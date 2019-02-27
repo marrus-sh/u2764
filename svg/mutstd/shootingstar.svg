@@ -1,0 +1,37 @@
+<?xml version="1.0"?>
+<!-- Derived from the following Mutant Standard 0.3.1 emoji : shooting_star -->
+<!-- See https://mutant.tech/ for more. -->
+<!-- Licensed under a Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International License <https://creativecommons.org/licenses/by-nc-sa/4.0/>. -->
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32">
+	<title>Shooting Star Emoji</title>
+	<description>
+		A star, trailing in a subtle arc.
+	</description>
+	<metadata>
+		<rdf:RDF xmlns:cc="http://web.resource.org/cc/" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:dc = "http://purl.org/dc/elements/1.1/">
+			<rdf:Description rdf:about="#svg-shootingstar">
+				<dc:title>Mutant Standard emoji v0.3.1</dc:title>
+			</rdf:Description>
+			<cc:work rdf:about="#svg-shootingstar">
+				<cc:license rdf:resource="http://creativecommons.org/licenses/by-nc-sa/4.0/"/>
+				<cc:attributionName>Dzuk (with modifications by Kyebego)</cc:attributionName>
+				<cc:attributionURL>http://mutant.tech/</cc:attributionURL>
+			</cc:work>
+		</rdf:RDF>
+	</metadata>
+	<defs>
+		<clipPath id="svg-shootingstar.clip">
+			<path d="M9.351,3.126c0,0 5.14,0.44 12.649,4.874c5.671,3.349 8,8 8,8l0,14c0,0 -10.79,-7.919 -15,-10c-5.528,-2.732 -9.932,-3.094 -9.932,-3.094l4.283,-13.78Z"/>
+		</clipPath>
+		<mask id="svg-shootingstar.mask" x="0" y="0" width="1" height="1" fill="black">
+			<path fill="none" stroke="white" stroke-width="4px" stroke-linejoin="round" d="M5.068,16.906c-0.09,-0.007 -0.178,-0.038 -0.255,-0.094c-0.175,-0.127 -0.248,-0.353 -0.181,-0.559c0.577,-1.777 1.475,-4.539 1.475,-4.539c0,0 -2.35,-1.708 -3.862,-2.806c-0.175,-0.127 -0.249,-0.353 -0.182,-0.559c0.067,-0.206 0.259,-0.346 0.476,-0.346c1.868,0 4.773,0 4.773,0c0,0 0.898,-2.762 1.475,-4.539c0.067,-0.206 0.259,-0.346 0.476,-0.346c0.03,0 0.059,0.003 0.088,0.008l0,0c0,0 5.14,0.44 12.649,4.874c5.671,3.349 8,8 8,8l0,14c0,0 -10.79,-7.919 -15,-10c-5.528,-2.732 -9.932,-3.094 -9.932,-3.094l0,0Z"/>
+			<path fill="hsl(0,0%,75%)" d="M9.351,3.126c0,0 5.14,0.44 12.649,4.874c5.671,3.349 8,8 8,8l0,14c0,0 -10.79,-7.919 -15,-10c-5.528,-2.732 -9.932,-3.094 -9.932,-3.094l4.283,-13.78Z"/>
+			<g clip-path="url(#svg-shootingstar.clip)" fill="none" stroke-width="2" stroke-linecap="round">
+				<path stroke="hsl(0,0%,50%)" d="M15,13c0,0 2.752,0.928 7,4c6.976,5.045 10,10 10,10"/>
+				<path stroke="hsl(0,0%,25%)" d="M9,5c0,0 3.067,0.872 6,2c4.842,1.862 8.919,4.427 13,9"/>
+			</g>
+			<path d="M8.787,3.464c0.067,-0.206 0.259,-0.346 0.476,-0.346c0.216,0 0.408,0.14 0.475,0.346c0.578,1.777 1.475,4.539 1.475,4.539c0,0 2.905,0 4.774,0c0.217,0 0.408,0.14 0.475,0.346c0.067,0.206 -0.006,0.432 -0.181,0.559c-1.512,1.098 -3.862,2.806 -3.862,2.806c0,0 0.898,2.762 1.475,4.539c0.067,0.206 -0.006,0.432 -0.182,0.559c-0.175,0.128 -0.412,0.128 -0.587,0c-1.512,-1.098 -3.862,-2.805 -3.862,-2.805c0,0 -2.35,1.707 -3.862,2.805c-0.175,0.128 -0.412,0.128 -0.588,0c-0.175,-0.127 -0.248,-0.353 -0.181,-0.559c0.577,-1.777 1.475,-4.539 1.475,-4.539c0,0 -2.35,-1.708 -3.862,-2.806c-0.175,-0.127 -0.249,-0.353 -0.182,-0.559c0.067,-0.206 0.259,-0.346 0.476,-0.346c1.868,0 4.773,0 4.773,0c0,0 0.898,-2.762 1.475,-4.539Z"/>
+		</mask>
+	</defs>
+	<rect id="svg-shootingstar" fill="currentColor" x="0" y="0" width="32" height="32" mask="url(#svg-shootingstar.mask)"/>
+</svg>

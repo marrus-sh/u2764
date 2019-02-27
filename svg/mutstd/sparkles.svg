@@ -1,0 +1,29 @@
+<?xml version="1.0"?>
+<!-- Derived from the following Mutant Standard 0.3.1 emoji : sparkles -->
+<!-- See https://mutant.tech/ for more. -->
+<!-- Licensed under a Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International License <https://creativecommons.org/licenses/by-nc-sa/4.0/>. -->
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32">
+	<title>Sparkles Emoji</title>
+	<description>
+		Three star­‑shaped sparkles.
+	</description>
+	<metadata>
+		<rdf:RDF xmlns:cc="http://web.resource.org/cc/" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:dc = "http://purl.org/dc/elements/1.1/">
+			<rdf:Description rdf:about="#svg-sparkles">
+				<dc:title>Mutant Standard emoji v0.3.1</dc:title>
+			</rdf:Description>
+			<cc:work rdf:about="#svg-sparkles">
+				<cc:license rdf:resource="http://creativecommons.org/licenses/by-nc-sa/4.0/"/>
+				<cc:attributionName>Dzuk (with modifications by Kyebego)</cc:attributionName>
+				<cc:attributionURL>http://mutant.tech/</cc:attributionURL>
+			</cc:work>
+		</rdf:RDF>
+	</metadata>
+	<defs>
+		<mask id="svg-sparkles.mask" x="0" y="0" width="1" height="1" fill="hsl(0,0%,25%)">
+			<path fill="none" stroke="white" stroke-width="4" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="1.5" d="M14,15l5.5,-2.5l2.5,-8.5l2.5,8.5l5.5,2.5l-5.5,2.5l-2.5,8.5l-2.5,-8.5l-5.5,-2.5ZM4,23l3.5,-1.5l1.5,-5.5l1.5,5.5l3.5,1.5l-3.5,1.5l-1.5,5.5l-1.5,-5.5l-3.5,-1.5ZM2,7l2,-1l1,-4l1,4l2,1l-2,1l-1,4l-1,-4l-2,-1Z"/>
+			<path d="M14,15l5.5,-2.5l2.5,-8.5l2.5,8.5l5.5,2.5l-5.5,2.5l-2.5,8.5l-2.5,-8.5l-5.5,-2.5ZM4,23l3.5,-1.5l1.5,-5.5l1.5,5.5l3.5,1.5l-3.5,1.5l-1.5,5.5l-1.5,-5.5l-3.5,-1.5ZM2,7l2,-1l1,-4l1,4l2,1l-2,1l-1,4l-1,-4l-2,-1Z"/>
+		</mask>
+	</defs>
+	<rect id="svg-sparkles" fill="currentColor" x="0" y="0" width="32" height="32" mask="url(#svg-sparkles.mask)"/>
+</svg>

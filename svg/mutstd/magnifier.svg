@@ -1,0 +1,32 @@
+<?xml version="1.0"?>
+<!-- Derived from the following Mutant Standard 0.3.1 emoji : magnifying_glass_left -->
+<!-- See https://mutant.tech/ for more. -->
+<!-- Licensed under a Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International License <https://creativecommons.org/licenses/by-nc-sa/4.0/>. -->
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32">
+	<title>Magnifier Emoji</title>
+	<description>
+		A magnifying glass, tilted to the left.
+	</description>
+	<metadata>
+		<rdf:RDF xmlns:cc="http://web.resource.org/cc/" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:dc = "http://purl.org/dc/elements/1.1/">
+			<rdf:Description rdf:about="#svg-magnifier">
+				<dc:title>Mutant Standard emoji v0.3.1</dc:title>
+			</rdf:Description>
+			<cc:work rdf:about="#svg-magnifier">
+				<cc:license rdf:resource="http://creativecommons.org/licenses/by-nc-sa/4.0/"/>
+				<cc:attributionName>Dzuk (with modifications by Kyebego)</cc:attributionName>
+				<cc:attributionURL>http://mutant.tech/</cc:attributionURL>
+			</cc:work>
+		</rdf:RDF>
+	</metadata>
+	<defs>
+		<mask id="svg-magnifier.mask" x="0" y="0" width="1" height="1" fill="white">
+			<path d="M12.154,0.001c4.214,0.01121 8.305,2.4547 10.321,6.152 1.09,1.9285 1.621,4.164 1.51,6.377 -0.127,3.911 -2.358,7.659 -5.696,9.692 -2.032,1.248 -4.434,1.887 -6.819,1.763C7.3635,23.854 3.4433,21.396 1.4879,17.788 -0.61555,14.056 -0.47158,9.1963 1.8515,5.5968 4.0244,2.1089 8.0404,-0.08649 12.154,0.001Zm-0.258,4c-3.2442,-0.01 -6.3306,2.1964 -7.411,5.25 -1.074,2.861 -0.3373,6.305 1.86,8.44 1.5326,1.527 3.706,2.449 5.883,2.3 2.168,0.05 4.281,-1.001 5.733,-2.58 1.35,-1.503 2.166,-3.528 2.03,-5.562C20.068,10.525 19.593,9.2605 18.988,8.105 17.593,5.5698 14.793,3.9377 11.896,4.001ZM29.924,24.096c0.994,0.982 1.379,2.477 1.09,3.83 -0.351,1.87 -2.179,3.328 -4.084,3.22 -1.278,0.05 -2.476,-0.639 -3.291,-1.588C19.817,25.705 15.994,21.853 12.172,18 14.115,16.057 16.057,14.115 18,12.172c3.975,3.975 7.949,7.949 11.924,11.924zM17.828,18 c 3.029,3.029 6.061,6.061 9.088,9.088C23.944,24.002 20.972,20.915 18,17.828 17.94,17.888 17.885,17.943 17.828,18Z"/>
+			<path fill="hsl(0,0%,50%)" d="M15,18c0,0 7.282,7.282 10.501,10.501 0.828,0.828 2.17,0.828 2.998,0 0,0 0,0 0,0 0.828,-0.828 0.828,-2.17 0,-2.998C25.282,22.282 18,15 18,15Z"/>
+			<circle fill="hsl(0,0%,25%)" cx="12" cy="12" r="10" />
+			<circle fill="black" cx="12" cy="12" r="8" />
+			<path fill="hsl(0,0%,25%)" d="M12.075,6.2c0.764,-0.01 1.524,0.1861 2.225,0.4845 1.804,0.7782 3.141,2.5394 3.395,4.4885 0,0.696 0.05,1.402 -0.136,2.081 -0.263,1.098 -0.829,2.138 -1.664,2.904 -0.206,0.153 -0.458,0.206 -0.71,0.181 -0.513,-0.02 -0.937,-0.544 -0.879,-1.049 -0.04,-0.426 0.347,-0.698 0.58,-1.001 0.511,-0.676 0.82,-1.526 0.77,-2.38 0,-0.413 0.04,-0.839 -0.129,-1.227C15.22,9.7744 14.541,9.0055 13.677,8.5894 13.099,8.3108 12.455,8.1591 11.813,8.197 11.018,8.2443 10.23,8.5182 9.6205,9.038 9.3428,9.27 9.0868,9.59 8.693,9.602 8.098,9.673 7.5424,9.1172 7.608,8.5224 7.6462,7.9922 8.1328,7.6801 8.5043,7.372 9.5212,6.599 10.799,6.1824 12.075,6.2 Z"/>
+		</mask>
+	</defs>
+	<rect id="svg-magnifier" fill="currentColor" x="0" y="0" width="32" height="32" mask="url(#svg-magnifier.mask)"/>
+</svg>

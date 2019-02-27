@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
+<!--
+The goal of JOURNAL : \U2764 is for each page to have its own unique layout and design, and to have the look and feel of print media—which means that we canʼt go sticking site navigation and page headers on every single page. Not to mention—these things can be a pain to update by hand !
+
+Instead, the JOURNAL uses the old­‑school approach of having a splash page with relevant links, site identity, and navigation, in lieu of an actual site header. We can ⸰ probably ⸰ assume (actually, not) that visitors are comfortable enough Browsing The Internet to URL hack their way to this page—but ⸰ just in case ⸰ there should be a link to this splash on every page anyway.
+
+See the <./cover.xhtml> for more information on the general design, markup, and layout of the JOURNAL.
+-->
+<head>
+	<title>❤ JOURNAL : \U2764</title>
+	<meta charset="utf-8"/>
+	<style>
+@namespace "http://www.w3.org/1999/xhtml";
+@namespace SVG "http://www.w3.org/2000/svg";
+
+html {
+	Margin: 0;
+	Padding: 0;
+	Height: 100%;
+	Color: #FAF8F7;
+	Background: #302F2B;
+	Overflow: Auto;
+}
+body {
+	Display: Flex; /* This is just to centre content ; no harm done if browsers donʼt support this */
+	Flex-Direction: Column;
+	Box-Sizing: Border-Box;
+	Margin: 0;
+	Padding: .5IN .25IN 1.5IN;
+	Min-Height: 100%;
+	Text-Align: Center; /* This will center all of our inline-blocks */
+}
+
+/*
+The title and logo are styled as inline-blocks because it means that they will be placed side­‑by­‑side if there is space on the screen. However ! This will only work properly if there is no whitespace between the elements ( because it ⸰ will ⸰ be rendered ! ).
+*/
+header {
+	/*
+	We use `text-indent` instead of `padding-left` for the left padding on the header. This has the exact same effect if the logo and title are side­‑by­‑side, but wonʼt pad the latter if they wrap onto two. This is important because the title ⸰ already ⸰ has left padding, from the `margin-left`s in its spans.
+	*/
+	Display: Inline-Block; /* Sizes to content */
+	Box-Sizing: Border-Box;
+	Margin: Auto Auto 0;
+	Padding: 2PC 2PC 2PC 0;
+	Max-Width: 100%;
+	Color: #FAF8F7;
+	Background: #1F1A14;
+	Text-Indent: 2PC;
+}
+h1 {
+	Display: Inline-Block;
+	Margin: 0;
+	Max-Width: 100%;
+	Text-Indent: 0; /* This is inherited, so we have to manuälly reset it */
+	Text-Transform: Uppercase;
+}
+SVG|svg {
+	Display: Inline-Block;
+	Width: 2.75IN;
+	Height: 2.75IN;
+	Max-Width: Calc(100% - 2PC); /* This 2PC is our `text-indent` */
+	Color: #F56E97;
+}
+
+h1>span {
+	/*
+	These are styled as blocks because it allows us to position them more precisely. In order to get a good “ highlighter ” effect, we set their width to be `max-content`—but note that this wonʼt do anything in older browsers. ( Itʼs okay ; the fallback looks fine. )
+
+	Normally I would caution against using absolute sizes, but on a splash screen with very large text, itʼs okay. Here, weʼre doing everything in picas, which are one­‑sixth of an inch.
+	*/
+	Display: Block;
+	Margin: 1PC 0 1PC 2PC;
+	Padding: 0 1PC;
+	Width: -moz-Max-Content; /* Firefox 65 and earlier */
+	Width: Max-Content;
+	Max-Width: Calc(100% - 4PC);
+	Overflow: Hidden;
+	Color: #1F1A14;
+	Background: #FAF8F7;
+	Font: 900 3PC/1 "Helvetica Neue", "Noto Sans", "Futura", Sans-Serif;
+	Font-Stretch: Condensed;
+	Text-Align: Left;
+	Text-Overflow: Ellipsis;
+	/*
+	It is important to align the transform origin with the start of the text run because each span has a different length. Aligning at the bottom ensures that the rotation doesnʼt encroach on the left margin.
+	*/
+	Transform-Origin: Bottom Left;
+	Transform: Rotate(8DEG);
+}
+
+/*
+Moving most of the link styling to the links themselves ( rather than the list items ) is beneficial because it lets us define them as inline­‑blocks—which are only as wide as their content. However, we ⸰ do ⸰ need to make the list items display as blocks ( not list­‑items ), and give them their own stacking contexts ( so that the “ stacks ” drawn behind the links on focus/hover arenʼt placed behind the entire webpage ).
+*/
+ul {
+	Margin: .5IN;
+	Padding: 0;
+	Text-Align: Center;
+}
+li {
+	Display: Block; /* Disables list styling */
+	Position: Relative; /* Allows setting of Z-Index */
+	Margin: .5EM 0;
+	Font: Bold XX-Large/1 "Courier New", Courier, Monospace;
+	Text-Transform: Uppercase;
+	Z-Index: 0; /* Creates a new stacking context */
+}
+li a[href] {
+	Display: Inline-Block;
+	Position: Relative; /* Allows functioning as a containing block for absolutely­‑positioned elements */
+	Padding: .25EM 1EM;
+	Max-Width: 100%;
+	Height: 1EM;
+	Outline: Medium #1F1A14 Solid; /* Doesnʼt take up space, unlike `border` */
+	Color: #302F2B; /* Slightly lighter */
+	Background: Linear-Gradient( /* This is used to “ spoof ” the lined effect */
+		To Bottom,
+		Transparent Calc(.25EM - 1.5PX),
+		#4B2DF7 Calc(.25EM - 1.5PX),
+		#4B2DF7 .25EM,
+		Transparent .25EM,
+		Transparent 1.25EM,
+		#4B2DF7 1.25EM,
+		#4B2DF7 Calc(1.25EM + 1.5PX),
+		Transparent Calc(1.25EM + 1.5PX)
+	) No-Repeat, #FAF8F7;
+}
+li a[href]::AFTER,
+li a[href]::BEFORE {
+	Display: Block;
+	Position: Absolute;
+	Top: 0;
+	Left: 0;
+	Width: 100%;
+	Height: 100%;
+	Visibility: Hidden;
+	Background: Inherit;
+	Outline: Thin #1F1A14 Solid;
+	Z-Index: -1;
+	Content: "";
+}
+li a[href]::AFTER {
+	Transform-Origin: 40% 65%;
+	Transform: Rotate(-3DEG);
+	Transition: None;
+}
+li a[href]:Focus::AFTER {
+	Visibility: Visible;
+	Background: #F56E97;
+	Transform: Rotate(-4DEG);
+	Transition: None;
+}
+li a[href]:Hover::AFTER {
+	Visibility: Visible;
+	Transition: Visibility 0S .25S;
+}
+li a[href]:Active::AFTER {
+	Background: #1F1A14;
+	Transform: Rotate(-4DEG);
+}
+li a[href]::BEFORE {
+	Transform-Origin: 50% 40%;
+	Transform: Rotate(6DEG);
+	Transition: Visibility 0S .25S;
+}
+li a[href]:Hover::BEFORE {
+	Visibility: Visible;
+	Transition: None;
+}
+li a[href]:Active::BEFORE {
+	Background: #B01C1C;
+	Transform: Rotate(8DEG);
+}
+
+/*
+These styles are mostly for the sake of the footer.
+*/
+footer {
+	Display: Block;
+	Margin: Auto Auto 0;
+	Max-Width: 8IN;
+}
+footer *:Link { Color: #1AACEB }
+footer *:Visited { Color: #F56E97 }
+footer *:Link:Active { Color: #FAE13E }
+footer *:Visited:Active { Color: #EB9100 }
+p { Margin: 0 }
+small { Font-Size: XX-Small }
+	</style>
+</head>
+<body>
+<header><svg xmlns="http://www.w3.org/2000/svg" width="192" height="192" viewBox="0 0 64 64" fill="currentColor">
+	<title>Ezine Logo</title>
+	<description>
+		A circled heart with an ellipsis in the centre.
+	</description>
+	<defs>
+		<mask id="heartmask" x="0" y="0" width="1" height="1" fill="white">
+			<path d="
+				M 0 0    l 8 0   q -6 2 -8 8    z
+				M 64 0    l -8 0    q 6 2 8 8    z
+				M 0 64    l 8 0    q -6 -2 -8 -8    z
+				M 64 64    l -8 0    q 6 -2 8 -8    z
+			"/>
+			<circle cx="32" cy="32" r="30"/>
+			<path d="
+				M 8 23
+				a 12 12 0 1 1 24 0
+				a 12 12 0 1 1 24 0
+				c 0 18 -24 22 -24 36
+				c 0 -14 -24 -18 -24 -36
+				z
+			" fill="black"/>
+			<circle cx="21.5" cy="31" r="3.5"/>
+			<circle cx="32" cy="31" r="3.5"/>
+			<circle cx="42.5" cy="31" r="3.5"/>
+		</mask>
+	</defs>
+	<rect x="0" y="0" width="64" height="64" mask="url(#heartmask)"/>
+</svg>
+<h1><!-- TITLE -->
+	<span>Journal :</span>
+	<span>\u2764</span>
+</h1></header>
+<nav><!-- NAVIGATION -->
+	<ul>
+		<li><a href="./cover.xhtml">Enter.</a></li>
+		<li><a href="./sitemap.xhtml">Sitemap.</a></li>
+		<li><a href="./links.xhtml">Links.</a></li>
+	</ul>
+</nav>
+<footer><!-- BASIC COPYRIGHT INFO -->
+	<p><small>Except where otherwise noted, all content on this site is 🄯 2019 Kyebego—licensed under a <a href="https://creativecommons.org/licenses/by-sa/4.0/"  rel="license nofollow noopener noreferrer"><cite>Creative Commons Attribution-ShareAlike 4.0 International</cite></a> license [ 🅭🅯⭴ ].<!-- These characters are anticipatory ; see <http://www.unicode.org/L2/L2018/18056-future-adds.pdf> --> Individual pages, or portions thereof, may be licensed differently. For more information, see the <a href="./back.xhtml">back cover</a>.</small></p>
+</footer>
+</body>
+</html>

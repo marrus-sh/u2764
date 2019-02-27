@@ -1,0 +1,30 @@
+<?xml version="1.0"?>
+<!-- Derived from the following Mutant Standard 0.3.1 emoji : nametag -->
+<!-- See https://mutant.tech/ for more. -->
+<!-- Licensed under a Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International License <https://creativecommons.org/licenses/by-nc-sa/4.0/>. -->
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32">
+	<title>Nametag Emoji</title>
+	<description>
+		A name badge, shaped like a tulip.
+	</description>
+	<metadata>
+		<rdf:RDF xmlns:cc="http://web.resource.org/cc/" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:dc = "http://purl.org/dc/elements/1.1/">
+			<rdf:Description rdf:about="#svg-nametag">
+				<dc:title>Mutant Standard emoji v0.3.1</dc:title>
+			</rdf:Description>
+			<cc:work rdf:about="#svg-nametag">
+				<cc:license rdf:resource="http://creativecommons.org/licenses/by-nc-sa/4.0/"/>
+				<cc:attributionName>Dzuk (with modifications by Kyebego)</cc:attributionName>
+				<cc:attributionURL>http://mutant.tech/</cc:attributionURL>
+			</cc:work>
+		</rdf:RDF>
+	</metadata>
+	<defs>
+		<mask id="svg-nametag.mask" x="0" y="0" width="1" height="1" fill="hsl(0,0%,50%)">
+			<path fill="none" stroke="white" stroke-width="4" d="M6.75,5.499l4.25,8.501l5,-10l5,10l4.25,-8.501c2.914,2.567 4.75,6.321 4.75,10.501c0,7.727 -6.273,14 -14,14c-7.727,0 -14,-6.273 -14,-14c0,-4.18 1.836,-7.934 4.75,-10.501Z"/>
+			<path d="M6.75,5.499l4.25,8.501l5,-10l5,10l4.25,-8.501c2.914,2.567 4.75,6.321 4.75,10.501c0,7.727 -6.273,14 -14,14c-7.727,0 -14,-6.273 -14,-14c0,-4.18 1.836,-7.934 4.75,-10.501Z"/>
+			<rect fill="black" x="7" y="17" width="18" height="6"/>
+		</mask>
+	</defs>
+	<rect id="svg-nametag" fill="currentColor" x="0" y="0" width="32" height="32" mask="url(#svg-nametag.mask)"/>
+</svg>

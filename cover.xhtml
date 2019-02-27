@@ -1,0 +1,1103 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:xlink="http://www.w3.org/1999/xlink" lang="en" xml:lang="en">
+<!--
+The design of JOURNAL : \U2764 is a reïmagining of 90ʼs­‑era ( GeoCities ) web æsthetic with modern CSS capabilities. It draws heavily upon the designs of print media—both formal and informal, and especially of ⸰ that ⸰ era, when magazines actually had the resources to invest in cutting design, fax machines proliferated, and multipurpose paper got its name.
+
+Typographically, the JOURNAL is inspired more by French ( and older English ) traditions than contemporary ones—there is extra spacing around most punctuation ( how much ? Well, it depends on the font… ) and guillemets are employed for quotes.
+
+The colour palette is “ PRINT + PASTELS ”, which I developed from examining a box of coloured pencils and newsprint—itʼs slightly yellowed, and the colours are of that bold/pastel coloured pencil variety which so little finds representation on the web. The shades of print are  : { white : #FAF8F7 | bright : #DEDBD9 | light : #B8B3B0 | regular : #948D87 | medium : #75706A | dark : #57534C | dim : #302F2B | black : #1F1A14 } ; the pastels are : { red : #B01C1C | orange : #D15919 | gold : #EB9100 | yellow : #FAE13E | green : #50D952 | cyan : #1AACEB | blue : #4B2DF7 | pink : #F56E97 }.
+
+All source files are complete—as in, do not rely on external stylesheets or scripts. Actually, each page is styled by­‑hand from scratch, so sticking stylesheets in external files would hardly help ! And one of the goals of the JOURNAL is portability—you should be able to download, email, share, print each page, so keeping each page contained within a single file is important.
+
+As you can see, source files are heavily commented to explain some of the finer points of their design and give background information on their publication. If you have an interest in web design, you might find reading these comments helpful ! Never be afraid to view the source ;P .
+
+At time of writing, I am using CotEditor on macOS for composing these pages, and Firefox Developer Edition in Private Browsing for testing them. I will probably not care particularly strongly about WebKit browsers.
+-->
+<head>
+	<title>❤ COVER</title>
+	<meta charset="utf-8"/>
+	<style>
+@namespace "http://www.w3.org/1999/xhtml";
+@namespace SVG "http://www.w3.org/2000/svg";
+
+html {
+	Margin: 0;
+	Padding: 0;
+	Color: #FAF8F7;
+	Background:
+		/*
+		The following is a pattern you will see a ⸰ lot ⸰—in this page and likely in future pages as well. Because we are working with a ⸰ very ⸰ limited palette ( 8 greys and 8 colours ), we can use “ hatching ” to simulate “ in­‑between ” colours. You will see this same technique invoked by very old webpages which tried to limit themselves to the “ web safe ” colour set—they used bitmap images, and, very rarely, you will see modern ones trying to pull of the same effect with SVGs. We use linear gradients, because theyʼre compact, easy to read, and get the job done.
+
+		When the angle of our gradient lines up with the pixel grid ( a multiple of 90° ), we can use “ hard ” stops and exact pixel values. The rest of the time, we need to apply a little bit of gradient between stops as a form of anti­‑aliasing.
+		*/
+		Repeating-Linear-Gradient(
+			45DEG,
+			Transparent 0,
+			Transparent 1.2PX,
+			#1F1A14 1.42PX,
+			#1F1A14 2.62PX,
+			Transparent 2.84PX
+		),
+		Repeating-Linear-Gradient(
+			-45DEG,
+			Transparent 0,
+			Transparent 1.2PX,
+			#1F1A14 1.42PX,
+			#1F1A14 2.62PX,
+			Transparent 2.84PX
+		),
+		#302F2B;
+}
+body {
+	Margin: 0;
+	Padding: 0;
+}
+
+/*
+Basic styling. The goal is for each element to have a style that is flexible enough that it works in all of the different contexts it appears in on the page.
+*/
+b {
+	Display: Inline-Block;
+	Margin: -1PX;
+	Padding: 0 .25EM;
+	Border: 1PX Var(--AccentBorder) Solid;
+	Color: Var(--AccentColour);
+	Background: Var(--AccentBackground);
+	Font-Weight: Inherit;
+	Line-Height: 1.25EM;
+}
+pre b { Padding: 0 }
+pre br { Display: None } /* `pre` elements are wrapped­‑to­‑fit ; we use `br` elements to suggest line­‑breaks for people viewing the page without our styling ( for example, in “ reader mode ” ). Actual newline characters can always be used to create line­‑breaks regardless. */
+blockquote {
+	Margin: 0;
+	Padding: 0;
+}
+del,
+ins { Text-Decoration-Style: Double }
+dfn {
+	Font-Style: Italic;
+	Font-Weight: Inherit;
+	Text-Decoration: Double Underline;
+}
+em {
+	Font-Style: Inherit;
+	Font-Weight: Bolder;
+}
+footer {
+	Display: Block;
+	Margin: 1EM;
+	Border-Top: Thin Solid;
+	Padding: 1EM;
+	Font-Size: Small; /* The `small` tag will make it even smaller though */
+	Text-Align: Center;
+}
+blockquote>footer {
+	Margin: 1EM 0;
+	Padding: 1EM 1EM 0;
+	Text-Align: Right
+}
+*|*:Link { Color: #4B2DF7 }
+*|*:Visited { Color: #D15919 }
+*|*:Link:Active { Color: #B01C1C }
+*|*:Visited:Active { Color: #57534C }
+article>footer *|*:Link,
+article>footer *|*:Visited { Color: #FAE13E }
+article>footer *|*:Link:Active,
+article>footer *|*:Visited:Active { Color: #B8B3B0 }
+*.JOURNAL {
+	Font-Family: Monospace;
+	Text-Transform: Uppercase;
+}
+SVG|svg {
+	Width: Auto;
+	Height: 2EX;
+	Vertical-Align: Middle;
+}
+*::SELECTION {
+	Color: Var(--AccentColour);
+	Background: Var(--AccentBackground); /* `background-image` will be ignored so make SURE the accent background colour is acceptable (not transparent) */
+}
+
+/*
+The top heading. As this is the “ cover page ”, Iʼve styled this header to look like the cover of a notebook—complete with emoji stickers.
+*/
+header {
+	Display: Block;
+	Position: Relative;
+	Color: #FAF8F7;
+	Background:
+		Repeating-Linear-Gradient(
+			45DEG,
+			Transparent 0,
+			Transparent 1.2PX,
+			#1F1A14 1.42PX,
+			#1F1A14 2.62PX,
+			Transparent 2.84PX
+		),
+		Linear-Gradient(
+			To Right,
+			Transparent 1.125IN,
+			#57534C 1.125IN,
+			#57534C 1.375IN,
+			Transparent 1.375IN
+		) Center / 2.5IN 2.5IN Repeat,
+		Linear-Gradient(
+			To Top,
+			Transparent 2.25IN,
+			#57534C 2.25IN
+		) Center -.75IN / 2.5IN 2.5IN Repeat,
+		#1F1A14;
+	Text-Align: Left;
+}
+header::BEFORE {
+	Display: Inline-Block; /* Make sure no whitespace follows the beginning of the header */
+	Width: Calc(50% - 16.5EM); /* Adds left padding if necessary */
+	Min-Width: 1EM;
+	Height: 100%;
+	Content: "";
+}
+h1 {
+	Display: Inline-Block; /* Shrink to content */
+	Padding: 11.25EM 0 1.25EM;
+	Font: 900 1.5REM / 1 Monospace;
+	Text-Align: Left;
+	Text-Transform: Uppercase;
+}
+h1>span {
+	Display: Block;
+	Margin: .25EM 0;
+	Padding: 0 .25EM;
+	Color: #1F1A14;
+	Background: #FAF8F7;
+	Text-Align: Right;
+	White-Space: Pre;
+	Transform-Origin: Bottom Left;
+	Transform: Rotate(-8DEG);
+}
+h1>span>SVG|svg {
+	Margin: 0 .1EM;
+	Width: .8EM;
+	Height: .8EM;
+	Vertical-Align: Baseline;
+}
+header>SVG|svg { /* First sticker */
+	Display: Block;
+	Position: Absolute;
+	Top: 1.25EM;
+	Left: 60%;
+	Margin: -.25EM;
+	Border: .25EM CurrentColor Solid;
+	Border-Radius: 100%;
+	Background: #FAF8F7;
+	Font-Size: 1.5REM;
+	Width: 5EM;
+	Height: 5EM;
+	Color: #F56E97;
+}
+header>SVG|svg:Nth-Of-Type(2) { /* Second sticker */
+	Top: 5EM;
+	Left: Calc(50% - 16.5EM - .75IN);
+	Width: 5EM;
+	Height: 5EM;
+	Color: #EB9100;
+}
+header>SVG|svg:Nth-Of-Type(3) { /* Third sticker */
+	Top: Auto;
+	Bottom: -2.5EM;
+	Left: Auto;
+	Right: Calc(50% - 16.5REM - 5EM);
+	Width: 5EM;
+	Height: 5EM;
+	Color: #1AACEB;
+}
+
+/*
+Normally I would define the `max-width` on the article itself, but setting things up as below allows us to do fun things with individual sections and break up the layout more. The decorations on sections will frequently overflow the article container, which we hide to prevent horizontal scrollbars.
+*/
+article {
+	Display: Block;
+	Position: Relative; /* Enables `z-index` */
+	Overflow: Hidden; /* Keeps decorative stuff from producing scrollbars */
+	Z-Index: 0; /* Establishes new stacking context in front of page background */
+	--AccentColour: #1F1A14;
+	--AccentBorder: #75706A;
+	--AccentBackground: #DEDBD9;
+	--AsideColour: #1F1A14;
+	--AsideBackground: #DEDBD9;
+	--TextColour: #302F2B;
+	--TextBorder: #1F1A14;
+	--TextBackground: #FAF8F7;
+}
+section {
+	Display: Block;
+	Position: Relative;
+	Margin: 1EM Auto;
+	Padding: 3EM 1EM;
+	Max-Width: 31EM;
+	Color: Var(--TextColour);
+	Background: Var(--TextBackground);
+}
+
+/*
+The “ whatis ” section talks about how the JOURNAL is a… well, journal, so we give it the appearance of something ripped out of an old notebook.
+*/
+section#whatis {
+	/*
+	The hatching on the accent background is a cute way to lighten the colour without having to deal with opacity. Itʼs an actual subtle gradient ( the colour stops donʼt line up exactly ) to compensate for the fact that weʼre drawing diagonal lines on a square pixel grid.
+	*/
+	Background: Transparent;
+	--AccentBorder: #B01C1C;
+	--AccentBackground: Repeating-Linear-Gradient(
+		-45DEG,
+		#FAF8F7 0,
+		#FAF8F7 .6PX,
+		#F56E97 .71PX,
+		#F56E97 1.34PX,
+		#FAF8F7 1.41PX
+	), #F56E97;
+	--AsideBackground: #FAE13E;
+}
+section#whatis p,
+section#whatis pre { Background: None }
+section#whatis::BEFORE {
+	Display: Block;
+	Position: Absolute;
+	Top: 0;
+	Bottom: 0;
+	Left: -1.5IN;
+	Right: -1.5IN;
+	Box-Shadow: .125IN .125IN #B01C1C;
+	Background:
+		Radial-Gradient( /* Holes */
+			Circle At .4375IN 1.25IN,
+			#302F2B .1875IN,
+			Transparent .1875IN
+		) Top Left / 1.5IN 4.25IN Repeat-Y,
+		Linear-Gradient( /* Left-hand line */
+			To Right,
+			Transparent Calc(1.5IN - 1PX),
+			#B01C1C Calc(1.5IN - 1PX)
+		) Center Left / 1.5IN 100% No-Repeat,
+		Repeating-Linear-Gradient( /* Lined­‑paper effect */
+			To Top,
+			Transparent 0,
+			#4B2DF7 0,
+			#4B2DF7 1.5PX,
+			Transparent 1.5PX,
+			Transparent 1.5EM
+		) Bottom Center / 100% Calc(100% - 1IN) No-Repeat,
+		Repeating-Linear-Gradient( /* Right-hand line hatching */
+			-45DEG,
+			Transparent 0,
+			Transparent .6PX,
+			#1AACEB .71PX,
+			#1AACEB 1.34PX,
+			Transparent 1.41PX,
+			Transparent 2.83PX
+		) Calc(100% - 1.5IN) Center / 1PX 100% No-Repeat;
+	Z-Index: -1;
+	Content: "";
+}
+section#whatis::AFTER {
+	Display: Block;
+	Position: Absolute;
+	Top: 0;
+	Bottom: 0;
+	Left: -1.5IN;
+	Right: -1.5IN;
+	Background: #FAF8F7;
+	Z-Index: -100;
+	Content: "";
+}
+
+/*
+The display of this section is inspired by the Amiga 500. It is set off to the right to break up the pageʼs visual flow.
+
+If our margin becomes negative, then the section will cross the article boundary and get clipped, so we add padding to protect its content. If the margin is positive, then the padding will be invalid, and have no effect.
+
+Because we are using the padding for these purposes, we have to use the border to apply “ fake ” padding to our section.
+*/
+section#subject {
+	Margin: -3EM Calc(50% - 29.7EM) -2EM Auto;
+	Border-Left:	Transparent 1EM Solid;
+	Border-Right: Transparent 1EM Solid;
+	Padding-Left: 0;
+	Padding-Right: Calc(29.7EM - 50%);
+	Max-Width: 35EM;
+	Color: #DEDBD9;
+	Background: #4B2DF7;
+	Box-Shadow: 0 0 0 2PX #FAF8F7; /* Fake border */
+	--AccentColour: #FAF8F7;
+	--AccentBorder: #EB9100;
+	--AccentBackground: #D15919;
+	--AsideBackground: #EB9100;
+	--TextColour: #DEDBD9;
+	--TextBorder: #FAF8F7;
+	--TextBackground: #4B2DF7;
+	Font-Size: 1REM; /* Some browsers will try to reduce the size of monospace fonts */
+	Font-Family: Monospace;
+	Z-Index: 1;
+}
+section#subject::BEFORE { /* Topbar */
+	Display: Block;
+	Position: Absolute;
+	Top: 0;
+	Left: -1EM;
+	Right: -1EM;
+	Border-Style: Double Solid;
+	Border-Color: #FAF8F7;
+	Border-Width: 5PX 2PX;
+	Height: 2PX;
+	Content: "";
+}
+section#subject::AFTER { /* BottomBox */
+	Display: Block;
+	Position: Absolute;
+	Bottom: 0;
+	Right: -1EM;
+	Border: 4PX #FAF8F7 Double;
+	Width: 8PX;
+	Height: 8PX;
+	Background: Padding-Box #FAF8F7;
+	Content: "";
+}
+section#subject:Target h2 SVG|svg:Not([color]) { Color: Inherit } /* Otherwise, the colour will match the background for this special case */
+section#subject>div.PARAGRAPHS>*:Last-Child::AFTER { /* Blinking cursor */
+	Display: Inline-Block;
+	Margin: 0;
+	Height: Auto;
+	Background:
+		Border-Box Repeating-Linear-Gradient(
+			45DEG,
+			Transparent 0,
+			Transparent .6PX,
+			Var(--AccentBackground) .71PX,
+			Var(--AccentBackground) 1.34PX,
+			Transparent 1.41PX
+		),
+		Border-Box Repeating-Linear-Gradient(
+			-45DEG,
+			Transparent 0,
+			Transparent .6PX,
+			Var(--AccentBackground) .71PX,
+			Var(--AccentBackground) 1.34PX,
+			Transparent 1.41PX
+		),
+		Var(--AccentBorder);
+	Content: " ";
+}
+section#subject aside[role="note"] { /* Gives notes the look of a “ sticky note application ” */
+	Margin: .375EM -2EM .375EM 1CH;
+	Border-Width: 3PX;
+	Padding: Calc(.375EM - 3PX) 1CH;
+	Font: Inherit;
+	Line-Height: 1.5;
+}
+
+/*
+This uses the same offsetting as the above section, but in the opposite direction. Otherwise, itʼs pretty straightforward.
+*/
+section#aboutme {
+	Margin: 1EM Auto 1EM Calc(50% - 23.1EM);
+	Border-Left:	Transparent 1EM Solid;
+	Border-Right: Transparent 1EM Solid;
+	Padding-Left: Calc(23.1EM - 50%);
+	Padding-Right: 0;
+	Background: #F56E97;
+	Box-Shadow: -.125EM .125EM 0 .25EM #FAF8F7;
+	--AccentColour: #B01C1C;
+	--AccentBorder: #B01C1C;
+	--AccentBackground: #FAF8F7;
+	--AsideBackground: #FAF8F7;
+	--TextColour: #1F1A14;
+	--TextBorder: #B01C1C;
+	--TextBackground: #FAF8F7;
+}
+section#aboutme p,
+section#aboutme pre { Border: Thin Var(--TextBorder) Solid }
+section#aboutme::SELECTION,
+section#aboutme *::SELECTION { /* Selections are really hard to see otherwise */
+	Color: #1F1A14;
+	Background: #F56E97;
+}
+section#aboutme aside[role=note]::SELECTION,
+section#aboutme aside[role=note] *::SELECTION { /* Back to defaults */
+	Color: Var(--AccentColour);
+	Background: Var(--AccentBackground);
+}
+
+/*
+This section is designed to have the appearance of a handwritten note.
+*/
+section#places {
+	Font-Family: Cursive;
+	--AccentColour: #1F1A14;
+	--AccentBorder: #1F1A14;
+	--AccentBackground: #FAF8F7;
+	--TextColour: #1F1A14;
+	--TextBackground: #DEDBD9;
+}
+section#places h2 { Background: #FAF8F7 }
+
+/*
+Headings have a boxy look ; the design inspiration is those construction paper headings you sometimes see on poster­‑boards.
+
+An empty link is used in section headings to link to the section itself. After it is clicked ( or if the containing section is otherwise the target of the URL ), extra styling is applied, and the link is swapped out for one that targets the top of the page : via `::before` and `::after` pseudo­‑elements, to appropriately compensate for rotation.
+*/
+h2 {
+	Clear: Both;
+	Position: Relative;
+	Margin: -3PX -3PX Calc(1.25EM - 3PX);
+	Border-Style: Solid Double Double Solid;
+	Border-Color: Var(--TextBorder);
+	Border-Width: 3PX;
+	Padding: .35EX;
+	Color: Var(--TextColour);
+	Background: Var(--TextBackground);
+	Box-Shadow: 2PX 2PX Var(--TextBorder);
+	Font: Bold X-Large/1.25 Sans-Serif;
+	Z-Index: 0; /* A stacking context will be created when the transform occurs, so this is just for consistency */
+}
+h2:Focus-Within { Transform: Rotate(-4DEG) } /* Not supported everywhere */
+h2:Hover { Transform: Rotate(-2DEG) }
+h2:Active {
+	Transform-Origin: Center 60%;
+	Transform: Rotate(6DEG);
+}
+h2::BEFORE,
+h2::AFTER,
+h2 a:Empty {
+	Display: Block;
+	Position: Absolute;
+	Top: -3PX;
+	Bottom: -3PX;
+	Left: -3PX;
+	Right: -3PX;
+}
+h2 a:Empty[href="#"] { Display: None }
+h2 SVG|svg {
+	Height: 1.2EM;
+	Vertical-Align: Text-Bottom;
+}
+h2 SVG|svg:Not([color]) { Color: Var(--AccentBorder) }
+h2:Hover::BEFORE {
+	Transform: Rotate(2DEG);
+	Content: "";
+}
+section:Target h2::AFTER {
+	Border-Style: Solid Double Double Solid;
+	Border-Color: Var(--TextBorder);
+	Border-Width: 3PX;
+	Background: #EB9100;
+	Box-Shadow: 2PX 2PX Var(--TextBorder);
+	Z-Index: -1;
+	Content: "";
+}
+section:Target h2::BEFORE {
+	Top: -.6EM;
+	Bottom: -.6EM;
+	Left: -.6EM;
+	Right: -.6EM;
+	Background: Repeating-Linear-Gradient(
+		-45DEG,
+		Transparent 0,
+		Transparent .6PX,
+		#EB9100 .71PX,
+		#EB9100 1.34PX,
+		Transparent 1.41PX
+	);
+	Z-Index: -2;
+	Content: "";
+}
+section:Target h2 a:Empty { Display: None }
+section:Target h2 a:Empty[href="#"] { Display: Block }
+
+/*
+Marginal notes are just sans­‑serif floats. Thereʼs nothing too complicated here and no reason to get fancy. Visually, theyʼre somewhere in­‑between a pull quote and a sticky.
+*/
+aside[role=note] {
+	Display: Block;
+	Position: Relative; /* This is just for stacking behaviour */
+	Box-Sizing: Border-Box;
+	Float: Right;
+	Clear: Right;
+	Margin: .6EM -2REM .6EM 1CH;
+	Border: Medium #1F1A14 Double;
+	Padding: .6EM 1CH;
+	Width: 12EM;
+	Max-Width: 50%;
+	Color: Var(--AsideColour);
+	Background: Var(--AsideBackground);
+	Box-Shadow: -2PX 2PX 0 1PX #302F2B;
+	Font: Normal Larger/1.2 Sans-Serif;
+	Text-Align: Left;
+	Z-Index: 100; /* Put these notes on top of everything else */
+	--AccentColour: Var(--AsideBackground);
+	--AccentBorder: Var(--AsideColour);
+	--AccentBackground: Var(--AsideColour);
+}
+
+/*
+There are two possible approaches to rendering a pilcrow at the beginning of a paragraph : using `text-indent` and absolute positioning, or using an inline­‑block as seen here. One downside to using an inline­‑block is : Whitespace at the beginning of paragraphs is now significant, as it will be rendered between the first letter and the `::before`. However, it makes getting proper alignment and positioning ⸰ much ⸰ easier.
+
+Paragraphs themselves are inline elements, ⸰ not ⸰ blocks, which gives them a “ highlighter ” effect. `::after` is used to create the space between them—the styling for `strong` does this as well.
+
+The `.PARAGRAPHS` div provides overflow clipping for paragraphs, to ensure that they donʼt exceed their designated area on the page. This mostly comes into play with `strong` elements.
+
+`pre` is taken as a whitespace­‑significant variant of `p` in our usage.
+*/
+div.PARAGRAPHS {
+	Margin: 0;
+	Padding: 0 2EM;
+	Overflow: Hidden;
+}
+p,
+pre {
+	Display: Inline;
+	Margin: 0;
+	Padding: .075EM 0 .05EM;
+	Color: Var(--TextColour);
+	Background: Var(--TextBackground);
+	Font: Inherit;
+	Font-Variant-Numeric: Oldstyle-Nums;
+	Line-Height: 1.5;
+}
+p { Hyphens: Auto }
+pre { White-Space: Pre-Wrap }
+p::BEFORE,
+pre::BEFORE {
+	Display: Inline-Block;
+	Position: Relative; /* For `z-index`ing */
+	Margin: -1PX Calc(.75EM - 1PX) -1PX Calc(-1.25EM - 1PX);
+	Border: 1PX Var(--AccentBorder) Solid;
+	Padding: 0 1.25EM 0 0;
+	Width: 1.25EM;
+	Height: 1.25EM;
+	Color: Var(--AccentColour);
+	Background: Var(--AccentBackground);
+	Line-Height: 1.25EM;
+	Text-Align: Center;
+	Z-Index: 1; /* Places on top of everything else */
+	Content: "¶";
+}
+p::AFTER,
+pre::AFTER {
+	Display: Block;
+	Margin-Bottom: 1.5EM;
+	Height: 0;
+	Content: "";
+}
+p:Last-Child::AFTER,
+pre:Last-Child::AFTER { Content: None }
+
+/*
+This is a huge hack. Basically weʼre shifting the entire important portion down a line, without changing how the words are flowed, and using the resulting whitespace to draw the eye and break up the text. You canʼt do this and then “ pick up where you left off ” ( well, you hypothetically could, but it would mean wrapping everything afterwards in a span ) so we fudge around it by terminating the line in a bunch of dots and then resuming the paragraph on a new line. It looks alright.
+
+The `::after` actually creates the dots, and forces the newline—did you know you can stick a block element inside an inline ? You can and itʼs perfect for this. The `::before` ensures that the space ⸰ before ⸰ the first line is whited out—otherwise, if the text only spans one line, the dots would appear there also.
+*/
+strong {
+	Position: Relative;
+	Top: 1.5EM;
+	Margin: -.25EM 0 -.125EM;
+	Padding: Calc(.25EM - 5PX) 0 Calc(.125EM - 5PX) .5EM;
+	Color: Var(--TextColour);
+	Background: Var(--TextBackground);
+	Border-Style: Double None;
+	Border-Color: Var(--AccentBorder);
+	Border-Width: 5PX;
+}
+strong::BEFORE {
+	Display: Inline-Block;
+	Position: Relative;
+	Margin: 0 0 0 -100%;
+	Width: 100%;
+	Height: 1EM;
+	Background: Var(--TextBackground);
+	Z-Index: -2;
+	Content: "";
+}
+strong::AFTER {
+	Display: Block;
+	Position: Relative;
+	Bottom: 1.5EM;
+	Box-Sizing: Border-Box;
+	Margin: Calc(.75EM - 1PX) 0 1.5EM;
+	Border-Top: 2PX Var(--AccentBorder) Dotted;
+	Width: Calc(100% - 1EM);
+	Height: .75EM;
+	Z-Index: -3;
+	Content: "";
+}
+
+/*
+When I handwrite texts, I wind up doing really long, swooshy ( more­‑than‑ )em­‑dashes. To replicate that look here, weʼll use a span which hides the text ( using `overflow` so that it stays “ rendered ” ) and then constructs its own curly dash using `::before` and `::after` pseudo­‑elements. ( Note : This differs from the actual swung dash `⁓`, which I use as a lilting voice mark. )
+*/
+span.DASH {
+	Display: Inline-Block;
+	Position: Relative;
+	Margin: -1PX Calc(.25CH - 1PX);
+	Border: 1PX Var(--AccentBorder) Solid;
+	Padding: 1.45EX .25EX 0;
+	Width: 5CH;
+	Height: 1PX;
+	Color: Var(--AccentColour);
+	Background: Var(--AccentBackground);
+	Overflow: Hidden;
+}
+span.DASH::BEFORE {
+	Display: Block;
+	Position: Absolute;
+	Bottom: .4EX;
+	Left: .35EX;
+	Border-Top: 1PX CurrentColor Solid;
+	Border-Left: 2PX CurrentColor Solid;
+	Border-Radius: .35EX 0;
+	Width: 50%;
+	Height: .35EX;
+	Content: "";
+}
+span.DASH::AFTER {
+	Display: Block;
+	Position: Absolute;
+	Bottom: .75EX;
+	Right: .35EX;
+	Border-Bottom: 1PX CurrentColor Solid;
+	Border-Right: 2PX CurrentColor Solid;
+	Border-Radius: .35EX 0;
+	Width: 50%;
+	Height: .35EX;
+	Content: "";
+}
+	</style>
+</head>
+<body>
+	<article>
+		<header><h1>
+			<span><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" width="24" height="24" fill="currentColor">
+				<title>Ezine Logo</title>
+				<description>
+					A circled heart with an ellipsis in the centre.
+				</description>
+				<defs>
+					<mask id="heartmask" x="0" y="0" width="1" height="1" fill="white">
+						<circle cx="32" cy="32" r="30"/>
+						<path d="
+							M 8 23
+							a 12 12 0 1 1 24 0
+							a 12 12 0 1 1 24 0
+							c 0 18 -24 22 -24 36
+							c 0 -14 -24 -18 -24 -36
+							z
+						" fill="black"/>
+						<circle cx="21.5" cy="31" r="3.5"/>
+						<circle cx="32" cy="31" r="3.5"/>
+						<circle cx="42.5" cy="31" r="3.5"/>
+					</mask>
+				</defs>
+				<rect x="0" y="0" width="64" height="64" mask="url(#heartmask)"/>
+			</svg>Journal: </span>
+			<span>\u2764 </span><!-- Whitespace at end is intentional -->
+		</h1><svg xmlns="http://www.w3.org/2000/svg" viewBox="-2 -2 36 36" width="132" height="132"><title>Heart Emoji</title><description>A glistening heart, rotated slightly right.</description><use href="#svg-heart" xlink:href="#svg-heart" transform="rotate(20 16 16)"/></svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="-8 -8 48 48" width="132" height="132"><title>Shooting Star Emoji</title><description>A star, trailing in a subtle arc, to the left.</description><use href="#svg-shootingstar" xlink:href="#svg-shootingstar" transform="rotate(-30 16 16)"/></svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="-6 -6 44 44" width="132" height="132"><title>Sparkles Emoji</title><description>Three star­‑shaped sparkles.</description><use href="#svg-sparkles" xlink:href="#svg-sparkles"/></svg></header>
+		<section id="whatis">
+			<h2><svg xmlns="http://www.w3.org/2000/svg" viewBox="-2 -2 36 36" width="36" height="36"><title>Curious Dog Emoji</title><description>A dog, tilting its head, with a question mark appearing above it.</description><use href="#svg-dogtilt" xlink:href="#svg-dogtilt" transform="rotate(-10 16 16)"/></svg> So, like, what is this, exactly<svg xmlns="http://www.w3.org/2000/svg" viewBox="-2 -2 36 36" width="36" height="36"><title>Eroteme Emoji</title><description>A filled question mark sign, rotated slightly right.</description><use href="#svg-eroteme" xlink:href="#svg-eroteme" transform="rotate(10 16 16)"/></svg><a href="#whatis"></a><a href="#"></a></h2>
+			<div class="PARAGRAPHS">
+				<p>Itʼs a journal. A web­‑journal. Some might even say web­‑<em>zine</em><span class="DASH">—</span>personally Iʼm not sure those two words necessarily add anything to each other ; independent, multimedia, unconventional press has <em>always</em> been the format of the webpage<span class="DASH">—</span>if anything we need a name for those <em>other</em> sites, those polished, corporate storefronts which hardly even deserve the prefix <i>web‑</i>. Itʼs a web­‑journal in the way that web­‑logs <em>arenʼt</em> : forward­‑chronological, each page a handcrafted statement and a resource on its own, the whole more an album than a chart of singles, an artistic statement. <strong>Itʼs what I imagine when I think of the word “ webpage ”… </strong>I got tired of not seeing it, so I went ahead and built one.</p>
+				<aside role="note">If a <dfn>web­‑log</dfn> is a <i>blog</i>, does that make a <dfn>web­‑journal</dfn> a <i>bjørn</i> ? <span style="White-Space:NoWrap"><svg xmlns="http://www.w3.org/2000/svg" viewBox="-2 -2 36 36" width="18" height="18"><title>Thinking Emoji</title><description>A thinking face, tilting slightly left.</description><use href="#svg-thinking" xlink:href="#svg-thinking" transform="rotate(-15 16 16)"/></svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="-2 -2 36 36" width="18" height="18"><title>Thinking Emoji</title><description>A thinking face, upside down.</description><use href="#svg-thinking" xlink:href="#svg-thinking" transform="rotate(195, 16, 16)"/></svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="-2 -2 36 36" width="18" height="18"><title>Thinking Emoji</title><description>A thinking face, tilting right.</description><use href="#svg-thinking" xlink:href="#svg-thinking" transform="rotate(24, 16, 16)"/></svg></span><!-- This is a very multi­‑level joke, which possibly depends on you knowing that “ ou ” is sometimes represented as “ ô ” in japanese and “ bjôrn ” is a rare variant form of “ bjørn ”. “ web journal ” > “ we bjourn( al ) ” > “ we bjôrn ” ⁓ “ we bjørn ”. I make no apologies. --></aside>
+				<p><strong>Prior art : </strong>Every GeoCities website ever made. <small>[ NB : Not actually. But you know what I mean. ]</small> Iʼd like to say that good web design has taken place, somewhere on the internet, since 2009, but I think we can all agree that itʼs <em>pretty rare</em>. Which strikes me as funny : HTML and CSS technologies are more sophisticated now than theyʼve ever been, computers and data connections are faster than ever before, and yet… the pinnacle of web design was reached five years and two days before <a href="https://www.w3.org/TR/html50/" rel="noopener noreferrer">HTML5</a> achieved W3C Recommendation status ? That <em>canʼt</em> be right. Surely.</p>
+				<aside role="note">People will argue with me that “ static site generators ” and “ version management ” have made the web harder to code for than it used to be<span class="DASH">—</span>but (1) you can still open up a text editor and code some HTML and view it in Firefox same as ever before, and (2) anyone remember <code>&lt;!DOCTYPE HTML PUBLIC "-<wbr/>//W3C<wbr/>//DTD HTML 4.01<wbr/>//EN" "https://<wbr/>www.w3.org<wbr/>/TR<wbr/>/html4<wbr/>/strict.dtd"<wbr/>></code> ? Table layouts ? Single­‑pixel transparent GIFs ? I rest my case.</aside>
+				<p>But it <em>does</em> seem like weʼve lost something<span class="DASH">—</span>and it isnʼt ease­‑of­‑access : web pages are easier to write and easier to publish than they ever have been<span class="DASH">—</span>but a certain kind of creätivity and ingenuïty, webpages viewed <em>as art</em> and not simply as the pale backdrop for a dry run of text and high­‑resolution stock photography. Iʼm trying my best to hold my tongue and not say, « thatʼs because boys donʼt understand design and women have been driven out of the industry »<span class="DASH">—</span>because ( I hear ) there are ( were ), out there, in the big wide world, good designers who were men and still cared about accessibility and creätivity and æsthetics<span class="DASH">—</span>and they got driven out of the industry too. Industry<span class="DASH">—</span>why are we even talking about that ? Is that what the Internet has become ?</p>
+				<aside role="note">Just because the tech industry is a boysʼ club <em>doesnʼt</em> mean all boys are allowed<span class="DASH">—</span>and this is something Iʼm learning to pay attention to more.</aside>
+				<p>Letʼs forget industry<span class="DASH">—</span>this is a journal. Do you remember ?<span class="DASH">—</span>if you were born in the 90s you might<span class="DASH">—</span>the distinction they tried to push on us, regarding diaries and journals ? “ Journals ” are what <em>boys</em> write : objective records of the world ; facts and information<span class="DASH">—</span>diaries are “ girlsʼ stuff ”<span class="DASH">—</span>they said<span class="DASH">—</span>diaries are personal, sentimental<span class="DASH">—</span>Anne Frank wrote a <em>diary</em>, Mary Shelley wrote a <em>diary</em> ( nevermind that it was titled <cite>The Journal of Sorrow</cite> ) but Lewis Carroll<span class="DASH">—</span>no, wait, Lewis Carroll kept a diary as well<span class="DASH">—</span>he was a weird one though<span class="DASH">—</span>but John Steinbeck !</p>
+				<p>This is not <em>that</em> kind of journal. ( Or diary, for that matter. )</p>
+				<p>This is ( just ) a ( simple ) record of the thoughts of one individual, glitzed up with <del>felt pen</del><ins>HTML</ins> and <del>stickers</del><ins>CSS</ins>, and published to the Internet like itʼs 1997 all over again. But with, like, linear­‑gradients and CSS variables, because itʼs <em>not</em> 1997 all over again. We can do better now. <strong>Canʼt we ?</strong></p>
+				<p>Ah, but here are some things this <span class="JOURNAL">Journal</span> is <em>not</em> : <strong>Detached. Formal. Uniform. Rigorous. Polished. Cohesive. </strong>This is not your grandfatherʼs tech blog. This is not Medium [ Dot ] Com. Itʼs a bunch of fuckinʼ HTML pages that I wrote by hand in a text editor. Appreciate the effort, lol.</p>
+			</div>
+		</section>
+		<section id="subject">
+			<!-- The typography of this section is a little different ( especially as far as whitespace is concerned ) because it is aimed at a monospace font. -->
+			<h2><svg xmlns="http://www.w3.org/2000/svg" viewBox="-2 -2 36 36" width="36" height="36"><title>Swearing Emoji</title><description>A person with symbols over their mouth, indicating cursing.</description><use href="#svg-swear" xlink:href="#svg-swear" transform="rotate(-15 16 16)"/></svg> Subject Matter.<a href="#subject"></a><a href="#"></a></h2>
+			<div class="PARAGRAPHS">
+				<pre>Anything and everything.    But realistically :
+<span role="list">
+<span role="listitem"><b aria-hidden="true"> + </b> Personal thoughts</span>
+<span role="listitem"><b aria-hidden="true"> + </b> Life stories</span>
+<span role="listitem"><b aria-hidden="true"> + </b> Short fiction</span>
+<span role="listitem"><b aria-hidden="true"> + </b> Media criticism</span>
+<span role="listitem"><b aria-hidden="true"> + </b> Tech and design commentary</span>
+<span role="listitem"><b aria-hidden="true"> + </b> Song lyrics</span>
+<span role="listitem"><b aria-hidden="true"> + </b> Poëtry ?  ⟨ oh god i hope there isnʼt any poëtry ⟩</span><!-- No final newline needed --></span></pre>
+				<pre>Regarding technology :  I think ( one of ) the <br />measure( s ) of good writing is the ability of a text to <br />produce something which outlasts its current moment.    Even <br />in journalism responding directly to current events, there is <br />a historical/cultural/human interest in well­‑written pieces <br />which greatly outlasts the events that they describe.</pre>
+				<pre>It is undeniable that technology has a huge and <br />significant impact on many of our lives, and this is indeed a <br />matter of historical/cultural/human interest worthy of note <br />and record.    However, tech “ journalism ” is…  mostly <br />lacking in this regard.    New phones that will be obsolete in <br />a year ;  controversies between figures that have no <br />relevance outside of their extremely narrow field ;  social <br />media companies continuing their slow march towards decay<br /><span class="DASH">—</span>despite the churn there is little here of lasting <br />substance.</pre>
+				<pre>Something I think itʼs worthwhile to consider before <br />publishing any critical piece responding to technology :  Is <br />this something I would still consider worthy of reading, if it <br />were to be printed off, stuck away somewhere, and only <br />discovered years later after all the technologies it was <br />responding to have come and gone ?    It is not impossible to <br />write pieces with this quality.    I still quite enjoy reading <br />about HyperCard, even though HyperCard technologies themselves <br />are long gone.</pre>
+				<pre>( My apologies to the HyperCard revivalists. )</pre>
+				<aside role="note">I think “ shape ” is a good way to think about it :  If you write about technology which shapes you<span class="DASH">—</span>youʼre really just writing about yourself.</aside>
+				<pre>So<span class="DASH">—</span>I am not planning on publishing, to this journal <br />( although I may elsewhere ), technical takes or analyses <br />regarding some obscure aspect of some fledgling protocol <br />( * cough, cough * ActivityPub ) whose relevance ( the <br />takesʼ ) is unlikely to last the year.    But I will not shy <br />away from addressing technology, as it stands, as it impacts <br />our lives, as it shapes and is shaped by our experiences and <br />efforts, in the present, future, or yesteryear.</pre>
+			</div>
+		</section>
+		<section id="aboutme">
+			<h2><svg xmlns="http://www.w3.org/2000/svg" viewBox="-2 -2 36 36" width="36" height="36"><title>Tipping Hand Emoji</title><description>A person tipping their hand, as if explaining something.</description><use href="#svg-handtip" xlink:href="#svg-handtip"/></svg> About Me <svg xmlns="http://www.w3.org/2000/svg" viewBox="-2 -2 36 36" width="36" height="36"><title>Nametag Emoji</title><description>A name badge, shaped like a tulip, tilted to the right.</description><use href="#svg-nametag" xlink:href="#svg-nametag" transform="rotate(20,16,16)"/></svg><a href="#aboutme"></a><a href="#"></a></h2>
+			<div class="PARAGRAPHS">
+				<aside role="note">Write about yourself more.</aside>
+				<p>My name is Kyebego<span class="DASH">—</span>or KIBI Gô, Allie HART, jellyfish_link, JʼLi, Leaf, Emogee, Moggy, and just about every other variation on Margaret you can imagine. This is my journal ! </p>
+				<p>Iʼm a genderfluid grey­‑ace trans woman living in Washington State<span class="DASH">—</span>but like, not the rainy part of Washington State, the part of Washington State with basalt and gay­‑haters, and coyotes which break into the gay­‑hatersʼ pantries and steal all of their delicious meats, because coyotes are queer allies yʼall, just ask them : « Awoo ! » I studied Mathematics and then Gender Studies at one of the <a href="https://web.archive.org/web/20140910201028/http://www.theawl.com/2014/09/how-whitman-college-is-destroying-itself" rel="noopener noreferrer">least economically­‑diverse liberal­‑arts colleges in the country</a>, and have been trying to unlearn the racism from that place ever since. I was born in 1994, which makes me old enough to technically be a millennial, but young enough to share nothing in common with those Bad Millennials like Mark Zuckerberg. I still have social anxiëty and know Marx though. My first webpages were published via email to my friends, and if you wanted you could email this webpage to your friends too, and I wouldnʼt stop you. I still donʼt understand how servers manage to function. Iʼm very good at HTML and CSS ( your mileäge may vary ). </p>
+				<aside role="note"><blockquote>— When the brother yelled « Action ! », it wasnʼt just for his actors : He wanted to see the masses get they asses out the door<span class="DASH">—</span>get up !<footer>— <a href="https://bluescholars.bandcamp.com/track/cinemetropolis" rel="noopener noreferrer">Blue Scholars, “ Cinemetropolis ”</a></footer></blockquote></aside>
+				<p>In November of 2016 I joined the social network Mastodon, and in the time since have written some of the most widely­‑circulated and well­‑thought­‑out articles discussing the platform, which is a really low bar. In 2018, I published this little thing called <a href="https://www.cybremonday.deals/2018/" rel="nofollow noreferrer"><cite>The CYBRE Manifesto</cite></a>, which people said “ moved them ”, but Iʼm still not clear on where <em>to</em>, since theyʼre still enacting the same old behaviours as before. I write highly­‑experimental fanfiction, which my friends all love and strangers donʼt bother to click on. I created this webpage ! and I hope you enjoy. </p>
+			</div>
+		</section>
+		<section id="places">
+			<h2><svg xmlns="http://www.w3.org/2000/svg" viewBox="-2 -2 36 36" width="36" height="36"><title>Magnifier Emoji</title><description>A magnifying glass, tilted to the left.</description><use href="#svg-magnifier" xlink:href="#svg-magnifier"/></svg> Finding Your Way Around <svg xmlns="http://www.w3.org/2000/svg" viewBox="-2 -2 36 36" width="36" height="36"><title>Investigator Emoji</title><description>A person in a coat and hat, holding a magnifying glass.</description><use href="#svg-investigator" xlink:href="#svg-investigator"/></svg><a href="#places"></a><a href="#"></a></h2>
+			<div class="PARAGRAPHS">
+				<p>Each entry in this journal will have a URL path of <code>page$$.xhtml</code>, where <i>$$</i> is the page number of the entry. The complete list of pages at any given time will be available from the <a href="./sitemap.xhtml">sitemap</a>. You are currently reading the front cover, and additional meta­‑level information can be found on the <a href="./back.xhtml">back cover</a> as well.</p>
+				<p>Contact information, links to other cool webpages, and so forth can all be found on the <a href="./links.xhtml">links page</a>. Links to all of these locations are present on the <a href="./">splash page</a>, which is the best resource to link if youʼre looking to share the <span class="JOURNAL">Journal</span> as a whole.</p>
+			</div>
+		</section>
+		<footer>
+			<small>The following emoji used in this article are derived from the <a href="https://mutant.tech" rel="noopener norefferer"><cite>Mutant Standard</cite></a> ( 0.3.1 ) emoji set :</small>
+			<blockquote><!-- EMOJI USED -->
+
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" width="16" height="16">
+	<title>Heart Emoji</title>
+	<description>
+		A glistening heart.
+	</description>
+	<metadata>
+		<rdf:RDF xmlns:cc="http://web.resource.org/cc/" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:dc = "http://purl.org/dc/elements/1.1/">
+			<rdf:Description rdf:about="#svg-heart">
+				<dc:title>Mutant Standard emoji v0.3.1</dc:title>
+			</rdf:Description>
+			<cc:work rdf:about="#svg-heart">
+				<cc:license rdf:resource="http://creativecommons.org/licenses/by-nc-sa/4.0/"/>
+				<cc:attributionName>Dzuk (with modifications by Kyebego)</cc:attributionName>
+				<cc:attributionURL>http://mutant.tech/</cc:attributionURL>
+			</cc:work>
+		</rdf:RDF>
+	</metadata>
+	<defs>
+		<mask id="svg-heart.mask" x="0" y="0" width="1" height="1" fill="white">
+			<path d="M10.216,2.784C12.352,2.831 14.456,3.7 16,5.176 18.536,2.703 22.629,2.066 25.796,3.653 28.997,5.148 31.039,8.738 30.685,12.254 30.512,14.559 29.321,16.703 27.605,18.224 23.736,22.092 19.868,25.96 16,29.828 11.81,25.617 7.576,21.447 3.412,17.21 1.068,14.576 0.607,10.484 2.309,7.396 3.807,4.525 6.979,2.676 10.216,2.784ZM9.941,6.782C7.547,6.758 5.385,8.816 5.291,11.208 5.161,12.806 5.973,14.337 7.177,15.348 10.118,18.289 13.059,21.231 16,24.172 19.211,20.939 22.467,17.748 25.65,14.489 27.195,12.687 27.03,9.74 25.293,8.122 23.633,6.428 20.684,6.336 18.922,7.925 17.931,8.874 16.977,9.863 16,10.828 14.874,9.770 13.877,8.565 12.664,7.607 11.870,7.06 10.905,6.769 9.941,6.782Z"/>
+			<path fill="hsl(0,0%,75%)" d="M16,27c0,0 -6.194,-6.194 -10.751,-10.751c-1.26,-1.26 -1.967,-2.968 -1.967,-4.749c0,-1.781 0.707,-3.489 1.967,-4.749c0.001,-0.001 0.001,-0.001 0.002,-0.002c1.26,-1.26 2.968,-1.967 4.749,-1.967c1.781,0 3.489,0.707 4.749,1.967c0.732,0.732 1.251,1.251 1.251,1.251c0,0 0.519,-0.519 1.251,-1.251c1.26,-1.26 2.968,-1.967 4.749,-1.967c1.781,0 3.489,0.707 4.749,1.967c0.001,0.001 0.001,0.001 0.002,0.002c1.26,1.26 1.967,2.968 1.967,4.749c0,1.781 -0.707,3.489 -1.967,4.749c-4.557,4.557 -10.751,10.751 -10.751,10.751Z"/>
+			<path fill="black" d="M14,24l-8.25,-8.25c-2.347,-2.347 -2.347,-6.153 0,-8.5c0,0 0,0 0,0c2.347,-2.347 6.153,-2.347 8.5,0c0.984,0.984 1.75,1.75 1.75,1.75c0,0 1.062,-0.91 2.358,-2.021c1.207,-1.035 2.786,-1.527 4.367,-1.36c0.082,0.008 0.163,0.018 0.244,0.03c-0.188,2.363 -1.21,4.592 -2.898,6.28c-1.208,1.208 -2.589,2.589 -3.728,3.728c-1.5,1.5 -2.343,3.535 -2.343,5.657l0,2.686Z"/>
+			<path fill="hsl(0,0%,75%)" d="M10.083,4.782c1.949,0.004 3.819,0.944 5.096,2.397 0.29,0.22 0.579,0.715 0.869,0.773C17.071,6.91 18.095,5.776 19.506,5.262c2.559,-1.065 5.725,-0.311 7.53,1.792 1.86,2.048 2.218,5.275 0.852,7.681 -0.776,1.419 -2.113,2.396 -3.191,3.568C21.798,21.202 18.899,24.100 16,27 12.311,23.294 8.588,19.621 4.92,15.895 3.077,13.825 2.754,10.587 4.152,8.194 5.323,6.085 7.671,4.734 10.083,4.782Zm-0.142,2C7.652,6.764 5.554,8.641 5.318,10.918 5.092,12.535 5.820,14.177 7.05,15.221 10.033,18.205 13.017,21.188 16,24.172 19.2,20.955 22.434,17.77 25.613,14.533 27.121,12.812 27.069,9.999 25.498,8.335 23.998,6.604 21.198,6.273 19.336,7.607 18.267,8.433 17.399,9.489 16.416,10.412 16.118,10.924 15.82,10.773 15.522,10.35 14.56,9.447 13.712,8.413 12.664,7.607 11.87,7.06 10.905,6.769 9.941,6.782Z"/>
+		</mask>
+	</defs>
+	<rect id="svg-heart" fill="currentColor" x="0" y="0" width="32" height="32" mask="url(#svg-heart.mask)"/>
+</svg>
+
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" width="16" height="16">
+	<title>Curious Dog Emoji</title>
+	<description>
+		A dog, tilting its head, with a question mark appearing above it.
+	</description>
+	<metadata>
+		<rdf:RDF xmlns:cc="http://web.resource.org/cc/" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:dc = "http://purl.org/dc/elements/1.1/">
+			<rdf:Description rdf:about="#svg-dogtilt">
+				<dc:title>Mutant Standard emoji VIP 2018-04</dc:title>
+			</rdf:Description>
+			<cc:work rdf:about="#svg-dogtilt">
+				<cc:license rdf:resource="http://creativecommons.org/licenses/by-nc-sa/4.0/"/>
+				<cc:attributionName>Dzuk (with modifications by Kyebego)</cc:attributionName>
+				<cc:attributionURL>http://mutant.tech/</cc:attributionURL>
+			</cc:work>
+		</rdf:RDF>
+	</metadata>
+	<defs>
+		<mask id="svg-dogtilt.mask" x="0" y="0" width="1" height="1" fill="white" stroke-width="4" stroke-linejoin="round" stroke-linecap="butt" stroke-miterlimit="1.5">
+			<path fill="none" stroke="white" d="M24.187,9.232l-6.331,-0.964l-6.928,4l-2.33,5.964c0,0 2.845,4.928 4.243,7.349c0.494,0.855 1.229,1.545 2.114,1.982c0.785,0.388 1.794,0.887 2.708,1.339c1.499,0.741 3.269,0.684 4.717,-0.152c1.246,-0.719 2.779,-1.604 4.025,-2.324c1.448,-0.835 2.382,-2.34 2.49,-4.008c0.065,-1.018 0.138,-2.142 0.194,-3.015c0.064,-0.985 -0.166,-1.967 -0.659,-2.822c-1.398,-2.421 -4.243,-7.349 -4.243,-7.349ZM20.065,7.17c-0.316,0.065 -0.619,0.18 -0.898,0.341c-0.513,0.296 -1.311,0.757 -1.311,0.757l2.732,0.732c0,0 0.706,1.223 1.28,2.215c0.455,0.79 1.245,1.329 2.146,1.466c1.867,0.285 4.905,0.747 4.905,0.747c0,0 -1.257,-2.977 -2.178,-5.162c-0.556,-1.318 -1.965,-2.06 -3.366,-1.773c-1.225,0.251 -2.602,0.533 -3.31,0.677ZM8.873,13.632c0.214,-0.241 0.466,-0.446 0.745,-0.607c0.512,-0.296 1.31,-0.757 1.31,-0.757l-0.732,2.732c0,0 0.706,1.223 1.279,2.215c0.456,0.79 0.528,1.743 0.196,2.592c-0.687,1.759 -1.805,4.621 -1.805,4.621c0,0 -1.95,-2.576 -3.382,-4.467c-0.863,-1.14 -0.801,-2.731 0.148,-3.801c0.83,-0.936 1.762,-1.987 2.241,-2.528Z"/>
+			<path fill="hsl(0,0%,25%)" d="M24.187,9.232l-5.465,-1.464l-8.66,5l-1.464,5.464c0,0 2.845,4.928 4.243,7.349c0.494,0.855 1.229,1.545 2.114,1.982c0.785,0.388 1.794,0.887 2.708,1.339c1.499,0.741 3.269,0.684 4.717,-0.152c1.246,-0.719 2.779,-1.604 4.025,-2.324c1.448,-0.835 2.382,-2.34 2.49,-4.008c0.065,-1.018 0.138,-2.142 0.194,-3.015c0.064,-0.985 -0.166,-1.967 -0.659,-2.822c-1.398,-2.421 -4.243,-7.349 -4.243,-7.349Z"/>
+			<path d="M14.928,19.196c-0.276,-0.478 -0.888,-0.642 -1.366,-0.366c-0.478,0.276 -0.642,0.888 -0.366,1.366c0.306,0.529 0.695,1.203 1,1.732c0.276,0.478 0.888,0.642 1.366,0.366c0.478,-0.276 0.642,-0.887 0.366,-1.366c-0.305,-0.529 -0.694,-1.203 -1,-1.732ZM23.588,14.196c-0.276,-0.478 -0.887,-0.642 -1.366,-0.366c-0.478,0.276 -0.642,0.888 -0.366,1.366c0.306,0.529 0.695,1.203 1,1.732c0.277,0.478 0.888,0.642 1.366,0.366c0.479,-0.276 0.643,-0.887 0.366,-1.366c-0.305,-0.529 -0.694,-1.203 -1,-1.732ZM19.777,22.489c-0.378,0.023 -0.736,-0.17 -0.926,-0.498c-0.06,-0.105 -0.126,-0.218 -0.191,-0.331c-0.276,-0.478 -0.112,-1.09 0.366,-1.366c0.529,-0.305 1.203,-0.694 1.732,-1c0.479,-0.276 1.09,-0.112 1.366,0.366c0.065,0.113 0.131,0.226 0.191,0.331c0.19,0.328 0.178,0.735 -0.031,1.051c-0.365,0.552 -0.892,1.35 -0.892,1.35c0,0 -0.954,0.058 -1.615,0.097Z"/>
+			<path fill="none" stroke="white" stroke-width="1" d="M20.392,20.66c0,0 0.804,1.393 1.5,2.598c0.266,0.46 0.337,1.006 0.2,1.518c-0.137,0.512 -0.472,0.949 -0.932,1.214c-0.171,0.099 -0.342,0.198 -0.507,0.293c-0.784,0.453 -1.716,0.576 -2.591,0.341c0,0 0,0 0,0M20.392,20.66c0,0 0.804,1.393 1.5,2.598c0.266,0.46 0.702,0.795 1.215,0.932c0.512,0.137 1.058,0.066 1.517,-0.2c0.172,-0.099 0.343,-0.197 0.508,-0.293c0.784,-0.452 1.356,-1.198 1.59,-2.073c0,0 0,0 0,0"/>
+			<path fill="hsl(0,0%,75%)" d="M20.065,7.17c-0.316,0.065 -0.619,0.18 -0.898,0.341c-0.513,0.296 -1.311,0.757 -1.311,0.757c0,0 0.799,0.214 1.532,0.41c0.769,0.206 1.424,0.709 1.822,1.398c0.208,0.361 0.442,0.766 0.658,1.139c0.455,0.79 1.245,1.329 2.146,1.466c1.867,0.285 4.905,0.747 4.905,0.747c0,0 -1.257,-2.977 -2.178,-5.162c-0.556,-1.318 -1.965,-2.06 -3.366,-1.773c-1.225,0.251 -2.602,0.533 -3.31,0.677ZM8.873,13.632c0.214,-0.241 0.466,-0.446 0.745,-0.607c0.512,-0.296 1.31,-0.757 1.31,-0.757c0,0 -0.214,0.798 -0.41,1.532c-0.206,0.768 -0.098,1.587 0.299,2.276c0.209,0.361 0.443,0.766 0.658,1.139c0.456,0.79 0.528,1.743 0.196,2.592c-0.687,1.759 -1.805,4.621 -1.805,4.621c0,0 -1.95,-2.576 -3.382,-4.467c-0.863,-1.14 -0.801,-2.731 0.148,-3.801c0.83,-0.936 1.762,-1.987 2.241,-2.528Z"/>
+			<path fill="none" stroke="white" stroke-miterlimit="1.41421" d="M12.229,6.016c0,0.784 -0.192,1.439 -0.577,1.964c-0.384,0.525 -0.991,0.995 -1.819,1.409c-0.695,0.355 -1.15,0.658 -1.365,0.91c-0.214,0.251 -0.351,0.484 -0.41,0.699c-0.059,0.214 -0.089,0.462 -0.089,0.743l0,0.644l-2.618,0l0,-0.888c0,-1.331 0.399,-2.278 1.198,-2.84c0.281,-0.207 0.695,-0.451 1.242,-0.732c0.548,-0.282 0.943,-0.566 1.188,-0.855c0.244,-0.288 0.366,-0.658 0.366,-1.109c0,-0.451 -0.185,-0.829 -0.555,-1.132c-0.37,-0.303 -0.917,-0.455 -1.642,-0.455c-0.725,0 -1.294,0.174 -1.709,0.522c-0.414,0.347 -0.651,0.802 -0.71,1.364l-2.729,0c0.074,-1.287 0.547,-2.318 1.42,-3.095c0.873,-0.777 2.097,-1.165 3.672,-1.165c1.576,0 2.826,0.385 3.75,1.154c0.925,0.769 1.387,1.723 1.387,2.862Zm-6.823,7.988c0.333,-0.325 0.769,-0.488 1.309,-0.488c0.54,0 0.988,0.163 1.343,0.488c0.355,0.326 0.532,0.74 0.532,1.243c0,0.503 -0.177,0.921 -0.532,1.254c-0.355,0.333 -0.803,0.499 -1.343,0.499c-0.54,0 -0.976,-0.166 -1.309,-0.499c-0.333,-0.333 -0.499,-0.751 -0.499,-1.254c0,-0.503 0.166,-0.917 0.499,-1.243Z"/>
+			<path fill="black" d="M12.229,6.016c0,0.784 -0.192,1.439 -0.577,1.964c-0.384,0.525 -0.991,0.995 -1.819,1.409c-0.695,0.355 -1.15,0.658 -1.365,0.91c-0.214,0.251 -0.351,0.484 -0.41,0.699c-0.059,0.214 -0.089,0.462 -0.089,0.743l0,0.644l-2.618,0l0,-0.888c0,-1.331 0.399,-2.278 1.198,-2.84c0.281,-0.207 0.695,-0.451 1.242,-0.732c0.548,-0.282 0.943,-0.566 1.188,-0.855c0.244,-0.288 0.366,-0.658 0.366,-1.109c0,-0.451 -0.185,-0.829 -0.555,-1.132c-0.37,-0.303 -0.917,-0.455 -1.642,-0.455c-0.725,0 -1.294,0.174 -1.709,0.522c-0.414,0.347 -0.651,0.802 -0.71,1.364l-2.729,0c0.074,-1.287 0.547,-2.318 1.42,-3.095c0.873,-0.777 2.097,-1.165 3.672,-1.165c1.576,0 2.826,0.385 3.75,1.154c0.925,0.769 1.387,1.723 1.387,2.862Zm-6.823,7.988c0.333,-0.325 0.769,-0.488 1.309,-0.488c0.54,0 0.988,0.163 1.343,0.488c0.355,0.326 0.532,0.74 0.532,1.243c0,0.503 -0.177,0.921 -0.532,1.254c-0.355,0.333 -0.803,0.499 -1.343,0.499c-0.54,0 -0.976,-0.166 -1.309,-0.499c-0.333,-0.333 -0.499,-0.751 -0.499,-1.254c0,-0.503 0.166,-0.917 0.499,-1.243Z"/>
+		</mask>
+	</defs>
+	<rect id="svg-dogtilt" fill="currentColor" x="0" y="0" width="32" height="32" mask="url(#svg-dogtilt.mask)"/>
+</svg>
+
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" width="16" height="16">
+	<title>Thinking Emoji</title>
+	<description>
+		A thinking face.
+	</description>
+	<metadata>
+		<rdf:RDF xmlns:cc="http://web.resource.org/cc/" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:dc = "http://purl.org/dc/elements/1.1/">
+			<rdf:Description rdf:about="#svg-thinking">
+				<dc:title>Mutant Standard emoji v0.3.1</dc:title>
+			</rdf:Description>
+			<cc:work rdf:about="#svg-thinking">
+				<cc:license rdf:resource="http://creativecommons.org/licenses/by-nc-sa/4.0/"/>
+				<cc:attributionName>Dzuk (with modifications by Kyebego)</cc:attributionName>
+				<cc:attributionURL>http://mutant.tech/</cc:attributionURL>
+			</cc:work>
+		</rdf:RDF>
+	</metadata>
+	<defs>
+		<mask id="svg-thinking.mask" x="0" y="0" width="1" height="1" fill="white">
+			<path d="M16.193,0.001c5.148,0.015 10.147,2.926 12.727,7.375 1.573,2.608 2.219,5.695 2.08,8.721 0.193,3.569 -1.047,7.214 -3.53,9.809C24.884,28.701 21.033,30.191 17.242,30 14.74,29.982 12.158,30.193 9.766,29.291 5.154,27.758 1.647,23.432 1.099,18.603 0.946,16.871 0.954,15.118 1.086,13.385 1.6,8.13 5.142,3.327 9.993,1.252c1.946,-0.854 4.075,-1.28 6.2,-1.251zm-0.336,4c-4.306,-0 -8.425,2.805 -10.026,6.796 -0.848,1.909 -0.883,4.026 -0.831,6.076 -0.097,3.639 2.259,7.177 5.658,8.483 2.159,0.929 4.548,0.578 6.827,0.644 3.305,0.189 6.637,-1.567 8.281,-4.452C26.812,19.833 27.106,17.784 27,15.806 27.182,12.674 26.055,9.472 23.811,7.256 21.744,5.15 18.808,3.946 15.857,4.001Z"/>
+			<path fill="black" d="M16,2c7.18,0 13,5.82 13,13c0,0.669 0,1.338 0,2c0,2.917 -1.159,5.715 -3.222,7.778c-1.176,1.176 -2.59,2.058 -4.13,2.6l-11.648,-0.131c-1.403,-0.548 -2.692,-1.383 -3.778,-2.469c-2.063,-2.063 -3.222,-4.861 -3.222,-7.778c0,-0.662 0,-1.331 0,-2c0,-7.18 5.82,-13 13,-13l0,0Z"/>
+			<path fill="hsl(0,0%,25%)" d="M10,27.247l0,-5.361c0,-0.749 0.419,-1.435 1.085,-1.778c0.666,-0.343 1.468,-0.285 2.077,0.151c1.855,1.325 3.838,2.741 3.838,2.741c0,0 0,0 0,0c0.634,0 1.234,0.281 1.64,0.768l3.008,3.61c-1.161,0.408 -2.394,0.622 -3.648,0.622c-1.324,0 -2.676,0 -4,0c-1.382,0 -2.737,-0.26 -4,-0.753Z"/>
+			<path d="M11,7.5c0,-0.398 -0.158,-0.779 -0.439,-1.061c-0.282,-0.281 -0.663,-0.439 -1.061,-0.439c-0.398,0 -0.779,0.158 -1.061,0.439c-0.281,0.282 -0.439,0.663 -0.439,1.061c0,1.181 0,2.819 0,4c0,0.398 0.158,0.779 0.439,1.061c0.282,0.281 0.663,0.439 1.061,0.439c0.398,0 0.779,-0.158 1.061,-0.439c0.281,-0.282 0.439,-0.663 0.439,-1.061c0,-1.181 0,-2.819 0,-4ZM23,8c0,0 -2.541,0 -4,0c-0.265,0 -0.52,0.105 -0.707,0.293c-0.188,0.187 -0.293,0.442 -0.293,0.707c0,0.552 0.448,1 1,1c0.5,0 1,0 1,0c0,0 0,0.751 0,1.502c0,0.397 0.158,0.778 0.439,1.059c0.281,0.281 0.662,0.439 1.059,0.439c0.001,0 0.003,0 0.004,0c0.827,0 1.498,-0.671 1.498,-1.498c0,-1.473 0,-3.502 0,-3.502ZM16.467,15.001c1.339,0.03 2.647,0.627 3.556,1.608 0.27,0.29 0.585,0.542 0.823,0.859 0.325,0.482 0.11,1.21 -0.424,1.438 -0.417,0.206 -0.943,0.06 -1.228,-0.298 -0.505,-0.482 -0.952,-1.061 -1.611,-1.34C17.064,17.02 16.481,16.979 15.916,17c-1.674,-0 -3.348,0 -5.022,-0 -0.571,-0.04 -1.006,-0.644 -0.873,-1.2 0.09,-0.498 0.598,-0.847 1.096,-0.794 1.783,0 3.567,0 5.35,0z"/>
+			<path fill="black" d="M10,22c0,0 -0.432,0.216 -0.894,0.447c-0.678,0.339 -1.106,1.032 -1.106,1.789c0,1.357 0,3.509 0,4.764c0,0.265 0.105,0.52 0.293,0.707c0.187,0.188 0.442,0.293 0.707,0.293c0.871,0 2.129,0 3,0c0.552,0 1,-0.448 1,-1c0,-1.185 0,-3 0,-3c0,0 1.815,0 3,0c0.552,0 1,-0.448 1,-1c0,-0.265 -0.105,-0.52 -0.293,-0.707c-0.187,-0.188 -0.442,-0.293 -0.707,-0.293c-1.934,0 -6,0 -6,0l0,-2Z"/>
+			<path d="M12,22c1.432,0 2.865,-0.02 4.296,0.01 1.373,0.112 2.558,1.281 2.686,2.653 0.178,1.373 -0.731,2.784 -2.056,3.187C16.306,28.07 15.642,27.982 15,28c-0,0.797 0.08,1.644 -0.33,2.368 -0.526,1.067 -1.726,1.718 -2.905,1.632 -1.044,-0.02 -2.092,0.03 -3.135,-0.02 -1.396,-0.146 -2.565,-1.39 -2.625,-2.792 -0.01,-1.743 -0.015,-3.488 0,-5.231C6.097,22.482 7.077,21.129 8.427,20.55 9.618,19.955 10.809,19.359 12,18.764 12,19.843 12,20.921 12,22ZM9.106,22.447C8.347,22.809 7.919,23.671 8,24.496 c 0.01,1.55 -0.015,3.102 0.011,4.652 0.067,0.554 0.636,0.93 1.175,0.852 1.001,-0.01 2.005,0.02 3.004,-0.02 0.534,-0.09 0.886,-0.644 0.811,-1.168 0,-0.938 0,-1.876 0,-2.814 1.062,-0.01 2.128,0.02 3.189,-0.02 0.66,-0.1 1.035,-0.936 0.669,-1.495C16.633,24.08 16.138,23.949 15.703,24 13.802,24 11.901,24 10,24c0,-0.667 0,-1.333 0,-2 -0.298,0.149 -0.596,0.298 -0.894,0.447z"/>
+		</mask>
+	</defs>
+	<rect id="svg-thinking" fill="currentColor" x="0" y="0" width="32" height="32" mask="url(#svg-thinking.mask)"/>
+</svg>
+
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" width="16" height="16">
+	<title>Swearing Emoji</title>
+	<description>
+		A person with symbols over their mouth, indicating cursing.
+	</description>
+	<metadata>
+		<rdf:RDF xmlns:cc="http://web.resource.org/cc/" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:dc = "http://purl.org/dc/elements/1.1/">
+			<rdf:Description rdf:about="#svg-swear">
+				<dc:title>Mutant Standard emoji v0.3.1</dc:title>
+			</rdf:Description>
+			<cc:work rdf:about="#svg-swear">
+				<cc:license rdf:resource="http://creativecommons.org/licenses/by-nc-sa/4.0/"/>
+				<cc:attributionName>Dzuk (with modifications by Kyebego)</cc:attributionName>
+				<cc:attributionURL>http://mutant.tech/</cc:attributionURL>
+			</cc:work>
+		</rdf:RDF>
+	</metadata>
+	<defs>
+		<mask id="svg-swear.mask" x="0" y="0" width="1" height="1" fill="white">
+			<path d="M16.206,2.001c5.455,0.016 10.755,3.08 13.521,7.776 1.715,2.8 2.425,6.128 2.272,9.39 -0,4.892 -3.057,9.594 -7.504,11.618 -2.164,1.054 -4.603,1.312 -6.98,1.215 -2.823,-0.09 -5.734,0.31 -8.464,-0.611C4.242,29.913 0.554,25.414 0.075,20.403 -0.234,17.075 0.201,13.614 1.792,10.637 4.289,5.731 9.471,2.33 14.974,2.032c0.41,-0.024 0.821,-0.036 1.232,-0.031zm-0.362,4c-4.616,-0 -9.041,2.952 -10.844,7.195 -1.027,2.308 -1.197,4.92 -0.859,7.399 0.62,3.768 3.892,6.89 7.685,7.33 2.171,0.169 4.355,0.03 6.531,0.07 2.972,0.189 5.998,-1.138 7.791,-3.53C27.575,22.66 28.143,20.305 28,18.029 28.071,13.45 25.234,9.012 21.07,7.12 19.442,6.358 17.641,5.976 15.844,6.001ZM29.084,2.001c1.284,0.017 2.481,0.954 2.807,2.196 0.313,1.079 -0.06,2.303 -0.893,3.047C30.746,7.496 30.495,7.748 30.243,8c0.546,0.584 1.231,1.083 1.529,1.852 0.508,1.179 0.143,2.656 -0.859,3.459 -0.983,0.84 -2.517,0.918 -3.58,0.183C26.8,13.117 26.389,12.6 25.914,12.156 25.342,11.594 24.744,11.031 24.388,10.299 23.543,8.704 23.668,6.654 24.703,5.174 25.186,4.479 25.851,3.941 26.429,3.329 26.871,2.868 27.337,2.395 27.957,2.187 28.316,2.054 28.701,1.991 29.084,2.001ZM20.084,0.001c0.862,0.014 1.679,0.441 2.242,1.083C22.551,1.309 22.775,1.533 23,1.757 23.584,1.212 24.083,0.526 24.852,0.228 26.03,-0.280 27.507,0.085 28.31,1.087 29.151,2.069 29.229,3.603 28.494,4.667 28.11,5.207 27.586,5.625 27.136,6.107 26.575,6.68 26.008,7.273 25.274,7.625 23.674,8.462 21.625,8.324 20.151,7.281 19.467,6.799 18.934,6.143 18.329,5.571 17.868,5.129 17.395,4.663 17.187,4.043 16.723,2.846 17.144,1.384 18.176,0.619 18.716,0.202 19.402,-0.019 20.084,0.001Z"/>
+			<!--
+				Iʼve removed the paths around the left and bottom chevrons. The bottom chevronʼs path was completely hidden, but the left chevronʼs path had a near­‑imperceptible portion visible at the top of the head.
+			-->
+			<path fill="black" d="M30,18c0,-7.732 -6.268,-14 -14,-14c0,0 0,0 0,0c-7.732,0 -14,6.268 -14,14c0,0.335 0,0.668 0,1c0,6.075 4.925,11 11,11c1.972,0 4.028,0 6,0c6.075,0 11,-4.925 11,-11c0,-0.332 0,-0.665 0,-1Z"/>
+			<rect x="3" y="20.018" width="26" height="11.982"/>
+			<path fill="black" d="M18.604,29.925c-0.596,-0.322 -1.06,-0.773 -1.392,-1.352c-0.332,-0.58 -0.498,-1.249 -0.498,-2.006l0,-0.704c0,-0.758 0.166,-1.426 0.498,-2.006c0.332,-0.58 0.796,-1.031 1.392,-1.352c0.597,-0.322 1.281,-0.483 2.052,-0.483c0.757,0 1.434,0.159 2.031,0.478c0.596,0.318 1.062,0.765 1.397,1.342c0.335,0.576 0.503,1.233 0.503,1.971l0,0.703c0,0.644 -0.161,1.135 -0.483,1.473c-0.321,0.339 -0.727,0.508 -1.216,0.508c-0.302,0 -0.56,-0.057 -0.775,-0.171c-0.214,-0.114 -0.378,-0.275 -0.492,-0.482c-0.215,0.435 -0.644,0.653 -1.287,0.653c-1.012,0 -1.518,-0.606 -1.518,-1.82l0,-0.885c0,-0.576 0.118,-1.025 0.356,-1.347c0.238,-0.322 0.602,-0.482 1.091,-0.482c0.242,0 0.455,0.046 0.639,0.14c0.184,0.094 0.32,0.218 0.407,0.372l0,-0.402l1.096,0l0,2.866c0,0.214 0.045,0.373 0.136,0.477c0.09,0.104 0.209,0.156 0.357,0.156c0.187,0 0.328,-0.082 0.422,-0.246c0.094,-0.164 0.141,-0.431 0.141,-0.8l0,-0.703c0,-0.57 -0.113,-1.064 -0.337,-1.483c-0.225,-0.419 -0.546,-0.743 -0.965,-0.971c-0.419,-0.228 -0.92,-0.342 -1.503,-0.342c-0.879,0 -1.567,0.252 -2.067,0.755c-0.499,0.502 -0.749,1.189 -0.749,2.061l0,0.714c0,0.569 0.112,1.069 0.337,1.498c0.225,0.429 0.548,0.761 0.97,0.995c0.423,0.235 0.925,0.352 1.509,0.352c0.402,0 0.764,-0.042 1.085,-0.126c0.322,-0.083 0.654,-0.212 0.996,-0.387l0.442,0.855c-0.389,0.228 -0.784,0.395 -1.186,0.503c-0.402,0.107 -0.848,0.161 -1.337,0.161c-0.771,0 -1.455,-0.161 -2.052,-0.483Zm-4.615,-0.282l-0.895,0l0,-0.915c-0.596,-0.06 -1.062,-0.259 -1.397,-0.598c-0.335,-0.338 -0.516,-0.796 -0.543,-1.372l1.156,0c0.04,0.328 0.159,0.563 0.357,0.704c0.198,0.14 0.501,0.211 0.91,0.211c0.369,0 0.649,-0.067 0.84,-0.201c0.191,-0.134 0.286,-0.332 0.286,-0.594c0,-0.234 -0.064,-0.415 -0.191,-0.543c-0.127,-0.127 -0.335,-0.207 -0.623,-0.241l-0.754,-0.1c-1.214,-0.161 -1.82,-0.744 -1.82,-1.75c0,-0.516 0.156,-0.937 0.467,-1.262c0.312,-0.325 0.749,-0.524 1.312,-0.598l0,-0.784l0.895,0l0,0.774c0.557,0.06 0.992,0.248 1.307,0.563c0.315,0.315 0.493,0.744 0.533,1.287l-1.176,0c-0.027,-0.282 -0.131,-0.489 -0.312,-0.623c-0.181,-0.135 -0.446,-0.202 -0.794,-0.202c-0.329,0 -0.58,0.066 -0.754,0.197c-0.174,0.13 -0.262,0.316 -0.262,0.558c0,0.214 0.072,0.383 0.217,0.507c0.144,0.124 0.377,0.21 0.698,0.257l0.785,0.11c1.132,0.161 1.699,0.748 1.699,1.76c0,0.556 -0.171,1 -0.513,1.332c-0.342,0.332 -0.818,0.531 -1.428,0.598l0,0.925Zm-7.169,-0.603l-1.035,0l0.271,-2.051l-1.056,0l0,-0.925l1.177,0l0.151,-1.106l-1.046,0l0,-0.925l1.166,0l0.252,-1.931l1.035,0l-0.251,1.931l1.126,0l0.251,-1.931l1.036,0l-0.251,1.931l1.045,0l0,0.925l-1.166,0l-0.141,1.106l1.026,0l0,0.925l-1.146,0l-0.272,2.051l-1.046,0l0.272,-2.051l-1.126,0l-0.272,2.051Zm20.13,0l-1.317,0l0,-1.307l1.317,0l0,1.307Zm-5.661,-2.393l0,-0.844c0,-0.597 -0.221,-0.895 -0.664,-0.895c-0.234,0 -0.407,0.078 -0.517,0.236c-0.111,0.157 -0.166,0.374 -0.166,0.648l0,0.825c0,0.302 0.053,0.533 0.161,0.694c0.107,0.161 0.281,0.241 0.522,0.241c0.443,0 0.664,-0.302 0.664,-0.905Zm5.47,0.081l-0.935,0l-0.242,-4.626l1.418,0l-0.241,4.626Zm-18.27,-1.77l-1.126,0l-0.151,1.106l1.127,0l0.15,-1.106Z"/>
+			<path d="M8,13.999c0,-0.552 0.447,-0.999 0.999,-0.999c0.001,0 0.001,0 0.001,0l3,3c0,0 0,0.449 0,1c0,0.53 -0.211,1.039 -0.586,1.414c-0.375,0.375 -0.884,0.586 -1.414,0.586c-1.105,0 -2,-0.895 -2,-2c0,-1.008 0,-2.186 0,-3.001ZM20,16l3,-3c0,0 0,0 0.001,0c0.552,0 0.999,0.447 0.999,0.999c0,0.815 0,1.993 0,3.001c0,1.105 -0.895,2 -2,2c-0.001,0 -0.001,0 -0.002,0c-1.103,0 -1.998,-0.895 -1.998,-1.998c0,-0.552 0,-1.002 0,-1.002Z"/>
+			<path fill="hsl(0,0%,75%)" d="M17.06,4.002c0.323,0.01 0.596,0.209 0.8,0.444 0.528,0.535 1.071,1.056 1.589,1.601 0.704,0.804 0.915,1.997 0.536,2.996 -0.177,0.497 -0.506,0.924 -0.892,1.278 -0.492,0.486 -0.972,0.984 -1.471,1.462 -0.409,0.341 -1.079,0.267 -1.401,-0.157 -0.333,-0.393 -0.279,-1.035 0.11,-1.371C16.869,9.712 17.417,9.179 17.948,8.63 18.281,8.24 18.232,7.601 17.848,7.263 17.306,6.714 16.751,6.177 16.217,5.622 15.876,5.214 15.95,4.543 16.374,4.221 16.565,4.065 16.814,3.987 17.06,4.002ZM29.036,4.001c0.532,0.01 0.993,0.498 0.963,1.029 0,0.326 -0.193,0.612 -0.432,0.817 -0.504,0.509 -1.018,1.007 -1.515,1.524 -0.333,0.39 -0.285,1.029 0.1,1.368 0.542,0.548 1.097,1.085 1.631,1.641 0.341,0.409 0.267,1.079 -0.157,1.401 -0.394,0.333 -1.034,0.279 -1.371,-0.11C27.689,11.096 27.109,10.538 26.553,9.956 25.835,9.138 25.629,7.916 26.034,6.907 26.216,6.423 26.544,6.013 26.92,5.666 27.407,5.185 27.883,4.691 28.378,4.217 28.563,4.07 28.8,3.991 29.036,4.001ZM23.072,9.829c0.823,0.014 1.622,0.393 2.173,1.002 0.511,0.517 1.035,1.023 1.538,1.547 0.341,0.409 0.267,1.079 -0.157,1.401 -0.394,0.333 -1.034,0.279 -1.371,-0.11 -0.543,-0.538 -1.076,-1.086 -1.625,-1.617 -0.39,-0.333 -1.029,-0.285 -1.368,0.1 -0.548,0.542 -1.085,1.097 -1.64,1.631 -0.409,0.341 -1.079,0.267 -1.401,-0.157 -0.333,-0.393 -0.279,-1.035 0.11,-1.371 0.573,-0.566 1.131,-1.146 1.713,-1.702 0.556,-0.482 1.293,-0.743 2.028,-0.724ZM20.06,2.002c0.323,0.01 0.596,0.209 0.8,0.444 0.505,0.499 0.999,1.01 1.51,1.502 0.39,0.333 1.029,0.285 1.368,-0.099 0.548,-0.542 1.085,-1.097 1.64,-1.632 0.408,-0.341 1.079,-0.267 1.401,0.157 0.333,0.394 0.279,1.035 -0.11,1.372 -0.573,0.565 -1.131,1.146 -1.713,1.701 -0.818,0.719 -2.04,0.925 -3.05,0.519C21.423,5.785 21.013,5.456 20.666,5.08 20.185,4.593 19.691,4.117 19.217,3.622 18.876,3.214 18.95,2.543 19.374,2.221 19.565,2.065 19.814,1.987 20.06,2.002Z"/>
+		</mask>
+	</defs>
+	<rect id="svg-swear" fill="currentColor" x="0" y="0" width="32" height="32" mask="url(#svg-swear.mask)"/>
+</svg>
+
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" width="16" height="16">
+	<title>Eroteme Emoji</title>
+	<description>
+		A filled question mark sign.
+	</description>
+	<metadata>
+		<rdf:RDF xmlns:cc="http://web.resource.org/cc/" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:dc = "http://purl.org/dc/elements/1.1/">
+			<rdf:Description rdf:about="#svg-eroteme">
+				<dc:title>Mutant Standard emoji v0.3.1</dc:title>
+			</rdf:Description>
+			<cc:work rdf:about="#svg-eroteme">
+				<cc:license rdf:resource="http://creativecommons.org/licenses/by-nc-sa/4.0/"/>
+				<cc:attributionName>Dzuk (with modifications by Kyebego)</cc:attributionName>
+				<cc:attributionURL>http://mutant.tech/</cc:attributionURL>
+			</cc:work>
+		</rdf:RDF>
+	</metadata>
+	<defs>
+		<mask id="svg-eroteme.mask" x="0" y="0" width="1" height="1" fill="hsl(0,0%,50%)">
+			<path fill="none" stroke="white" stroke-width="4" stroke-miterlimit="3" d="M25.23,9.614c0,1.47 -0.361,2.697 -1.082,3.682c-0.721,0.984 -1.858,1.865 -3.411,2.642c-1.304,0.665 -2.157,1.234 -2.559,1.705c-0.402,0.472 -0.659,0.909 -0.77,1.311c-0.111,0.402 -0.166,0.867 -0.166,1.394l0,1.206l-4.91,0l0,-1.664c0,-2.496 0.749,-4.271 2.247,-5.325c0.527,-0.389 1.304,-0.846 2.33,-1.373c1.026,-0.527 1.768,-1.061 2.226,-1.602c0.457,-0.541 0.686,-1.234 0.686,-2.08c0,-0.846 -0.346,-1.554 -1.04,-2.122c-0.693,-0.569 -1.719,-0.853 -3.079,-0.853c-1.359,0 -2.427,0.326 -3.203,0.978c-0.777,0.651 -1.221,1.504 -1.331,2.558l-5.118,0c0.139,-2.413 1.026,-4.347 2.663,-5.804c1.636,-1.456 3.931,-2.184 6.885,-2.184c2.954,0 5.298,0.721 7.032,2.164c1.733,1.442 2.6,3.231 2.6,5.367Zm-12.794,14.977c0.625,-0.61 1.443,-0.915 2.455,-0.915c1.013,0 1.852,0.305 2.517,0.915c0.666,0.611 0.999,1.387 0.999,2.33c0,0.943 -0.333,1.727 -0.999,2.351c-0.665,0.624 -1.504,0.936 -2.517,0.936c-1.012,0 -1.83,-0.312 -2.455,-0.936c-0.624,-0.624 -0.936,-1.408 -0.936,-2.351c0,-0.943 0.312,-1.719 0.936,-2.33Z"/>
+			<path d="M25.23,9.614c0,1.47 -0.361,2.697 -1.082,3.682c-0.721,0.984 -1.858,1.865 -3.411,2.642c-1.304,0.665 -2.157,1.234 -2.559,1.705c-0.402,0.472 -0.659,0.909 -0.77,1.311c-0.111,0.402 -0.166,0.867 -0.166,1.394l0,1.206l-4.91,0l0,-1.664c0,-2.496 0.749,-4.271 2.247,-5.325c0.527,-0.389 1.304,-0.846 2.33,-1.373c1.026,-0.527 1.768,-1.061 2.226,-1.602c0.457,-0.541 0.686,-1.234 0.686,-2.08c0,-0.846 -0.346,-1.554 -1.04,-2.122c-0.693,-0.569 -1.719,-0.853 -3.079,-0.853c-1.359,0 -2.427,0.326 -3.203,0.978c-0.777,0.651 -1.221,1.504 -1.331,2.558l-5.118,0c0.139,-2.413 1.026,-4.347 2.663,-5.804c1.636,-1.456 3.931,-2.184 6.885,-2.184c2.954,0 5.298,0.721 7.032,2.164c1.733,1.442 2.6,3.231 2.6,5.367Zm-12.794,14.977c0.625,-0.61 1.443,-0.915 2.455,-0.915c1.013,0 1.852,0.305 2.517,0.915c0.666,0.611 0.999,1.387 0.999,2.33c0,0.943 -0.333,1.727 -0.999,2.351c-0.665,0.624 -1.504,0.936 -2.517,0.936c-1.012,0 -1.83,-0.312 -2.455,-0.936c-0.624,-0.624 -0.936,-1.408 -0.936,-2.351c0,-0.943 0.312,-1.719 0.936,-2.33Z"/>
+		</mask>
+	</defs>
+	<rect id="svg-eroteme" fill="currentColor" x="0" y="0" width="32" height="32" mask="url(#svg-eroteme.mask)"/>
+</svg>
+
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" width="16" height="16">
+	<title>Shooting Star Emoji</title>
+	<description>
+		A star, trailing in a subtle arc.
+	</description>
+	<metadata>
+		<rdf:RDF xmlns:cc="http://web.resource.org/cc/" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:dc = "http://purl.org/dc/elements/1.1/">
+			<rdf:Description rdf:about="#svg-shootingstar">
+				<dc:title>Mutant Standard emoji v0.3.1</dc:title>
+			</rdf:Description>
+			<cc:work rdf:about="#svg-shootingstar">
+				<cc:license rdf:resource="http://creativecommons.org/licenses/by-nc-sa/4.0/"/>
+				<cc:attributionName>Dzuk (with modifications by Kyebego)</cc:attributionName>
+				<cc:attributionURL>http://mutant.tech/</cc:attributionURL>
+			</cc:work>
+		</rdf:RDF>
+	</metadata>
+	<defs>
+		<clipPath id="svg-shootingstar.clip">
+			<path d="M9.351,3.126c0,0 5.14,0.44 12.649,4.874c5.671,3.349 8,8 8,8l0,14c0,0 -10.79,-7.919 -15,-10c-5.528,-2.732 -9.932,-3.094 -9.932,-3.094l4.283,-13.78Z"/>
+		</clipPath>
+		<mask id="svg-shootingstar.mask" x="0" y="0" width="1" height="1" fill="black">
+			<path fill="none" stroke="white" stroke-width="4px" stroke-linejoin="round" d="M5.068,16.906c-0.09,-0.007 -0.178,-0.038 -0.255,-0.094c-0.175,-0.127 -0.248,-0.353 -0.181,-0.559c0.577,-1.777 1.475,-4.539 1.475,-4.539c0,0 -2.35,-1.708 -3.862,-2.806c-0.175,-0.127 -0.249,-0.353 -0.182,-0.559c0.067,-0.206 0.259,-0.346 0.476,-0.346c1.868,0 4.773,0 4.773,0c0,0 0.898,-2.762 1.475,-4.539c0.067,-0.206 0.259,-0.346 0.476,-0.346c0.03,0 0.059,0.003 0.088,0.008l0,0c0,0 5.14,0.44 12.649,4.874c5.671,3.349 8,8 8,8l0,14c0,0 -10.79,-7.919 -15,-10c-5.528,-2.732 -9.932,-3.094 -9.932,-3.094l0,0Z"/>
+			<path fill="hsl(0,0%,75%)" d="M9.351,3.126c0,0 5.14,0.44 12.649,4.874c5.671,3.349 8,8 8,8l0,14c0,0 -10.79,-7.919 -15,-10c-5.528,-2.732 -9.932,-3.094 -9.932,-3.094l4.283,-13.78Z"/>
+			<g clip-path="url(#svg-shootingstar.clip)" fill="none" stroke-width="2" stroke-linecap="round">
+				<path stroke="hsl(0,0%,50%)" d="M15,13c0,0 2.752,0.928 7,4c6.976,5.045 10,10 10,10"/>
+				<path stroke="hsl(0,0%,25%)" d="M9,5c0,0 3.067,0.872 6,2c4.842,1.862 8.919,4.427 13,9"/>
+			</g>
+			<path d="M8.787,3.464c0.067,-0.206 0.259,-0.346 0.476,-0.346c0.216,0 0.408,0.14 0.475,0.346c0.578,1.777 1.475,4.539 1.475,4.539c0,0 2.905,0 4.774,0c0.217,0 0.408,0.14 0.475,0.346c0.067,0.206 -0.006,0.432 -0.181,0.559c-1.512,1.098 -3.862,2.806 -3.862,2.806c0,0 0.898,2.762 1.475,4.539c0.067,0.206 -0.006,0.432 -0.182,0.559c-0.175,0.128 -0.412,0.128 -0.587,0c-1.512,-1.098 -3.862,-2.805 -3.862,-2.805c0,0 -2.35,1.707 -3.862,2.805c-0.175,0.128 -0.412,0.128 -0.588,0c-0.175,-0.127 -0.248,-0.353 -0.181,-0.559c0.577,-1.777 1.475,-4.539 1.475,-4.539c0,0 -2.35,-1.708 -3.862,-2.806c-0.175,-0.127 -0.249,-0.353 -0.182,-0.559c0.067,-0.206 0.259,-0.346 0.476,-0.346c1.868,0 4.773,0 4.773,0c0,0 0.898,-2.762 1.475,-4.539Z"/>
+		</mask>
+	</defs>
+	<rect id="svg-shootingstar" fill="currentColor" x="0" y="0" width="32" height="32" mask="url(#svg-shootingstar.mask)"/>
+</svg>
+
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" width="16" height="16">
+	<title>Sparkles Emoji</title>
+	<description>
+		Three star­‑shaped sparkles.
+	</description>
+	<metadata>
+		<rdf:RDF xmlns:cc="http://web.resource.org/cc/" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:dc = "http://purl.org/dc/elements/1.1/">
+			<rdf:Description rdf:about="#svg-sparkles">
+				<dc:title>Mutant Standard emoji v0.3.1</dc:title>
+			</rdf:Description>
+			<cc:work rdf:about="#svg-sparkles">
+				<cc:license rdf:resource="http://creativecommons.org/licenses/by-nc-sa/4.0/"/>
+				<cc:attributionName>Dzuk (with modifications by Kyebego)</cc:attributionName>
+				<cc:attributionURL>http://mutant.tech/</cc:attributionURL>
+			</cc:work>
+		</rdf:RDF>
+	</metadata>
+	<defs>
+		<mask id="svg-sparkles.mask" x="0" y="0" width="1" height="1" fill="hsl(0,0%,25%)">
+			<path fill="none" stroke="white" stroke-width="4" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="1.5" d="M14,15l5.5,-2.5l2.5,-8.5l2.5,8.5l5.5,2.5l-5.5,2.5l-2.5,8.5l-2.5,-8.5l-5.5,-2.5ZM4,23l3.5,-1.5l1.5,-5.5l1.5,5.5l3.5,1.5l-3.5,1.5l-1.5,5.5l-1.5,-5.5l-3.5,-1.5ZM2,7l2,-1l1,-4l1,4l2,1l-2,1l-1,4l-1,-4l-2,-1Z"/>
+			<path d="M14,15l5.5,-2.5l2.5,-8.5l2.5,8.5l5.5,2.5l-5.5,2.5l-2.5,8.5l-2.5,-8.5l-5.5,-2.5ZM4,23l3.5,-1.5l1.5,-5.5l1.5,5.5l3.5,1.5l-3.5,1.5l-1.5,5.5l-1.5,-5.5l-3.5,-1.5ZM2,7l2,-1l1,-4l1,4l2,1l-2,1l-1,4l-1,-4l-2,-1Z"/>
+		</mask>
+	</defs>
+	<rect id="svg-sparkles" fill="currentColor" x="0" y="0" width="32" height="32" mask="url(#svg-sparkles.mask)"/>
+</svg>
+
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" width="16" height="16">
+	<title>Magnifier Emoji</title>
+	<description>
+		A magnifying glass, tilted to the left.
+	</description>
+	<metadata>
+		<rdf:RDF xmlns:cc="http://web.resource.org/cc/" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:dc = "http://purl.org/dc/elements/1.1/">
+			<rdf:Description rdf:about="#svg-magnifier">
+				<dc:title>Mutant Standard emoji v0.3.1</dc:title>
+			</rdf:Description>
+			<cc:work rdf:about="#svg-magnifier">
+				<cc:license rdf:resource="http://creativecommons.org/licenses/by-nc-sa/4.0/"/>
+				<cc:attributionName>Dzuk (with modifications by Kyebego)</cc:attributionName>
+				<cc:attributionURL>http://mutant.tech/</cc:attributionURL>
+			</cc:work>
+		</rdf:RDF>
+	</metadata>
+	<defs>
+		<mask id="svg-magnifier.mask" x="0" y="0" width="1" height="1" fill="white">
+			<path d="M12.154,0.001c4.214,0.01121 8.305,2.4547 10.321,6.152 1.09,1.9285 1.621,4.164 1.51,6.377 -0.127,3.911 -2.358,7.659 -5.696,9.692 -2.032,1.248 -4.434,1.887 -6.819,1.763C7.3635,23.854 3.4433,21.396 1.4879,17.788 -0.61555,14.056 -0.47158,9.1963 1.8515,5.5968 4.0244,2.1089 8.0404,-0.08649 12.154,0.001Zm-0.258,4c-3.2442,-0.01 -6.3306,2.1964 -7.411,5.25 -1.074,2.861 -0.3373,6.305 1.86,8.44 1.5326,1.527 3.706,2.449 5.883,2.3 2.168,0.05 4.281,-1.001 5.733,-2.58 1.35,-1.503 2.166,-3.528 2.03,-5.562C20.068,10.525 19.593,9.2605 18.988,8.105 17.593,5.5698 14.793,3.9377 11.896,4.001ZM29.924,24.096c0.994,0.982 1.379,2.477 1.09,3.83 -0.351,1.87 -2.179,3.328 -4.084,3.22 -1.278,0.05 -2.476,-0.639 -3.291,-1.588C19.817,25.705 15.994,21.853 12.172,18 14.115,16.057 16.057,14.115 18,12.172c3.975,3.975 7.949,7.949 11.924,11.924zM17.828,18 c 3.029,3.029 6.061,6.061 9.088,9.088C23.944,24.002 20.972,20.915 18,17.828 17.94,17.888 17.885,17.943 17.828,18Z"/>
+			<path fill="hsl(0,0%,50%)" d="M15,18c0,0 7.282,7.282 10.501,10.501 0.828,0.828 2.17,0.828 2.998,0 0,0 0,0 0,0 0.828,-0.828 0.828,-2.17 0,-2.998C25.282,22.282 18,15 18,15Z"/>
+			<circle fill="hsl(0,0%,25%)" cx="12" cy="12" r="10" />
+			<circle fill="black" cx="12" cy="12" r="8" />
+			<path fill="hsl(0,0%,25%)" d="M12.075,6.2c0.764,-0.01 1.524,0.1861 2.225,0.4845 1.804,0.7782 3.141,2.5394 3.395,4.4885 0,0.696 0.05,1.402 -0.136,2.081 -0.263,1.098 -0.829,2.138 -1.664,2.904 -0.206,0.153 -0.458,0.206 -0.71,0.181 -0.513,-0.02 -0.937,-0.544 -0.879,-1.049 -0.04,-0.426 0.347,-0.698 0.58,-1.001 0.511,-0.676 0.82,-1.526 0.77,-2.38 0,-0.413 0.04,-0.839 -0.129,-1.227C15.22,9.7744 14.541,9.0055 13.677,8.5894 13.099,8.3108 12.455,8.1591 11.813,8.197 11.018,8.2443 10.23,8.5182 9.6205,9.038 9.3428,9.27 9.0868,9.59 8.693,9.602 8.098,9.673 7.5424,9.1172 7.608,8.5224 7.6462,7.9922 8.1328,7.6801 8.5043,7.372 9.5212,6.599 10.799,6.1824 12.075,6.2 Z"/>
+		</mask>
+	</defs>
+	<rect id="svg-magnifier" fill="currentColor" x="0" y="0" width="32" height="32" mask="url(#svg-magnifier.mask)"/>
+</svg>
+
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" width="16" height="16">
+	<title>Investigator Emoji</title>
+	<description>
+		A person in a coat and hat, holding a magnifying glass.
+	</description>
+	<metadata>
+		<rdf:RDF xmlns:cc="http://web.resource.org/cc/" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:dc = "http://purl.org/dc/elements/1.1/">
+			<rdf:Description rdf:about="#svg-investigator">
+				<dc:title>Mutant Standard emoji v0.3.1</dc:title>
+			</rdf:Description>
+			<cc:work rdf:about="#svg-investigator">
+				<cc:license rdf:resource="http://creativecommons.org/licenses/by-nc-sa/4.0/"/>
+				<cc:attributionName>Dzuk (with modifications by Kyebego)</cc:attributionName>
+				<cc:attributionURL>http://mutant.tech/</cc:attributionURL>
+			</cc:work>
+		</rdf:RDF>
+	</metadata>
+	<defs>
+		<clipPath id="svg-investigator.bodyclip">
+			<path d="M21,27.998c0,-1.656 -1.342,-2.998 -2.998,-2.998c-0.001,0 -0.002,0 -0.002,0l0,-2l-2,2l-6,0l-2,-2l0,2c0,0 -0.001,0 -0.002,0c-1.656,0 -2.998,1.342 -2.998,2.998c0,1.064 0,2.002 0,2.002l16,0c0,0 0,-0.938 0,-2.002Z"/>
+		</clipPath>
+		<clipPath id="svg-investigator.headclip">
+			<path d="M19,15c0,-1.591 -0.632,-3.117 -1.757,-4.243c-1.126,-1.125 -2.652,-1.757 -4.243,-1.757c-0.001,0 -0.001,0 -0.002,0c-3.313,0 -5.998,2.685 -5.998,5.998c0,0.664 0,1.34 0,2.004c0,3.313 2.685,5.998 5.998,5.998c0.001,0 0.001,0 0.002,0c1.591,0 3.117,-0.632 4.243,-1.757c1.125,-1.126 1.757,-2.652 1.757,-4.243c0,-0.663 0,-1.337 0,-2Z"/>
+		</clipPath>
+		<clipPath id="svg-investigator.hatclip">
+			<path d="M7.667,12c0,0 1.453,-4.36 2.017,-6.051c0.084,-0.252 0.264,-0.46 0.501,-0.579c0.237,-0.118 0.512,-0.138 0.764,-0.054c0.595,0.199 1.326,0.442 1.735,0.579c0.205,0.068 0.427,0.068 0.632,0c0.409,-0.137 1.14,-0.38 1.735,-0.579c0.252,-0.084 0.527,-0.064 0.764,0.054c0.237,0.119 0.417,0.327 0.501,0.579c0.564,1.691 2.017,6.051 2.017,6.051l-10.666,0Z"/>
+		</clipPath>
+		<mask id="svg-investigator.mask" x="0" y="0" width="1" height="1" fill="white">
+			<path d="M6.56,8.997l1.234,-3.704c0.041,-0.114 0.048,-0.138 0.1,-0.254c0.1,-0.223 0.227,-0.434 0.378,-0.627c0.55,-0.701 1.404,-1.127 2.294,-1.147c0.245,-0.005 0.49,0.019 0.729,0.073c0.124,0.028 0.147,0.038 0.263,0.073l1.442,0.481l1.442,-0.481l0.119,-0.036c0.127,-0.032 0.159,-0.043 0.288,-0.066c0.146,-0.025 0.291,-0.036 0.439,-0.044c0.146,0 0.146,0 0.292,0.007c0.13,0.012 0.163,0.013 0.291,0.035c0.193,0.033 0.383,0.085 0.567,0.155c0.598,0.228 1.115,0.649 1.459,1.189c0.129,0.202 0.228,0.417 0.309,0.642l1.225,3.676c0.573,0.009 1.145,0.02 1.718,0.034c0.148,0.011 0.293,0.025 0.439,0.055c0.288,0.057 0.566,0.157 0.825,0.295c0.348,0.186 0.658,0.44 0.908,0.745c0.217,0.265 0.388,0.568 0.504,0.89c0.099,0.277 0.157,0.569 0.172,0.863c0.042,0.84 -0.28,1.676 -0.875,2.271c-0.209,0.209 -0.449,0.386 -0.709,0.525c-0.302,0.161 -0.631,0.27 -0.97,0.321c-0.139,0.02 -0.278,0.029 -0.418,0.032l-0.025,0c0.004,0.7 0.004,1.4 -0.001,2.099c-0.005,0.297 -0.023,0.593 -0.06,0.887l-0.002,0.014l0.594,0c0.49,-0.547 1.08,-1.006 1.736,-1.342c0.571,-0.292 1.188,-0.492 1.822,-0.589c0.251,-0.038 0.503,-0.058 0.757,-0.067c0.155,-0.002 0.154,-0.002 0.308,0c0.254,0.009 0.506,0.029 0.757,0.067c0.634,0.097 1.251,0.297 1.822,0.589c1.203,0.616 2.179,1.64 2.736,2.872c0.224,0.495 0.38,1.021 0.462,1.559c0.092,0.603 0.092,1.219 0,1.822c-0.09,0.586 -0.267,1.158 -0.524,1.691c-0.314,0.65 -0.745,1.242 -1.268,1.741c-0.523,0.499 -1.137,0.902 -1.803,1.184c-0.737,0.312 -1.536,0.473 -2.336,0.473c-0.524,0 -1.048,-0.069 -1.553,-0.204l-1.447,1.447l0,2.757l-2.757,0l-0.4,0.399l-0.399,-0.399l-16.444,0l0,-4.015c0.002,-0.165 0.009,-0.331 0.026,-0.496c0.037,-0.372 0.117,-0.739 0.237,-1.094c0.297,-0.877 0.841,-1.664 1.555,-2.253c0.358,-0.296 0.757,-0.54 1.182,-0.726l0,-2.543c-0.098,-0.178 -0.19,-0.359 -0.274,-0.543c-0.326,-0.712 -0.546,-1.471 -0.652,-2.246c-0.045,-0.327 -0.067,-0.655 -0.073,-0.985c-0.005,-0.699 -0.005,-1.399 -0.001,-2.099l-0.025,0c-0.14,-0.003 -0.279,-0.012 -0.418,-0.032c-0.339,-0.051 -0.668,-0.16 -0.97,-0.321c-0.26,-0.139 -0.5,-0.316 -0.709,-0.525c-0.631,-0.631 -0.952,-1.531 -0.864,-2.418c0.029,-0.293 0.101,-0.581 0.214,-0.852c0.131,-0.317 0.317,-0.612 0.548,-0.866c0.264,-0.292 0.586,-0.531 0.942,-0.699c0.265,-0.125 0.549,-0.211 0.839,-0.255c0.139,-0.021 0.278,-0.029 0.418,-0.032c0.528,0 1.056,-0.001 1.585,-0.003Z"/>
+			<path fill="hsl(0,0%,50%)" d="M21,27.998c0,-1.656 -1.342,-2.998 -2.998,-2.998c-0.001,0 -0.002,0 -0.002,0l0,-2l-2,2l-6,0l-2,-2l0,2c0,0 -0.001,0 -0.002,0c-1.656,0 -2.998,1.342 -2.998,2.998c0,1.064 0,2.002 0,2.002l16,0c0,0 0,-0.938 0,-2.002Z"/>
+			<path clip-path="url(#svg-investigator.bodyclip)" fill="hsl(0,0%,75%)" d="M8,23c0,0 2.107,2.107 3.586,3.586c0.781,0.781 2.047,0.781 2.828,0c1.479,-1.479 3.586,-3.586 3.586,-3.586l-10,0ZM28.328,23.914l-8.485,8.485l-4.242,-4.242l8.485,-8.485l4.242,4.242Z"/>
+			<path fill="black" d="M19,15c0,-1.591 -0.632,-3.117 -1.757,-4.243c-1.126,-1.125 -2.652,-1.757 -4.243,-1.757c-0.001,0 -0.001,0 -0.002,0c-3.313,0 -5.998,2.685 -5.998,5.998c0,0.664 0,1.34 0,2.004c0,3.313 2.685,5.998 5.998,5.998c0.001,0 0.001,0 0.002,0c1.591,0 3.117,-0.632 4.243,-1.757c1.125,-1.126 1.757,-2.652 1.757,-4.243c0,-0.663 0,-1.337 0,-2Z"/>
+			<rect clip-path="url(#svg-investigator.headclip)" fill="hsl(0,0%,25%)" x="6" y="12" width="14" height="5"/>
+			<path d="M17,15c0,-0.552 -0.448,-1 -1,-1c-0.552,0 -1,0.448 -1,1c0,0.322 0,0.678 0,1c0,0.552 0.448,1 1,1c0.552,0 1,-0.448 1,-1c0,-0.322 0,-0.678 0,-1Zm-6,0c0,-0.552 -0.448,-1 -1,-1c-0.552,0 -1,0.448 -1,1c0,0.322 0,0.678 0,1c0,0.552 0.448,1 1,1c0.552,0 1,-0.448 1,-1c0,-0.322 0,-0.678 0,-1Z"/>
+			<path fill="hsl(0,0%,50%)" d="M25.5,23.914l-1.414,-1.414l-5.657,5.657l1.414,1.414l5.657,-5.657Z"/>
+			<circle fill="black" cx="26" cy="22" r="4"/>
+			<path fill="hsl(0,0%,25%)" d="M27.789,19.733c0.039,0.002 0.076,0.007 0.114,0.018c0.159,0.045 0.266,0.17 0.37,0.291c0.24,0.278 0.428,0.601 0.551,0.946c0.1,0.278 0.158,0.569 0.172,0.863c0.015,0.302 -0.015,0.606 -0.091,0.898c-0.2,0.777 -0.717,1.453 -1.412,1.853c-0.233,0.134 -0.484,0.236 -0.744,0.303c-0.747,0.193 -1.555,0.086 -2.226,-0.294c-0.192,-0.109 -0.373,-0.239 -0.537,-0.387c-0.086,-0.078 -0.171,-0.156 -0.216,-0.266c-0.026,-0.063 -0.039,-0.131 -0.038,-0.199c0.004,-0.229 0.169,-0.431 0.393,-0.48c0.057,-0.012 0.116,-0.015 0.174,-0.007c0.098,0.013 0.185,0.056 0.261,0.118c0.045,0.042 0.089,0.085 0.135,0.125c0.213,0.18 0.456,0.317 0.723,0.399c0.173,0.052 0.352,0.081 0.532,0.085c0.218,0.006 0.436,-0.024 0.644,-0.089c0.463,-0.144 0.865,-0.46 1.117,-0.874c0.118,-0.195 0.203,-0.409 0.248,-0.633c0.1,-0.487 0.013,-1.003 -0.243,-1.43c-0.059,-0.098 -0.126,-0.191 -0.201,-0.278c-0.046,-0.054 -0.098,-0.103 -0.143,-0.158c-0.018,-0.023 -0.033,-0.047 -0.047,-0.073c-0.03,-0.062 -0.051,-0.126 -0.056,-0.194c-0.014,-0.187 0.081,-0.37 0.242,-0.467c0.059,-0.035 0.123,-0.055 0.19,-0.066c0.03,-0.003 0.058,-0.005 0.088,-0.004Z"/>
+			<path fill="hsl(0,0%,50%)" d="M7.667,12c0,0 1.453,-4.36 2.017,-6.051c0.084,-0.252 0.264,-0.46 0.501,-0.579c0.237,-0.118 0.512,-0.138 0.764,-0.054c0.595,0.199 1.326,0.442 1.735,0.579c0.205,0.068 0.427,0.068 0.632,0c0.409,-0.137 1.14,-0.38 1.735,-0.579c0.252,-0.084 0.527,-0.064 0.764,0.054c0.237,0.119 0.417,0.327 0.501,0.579c0.564,1.691 2.017,6.051 2.017,6.051l-10.666,0Z"/>
+			<rect clip-path="url(#svg-investigator.hatclip)" fill="hsl(0,0%,75%)" x="6" y="9" width="14" height="3"/>
+			<path fill="hsl(0,0%,50%)" d="M4,12c0,0.265 0.105,0.52 0.293,0.707c0.187,0.188 0.442,0.293 0.707,0.293c3.151,0 12.849,0 16,0c0.265,0 0.52,-0.105 0.707,-0.293c0.188,-0.187 0.293,-0.442 0.293,-0.707c0,-0.265 -0.105,-0.52 -0.293,-0.707c-0.187,-0.188 -0.442,-0.293 -0.707,-0.293c-3.151,0 -12.849,0 -16,0c-0.265,0 -0.52,0.105 -0.707,0.293c-0.188,0.187 -0.293,0.442 -0.293,0.707c0,0 0,0 0,0Z"/>
+		</mask>
+	</defs>
+	<rect id="svg-investigator" fill="currentColor" x="0" y="0" width="32" height="32" mask="url(#svg-investigator.mask)"/>
+</svg>
+
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" width="16" height="16">
+	<title>Tipping Hand Emoji</title>
+	<description>
+		A person tipping their hand, as if explaining something.
+	</description>
+	<metadata>
+		<rdf:RDF xmlns:cc="http://web.resource.org/cc/" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:dc = "http://purl.org/dc/elements/1.1/">
+			<rdf:Description rdf:about="#svg-handtip">
+				<dc:title>Mutant Standard emoji v0.3.1</dc:title>
+			</rdf:Description>
+			<cc:work rdf:about="#svg-handtip">
+				<cc:license rdf:resource="http://creativecommons.org/licenses/by-nc-sa/4.0/"/>
+				<cc:attributionName>Dzuk (with modifications by Kyebego)</cc:attributionName>
+				<cc:attributionURL>http://mutant.tech/</cc:attributionURL>
+			</cc:work>
+		</rdf:RDF>
+	</metadata>
+	<defs>
+		<mask id="svg-handtip.mask" x="0" y="0" width="1" height="1" fill="white">
+			<path d="M7.082,23.062c-0.312,-0.23 -0.611,-0.477 -0.894,-0.741c-0.94,-0.875 -1.71,-1.931 -2.253,-3.094c-0.4,-0.857 -0.677,-1.771 -0.82,-2.707c-0.07,-0.461 -0.105,-0.925 -0.114,-1.391c-0.007,-1.086 -0.007,-2.172 0,-3.258c0.006,-0.34 0.025,-0.679 0.064,-1.017c0.085,-0.741 0.253,-1.473 0.501,-2.177c0.508,-1.444 1.353,-2.763 2.448,-3.832c1.008,-0.985 2.224,-1.753 3.548,-2.238c0.739,-0.27 1.51,-0.452 2.292,-0.542c0.338,-0.039 0.677,-0.058 1.017,-0.064c0.13,-0.001 0.129,-0.001 0.258,0c0.34,0.006 0.679,0.025 1.017,0.064c0.782,0.089 1.553,0.272 2.292,0.542c1.324,0.485 2.539,1.253 3.548,2.238c1.095,1.069 1.94,2.388 2.448,3.832c0.248,0.704 0.416,1.436 0.501,2.177c0.039,0.338 0.058,0.677 0.064,1.017c0.007,1.086 0.007,2.172 0,3.258c-0.007,0.382 -0.031,0.763 -0.079,1.142c-0.104,0.82 -0.311,1.627 -0.614,2.396c-0.043,0.108 -0.088,0.216 -0.134,0.322c0.7,0 1.399,0.003 2.099,0.012c0.263,0.01 0.523,0.039 0.78,0.097c0.445,0.1 0.872,0.277 1.258,0.521c0.166,0.105 0.322,0.223 0.473,0.35l0.035,0.031l4.183,0c0,0.701 0.008,1.402 -0.001,2.102c-0.005,0.136 -0.014,0.27 -0.031,0.405c-0.042,0.329 -0.124,0.652 -0.246,0.96c-0.224,0.568 -0.58,1.083 -1.032,1.494c-0.406,0.369 -0.888,0.653 -1.407,0.829c-0.411,0.138 -0.838,0.205 -1.27,0.21l-2.013,0l0,6l-7,0l-17,0c0,-0.717 -0.012,-1.454 0.002,-2.18c0.01,-0.296 0.034,-0.591 0.079,-0.884c0.095,-0.626 0.277,-1.24 0.538,-1.818c0.509,-1.126 1.32,-2.109 2.327,-2.826c0.46,-0.326 0.958,-0.594 1.481,-0.804c0.532,-0.213 1.089,-0.353 1.655,-0.426Z"/>
+			<path fill="hsl(0,0%,50%)" d="M18,30l-15,0c0,0 0,-0.001 0,-0.002c0,-1.326 0.527,-2.597 1.464,-3.534c0.769,-0.769 1.763,-1.262 2.828,-1.414c1.124,1.581 8.221,1.762 10.708,0.541l1.516,2.409l-1.516,2Z"/>
+			<path fill="hsl(0,0%,75%)" d="M18,25.591c0.32,-0.157 0.564,-0.338 0.709,-0.541c2.425,0.344 4.291,2.429 4.291,4.95l0,0l-5,0l0,-4.409Z"/>
+			<path fill="black" d="M18,25l0.311,0.262l-0.311,0.635c-1.271,1.298 -3.042,2.103 -5,2.103c-2.355,0 -4.439,-1.165 -5.708,-2.95c0.232,-0.033 0.468,-0.05 0.706,-0.05l10.002,0ZM21,12c0,-4.418 -3.582,-8 -8,-8c0,0 0,0 0,0c-4.418,0 -8,3.582 -8,8c0,0.993 0,2.007 0,3c0,4.418 3.582,8 8,8c0,0 0,0 0,0c4.418,0 8,-3.582 8,-8c0,-0.993 0,-2.007 0,-3Z"/>
+			<path fill="hsl(0,0%,25%)" d="M18,25l0,0c0.241,0 0.477,0.017 0.709,0.05c-0.214,0.301 -0.451,0.584 -0.709,0.847l0,-0.897Z"/>
+			<path d="M19,12.5c0,-0.398 -0.158,-0.779 -0.439,-1.061c-0.282,-0.281 -0.663,-0.439 -1.061,-0.439c-0.398,0 -0.779,0.158 -1.061,0.439c-0.281,0.282 -0.439,0.663 -0.439,1.061c0,0.327 0,0.673 0,1c0,0.398 0.158,0.779 0.439,1.061c0.282,0.281 0.663,0.439 1.061,0.439c0.398,0 0.779,-0.158 1.061,-0.439c0.281,-0.282 0.439,-0.663 0.439,-1.061c0,-0.327 0,-0.673 0,-1Zm-9,0c0,-0.398 -0.158,-0.779 -0.439,-1.061c-0.282,-0.281 -0.663,-0.439 -1.061,-0.439c-0.398,0 -0.779,0.158 -1.061,0.439c-0.281,0.282 -0.439,0.663 -0.439,1.061c0,0.327 0,0.673 0,1c0,0.398 0.158,0.779 0.439,1.061c0.282,0.281 0.663,0.439 1.061,0.439c0.398,0 0.779,-0.158 1.061,-0.439c0.281,-0.282 0.439,-0.663 0.439,-1.061c0,-0.327 0,-0.673 0,-1Z"/>
+			<path fill="black" d="M20,30c0,0 0,-4.348 0,-7c0,-0.53 0.211,-1.039 0.586,-1.414c0.375,-0.375 0.884,-0.586 1.414,-0.586c0.758,0 1.58,0 2.172,0c0.53,0 1.039,0.211 1.414,0.586c0.218,0.218 0.414,0.414 0.414,0.414l3,0c0,0 0,0 0,0c0,1.105 -0.895,2 -2,2c-1.745,0 -4,0 -4,0l0,6l-3,0Z"/>
+		</mask>
+	</defs>
+	<rect id="svg-handtip" fill="currentColor" x="0" y="0" width="32" height="32" mask="url(#svg-handtip.mask)"/>
+</svg>
+
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" width="16" height="16">
+	<title>Nametag Emoji</title>
+	<description>
+		A name badge, shaped like a tulip.
+	</description>
+	<metadata>
+		<rdf:RDF xmlns:cc="http://web.resource.org/cc/" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:dc = "http://purl.org/dc/elements/1.1/">
+			<rdf:Description rdf:about="#svg-nametag">
+				<dc:title>Mutant Standard emoji v0.3.1</dc:title>
+			</rdf:Description>
+			<cc:work rdf:about="#svg-nametag">
+				<cc:license rdf:resource="http://creativecommons.org/licenses/by-nc-sa/4.0/"/>
+				<cc:attributionName>Dzuk (with modifications by Kyebego)</cc:attributionName>
+				<cc:attributionURL>http://mutant.tech/</cc:attributionURL>
+			</cc:work>
+		</rdf:RDF>
+	</metadata>
+	<defs>
+		<mask id="svg-nametag.mask" x="0" y="0" width="1" height="1" fill="hsl(0,0%,50%)">
+			<path fill="none" stroke="white" stroke-width="4" d="M6.75,5.499l4.25,8.501l5,-10l5,10l4.25,-8.501c2.914,2.567 4.75,6.321 4.75,10.501c0,7.727 -6.273,14 -14,14c-7.727,0 -14,-6.273 -14,-14c0,-4.18 1.836,-7.934 4.75,-10.501Z"/>
+			<path d="M6.75,5.499l4.25,8.501l5,-10l5,10l4.25,-8.501c2.914,2.567 4.75,6.321 4.75,10.501c0,7.727 -6.273,14 -14,14c-7.727,0 -14,-6.273 -14,-14c0,-4.18 1.836,-7.934 4.75,-10.501Z"/>
+			<rect fill="black" x="7" y="17" width="18" height="6"/>
+		</mask>
+	</defs>
+	<rect id="svg-nametag" fill="currentColor" x="0" y="0" width="32" height="32" mask="url(#svg-nametag.mask)"/>
+</svg>
+
+			</blockquote>
+			<small>These, and this article as a whole, are licensed under a <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" rel="license nofollow noopener noreferrer"><cite>Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International License</cite></a>. Non­‑emoji portions of this article are also licensed under the ( slightly ) more permissive <a href="https://creativecommons.org/licenses/by-sa/4.0/" rel="nofollow noopener noreferrer"><cite>Creative Commons Attribution-ShareAlike 4.0 International License</cite></a>—so free to steal my CSS when your friends down the street hire you to build their bandʼs webpage. ( Provided you ShareAlike, of course ;P . )</small>
+		</footer>
+	</article>
+</body>
+</html>
