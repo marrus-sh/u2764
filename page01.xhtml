@@ -1,0 +1,602 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
+<!--
+The idea behind the design of this page is to demostrate how web design has and can evolve by chronologically advancing through each section. We start off with a completely unstyled page, and then a page as it might have been designed in the early web, and so on, ending with potential corporate and indie design æsthetics for our Web 2020 future.
+-->
+<head>
+	<title>❤ Page 01 – Designing for Web 2020</title>
+	<meta charset="utf-8"/>
+	<style>
+@namespace "http://www.w3.org/1999/xhtml";
+@namespace SVG "http://www.w3.org/2000/svg";
+
+html {
+	Margin: 0;
+	Padding: 0;
+	Color: #1F1A14; /* Basically just black */
+	Background: #FAF8F7; /* Basically just white */
+	Line-Height: 1.2; /* Different browsers have different default line-heights, but because we need to reason about them ( and RLH units arenʼt supported most places yet ), we go with 1.2 for consistency */
+}
+body {
+	Margin: 0;
+	Padding: 0;
+}
+body>footer {
+	Padding: 1EM .5EM;
+	Font: Bold XX-Large / 1 Serif;
+	Text-Align: Center;
+	Text-Transform: Uppercase;
+}
+body>footer a[href] { Color: Inherit }
+*:Link,
+*:Visited { Color: #4B2DF7 }
+*:Link:Active,
+*:Visited:Active { Color: #B01C1C }
+
+/*
+These are just the default HTML `h1` styles. We redeclare them because otherwise, since it is nested inside of an `article`, modern browsers will style it like an `h2`.
+*/
+h1 {
+	Margin: 0.67EM 0;
+	Font-Size: 2EM;
+	Font-Weight: Bold;
+}
+
+/*
+Each section creates its own stacking context. The `.CONTENT` div inside is used to constrain the width of each sectionʼs contents.
+*/
+article>div,
+article>section {
+	Display: Block;
+	Position: Relative;
+	Z-Index: 0;
+}
+article>div>div.CONTENT,
+article>section>div.CONTENT { Margin: 0 Auto }
+
+/*
+The content in this div is virtually unstyled. However, for readability purposes, we do give its children a `max-width`. The `8px` padding comes from the default `body` margins in Firefox.
+*/
+article>div>div.CONTENT {
+	Padding: 8PX;
+	Max-Width: 640PX
+}
+
+/*
+I was originally going to style this section in the manner of those bad old hacker websites but honestly why would I do that when I could just style it like this instead : https://web.archive.org/web/19991109004540/http://www.geocities.com/TimesSquare/Alley/3024/eqmain.html . ⸰ So ⸰ much better than monospaced green­‑on­‑black, lol.
+
+Thanks, LadyMage.
+*/
+section#why {
+	Padding: 8PX; /* That 8PX body margin again */
+	Color: #FAE13E;
+	Background: #1F1A14;
+}
+section#why>div.CONTENT {
+	Margin: 0; /* Left-align */
+	Position: Relative;
+	Box-Sizing: Border-Box;
+	Padding-Left: 16%;
+	Width: Calc(800PX + 16%);
+	Max-Width: 100%;
+	Overflow: Hidden;
+}
+section#why nav {
+	Display: Block;
+	Position: Absolute;
+	Box-Sizing: Border-Box;
+	Top: 0;
+	Bottom: 0;
+	Left: -8PX; /* Shifts the 8PX outer left padding to the other side */
+	Padding: 8PX;
+	Width: 16%;
+	Color: #FAE13E;
+	Background: #1F1A14;
+	Overflow: Auto;
+	Font-Weight: Bold;
+}
+section#why nav h3 {
+	Margin: 2.4EM 0;
+	Font-Size: 1EM; /* font="3" */
+	Text-Transform: Uppercase;
+}
+section#why nav a,
+section#why nav span {
+	Display: Block;
+	Margin: 1.2EM 0;
+	Font-Size: Calc(8EM / 9) /* font="2" */
+}
+section#why iframe {
+	Display: Block;
+	Margin: 0 Calc(50% - 234PX); /* Centers on overflow */
+	Border: None;
+	Padding: 0;
+	Width: 468PX;
+	Background: Transparent;
+	Overflow: Hidden;
+}
+section#why h2 {
+	Margin: 0; /* LadyMage didnʼt implement this using an h2 element, just `font` and `center` */
+	Font-Size: 2EM; /* font="6" */
+	Font-Weight: Inherit;
+	Text-Align: Center;
+	Text-Transform: Uppercase;
+}
+section#why>div.CONTENT::AFTER,
+section#why h2::AFTER {
+	Display: Block;
+	Margin: 1.2REM Auto; /* These represent `br`s */
+	Width: 254PX;
+	Height: 5PX;
+	Background: Linear-Gradient(
+		To Right,
+		#1F1A14 -6.25%,
+		#FAE13E 25%,
+		#FAF8F7 50%,
+		#FAE13E 75%,
+		#1F1A14 106.25%
+	);
+	Content: "";
+}
+section#why p {
+	Margin: 1.2EM 0;
+	Font-Size: 1.2EM; /* font="4" */
+}
+section#why blockquote {
+	Margin: 2.4EM 0;
+	Font-Weight: Bold;
+	Text-Align: Center;
+}
+section#why blockquote p { Margin: 1.2EM 0 0 }
+section#why blockquote footer { Font-Weight: Normal }
+section#why footer {
+	Display: Block;
+	Margin: 1.2EM 0;
+	Font-Size: Calc(8EM / 9); /* font="2" */
+	Text-Align: Center;
+}
+section#why *:Link { Color: #FAE13E }
+section#why *:Visited { Color: #EB9100 }
+
+/*
+This sectionʼs styling is based off of a webpage I made in high school—one of my first ever web designs.
+*/
+section#experiment {
+	Padding: 2%;
+	Color: #FAF8F7;
+	Background: #1F1A14;
+	Font-Family: "Junicode", Serif;
+	Line-Height: Normal;
+}
+#experimentstyle:Checked+section#experiment {
+	Color: #FAF8F7;
+	Background: #302F2B;
+}
+section#experiment>div.CONTENT {
+	Border: 3PX Double;
+	Padding: 2.5% 5%;
+	Max-Width: 48EM;
+	Color: #1F1A14;
+	Background: #FAF8F7;
+}
+#experimentstyle:Checked+section#experiment>div.CONTENT {
+	Border: 3PX #B01C1C Solid;
+	Color: #F56E97;
+	Background: #1F1A14;
+}
+section#experiment h2 {
+	Font-Size: 2EM;
+	Line-Height: 1;
+	Text-Align: Center;
+}
+#experimentstyle:Checked+section#experiment h2 { Color: #FAF8F7 }
+section#experiment h2 a {
+	Font-Size: .875EM;
+	Font-Weight: Normal;
+}
+section#experiment p {
+	Text-Align: Justify;
+	Text-Align-Last: Center;
+}
+section#experiment footer {
+	Display: Block;
+	Border-Top: Thin Dashed;
+	Padding: 1EM 0 0;
+	Font-Size: Small;
+	Text-Align: Center;
+}
+#experimentstyle:Checked+section#experiment footer { Border-Color: #B01C1C }
+section#experiment label,
+section#experiment *:Link,
+section#experiment *:Visited {
+	Color: #75706A;
+	Text-Decoration: Underline;
+	Cursor: Pointer;
+}
+#experimentstyle:Checked+section#experiment label,
+#experimentstyle:Checked+section#experiment *:Link,
+#experimentstyle:Checked+section#experiment *:Visited { Color: #B8B3B0 }
+section#experiment label:Hover,
+section#experiment *:Link:Hover,
+section#experiment *:Visited:Hover { Color: Inherit }
+#experimentstyle:Checked+section#experiment label:Hover,
+#experimentstyle:Checked+section#experiment *:Link:Hover,
+#experimentstyle:Checked+section#experiment *:Visited:Hover { Color: #DEDBD9 }
+
+/*
+This sectionʼs styling is based off of album liner notes. Specifically, I was looking at Miles Davis &amp; Robert Glasperʼs _ Everythingʼs Beautiful _—but itʼs pretty generic.
+
+Column layouts mix up the styling paradigm a little because instead of limiting the horizontal space, itʼs all about limiting the vertical—you donʼt want the “ page height ” to be too large. As a matter of fact, since these are liner notes, the goal is for every two columns to form a rough square. My reference was 33 lines tall, somewhat loose line­‑spacing, not a lot of margin space, small, sans­‑serif font. I went for a slightly smaller page­‑size to ease readability on the screen.
+
+Because the fact that there is more content in the horizontal direction isnʼt always apparent, we add a scroll indicator at the bottom when the content overflows. We actually have to switch into a vertical writing mode in order to pull this off—there is no way for determining if a block overflows in the inline direction, because the inline size will still match that of the parent. Making the writing mode for the entire section be vertical left­‑to­‑right makes the block direction line up with our overflow, and we just switch back into horizontal for our actual content.
+
+Apple wishes they could pull this look off but ( not ) unfortunately it leaves no room for their branding.
+*/
+section#rap {
+	Writing-Mode: Vertical-LR; /* Swaps inline and block axes, so that overflow still happens in the block direction */
+	Margin: Auto;
+	Padding: 3EM 0;
+	Width: 100%;
+	Max-Width: 56EM;
+	Overflow-X: Auto;
+	Overflow-Y: Hidden;
+	Font: Normal Small / 1.5 Sans-Serif;
+}
+section#rap>div.CONTENT {
+	Position: Relative;
+	Writing-Mode: Horizontal-TB; /* Swaps back into horizontal writing for the actual content */
+	Padding: 1.5EM 3EM;
+	Height: Calc(100VW - 12EM);
+	Max-Height: 38EM;
+	Columns: 2 15EM;
+	Column-Gap: 3EM;
+	Column-Fill: Auto;
+	Text-Align: Justify;
+}
+section#rap>div.CONTENT::BEFORE {
+	Display: Block;
+	Position: Absolute;
+	Left: 3EM;
+	Right: 53EM; /* Width will be 0PX when the content does not overflow */
+	Bottom: -1.5EM;
+	Overflow: Hidden;
+	Color: #75706A;
+	White-Space: Pre;
+	Text-Overflow: ""; /* Prevent an attempt at drawing characters in a 0PX space */
+	Content: "⟦ Scroll → ⟧"
+}
+section#rap h2 {
+	Margin: 0;
+	Font-Size: 1.25EM;
+	Font-Weight: 200;
+	Line-Height: 1.2;
+	Text-Transform: Uppercase;
+}
+section#rap p {
+	Margin: 0;
+	Text-Indent: 2EM;
+}
+section#rap footer {
+	Display: Block;
+	Text-Align: Right;
+}
+section#rap *:Link,
+section#rap *:Visited { Color: Inherit }
+
+/*
+This section is a parody of corporate æsthetic ( Apple etc ) and their attempts to profit off of queer and subversive design elements. It has that slender white bar at the top, those pink and blue gradients that millennials love, translucency on top of translucency, and a layout so confusing that it needs little arrows in order to direct you where to go.
+
+It still looks sharp though, because would I design something which didnʼt ?
+*/
+section#sublimation {
+	Padding: 0 8PX;
+	Overflow: Hidden;
+	Color: #1F1A14;
+	Background: Linear-Gradient(
+		To Right,
+		#F56E97,
+		#1AACEB
+	);
+	Font-Family: "Helvetica Neue", "Lucida Grande", Sans-Serif;
+	Font-Weight: 300;
+	Text-Align: Justify;
+	Text-Align-Last: Center;
+}
+section#sublimation::AFTER {
+	Display: Block;
+	Position: Absolute;
+	Top: 0;
+	Bottom: 0;
+	Left: 8PX;
+	Right: 8PX;
+	Background: #FAF8F7;
+	Opacity: .6;
+	Z-Index: -1;
+	Content: "";
+}
+section#sublimation>div.CONTENT {
+	Display: Grid;
+	Grid-Template-Columns: 1FR 1FR;
+	Grid-Auto-Flow: Dense;
+	Position: Relative;
+	Padding: 1EM;
+	Max-Width: 40EM;
+	Hyphens: Auto;
+	Z-Index: 0;
+}
+section#sublimation>div.CONTENT::AFTER {
+	Display: Block;
+	Position: Absolute;
+	Top: 0;
+	Bottom: 0;
+	Left: 0;
+	Right: 0;
+	Background: #FAF8F7;
+	Box-Shadow:
+		-5PX 2PX 5PX #4B2DF7,
+		5PX 2PX 5PX #B01C1C;
+	Opacity: .8;
+	Z-Index: -1;
+	Content: "";
+}
+section#sublimation>div.CONTENT>*:First-Child {
+	Display: Block;
+	Position: Relative;
+	Margin: -1EM -1EM 0;
+	Grid-Column-Start: 1;
+	Grid-Column-End: 3;
+	Padding: .5EM .5EM 0;
+	Overflow: Hidden;
+	Color: #1F1A14;
+	Background: #FAF8F7;
+}
+section#sublimation>div.CONTENT>*:First-Child:AFTER {
+	Display: Block;
+	Margin: .5EM Calc(50% - 50VW) 0;
+	Height: 1PX;
+	Background:  Linear-Gradient(
+		To Right,
+		#F56E97,
+		#1AACEB
+	);
+	Content: "";
+}
+section#sublimation>div.CONTENT>*:First-Child>SVG|svg {
+	Display: Block;
+	Margin: Auto;
+	Width: 1.5EM;
+	Height: 1.5EM;
+	Color: #302F2B;
+}
+section#sublimation>div.CONTENT>*:Nth-Child(2) {
+	Margin: 2EM 0 1EM;
+	Padding: 0 1.25EM;
+	Grid-Column-Start: 1;
+	Grid-Column-End: 3;
+	Text-Align: Center;
+	Font-Size: 3EM;
+	Font-Weight: 800;
+	Hyphens: None;
+}
+section#sublimation>div.CONTENT>*:Nth-Child(2)::AFTER { Content: "." }
+section#sublimation>div.CONTENT>*:Nth-Child(2) a {
+	Display: Inline-Block;
+	Margin: 0 0 0 -1.5EM;
+	Font-Size: Smaller;
+	Font-Weight: 300;
+}
+section#sublimation>div.CONTENT>* {
+	Display: Block;
+	Position: Relative;
+	Align-Self: Center;
+	Margin: 1.2EM 1EM;
+}
+section#sublimation>div.CONTENT>*:Nth-Child(n+3):Nth-Child(-n+4) { Margin-Top: 0 }
+section#sublimation>div.CONTENT>*:Nth-Child(n+3):Nth-Child(4n+1) { Grid-Column-Start: 2 }
+section#sublimation>div.CONTENT>*:Nth-Child(n+4):Nth-Child(2n+1)::BEFORE,
+section#sublimation>div.CONTENT>*:Nth-Child(n+3):Nth-Child(2n+1)::AFTER {
+	Display: Block;
+	Position: Absolute;
+	Top: -1.5EM;
+	Bottom: -1.5EM;
+	Left: -1.5EM;
+	Right: -1.5EM;
+	Margin: Auto;
+	Width: 1EM;
+	Height: 1EM;
+	Color: #75706A;
+	Font-Family: Arial, Sans-Serif;
+	Line-Height: 1EM;
+}
+section#sublimation>div.CONTENT>*:Nth-Child(n+4):Nth-Child(2n+1)::BEFORE {
+	Bottom: Auto;
+	Content: "↓";
+}
+section#sublimation>div.CONTENT>*:Nth-Child(n+3):Nth-Child(4n+3)::AFTER {
+	Left: Auto;
+	Content: "→";
+}
+section#sublimation>div.CONTENT>*:Nth-Child(n+3):Nth-Child(4n+1)::AFTER {
+	Right: Auto;
+	Content: "←";
+}
+section#sublimation>div.CONTENT>*:Nth-Child(n+3):Nth-Last-Child(-n+2)::AFTER { Content: None }
+section#sublimation>div.CONTENT>*:Last-Child {
+	Grid-Column-Start: 2;
+	Align-Self: End;
+	Text-Align: Right;
+	Text-Align-Last: Auto;
+}
+section#sublimation>div.CONTENT>*:Nth-Child(n+3):Last-Child::BEFORE { Content: None }
+@media (Max-Width: 400PX) {
+	*:Root:Root section#sublimation>div.CONTENT>* {
+		Grid-Column-Start: 1;
+		Grid-Column-End: 3;
+		Hyphens: Auto;
+	}
+	*:Root:Root section#sublimation>div.CONTENT>*:Nth-Child(n+3) { Margin-Top: 0 }
+	*:Root:Root section#sublimation>div.CONTENT>*:Nth-Child(n+3)::BEFORE,
+	*:Root:Root section#sublimation>div.CONTENT>*:Nth-Child(n+3)::AFTER { Content: None }
+}
+section#sublimation *:Link { Color: #4B2DF7 }
+section#sublimation *:Visited { Color: #B01C1C }
+section#sublimation *:Link:Active,
+section#sublimation *:Visited:Active { Color: #75706A }
+	</style>
+</head>
+<body>
+	<article>
+		<div>
+			<!--
+			This `div` encapsulates both the top header and the first section. I think it serves as a nice reminder of how little styling actually is necessary on a webpage.
+			-->
+			<div class="CONTENT">
+				<header>
+					<p>Journal : \u2764</p>
+					<nav><a href="./">Home</a> | <a href="./sitemap.xhtml">Sitemap</a> | <a href="./links.xhtml">Links</a></nav>
+					<h1>Designing for<br />Web 2020</h1>
+				</header>
+				<section id="20to20">
+					<h2><a href="#20to20">§1</a> <!-- This is a figure space, both to match the width of the preceding digit, and because it is non­‑breaking -->From 2.0 to ʼ20</h2>
+					<p><strong>Betraying my age : </strong>Have you ever looked up the actual definition of <i>Web 2.0</i> ? I found it surprised me.</p>
+					<blockquote>
+						<p>In 2004, the term began to popularize when O'Reilly Media and MediaLive hosted the first Web 2.0 conference. In their opening remarks, John Battelle and Tim O'Reilly outlined their definition of the "Web as Platform", where software applications are built upon the Web as opposed to upon the desktop. The unique aspect of this migration, they argued, is that "customers are building your business for you". They argued that the activities of users generating content (in the form of ideas, text, videos, or pictures) could be "harnessed" to create value.</p>
+						<footer>— <a href="https://en.wikipedia.org/wiki/Web_2.0" rel="noopener noreferrer"><cite>Wikipedia</cite> : “ Web 2.0 ”</a> [<a href="https://creativecommons.org/licenses/by-sa/3.0/" rel="noopener noreferrer">CC BY-SA</a>]</footer>
+					</blockquote>
+					<p>Wow, so, like, everything we hate about the internet, right ? Which is to say, the prediction <em>did</em> prove true : The internet of today is indeed an <b><dfn>“ Internet of Platforms ”</dfn></b>—a smattering collection of “ apps ”, each their own—largely—self­‑contained unit, deriving the near entirety of their value from the labour of their users—a stark contrast from the <b><dfn>“ Internet of Sites ”</dfn></b> of Web 1.0. We have all witnessed over the past few years the impact that this « new, social Internet » has had on our politics, on our relationships, and on our mental health, and we have watched—sometimes humorously, sometimes in abject horror—as platforms like Twitter have desperately tried to maintain their relevance ( read : « growth » ) while clinging existentially to those paradigms that they have so thoroughly exhausted.</p>
+					<p>I think we all can agree that we are in the late stages of Web 2.0.</p>
+					<p>But what comes next?</p>
+					<p><strong>A History Lesson : </strong>It is hardly a secret that I sometimes spend my time browsing the old GeoCities pages featured on <a href="http://oneterabyteofkilobyteage.tumblr.com/" rel="noopener noreferrer"><cite>One Terabyte of Kilobyte Age Photo Op</cite></a>. Something that one who spends any time there will quickly discover is how much of GeoCities—as suggested by its name—is <em>locality</em>­‑based : <i>homesteaders</i> build <i>sites</i>—with names like <a href="https://web.archive.org/web/20091027005055/http://geocities.com/WestHollywood/5032/" rel="noopener noreferrer"><cite>Poetʼs Corner</cite></a>, <a href="https://web.archive.org/web/20010701001806/http://www.geocities.com/WestHollywood/Stonewall/9998/index1.html" rel="noopener noreferrer"><cite>Shygirlllʼs World</cite></a>, or <a href="https://web.archive.org/web/20021128001841/http://www.geocities.com/SoHo/Bistro/5112/" rel="noopener noreferrer"><cite>Lanes Heart Pantry</cite></a>—often consisting of multiple <i>rooms</i> ( sometimes including a <i>gallery</i> or <i>games corner</i> ), connected through a central <i>navigation</i> or <i>site­‑map</i> or <i>home</i>.</p>
+					<p>You also see a lot of this guy :</p>
+					<img src="data:image/gif;base64,R0lGODlheACpAOMIAB8aFN7b2XVwapSNh1dTTPr49zAvK7izsP%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2FyH5BAEKAAgALAAAAAB4AKkAAAT%2BEMlJq7046827%2F2AYBsExnOhwkGLrvvBUBANhAHiuAwahFrGgUEgj7HKG5BHnCwyfUA7thvSpAsCZqUbFGQbOqDhaqOmaQM3MnPOlx%2FBXQKATYEMzejsc738ORjh2by1zSAd%2BiRsHVF%2BELwWMXoiKlRQHe1EBgQADlpaSAAR8UIY8lJ99AVQCj1AFegakqWSBo36mBK60QgNes3CbgryaVKiJmDzAxC96Aqm%2BAK3MQQG%2Fqas4x9Qtep600dPchTeyvNnm4yLhF3N2fwLbG9Hf6iB68gjhuxboyxjWRPGzd6HADV39AqWbl6NeByMLCW4I%2BKyfjnwW9IgCEQ2jxAr%2BHdvpcJiBkwEQyUh%2BvKBnWUBtD9uAyFZxZQY6ESdkg8lBY80OwgjY1GAEoYUCCv9VSNYJBKyNQzEY%2BbkUh0oMT2%2Fd4xFVqrQMkQ4MPLpiHdeuFqaq83USbYWi6nC6fSuQG1KocyXgVFqJZt4J0fgqovhXQkpuhwsTHjLg3VYAglfeNTAQUGS9ADwWhDh2qLcMmK6yhIxyWGHDTDKs0qrGxuUJ%2BE5LuJv5ZtMNBnNq8Cdbwj4MmCgv%2Bvrhc28EOz3SEQ27toeAugtHM9rvhkdM1HEHYp6XNtVLVtsZ0QySyevBJ8SW5nkh2aAJkrhXZZ9qjQACBAQI6CLfQjQD10H%2BJEBjgYgjBSudBcPJEjich8BTp4A1QBeiqAeULQ4%2BsRMP%2BFHhQ3gzKWRhOweskOAlHmY4BG1f3JGSXyNwMsCJHpSRIjHQkTIDCXd9B5RGrMFgiigqPkEPWGoVEg0PjinZRZO8BKbaDT7%2B0YUB79U4BRL9JSJlQcbJMeEZYAy0xoKdFCmGexgsqWYFc1DI4YAlmnCfnFi%2BKUZycC7ZpZZcMLhED2V%2B5NMKRTREo1Ml3CnnnCYONeQSM%2FpRwI4kWHXpXDYuUaUq9M1VQgoH0RIQeW7tlUoyeq4FIigNHqeTaZZ8KetkrYbA1muX9uprr9SwY4mqYNFwJ4M9DHgHNuX%2B5FockQUdsJ%2BggmI5oiLOLBoDHdkhx8YZA6pQ5wn3HdFEX8ZUwu0bnSIRDxb8XNoohY4o8p%2BzHEyVBSBkqphoG9eOAWG3Y6jVboXakmVSpaog6Ie%2BQAYMCb%2BCJCxCKAYWLIpP%2BFIwJJRjMBVkFGj%2B6cKSIK%2FZCKoucDJyyA73EYo0HUuwU8pwYGzxCBrVS0SBO78QismQLCkKGBNrdNsnTLFcjdLWnnfmEUQ%2FoQfBAlPs7hXL2kyCtGhKc0PVQ%2BxEdtKPJoHf2kqYe8vYxPwXdNJhV6vspgjAzQttZ5ddYmP34acfnV1ToDcvyWDt1uG04Nob4%2BC8Whjk2NBaWJL%2BxNz1sluYE0Ps5cQxY%2BtfnSMe6lz6UnOqbOuqfnqqdTGz%2Bmmty%2F46Wp%2Bfc3tXu1LDqmy9M%2BMMCoVH9fs5StdRc86x0jIzD%2FQ6zUwy0mtIYZlbKtPV7J8ASZIwS9sUUN8wFOiS5StlQ%2F4LEP2jeVcGhW5J%2BwCVGlWPtMR2lDO4xw7r0iWKhEaqxwuczM0F8XtGGZgwEreMrhIHmYGcCCCxlYQkFfj4T36QJirJVeI%2F6ToNjD5Bm4rJJhtCMVXgcOaWyRxQVkJoCQyD5cEZfmIxNjRVBHNYwObx8BNH%2BuENvfBCIYaAfw%2F6lRFD1gYb6EBtPojUEluQh0dRqwdlmWL%2BjbTWhnCl4FhP5KAWVYOmd8WLBN%2FiAcPGSIEFtkGMHRDgGZYnqYUFLQ%2BHYCNyOMFCp8xsjUYMBYBK4ZMiriQUm4uBG6VhSILsJJG9aMgPwQdJxkjShhCKjhjuZcMlERASV2skjqiwPhGAr5TcCOWqrtGbl3wyCBD6VP%2FkN0TtibBZwquhA9FXOf%2FlJRCvfAJtgjlKX0aJl11JjOp2mBcZ2sWZLeSMq5zjlhEiRpfiw6YOw7e93dWndFEJCB3Zhxe0HE8dcJnLOcfBrbysM5XlTKYP2RlP482TGxAhkOCuIEoieJNpVjxDBXVHTWZAqAod2kEfb0i5%2BijNDnxAIx%2Bq%2B1ksAiVBbfqh0jXVWDwZjKmgWavbETT5QW2Ch5aaSF5%2BBufETMTtnvVDqTC9VzgtmGScHQgiQ2Q6BKYAMiE5kCWorKKU7BGzJyaVATooWqOe8fNBo3oSU5sjHA%2FoYapxNBqHEqq8PuSuNTjAqgekFVBBDNRI5uHAwNQxqsHp5wp9UQgcPaa1owaSQlH8WmOuJ9ZWJk9QFOzrcc5kRWsJFpNfqxMJcMqNCAAAOw%3D%3D" alt="A stick figure used in one of the profile page templates common on GeoCities" width="120" height="169" />
+					<p>But when Web 2.0 came along, the bulk of that terminology went out the window. Instead of <i>sites</i> we have <i>platforms</i>, instead of <i>pages</i> we have <i>feeds</i> of <i>content</i>, instead of <i>browsers</i> we have <i>apps</i>, and instead of <i>people</i> we have <i>users</i>. And hey, to give Web 2.0 its due : At first, « millions of users all collaborating on a single site » seemed pretty awe­‑some. But what we now know was so awe­‑ful was the manner in which it enshrined platform <em>ownersʼ</em> dominance and control. One single organization having complete, unfettered access and control over millions of peopleʼs social interactions <em>isnʼt</em> a good thing, after all.</p>
+					<p><strong>Enter Web 3.0 : </strong>⟨ No, I did not invent that term just now. ⟩ Web 3.0 is the federated, “ semantic ” web, and its main claim to fame is that while Web 1.0 was a Web of Sites and Web 2.0 was a Web of Platforms, Web 3.0 is a <b><dfn>“ Web of Resources ”</dfn></b> ( specifically, from a technical standpoint, interoperable resources describable using the Resource Description Framework, or <abbr>RDF</abbr> )—the significance of this best illustrated through an example. So letʼs look at social media. In Web 1.0, to communicate socially with someone on the internet you had both be in the same “ place ”—website or BBS. In Web 2.0, you had to both be on the same platform, like Twitter. In Web 3.0, you can be on <em>any platform which speaks the same common language</em>—and itʼs possible that <i>platform</i> is entirely the wrong way to be thinking about this, and instead we should be using words like <i>server</i> or <i>user agent</i>.</p>
+					<p>In fact, for social media, this already exists ( albeït in its early stages ), and itʼs called <a href="https://en.wikipedia.org/wiki/Fediverse" rel="noopener noreferrer"><i>the Fediverse</i></a>.</p>
+					<p>However, even though the <em>technical</em> groundwork for Web 3.0 has been laid since—at least—2014, with <a href="https://www.w3.org/TR/rdf11-primer/">RDF 1.1</a>, we still donʼt know what this new web will <em>look</em> like—weʼre still <em>designing</em> things under Web 2.0 models. <em>Even though</em> it is “ technically ” a federated collection of resources, the Fediverse <em>is still designed as</em> a network of platforms.</p>
+					<p><strong>When I say <dfn>Web 2020</dfn>, I mean a <em>new paradigm of design</em> which emphasizes web resources as exactly that—<em>resources</em>—breaking from both the static site­‑based and overarching platform­‑based models of today.</strong> This journal entry is an early examination into that space.</p>
+					<footer><a href="#">Top</a></footer>
+				</section>
+			</div>
+		</div>
+		<section id="why">
+			<div class="CONTENT">
+				<nav>
+					<h3>Index</h3>
+					<a href="#20to20">From 2.0 to ʼ20</a>
+					<a href="#why">Why Does This Matter ?</a>
+					<a href="#experiment">Design which Encourages Experimentation</a>
+					<a href="#rap">White Girl Rambles about Rap Music</a>
+					<a href="#sublimation">Anticipating Sublimation</a>
+					<span>Best at 1024x768</span>
+				</nav>
+				<!--
+				Not all browsers support `srcdoc` and those which donʼt wonʼt be able to render our lovely advertising banners. I feel like thatʼs oddly fitting.
+
+				I do not endorse Microsoft bCentral ; they just happened to be who GeoCities/LadyMage used for their ads.
+				-->
+				<iframe srcdoc="&lt;!DOCTYPE html>&lt;html lang=&quot;en&quot; xml:lang=&quot;en&quot;>&lt;head>&lt;/head>&lt;body style=&quot;Margin:0;Padding:0;Overflow:Hidden&quot;>&lt;a href=&quot;https://web.archive.org/web/20000617182847/http://adnetwork.bcentral.com/&quot; rel=&quot;noopener noreferrer&quot;>&lt;img alt=&quot;Have an online business? Want to promote it for free? visit: BannerNetwork, Microsoft® bCentral&quot; src=&quot;data:image/gif;base64,R0lGODlh1AE8AOMLAPr4997b2R8aFLAcHLizsJSNhxqs61dTTPVul3VwajAvK%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2FyH5BAEKAA8ALAAAAADUATwAAAT%2BUMhJq7046827%2F2AojmRpnmiqrmzrUkAsz3Rt33iu73zv%2F8CgcEgsGo9CQWDJbDYFyKh0ipRQr9isdsvteotKp3gJ%2FZrPPCt6zW673%2FBceOwsx%2B9ZNX7P7%2Fv%2FMXN0THaAhj56h4qLjI0%2FgoMBhUVLBAQBaJg0TV0EAwQ4iY6jpKWGkIOTRAasrZpeCAOvAAEDCLNZtaA3oqa%2Bv8BnqHSqQ60Ax1%2B1CDS3OLtItbgzvdGXzwcCB9DBVNd4391mw2PFQscBrDEBlt%2Fslbvv7NztMpYA1wSx3Mw3nlL%2FQpnDIe9GgAIKJGzblKChgIQKCkzDUaBiDAIVJ44awLFWRyP%2B7CqGA8JRlpaQ3IKREzMQyDECBkCla2UAE01WoGDS3HUzxk4AEmPJCNCPlj5Mnj7RKhqPKQJn%2BG4pfbq0QI1qFCUoUHDA6gyEMR9uTYDpYIJLBh4aSChAIo%2BSmGIN8PoLbsmUQUrqFXJXi16T3VbWiXLTwFBaOJHhfLlYnU7FNl0BcGbr4i4EoObi%2B7QkVtkB60ATjcuM6CdnmImODNRyRoADCgwkiJ0tIi3YlwhoYzU2Qc1KElhlk5BgB9zJHOn6gitXo4%2B%2FHIv6aO73rzjBTwg3jteTseHH4GOyi6nY8NKLJt3qW%2Fp5hknP%2BEBhRh9DqIxPeGVgpUFAAdkACQj%2B0EptD13Czm7CCdiEbgK2wpZzMRwnl3KmHAfhcx15BFoQFx6xRAElXRdJdkigw8oSjRnmHT6OqVMYKImdVx9olGEGTUARzvMeLRtGFSFdHklHw34yFHAWEwHeJIGB6SBoQDa%2FfRgcTdoY99GEF8mlVFKgJdWPlnhpCVVz0d0g15gdlRlhRyBWRmZlQ5UkJADHhQhUdBquc%2BadbqYJZ2hqLqWmaX%2FmGdiIhGhn2Ezj5eRii99BymKUke1yT2gIeKXUDFTdV0BmliDVo1LS2CMLYFe19poTSdLkXxNpxZYgpQVMmSCFNsjZpmbI6ZUZR5spBd0sGtq5q5w1QBfDsWr%2BwtUmM8zCyWWga8ri5bJ42qkXtGVG28%2B0cG5b7Z%2FPisgJMYrOVBNO6pY36bvhiadJjPOZWtqmmnCW73ubBlRLaJxa9eeQqv6HZIMOGgxTQgfMysRaWjmohJXQeRWqlnR2JFewElE72SXHRdsjtrbsKXK1B3UL3YbMfXTfX0U9m6eXS%2FDJrbIZy9IczaLaUjOPwJr787lkKCqZusckLelj5Z2oWE683rcLR6FGCBWdl43sM1Qgugf11foVzCrCrAhAlmxkAaUWlEsEqA1EZR%2Fw1srKEQpam3lqG7RrXIIis50vy5Ln30E7q7LPIQYJNDcra0J4l4GW%2BzjQ9%2BIX6LX%2BMsiVnymCrSNJFPP8vM41NTNBS%2Bmov1LQ6aOPJPqnr7h%2BGN%2FciE6LPRMRSYvBB0Xcym5duTacgARkc1YMbieEa65Uc%2BlVscB6dK2cGHP6l1WTu5dhiNkbXtnkXD6VnPanhZxt9HphIvn5kEc3YbGfHZezOIEgWjT9gOgOIIoJbAOgQmnRRn7cdoADpE14EuhQzuIyvpxVLzofWdnIzlQS7LGPBnAZ3AUXuD7EAUtkyqkT1WxmqGnZjITco1uwgmZCoHwKf2G43elYgr%2F8qaphDaHH8IqDDbfcICE9kND4kvKrDWmJZcmpyAsDxycLenBkC9TgE1HWQakAy3lKnIX%2BCJWSPSoezortm0sWA%2FeK4xwFhqZzjSbuV8M%2B6M8%2FmyPA8YxQpbnxSzM0s1MLwYQRLWpsfF2cUcm%2BaCjv3QyMQLNFPcinDzOuzCiEStn3LqghG8nkEs15x84Ad6g01oCNbdyD7mS4BUlsLllXGh%2F0gqYhukCHHxVD4d4CZ6wNGlKWG4oWBmM5rhCB64TZ0%2BUvhym%2FTppOdImqQYDqthVMKOCUUnjNQhT4h1Ee4VJZoaYQeeWljaHMesUU5LUCqafI2ZJNhATctIQEs1kkpQAbCx%2FJDmmoFVZGnissSgOFNqJiBEhuRUogPqhZhAIAtHitIygcrFmEAP0HBwUMpUT%2BJ4qFickQXcos4Ctm80zW0UIknpMjUkC6jjFehKT92YYc22IJki6CoUOolVeWeBUeUvSmOB1CDCeSTBokwEg8BBBCQGGbAPgHIcWZjQHZERGZ4iMixVOA%2Bpralqd2xaAsbcdqAMDVrnr1q2ANq1jHSlYAwLSsYuVKV4MHVt1AE61wjatc50rXutr1rnjNq173utdhfBWUXT2LbjDx08ECwDYN4apBARAgmVQVKFINUFcN9FiEcPWnXEWoUbbK185%2B9ax17SgANBrWWnn2tKhNrWpXy9rW8hU7PfVqV0x5WEtMrKMCgAZhD2rR11jiqJayaG0ZazGAula1oBWrWUb%2BYqTiLY%2BrET2udKdL3epaV7qwBSx0rWJAhBr2mbT1av8yK9zgASgbBzjQKzqKWXwY97p6Ta5XDzI8hfiwf6eUxHPhy9%2F%2B%2Bve%2Fx4UEV1WnXeK6N3jfJerzrDJefOR2wODtqlEl0lupGti9AL6rfJHUkJjExEj2bYcSR2LYDJv4xChOMVwFbLsCszUbSHlwRw26BNgw1rhLPS9Q0ksL2%2BS4wYl1sEJPLF%2BjALWAsMusUpHsjj5aVsVQjrKU%2FyuIAVv5dP6c6UEtzFaO8rjBtymg%2F4pXwFfdhis8vvBrHjtlsBZ5hpWoTX6Beg0DtvnOeL6r7ey65%2Bmy%2BMoFHprqLmv%2BQMG6g1gB4gqaoTrfqg1YdTS1LpnTLNc3l%2FYhuKBvd70q2hNzQsIS9mSeAcyOuDLhrWQ9tV5FvWInhPrRrUnrBN6KkAtQGrX9W0hnhzdkS4cV017VTUQyfWsTY9Mo8x3yqFvb57CWOq%2FP1muoUP1ZMXg0tqamADTdhgELo5ZBbF71BLxd6VjPVRIHJLRybYriY0fbo3VtNrzzLG%2B0yvvdfKa2XOv96zVGwtxfBbdwwVorCvy0vuzuLLf1jVZwvzeuvv5ruEcbR4ZXN9qhA%2FVdOTtQuvLbte%2FYuEY4LleSx9vkbi7dX0k0V4dvllhsWdKAuT3wjJeV1Uad9Xz%2FunL%2BVhfcbHWNeLAFNN%2F9Knu6IT%2FdoUOd9DQ%2BuxKihrqg7z1t1cmEwC2OR5OTjcxQEXirx5QHscT%2B6K5DPdlMQjYyk650YqE85Z%2FmOsC9%2BvOzDEfXjNX2fPXuXgrgXZp2Lt5D0hZVCqCZHWK%2BBGw0IUe2cMWHeSdO0OcO12zUbtkSJt3ZSfkzzTMJ45xle%2BencfaQi93fmV3jPaReiVd3PPXJhiTaVc%2FTcIy%2B7Thv8rksFY%2ByfMPRc11J2Sl%2F2QnUV6A5VwhYY%2B43DDzP%2BD9XfvQr8L8lDYewGEjz8PY7VqErti2iK17c22z6zF790QPWPVJ0uznQTzY%2F0b6U625Ef9%2F%2B1%2BxS8b%2BR1dH%2F1607m%2F3vl34a8W4kZn%2FIdm1v129EQ0N0VV8FZHAONgEJt2P9cyBacXATEGMKcQEghgFrNnha0TsXSHM8NDwWx1XeVysPJWGwIWbc52lpFx8X5X%2By93oyGFbYFA7HFoCwZ4M2mIO014M6qHWxUxa1x4NgFX%2Bxo3VjRYBW92mat3N2JWBwhm32BoERiGk0B03Jl2YfWBwC9x%2FDsw1YRRwiIQkWcBZs4YXj5kwZOHl1NRs5RF4r6ATyYhF3Bnyr83Q5SISTNXJB2IMBF4Sip4OBiH%2BkY4jpF2z1BoRihYhFKIhtxX5P6E4fF3zWVnYFRlbg5m0fmFv%2B9QUh3KYcPyeCdRR5QDdab0heBmcgJsVVjkcGygeHc6WC%2FfM2ZvMzBVdo%2BDVSR1ddemh7ftiDTRd6ureISbh0ByiAyLiMx1iMmZd5EHKMOBiISjhWwhhsKcF2Uhh0Y8B0n1OLxseCsxZzCpBqMfcp7cBrCxdYE2AVaAhs3yeBzjYPPyc34DaBK0Z543EiHmYg7uUfubYVCUF4J3hd87eE91c66gdJpAeQr9dsprd%2FjMh%2FN1iMC2mRXmd%2BFimA9jcRioiAzpGN0nhl%2BBeIdCV8sEZX3GZTydcWfpdqHSB4AgVdOudy7hiCRQcbF1AcP%2FeCYnVWa1RAR1IzKihWKkj%2BYFG2Z7Xze6iXeijZaJU4gDEoiQ5piRo5NFUZH1ZnjFEZjdK4dk1ID24XjAk5ha6WhOEoV9snYdoWcw%2B3WVkoFuNGkA43lG%2FIbe%2B1Q8EWc2ZThlVlglNIfHSHXjGBG2SVlIoFeZj3XzvYmPW4ar94WlXWc2sZV4LJitrwief4Vbs4hoOAk7QwjqooeWv1jhIWcwckmMw3mKvWP%2F4BV7VCaZMJmZ6VgJh3iTdXm52VXZdpb61ZfBKAPXwHYRLIFgmni%2FSomSWImgNWnKPolhkYjwNXbtc1m7AJlLbJbLi5bLxJSv7lm%2FzId9TpWOMWD6AZi5MVgtE5j1X1iTfShsb%2BKXPuqQSdeHSgdYkX8pPb2V9S159SCW3d6Vri2XJ%2B1zbGpwk0pw3HBwo7BBwZ2I7C%2BWAvqVKmaFwvSXiGl4VxCXHmFglc5wotdmpF%2BZ0AeqIoiloFKle7qBV%2BqTrHVwHP45cV4KA612M3GqMYsZwTyqAVIDd1p2Gqoi6wUhMDJqIPgzpIyigp2qROyl8riplVsqCdNnMXUKWfeJ6jqZNbWpPTB4rOOWDH91Pj2J60aG8owmpVKJGMoptP%2BqZw2lf285tlZVC7YFBckW4BV2ZIRnoG5YJr1BDttTuCGmxi9ipApae704LwKKh%2BI6i%2F6H2xl2omGqeWeqlwhyiEialmqSWpnPqpoIpdc7qpofpapFqqqJqqqxWlqopdp9qqsBqraGk%2FryqrHmqruJqrlDmqurqqtdqrwCqrrBqspkqsxnqsCqipyFqsy9qsxDqszpqSLzCt1Fqt1nqt2Jqt2rqt3NqtLhABADs%3D&quot; style=&quot;Display:Block&quot; />&lt;/a>&lt;/body>&lt;/html>" width="468" height="60" sandbox=""></iframe>
+				<iframe srcdoc="&lt;!DOCTYPE html>&lt;html lang=&quot;en&quot; xml:lang=&quot;en&quot;>&lt;head>&lt;/head>&lt;body style=&quot;Margin:0;Padding:0;Overflow:Hidden&quot;>&lt;img alt=&quot;LinkExchange&quot; src=&quot;data:image/gif;base64,R0lGODlh1AEQAMIGAPr49x8aFDAvKxqs67izsHVwav%2F%2F%2F%2F%2F%2F%2FyH5BAEKAAcALAAAAADUARAAAAP%2BeLrc%2FjDKSau9OOvNu%2F9gKI5kaZ5oqq5s675wLM90bd94ru987%2F%2FAoHBILBqPyKRyCGg6nY2n4tmcSJfYrHbLjQAEAicYEB1PA%2BgAWQJArz%2FXrnxOr3cAgwF1j9c73Xx8gIGEgQRVdomKi4lfYU1jYGB6kWGDbm4EaYdpAYeaaJwBBZ4AoJqmm1CMrK2uR31OebGztXqDpG0FbWqYvb%2B8wb7CwK%2FGx8g6jmJhlY5jvJmepcPVwNbEwcnb3N0qsU22tHl%2Bg9FN5sOp2NZpb97w8fIXy5DN98uPg5r82ezXAIOtmkewoEFw4xLOwtVr1z9%2FwAiQwmawokVvz%2FA5c9YiKRsoasAmPpQW6t3FkygXFVrJsmWhj4f2pJxJs%2BYdmQ8SAAA7&quot; style=&quot;Display:Block&quot; />&lt;/body>&lt;/html>" width="468" height="16" sandbox=""></iframe>
+				<h2><a href="#why">§2</a> Why Does This Matter ?</h2>
+				<p>Because they who control knowledge­‑production control power.</p>
+				<p>The other day, while doïng research for an unrelated project, I found myself on <a href="https://en.wikipedia.org/wiki/Riot_grrrl" rel="noopener noreferrer"><cite>Riot Grrrl</cite> Wikipedia page</a>—which has a very nice selection of quotes, a few of which Iʼm just going to drop here :</p>
+				<blockquote>
+					<p>Because we girls want to create mediums that speak to US. […] Because we need to talk to each other. Communication and inclusion are key. We will never know if we don't break the code of silence […] Because a safe space needs to be created for girls where we can open our eyes and reach out to each other without being threatened by this sexist society and our day to day bullshit.</p>
+					<footer>— « An undated, typewritten Bikini Kill flyer », as cited by Wikipedia</footer>
+				</blockquote>
+				<blockquote>
+					<p>When I think of how much benefit my teenage self could have gained from the multitude of zines that have proliferated over the past decade, I weep for all the lost potential. Except for Joan of Arc and Anne Frank, the thoughts of teenage girls have rarely been taken seriously.</p>
+					<footer>— Ann Magnuson of Bongwater, in the foreword to <cite>A Girl's Guide to Taking over the World : Writings from the Girl Zine Revolution</cite>, as cited by Wikipedia</footer>
+				</blockquote>
+				<p>Iʼll save the analysis of Riot Grrrl culture for someone who was actually socially conscious at the time it was happening, but I think itʼs important, when we think of the word <i>resource</i>, that <em>that</em> is what we have in mind. That <em>specifically</em> : Resources by and for young queer girls, young trans girls, young enbies, young aromantics and asexuals. The very sorts of resources that might help you find a community, might help you navigate an oppressive medical system, might help you escape an abusive relationship, might help you stay alive. Not some bullshit news article or social media post.</p>
+				<p>Actually, to be honest, thatʼs part of the reason why I have always been hesitant to claim the title <i>web designer</i>—despite the fact that I clearly have the chops and the practice—because those sorts of resources have <em>always</em> been where Iʼve set my sights. I design for stories, reference books, articles, zines—not storefronts or branded web portfolios. And—thereʼs not a huge demand for that these days.</p>
+				<p>But then : The Internet used to be <a href="http://oneterabyteofkilobyteage.tumblr.com/tagged/WestHollywood/chrono/page/69" rel="noopener noreferrer">all about that sort of thing</a>. We can make it that place again.</p>
+				<footer>With many thanks to <a href="https://web.archive.org/web/20010404085949/http://www.geocities.com/TimesSquare/Alley/3024/" rel="noopener noreferrer">LadyMage of GeoCities TimesSquare/Alley</a>.<br /><a href="#">Top</a></footer>
+			</div>
+		</section>
+		<input id="experimentstyle" type="checkbox" hidden=""/>
+		<section id="experiment">
+			<div class="CONTENT">
+				<h2><a href="#experiment">§3</a> Design which Encourages Experimentation</h2>
+				<p>⟨ And feel free to read « experimentation » as « queerness » if you want. ⟩</p>
+				<p>Plenty of people have already talked about recent trends in tech minimalism and the exhaustion of that design space—usually the argument goes something like « wow this is boring », « where is the <em>life</em> ? the <em>culture</em> ? », or « i hate apple ». I want to take the conversation in a somewhat different direction, and talk about <em>experimentation</em>. Go to the Apple website : How would you <em>experiment</em> with their design ?</p>
+				<p>I can tell you how I would : With a printout and a felt­‑tip marker. But my urge to mix up the media is a sign of the mediumʼs own failing ; thereʼs nothing to <em>do</em> to Appleʼs website because the design itself leaves no room for doïng : there are no font­‑colours to change, there are no borders to switch out, backgrounds to apply, decorations to tweak. <i>Radical design</i>, in this space, hits its limit just switching out 2015ʼs ultrathin fonts for semibolds.</p>
+				<p>And you look around the internet, and itʼs all like this : How would you change Facebookʼs design ? Twitterʼs ? Instagramʼs ? <em>I</em> donʼt fucking know. Fuck, I donʼt even want to touch it. Maybe Iʼd break something.</p>
+				<p>I donʼt think itʼs very surprising, then, that most people donʼt have any desire to go out and make websites of their own. <strong>Browsing the Internet of today, one sees little reason to make more of the same, and little inspiration for anything different.</strong></p>
+				<p>Which is <em>why</em> my number one piece of advice for web designers is : Stay off of the interent. Consume as little of it as possible. Get deep into physical media, read comics, read zines, check the liner notes of your albums, watch films, <em>do anything but look for inspiration online.</em> How sad is that ? that the worst place to look for inspiration for our medium is the medium itself ?</p>
+				<p>Designing for <b>Web 2020</b> means designing for a future ( which will probably not <em>actually</em> be actualized by 2020, but a girl can dream ) in which people are creäting resources for each other on the web. In which people <em>want</em> to creäte resources for each other on the web. In which people <em>are inspired</em> to creäte resources for each other on the web.</p>
+				<p>In other words, it needs to be <em>inspiring</em>.</p>
+				<p>We need to make more websites in which people can <em>imagine</em> things beïng done differently. Make things which <em>open</em> up and <em>explore</em> the possibilities of a space. <em>Not</em> constrain ourselves to monolithic ideas of “ brand ” or “ identity ”—instead thinking about what our <em>resources</em> need—what other resources they might inspire. <strong>When your design encourages experimentation—it is encouraging people to experiment.</strong></p>
+				<p>Sometimes, all people need is a <label tabindex="0" for="experimentstyle" role="button" aria-label="Toggle the visual styling of this section.">temptation</label>.</p>
+				<footer><a href="#">Top</a></footer>
+			</div>
+		</section>
+		<section id="rap">
+			<div class="CONTENT">
+				<h2><a href="#rap">§4</a> White Girl Rambles about Rap Music</h2>
+				<p>⟨ I promise I will tie this back in eventually. ⟩</p>
+				<p>Maybe itʼs just because Iʼm a writer, but I feel that there is something profoundly <em>democratizing</em> about rap music. Which, just to be clear : Rapping is not <em>easy</em>. Good lyricism is not <em>easy</em>.</p>
+				<p>But you donʼt have to know how to play a guitar to speak a verse. You donʼt have to learn how to sing ; it doesnʼt matter if you can read staffs or tabs ; nobody gives a fuck if you took band in high school. The only <em>ability</em> rapping takes is speaking, and speaking personally, speaking is something that I already do every day. So thereʼs this dual set of emotions which takes over whenever I hear a really good rap lyric : One, « damn. », and two, « this is not out­‑of­‑reach. Someone like me could do this. »</p>
+				<p>( Poorly, in my case—but the thought remains. )</p>
+				<p>I bring this up because if rap music is just a matter of speaking, really well, over a backing track, making a web resource is just a matter of writing, really well, over a stylesheet. Have I lost you ? Anyone can do it. Open up a text editor, type <code>&lt;!DOCTYPE html></code>, type <code>&lt;p></code> every time you want to start a new paragraph, and you have yourself a webpage. Save it with a <code>.html</code> extension. Thatʼs all it takes.</p>
+				<p>And Iʼm <em>sure</em> there is someone really attentive out there with the right background and life experiënces to compare and contrast the cultures of sharing beattapes in independent hip­‑hop circles and sharing stylesheets in the early independent web—and I would read the heck out of that article, so please, @ me if you do. I am not that person though.</p>
+				<p>What I <em>will</em> say is that, even <em>if</em> web design is the hip­‑hop of the written world ⟨ yes, yes, I know itʼs a stretch ⟩, looking at a really sharp, well­‑executed webpage… doesnʼt carry that same magic. Not for me. Iʼm a web designer, I made everything you see here, and <em>still</em>, while I might say « damn. », Iʼm not gonna say « someone like me could do this. This is not out­‑of­‑reach. »</p>
+				<p>And part of that I think is an intentional result of our current culture of apps : What app do you download to make a webpage ? ⟨ you donʼt ! ⟩ Do the kids these days even know how to find Notepad ? ⟨ <a href="https://go.kibi.family/writer/" rel="noopener noreferrer">hereʼs a good last resort</a>. ⟩ And part of that is infrastructural—<a href="https://pages.github.com/" rel="noopener noreferrer">GitHub Pages</a> may be the SoundCloud of web design—but really now ?? GitHub Pages ?? Lol.</p>
+				<p>And Iʼm honestly not 💯 on how to fix this, either. Maybe we need to bring the remix culture of the early 2000s back. Maybe we need to start passing around mixtapes of stylesheets for people to build off of ⟨ <a href="https://style.u2764.com/" rel="noopener noreferrer">working on it</a> ⟩. Maybe we need to go the whole Mozilla Web­‑Literacy­‑in­‑the­‑early­‑2010s approach and start using literal &lt;code>html&lt;/code> tags in everyday speech until people start picking up their meanings and usages through osmosis.</p>
+				<p>Maybe we just need a good free <a href="https://en.wikipedia.org/wiki/WYSIWYM" rel="noopener noreferrer"><abbr title="What You See Is What You Mean">WYSIWYM</abbr> editor</a> for everyone to use.</p>
+				<p>But one thing which I think it is very important that we <em>do</em> do is look to other fields—hip­‑hop is one, the indie comix scene is another—look at how they are supporting each other, look at how the art is proliferating, learn from that, and apply those lessons back home. Bring back community spaces. Bring back the WebRing. Bring back the <a href="./links.xhtml">Links page</a>.</p>
+				<p>And : Let those spaces inform your design.</p>
+				<p>⟨ For the record : The artist which first got me into hip­‑hop was <a href="https://archive.org/download/BSCOMP0005B/10-SunZoo-TheDaoofSunZoo.mp3" rel="noopener noreferrer">Sun Zoo</a>. ⟩</p>
+				<footer><a href="#">Top</a></footer>
+			</div>
+		</section>
+		<section id="sublimation">
+			<div class="CONTENT">
+				<header>
+					<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" fill="currentColor" width="24" height="24">
+						<title>Ezine Logo</title>
+						<description>
+							A circled heart with an ellipsis in the centre.
+						</description>
+						<defs>
+							<mask id="heartmask" x="0" y="0" width="1" height="1" fill="white">
+								<path d="
+									M 0 0    l 8 0    q -6 2 -8 8    z
+									M 64 0    l -8 0    q 6 2 8 8    z
+									M 0 64    l 8 0    q -6 -2 -8 -8    z
+									M 64 64    l -8 0    q 6 -2 8 -8    z
+								"/>
+								<circle cx="32" cy="32" r="30"/>
+								<path d="
+									M 8 23
+									a 12 12 0 1 1 24 0
+									a 12 12 0 1 1 24 0
+									c 0 18 -24 22 -24 36
+									c 0 -14 -24 -18 -24 -36
+									z
+								" fill="black"/>
+								<circle cx="21.5" cy="31" r="3.5"/>
+								<circle cx="32" cy="31" r="3.5"/>
+								<circle cx="42.5" cy="31" r="3.5"/>
+							</mask>
+						</defs>
+						<rect x="0" y="0" width="64" height="64" mask="url(#heartmask)"/>
+					</svg>
+				</header>
+				<h2><a href="#sublimation">§5</a> Anticipating Sublimation</h2>
+				<p>If youʼre at all interested in design, and you <em>havenʼt</em> already read <a href="https://www.lokidesign.net/journal/2016/2/22/the-propaganda-of-pantone-colour-and-subcultural-sublimation" rel="noopener noreferrer"><cite>The Propaganda of Pantone : Colour and Subcultural Sublimation</cite></a> by Kevin Lo of LOKI Design, I encourage you to pause your reading of this article and take a moment to go read that one instead.</p>
+				<p>Back ? Okay.</p>
+				<p>It is a necessary question, whenever designing in a subcultural space, how to prevent those designs from simply being appropriated as free labour by the mainstream, and how to prevent their political force from beïng sublimated into the dominant culture through a detachment from their originary, radical context. To some extent, this work can be accomplished by simply never designing things which those in power would find useful—but this is hopelessly limiting. And further, some cultural artefacts—like æsthetics—are not so easily constrained—and especially not when their <em>counter</em>cultural proliferation is so desired.</p>
+				<p>But perhaps this question is not quite correct. Maybe we should not be asking how to <em>prevent</em> appropriation, but how to render it politically <em>ineffective</em>. How do we create designs which so encode their context as to be inextricable from it ? and I donʼt just mean « Pantone accidentally tricked thousands of designers into creating products that looked trans ». I think zine culture is informative when thinking about this—despite its successes, it has resisted normalization, precisely because—well, you canʼt distribute a <abbr title="Do It Yourself">DIY</abbr> æsthetic without encouraging folks to Do It Themselves.</p>
+				<p>Such a huge part of web design is building, working within, and/or subverting audiënce expectations. Perhaps this can be said of design in general. So I think it is important to think about which expectations we are encouraging with our forms, and how essential those expectations are to our work. Take, for example, the designs on this page. They <em>expect</em> a web page which is predominantly text­‑based. They can only be used within that context. Their propagation necessitates a propagation of text­‑based websites.</p>
+				<p>Is that a good thing ? As a writer, I admit a fair bit of bias. So Iʼll leave that evaluation to you.</p>
+				<footer><a href="#">Top</a></footer>
+			</div>
+		</section>
+	</article>
+	<footer>
+		<nav>
+			<a href="./cover.xhtml">← Cover</a>
+		</nav>
+	</footer>
+</body>
+</html>

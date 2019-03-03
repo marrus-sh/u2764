@@ -7,7 +7,7 @@
 	<defs>
 		<mask id="heartmask" x="0" y="0" width="1" height="1" fill="white">
 			<path d="
-				M 0 0    l 8 0   q -6 2 -8 8    z
+				M 0 0    l 8 0    q -6 2 -8 8    z
 				M 64 0    l -8 0    q 6 2 8 8    z
 				M 0 64    l 8 0    q -6 -2 -8 -8    z
 				M 64 64    l -8 0    q 6 -2 8 -8    z

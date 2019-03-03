@@ -14,7 +14,7 @@ As you can see, source files are heavily commented to explain some of the finer 
 At time of writing, I am using CotEditor on macOS for composing these pages, and Firefox Developer Edition in Private Browsing for testing them. I will probably not care particularly strongly about WebKit browsers.
 -->
 <head>
-	<title>❤ COVER</title>
+	<title>❤ Cover</title>
 	<meta charset="utf-8"/>
 	<style>
 @namespace "http://www.w3.org/1999/xhtml";
@@ -96,6 +96,14 @@ blockquote>footer {
 	Padding: 1EM 1EM 0;
 	Text-Align: Right
 }
+nav {
+	Display: Flex;
+	Flex-Direction: Column;
+	Margin: 1EM 0;
+	Align-Items: Center;
+	Text-Align: Center;
+}
+nav>* { Margin: 0 0 .375EM }
 *|*:Link { Color: #4B2DF7 }
 *|*:Visited { Color: #D15919 }
 *|*:Link:Active { Color: #B01C1C }
@@ -437,14 +445,19 @@ section#places {
 	--TextColour: #1F1A14;
 	--TextBackground: #DEDBD9;
 }
+section#places nav a[href],
 section#places h2 { Background: #FAF8F7 }
 
 /*
 Headings have a boxy look ; the design inspiration is those construction paper headings you sometimes see on poster­‑boards.
 
 An empty link is used in section headings to link to the section itself. After it is clicked ( or if the containing section is otherwise the target of the URL ), extra styling is applied, and the link is swapped out for one that targets the top of the page : via `::before` and `::after` pseudo­‑elements, to appropriately compensate for rotation.
+
+The navigation link to the first page borrows the heading stylings.
 */
+nav a[href],
 h2 {
+	Display: Block;
 	Clear: Both;
 	Position: Relative;
 	Margin: -3PX -3PX Calc(1.25EM - 3PX);
@@ -458,12 +471,19 @@ h2 {
 	Font: Bold X-Large/1.25 Sans-Serif;
 	Z-Index: 0; /* A stacking context will be created when the transform occurs, so this is just for consistency */
 }
+nav a[href] { Margin: -3PX }
+nav a[href]:Focus,
 h2:Focus-Within { Transform: Rotate(-4DEG) } /* Not supported everywhere */
+nav a[href]:Hover,
 h2:Hover { Transform: Rotate(-2DEG) }
+nav a[href]:Active,
 h2:Active {
 	Transform-Origin: Center 60%;
 	Transform: Rotate(6DEG);
 }
+nav a[href]:Focus:Active,
+nav a[href]:Hover:Active { Color: Var(--TextColour) }
+nav a[href]::BEFORE,
 h2::BEFORE,
 h2::AFTER,
 h2 a:Empty {
@@ -480,6 +500,7 @@ h2 SVG|svg {
 	Vertical-Align: Text-Bottom;
 }
 h2 SVG|svg:Not([color]) { Color: Var(--AccentBorder) }
+nav a[href]:Hover::BEFORE,
 h2:Hover::BEFORE {
 	Transform: Rotate(2DEG);
 	Content: "";
@@ -750,6 +771,10 @@ span.DASH::AFTER {
 				<p>Each entry in this journal will have a URL path of <code>page$$.xhtml</code>, where <i>$$</i> is the page number of the entry. The complete list of pages at any given time will be available from the <a href="./sitemap.xhtml">sitemap</a>. You are currently reading the front cover, and additional meta­‑level information can be found on the <a href="./back.xhtml">back cover</a> as well.</p>
 				<p>Contact information, links to other cool webpages, and so forth can all be found on the <a href="./links.xhtml">links page</a>. Links to all of these locations are present on the <a href="./">splash page</a>, which is the best resource to link if youʼre looking to share the <span class="JOURNAL">Journal</span> as a whole.</p>
 			</div>
+			<nav>
+				<span>Onward to…</span>
+				<a href="./page01.xhtml">Page 01 →</a>
+			</nav>
 		</section>
 		<footer>
 			<small>The following emoji used in this article are derived from the <a href="https://mutant.tech" rel="noopener norefferer"><cite>Mutant Standard</cite></a> ( 0.3.1 ) emoji set :</small>
