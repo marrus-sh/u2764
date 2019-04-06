@@ -1,0 +1,841 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
+<head>
+	<title>❤ Page 03 – Taking Violence Personally</title>
+	<meta charset="utf-8"/>
+	<style>
+/*
+This styling is blatantly ripped from the 1994 Routledge edition of Eve Kosofsky Sedgwickʼs _Tendencies_ ( PDF sample here: http://985queer.queergeektheory.org/wp-content/uploads/2013/04/Tendencies.pdf ).
+*/
+
+/* Layout and sectioning */
+@media screen {
+	html { Background: Fixed Repeat-Y Linear-Gradient(
+		To Left,
+		#FAF8F7 30CH,
+		#DEDBD9 42CH,
+		#B8B3B0 54CH,
+		#948D87 66CH,
+		#75706A 78CH,
+		#57534C 90CH,
+		#302F2B 102CH,
+		#1F1A14
+	) Calc(50% - 57CH - .875IN) Center / 114CH 100%, Fixed Repeat-Y Linear-Gradient(
+		To Right,
+		#FAF8F7 30CH,
+		#DEDBD9 42CH,
+		#B8B3B0 54CH,
+		#948D87 66CH,
+		#75706A 78CH,
+		#57534C 90CH,
+		#302F2B 102CH,
+		#1F1A14
+	) Calc(50% + 57CH + .875IN) Center / 114CH 100%, #FAF8F7 }
+	body { Color: #1F1A14 }
+}
+body {
+	/* Properties related to horizontal sizing are `!important` for a reason—their values are expected in scripting. */
+	Display: Block ! IMPORTANT;
+	Box-Sizing: Content-Box ! IMPORTANT;
+	Writing-Mode: Horizontal-TB ! IMPORTANT;
+	Margin: 0 Auto !IMPORTANT;
+	Border: None ! IMPORTANT ;
+	Padding: 1IN .75IN 1IN 1IN ! IMPORTANT;
+	Width: Calc(100VW - 1.75IN) ! IMPORTANT;
+	Max-Width: 60CH ! IMPORTANT;
+	Background: Transparent ! IMPORTANT;
+	Font: Normal Medium / 1.35 Serif;
+	Font-Variant-Numeric: Oldstyle-Nums;
+	Text-Align: Justify;
+	Hyphens: Auto;
+}
+header {
+	Min-Height: 18EM;
+	Font-Style: Italic;
+	Line-Height: 1.5;
+}
+header::BEFORE {
+	Display: Block;
+	Float: Left;
+	Width: 9EM;
+	Height: 18EM;
+	Shape-Outside: Polygon(0 0, 100% 100%, 0 100%);
+	Content: "";
+}
+header::AFTER {
+	Display: Block;
+	Float: Left;
+	Clear: Left;
+	Width: 12EM;
+	Height: 36EM;
+	Shape-Outside: Polygon(0 0, 100% 0, 0 100%);
+	Content: "";
+}
+header>*:Not(h1) {
+	Display: Block;
+	Position: Relative;
+	Left: -9EM;
+	Margin-Right: -9EM;
+	Padding-Left: 9EM;
+}
+@supports Not ( Shape-Outside: Polygon(0 0, 100% 0, 0 100%) ) { /* Firefox ESR 60 support */
+	header::BEFORE,
+	header::AFTER { Width: 0EM }
+}
+nav,
+section { Margin: 1IN 0 0 }
+header+nav,
+header+section { Margin-Top: 0 }
+
+/* Horizontal article layout for screens */
+article>*:Focus { Outline: None }
+@media screen {
+	article {
+		Position: Relative; /* This needs to be a positioned containing element for scripting reasons */
+		Writing-Mode: Vertical-LR;
+		Text-Orientation: Sideways; /* For correct `ch` units */
+		Margin: -1IN Calc(50% + .125IN - 50VW) -1IN Calc(50% - .125IN - 50VW);
+		Width: 100VW;
+		Height: 100VH;
+		Overflow-X: Auto;
+		Overflow-Y: Hidden;
+	}
+	article + article { Margin-Top: 1IN }
+	article::BEFORE,
+	article::AFTER {
+		Display: Block;
+		Width: Calc(50VW - .875IN - 30CH);
+		Mix-Blend-Mode: Darken;
+		Content: "";
+	}
+	article::BEFORE {
+		Background: Linear-Gradient(
+			To Left,
+			#FAF8F7,
+			#DEDBD9 8CH,
+			#B8B3B0 16CH,
+			#948D87 24CH,
+			#75706A 32CH,
+			#57534C 40CH,
+			#302F2B 48CH,
+			#1F1A14 56CH
+		);
+	}
+	article::AFTER { Background: Linear-Gradient(
+		To Right,
+		#FAF8F7,
+		#DEDBD9 8CH,
+		#B8B3B0 16CH,
+		#948D87 24CH,
+		#75706A 32CH,
+		#57534C 40CH,
+		#302F2B 48CH,
+		#1F1A14 56CH
+	) }
+	article>* {
+		/* It is important that children of `article` have the same box sizing in the x direction as `body`, since the latter is used for calculating section widths. */
+		Display: Block ! IMPORTANT;
+		Position: Relative;
+		Box-Sizing: Content-Box ! IMPORTANT;
+		Writing-Mode: Horizontal-TB;
+		Margin: 0 ! IMPORTANT ;
+		Border: None ! IMPORTANT ;
+		Padding: 1IN .75IN 1IN 1IN ! IMPORTANT;
+		Width: Calc(100VW - 1.75IN) ! IMPORTANT;
+		Max-Width: 60CH ! IMPORTANT;
+		Height: Calc(100VH - 2IN) ! IMPORTANT;
+		Overflow-X: Hidden;
+		Overflow-Y: Scroll;
+		Background: Transparent ! IMPORTANT;
+	}
+	article>*::AFTER {
+		Display: Block;
+		Margin: 0 0 -1IN;
+		Padding: 1IN 0 0;
+		Content: "";
+	}
+}
+
+/* Basic styling */
+h1 {
+	Margin: 0;
+	Font: 900 1EM / 3 Sans-Serif;
+	Text-Transform: Uppercase;
+	Hyphens: None;
+}
+h2 {
+	Display: Inline-Block;
+	Margin: 0 2CH 0 0;
+	Font: 900 Small-Caps 1EM / 1 Sans-Serif;
+	Text-Transform: Lowercase;
+}
+h2::AFTER {
+	/*
+	Ending an `h2` with an inline element with right padding forces a line­‑break in Firefox ( this right padding is evidently not taken into account when sizing the containing block, and then overflows ). Placing an empty inline block at the end of the element avoids this by ensuring that both sides of the padding are taken into account.
+	*/
+	Display: Inline-Block;
+	Content: "";
+}
+blockquote {
+	Position: Relative;
+	Left: 4CH;
+	Margin: 1.35EM 4CH 1.35EM 0;
+	Padding: 0;
+}
+abbr { Font-Variant-Caps: Small-Caps }
+b.LISTING {
+	Margin: -1PX;
+	Border: 1PX Solid;
+	Border-Radius: 1.0125EM .675EM; /* This “ should ” be `.675EM` for all but Iʼve intentionally warped it. */
+	Padding: .175EM .5CH;
+}
+b.NUMERIC.LISTING {
+	Display: Inline-Block;
+	Box-Sizing: Border-Box;
+	Margin: -3PX;
+	Border: 3PX Double;
+	Height: Calc(1.35EM + 3PX);
+	Min-Width: Calc(1.35EM + 3PX);
+	Line-Height: 1;
+	Text-Align: Center;
+}
+b.LEAD-IN { Font: 900 Small-Caps 1EM / 1 Sans-Serif }
+b.TOMBSTONE {
+	Display: Inline-Block;
+	Padding: 0 .5CH;
+	Color: #57534C;
+	Font: 900 Small-Caps Smaller / 1 Sans-Serif;
+	Font-Synthesis: None;
+	White-Space: NoWrap;
+	Vertical-Align: Middle;
+}
+em {
+	/*
+	THIS WILL LOOK WRONG IN EVERY MAJOR BROWSER ( at time of writing ). Both Firefox and WebKit ( and Edge, RIP ) apply letter­‑spacing after every character in a span, rather than simply in­‑between characters, meaning that the .2CH padding will be double­‑applied ( once through `padding` and once through `letter-spacing` ) at the end of each `em`. This is considered non­–⁠spec­‑conforming and an implementation bug by CSSWG ( see https://github.com/w3c/csswg-drafts/issues/1518, which resolved ⸰ not ⸰ to change the spec to match implementations ), so for forward­‑compatibility purposes this code assumes the specified ( but unimplemented, save in IE, RIP ) behaviour.
+	*/
+	Padding: 0 .2CH;
+	Letter-Spacing: .2CH;
+}
+mark {
+	Margin: -1PX;
+	Padding: .07EM .5CH;
+	Border: 1PX #EB91007F Solid;
+	Box-Decoration-Break: Clone;
+	Background: #FAE13E7F;
+}
+span.SCREENREADER {
+	Position: Absolute;
+	Width: 1PX;
+	Height: 1PX;
+	Clip-Path: Inset(50%);
+	Overflow: Hidden;
+	Z-Index: -1;
+}
+strong { Font-Variant-Caps: Small-Caps }
+sup {
+	Font: Normal XX-Small / 1 Serif;
+	Text-Transform: None;
+}
+@media screen {
+	/*
+	`screen` adjustments for superscript links to boost their clickability.
+	*/
+	*:Root sup a[href] {
+		Position: Relative;
+		Margin: -.5EM Calc(.5CH - 1EM);
+		Border-Style: Solid;
+		Border-Color: Transparent;
+		Border-Width: .25EM;
+		Padding: .25EM Calc(.75EM - .5CH);
+		Outline: Thin #B8B3B0 Solid;
+		Color: Inherit;
+		Background-Image: Repeating-Linear-Gradient(
+			-60DEG,
+			Transparent 0,
+			Transparent 1PX,
+			#DEDBD9 1.1547PX,
+			#DEDBD9 2.1547PX,
+			Transparent 2.3094PX
+		);
+		Outline-Offset: -.25EM;
+		Mix-Blend-Mode: Multiply;
+		Text-Decoration: None;
+		Z-Index: 1;
+	}
+	sup a[href]:Focus,
+	sup a[href]:Hover { Outline: Thin Solid }
+	sup a[href]:Hover { Background-Image: Repeating-Linear-Gradient(
+		-60DEG,
+		Transparent 0,
+		Transparent 1PX,
+		#B8B3B0 1.1547PX,
+		#B8B3B0 2.1547PX,
+		Transparent 2.3094PX
+	) }
+}
+time { Font-Variant-Caps: Small-Caps }
+*:Link,
+*:Visited {
+	Margin: 0 -.5CH -1PX;
+	Padding: .07EM .5CH;
+	Border-Bottom: 1PX Solid;
+	Box-Decoration-Break: Clone;
+	Color: #4B2DF7; /* Applies to both in non­‑`screen` layouts */
+	Background: None Padding-Box;
+	Text-Decoration: None;
+}
+small *:Link,
+small *:Visited { Border-Bottom-Style: Dashed }
+@media screen {
+	*:Visited { Color: #B01C1C }
+}
+*:Link:Focus,
+*:Visited:Focus {
+	Margin: -1PX Calc(-.5CH - 1PX) -2PX;
+	Border-Style: Solid;
+	Border-Width: 1PX 1PX 2PX;
+	Outline: None;
+}
+small *:Link:Focus,
+small *:Visited:Focus { Border-Style: Dashed Dashed Dotted }
+*:Link:Active,
+*:Visited:Active {
+	Margin: -1PX Calc(-.5CH - 1PX) -2PX Calc(-.5CH - 2PX);
+	Border-Width: 1PX 1PX 2PX 2PX;
+}
+small *:Link:Active,
+small *:Visited:Active { Border-Style: Dashed Dashed Dotted Dotted }
+
+/* Paragraph formatting */
+p {
+	Display: Inline;
+	Margin: 0;
+}
+p+p {
+	Display: Block;
+	Text-Indent: 2CH;
+}
+p>* { Text-Indent: 0 }
+
+/* List formatting */
+ol,
+ul {
+	Margin: 1.35EM 0;
+	Padding: 0;
+	List-Style-Position: Inside;
+}
+@counter-style Decimal-Dot-Space { /* See CSS Counter Styles Level 3 ( Editorʼs Draft, 09 December 2018 ), only supported in Firefox at time of publication */
+	System: Numeric;
+	Symbols: "0" "1" "2" "3" "4" "5" "6" "7" "8" "9";
+	Negative: "−";
+	Suffix: ". ";
+}
+ol { List-Style-Type: Decimal-Dot-Space }
+ul { List-Style-Type: None }
+li {
+	Position: Relative;
+	Left: 6CH;
+	Margin: 0 6CH 0 0;
+	Text-Indent: -2CH; /* Will affect the marker regardless of contents */
+}
+li>* { Text-Indent: 0 }
+li>p {
+	Display: Block;
+	Position: Relative;
+	Left: -2CH;
+	Margin: 0 -2CH 0 0;
+}
+li>p:Last-Child { Margin-Bottom: 1.35EM }
+ol>li>p { Text-Indent: 2CH }
+ol>li>p:First-Child { /* Shifts the paragraph up a line such that the marker is inside the indentation. */
+	Margin-Top: -1.35EM;
+	Text-Indent: 4CH;
+}
+
+/* Footer formatting */
+footer {
+	Position: Relative;
+	Margin: 1.35EM 0 0;
+	Border-Style: Solid None;
+	Border-Width: 1.35EM 0;
+	Padding: 1.35EM 0;
+	Font-Size: Small;
+	Z-Index: 0; /* New stacking context */
+}
+*:Root footer>*+* { Margin-Top: 1.35EM }
+footer>nav {
+	Display: Grid;
+	Position: Relative;
+	Grid-Template-Columns: 1FR 1FR 1FR;
+	Margin: -3PX;
+	Border: 3PX Double;
+	Background: Padding-Box CurrentColor;
+	Z-Index: 1;
+}
+footer>nav:Last-Child { Margin-Bottom: Calc(-2.7EM - 3PX) }
+*:Root footer>nav>ol,
+*:Root footer>nav>ul,
+*:Root footer>nav>*>li { Display: Contents }
+*:Root footer>nav>*>li>a[href] {
+	Justify-Self: Center;
+	Top: 0;
+	Margin: 0;
+	Transition: Top Ease-In-Out .25S;
+}
+footer>nav>*>li>a[href]:Hover,
+footer>nav>*>li>a[href]:Focus { Top: 1EX }
+footer>nav>*>li>a[href]:Active { Top: 0 }
+footer>nav>*>li:Nth-Of-Type(n+4)>a[href] {
+	Top: Auto;
+	Bottom: 0;
+	Margin-Top: 1.35EM;
+	Transition: Bottom Ease-In-Out .25S;
+}
+footer>nav>*>li:Nth-Of-Type(n+4)>a[href]:Hover,
+footer>nav>*>li:Nth-Of-Type(n+4)>a[href]:Focus { Bottom: 1EX }
+footer>nav>*>li:Nth-Of-Type(n+4)>a[href]:Active { Bottom: 0 }
+footer>nav>*>li:Nth-Of-Type(3n+1)>a[href] {
+	Justify-Self: Start;
+	Top: 0;
+	Bottom: 0;
+	Left: 0;
+	Text-Align: Left;
+	Transition: Left Ease-In-Out .25S;
+}
+footer>nav>*>li:Nth-Of-Type(3n+0)>a[href] {
+	Justify-Self: End;
+	Top: 0;
+	Bottom: 0;
+	Right: 0;
+	Text-Align: Right;
+	Transition: Right Ease-In-Out .25S;
+}
+footer>ol>li small.RETURN,
+footer>ol>li small.RETURN>* { Display: None }
+@media screen {
+	footer>ol>li:Target small.RETURN {
+		Display: Block;
+		Position: Absolute;
+		Top: -1.35EM;
+		Left: 0;
+		Right: 0;
+		Bottom: 0;
+		Font: Inherit;
+		Text-Align: Right;
+		Z-Index: 0;
+		Pointer-Events: None;
+	}
+	footer>ol>li:Target small.RETURN::BEFORE {
+		Display: Block;
+		Position: Sticky;
+		Top: -1IN;
+		Margin: 0 0 -1.35EM;
+		Height: 1.35EM;
+		Background: #1F1A14;
+		Z-Index: -1;
+		Pointer-Events: Auto;
+		Content: "";
+	}
+}
+footer>ol>li:Target small.RETURN>a[href]:First-Child,
+*:Root footer>nav>*>li>a[href],
+footer>a[href]:Last-Child {
+	Display: Block;
+	Position: Relative;
+	Border: 1PX Solid;
+	Padding: .07EM .5CH;
+	Height: 1.35EM;
+	Color: Inherit;
+	Background: #FAF8F7;
+	Font: Normal Small / 1.35 Serif;
+	Pointer-Events: Auto;
+}
+footer>ol>li:Target small.RETURN>a[href]:First-Child::AFTER,
+footer>nav>*>li>a[href]::AFTER,
+footer>a[href]:Last-Child::AFTER {
+	Position: Absolute;
+	Top: -1EX;
+	Bottom: -1EX;
+	Left: -4CH;
+	Right: -4CH;
+	Z-Index: -1;
+	Content: "";
+}
+footer>ol>li:Target small.RETURN>a[href]:First-Child,
+footer>a[href]:Last-Child {
+	Position: Absolute;
+	Bottom: -1.35EM;
+	Right: 0;
+	Margin: Calc(-1PX - .07EM) Calc(-1PX - .5CH);
+	Text-Align: Right;
+	Transition: Right Ease-In-Out .25S;
+}
+footer>ol>li:Target small.RETURN>a[href]:First-Child {
+	Display: Inline-Block;
+	Position: Sticky;
+	Top: Calc(-1IN - 1PX - .07EM);
+	Right: Calc(-1PX - .5CH);
+	Bottom: Auto;
+}
+*:Root:Root footer>a[href="#"]:Last-Child {
+	Right: Auto;
+	Left: 0;
+	Text-Align: Left;
+	Transition: Left Ease-In-Out .25S;
+}
+footer>ol>li:Target small.RETURN>a[href]:First-Child:Hover,
+footer>ol>li:Target small.RETURN>a[href]:First-Child:Focus { Right: Calc(1.5CH - 1PX) }
+footer>nav>*>li:Nth-Of-Type(3n+0)>a[href]:Hover,
+footer>nav>*>li:Nth-Of-Type(3n+0)>a[href]:Focus,
+footer>a[href]:Last-Child:Hover,
+footer>a[href]:Last-Child:Focus { Right: 2CH }
+footer>nav>*>li:Nth-Of-Type(3n+1)>a[href]:Hover,
+footer>nav>*>li:Nth-Of-Type(3n+1)>a[href]:Focus,
+*:Root footer>a[href="#"]:Last-Child:Hover,
+*:Root footer>a[href="#"]:Last-Child:Focus { Left: 2CH }
+footer>ol>li:Target small.RETURN>a[href]:First-Child:Focus,
+footer>nav>*>li>a[href]:Focus,
+footer>a[href]:Last-Child:Focus { Text-Decoration: Dashed Underline }
+footer>ol>li:Target small.RETURN>a[href]:First-Child:Active,
+footer>nav>*>li>a[href]:Active,
+*:Root footer>a[href]:Last-Child:Active { Transition: None }
+footer>ol>li:Target small.RETURN>a[href]:First-Child:Active { Right: Calc(-1PX - .5CH) }
+footer>nav>*>li>li:Nth-Of-Type(3n+0)>a[href]:Active,
+footer>a[href]:Last-Child:Active { Right: 0 }
+footer>nav>*>li>li:Nth-Of-Type(3n+1)>a[href]:Active,
+*:Root footer>a[href="#"]:Last-Child:Active { Left: 0 }
+footer>ol { Margin: 0 }
+footer>ol>li {
+	Position: Static;
+	Margin: 0;
+	Text-Indent: 0;
+}
+footer>ol>li:Target {
+	Margin: Calc(-1.35EM - 1PX) Calc(-.5CH - 1PX) -1PX;
+	Border-Style: Solid None None;
+	Border-Color: Transparent;
+	Border-Width: 1.35EM 0 0;
+	Padding: 1PX Calc(.5CH + 1PX);
+	Background: Padding-Box #FAF8F7;
+	Box-Shadow: Inset 0 0 0 1PX #1F1A14;
+}
+footer>ol>li:Target::AFTER {
+	Display: Block;
+	Position: Absolute;
+	Top: 0;
+	Bottom: 0;
+	Left: 0;
+	Right: 0;
+	Background: #DEDBD9;
+	Z-Index: -1;
+	Content: "";
+}
+*:Root footer>ol>li>p {
+	Position: Static;
+	Margin: 0;
+}
+footer>ol>li>p:First-Child {
+	Display: Inline;
+	Text-Indent: 0;
+}
+	</style>
+</head>
+<body>
+	<article>
+		<div id="introduction" tabindex="0">
+			<header>
+				<h1>Taking<br />Violence<br />Personally</h1>
+			</header>
+			<p><b class="LEAD-IN">That I am concerned</b> with the subject of violence should come at no particular surprise to those who have spent some portion of the last several years listening to me on social media ; it is a subject I have written about numerous times before :— <b class="LISTING">first</b> with respect to the systemic violences of <a href="https://www.cybremonday.deals/2018/" rel="noopener noreferrer">Internet capitalism</a> and software development ; <b class="LISTING">then</b>, more recently, with respect to the interpersonal violences of the everyday. It is this latter form of violence which interests me most now :— <b class="LISTING">not the least of all</b> because I see it as the machinery by which <em>structural</em> violence maintains its hold, <b class="LISTING">but also</b> because I believe it presents us with the best opportunity for coming to terms with, reasoning about, and working to end violence <em>of all forms</em> in our lives.</p>
+			<p>To explain both of these points in brief :— <b class="NUMERIC LISTING">1.</b> It is the oft­‑repeated refrain of the naïve newcomer to politics that life would be so much better if bad people would simply stop doïng bad things and we all could just « hug it out » whenever anything went wrong in our lives.<sup id="introduction.m1"><a href="#introduction.n1">1</a></sup> ― Of course, says the reasonable, experiënced politician, ― things are Not So Simple As That. But perhaps we should not dismiss these sentiments so quickly. Why <em>do</em> bad people do bad things ? And why <em>canʼt</em> we all just « hug it out » ? : Are these not the questions of social justice ?</p>
+			<p>But our typical critical vocabulary is ill­‑prepared for answering these sorts of questions : We speak of systems and structures—of sociëty—but at the end of the day, it is individual actions which are made by individual people—people : bodies of flesh and blood that have been shaped by, through, and in spite of trauma. Violenceʼs :— <b class="NUMERIC LISTING">a.</b> production by, and <b class="NUMERIC LISTING">b.</b> interactions with —: these bodies, on an individual, personal level, are the necessary physical underpinnings of larger, structural violences which take place on a grander scale. Theorizing one therefore necessitates a theory of the other.</p>
+			<p><b class="NUMERIC LISTING">2.</b> But if violence is carried out, mechanically, as ( perhaps, in some cases, the sum of ) individual actions by and against individual people, then it stands to reason that mere structural upheaval will not be <em>enough</em>, on its own, to remedy its effect. The environments, events, and traumas which shape us as beïngs live on, in our shape, long after we have left <em>them</em> behind. So, what are we to do about it ? I turn, as I often do, to Judith Butler :</p>
+			<blockquote>
+				<p>One insight that injury affords is that there are others out there on whom my life depends, people I do not know and may never know. This fundamental dependency on anonymous others is not a condition that I can will away. No security measure will foreclose this dependency ; no violent act of sovereignty will rid the world of this fact. [ … ] <mark>To be injured means that one has the chance to reflect upon injury,</mark> to find out the mechanisms of its distribution, to find out who else suffers from permeable borders, unexpected violence, dispossession, and fear, and in what ways.<sup id="introduction.m2"><a href="#introduction.n2">2</a></sup></p>
+			</blockquote>
+			<p>Butler is speaking primarily about violence against collectives ( in particular, nations ) in the wake of the terrorist attacks of <time datetime="2001-09-11">11 September 2001</time>—but Butlerʼs statements ring true on an individual level as well ( if not moreso ). It is from experiëncing pain that we learn how to experiënce pain ; from surviving it that we learn how it is possible to be survived ; from recognizing it in our own lives that we are able to recognize the signs of it in othersʼ. And as we are, ourselves, persons, and as violence is, on a material, physical, level, the direct consequence of some personsʼ actions, it seems to follow that it is on a personal level that this understanding might first begin to form.</p>
+			<p>Paying attention to the personal experiënce of violence, we can come to understand how violence itself operates, and, indeed, is produced. It is only with this understanding in­‑hand that we can approach larger systems to critique how they might favour, structure, or mask this production. This is not to say that systemic critique is worthless, or that it has no place in our politics—it is essential—but it is neither where we should begin our line of questioning nor where we should end. <strong>We need to make the personal political once again.</strong> We need to inform our inquiries with our lived experiënces, and we need to seek out conclusions that we can apply practically back into our lives.</p>
+			<p>At least—at least when it comes to violence.</p>
+			<footer>
+				<ol>
+					<li id="introduction.n1" value="1"><p>This sentiment ( lovingly ! ) inspired by l i m b o, <a href="https://youknowlimbo.bandcamp.com/track/be-ok" rel="noopener noreferrer">« be ok »,</a> track 02 of <a href="https://youknowlimbo.bandcamp.com/album/lonely-but-never-alone"><cite>lonely but never alone</cite></a> ( Bandcamp : <time datetime="2018-06-12">12 June 2018</time> ), also referenced on the preceding page. I think there is a strong tendency to dismiss the calls of women for nonviolence as the naïve imaginings of inexperiënced girls who arenʼt fit for politics—when in fact it is precisely their ( often quite extensive ) experiënces with violence which are informing these calls. How is it that womenʼs experiënces as victims are characterized as naïveté, and menʼs lack thereof as expertise ?<small class="RETURN"> <a href="#introduction.m1">[ Return to text. ]</a></small></p></li>
+					<li id="introduction.n2" value="2"><p>Judith Butler, <cite>Precarious Life : The Powers of Mourning and Violence</cite> ( London : Verso, <time>2006</time> ), xii.<small class="RETURN"> <a href="#introduction.m2">[ Return to text. ]</a></small></p></li>
+				</ol>
+			<a href="#anecdote">[ Continued ⇒ ]</a>
+			</footer>
+		</div>
+		<section id="anecdote" tabindex="0">
+			<h2>An Anecdote<sup id="anecdote.m1"><a href="#anecdote.n1">1</a></sup></h2>
+			<p>On <time datetime="2018-11-06T21:27:37Z">06 November 2018, at approximately 01:30 in the afternoon, Pacific Time</time>, <a href="https://github.com/marrus-sh/marrus-sh.github.io/commit/bb2db6a227bffd8a80d132b0b232a0aa038ec7a0" rel="noopener noreferrer">I published to my blog</a> what would become ( at time of writing, five months later ) its final entry ; framed as an intermission to my then­‑running ( and promptly discontinued ) analysis of the fringes of Mastodon software development, it dissected the cultures of violence and exploitation which had surrounded the platform and harmed its caretakers :— <b class="NUMERIC LISTING">a.</b> from the outset, and <b class="NUMERIC LISTING">b.</b> especially in the time following my <em>prior</em> analysis of Mastodon culture, <a href="https://medium.com/@alliethehart/gameingers-are-dead-and-so-is-mastodon-705b535ed616" rel="noopener noreferrer"><cite>Mourning Mastodon</cite></a>.<sup id="anecdote.m2"><a href="#anecdote.n2">2</a></sup></p><p>It was, in retrospect, probably not the greatest piece of critical literature—</p>
+			<p>—a fact regarding which I console myself by saying that it was not <em>intended</em> as a piece of great critical literature, but rather as something of a wake­‑up call, and also, to a certain extent, a cry for help. It was, in particular, written :— <b class="NUMERIC LISTING">1.</b> In response to events that I had seen taking place—and which were, in fact, contemporaneously taking place once again—among my developer and admin friends on the platform ; <b class="NUMERIC LISTING">2.</b> In response to a community reckoning which was—at that point—several months in the making regarding how the platform treated abusers and failed to accommodate victims ; <b class="NUMERIC LISTING">3.</b> In response to growing concerns I was having with regard to the nature of online relationships in a community of young queers with long histories of trauma and a dearth of positive role models ; and <b class="NUMERIC LISTING">4.</b> In response to my own experiënces along that front, which at that time were both recent and profoundly affecting.</p>
+			<p>It is this final point which seemed to draw the most attention from my critics<sup id="anecdote.m3"><a href="#anecdote.n3">3</a></sup> : the point which was, of the four, the least « systemic critique », the most personal. This is not something I see as any sort of coïncidence. I included my own experiënces in the piece because I felt that they gave it a certain credence ; I ( with my academic background in Gender Studies and—can we say ?—naïve outlook on life ) had taken it for granted that such lived experiënce would be read as foundational and not distracting ; that <em>without</em> such a basis my points might be read as lofty and ill­‑informed ; to the contrary, I found my <em>systemic</em> critiques were instead read ( and readily dismissed ) through the lens of personal drama, as though the rampant dismissal and ignoring of caretakersʼ boundaries on Mastodon was somehow negated by the fact that it had happened to me too.<sup id="anecdote.m4"><a href="#anecdote.n4">4</a></sup></p>
+			<p>If the political is so easy to dismiss as personal : Maybe it is a sign that the personal is where our attention should have been focused all along.</p>
+			<p>This is why I want to focus more on this question of the personal, and its role even in places of systemic critique. In response to questions regarding the inclusion of my recent personal experiënces in the piece, I wrote the following paragraphs ( never published ) :</p>
+			<blockquote>
+				<p>For me, [ … ] <mark>those personal, intimate experiences were really important, because they were what clued me in to everything else that was going on ;</mark>  you know, i was doing this work, my friends were doing this work, and <mark>we were feeling it, but we werenʼt seeing it.</mark> But then i was in this relationship, this close intimate situation where, yʼknow, itʼs sort of staring you in the face—and it still took me six months, lol, but i got it. And then, once I had realized what was going on in my intimate life, i sort of stuck my head up and looked around, and it was like “ oh shit ”. <mark>i saw those same patterns</mark> in my friendships, and my friendsʼ relationships, and in my work, and really just everywhere.</p>
+				<p>i think for a lot of people experiencing injustice this is sort of how it happens, right ; <mark>you realize it first on that personal, sort of intimate level,</mark> and then <mark>you look around and realize, wait a minute, this isnʼt just a personal problem, this is systemic.</mark> and then <mark>once you make that realization, thatʼs when you really have to speak out.</mark></p>
+				<p>so [ … ] if you want to know my personal path of discovery regarding this stuff, you kinda have to start with that last section, with that really personal anecdote, and then sort of follow it backwards, through the realization of the parallels between macro and micro, through the steps and systemic issues and into the large scale.</p>
+			</blockquote>
+			<p>We may try to theorize violence, but violence is not theoretical. Violence is lived. And it is through the lived experiënce of violence that we come to understand its nature and its effects, the ways in which we and others are vulnerable to it, the ways in which the structures which surround us encourage or protect us from its force. I tell this anecdote because I think it speaks powerfully to the ways in which a theory of violence can develop from and through the act of living, and through oneʼs personal life. And this is true not only with respect to my original comments, which developed from my earlier experiënces, but also with respect to this page, which is in some aspects a continuätion of that response.</p>
+			<blockquote>
+				<p>i think that most critical discourses are just fronts for talking about ways that you have been hurt in the past, but that, <mark>far from a cause for dismissal, that just means you should listen to them all the more</mark><sup id="anecdote.m5"><a href="#anecdote.n5">5</a></sup></p>
+			</blockquote>
+			<p>I think we are too quick to dismiss discourse which carries with it connotations of self­‑defense—as though defending the self were an unreasonable stance, as though victims should always be left open to injury—without first interrogating the very important questions of :— <b class="NUMERIC LISTING">1.</b> Who or what is the “ self ” beïng defended ? <b class="NUMERIC LISTING">2.</b> Who or what are they defending themselves from ? <b class="NUMERIC LISTING">3.</b> And at what cost ? and to whom ? I raise this concern even as I fear for the ways in which “ self­‑defense ” can and has been used to justify further violence. I wonder who has access to these claims of “ self­‑defense ” ; how access to these claims are themselves a form of privilege and a consequence of power.</p>
+			<p>But most of all, I worry about the extent to which we are depriving ourselves the ability to reason about and come to terms with violence simply by not talking about our own experiënces with it :— <b class="LISTING">out of fear</b> that such speech will be erased ; <b class="LISTING">out of fear</b> that such speech will be deemed “ not respectable ” or “ self­‑serving ” ; <b class="LISTING">out of fear</b> that such speech will make us targets for repercussion —: and far from unreasonable, I think these fears are incredibly well­‑grounded, even as they reïfy the power imbalances between those who perpetuate violence and those who are its victims. How do we make a politic which justly addresses these concerns ? How do we create spaces which are “ safe ” from these fears ?<sup id="anecdote.m6"><a href="#anecdote.n6">6</a></sup></p>
+			<footer>
+				<ol>
+					<li id="anecdote.n1" value="1"><p>It seems like I am constantly telling { stories, anecdotes, comments, responses } { of, regarding, on, to } { stories, anecdotes, comments, responses } that I have made previously, and if it is tiring for you, believe me when I say that it is exceptionally tiring for me. I would, for once, love to be able to publish a commentary on something and have it not ignored, and nor inciting drama, but rather reaching acceptance and integration into a broader understanding of the mechanizations of the world. Alas, this is not how <em>conversations</em> generally work. So we find ourselves, once again, with a story of a story, and a response to a response.<small class="RETURN"> <a href="#anecdote.m1">[ Return to text. ]</a></small></p></li>
+					<li id="anecdote.n2" value="2"><p>KIBI Gô, <a href="https://go.kibi.family/Nov/2018/fringe-intermission.xhtml" rel="noopener noreferrer">« Intermission »</a>, part IV of <cite>Fringe Mastodev</cite> ( <time datetime="2018-11">November 2018</time> ).<small class="RETURN"> <a href="#anecdote.m2">[ Return to text. ]</a></small></p></li>
+					<li id="anecdote.n3" value="3"><p>Can I call them my haters ? Is that a thing which I have now ? Iʼve yet to receive what I might actually call a <em>critical</em> response to one of my pieces.<small class="RETURN"> <a href="#anecdote.m3">[ Return to text. ]</a></small></p></li>
+					<li id="anecdote.n4" value="4"><p>As I say in the piece : « “ Hey, so­‑and­‑so has really been doing a lot for yʼall and they deserve to be treated better ” is a sentence which, under white respectability culture, sounds a lot more heartfelt and genuine when so­‑and­‑so isn't yourself » ( ¶14 ). We need to get over this. We need to get over this culture where speaking out about exploitation and abuse is only okay when youʼre speaking out on behalf of “ other people ”. We need to create a culture where it is okay to speak out on behalf of yourself.<small class="RETURN"> <a href="#anecdote.m4">[ Return to text. ]</a></small></p></li>
+					<li id="anecdote.n5" value="5"><p>@onethousandtwentyfour, <a href="https://weirder.earth/@onethousandtwentyfour/101824771088480663" rel="noopener noreferrer">post on weirder.earth</a>, <time datetime="2019-03-27T21:38:23Z">27 March 2019 @ 02:38:23 PM ( PDT )</time>.<small class="RETURN"> <a href="#anecdote.m5">[ Return to text. ]</a></small></p></li>
+					<li id="anecdote.n6" value="6"><p>As I will discuss in later sections, beïng safe from violence is not the same thing as beïng safe from harm. I think the former, at least, is a manageäble goal.<small class="RETURN"> <a href="#anecdote.m6">[ Return to text. ]</a></small></p></li>
+				</ol>
+				<a href="#definition">[ Continued ⇒ ]</a>
+			</footer>
+		</section>
+		<section id="definition" tabindex="0">
+			<h2>A Definition</h2>
+			<p>And what <em>is</em> violence, anyway ?</p>
+			<p>For all our talk and theory regarding it, it seems rare that anyone offers a clear description of what it means. Perhaps this is wise : The experiënces of violence are so diverse and multifaceted that any attempt to draw a strict boundary around them seems doomed to fail from the outset. But still, I think there are things which can be learned by starting with a definition.</p>
+			<p>Take, for example, the definition of violence offered by the World Health Organization :</p>
+			<blockquote>
+				<p>The <mark>intentional use</mark> of <mark>physical force or power,</mark> <mark>threatened or actual,</mark> against oneself, another person, or against a group or community, that <mark>either results in or has a high likelihood of resulting in</mark> injury, death, psychological harm, maldevelopment or deprivation.<sup id="definition.m1"><a href="#definition.n1">1</a></sup></p>
+			</blockquote>
+			<p>We can notice some things straightaway :— <b class="NUMERIC LISTING">1.</b> The <abbr>WHO</abbr> definition requires the <em>use</em> of { force / power } to be intentional, but makes no such requirement on the result : Intentional acts with unintentional violent consequences are still violent in nature ; <b class="NUMERIC LISTING">2.</b> Violence need not be “ acted out ” to qualify as such ; threats of violence may, themselves, be violent ; <b class="NUMERIC LISTING">3.</b> A use of { force / power } is only nonviolent if it <b class="LISTING">both</b> did not result in harm <b class="LISTING">and</b> did not have a high likelihood of doïng so ; finally, <b class="NUMERIC LISTING">4.</b> Violence is inherently tied in with power relations ; violence is itself an act of power, against oneself or against another.</p>
+			<p>This final observation, then, opens up a very important category of actions which are <em>not</em> considered violent : acts of self­‑autonomy ( provided, of course, that these are not acts of self­‑harm ). It is <em>not</em> a violent action to set boundaries for oneself. It is <em>not</em> a violent action to leave an unhealthy relationship. It is <em>not</em> a violent action to withhold consent. These are not violent actions <strong>even when they result in harm</strong>.</p>
+			<p>Similarly, it is not violent for the oppressed to speak about their experiënces, even if said speech arouses in their oppressors feelings of guilt or shame. It is not violent for a victim to seek accountability from their abuser, even when that accountability carries with it a social cost. This is not to imply that the disadvantaged are incapable of violence—lacking power of a certain kind over a certain person does not imply a lack of power of other kinds or over other people—but rather to point out that <em>any</em> analysis of violence must also take into account the flow of power and the structure of power relations at­‑hand. It is not <em>enough</em> to merely look at who was harmed. It is not <em>appropriate</em> to say « there was harm on both sides ; therefore, { both / neither } side( s ) must be at fault ».<sup id="definition.m2"><a href="#definition.n2">2</a></sup></p>
+			<p>Indeed, to the extent that violence is a machination of power, « fault » is likely entirely the wrong framework from which to analyse things. Per Foucault, « [ … ] there is no power that is exercised without a series of aims and objectives. But <mark>this does not mean that it results from the choice or decision of an individual subject ;</mark> let us not look for the headquarters that presides over its rationality ; [ … ] <mark>the logic is perfectly clear, the aims decipherable, and yet it is often the case that no one is there to have invented them,</mark> and few who can be said to have formulated them ».<sup id="definition.m3"><a href="#definition.n3">3</a></sup> The perpetrators of violence are often not acting through power so much as power is acting through <em>them</em> ; this does not absolve them of responsibility for their actions, but it does shift the perspective in which that responsibility might be said to manifest.</p>
+			<blockquote>
+				<p><mark>Relations of power are not in a position of exteriority with respect to other types of relationships</mark> ( economic processes, knowledge relationships, sexual relations ), but are immanent in the latter ; <mark>they are the immediate effects of the divisions, inequalities, and disequilibriums which occur in the latter,</mark> and conversely they are the internal conditions of these differentiations ; relations of power are not in superstructural positions, with merely a role of prohibition or accompaniment ; they have a directly productive role, wherever they come into play.<sup id="definition.m4"><a href="#definition.n4">4</a></sup></p>
+			</blockquote>
+			<p>At the same time, and regardless of “ fault ”, the relationship between a perpetrator of violence and its victim remains a source and site of trauma ; “ fault ” is irrelevant to the pain or discomfort felt by a victim ; it has no bearing on their disempowerment, or a perpetratorʼs empowerment at their expense. Perpetrators often will argue that they are « not to blame » for their actions—but the assignment of blame is not a precondition for the above definition of violence. <strong>The <em>only</em> precondition—is an intentional use of <em>power</em>.</strong></p>
+			<footer>
+				<ol>
+					<li id="definition.n1" value="1"><p>World Health Organization, <a href="https://www.who.int/violence_injury_prevention/violence/world_report/en/" rel="noopener noreferrer"><cite>World report on violence and health</cite></a> ( Geneva : World Health Organization, 2002 ), 5.<small class="RETURN"> <a href="#definition.m1">[ Return to text. ]</a></small></p></li>
+					<li id="definition.n2" value="2"><p>This said, I am, generally speaking, a pacifist, and part of my reluctance towards calls to <em>political</em> violence ( even by disadvantaged groups ) is precisely because of the lack of this sort of analysis which I find accompanying these calls. Politics is the domain of systems and structures—but violence is, as we have discussed, enacted <em>not</em> against these, but against individual people, and communities. And, it is my experiënce that power which forms through violence typically perpetuätes itself through it—sometimes against those very people who originally gave it purpose.</p>
+					<p>Political violence is a complicated topic, and it is not the focus of this page. But without casting too black­‑and­‑white a judgement, we should be wary of calls to political violence which have not clearly thought through and addressed these concerns.<small class="RETURN"> <a href="#definition.m2">[ Return to text. ]</a></small></p></li>
+					<li id="definition.n3" value="3"><p>Michel Foucault, <cite>The History of Sexuality</cite>, translated by Robert Hurley, volume 1, <cite>An Introduction</cite> ( New York : Vintage Books, 1990 ), 95.<small class="RETURN"> <a href="#definition.m3">[ Return to text. ]</a></small></p></li>
+					<li id="definition.n4" value="4"><p>Foucault, <cite>History of Sexuality</cite>, 94.<small class="RETURN"> <a href="#definition.m4">[ Return to text. ]</a></small></p></li>
+				</ol>
+				<a href="#goal">[ Continued ⇒ ]</a>
+			</footer>
+		</section>
+		<section id="goal" tabindex="0">
+			<h2>A Goal</h2>
+			<p>If we accept the World Health Organizationʼs classification of violence as the result of power, we find, as demonstrated in the previous section, that not all <em>harm</em> is necessarily violent ; it follows that any theory of violence must account for nonviolent harm as well. <strong>This distinction is important</strong> because—although harm­‑reduction is a worthwhile pursuit—we cannot classify all harm as inherently <em>bad</em>, per se. Sports matches frequently result in injury ; piercings and tattoos require a certain level of bodily harm ; one might risk oneʼs own safety for a movement one cares about ; childbirth itself is a risky proposition ; and risking personal harm to care for another is sometimes a necessary fact of life.</p>
+			<p>Although we might try to reduce the risk or amount of harm caused in each of these situätions, it is still clear that a stance against sports, body modification, risky political action, childbirth, or all but the most personally nonthreatening forms of caretaking is a step too far. Consequently, we can not simply or straightforwardly take a “ stance against harm ”.</p>
+			<p>We can, however, take a stance against violence.</p>
+			<p>Violence differs from nonviolent harm precisely <em>in</em> the fact that it operates through a power relation ; victims of violence cannot consent to the harm they receive and are deprived of agency in the interaction. Violence can be addressed by challenging this allocation of power, and returning autonomy to the victim. In this way, anti­‑violence is not the same thing as “ pro­‑safety ”—violence can, in fact, be carried out in the interest of the “ safety ” of its victims, depriving them of agency and autonomy in the interest of “ protecting them from harm ”. As noted by The NW Network of Bi, Trans, Lesbian and Gay Survivors of Abuse, without self­‑determination, “ safety ” is a meaningless goal :</p>
+			<blockquote>
+				<p>At times, the anti­‑violence movement has prioritized “ safety ” over “ self­‑determination ”, building many services based on the idea that, “ If we make a survivor safe, than she can start to increase her self­‑determination. ” In our experience, the opposite is true. <mark>Instead of a <em>product</em> of safety, self­‑determination is a <em>necessary pre­‑condition</em> to creating sustainable, authentic safety in oneʼs life.</mark></p>
+				<p>[…]</p>
+				<p><strong>That is to say :</strong> <mark>Advocates work to fortify peoplesʼ self­‑determination so that those people may empower themselves and create safety for themselves.</mark><sup id="goal.m1"><a href="#goal.n1">1</a></sup></p>
+			</blockquote>
+			<p>Insofar as a victim of violence is a victim of an abuse of power, justice cannot be said to have been served so long as the victim remains disempowered. A solution to violence which does not grant a victim autonomy is not a solution to violence—but its reïnstatement.</p>
+			<p>So let us make anti­‑violence our goal. Let us make our goal, at once :— <b class="NUMERIC LISTING">1.</b> an end to violence in its various forms, and <b class="NUMERIC LISTING">2.</b> the achievement of justice for its victims, namely through the restoration of their agency, and a redistribution of power away from perpetrators ( and back into victims ) through a process of, at the very least, accountability. As I have stated already in this piece, I believe the first hurdle to be cleared is the restoring of victimsʼ agency <strong>to talk about themselves</strong> ; <strong>to defend themselves</strong> against further attack ; and <strong>to speak personally</strong> about their experiënces. Through this early discourse, we can, collectively, gain a better understanding of violence and how it functions, and build our anti­‑violence toolkit therefrom.</p>
+			<p>This is to say : When it comes to violence, our first goal should be to <em>enable</em> victims to <em>hold a conversation</em>.</p>
+			<footer>
+				<ol>
+					<li id="goal.n1" value="1"><p>Connie Burk, <a href="https://nwnetwork.squarespace.com/s/self-determination-safety-doc.pdf" rel="noopener noreferrer">« Self‑Determination &amp; Safety »</a> ( Seattle : The NW Network, 2009 ).<small class="RETURN"> <a href="#goal.m1">[ Return to text. ]</a></small></p></li>
+				</ol>
+				<a href="#conversation">[ Continued ⇒ ]</a>
+			</footer>
+		</section>
+		<section id="conversation" tabindex="0">
+			<h2>A Conversation</h2>
+			<p>What barriers stand in the way of these conversations ? In the second <i><abbr>usa</abbr></i> episode of cecile emekeʼs series to document the « the scattered stories of the global black diaspora », <cite>strolling</cite>, Rachell speaks on the experiënce of studying anthropology in university :</p>
+			<blockquote>
+				<p><mark>We associate objectivity, and impartiality, with certain behaviors,</mark> and, like, ways of talking and ways of, even, like, sitting, right, and not a lot of people acknowledge that, like… all of those have white connotations to them ? and, like, actually come from white men, like, making those rules ? <mark>Theyʼre not, like, an inherent aspect to, like, being able to impartially speak about something ?</mark></p>
+				<p>And so… Itʼs just so interesting to enter these spaces where people think that theyʼre so, like, free­‑thinking, and like, theyʼll still… theyʼll still sort of, like… Like, <mark>you canʼt be emotional, in a class, still, to this day,</mark> because your opinion isnʼt going to be taken as… <mark>Itʼs not going to be as valid</mark> as someone who can, like, sit there, and talk about these things, and not cry because they havenʼt experienced it. I donʼt think— <mark>I think thatʼs a, like, a very particular aspect of white privilege that people donʼt actually delve into ?</mark> ʼCause it, like, it would mean that a lot of people that consider themselves… extremely knowledgeable and extremely… politically correct are actually, like, just fucked up, and just as fucked up as the people they criticize. Thatʼs why… I think it should be mandatory for, like, certain people entering these spaces to take some— Not a <em>sensitivity</em> course, but a, like, “ put you in your place ” sort of course, where itʼs like, “ I know, up until this point in your life youʼve always been taught that, like, everything and anything you say matters, and like, youʼre always right, but, like, no. <mark>Sometimes youʼre just fucking wrong,</mark> and, like… <mark>There are going to be people that you look down on at this point in your life that actually know so much better than you do.</mark> Nothing that you do is going to make you the authority on someone elseʼs life, because itʼs their life.<sup id="conversation.m1"><a href="#conversation.n1">1</a></sup></p>
+			</blockquote>
+			<p>Rachellʼs experiënces as a black, Dominican person studying anthropology mirror my own experiënces in university as a trans, nonbinary person studying gender, and reflect what I have heard from victims confronting sexual assault in academic settings as well. In these moments we see how the traumas from past violences are used inflict new ones : an erasure, silencing, “ putting down ” of violenceʼs even mention to protect its perpetrators from just accountability. The showing of emotion, the personal account, and the personal history mark the victim of violence as compromised, no longer impartial. But what is impartiality, in the face of violence ?</p>
+			<p>As established, if we are to take a stand against violence, then it is the people who have stood against, and withstood, violence, to whom we must listen to the most.</p>
+			<p>But it is not simply that victims are being stigmatized, marked, or ignored ( although they are ), and that if we properly attend to their needs and listen to their words, everything will be okay. Even in a supportive environment, having these conversations is often actively more difficult for survivors of violence, simply by nature of having to relive the associated traumas. For my midterm paper in <cite>Queer Religiosities</cite> ( <time datetime="2015-03">spring 2015</time> ), I wanted to talk about the intersections between religion and nonnormative gender expression that I had noticed on GeoCities ; doïng the research made me dissociate so badly that I had to ask my professor for an extension and switch topics to something unrelated. The final project in my <cite>Feminist &amp; Queer Legal Theory</cite> course ( also <time datetime="2015-03">spring 2015</time>, before they <a href="https://www.cnn.com/2015/05/04/living/smith-college-transgender-women-feat/index.html" rel="noopener noreferrer">announced their policy change</a> ) was to write a mock advisory letter to Smith College on the subject of who should or should not be allowed to attend ; I spent the final day of class, a trans woman, listening to a room of some 20–30 peers debating my right to admittance.<sup id="conversation.m2"><a href="#conversation.n2">2</a></sup> I had a formal awards ceremony to attend later that evening ; I was exhausted and barely present.</p>
+			<blockquote>
+				<p>I think <mark>having white people in my classes was actually really difficult,</mark> Iʼm just going to be blunt. Just because you are having these conversations around… things that, like, Iʼve experienced personally, and other people in the class have experienced personally, and… to have people like— We had a lot of people that were just, like, “ Yes, but, like, returning to last nightʼs reading… ” from, like, this white man, who, like, went to the hood one time, and, like, wrote his dissertation about it. “ Returning to, like, the way that he phrased it… like, <mark>how can your experience actually be true ?</mark> ”<sup id="conversation.m3"><a href="#conversation.n3">3</a></sup></p>
+			</blockquote>
+			<p>How do we have conversations, under these conditions ? How do we discuss violence, when doïng so hurts ? Conversely : How do we prevent the domination of discourse by those who do <em>not</em> have these experiënces, who have <em>not</em> lived these traumas, for whom words come much more easily and painlessly ? It is easier to major in gender studies as a straight cisgender white man than as a nonwhite queer trans woman. The coursework simply is not as <em>difficult</em>.</p>
+			<p>How do we rectify this distribution of difficulty ?</p>
+			<p>The examples above are academic in nature but these points hold just as true in the contexts of a support group, a community forum, or social media. And what becomes clear through these discussions is the need for affirming peer spaces, places where a common experiënce and understanding of trauma can be expected, and where familiarity with the associated difficulties can be assured—where the difficulties themselves can be designed for. To be clear : There are other times, and other spaces, where access to allies who can act on instances of violence without the lingering baggage of personal trauma can be a great boon. But these times, and these spaces, need always be informed by those others, those personal encounters with, and understandings of, violence, and trauma.</p>
+			<p>If we are goïng to tackle problems of violence, we need to creäte spaces where its victims can speak not with their abusers, or institutions, or broader communities, or public—but with each other.</p>
+			<footer>
+				<ol>
+					<li id="conversation.n1" value="1"><p>Rachell [ Morillo ], <a href="https://youtu.be/GLaNdwezPAE" rel="noopener noreferrer">« dominican republic, haiti, class, survivors guilt, anthropology &amp; more »</a>, interview by cecile emeke, episode 2 of <cite>strolling ( usa )</cite>, video, 17:45.<small class="RETURN"> <a href="#conversation.m1">[ Return to text. ]</a></small></p></li>
+					<li id="conversation.n2" value="2"><p>I was “ out ” at the time, in that I was not <em>hiding</em> my transgender identity and had made it known to others in the department, but I had not “ come out ” publicly in class ( said « my pronouns are she/hers » or « I am a woman » ), so it was never clear to me which, if any, of my classmates were conscious of the fact.<small class="RETURN"> <a href="#conversation.m2">[ Return to text. ]</a></small></p></li>
+					<li id="conversation.n3" value="3"><p>Rachell, interview, 14:58.<small class="RETURN"> <a href="#conversation.m3">[ Return to text. ]</a></small></p></li>
+				</ol>
+				<a href="#project">[ Continued ⇒ ]</a>
+			</footer>
+		</section>
+		<section id="project" tabindex="0">
+			<h2>A Project</h2>
+			<p>It is to this end that myself, and some of my close friends, have recently begun brainstorming and setting to work. Right now, we have little more than a tentative name : <i>Fediversians Against Violence</i>, or <i><abbr>FAV</abbr></i>. The goal of this project will be to build toolkits, facilitate peer networks, explore community structures, and theorize relationalities for understanding, facing, and working to end violence within the unique online space of the fediverse ( to be defined )—which, in contrast to physical spaces, carries with it a unique set of both problems and potentials.</p>
+			<p><abbr>FAV</abbr> is not an organization—rather, it is conceived as :— <b class="NUMERIC LISTING">1.</b> A network of safe spaces and an accumulation of resources ; <b class="NUMERIC LISTING">2.</b> An assemblage of people, experiënces, and ideas ; <b class="NUMERIC LISTING">3.</b> The end result of merging :— <b class="NUMERIC LISTING">a.</b> personal and intimate encounters with cycles of violence, with <b class="NUMERIC LISTING">b.</b> a shared commitment to their dissolution. This work is not new—but its presence within the context of the fediverse is.</p>
+			<p>We have a lot of work ahead of us, and in this lengthy piece Iʼve really only begun to state the problem. It is a problem that it has taken me two­‑plus years to state.<sup id="project.m1"><a href="#project.n1">1</a></sup> That is the scale at which we are working on—that is the scale at which trauma heals.</p>
+			<p>In the meantime, I hope that this piece—and my continued efforts in this direction—will perhaps, finally, start to kick off some fresh discussions—not just with me, but among peers, friends, enemies, and followers—regarding violence and « what we might do about it » in our shared fediverse. For my part, I am collecting, and working through, whatever texts and resources I can get my hands on regarding intimate violence, trauma recovery, peer listening. I am interested, also ( as always ), in the opportunities that art and fiction might present for creäting safe spaces through which to approach some of this material.</p>
+			<p>The lessons of other authors, other thinkers, and other communities can only get us so far, however. We need to work hard to creäte spaces of our own, because, at some point, we are goïng to have to start speaking for ourselves.<b class="TOMBSTONE">⛤<span class="SCREENREADER"> [ End of article. ]</span></b></p>
+			<footer>
+				<ol>
+					<li id="project.n1" value="1"><p>If you count my undergraduate years developing my thesis on digital queer identities : four­‑plus years.<small class="RETURN"> <a href="#project.m1">[ Return to text. ]</a></small></p></li>
+				</ol>
+				<nav>
+					<ul>
+						<li><a href="./">⌂ Home ⌂</a></li>
+						<li><a href="./sitemap.xhtml">⎈ Sitemap ⎈</a></li>
+						<li><a href="./links.xhtml">⎋ Links ⎋</a></li>
+						<li><a href="./page02.xhtml">← Page 02</a></li>
+						<li><a href="#">↿ Top ↾</a></li>
+						<!-- <li><a href="./page04.xhtml">Page 04 →</a></li> -->
+					</ul>
+				</nav>
+			</footer>
+		</section>
+	</article>
+	<script>
+/*
+These scripts provide scrolling support to ensure that the current section will always be centred on the page, and that keyboard navigation will function as expected. Make sure they run after the DOM content for the rest of the page is loaded, or else they wonʼt work.
+
+( These scripts *only* provide scrolling support. All page styling is done via the CSS, above. )
+*/
+( ( )  =>  {
+	"use strict"
+	let screenStatus  =  matchMedia( "screen" )
+	Array.prototype.forEach.call(
+		document.body.getElementsByTagName( "article" )
+		, ( element )  =>  {
+			var
+				isSmoothScrolling  =  false
+				, lastSnap  =  ( ( )  =>  {
+					let sectionWidth  =  document.body.offsetWidth
+					return element.scrollLeft  =  sectionWidth * Math.round( element.scrollLeft / sectionWidth )
+				} )( )
+				, timeout  =  null
+			element.addEventListener(
+				"scroll"
+				, ( event )  =>  {
+					/*
+					500MS after an `article` is scrolled, its scroll position is snapped to a section. If the article was scrolled less than 72PX ( .75IN ), it will snap to the nearest section ( which will be the one it is already on ). If it is scrolled more than one sectionʼs width, it will snap to whichever section is nearest. Otherwise, it will snap to the next section in the direction scrolled ( computed from the previous snap ).
+					*/
+					if ( !screenStatus.matches )  return
+					if ( timeout != null )  clearTimeout( timeout )
+					timeout  =  setTimeout( ( )  =>  {
+						let
+							roundingMode  =  Math.abs( lastSnap - element.scrollLeft ) > document.body.offsetWidth  ||  72 > Math.abs( lastSnap - element.scrollLeft )  ?  "round"  :  ( lastSnap > element.scrollLeft  ?  "floor"  :  "ceil" )
+							, sectionWidth  =  document.body.offsetWidth
+							, sectionToFocus  =  Math[ roundingMode ]( element.scrollLeft / sectionWidth )
+						if ( element.scrollLeft == sectionWidth * sectionToFocus )  if ( isSmoothScrolling  ||  element.scrollLeft != lastSnap )  {
+							/*
+							This is the completion of a previous scroll. The current element is focused so that up/down keyboard navigation will function as expected.
+							*/
+							isSmoothScrolling  =  false
+							try  { element.children[ sectionToFocus ].focus( ) }
+							catch ( e )  { }
+							return
+						}
+						isSmoothScrolling  =  true
+						element.scrollTo( {
+							behavior: "smooth"
+							, left: lastSnap  =  sectionWidth * sectionToFocus
+						} )
+					}, 500 )
+				}
+			)
+		}
+	)
+	Array.prototype.forEach.call(
+		document.body.querySelectorAll( `article>*` )
+		, ( element )  =>  [
+			"click"
+			, "focusin"
+		].forEach( ( name )  =>  element.addEventListener(
+			name
+			, ( event )  =>  {
+				/*
+				Clicking on a section will immediately scroll it into view.
+				*/
+				let parent = element.parentNode
+				if ( !screenStatus.matches )  return
+				parent.scrollLeft  =  element.offsetLeft - parseFloat( getComputedStyle(
+					parent
+					, "::before"
+				).getPropertyValue( "Width" ) )
+			}
+		) )
+	)
+	;  [
+		"hashchange"
+		, "load"
+		, "resize"
+		, "change"
+	].forEach( ( name )  =>  ( name == "change" ? screenStatus.addEventListener : addEventListener )(
+		name
+		, ( event )  =>  {
+			/*
+			On hashchange/resize/load, or when the media type changes to `screen`, sections are manually scrolled into view.
+			*/
+			var
+				article
+				, parent
+				, section
+			let
+				hash  =  location.hash.substring( 1 )
+				, element  =  hash  ?  document.getElementById( hash )  :  null
+			if ( !screenStatus.matches )  return
+			if ( name == "resize" )  {
+				/*
+				On `resize` events, we just simulate a scroll and let the `article` code handle it.
+				*/
+				console.log("resized")
+				Array.prototype.forEach.call(
+					document.body.getElementsByTagName( "article" )
+					, ( eachArticle )  =>  eachArticle.dispatchEvent( new Event( "scroll" ) )
+				)
+				return
+			}
+			if ( hash == "" )  {
+				article = document.body.getElementsByTagNameNS(
+					"http://www.w3.org/1999/xhtml"
+					, "article"
+				).item( 0 )
+				if ( !article )  return
+				section  =  article.firstElementChild
+				if ( !section )  return
+			}
+			else  {
+				if ( !( section  =  element )  ||  !( parent  =  element.parentNode ) )  return
+				while ( !article )  {
+					if ( parent.localName == "article" )  if ( parent.namespaceURI == "http://www.w3.org/1999/xhtml" )  article  =  parent
+					if ( !article )  if ( !( ( section  =  parent ), ( parent  =  parent.parentNode ) ) )  return
+				}
+			}
+			;  ( element  ||  section ).focus( )
+			if ( section == element )  event.preventDefault( )
+		}
+	) )
+	Array.prototype.forEach.call(
+		document.body.querySelectorAll( "a[href^=\"#\"]" )
+		, ( element )  =>  element.addEventListener(
+			"click"
+			, ( event )  =>  {
+				/*
+				Clicking on a hash link will fire a `hashchange` event even if the hash does not actually change.
+				*/
+				if ( !screenStatus.matches )  return
+				if ( element.href == location )  {
+					requestAnimationFrame( ( )  =>  dispatchEvent( new HashChangeEvent(
+						"hashchange"
+						, {
+							oldURL: location
+							, newURL: location
+						}
+					) ) )
+					event.preventDefault( )
+				}
+			}
+		)
+	)
+} )( )
+	</script>
+</body>
+</html>

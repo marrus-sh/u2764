@@ -27,6 +27,7 @@ body {
 	Max-Width: 8.5IN;
 }
 article { Counter-Reset: Section }
+footer,
 header { Text-Align: Center }
 h1 {
 	Margin: 0;
@@ -39,7 +40,7 @@ h2 {
 	Font: Inherit;
 	Text-Transform: Uppercase;
 }
-h2::BEFORE { Content: Counter(Section) ". " }
+section h2::BEFORE { Content: Counter(Section) ". " }
 ol,
 ul {
 	Margin: 0;
@@ -129,7 +130,10 @@ blockquote {
 blockquote em,
 blockquote cite,
 blockquote i { Font-Style: Normal }
-code { Font-Family: "Courier New", Monospace }
+code {
+	Font-Family: "Courier New", Monospace;
+	Text-Transform: None;
+}
 cite {
 	Font-Style: Italic;
 	Font-Variant: Small-Caps;
@@ -146,6 +150,7 @@ u.JOURNAL {
 *:Visited { Color: #B01C1C }
 *:Link:Active,
 *:Visited:Active { Color: #D15919 }
+*::SELECTION { Background: #1AACEB80 }
 	</style>
 </head>
 <body>
@@ -217,7 +222,7 @@ u.JOURNAL {
 			<p>This is best exemplified through the trope of the “ scrappy mech ”, a mech “ cobbled together ” from whatever is on­‑hand for the purposes of ( sometimes ) survival but ( usually ) attack or self­‑defense. Of all the mechs, these are frequently the most wasteful and damaging : leaking oil, attacking in wide, inaccurate sweeps, devastating their environment. At the same time, the blame for this devastation is usually deferred back on<em>to</em> the environment—for not having the resources available for building a “ better, less­‑destructive ” massive murder machine.</p>
 			<p>At the same time, mech fiction ( usually unwittingly ) also often presents us with another alternative—as mech access is typically a privilege that not everyone gets to enjoy. These non–mech users ( whose very presence can be a distinguishing factor between mechs and exosuits—there are no non­‑spacesuit users in space ) not <em>only</em> have to suffer hostile environments without the help of mech technology but <em>also</em> are frequently the first people harmed through mech usage. And yet they typically ( plot contrivances aside ) are able to eke out a liveäble life. What makes mech users different from these suffered souls ? Well, they have the “ guts ” ( power ) to “ act ” ( violently ) to “ overthrow ” ( enstate anew ) an oppressive regime. Or, in the more libertarian variant, theyʼre just inherently superior and get to do whatever they want as a result.</p>
 			<p>Youʼre probably already getting the gist of my argument because Iʼm not exactly beïng subtle about it ! Mech media is like superhero movies but the bad kind of superhero movies because instead of an analysis of power and what it means to find oneself wielding it, you instead get people in giant walking tanks blowing each other up because they can.</p>
-			<p>This sounds like Iʼm saying the whole genre is problematic and youʼre a bad person if you enjoy it ( Iʼm <em>not</em> ), so let me just pause a moment and say I <em>loved</em> <u>Gerard Way</u>ʼs <a href="https://en.wikipedia.org/wiki/Peni_Parker" rel="noopener noreferrer"><u>SP//dr</u></a> and there is <em>absolutely</em> room within the genre to examine how ordinary people, forced into positions of violence by governments and militaries, come to ( dis ? )identify with those subject­‑positions and deal with the ethical problems that result, as well as a whole host of other similar topics. But <u>SP//dr</u> is an unethical medical procedure forced onto a <em>child</em> without her consent and thatʼs a far cry from the « this is my mech » romanticizing bullshitposting which kicked off this <u class="JOURNAL">Journal</u> entry in the first place.</p>
+			<p>This sounds like Iʼm saying the whole genre is problematic and youʼre a bad person if you enjoy it ( Iʼm <em>not</em> ), so let me just pause a moment and say I <em>loved</em> <u>Gerard Way</u>ʼs <a href="https://en.wikipedia.org/wiki/Peni_Parker" rel="noopener noreferrer"><u><code>SP//dr</code></u></a> and there is <em>absolutely</em> room within the genre to examine how ordinary people, forced into positions of violence by governments and militaries, come to ( dis ? )identify with those subject­‑positions and deal with the ethical problems that result, as well as a whole host of other similar topics. But <u><code>SP//dr</code></u> is an unethical medical procedure forced onto a <em>child</em> without her consent and thatʼs a far cry from the « this is my mech » romanticizing bullshitposting which kicked off this <u class="JOURNAL">Journal</u> entry in the first place.</p>
 		</section>
 		<section id="exo-v-mech">
 			<h2>Exosuits V. Mechs</h2>
@@ -295,6 +300,8 @@ u.JOURNAL {
 		<footer>
 			<nav>
 				<a href="./page01.xhtml">← Page 01</a>
+				|
+				<a href="./page03.xhtml">Page 03 →</a>
 			</nav>
 		</footer>
 	</article>

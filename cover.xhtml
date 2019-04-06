@@ -226,6 +226,8 @@ article {
 	Display: Block;
 	Position: Relative; /* Enables `z-index` */
 	Overflow: Hidden; /* Keeps decorative stuff from producing scrollbars */
+	Overflow: -moz-Hidden-Unscrollable;
+	Overflow: Clip; /* Prevents even programmatic horizontal scrolling */
 	Z-Index: 0; /* Establishes new stacking context in front of page background */
 	--AccentColour: #1F1A14;
 	--AccentBorder: #75706A;
