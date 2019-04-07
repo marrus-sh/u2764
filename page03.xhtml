@@ -3,6 +3,7 @@
 <head>
 	<title>❤ Page 03 – Taking Violence Personally</title>
 	<meta charset="utf-8"/>
+	<meta name="viewport" content="width=device-width,intial-scale=1"/>
 	<style>
 /*
 This styling is blatantly ripped from the 1994 Routledge edition of Eve Kosofsky Sedgwickʼs _Tendencies_ ( PDF sample here: http://985queer.queergeektheory.org/wp-content/uploads/2013/04/Tendencies.pdf ).
@@ -378,6 +379,7 @@ footer>nav:Last-Child { Margin-Bottom: Calc(-2.7EM - 3PX) }
 *:Root footer>nav>*>li { Display: Contents }
 *:Root footer>nav>*>li>a[href] {
 	Justify-Self: Center;
+	Position: Relative;
 	Top: 0;
 	Margin: 0;
 	Transition: Top Ease-In-Out .25S;
@@ -441,7 +443,6 @@ footer>ol>li:Target small.RETURN>a[href]:First-Child,
 *:Root footer>nav>*>li>a[href],
 footer>a[href]:Last-Child {
 	Display: Block;
-	Position: Relative;
 	Border: 1PX Solid;
 	Padding: .07EM .5CH;
 	Height: 1.35EM;
@@ -463,9 +464,6 @@ footer>a[href]:Last-Child::AFTER {
 }
 footer>ol>li:Target small.RETURN>a[href]:First-Child,
 footer>a[href]:Last-Child {
-	Position: Absolute;
-	Bottom: -1.35EM;
-	Right: 0;
 	Margin: Calc(-1PX - .07EM) Calc(-1PX - .5CH);
 	Text-Align: Right;
 	Transition: Right Ease-In-Out .25S;
@@ -476,6 +474,11 @@ footer>ol>li:Target small.RETURN>a[href]:First-Child {
 	Top: Calc(-1IN - 1PX - .07EM);
 	Right: Calc(-1PX - .5CH);
 	Bottom: Auto;
+}
+footer>a[href]:Last-Child {
+	Position: Absolute;
+	Bottom: -1.35EM;
+	Right: 0;
 }
 *:Root:Root footer>a[href="#"]:Last-Child {
 	Right: Auto;
@@ -786,7 +789,6 @@ These scripts provide scrolling support to ensure that the current section will 
 				/*
 				On `resize` events, we just simulate a scroll and let the `article` code handle it.
 				*/
-				console.log("resized")
 				Array.prototype.forEach.call(
 					document.body.getElementsByTagName( "article" )
 					, ( eachArticle )  =>  eachArticle.dispatchEvent( new Event( "scroll" ) )
