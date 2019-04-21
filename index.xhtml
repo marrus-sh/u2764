@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en" prefix="bibo: http://purl.org/ontology/bibo/" resource="#">
 <!--
 The goal of JOURNAL : \U2764 is for each page to have its own unique layout and design, and to have the look and feel of print media—which means that we canʼt go sticking site navigation and page headers on every single page. Not to mention—these things can be a pain to update by hand !
 
@@ -189,7 +189,7 @@ p { Margin: 0 }
 small { Font-Size: XX-Small }
 	</style>
 </head>
-<body>
+<body typeof="bibo:Website bibo:Journal" resource="#">
 <header><svg xmlns="http://www.w3.org/2000/svg" width="192" height="192" viewBox="0 0 64 64" fill="currentColor">
 	<title>Ezine Logo</title>
 	<description>
@@ -219,7 +219,7 @@ small { Font-Size: XX-Small }
 	</defs>
 	<rect x="0" y="0" width="64" height="64" mask="url(#heartmask)"/>
 </svg>
-<h1><!-- TITLE -->
+<h1 property="dc:title" content="Journal : \u2764"><!-- TITLE -->
 	<span>Journal :</span>
 	<span>\u2764</span>
 </h1></header>
