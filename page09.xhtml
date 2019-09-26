@@ -1,0 +1,250 @@
+<!DOCTYPE html [
+	<!ENTITY htmlfix '><html lang="en"><head><script type="text/plain">'>
+	<!ENTITY emsp '<span style="Position: Absolute; Z-Index: -1"> </span><span aria-hidden="true"> </span>'>
+	<!ENTITY ensp '<span style="Position: Absolute; Z-Index: -1"> </span><span aria-hidden="true"> </span>'>
+]>
+<!-- See Page 08 -->
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
+<head>
+	<script type="text/plain">[Closes the HTML parser fix]</script>
+	<title>❤ Page 09 – Building Fedi Motion</title>
+	<meta charset="utf-8"/>
+	<meta name="viewport" content="width=device-width,intial-scale=1"/>
+	<style>
+html {
+	Color: #302F2B;
+	Background: #FAF8F7;
+	Font: Normal Medium / 1.2 Avenir Next, Avenir, Lato, Helvetica Neue, Sans-Serif;
+	Font-Variant-Numeric: Oldstyle-Nums;
+	Text-Align: Justify;
+	Hyphens: Auto;
+	Counter-Reset: SECTION;
+}
+header {
+	Display: Flex;
+	Flex-Direction: Column;
+	Margin: 0 0 .4REM;
+	Border-Style: Solid;
+	Border-Color: Transparent;
+	Border-Width: 2.4REM 1.5REM;
+	Padding: 0 Calc(50% - 36REM);
+	Height: 48REM;
+	Max-Height: Calc(100VH - 6REM);
+	Overflow: Auto;
+	Color: #DEDBD9;
+	Background: No-Repeat Linear-Gradient(
+		To Top,
+		#302F2B 19.2REM,
+		Calc(100% - 9.6REM),
+		#57534C
+	) Border-Box Bottom Right / Cover, #302F2B;
+	Font-Weight: 500;
+	Text-Align-Last: Right;
+}
+header::BEFORE {
+	/*
+	This will `flex-shrink` as required; it is effectively a `margin-top: auto` except with an upper cap of `28.8rem`.
+	*/
+	Height: 28.8REM;
+	Content: "";
+}
+header p+p {
+	Margin-Top: .6REM;
+	Text-Indent: 0;
+}
+header *:Any-Link {
+	Color: #FAF8F7;
+	Font-Weight: 600;
+}
+nav {
+	Margin: 0 0 0 Auto;
+	Width: 100%;
+	Max-Width: 35.5REM;
+	Font: Normal 1REM / 1.2 Monospace;
+	Text-Transform: Uppercase;
+}
+section {
+	Margin: Auto;
+	Padding: 1.5REM;
+	Max-Width: 69REM;
+	Counter-Increment: SECTION;
+}
+section h2 { Position: Relative }
+section h2::BEFORE {
+	Position: Absolute;
+	Margin: Auto;
+	Top: 0;
+	Right: 0;
+	Height: 1.2REM;
+	Color: #302F2B;
+	Font: Normal 1REM / 1.2 Monospace;
+	Content: Counter(SECTION) ".";
+}
+section+section,
+footer+section {
+	Margin-Top: Calc(.4REM - 2PX);
+	Border-Top: 4PX #B8B3B0 Double;
+	Padding-Top: Calc(2.4REM - 2PX);
+}
+div.BODY {
+	Columns: 3 17REM;
+	Column-Gap: 1.5REM;
+}
+footer {
+	Margin: .4REM 0 0;
+	Border-Style: Solid;
+	Border-Color: Transparent;
+	Border-Width: 2.4REM 1.5REM;
+	Padding: 0 Calc(50% - 36REM);
+	Font-Weight: 500;
+	Text-Align-Last: Center;
+}
+h1 {
+	Margin: 0 0 1.2REM;
+	Font-Size: 7.2REM;
+	Font-Weight: 900;
+	Font-Variant-Caps: Titling-Caps;
+	Line-Height: 1;
+	Text-Align: Right;
+	Text-Transform: Uppercase;
+	Overflow-Wrap: Break-Word;
+}
+h2 {
+	Margin: 0 0 2.4REM;
+	Color: #57534C;
+	Font-Size: 7.2REM;
+	Font-Weight: 900;
+	Font-Variant-Caps: Titling-Caps;
+	Line-Height: 1;
+	Text-Align: Left;
+	Text-Transform: Uppercase;
+	Overflow-Wrap: Break-Word;
+}
+h1 small,
+h2 small {
+	Display: Block;
+	Font-Size: 3.6REM;
+	Font-Style: Italic;
+	Font-Weight: Bold;
+}
+p { Margin: 0 0 .6REM }
+p+p {
+	Margin: -.6REM 0 .6REM;
+	Text-Indent: 1.5REM;
+}
+strong+p { Display: Inline }
+strong+p::AFTER {
+	Display: Block;
+	Margin: 0 0 .6REM;
+	Content: "";
+}
+hr {
+	Margin: 0;
+	Border: None;
+	Padding: 0;
+	Width: 0;
+	Height: 1.2EM;
+}
+*:Any-Link {
+	Color: #1F1A14;
+	Font-Weight: 500;
+	Text-Decoration: Double Underline;
+}
+b {
+	Color: #1F1A14;
+	Font-Style: Italic;
+	Font-Weight: 600;
+}
+b.LISTING {
+	Margin: -1PX;
+	Border: 1PX #302F2B Solid;
+	Border-Radius: Calc(.6EM +1PX);
+	Padding: .1EM .25CH;
+}
+b.NUMERIC.LISTING {
+	Display: Inline-Block;
+	Box-Sizing: Border-Box;
+	Margin: -3PX;
+	Border: 3PX #302F2B Double;
+	Border-Radius: Calc(.6EM + 3PX);
+	Height: Calc(1.2EM + 6PX);
+	Min-Width: Calc(1.2EM + 6PX);
+	Vertical-Align: Top;
+	Font-Variant-Numeric: Tabular-Nums Lining-Nums;
+	Line-Height: 1;
+	Text-Align: Center;
+	Text-Indent: 0;
+}
+code {
+	Font-Family: Monospace;
+	Font-Size: 1REM;
+	Font-Variant: Normal;
+	Line-Height: 1.2;
+}
+strong *:Any-Link { Font-Weight: Inherit }
+p strong { Font-Weight: 600 }
+	</style>
+</head>
+<body>
+	<article>
+		<header>
+			<h1><small>Building Fedi</small> Motion</h1>
+			<nav>
+				<p style="Display: Flex; Flex-Flow: Wrap Row; Justify-Content: Space-Between"><span>Journal :&ensp;\u2764</span><span>Volume 1, Issue 9</span></p>
+				<p><a href="./page08.xhtml">← Page 08</a><!-- &ensp;|&ensp;<a href="./page10.xhtml">Page 10 →</a> --></p>
+			</nav>
+		</header>
+		<section id="questions">
+			<h2><small>The</small> Ques­tion( s )</h2>
+			<div class="BODY">
+				<p>This issue was prompted by the great number of interviews I have read / watched / listened to on the subject of grassroots activism and organizing over the past several years ;&ensp;certainly since and including <a href="https://vimeo.com/283098129" rel="noopener noreferrer">#EmergingUS / Define Americanʼs interview of the founders of #BlackLivesMatter in 2016</a>, which you should watch if you havenʼt.&emsp;These interviews always leave something of an—uncomfortable—heavy feeling in my chest, as :—&emsp;<b class="NUMERIC LISTING">1.</b>&emsp;I think they contain incredibly important and meaningful knowledge and perspective, and&emsp;<b class="NUMERIC LISTING">2.</b>&emsp;As a non­‑passing rural trans person, their call to action nevertheless remains largely inaccessible to me, as the psychic energy required to perform grassroots organizing in a climate of nonacceptance and pervasive misgendering is more than I have at my disposal.&emsp;This turmoil becomes especially fraught in situations where my privilege and disabilities play against one another—as a white person, I have a responsibility to organize against racism ;&ensp;as a trans person, I am unable to do so ;&ensp;yet as a <em>white</em> trans person, it becomes <em>doubly</em> important that I create space for our nonwhite siblings and peers.</p>
+				<p>Which has gotten me thinking :&ensp;If only there were some accessible site—maybe even a <em>web</em> site !—where <abbr title="friends ; folks">fryne</abbr> could organize and network—maybe even <em>social</em> network !—which was accepting and accommodating of trans identities and the particular hardships that people with those identities face !&emsp;Then, surely, I could pay my dues and make a difference in this harsh and uncaring sociëty !</p>
+				<strong>Oh, right, there <em>is</em> this little thing called Mastodon.&emsp;</strong><p>Much as I am loathe to admit it, Mastodon may well be my ( and other rural trans people like meʼs ) best opportunity for political organizing.&emsp;And indeed, Mastodon is a prime place for organizing around racism in particular, because Mastodon has a lot of racist white people.&emsp;Lotta room for growth in that sector.</p>
+				<p>And, if youʼre white, and youʼre on Mastodon, and you oppose racism, I think the question of “ How do we ( white people ) organize to make Mastodon less racist ? ” is <em>really</em> something which should be on your mind right now.&emsp;I mean, really, it is something which <em>should have</em> been on your mind since, idk, February of 2017, but there was a lot of community drama goïng down around then and, yk, my antennæ werenʼt entirely in the correct place either.&emsp;I think thereʼs a tendency for well­‑meaning white people on Mastodon to get real defeatist about their ability to change the culture of the platform, which, fair, but the point of this issue is to attempt to push forward a path which is something other than “ integrate with shitty white folks ” or “ fuck off ”.</p>
+				<strong>I believe these questions have the same answer.&emsp;</strong><p>By which I mean, I think the problem of using Mastodon as a vehicle for grassroots organizing and the problem of making Mastodonʼs white people more Conscious and less… what they are now&emsp;—: I think these are the same problem.&emsp;And this comes from my understanding of those who have done this work a <em>lot</em> more than I have, saying, okay, you want to end racism, you want to make white people less racist, that means you have to place them in situätions where they are beïng challenged to grow.&emsp;And that means forming networks of solidarity which force them to confront their existing biases, and put them doïng <em>real work</em> that <em>hinges</em> on their growth in that respect.</p>
+				<p><strong>If you are concerned with ending racism on Mastodon, I think the question of how to motivate its minority whites—which, in my experiënce, tend to be some combination of disabled, poor, queer, and/or Jewish—into meaningful, solidarity­‑focused activism is an extremely valuable place to start.</strong></p>
+				<p>I donʼt think I have ever really <em>seen</em> something on Mastodon which I would label with the term “ activism ”.&emsp;I donʼt think we <em>really</em> know what that looks like just yet.&emsp;But, I have some ideäs.</p>
+			</div>
+		</section>
+		<section id="activism">
+			<h2><small>Fedi­verse</small> Activ­ism</h2>
+			<div class="BODY">
+				<p>Iʼm going to start with what <em>doesnʼt</em> work.&emsp;And thatʼs organizing on Mastodon for issues which <em>cannot be solved through Mastodon.</em>&emsp;Ending capitalism—<span lang="es" xml:lang="es">por ejemplo</span>—is a noble cause, but no amount of “ work ” on the Mastodon platform is goïng to make a <em>dent</em> in capitalismʼs structures.&emsp;Thatʼs something which needs to be taken offscreen, into coöps and marches and local orgs.&emsp;Mastodon <em>can</em> serve as a <em>meetingplace</em>, but the actuäl <em>active work</em> ( and, hence, activism ) needs to happen elsewhere.</p>
+				<p>And this is the “ slactivism ” paradigm all over again, and Mastodon is honestly kind of known for this.&emsp;People are happy to <em>talk</em> about change, but itʼs not Real Organizing because nothing ever gets <em>done</em>.&emsp;Nothing on Mastodon ever <em>can</em>.&emsp;And, for people like me, who are unemployed, canʼt go on strike, donʼt have any local organizations to join, donʼt have any local marches to show up for, and donʼt really have the ability to canvas, slactivism is as far as those conversations ever go.&emsp;Those of you who follow me on Mastodon know that despite beïng pretty strong­‑minded politically, I donʼt ever really post about current events or these kinds of political demonstrations.&emsp;Thereʼs a reason for that, and the reason is that I donʼt see the <em>point</em> when I am foreclosed from ever turning that talk into actual work.</p>
+				<strong>So our question becomes :&ensp;What kinds of problems <em>can</em> be solved through the platform of Mastodon ?&emsp;</strong><p>And there are people who say, “ Ah !&emsp;The problem that Mastodon can solve is one of corporate control of our social networks, ” but actually, no, <em>that</em> problem requires changing the mindsets and behaviours of people who are <em>off</em> Mastodon ( and on Facebook, etc. ) far more than it requires work <em>on</em> it.&emsp;Again, a noble goal, but one to carry out on Gitea ( and over the dinner table ), <em>not</em> on federated social media.</p>
+				<p>There are also people who think that <em>no</em> true political activism can take place on social media, but I donʼt think thatʼs quite true either.&emsp;Because while Mastodon may not be the <span lang="fr" xml:lang="fr">première demeure</span> of capitalist structures, Facebook users, or corporate overlords, it is home to one thing :&ensp;our communities.</p>
+				<strong>The kind of activism which is possibly effective on social media is <em>community activism</em>.&emsp;</strong><p>And by this I mean activism whose goal is to <em>change the political landscape of our communities</em>.&emsp;I think this activism is very important, because our communities are also our support structures, and the things which <em>fuel</em> all of the other activist­‑type actions with which we might engage.&emsp;And while there might be some folks on Mastodon who think “ our communities are just dandy, thanks ”, I think most of us who have been around for a while probably can think of one or two ways in which we would like them to change.</p>
+				<p>Iʼm goïng to name one, which I think should come as zero surprise to anyone who has been following this <span style="Text-Transform: Uppercase">JOURNAL</span>, and which I think holds real and demonstrated activist potential.&emsp;And that is the problem of violence.</p>
+			</div>
+		</section>
+		<section id="violence">
+			<h2><small>Or­ganiz­ing around</small> Vio­lence</h2>
+			<div class="BODY">
+				<p>Iʼll say it loudly once again, for the people in the back :</p>
+				<p><strong>It is my opinion that the №1 issue facing queer, and specifically genderqueer and trans, communities today is that of violence.</strong></p>
+				<p>And youʼll notice Iʼve shifted my focus a little bit here.&emsp;Iʼm not just talking about <em>white</em> genderqueer people and <em>white</em> trans people.&emsp;And Iʼm also not saying that disabled communities and poor communities and Jewish communities donʼt <em>also</em> have to deal with violence.&emsp;This is that “ solidarity ” thing which Iʼve been talking about.&emsp;But trans and genderqueer people have a very particular relationship to violence which I think—especially given the large number of trans and genderqueer people on Mastodon—it is worth goïng into in a little more detail.</p>
+				<p>Trans communities are placed in a very difficult situätion when it comes to violence because of the dominant cultural assumptions when it comes to trans bodies :&ensp;on the one hand, says our culture, trans people are predators, they are dangerous, they are abusers ;&ensp;on the other hand, says that same culture, they are victims, they are traumatized, they will never find happiness.&emsp;Neither of these assumptions are unique to trans people, but the way they work <em>in combination</em> is particularly and uniquely devastating.&emsp;Fearful of the stigma of trans people as abusers, trans communities are reluctant to bring forward or investigate accusations of abuse ;&ensp;fearful of the stigma of traumatized victim, trans communities distance themselves from and silence their survivors.</p>
+				<p>( There is precedence for this dynamic in the dominant cultural assumptions regarding lesbians, and that is one of the reasons why solidarity and continuïty between trans communities and lesbian activism is <em>so incredibly important</em>. )</p>
+				<strong>This is a community issue, which it will take community activism to address.&emsp;</strong><p>This is not to say that all of the violence trans people face comes from within the trans community.&emsp;But some of it does.&emsp;And it <em>is</em> to say that survivors deserve a place here.&emsp;The current presumption on Mastodon seems to be that if one is not an abuser ( let us hope ), and oneʼs friends are also not abusers ( are you sure ? ), and we loudly harass any abusers who happen to come along ( do you check ? ), that survivors will somehow just pull themselves up by their bootstraps and there is no need for formal community organizing or support structures.</p>
+				<p>This is not the case.&emsp;We need organizing to get survivors the resources and autonomy they need, and we need hella organizing <em>just to change the dominant assumption that we donʼt need organizing</em>.&emsp;And Iʼm really talking, like, fliers, brochures, disruption, monologues, and real hard work on the cultural ground to put this issue in peopleʼs faces and get them thinking about it, while <em>at the same time</em> working to organize and build peer networks, safe spaces, active listening, and—longshot but letʼs hope—material support for survivors to be able to draw on as they need.</p>
+				<p>These are not things you can just <em>do</em>.&emsp;These things take time, and energy, and real activism to make happen.&emsp;And they are things which can only be built from <em>within our community</em>.&emsp;This—this work, these resources, this kind of activism—is what we need Mastodon to become.&emsp;I might even go so far as to say that this is what Mastodon is <em>for</em>.</p>
+				<strong>It is also a site of solidarity.&emsp;</strong><p>I am reminded of <a href="https://www.buzzfeednews.com/article/anitabadejo/where-is-that-narrative" rel="noopener noreferrer">a BuzzFeed News article I read in 2016 about survivors attending Spelman College</a>.&emsp;Like all survivors, these women faced the stigmas associated with coming forward with their experiënces of abuse.&emsp;And like trans survivors, they were pressured against doïng so because of how their words might reïnforce hostile cultural narratives regarding their abusers.&emsp;To say that there are things that the trans community might learn from the actions/experiënces of these women, and many others, is an understatement.</p>
+				<p>And yet, young white trans people today find themselves aliënated from their elders, who use a different language and framework of gender and sexuälity to describe their experiences.&emsp;They find themselves aliënated from feminism, and all of its work to combat violence, because of their experiënces with TERFs, and because of its history of speaking in binaryïst gendered terms.&emsp;And they find themselves aliënated from people of colour, who <em>also</em> use different language and frameworks of gender and sexuälity, and who they might assume ( often incorrectly ) are less accommodating of their queerness.&emsp;These are all bridges which need to be rebuilt.</p>
+				<p>But one of the powerful things about organizing around violence is that <em>I do believe they can be rebuilt</em>.&emsp;We <em>all</em> have things to gain from coming together on this topic.&emsp;And together, we can build networks and communities far stronger, far more knowledgeäble, and far more supportive than we would be able to otherwise.</p>
+			</div>
+		</section>
+		<section id="networking">
+			<h2><small>Building</small> Net­works</h2>
+			<div class="BODY">
+				<p>These are things I have been saying, more or less explicitly, more or less eloquently, since February of 2019, when I first really began dedicating myself to this issue.&emsp;In <a href="./page03.xhtml">page 03 of this <span style="Text-Transform: Uppercase">Journal</span></a> I mentioned a tentative project by the title of <i>Fediversians Against Violence</i> as a potential outlet for these efforts.&emsp;I have not given up on this goal.</p>
+				<p>But it is not a goal I can reach alone.&emsp;I am, in fact, woefully unequipped and underprepared, three hours away from anyone I might be able to sit down with, and with little more than a poorly­‑read <span style="Text-Transform: Uppercase">Journal</span> to my name.&emsp;There are less­‑material concerns as well.&emsp;Few people have a strong desire to network with an outspoken trans woman who has a history of loudly challenging dominant cultural assumptions and norms ( and I will need some help here ).&emsp;And, for my part, I have learned to be distrustful of the best­‑connected among us, as networking is too often <em>not</em> about seizing political power, as is claimed, but about personal empowerment at the expense of others, and frequently the most popular are in fact ( or become through their station ) abusers themselves, whose popularity is wielded as an important and dangerous component of their abuse.</p>
+				<p>Nevertheless.&emsp;I think we have a sore need for real activism on the fediverse—as a matter of community health.&emsp;I think activism is one of the best mechanisms for counteracting the “ echo chamber ” and “ clique ” tendencies of social networks, by forcing people into working and finding solidarity with others in their pursuit of justice.&emsp;And Iʼm hoping that by putting forward this argument, it will help to challenge ( particluarly white ) folks to think more seriously about their responsibilities as a participant on the platform.&emsp;If you care about Mastodon at all, you should at least <em>support</em> a healthy activist climate taking place in the spaces around you.&emsp;You <em>should</em> support the people engaging critically in those conversations.&emsp;And it is not as though there arenʼt any important community issues which we might be organizing around.</p>
+				<p>For what itʼs worth, I think that this “ violence ” thing…&ensp;might be a place to start.</p>
+			</div>
+		</section>
+		<footer>
+			Seriously, @ me :&ensp;<strong><a href="https://gentle.town/@LadyMargaret" rel="noopener noreferrer"><code>@LadyMargaret@gentle.town</code></a></strong>
+		</footer>
+	</article>
+</body>
+</html>
