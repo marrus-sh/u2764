@@ -5,7 +5,8 @@
 	<!ENTITY mdash '<span style="Display: Inline-Block; White-Space: NoWrap"> — </span>'>
 ]>
 <!--
-The inclusion of a DTD in the above DOCTYPE will make HTML parsers treat this page in quirks mode, but the htmlfix entity above properly closes the DOCTYPE, opens an html element, and begins a text/plain script tag, which will cause the rest of the DOCTYPE to be ignored. The names of remaining entities are chosen such that they fallback to reasonable Unicode equivalents in HTML.
+The inclusion of a DTD in the above DOCTYPE will make HTML parsers treat this page in quirks mode, but the htmlfix entity above properly closes the DOCTYPE, opens an html element, and begins a text/plain script tag, which will cause the rest of the DOCTYPE to be ignored. 
+The names of remaining entities are chosen such that they fallback to reasonable Unicode equivalents in HTML.
 
 This effectively allows this page to maintain approximate polyglot status, such that it should not be noticably different if somebody accidentally saves it with an HTML (and not XHTML) file extension.
 
@@ -16,9 +17,10 @@ For its part, &mdash; wraps emdashes in hair spaces.
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
 <head>
 	<script type="text/plain">[Closes the HTML parser fix]</script>
-	<title>❤ Page 07 – For­neʼer­more</title>
+	<title>❤ Page 07 – For­neʼer­more</title>
 	<meta charset="utf-8"/>
 	<meta name="viewport" content="width=device-width,intial-scale=1"/>
+	<meta name="referrer" content="no-referrer"/>
 	<style>
 html {
 	Margin: 0;
@@ -46,6 +48,31 @@ footer p {
 footer p+p {
 	Margin-Top: .75REM;
 	Text-Indent: 0;
+}
+footer nav {
+	Margin: 1.5REM Auto 0;
+	Border-Style: Solid Dotted Dotted Solid;
+	Border-Width: 1PX;
+	Padding: .75REM 3EM;
+	Max-Width: Max-Content;
+	Text-Align: Center;
+}
+footer nav div.PAGENAV {
+	Margin: 0 Auto;
+	Max-Width: Max-Content;
+	Line-Height: 1.5EM;
+}
+footer nav div.PAGENAV a[href] {
+	Outline: Thin Dashed;
+	Outline-Offset: .125EM;
+	Color: Inherit;
+	Text-Decoration: None;
+}
+footer nav div.PAGENAV a[href]:Focus { Outline-Style: Dotted }
+footer nav div.PAGENAV a[href]:Active { Outline: Medium Double }
+footer nav div.SITENAV {
+	Margin: .375EM 0 0;
+	Text-Transform: Uppercase;
 }
 header { Text-Align: Center }
 header hr {
@@ -212,7 +239,7 @@ h1 small b {
 header.SHORTTITLE { Display: None } /* Fallback */
 @supports ( Writing-Mode: Vertical-LR ) {
 	/*
-	Rendering the right marginal information depends on support for vertical left­‑to­‑right text.
+	Rendering the right marginal information depends on support for vertical left‐to‐right text.
 	*/
 	body::AFTER,
 	header.SHORTTITLE {
@@ -345,7 +372,7 @@ div.BODY section::BEFORE {
 }
 div.BODY section:First-Child::BEFORE {
 	/*
-	The sticky top border for the container, again, only this time on top of the first heading, to cover it when the heading is scrolled up past the top of the page (as the end of the entire BODY is beïng scrolled past).
+	The sticky top border for the container, again, only this time on top of the first heading, to cover it when the heading is scrolled up past the top of the page (as the end of the entire BODY is being scrolled past).
 	*/
 	Position: Sticky;
 	Top: 0;
@@ -435,7 +462,8 @@ div.ANCHOR {
 }
 @media ( Min-Height: 39EM ) {
 	/*
-	On tall browsers, headings stick to the top and bottom of the BODY for easy navigation (and so that the entire poem is made visible). This expects the number of headings to be no greater than 5.
+	On tall browsers, headings stick to the top and bottom of the BODY for easy navigation (and so that the entire poem is made visible). 
+	This expects the number of headings to be no greater than 5.
 	*/
 	div.BODY::BEFORE,
 	div.BODY::AFTER { Margin-Right: -2.5REM }
@@ -588,7 +616,9 @@ p b[tabindex] u::BEFORE {
 }
 p b[tabindex] u::AFTER {
 	/*
-	Draws an underline under the first letter in a sentence. This underline will always be clipped to .5EM wide, and its right edge will not extend past the right edge of the letter. For large letters, the left edge will extend .125EM before the letter ; for small letters ( like ‹ I › ), it may extend farther.
+	Draws an underline under the first letter in a sentence. 
+	This underline will always be clipped to .5EM wide, and its right edge will not extend past the right edge of the letter. 
+	For large letters, the left edge will extend .125EM before the letter; for small letters (like ‹ I ›), it may extend farther.
 	*/
 	Position: Absolute;
 	Right: 0;
@@ -675,47 +705,47 @@ span.JOURNAL { Text-Transform: Uppercase }
 					<li>
 						<strong>A meeting, past secret, exposed ;</strong>
 						<ol type="1" start="1">
-							<li style="Break-Inside: Avoid"><cite>A Different Shore</cite> | Nightnoise<br/>[ <a href="https://youtu.be/j9U6cNbSIhU" rel="noopener noreferrer" target="_blank">YouTube</a> | <a href="https://music.apple.com/us/album/a-different-shore/255974299?i=255974949" rel="noopener noreferrer" target="_blank">Apple Music</a> ]</li>
-							<li style="Break-Inside: Avoid"><cite>Wunder</cite> | Oskar Schuster<br/>[ <a href="https://shop.oskarschuster.com/track/wunder" rel="noopener noreferrer" target="_blank">Bandcamp</a> | <a href="https://youtu.be/ASjYPZGD7Gs" rel="noopener noreferrer" target="_blank">YouTube</a> | <a href="https://music.apple.com/us/album/wunder/834334221?i=834334237" rel="noopener noreferrer" target="_blank">Apple Music</a> ]</li>
-							<li style="Break-Inside: Avoid"><cite>Waltz “ Katzen Blut ”</cite> | Yuji Nomi<br/>[ <a href="https://youtu.be/Blqe-dUGz90" rel="noopener noreferrer" target="_blank">YouTube</a> | <a href="https://music.apple.com/us/album/waltz-katzen-blut/883503252?i=883503288" rel="noopener noreferrer" target="_blank">Apple Music</a> ]</li>
-							<li style="Break-Inside: Avoid"><cite>Take My Hand</cite> | Maya Filipič<br/>[ <a href="http://jamen.do/t/677049" rel="noopener noreferrer" target="_blank">Jamendo</a> | <a href="https://archive.org/details/jamendo-080948" rel="noopener noreferrer" target="_blank">Internet Archive</a> | <a href="https://youtu.be/e5oDaGKLrAg" rel="noopener noreferrer" target="_blank">YouTube</a> | <a href="https://music.apple.com/us/album/take-my-hand/705070153?i=705070159" rel="noopener noreferrer" target="_blank">Apple Music</a> ]</li>
-							<li style="Break-Inside: Avoid"><cite>Longing</cite> | Yosi Horikawa<br/>[ <a href="https://yosihorikawa.bandcamp.com/track/longing" rel="noopener noreferrer" target="_blank">Bandcamp</a> | <a href="https://youtu.be/eJgP3Pn6qCE" rel="noopener noreferrer" target="_blank">YouTube</a> | <a href="https://music.apple.com/us/album/longing/1463826014?i=1463826024" rel="noopener noreferrer" target="_blank">Apple Music</a> ]</li>
+							<li style="Break-Inside: Avoid"><cite>A Different Shore</cite> | Nightnoise<br/>[ <a href="https://youtu.be/j9U6cNbSIhU" target="_blank">YouTube</a> | <a href="https://music.apple.com/us/album/a-different-shore/255974299?i=255974949" target="_blank">Apple Music</a> ]</li>
+							<li style="Break-Inside: Avoid"><cite>Wunder</cite> | Oskar Schuster<br/>[ <a href="https://shop.oskarschuster.com/track/wunder" target="_blank">Bandcamp</a> | <a href="https://youtu.be/ASjYPZGD7Gs" target="_blank">YouTube</a> | <a href="https://music.apple.com/us/album/wunder/834334221?i=834334237" target="_blank">Apple Music</a> ]</li>
+							<li style="Break-Inside: Avoid"><cite>Waltz “ Katzen Blut ”</cite> | Yuji Nomi<br/>[ <a href="https://youtu.be/Blqe-dUGz90" target="_blank">YouTube</a> | <a href="https://music.apple.com/us/album/waltz-katzen-blut/883503252?i=883503288" target="_blank">Apple Music</a> ]</li>
+							<li style="Break-Inside: Avoid"><cite>Take My Hand</cite> | Maya Filipič<br/>[ <a href="http://jamen.do/t/677049" target="_blank">Jamendo</a> | <a href="https://archive.org/details/jamendo-080948" target="_blank">Internet Archive</a> | <a href="https://youtu.be/e5oDaGKLrAg" target="_blank">YouTube</a> | <a href="https://music.apple.com/us/album/take-my-hand/705070153?i=705070159" target="_blank">Apple Music</a> ]</li>
+							<li style="Break-Inside: Avoid"><cite>Longing</cite> | Yosi Horikawa<br/>[ <a href="https://yosihorikawa.bandcamp.com/track/longing" target="_blank">Bandcamp</a> | <a href="https://youtu.be/eJgP3Pn6qCE" target="_blank">YouTube</a> | <a href="https://music.apple.com/us/album/longing/1463826014?i=1463826024" target="_blank">Apple Music</a> ]</li>
 						</ol>
 					</li>
 					<li>
 						<strong>Lost future, and blood ergo flows ;</strong>
 						<ol type="1" start="6">
-							<li style="Break-Inside: Avoid"><cite>Obrigado ( Egberto )</cite> | Don Ross Louder Than Usual<br/>[ <a href="https://youtu.be/8UATUbpdd_A" rel="noopener noreferrer" target="_blank">YouTube</a> | <a href="https://music.apple.com/us/album/obrigado-egberto/1450837952?i=1450837961" rel="noopener noreferrer" target="_blank">Apple Music</a> ]</li>
-							<li style="Break-Inside: Avoid"><cite>Vampires</cite> | Godsmack<br/>[ <a href="https://youtu.be/GX3TsxJut7I" rel="noopener noreferrer" target="_blank">YouTube</a> | <a href="https://music.apple.com/us/album/vampires/1440889657?i=1440889871" rel="noopener noreferrer" target="_blank">Apple Music</a> ]</li>
-							<li style="Break-Inside: Avoid"><cite>Lifeforms</cite> | Daughter<br/>[ <a href="https://youtu.be/rvzZjPGbsjQ" rel="noopener noreferrer" target="_blank">YouTube</a> | <a href="https://music.apple.com/us/album/lifeforms/1451350962?i=1451350970" rel="noopener noreferrer" target="_blank">Apple Music</a> ]</li>
-							<li style="Break-Inside: Avoid"><cite>Fate</cite> | Joe Hisaishi<br/>[ <a href="https://youtu.be/rvhWPQt1vH4" rel="noopener noreferrer" target="_blank">YouTube</a> | <a href="https://music.apple.com/us/album/fate/895664857?i=895667081" rel="noopener noreferrer" target="_blank">Apple Music</a> ]</li>
-							<li style="Break-Inside: Avoid"><cite>12 Ghosts II</cite> | Nine Inch Nails<br/>[ <a href="https://archive.org/details/nineinchnails_ghosts_I_IV" rel="noopener noreferrer" target="_blank">Internet Archive</a> | <a href="https://youtu.be/-gL9nmk0M2c" rel="noopener noreferrer" target="_blank">YouTube</a> | <a href="https://music.apple.com/us/album/12-ghosts-ii/451466034?i=451466060" rel="noopener noreferrer" target="_blank">Apple Music</a> ]</li>
+							<li style="Break-Inside: Avoid"><cite>Obrigado ( Egberto )</cite> | Don Ross Louder Than Usual<br/>[ <a href="https://youtu.be/8UATUbpdd_A" target="_blank">YouTube</a> | <a href="https://music.apple.com/us/album/obrigado-egberto/1450837952?i=1450837961" target="_blank">Apple Music</a> ]</li>
+							<li style="Break-Inside: Avoid"><cite>Vampires</cite> | Godsmack<br/>[ <a href="https://youtu.be/GX3TsxJut7I" target="_blank">YouTube</a> | <a href="https://music.apple.com/us/album/vampires/1440889657?i=1440889871" target="_blank">Apple Music</a> ]</li>
+							<li style="Break-Inside: Avoid"><cite>Lifeforms</cite> | Daughter<br/>[ <a href="https://youtu.be/rvzZjPGbsjQ" target="_blank">YouTube</a> | <a href="https://music.apple.com/us/album/lifeforms/1451350962?i=1451350970" target="_blank">Apple Music</a> ]</li>
+							<li style="Break-Inside: Avoid"><cite>Fate</cite> | Joe Hisaishi<br/>[ <a href="https://youtu.be/rvhWPQt1vH4" target="_blank">YouTube</a> | <a href="https://music.apple.com/us/album/fate/895664857?i=895667081" target="_blank">Apple Music</a> ]</li>
+							<li style="Break-Inside: Avoid"><cite>12 Ghosts II</cite> | Nine Inch Nails<br/>[ <a href="https://archive.org/details/nineinchnails_ghosts_I_IV" target="_blank">Internet Archive</a> | <a href="https://youtu.be/-gL9nmk0M2c" target="_blank">YouTube</a> | <a href="https://music.apple.com/us/album/12-ghosts-ii/451466034?i=451466060" target="_blank">Apple Music</a> ]</li>
 						</ol>
 					</li>
 					<li>
 						<strong>But then humour makes kin —</strong>
 						<ol type="1" start="11">
-							<li style="Break-Inside: Avoid"><cite>Bixby Canyon Bridge</cite> | Death Cab for Cutie<br/>[ <a href="https://youtu.be/_mF7oq5HUw8" rel="noopener noreferrer" target="_blank">YouTube</a> | <a href="https://music.apple.com/us/album/bixby-canyon-bridge/967478425?i=967478426" rel="noopener noreferrer" target="_blank">Apple Music</a> ]</li>
-							<li style="Break-Inside: Avoid"><cite>Life of a Tanuki</cite> | Hasso Gakudan<br/>[ <a href="https://music.apple.com/us/album/life-of-a-tanuki/893003128?i=893003132" rel="noopener noreferrer" target="_blank">Apple Music</a> ]</li>
-							<li style="Break-Inside: Avoid"><cite>In Metaphor, Solace</cite> | Luke Howard<br/>[ <a href="https://youtu.be/eJy5RKvh7_g" rel="noopener noreferrer" target="_blank">YouTube</a> | <a href="https://music.apple.com/us/album/in-metaphor-solace/1359099454?i=1359100013" rel="noopener noreferrer" target="_blank">Apple Music</a> ]</li>
+							<li style="Break-Inside: Avoid"><cite>Bixby Canyon Bridge</cite> | Death Cab for Cutie<br/>[ <a href="https://youtu.be/_mF7oq5HUw8" target="_blank">YouTube</a> | <a href="https://music.apple.com/us/album/bixby-canyon-bridge/967478425?i=967478426" target="_blank">Apple Music</a> ]</li>
+							<li style="Break-Inside: Avoid"><cite>Life of a Tanuki</cite> | Hasso Gakudan<br/>[ <a href="https://music.apple.com/us/album/life-of-a-tanuki/893003128?i=893003132" target="_blank">Apple Music</a> ]</li>
+							<li style="Break-Inside: Avoid"><cite>In Metaphor, Solace</cite> | Luke Howard<br/>[ <a href="https://youtu.be/eJy5RKvh7_g" target="_blank">YouTube</a> | <a href="https://music.apple.com/us/album/in-metaphor-solace/1359099454?i=1359100013" target="_blank">Apple Music</a> ]</li>
 						</ol>
 					</li>
 					<li>
 						<strong>A consolidation —</strong>
 						<ol type="1" start="14">
-							<li style="Break-Inside: Avoid"><cite>After the Zero Hour</cite> | Wolf Alice<br/>[ <a href="https://youtu.be/VUzQW-GRZTQ" rel="noopener noreferrer" target="_blank">YouTube</a> | <a href="https://music.apple.com/us/album/after-the-zero-hour/1254129591?i=1254129603" rel="noopener noreferrer" target="_blank">Apple Music</a> ]</li>
-							<li style="Break-Inside: Avoid"><cite>Lovers &amp; Lean</cite> | Sabzi<br/>[ <a href="https://sabzi.bandcamp.com/track/lovers-lean" rel="noopener noreferrer" target="_blank">Bandcamp</a> | <a href="https://youtu.be/8z0npC9NEdc" rel="noopener noreferrer" target="_blank">YouTube</a> ]</li>
-							<li style="Break-Inside: Avoid"><cite>Unreal</cite> | Garmisch<br/>[ <a href="https://blocsonic.com/releases/bsog0008" rel="noopener noreferrer" target="_blank">BlocSonic</a> | <a href="https://archive.org/details/BSOG0008" rel="noopener noreferrer" target="_blank">Internet Archive</a> | <a href="https://music.apple.com/us/album/unreal/1053156683?i=1053157666" rel="noopener noreferrer" target="_blank">Apple Music</a> ]</li>
+							<li style="Break-Inside: Avoid"><cite>After the Zero Hour</cite> | Wolf Alice<br/>[ <a href="https://youtu.be/VUzQW-GRZTQ" target="_blank">YouTube</a> | <a href="https://music.apple.com/us/album/after-the-zero-hour/1254129591?i=1254129603" target="_blank">Apple Music</a> ]</li>
+							<li style="Break-Inside: Avoid"><cite>Lovers &amp; Lean</cite> | Sabzi<br/>[ <a href="https://sabzi.bandcamp.com/track/lovers-lean" target="_blank">Bandcamp</a> | <a href="https://youtu.be/8z0npC9NEdc" target="_blank">YouTube</a> ]</li>
+							<li style="Break-Inside: Avoid"><cite>Unreal</cite> | Garmisch<br/>[ <a href="https://blocsonic.com/releases/bsog0008" target="_blank">BlocSonic</a> | <a href="https://archive.org/details/BSOG0008" target="_blank">Internet Archive</a> | <a href="https://music.apple.com/us/album/unreal/1053156683?i=1053157666" target="_blank">Apple Music</a> ]</li>
 						</ol>
 					</li>
 					<li>
 						<strong>Small death and a fitful repose.</strong>
 						<ol type="1" start="17">
-							<li style="Break-Inside: Avoid"><cite>Book of Days</cite> | Enya<br/>[ <a href="https://youtu.be/LiBwr4U59EI" rel="noopener noreferrer" target="_blank">YouTube</a> | <a href="https://music.apple.com/us/album/book-of-days/253334781?i=253336375" rel="noopener noreferrer" target="_blank">Apple Music</a> ]</li>
-							<li style="Break-Inside: Avoid"><cite>Iceland</cite> | J.Views<br/>[ <a href="https://jviews.bandcamp.com/track/iceland" rel="noopener noreferrer" target="_blank">Bandcamp</a> | <a href="https://youtu.be/mHtaSxHJwB0" rel="noopener noreferrer" target="_blank">YouTube</a> | <a href="https://music.apple.com/us/album/iceland/1114897753?i=1114898486" rel="noopener noreferrer" target="_blank">Apple Music</a> ]</li>
-							<li style="Break-Inside: Avoid"><cite>Frozen Hot Sauce</cite> | Lifeformed<br/>[ <a href="https://lifeformed.bandcamp.com/track/frozen-hot-sauce" rel="noopener noreferrer" target="_blank">Bandcamp</a> | <a href="https://youtu.be/FxJXn1dOwGA" rel="noopener noreferrer" target="_blank">YouTube</a> | <a href="https://music.apple.com/us/album/frozen-hot-sauce/503232605?i=503233418" rel="noopener noreferrer" target="_blank">Apple Music</a> ]</li>
-							<li style="Break-Inside: Avoid"><cite>Paper Moon #3</cite> | Jeremy Messersmith<br/>[ <a href="https://jeremymessersmith.bandcamp.com/track/3" rel="noopener noreferrer" target="_blank">Bandcamp</a> | <a href="https://music.apple.com/us/album/paper-moon-3/613524629?i=613524911" rel="noopener noreferrer" target="_blank">Apple Music</a> ]</li>
-							<li style="Break-Inside: Avoid"><cite>Eternity</cite> | STUTS<br/>[ <a href="https://youtu.be/MvbILWe3dIA" rel="noopener noreferrer" target="_blank">YouTube</a> | <a href="https://music.apple.com/us/album/eternity/1424866258?i=1424868133" rel="noopener noreferrer" target="_blank">Apple Music</a> ]</li>
+							<li style="Break-Inside: Avoid"><cite>Book of Days</cite> | Enya<br/>[ <a href="https://youtu.be/LiBwr4U59EI" target="_blank">YouTube</a> | <a href="https://music.apple.com/us/album/book-of-days/253334781?i=253336375" target="_blank">Apple Music</a> ]</li>
+							<li style="Break-Inside: Avoid"><cite>Iceland</cite> | J.Views<br/>[ <a href="https://jviews.bandcamp.com/track/iceland" target="_blank">Bandcamp</a> | <a href="https://youtu.be/mHtaSxHJwB0" target="_blank">YouTube</a> | <a href="https://music.apple.com/us/album/iceland/1114897753?i=1114898486" target="_blank">Apple Music</a> ]</li>
+							<li style="Break-Inside: Avoid"><cite>Frozen Hot Sauce</cite> | Lifeformed<br/>[ <a href="https://lifeformed.bandcamp.com/track/frozen-hot-sauce" target="_blank">Bandcamp</a> | <a href="https://youtu.be/FxJXn1dOwGA" target="_blank">YouTube</a> | <a href="https://music.apple.com/us/album/frozen-hot-sauce/503232605?i=503233418" target="_blank">Apple Music</a> ]</li>
+							<li style="Break-Inside: Avoid"><cite>Paper Moon #3</cite> | Jeremy Messersmith<br/>[ <a href="https://jeremymessersmith.bandcamp.com/track/3" target="_blank">Bandcamp</a> | <a href="https://music.apple.com/us/album/paper-moon-3/613524629?i=613524911" target="_blank">Apple Music</a> ]</li>
+							<li style="Break-Inside: Avoid"><cite>Eternity</cite> | STUTS<br/>[ <a href="https://youtu.be/MvbILWe3dIA" target="_blank">YouTube</a> | <a href="https://music.apple.com/us/album/eternity/1424866258?i=1424868133" target="_blank">Apple Music</a> ]</li>
 						</ol>
 					</li>
 				</ol>
@@ -727,7 +757,7 @@ span.JOURNAL { Text-Transform: Uppercase }
 				<h2>A meeting, past secret, exposed ; <a href="#A.anchor">[ Permalink for section A ]</a></h2>
 				<p><b tabindex="0"><u>W</u>e</b>&mdash;were having a ball.</p>
 				<p><b tabindex="0"><u>T</u>he</b> location was a bar<span style="White-Space: NoWrap">.&emsp;<b tabindex="0"><u>I</u>t</b></span> was high⹀⁠end for its location, just north of the vampire district, and more affordable than similar ventures elsewhere in the city&mdash;which meant that more of our money could go towards those things which mattered<span style="White-Space: NoWrap"> :—&emsp;</span>music, decorations, and, naturally, our outfits<span style="White-Space: NoWrap">.&emsp;<b tabindex="0"><u>T</u>he</b></span> theme was Victorian, and its manifestation decidedly Gothic, although our spirits were light&mdash;this sort of extravagance only happening once a year.</p>
-				<p><b tabindex="0"><u>T</u>he</b> pianist plucked out a medley of contemporary, jazz, and show tunes<span style="White-Space: NoWrap">.&emsp;<b tabindex="0"><u>I</u>t</b></span> wasnʼt exactly in­‑theme, but none of us were about to complain<span style="White-Space: NoWrap">.&emsp;<b tabindex="0"><u>T</u>here</b></span> were some 30 or 40 of us seated in that room.</p>
+				<p><b tabindex="0"><u>T</u>he</b> pianist plucked out a medley of contemporary, jazz, and show tunes<span style="White-Space: NoWrap">.&emsp;<b tabindex="0"><u>I</u>t</b></span> wasnʼt exactly in‐theme, but none of us were about to complain<span style="White-Space: NoWrap">.&emsp;<b tabindex="0"><u>T</u>here</b></span> were some 30 or 40 of us seated in that room.</p>
 				<p><b tabindex="0"><u>T</u>he</b> scene was, and despite our best efforts, decidedly queer.</p>
 				<p><b tabindex="0"><u>O</u>ne</b> factor of this, no doubt, was simply the matter of hosting of a formal ball at an establishment with a barcounter<span style="White-Space: NoWrap">.&emsp;<b tabindex="0"><u>A</u>nd</b></span> neverminding the fact that our attire was a rough century out of date and fashion<span style="White-Space: NoWrap">.&emsp;<b tabindex="0"><u>F</u>orgetting</b></span> that this wasnʼt even England<span style="White-Space: NoWrap"> ;&ensp;</span>no, none of us had ever visited the place<span style="White-Space: NoWrap">.&emsp;<b tabindex="0"><u>N</u>o,</b></span> doubtlessly the queerest element was the fact that, despite the frank preponderance of dresses, powder, and wigs to suggest otherwise, none but one of our number actually lived out her days as a woman<span style="White-Space: NoWrap">.&emsp;<b tabindex="0"><u>T</u>his</b></span> was a crossdresserʼs ball, and we, the aforementioned, had come together ( plus admirers ) for a rare chance to live out our lives&mdash;outside the confines of the bedroom, or, as the case may be, closet&mdash;in each otherʼs presence for the night.</p>
 				<p><b tabindex="0"><u>T</u>he</b> dinner was steak<span style="White-Space: NoWrap">.&emsp;<b tabindex="0"><u>I</u>t</b></span> was a bit bloody.</p>
@@ -763,7 +793,7 @@ span.JOURNAL { Text-Transform: Uppercase }
 				<p><span style="White-Space: NoWrap">― <b tabindex="0"><u>F</u>rom</b></span> the look on your face, I take it this is your first time<span style="White-Space: NoWrap"> ?&emsp;<b tabindex="0"><u>T</u>he</b></span> vampire flashed me a smile as she led me to the chair, which did little to settle my nerves<span style="White-Space: NoWrap">.&emsp;<b tabindex="0"><u>H</u>er</b></span> teeth were unnaturally white.</p>
 				<p><span style="White-Space: NoWrap">― <b tabindex="0"><u>W</u>ell,</b></span> youʼve nothing to worry about, itʼs completely safe and&mdash;aside from a slight prickling sensation&mdash;painless<span style="White-Space: NoWrap">.&emsp;<b tabindex="0"><u>I</u>ʼm</b></span> going to bite in here<span style="White-Space: NoWrap">&mdash;&emsp;<b tabindex="0"><u>S</u>he</b></span> traced her finger along my wrist<span style="White-Space: NoWrap">.&emsp;<b tabindex="0"><u>I</u>t</b></span> was frigid<span style="White-Space: NoWrap">.&emsp;― <b tabindex="0">&mdash;<u>a</u>nd</b></span> slowly draw blood for about fifteen minutes<span style="White-Space: NoWrap">.&emsp;<b tabindex="0"><u>T</u>ell</b></span> me if you start feeling faint, and weʼll end early.</p>
 				<p><b tabindex="0"><u>I</u></b> was seated and made comfortable<span style="White-Space: NoWrap">.&emsp;<b tabindex="0"><u>T</u>he</b></span> chair was actually quite cozy&mdash;if a bit clinical in feel.</p>
-				<p><b tabindex="0"><u>T</u>he</b> vampire took my hand in hers, kneeling beside me, and I did my best not to shiver<span style="White-Space: NoWrap">.&emsp;<b tabindex="0"><u>W</u>e</b></span> spent an unnecessary moment staring into each otherʼs eyes<span style="White-Space: NoWrap">.&emsp;― <b tabindex="0"><u>F</u>or</b></span> the record<span style="White-Space: NoWrap">,&emsp;</span>she said, suddenly ( hers were green )<span style="White-Space: NoWrap">.&emsp;― <b tabindex="0"><u>I</u>ʼm</b></span> perfectly content to pass the next quarter­‑hour in silence<span style="White-Space: NoWrap">.&emsp;<b tabindex="0"><u>B</u>ut</b></span> some donors find that a bit awkward, so<span style="White-Space: NoWrap">…&emsp;<b tabindex="0"><u>I</u>f</b></span> thereʼs anything you need to get off your chest to a complete stranger, a feeding vampire is about the most patient ear you will get<span style="White-Space: NoWrap">.&emsp;<b tabindex="0"><u>S</u>omething</b> to keep in mind.</span></p>
+				<p><b tabindex="0"><u>T</u>he</b> vampire took my hand in hers, kneeling beside me, and I did my best not to shiver<span style="White-Space: NoWrap">.&emsp;<b tabindex="0"><u>W</u>e</b></span> spent an unnecessary moment staring into each otherʼs eyes<span style="White-Space: NoWrap">.&emsp;― <b tabindex="0"><u>F</u>or</b></span> the record<span style="White-Space: NoWrap">,&emsp;</span>she said, suddenly ( hers were green )<span style="White-Space: NoWrap">.&emsp;― <b tabindex="0"><u>I</u>ʼm</b></span> perfectly content to pass the next quarter‐hour in silence<span style="White-Space: NoWrap">.&emsp;<b tabindex="0"><u>B</u>ut</b></span> some donors find that a bit awkward, so<span style="White-Space: NoWrap">…&emsp;<b tabindex="0"><u>I</u>f</b></span> thereʼs anything you need to get off your chest to a complete stranger, a feeding vampire is about the most patient ear you will get<span style="White-Space: NoWrap">.&emsp;<b tabindex="0"><u>S</u>omething</b> to keep in mind.</span></p>
 				<p><b tabindex="0"><u>A</u>nd</b> without any further warning, she sunk her teeth into me.</p>
 				<p><b tabindex="0"><u>I</u></b> let out a small yelp, but she had been right&mdash;there was almost no pain, just the chill of her mouth and lips, and a slight tingling in my fingertips<span style="White-Space: NoWrap">.&emsp;<b tabindex="0"><u>I</u></b></span> looked away and did my best to pretend that she wasnʼt there<span style="White-Space: NoWrap">.&emsp;<b tabindex="0"><u>T</u>hat</b></span> there wasnʼt a vampire, very physically attaching herself to me.</p>
 				<p><b tabindex="0"><u>F</u>ifteen</b> seconds passed<span style="White-Space: NoWrap">.&emsp;<b tabindex="0"><u>I</u></b></span> looked back.</p>
@@ -775,7 +805,7 @@ span.JOURNAL { Text-Transform: Uppercase }
 					<p><b tabindex="0"><u>S</u>o</b> I set about seeking a community which I could call my own<span style="White-Space: NoWrap">.&emsp;<b tabindex="0"><u>T</u>he</b></span> local Crossdressersʼ chapter hadnʼt been a perfect match, but it was, for a time, well enough<span style="White-Space: NoWrap">.&emsp;<b tabindex="0"><u>Y</u>et</b></span> now it, too, had fallen through, with a mark of sexual deviancy affixed to my record for the effort.</p>
 					<p><b tabindex="0"><u>I</u></b> made it back to my apartment without incident<span style="White-Space: NoWrap">.&emsp;<b tabindex="0"><u>M</u>y</b></span> roommate was, thankfully, away at a night class<span style="White-Space: NoWrap">.&emsp;<b tabindex="0"><u>S</u>o</b></span> I was able to hide my incriminating Victorian attire without arousing any suspicion<span style="White-Space: NoWrap">.&emsp;<b tabindex="0"><u>T</u>he</b></span> time was only a little after <span style="Font-Variant-Numeric: Tabular-Nums">8PM</span>, but it was late fall, and the windows were already darkened<span style="White-Space: NoWrap">.&emsp;<b tabindex="0"><u>F</u>or</b></span> my part, I was exhausted<span style="White-Space: NoWrap">.&emsp;<b tabindex="0"><u>S</u>omething</b></span> about an evening not going as planned<span style="White-Space: NoWrap"> ;&ensp;</span>I went to bed.</p>
 					<p><b tabindex="0"><u>T</u>he</b> morning and a message arrived<span style="White-Space: NoWrap">.&emsp;<b tabindex="0"><u>T</u>he</b></span> police had&mdash;of course&mdash;informed the University of my transgressions<span style="White-Space: NoWrap"> ;&ensp;</span>they didnʼt take direct disciplinary action&mdash;but they didnʼt have to<span style="White-Space: NoWrap">.&emsp;<b tabindex="0"><u>M</u>y</b></span> scholarship donor was reportedly « uncomfortable with their money beïng spent in such a manner », and had withdrawn funding<span style="White-Space: NoWrap"> ;&ensp;</span>the only surprising note beïng how little time it had apparently taken for them to reach this decision<span style="White-Space: NoWrap">.&emsp;<b tabindex="0"><u>W</u>ithout</b></span> their financial support, this would be my last semester at school.</p>
-					<p><b tabindex="0"><u>I</u></b> didnʼt inform anyone of my at­‑risk attendance&mdash;least of all my parents<span style="White-Space: NoWrap">.&emsp;<b tabindex="0"><u>I</u></b></span> knew that my extracurricular activities would not go over well and hoped to keep the situätion under wraps<span style="White-Space: NoWrap">.&emsp;<b tabindex="0"><u>I</u>nstead,</b></span> I began looking for work<span style="White-Space: NoWrap">.&emsp;<b tabindex="0"><u>M</u>y</b></span> hope was that if I could at least make rent, I could pretend to still be at school  and defer suspicion until I had my affairs better in order.</p>
+					<p><b tabindex="0"><u>I</u></b> didnʼt inform anyone of my at‐risk attendance&mdash;least of all my parents<span style="White-Space: NoWrap">.&emsp;<b tabindex="0"><u>I</u></b></span> knew that my extracurricular activities would not go over well and hoped to keep the situätion under wraps<span style="White-Space: NoWrap">.&emsp;<b tabindex="0"><u>I</u>nstead,</b></span> I began looking for work<span style="White-Space: NoWrap">.&emsp;<b tabindex="0"><u>M</u>y</b></span> hope was that if I could at least make rent, I could pretend to still be at school  and defer suspicion until I had my affairs better in order.</p>
 					<p><b tabindex="0"><u>O</u>f</b> course, this was easiër said than done<span style="White-Space: NoWrap">.&emsp;<b tabindex="0"><u>A</u>n</b></span> undergraduate humanities major with a black mark on their record was far from the ideal candidate for employment&mdash;not that anyone went so far as to confirm that it was why I kept beïng turned down without chance for interview<span style="White-Space: NoWrap">.&emsp;<b tabindex="0"><u>A</u></b></span> few weeks isnʼt much time, but by the end I was already feeling more than a little helpless.</p>
 					<p><b tabindex="0"><u>Y</u>ou</b> see, when I had come back to Uni with my change of major, I had done so <em>imagining</em> a future coming from it<span style="White-Space: NoWrap">.&emsp;<b tabindex="0"><u>I</u>t</b></span> was my vision of that future which had driven me to press forward through my depression, to search for communities to which I might belong, to doubledown on my studies<span style="White-Space: NoWrap">.&emsp;<b tabindex="0"><u>I</u></b></span> had wanted to be a writer, or an editor, or a journalist&mdash;was that all off the table now ?</p>
 					<p><b tabindex="0"><u>T</u>hat</b> one night could so severely change my prospects was beyond reckoning, and, in a sense, it was this denial which kept me in the ring.</p>
@@ -945,9 +975,17 @@ span.JOURNAL { Text-Transform: Uppercase }
 			</section>
 		</div>
 		<footer>
-			<p><b tabindex="0"><u>I</u>nspired</b> by <a href="https://miraongchua.myshopify.com/products/vampire-blood-drive-pdf" rel="noopener noreferrer"><cite>My Very First Vampire Blood Drive</cite></a> by mira ong chua and <a href="https://jennyhval.bandcamp.com/album/blood-bitch"><cite>Blood Bitch</cite></a> by Jenny Hval<span style="White-Space: NoWrap">.&emsp;<b tabindex="0"><u>W</u>ritten</b></span> ( and hand­‑coded ) over several months mid­‑2019.</p>
+			<p><b tabindex="0"><u>I</u>nspired</b> by <a href="https://miraongchua.myshopify.com/products/vampire-blood-drive-pdf" rel="noopener noreferrer"><cite>My Very First Vampire Blood Drive</cite></a> by mira ong chua and <a href="https://jennyhval.bandcamp.com/album/blood-bitch"><cite>Blood Bitch</cite></a> by Jenny Hval<span style="White-Space: NoWrap">.&emsp;<b tabindex="0"><u>W</u>ritten</b></span> ( and hand‐coded ) over several months mid‐2019.</p>
 			<p><b tabindex="0"><u>W</u>orks</b> <em>significantly</em> better in [ desktop ] Firefox, and I canʼt believe Iʼm having to say that about a static nonscripted text page in 2019.</p>
 			<p><b tabindex="0"><u>R</u>emind</b> me never to do a <span class="JOURNAL">Journal</span> entry which takes this much markup again, lol.</p>
+			<nav>
+				<div class="PAGENAV">
+					<a href="./page06.xhtml">← Page 06</a>&emsp;<a href="./page08.xhtml">Page 08 →</a>
+				</div>
+				<div class="SITENAV">
+					<a href="./index.xhtml">Home</a>&ensp;|&ensp;<a href="./sitemap.xhtml">Sitemap</a>&ensp;|&ensp;<a href="./links.xhtml">Links</a>
+				</div>
+			</nav>
 		</footer>
 	</article>
 </body>
