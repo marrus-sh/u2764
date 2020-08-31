@@ -1,22 +1,30 @@
 <!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml" xmlns:xlink="http://www.w3.org/1999/xlink" lang="en" xml:lang="en">
 <!--
-The design of JOURNAL : \U2764 is a reïmagining of 90ʼs­‑era ( GeoCities ) web æsthetic with modern CSS capabilities. It draws heavily upon the designs of print media—both formal and informal, and especially of ⸰ that ⸰ era, when magazines actually had the resources to invest in cutting design, fax machines proliferated, and multipurpose paper got its name.
+The design of JOURNAL: \U2764 is a reïmagining of 90ʼs‐era (GeoCities) web æsthetic with modern CSS capabilities.
+It draws heavily upon the designs of print media—both formal and informal, and especially of ⸰ that ⸰ era, when magazines actually had the resources to invest in cutting design, fax machines proliferated, and multipurpose paper got its name.
 
-Typographically, the JOURNAL is inspired more by French ( and older English ) traditions than contemporary ones—there is extra spacing around most punctuation ( how much ? Well, it depends on the font… ) and guillemets are employed for quotes.
+The JOURNAL used to have a lot of typographic spacing, but this has since been removed in most places because browsers are frankly not capable of handling it in a pleasing manner, and it sometimes interfered with screenreaders.
 
-The colour palette is “ PRINT + PASTELS ”, which I developed from examining a box of coloured pencils and newsprint—itʼs slightly yellowed, and the colours are of that bold/pastel coloured pencil variety which so little finds representation on the web. The shades of print are  : { white : #FAF8F7 | bright : #DEDBD9 | light : #B8B3B0 | regular : #948D87 | medium : #75706A | dark : #57534C | dim : #302F2B | black : #1F1A14 } ; the pastels are : { red : #B01C1C | orange : #D15919 | gold : #EB9100 | yellow : #FAE13E | green : #50D952 | cyan : #1AACEB | blue : #4B2DF7 | pink : #F56E97 }.
+The colour palette is “PRINT + PASTELS”, which I developed from examining a box of coloured pencils and newsprint—itʼs slightly yellowed, and the colours are of that bold/pastel coloured pencil variety which so little finds representation on the web.
+The shades of print are: { white: #FAF8F7 | bright: #DEDBD9 | light: #B8B3B0 | regular: #948D87 | medium: #75706A | dark: #57534C | dim: #302F2B | black: #1F1A14 }; the pastels are: { red: #B01C1C | orange: #D15919 | gold: #EB9100 | yellow: #FAE13E | green: #50D952 | cyan: #1AACEB | blue: #4B2DF7 | pink: #F56E97 }.
 
-All source files are complete—as in, do not rely on external stylesheets or scripts. Actually, each page is styled by­‑hand from scratch, so sticking stylesheets in external files would hardly help ! And one of the goals of the JOURNAL is portability—you should be able to download, email, share, print each page, so keeping each page contained within a single file is important.
+All source files are complete—as in, do not rely on external stylesheets or scripts.
+Actually, each page is styled by‐hand from scratch, so sticking stylesheets in external files would hardly help!
+And one of the goals of the JOURNAL is portability—you should be able to download, email, share, print each page, so keeping each page contained within a single file is important.
 
-As you can see, source files are heavily commented to explain some of the finer points of their design and give background information on their publication. If you have an interest in web design, you might find reading these comments helpful ! Never be afraid to view the source ;P .
+As you can see, source files may be heavily commented to explain some of the finer points of their design and give background information on their publication.
+If you have an interest in web design, you might find reading these comments helpful!
+Never be afraid to view the source ;P .
 
-At time of writing, I am using CotEditor on macOS for composing these pages, and Firefox Developer Edition in Private Browsing for testing them. I will probably not care particularly strongly about WebKit browsers.
+At time of writing, I am using CotEditor on macOS for composing these pages, and Firefox Developer Edition in Private Browsing for testing them.
+I will probably not care particularly strongly about WebKit browsers.
 -->
 <head>
 	<title>❤ Cover</title>
 	<meta charset="utf-8"/>
 	<meta name="viewport" content="width=device-width,intial-scale=1"/>
+	<meta name="referrer" content="no-referrer"/>
 	<style>
 @namespace "http://www.w3.org/1999/xhtml";
 @namespace SVG "http://www.w3.org/2000/svg";
@@ -27,9 +35,13 @@ html {
 	Color: #FAF8F7;
 	Background:
 		/*
-		The following is a pattern you will see a ⸰ lot ⸰—in this page and likely in future pages as well. Because we are working with a ⸰ very ⸰ limited palette ( 8 greys and 8 colours ), we can use “ hatching ” to simulate “ in­‑between ” colours. You will see this same technique invoked by very old webpages which tried to limit themselves to the “ web safe ” colour set—they used bitmap images, and, very rarely, you will see modern ones trying to pull of the same effect with SVGs. We use linear gradients, because theyʼre compact, easy to read, and get the job done.
+		The following is a pattern you will see a ⸰ lot ⸰—in this page and likely in future pages as well.
+		Because we are working with a ⸰ very ⸰ limited palette (8 greys and 8 colours), we can use “hatching” to simulate “in‐between” colours.
+		You will see this same technique invoked by very old webpages which tried to limit themselves to the “web safe” colour set—they used bitmap images, and, very rarely, you will see modern ones trying to pull of the same effect with SVGs.
+		We use linear gradients, because theyʼre compact, easy to read, and get the job done.
 
-		When the angle of our gradient lines up with the pixel grid ( a multiple of 90° ), we can use “ hard ” stops and exact pixel values. The rest of the time, we need to apply a little bit of gradient between stops as a form of anti­‑aliasing.
+		When the angle of our gradient lines up with the pixel grid (a multiple of 90°), we can use “hard” stops and exact pixel values.
+		The rest of the time, we need to apply a little bit of gradient between stops as a form of anti‐aliasing.
 		*/
 		Repeating-Linear-Gradient(
 			45DEG,
@@ -55,7 +67,8 @@ body {
 }
 
 /*
-Basic styling. The goal is for each element to have a style that is flexible enough that it works in all of the different contexts it appears in on the page.
+Basic styling.
+The goal is for each element to have a style that is flexible enough that it works in all of the different contexts it appears in on the page.
 */
 b {
 	Display: Inline-Block;
@@ -68,7 +81,7 @@ b {
 	Line-Height: 1.25EM;
 }
 pre b { Padding: 0 }
-pre br { Display: None } /* `pre` elements are wrapped­‑to­‑fit ; we use `br` elements to suggest line­‑breaks for people viewing the page without our styling ( for example, in “ reader mode ” ). Actual newline characters can always be used to create line­‑breaks regardless. */
+pre br { Display: None } /* `pre` elements are wrapped‐to‐fit; we use `br` elements to suggest line‐breaks for people viewing the page without our styling (for example, in “reader mode”)—actual newline characters can always be used to create line‐breaks regardless */
 blockquote {
 	Margin: 0;
 	Padding: 0;
@@ -89,7 +102,7 @@ footer {
 	Margin: 1EM;
 	Border-Top: Thin Solid;
 	Padding: 1EM;
-	Font-Size: Small; /* The `small` tag will make it even smaller though */
+	Font-Size: Small; /* the `small` tag will make it even smaller though */
 	Text-Align: Center;
 }
 blockquote>footer {
@@ -122,13 +135,14 @@ SVG|svg {
 	Height: 2EX;
 	Vertical-Align: Middle;
 }
-*::SELECTION {
+*::selection {
 	Color: Var(--AccentColour);
 	Background: Var(--AccentBackground); /* `background-image` will be ignored so make SURE the accent background colour is acceptable (not transparent) */
 }
 
 /*
-The top heading. As this is the “ cover page ”, Iʼve styled this header to look like the cover of a notebook—complete with emoji stickers.
+The top heading.
+As this is the “cover page”, Iʼve styled this header to look like the cover of a notebook—complete with emoji stickers.
 */
 header {
 	Display: Block;
@@ -158,15 +172,15 @@ header {
 		#1F1A14;
 	Text-Align: Left;
 }
-header::BEFORE {
-	Display: Inline-Block; /* Make sure no whitespace follows the beginning of the header */
-	Width: Calc(50% - 16.5EM); /* Adds left padding if necessary */
+header::before {
+	Display: Inline-Block; /* make sure no whitespace follows the beginning of the header */
+	Width: Calc(50% - 16.5EM); /* adds left padding if necessary */
 	Min-Width: 1EM;
 	Height: 100%;
 	Content: "";
 }
 h1 {
-	Display: Inline-Block; /* Shrink to content */
+	Display: Inline-Block; /* shrink to content */
 	Padding: 11.25EM 0 1.25EM;
 	Font: 900 1.5REM / 1 Monospace;
 	Text-Align: Left;
@@ -189,7 +203,7 @@ h1>span>SVG|svg {
 	Height: .8EM;
 	Vertical-Align: Baseline;
 }
-header>SVG|svg { /* First sticker */
+header>SVG|svg { /* first sticker */
 	Display: Block;
 	Position: Absolute;
 	Top: 1.25EM;
@@ -203,14 +217,14 @@ header>SVG|svg { /* First sticker */
 	Height: 5EM;
 	Color: #F56E97;
 }
-header>SVG|svg:Nth-Of-Type(2) { /* Second sticker */
+header>SVG|svg:Nth-Of-Type(2) { /* second sticker */
 	Top: 5EM;
 	Left: Calc(50% - 16.5EM - .75IN);
 	Width: 5EM;
 	Height: 5EM;
 	Color: #EB9100;
 }
-header>SVG|svg:Nth-Of-Type(3) { /* Third sticker */
+header>SVG|svg:Nth-Of-Type(3) { /* third sticker */
 	Top: Auto;
 	Bottom: -2.5EM;
 	Left: Auto;
@@ -221,15 +235,16 @@ header>SVG|svg:Nth-Of-Type(3) { /* Third sticker */
 }
 
 /*
-Normally I would define the `max-width` on the article itself, but setting things up as below allows us to do fun things with individual sections and break up the layout more. The decorations on sections will frequently overflow the article container, which we hide to prevent horizontal scrollbars.
+Normally I would define the `max-width` on the article itself, but setting things up as below allows us to do fun things with individual sections and break up the layout more.
+The decorations on sections will frequently overflow the article container, which we hide to prevent horizontal scrollbars.
 */
 article {
 	Display: Block;
-	Position: Relative; /* Enables `z-index` */
-	Overflow: Hidden; /* Keeps decorative stuff from producing scrollbars */
+	Position: Relative; /* enables `z-index` */
+	Overflow: Hidden; /* keeps decorative stuff from producing scrollbars */
 	Overflow: -moz-Hidden-Unscrollable;
-	Overflow: Clip; /* Prevents even programmatic horizontal scrolling */
-	Z-Index: 0; /* Establishes new stacking context in front of page background */
+	Overflow: Clip; /* prevents even programmatic horizontal scrolling */
+	Z-Index: 0; /* establishes new stacking context in front of page background */
 	--AccentColour: #1F1A14;
 	--AccentBorder: #75706A;
 	--AccentBackground: #DEDBD9;
@@ -250,11 +265,12 @@ section {
 }
 
 /*
-The “ whatis ” section talks about how the JOURNAL is a… well, journal, so we give it the appearance of something ripped out of an old notebook.
+The “whatis” section talks about how the JOURNAL is a… well, journal, so we give it the appearance of something ripped out of an old notebook.
 */
 section#whatis {
 	/*
-	The hatching on the accent background is a cute way to lighten the colour without having to deal with opacity. Itʼs an actual subtle gradient ( the colour stops donʼt line up exactly ) to compensate for the fact that weʼre drawing diagonal lines on a square pixel grid.
+	The hatching on the accent background is a cute way to lighten the colour without having to deal with opacity.
+	Itʼs an actual subtle gradient (the colour stops donʼt line up exactly) to compensate for the fact that weʼre drawing diagonal lines on a square pixel grid.
 	*/
 	Background: Transparent;
 	--AccentBorder: #B01C1C;
@@ -270,7 +286,7 @@ section#whatis {
 }
 section#whatis p,
 section#whatis pre { Background: None }
-section#whatis::BEFORE {
+section#whatis::before {
 	Display: Block;
 	Position: Absolute;
 	Top: 0;
@@ -279,17 +295,17 @@ section#whatis::BEFORE {
 	Right: -1.5IN;
 	Box-Shadow: .125IN .125IN #B01C1C;
 	Background:
-		Radial-Gradient( /* Holes */
+		Radial-Gradient( /* holes */
 			Circle At .4375IN 1.25IN,
 			#302F2B .1875IN,
 			Transparent .1875IN
 		) Top Left / 1.5IN 4.25IN Repeat-Y,
-		Linear-Gradient( /* Left-hand line */
+		Linear-Gradient( /* left-hand line */
 			To Right,
 			Transparent Calc(1.5IN - 1PX),
 			#B01C1C Calc(1.5IN - 1PX)
 		) Center Left / 1.5IN 100% No-Repeat,
-		Repeating-Linear-Gradient( /* Lined­‑paper effect */
+		Repeating-Linear-Gradient( /* lined‐paper effect */
 			To Top,
 			Transparent 0,
 			#4B2DF7 0,
@@ -297,7 +313,7 @@ section#whatis::BEFORE {
 			Transparent 1.5PX,
 			Transparent 1.5EM
 		) Bottom Center / 100% Calc(100% - 1IN) No-Repeat,
-		Repeating-Linear-Gradient( /* Right-hand line hatching */
+		Repeating-Linear-Gradient( /* right-hand line hatching */
 			-45DEG,
 			Transparent 0,
 			Transparent .6PX,
@@ -309,7 +325,7 @@ section#whatis::BEFORE {
 	Z-Index: -1;
 	Content: "";
 }
-section#whatis::AFTER {
+section#whatis::after {
 	Display: Block;
 	Position: Absolute;
 	Top: 0;
@@ -322,11 +338,12 @@ section#whatis::AFTER {
 }
 
 /*
-The display of this section is inspired by the Amiga 500. It is set off to the right to break up the pageʼs visual flow.
+The display of this section is inspired by the Amiga 500.
+It is set off to the right to break up the pageʼs visual flow.
 
 If our margin becomes negative, then the section will cross the article boundary and get clipped, so we add padding to protect its content. If the margin is positive, then the padding will be invalid, and have no effect.
 
-Because we are using the padding for these purposes, we have to use the border to apply “ fake ” padding to our section.
+Because we are using the padding for these purposes, we have to use the border to apply “fake” padding to our section.
 */
 section#subject {
 	Margin: -3EM Calc(50% - 29.7EM) -2EM Auto;
@@ -337,7 +354,7 @@ section#subject {
 	Max-Width: 35EM;
 	Color: #DEDBD9;
 	Background: #4B2DF7;
-	Box-Shadow: 0 0 0 2PX #FAF8F7; /* Fake border */
+	Box-Shadow: 0 0 0 2PX #FAF8F7; /* fake border */
 	--AccentColour: #FAF8F7;
 	--AccentBorder: #EB9100;
 	--AccentBackground: #D15919;
@@ -345,11 +362,11 @@ section#subject {
 	--TextColour: #DEDBD9;
 	--TextBorder: #FAF8F7;
 	--TextBackground: #4B2DF7;
-	Font-Size: 1REM; /* Some browsers will try to reduce the size of monospace fonts */
+	Font-Size: 1REM; /* some browsers will try to reduce the size of monospace fonts */
 	Font-Family: Monospace;
 	Z-Index: 1;
 }
-section#subject::BEFORE { /* Topbar */
+section#subject::before { /* topbar */
 	Display: Block;
 	Position: Absolute;
 	Top: 0;
@@ -361,7 +378,7 @@ section#subject::BEFORE { /* Topbar */
 	Height: 2PX;
 	Content: "";
 }
-section#subject::AFTER { /* BottomBox */
+section#subject::after { /* bottombox */
 	Display: Block;
 	Position: Absolute;
 	Bottom: 0;
@@ -372,8 +389,8 @@ section#subject::AFTER { /* BottomBox */
 	Background: Padding-Box #FAF8F7;
 	Content: "";
 }
-section#subject:Target h2 SVG|svg:Not([color]) { Color: Inherit } /* Otherwise, the colour will match the background for this special case */
-section#subject>div.PARAGRAPHS>*:Last-Child::AFTER { /* Blinking cursor */
+section#subject:Target h2 SVG|svg:Not([color]) { Color: Inherit } /* otherwise, the colour will match the background for this special case */
+section#subject>div.PARAGRAPHS>*:Last-Child::after { /* blinking cursor */
 	Display: Inline-Block;
 	Margin: 0;
 	Height: Auto;
@@ -397,7 +414,7 @@ section#subject>div.PARAGRAPHS>*:Last-Child::AFTER { /* Blinking cursor */
 		Var(--AccentBorder);
 	Content: " ";
 }
-section#subject aside[role="note"] { /* Gives notes the look of a “ sticky note application ” */
+section#subject aside[role=note] { /* gives notes the look of a “sticky note application” */
 	Margin: .375EM -2EM .375EM 1CH;
 	Border-Width: 3PX;
 	Padding: Calc(.375EM - 3PX) 1CH;
@@ -406,7 +423,8 @@ section#subject aside[role="note"] { /* Gives notes the look of a “ sticky n
 }
 
 /*
-This uses the same offsetting as the above section, but in the opposite direction. Otherwise, itʼs pretty straightforward.
+This uses the same offsetting as the above section, but in the opposite direction.
+Otherwise, itʼs pretty straightforward.
 */
 section#aboutme {
 	Margin: 1EM Auto 1EM Calc(50% - 23.1EM);
@@ -427,12 +445,12 @@ section#aboutme {
 section#aboutme p,
 section#aboutme pre { Border: Thin Var(--TextBorder) Solid }
 section#aboutme::SELECTION,
-section#aboutme *::SELECTION { /* Selections are really hard to see otherwise */
+section#aboutme *::SELECTION { /* selections are really hard to see otherwise */
 	Color: #1F1A14;
 	Background: #F56E97;
 }
 section#aboutme aside[role=note]::SELECTION,
-section#aboutme aside[role=note] *::SELECTION { /* Back to defaults */
+section#aboutme aside[role=note] *::SELECTION { /* back to defaults */
 	Color: Var(--AccentColour);
 	Background: Var(--AccentBackground);
 }
@@ -452,9 +470,10 @@ section#places nav a[href],
 section#places h2 { Background: #FAF8F7 }
 
 /*
-Headings have a boxy look ; the design inspiration is those construction paper headings you sometimes see on poster­‑boards.
+Headings have a boxy look; the design inspiration is those construction paper headings you sometimes see on poster‐boards.
 
-An empty link is used in section headings to link to the section itself. After it is clicked ( or if the containing section is otherwise the target of the URL ), extra styling is applied, and the link is swapped out for one that targets the top of the page : via `::before` and `::after` pseudo­‑elements, to appropriately compensate for rotation.
+An empty link is used in section headings to link to the section itself.
+After it is clicked (or if the containing section is otherwise the target of the URL), extra styling is applied, and the link is swapped out for one that targets the top of the page: via `::before` and `::after` pseudo‐elements, to appropriately compensate for rotation.
 
 The navigation link to the first page borrows the heading stylings.
 */
@@ -472,11 +491,11 @@ h2 {
 	Background: Var(--TextBackground);
 	Box-Shadow: 2PX 2PX Var(--TextBorder);
 	Font: Bold X-Large/1.25 Sans-Serif;
-	Z-Index: 0; /* A stacking context will be created when the transform occurs, so this is just for consistency */
+	Z-Index: 0; /* a stacking context will be created when the transform occurs, so this is just for consistency */
 }
 nav a[href] { Margin: -3PX }
 nav a[href]:Focus,
-h2:Focus-Within { Transform: Rotate(-4DEG) } /* Not supported everywhere */
+h2:Focus-Within { Transform: Rotate(-4DEG) } /* not supported everywhere */
 nav a[href]:Hover,
 h2:Hover { Transform: Rotate(-2DEG) }
 nav a[href]:Active,
@@ -486,9 +505,9 @@ h2:Active {
 }
 nav a[href]:Focus:Active,
 nav a[href]:Hover:Active { Color: Var(--TextColour) }
-nav a[href]::BEFORE,
-h2::BEFORE,
-h2::AFTER,
+nav a[href]::before,
+h2::before,
+h2::after,
 h2 a:Empty {
 	Display: Block;
 	Position: Absolute;
@@ -503,12 +522,12 @@ h2 SVG|svg {
 	Vertical-Align: Text-Bottom;
 }
 h2 SVG|svg:Not([color]) { Color: Var(--AccentBorder) }
-nav a[href]:Hover::BEFORE,
-h2:Hover::BEFORE {
+nav a[href]:Hover::before,
+h2:Hover::before {
 	Transform: Rotate(2DEG);
 	Content: "";
 }
-section:Target h2::AFTER {
+section:Target h2::after {
 	Border-Style: Solid Double Double Solid;
 	Border-Color: Var(--TextBorder);
 	Border-Width: 3PX;
@@ -517,7 +536,7 @@ section:Target h2::AFTER {
 	Z-Index: -1;
 	Content: "";
 }
-section:Target h2::BEFORE {
+section:Target h2::before {
 	Top: -.6EM;
 	Bottom: -.6EM;
 	Left: -.6EM;
@@ -537,11 +556,13 @@ section:Target h2 a:Empty { Display: None }
 section:Target h2 a:Empty[href="#"] { Display: Block }
 
 /*
-Marginal notes are just sans­‑serif floats. Thereʼs nothing too complicated here and no reason to get fancy. Visually, theyʼre somewhere in­‑between a pull quote and a sticky.
+Marginal notes are just sans‐serif floats.
+Thereʼs nothing too complicated here and no reason to get fancy.
+Visually, theyʼre somewhere in‐between a pull quote and a sticky.
 */
 aside[role=note] {
 	Display: Block;
-	Position: Relative; /* This is just for stacking behaviour */
+	Position: Relative; /* this is just for stacking behaviour */
 	Box-Sizing: Border-Box;
 	Float: Right;
 	Clear: Right;
@@ -555,20 +576,25 @@ aside[role=note] {
 	Box-Shadow: -2PX 2PX 0 1PX #302F2B;
 	Font: Normal Larger/1.2 Sans-Serif;
 	Text-Align: Left;
-	Z-Index: 100; /* Put these notes on top of everything else */
+	Z-Index: 100; /* put these notes on top of everything else */
 	--AccentColour: Var(--AsideBackground);
 	--AccentBorder: Var(--AsideColour);
 	--AccentBackground: Var(--AsideColour);
 }
 
 /*
-There are two possible approaches to rendering a pilcrow at the beginning of a paragraph : using `text-indent` and absolute positioning, or using an inline­‑block as seen here. One downside to using an inline­‑block is : Whitespace at the beginning of paragraphs is now significant, as it will be rendered between the first letter and the `::before`. However, it makes getting proper alignment and positioning ⸰ much ⸰ easier.
+There are two possible approaches to rendering a pilcrow at the beginning of a paragraph: using `text-indent` and absolute positioning, or using an inline‐block as seen here.
+One downside to using an inline‐block is:
+Whitespace at the beginning of paragraphs is now significant, as it will be rendered between the first letter and the `::before`.
+However, it makes getting proper alignment and positioning ⸰ much ⸰ easier.
 
-Paragraphs themselves are inline elements, ⸰ not ⸰ blocks, which gives them a “ highlighter ” effect. `::after` is used to create the space between them—the styling for `strong` does this as well.
+Paragraphs themselves are inline elements, ⸰ not ⸰ blocks, which gives them a “highlighter” effect.
+`::after` is used to create the space between them—the styling for `strong` does this as well.
 
-The `.PARAGRAPHS` div provides overflow clipping for paragraphs, to ensure that they donʼt exceed their designated area on the page. This mostly comes into play with `strong` elements.
+The `.PARAGRAPHS` div provides overflow clipping for paragraphs, to ensure that they donʼt exceed their designated area on the page.
+This mostly comes into play with `strong` elements.
 
-`pre` is taken as a whitespace­‑significant variant of `p` in our usage.
+`pre` is taken as a whitespace‐significant variant of `p` in our usage.
 */
 div.PARAGRAPHS {
 	Margin: 0;
@@ -588,10 +614,10 @@ pre {
 }
 p { Hyphens: Auto }
 pre { White-Space: Pre-Wrap }
-p::BEFORE,
-pre::BEFORE {
+p::before,
+pre::before {
 	Display: Inline-Block;
-	Position: Relative; /* For `z-index`ing */
+	Position: Relative; /* for `z-index`ing */
 	Margin: -1PX Calc(.75EM - 1PX) -1PX Calc(-1.25EM - 1PX);
 	Border: 1PX Var(--AccentBorder) Solid;
 	Padding: 0 1.25EM 0 0;
@@ -601,36 +627,42 @@ pre::BEFORE {
 	Background: Var(--AccentBackground);
 	Line-Height: 1.25EM;
 	Text-Align: Center;
-	Z-Index: 1; /* Places on top of everything else */
+	Z-Index: 1; /* places on top of everything else */
 	Content: "¶";
 }
-p::AFTER,
-pre::AFTER {
+p::after,
+pre::after {
 	Display: Block;
 	Margin-Bottom: 1.5EM;
 	Height: 0;
 	Content: "";
 }
-p:Last-Child::AFTER,
-pre:Last-Child::AFTER { Content: None }
+p:Last-Child::after,
+pre:Last-Child::after { Content: None }
 
 /*
-This is a huge hack. Basically weʼre shifting the entire important portion down a line, without changing how the words are flowed, and using the resulting whitespace to draw the eye and break up the text. You canʼt do this and then “ pick up where you left off ” ( well, you hypothetically could, but it would mean wrapping everything afterwards in a span ) so we fudge around it by terminating the line in a bunch of dots and then resuming the paragraph on a new line. It looks alright.
+This is a huge hack.
+Basically weʼre shifting the entire important portion down a line, without changing how the words are flowed, and using the resulting whitespace to draw the eye and break up the text.
+You canʼt do this and then “pick up where you left off” (well, you hypothetically could, but it would mean wrapping everything afterwards in a span) so we fudge around it by terminating the line in a bunch of dots and then resuming the paragraph on a new line.
+It looks alright.
 
-The `::after` actually creates the dots, and forces the newline—did you know you can stick a block element inside an inline ? You can and itʼs perfect for this. The `::before` ensures that the space ⸰ before ⸰ the first line is whited out—otherwise, if the text only spans one line, the dots would appear there also.
+The `::after` actually creates the dots, and forces the newline—did you know you can stick a block element inside an inline?
+You can and itʼs perfect for this.
+The `::before` ensures that the space ⸰ before ⸰ the first line is whited out—otherwise, if the text only spans one line, the dots would appear there also.
 */
 strong {
 	Position: Relative;
 	Top: 1.5EM;
 	Margin: -.25EM 0 -.125EM;
-	Padding: Calc(.25EM - 5PX) 0 Calc(.125EM - 5PX) .5EM;
+	Padding: Calc(.25EM - 5PX) 0 Calc(.125EM - 5PX);
 	Color: Var(--TextColour);
 	Background: Var(--TextBackground);
 	Border-Style: Double None;
 	Border-Color: Var(--AccentBorder);
 	Border-Width: 5PX;
+	White-Space: Pre-Wrap;
 }
-strong::BEFORE {
+strong::before {
 	Display: Inline-Block;
 	Position: Relative;
 	Margin: 0 0 0 -100%;
@@ -640,7 +672,7 @@ strong::BEFORE {
 	Z-Index: -2;
 	Content: "";
 }
-strong::AFTER {
+strong::after {
 	Display: Block;
 	Position: Relative;
 	Bottom: 1.5EM;
@@ -654,7 +686,10 @@ strong::AFTER {
 }
 
 /*
-When I handwrite texts, I wind up doing really long, swooshy ( more­‑than‑ )em­‑dashes. To replicate that look here, weʼll use a span which hides the text ( using `overflow` so that it stays “ rendered ” ) and then constructs its own curly dash using `::before` and `::after` pseudo­‑elements. ( Note : This differs from the actual swung dash `⁓`, which I use as a lilting voice mark. )
+When I handwrite texts, I wind up doing really long, swooshy (more‐than‐)em‐dashes.
+To replicate that look here, weʼll use a span which hides the text (using `overflow` so that it stays “rendered”) and then constructs its own curly dash using `::before` and `::after` pseudo‐elements.
+(Note:
+This differs from the actual swung dash `⁓`, which I use as a lilting voice mark.)
 */
 span.DASH {
 	Display: Inline-Block;
@@ -668,7 +703,7 @@ span.DASH {
 	Background: Var(--AccentBackground);
 	Overflow: Hidden;
 }
-span.DASH::BEFORE {
+span.DASH::before {
 	Display: Block;
 	Position: Absolute;
 	Bottom: .4EX;
@@ -680,7 +715,7 @@ span.DASH::BEFORE {
 	Height: .35EX;
 	Content: "";
 }
-span.DASH::AFTER {
+span.DASH::after {
 	Display: Block;
 	Position: Absolute;
 	Bottom: .75EX;
@@ -720,28 +755,65 @@ span.DASH::AFTER {
 				</defs>
 				<rect x="0" y="0" width="64" height="64" mask="url(#heartmask)"/>
 			</svg>Journal: </span>
-			<span>\u2764 </span><!-- Whitespace at end is intentional -->
-		</h1><svg xmlns="http://www.w3.org/2000/svg" viewBox="-2 -2 36 36" width="132" height="132"><title>Heart Emoji</title><description>A glistening heart, rotated slightly right.</description><use href="#svg-heart" xlink:href="#svg-heart" transform="rotate(20 16 16)"/></svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="-8 -8 48 48" width="132" height="132"><title>Shooting Star Emoji</title><description>A star, trailing in a subtle arc, to the left.</description><use href="#svg-shootingstar" xlink:href="#svg-shootingstar" transform="rotate(-30 16 16)"/></svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="-6 -6 44 44" width="132" height="132"><title>Sparkles Emoji</title><description>Three star­‑shaped sparkles.</description><use href="#svg-sparkles" xlink:href="#svg-sparkles"/></svg></header>
+			<span>\u2764 </span><!-- whitespace at end is intentional -->
+		</h1><svg xmlns="http://www.w3.org/2000/svg" viewBox="-2 -2 36 36" width="132" height="132"><title>Heart Emoji</title><description>A glistening heart, rotated slightly right.</description><use href="#svg-heart" xlink:href="#svg-heart" transform="rotate(20 16 16)"/></svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="-8 -8 48 48" width="132" height="132"><title>Shooting Star Emoji</title><description>A star, trailing in a subtle arc, to the left.</description><use href="#svg-shootingstar" xlink:href="#svg-shootingstar" transform="rotate(-30 16 16)"/></svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="-6 -6 44 44" width="132" height="132"><title>Sparkles Emoji</title><description>Three star‐shaped sparkles.</description><use href="#svg-sparkles" xlink:href="#svg-sparkles"/></svg></header>
 		<section id="whatis">
 			<h2><svg xmlns="http://www.w3.org/2000/svg" viewBox="-2 -2 36 36" width="36" height="36"><title>Curious Dog Emoji</title><description>A dog, tilting its head, with a question mark appearing above it.</description><use href="#svg-dogtilt" xlink:href="#svg-dogtilt" transform="rotate(-10 16 16)"/></svg> So, like, what is this, exactly<svg xmlns="http://www.w3.org/2000/svg" viewBox="-2 -2 36 36" width="36" height="36"><title>Eroteme Emoji</title><description>A filled question mark sign, rotated slightly right.</description><use href="#svg-eroteme" xlink:href="#svg-eroteme" transform="rotate(10 16 16)"/></svg><a href="#whatis"></a><a href="#"></a></h2>
 			<div class="PARAGRAPHS">
-				<p>Itʼs a journal. A web­‑journal. Some might even say web­‑<em>zine</em><span class="DASH">—</span>personally Iʼm not sure those two words necessarily add anything to each other ; independent, multimedia, unconventional press has <em>always</em> been the format of the webpage<span class="DASH">—</span>if anything we need a name for those <em>other</em> sites, those polished, corporate storefronts which hardly even deserve the prefix <i>web‑</i>. Itʼs a web­‑journal in the way that web­‑logs <em>arenʼt</em> : forward­‑chronological, each page a handcrafted statement and a resource on its own, the whole more an album than a chart of singles, an artistic statement. <strong>Itʼs what I imagine when I think of the word “ webpage ”… </strong>I got tired of not seeing it, so I went ahead and built one.</p>
-				<aside role="note">If a <dfn>web­‑log</dfn> is a <i>blog</i>, does that make a <dfn>web­‑journal</dfn> a <i>bjørn</i> ? <span style="White-Space:NoWrap"><svg xmlns="http://www.w3.org/2000/svg" viewBox="-2 -2 36 36" width="18" height="18"><title>Thinking Emoji</title><description>A thinking face, tilting slightly left.</description><use href="#svg-thinking" xlink:href="#svg-thinking" transform="rotate(-15 16 16)"/></svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="-2 -2 36 36" width="18" height="18"><title>Thinking Emoji</title><description>A thinking face, upside down.</description><use href="#svg-thinking" xlink:href="#svg-thinking" transform="rotate(195, 16, 16)"/></svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="-2 -2 36 36" width="18" height="18"><title>Thinking Emoji</title><description>A thinking face, tilting right.</description><use href="#svg-thinking" xlink:href="#svg-thinking" transform="rotate(24, 16, 16)"/></svg></span><!-- This is a very multi­‑level joke, which possibly depends on you knowing that “ ou ” is sometimes represented as “ ô ” in japanese and “ bjôrn ” is a rare variant form of “ bjørn ”. “ web journal ” > “ we bjourn( al ) ” > “ we bjôrn ” ⁓ “ we bjørn ”. I make no apologies. --></aside>
-				<p><strong>Prior art : </strong>Every GeoCities website ever made. <small>[ NB : Not actually. But you know what I mean. ]</small> Iʼd like to say that good web design has taken place, somewhere on the internet, since 2009, but I think we can all agree that itʼs <em>pretty rare</em>. Which strikes me as funny : HTML and CSS technologies are more sophisticated now than theyʼve ever been, computers and data connections are faster than ever before, and yet… the pinnacle of web design was reached five years and two days before <a href="https://www.w3.org/TR/html50/" rel="noopener noreferrer">HTML5</a> achieved W3C Recommendation status ? That <em>canʼt</em> be right. Surely.</p>
-				<aside role="note">People will argue with me that “ static site generators ” and “ version management ” have made the web harder to code for than it used to be<span class="DASH">—</span>but (1) you can still open up a text editor and code some HTML and view it in Firefox same as ever before, and (2) anyone remember <code>&lt;!DOCTYPE HTML PUBLIC "-<wbr/>//W3C<wbr/>//DTD HTML 4.01<wbr/>//EN" "https://<wbr/>www.w3.org<wbr/>/TR<wbr/>/html4<wbr/>/strict.dtd"<wbr/>></code> ? Table layouts ? Single­‑pixel transparent GIFs ? I rest my case.</aside>
-				<p>But it <em>does</em> seem like weʼve lost something<span class="DASH">—</span>and it isnʼt ease­‑of­‑access : web pages are easier to write and easier to publish than they ever have been<span class="DASH">—</span>but a certain kind of creätivity and ingenuïty, webpages viewed <em>as art</em> and not simply as the pale backdrop for a dry run of text and high­‑resolution stock photography. Iʼm trying my best to hold my tongue and not say, « thatʼs because boys donʼt understand design and women have been driven out of the industry »<span class="DASH">—</span>because ( I hear ) there are ( were ), out there, in the big wide world, good designers who were men and still cared about accessibility and creätivity and æsthetics<span class="DASH">—</span>and they got driven out of the industry too. Industry<span class="DASH">—</span>why are we even talking about that ? Is that what the Internet has become ?</p>
+				<p>Itʼs a journal. 
+					A web‐journal. 
+					Some might even say web‐<em>zine</em><span class="DASH">—</span>personally Iʼm not sure those two words necessarily add anything to each other; independent, multimedia, unconventional press has <em>always</em> been the format of the webpage<span class="DASH">—</span>if anything we need a name for those <em>other</em> sites, those polished, corporate storefronts which hardly even deserve the prefix <i>web‐</i>. 
+					Itʼs a web‐journal in the way that web‐logs <em>arenʼt</em>: forward‐chronological, each page a handcrafted statement and a resource on its own, the whole more an album than a chart of singles, an artistic statement. 
+					<strong> Itʼs what I imagine when I think of the word “webpage”…  </strong>
+					I got tired of not seeing it, so I went ahead and built one.</p>
+				<aside role="note">If a <dfn>web‐log</dfn> is a <i>blog</i>, does that make a <dfn>web‐journal</dfn> a <i>bjørn</i>? 
+					<span style="White-Space:NoWrap"><svg xmlns="http://www.w3.org/2000/svg" viewBox="-2 -2 36 36" width="18" height="18"><title>Thinking Emoji</title><description>A thinking face, tilting slightly left.</description><use href="#svg-thinking" xlink:href="#svg-thinking" transform="rotate(-15 16 16)"/></svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="-2 -2 36 36" width="18" height="18"><title>Thinking Emoji</title><description>A thinking face, upside down.</description><use href="#svg-thinking" xlink:href="#svg-thinking" transform="rotate(195, 16, 16)"/></svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="-2 -2 36 36" width="18" height="18"><title>Thinking Emoji</title><description>A thinking face, tilting right.</description><use href="#svg-thinking" xlink:href="#svg-thinking" transform="rotate(24, 16, 16)"/></svg></span>
+					<!--
+					This is a very multi‐level joke, which possibly depends on you knowing that “ou” is sometimes represented as “ô” in japanese and “bjôrn” is a rare variant form of “bjørn”. 
+					“web journal” > “we bjourn( al )” > “we bjôrn” ⁓ “we bjørn”. 
+					I make no apologies.
+					--></aside>
+				<p><strong> Prior art:  </strong>
+					Every GeoCities website ever made. 
+					<small>[NB: Not actually. But you know what I mean.] </small>
+					Iʼd like to say that good web design has taken place, somewhere on the internet, since 2009, but I think we can all agree that itʼs <em>pretty rare</em>. 
+					Which strikes me as funny: 
+					HTML and CSS technologies are more sophisticated now than theyʼve ever been, computers and data connections are faster than ever before, and yet… the pinnacle of web design was reached five years and two days before <a href="https://www.w3.org/TR/html50/">HTML5</a> achieved W3C Recommendation status? 
+					That <em>canʼt</em> be right. 
+					Surely.</p>
+				<aside role="note">People will argue with me that “static site generators” and “version management” have made the web harder to code for than it used to be<span class="DASH">—</span>but (1) you can still open up a text editor and code some HTML and view it in Firefox same as ever before, and (2) anyone remember <code>&lt;!DOCTYPE HTML PUBLIC "-<wbr/>//W3C<wbr/>//DTD HTML 4.01<wbr/>//EN" "https://<wbr/>www.w3.org<wbr/>/TR<wbr/>/html4<wbr/>/strict.dtd"<wbr/>></code>? 
+					Table layouts? 
+					Single‐pixel transparent GIFs? 
+					I rest my case.</aside>
+				<p>But it <em>does</em> seem like weʼve lost something<span class="DASH">—</span>and it isnʼt ease‐of‐access: web pages are easier to write and easier to publish than they ever have been<span class="DASH">—</span>but a certain kind of creativity and ingenuity, webpages viewed <em>as art</em> and not simply as the pale backdrop for a dry run of text and high‐resolution stock photography. 
+					Iʼm trying my best to hold my tongue and not say, « thatʼs because boys donʼt understand design and women have been driven out of the industry »<span class="DASH">—</span>because (I hear) there are (were), out there, in the big wide world, good designers who were men and still cared about accessibility and creativity and æsthetics<span class="DASH">—</span>and they got driven out of the industry too. 
+					Industry<span class="DASH">—</span>why are we even talking about that? 
+					Is that what the Internet has become?</p>
 				<aside role="note">Just because the tech industry is a boysʼ club <em>doesnʼt</em> mean all boys are allowed<span class="DASH">—</span>and this is something Iʼm learning to pay attention to more.</aside>
-				<p>Letʼs forget industry<span class="DASH">—</span>this is a journal. Do you remember ?<span class="DASH">—</span>if you were born in the 90s you might<span class="DASH">—</span>the distinction they tried to push on us, regarding diaries and journals ? “ Journals ” are what <em>boys</em> write : objective records of the world ; facts and information<span class="DASH">—</span>diaries are “ girlsʼ stuff ”<span class="DASH">—</span>they said<span class="DASH">—</span>diaries are personal, sentimental<span class="DASH">—</span>Anne Frank wrote a <em>diary</em>, Mary Shelley wrote a <em>diary</em> ( nevermind that it was titled <cite>The Journal of Sorrow</cite> ) but Lewis Carroll<span class="DASH">—</span>no, wait, Lewis Carroll kept a diary as well<span class="DASH">—</span>he was a weird one though<span class="DASH">—</span>but John Steinbeck !</p>
-				<p>This is not <em>that</em> kind of journal. ( Or diary, for that matter. )</p>
-				<p>This is ( just ) a ( simple ) record of the thoughts of one individual, glitzed up with <del>felt pen</del><ins>HTML</ins> and <del>stickers</del><ins>CSS</ins>, and published to the Internet like itʼs 1997 all over again. But with, like, linear­‑gradients and CSS variables, because itʼs <em>not</em> 1997 all over again. We can do better now. <strong>Canʼt we ?</strong></p>
-				<p>Ah, but here are some things this <span class="JOURNAL">Journal</span> is <em>not</em> : <strong>Detached. Formal. Uniform. Rigorous. Polished. Cohesive. </strong>This is not your grandfatherʼs tech blog. This is not Medium [ Dot ] Com. Itʼs a bunch of fuckinʼ HTML pages that I wrote by hand in a text editor. Appreciate the effort, lol.</p>
+				<p>Letʼs forget industry<span class="DASH">—</span>this is a journal. 
+					Do you remember?<span class="DASH">—</span>if you were born in the 90s you might<span class="DASH">—</span>the distinction they tried to push on us, regarding diaries and journals? 
+					“Journals” are what <em>boys</em> write: objective records of the world; facts and information<span class="DASH">—</span>diaries are “girlsʼ stuff”<span class="DASH">—</span>they said<span class="DASH">—</span>diaries are personal, sentimental<span class="DASH">—</span>Anne Frank wrote a <em>diary</em>, Mary Shelley wrote a <em>diary</em> (nevermind that it was titled <cite>The Journal of Sorrow</cite>) but Lewis Carroll<span class="DASH">—</span>no, wait, Lewis Carroll kept a diary as well<span class="DASH">—</span>he was a weird one though<span class="DASH">—</span>but John Steinbeck!</p>
+				<p>This is not <em>that</em> kind of journal. 
+					(Or diary, for that matter.)</p>
+				<p>This is (just) a (simple) record of the thoughts of one individual, glitzed up with <del>felt pen</del><ins>HTML</ins> and <del>stickers</del><ins>CSS</ins>, and published to the Internet like itʼs 1997 all over again. 
+					But with, like, linear‐gradients and CSS variables, because itʼs <em>not</em> 1997 all over again. 
+					We can do better now. 
+					<strong> Canʼt we?  </strong></p>
+				<p>Ah, but here are some things this <span class="JOURNAL">Journal</span> is <em>not</em>:— 
+					<strong> Detached.  Formal.  Uniform.  Rigorous.  Polished.  Cohesive.  </strong>
+					This is not your grandfatherʼs tech blog. 
+					This is not Medium [Dot] Com. 
+					Itʼs a bunch of fuckinʼ HTML pages that I wrote by hand in a text editor. 
+					Appreciate the effort, lol.</p>
 			</div>
 		</section>
 		<section id="subject">
-			<!-- The typography of this section is a little different ( especially as far as whitespace is concerned ) because it is aimed at a monospace font. -->
+			<!--
+			The typography of this section is a little different (especially as far as whitespace is concerned) because it is aimed at a monospace font.
+			-->
 			<h2><svg xmlns="http://www.w3.org/2000/svg" viewBox="-2 -2 36 36" width="36" height="36"><title>Swearing Emoji</title><description>A person with symbols over their mouth, indicating cursing.</description><use href="#svg-swear" xlink:href="#svg-swear" transform="rotate(-15 16 16)"/></svg> Subject Matter.<a href="#subject"></a><a href="#"></a></h2>
 			<div class="PARAGRAPHS">
-				<pre>Anything and everything.    But realistically :
+				<pre>Anything and everything.  But realistically:
 <span role="list">
 <span role="listitem"><b aria-hidden="true"> + </b> Personal thoughts</span>
 <span role="listitem"><b aria-hidden="true"> + </b> Life stories</span>
@@ -749,30 +821,44 @@ span.DASH::AFTER {
 <span role="listitem"><b aria-hidden="true"> + </b> Media criticism</span>
 <span role="listitem"><b aria-hidden="true"> + </b> Tech and design commentary</span>
 <span role="listitem"><b aria-hidden="true"> + </b> Song lyrics</span>
-<span role="listitem"><b aria-hidden="true"> + </b> Poëtry ?  ⟨ oh god i hope there isnʼt any poëtry ⟩</span><!-- No final newline needed --></span></pre>
-				<pre>Regarding technology :  I think ( one of ) the <br />measure( s ) of good writing is the ability of a text to <br />produce something which outlasts its current moment.    Even <br />in journalism responding directly to current events, there is <br />a historical/cultural/human interest in well­‑written pieces <br />which greatly outlasts the events that they describe.</pre>
-				<pre>It is undeniable that technology has a huge and <br />significant impact on many of our lives, and this is indeed a <br />matter of historical/cultural/human interest worthy of note <br />and record.    However, tech “ journalism ” is…  mostly <br />lacking in this regard.    New phones that will be obsolete in <br />a year ;  controversies between figures that have no <br />relevance outside of their extremely narrow field ;  social <br />media companies continuing their slow march towards decay<br /><span class="DASH">—</span>despite the churn there is little here of lasting <br />substance.</pre>
-				<pre>Something I think itʼs worthwhile to consider before <br />publishing any critical piece responding to technology :  Is <br />this something I would still consider worthy of reading, if it <br />were to be printed off, stuck away somewhere, and only <br />discovered years later after all the technologies it was <br />responding to have come and gone ?    It is not impossible to <br />write pieces with this quality.    I still quite enjoy reading <br />about HyperCard, even though HyperCard technologies themselves <br />are long gone.</pre>
-				<pre>( My apologies to the HyperCard revivalists. )</pre>
-				<aside role="note">I think “ shape ” is a good way to think about it :  If you write about technology which shapes you<span class="DASH">—</span>youʼre really just writing about yourself.</aside>
-				<pre>So<span class="DASH">—</span>I am not planning on publishing, to this journal <br />( although I may elsewhere ), technical takes or analyses <br />regarding some obscure aspect of some fledgling protocol <br />( * cough, cough * ActivityPub ) whose relevance ( the <br />takesʼ ) is unlikely to last the year.    But I will not shy <br />away from addressing technology, as it stands, as it impacts <br />our lives, as it shapes and is shaped by our experiences and <br />efforts, in the present, future, or yesteryear.</pre>
+<span role="listitem"><b aria-hidden="true"> + </b> Poetry? ⟨oh god i hope there isnʼt any poetry⟩</span><!-- No final newline needed --></span></pre>
+				<pre>Regarding technology: I think (one of) the <br />measure(s) of good writing is the ability of a text to <br />produce something which outlasts its current moment.  Even <br />in journalism responding directly to current events, there is <br />a historical/cultural/human interest in well‐written pieces <br />which greatly outlasts the events that they describe.</pre>
+				<pre>It is undeniable that technology has a huge and <br />significant impact on many of our lives, and this is indeed a <br />matter of historical/cultural/human interest worthy of note <br />and record.  However, tech “journalism” is… mostly <br />lacking in this regard.  New phones that will be obsolete in <br />a year; controversies between figures that have no <br />relevance outside of their extremely narrow field; social <br />media companies continuing their slow march towards decay<br /><span class="DASH">—</span>despite the churn there is little here of lasting <br />substance.</pre>
+				<pre>Something I think itʼs worthwhile to consider before <br />publishing any critical piece responding to technology: Is <br />this something I would still consider worthy of reading, if it <br />were to be printed off, stuck away somewhere, and only <br />discovered years later after all the technologies it was <br />responding to have come and gone?  It is not impossible to <br />write pieces with this quality.  I still quite enjoy reading <br />about HyperCard, even though HyperCard technologies themselves <br />are long gone.</pre>
+				<pre>(My apologies to the HyperCard revivalists.)</pre>
+				<aside role="note">I think “shape” is a good way to think about it: If you write about technology which shapes you<span class="DASH">—</span>youʼre really just writing about yourself.</aside>
+				<pre>So<span class="DASH">—</span>I am not planning on publishing, to this journal <br />(although I may elsewhere), technical takes or analyses <br />regarding some obscure aspect of some fledgling protocol <br />(*cough, cough* ActivityPub) whose relevance (the <br />takesʼ) is unlikely to last the year.  But I will not shy <br />away from addressing technology, as it stands, as it impacts <br />our lives, as it shapes and is shaped by our experiences and <br />efforts, in the present, future, or yesteryear.</pre>
 			</div>
 		</section>
 		<section id="aboutme">
 			<h2><svg xmlns="http://www.w3.org/2000/svg" viewBox="-2 -2 36 36" width="36" height="36"><title>Tipping Hand Emoji</title><description>A person tipping their hand, as if explaining something.</description><use href="#svg-handtip" xlink:href="#svg-handtip"/></svg> About Me <svg xmlns="http://www.w3.org/2000/svg" viewBox="-2 -2 36 36" width="36" height="36"><title>Nametag Emoji</title><description>A name badge, shaped like a tulip, tilted to the right.</description><use href="#svg-nametag" xlink:href="#svg-nametag" transform="rotate(20,16,16)"/></svg><a href="#aboutme"></a><a href="#"></a></h2>
 			<div class="PARAGRAPHS">
 				<aside role="note">Write about yourself more.</aside>
-				<p>My name is Kyebego<span class="DASH">—</span>or KIBI Gô, Allie HART, jellyfish_link, JʼLi, Leaf, Emogee, Moggy, and just about every other variation on Margaret you can imagine. This is my journal ! </p>
-				<p>Iʼm a genderfluid grey­‑ace trans woman living in Washington State<span class="DASH">—</span>but like, not the rainy part of Washington State, the part of Washington State with basalt and gay­‑haters, and coyotes which break into the gay­‑hatersʼ pantries and steal all of their delicious meats, because coyotes are queer allies yʼall, just ask them : « Awoo ! » I studied Mathematics and then Gender Studies at one of the <a href="https://web.archive.org/web/20140910201028/http://www.theawl.com/2014/09/how-whitman-college-is-destroying-itself" rel="noopener noreferrer">least economically­‑diverse liberal­‑arts colleges in the country</a>, and have been trying to unlearn the racism from that place ever since. I was born in 1994, which makes me old enough to technically be a millennial, but young enough to share nothing in common with those Bad Millennials like Mark Zuckerberg. I still have social anxiëty and know Marx though. My first webpages were published via email to my friends, and if you wanted you could email this webpage to your friends too, and I wouldnʼt stop you. I still donʼt understand how servers manage to function. Iʼm very good at HTML and CSS ( your mileäge may vary ). </p>
-				<aside role="note"><blockquote>— When the brother yelled « Action ! », it wasnʼt just for his actors : He wanted to see the masses get they asses out the door<span class="DASH">—</span>get up !<footer>— <a href="https://bluescholars.bandcamp.com/track/cinemetropolis" rel="noopener noreferrer">Blue Scholars, “ Cinemetropolis ”</a></footer></blockquote></aside>
-				<p>In November of 2016 I joined the social network Mastodon, and in the time since have written some of the most widely­‑circulated and well­‑thought­‑out articles discussing the platform, which is a really low bar. In 2018, I published this little thing called <a href="https://www.cybremonday.deals/2018/" rel="nofollow noreferrer"><cite>The CYBRE Manifesto</cite></a>, which people said “ moved them ”, but Iʼm still not clear on where <em>to</em>, since theyʼre still enacting the same old behaviours as before. I write highly­‑experimental fanfiction, which my friends all love and strangers donʼt bother to click on. I created this webpage ! and I hope you enjoy. </p>
+				<p>My name is KIBI Gô<span class="DASH">—</span>or Lady KIBI, Allie HART, jellyfish_link, JʼLi, Autumn Leaf, Emogee, Moggy, and just about every other variation on Margaret you can imagine. 
+					This is my journal! </p>
+				<p>Iʼm a genderfluid grey‐ace trans woman living in Washington State<span class="DASH">—</span>but like, not the rainy part of Washington State, the part of Washington State with basalt and gay‐haters, and coyotes which break into the gay‐hatersʼ pantries and steal all of their delicious meats, because coyotes are queer allies yʼall, just ask them: 
+					« Awoo! » 
+					I studied Mathematics and then Gender Studies at one of the <a href="https://web.archive.org/web/20140910201028/http://www.theawl.com/2014/09/how-whitman-college-is-destroying-itself" rel="noopener noreferrer">least economically‐diverse liberal‐arts colleges in the country</a>, and have been trying to unlearn the racism from that place ever since. 
+					I was born in 1994, which makes me old enough to technically be a millennial, but young enough to share nothing in common with those Bad Millennials like Mark Zuckerberg. 
+					I still have social anxiety and know Marx though. 
+					My first webpages were published via email to my friends, and if you wanted you could email this webpage to your friends too, and I wouldnʼt stop you. 
+					I still donʼt understand how servers manage to function. 
+					Iʼm very good at HTML and CSS (your mileage may vary).  </p>
+				<aside role="note"><blockquote>— When the brother yelled « Action! », it wasnʼt just for his actors: He wanted to see the masses get they asses out the door<span class="DASH">—</span>get up!<footer>— <a href="https://bluescholars.bandcamp.com/track/cinemetropolis" rel="noopener noreferrer">Blue Scholars, “Cinemetropolis”</a></footer></blockquote></aside>
+				<p>In November of 2016 I joined the social network Mastodon, and in the time since have written some of the most widely‐circulated and well‐thought‐out articles discussing the platform, which is a really low bar. 
+					In 2018, I published this little thing called <a href="https://go.KIBI.family/CYBREMONDAY/2018/"><cite>The CYBRE Manifesto</cite></a>, which people said “moved them”, but Iʼm still not clear on where <em>to</em>, since theyʼre still enacting the same old behaviours as before. 
+					I write highly‐experimental fanfiction, which my friends all love and strangers donʼt bother to click on. 
+					I created this webpage! and I hope you enjoy.  </p>
 			</div>
 		</section>
 		<section id="places">
 			<h2><svg xmlns="http://www.w3.org/2000/svg" viewBox="-2 -2 36 36" width="36" height="36"><title>Magnifier Emoji</title><description>A magnifying glass, tilted to the left.</description><use href="#svg-magnifier" xlink:href="#svg-magnifier"/></svg> Finding Your Way Around <svg xmlns="http://www.w3.org/2000/svg" viewBox="-2 -2 36 36" width="36" height="36"><title>Investigator Emoji</title><description>A person in a coat and hat, holding a magnifying glass.</description><use href="#svg-investigator" xlink:href="#svg-investigator"/></svg><a href="#places"></a><a href="#"></a></h2>
 			<div class="PARAGRAPHS">
-				<p>Each entry in this journal will have a URL path of <code>page$$.xhtml</code>, where <i>$$</i> is the page number of the entry. The complete list of pages at any given time will be available from the <a href="./sitemap.xhtml">sitemap</a>. You are currently reading the front cover, and additional meta­‑level information can be found on the <a href="./back.xhtml">back cover</a> as well.</p>
-				<p>Contact information, links to other cool webpages, and so forth can all be found on the <a href="./links.xhtml">links page</a>. Links to all of these locations are present on the <a href="./">splash page</a>, which is the best resource to link if youʼre looking to share the <span class="JOURNAL">Journal</span> as a whole.</p>
+				<p>Each entry in this journal will have a URL path of <code>page$$.xhtml</code>, where <i>$$</i> is the page number of the entry. 
+					The complete list of pages at any given time will be available from the <a href="./sitemap.xhtml">sitemap</a>. 
+					You are currently reading the front cover, and additional meta‐level information can be found on the <a href="./back.xhtml">back cover</a> as well.</p>
+				<p>Contact information, links to other cool webpages, and so forth can all be found on the <a href="./links.xhtml">links page</a>. 
+					Links to all of these locations are present on the <a href="./">splash page</a>, which is the best resource to link if youʼre looking to share the <span class="JOURNAL">Journal</span> as a whole.</p>
 			</div>
 			<nav>
 				<span>Onward to…</span>
@@ -780,7 +866,7 @@ span.DASH::AFTER {
 			</nav>
 		</section>
 		<footer>
-			<small>The following emoji used in this article are derived from the <a href="https://mutant.tech" rel="noopener norefferer"><cite>Mutant Standard</cite></a> ( 0.3.1 ) emoji set :</small>
+			<small>The following emoji used in this article are derived from the <a href="https://mutant.tech"><cite>Mutant Standard</cite></a> (0.3.1) emoji set:</small>
 			<blockquote><!-- EMOJI USED -->
 
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" width="16" height="16">
@@ -893,7 +979,7 @@ span.DASH::AFTER {
 		<mask id="svg-swear.mask" x="0" y="0" width="1" height="1" fill="white">
 			<path d="M16.206,2.001c5.455,0.016 10.755,3.08 13.521,7.776 1.715,2.8 2.425,6.128 2.272,9.39 -0,4.892 -3.057,9.594 -7.504,11.618 -2.164,1.054 -4.603,1.312 -6.98,1.215 -2.823,-0.09 -5.734,0.31 -8.464,-0.611C4.242,29.913 0.554,25.414 0.075,20.403 -0.234,17.075 0.201,13.614 1.792,10.637 4.289,5.731 9.471,2.33 14.974,2.032c0.41,-0.024 0.821,-0.036 1.232,-0.031zm-0.362,4c-4.616,-0 -9.041,2.952 -10.844,7.195 -1.027,2.308 -1.197,4.92 -0.859,7.399 0.62,3.768 3.892,6.89 7.685,7.33 2.171,0.169 4.355,0.03 6.531,0.07 2.972,0.189 5.998,-1.138 7.791,-3.53C27.575,22.66 28.143,20.305 28,18.029 28.071,13.45 25.234,9.012 21.07,7.12 19.442,6.358 17.641,5.976 15.844,6.001ZM29.084,2.001c1.284,0.017 2.481,0.954 2.807,2.196 0.313,1.079 -0.06,2.303 -0.893,3.047C30.746,7.496 30.495,7.748 30.243,8c0.546,0.584 1.231,1.083 1.529,1.852 0.508,1.179 0.143,2.656 -0.859,3.459 -0.983,0.84 -2.517,0.918 -3.58,0.183C26.8,13.117 26.389,12.6 25.914,12.156 25.342,11.594 24.744,11.031 24.388,10.299 23.543,8.704 23.668,6.654 24.703,5.174 25.186,4.479 25.851,3.941 26.429,3.329 26.871,2.868 27.337,2.395 27.957,2.187 28.316,2.054 28.701,1.991 29.084,2.001ZM20.084,0.001c0.862,0.014 1.679,0.441 2.242,1.083C22.551,1.309 22.775,1.533 23,1.757 23.584,1.212 24.083,0.526 24.852,0.228 26.03,-0.280 27.507,0.085 28.31,1.087 29.151,2.069 29.229,3.603 28.494,4.667 28.11,5.207 27.586,5.625 27.136,6.107 26.575,6.68 26.008,7.273 25.274,7.625 23.674,8.462 21.625,8.324 20.151,7.281 19.467,6.799 18.934,6.143 18.329,5.571 17.868,5.129 17.395,4.663 17.187,4.043 16.723,2.846 17.144,1.384 18.176,0.619 18.716,0.202 19.402,-0.019 20.084,0.001Z"/>
 			<!--
-				Iʼve removed the paths around the left and bottom chevrons. The bottom chevronʼs path was completely hidden, but the left chevronʼs path had a near­‑imperceptible portion visible at the top of the head.
+				Iʼve removed the paths around the left and bottom chevrons. The bottom chevronʼs path was completely hidden, but the left chevronʼs path had a near‐imperceptible portion visible at the top of the head.
 			-->
 			<path fill="black" d="M30,18c0,-7.732 -6.268,-14 -14,-14c0,0 0,0 0,0c-7.732,0 -14,6.268 -14,14c0,0.335 0,0.668 0,1c0,6.075 4.925,11 11,11c1.972,0 4.028,0 6,0c6.075,0 11,-4.925 11,-11c0,-0.332 0,-0.665 0,-1Z"/>
 			<rect x="3" y="20.018" width="26" height="11.982"/>
@@ -968,7 +1054,7 @@ span.DASH::AFTER {
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" width="16" height="16">
 	<title>Sparkles Emoji</title>
 	<description>
-		Three star­‑shaped sparkles.
+		Three star‐shaped sparkles.
 	</description>
 	<metadata>
 		<rdf:RDF xmlns:cc="http://web.resource.org/cc/" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:dc = "http://purl.org/dc/elements/1.1/">
@@ -1124,7 +1210,9 @@ span.DASH::AFTER {
 </svg>
 
 			</blockquote>
-			<small>These, and this article as a whole, are licensed under a <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" rel="license nofollow noopener noreferrer"><cite>Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International License</cite></a>. Non­‑emoji portions of this article are also licensed under the ( slightly ) more permissive <a href="https://creativecommons.org/licenses/by-sa/4.0/" rel="nofollow noopener noreferrer"><cite>Creative Commons Attribution-ShareAlike 4.0 International License</cite></a>—so free to steal my CSS when your friends down the street hire you to build their bandʼs webpage. ( Provided you ShareAlike, of course ;P . )</small>
+			<small>These, and this article as a whole, are licensed under a <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" rel="license nofollow noopener noreferrer"><cite>Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International License</cite></a>. 
+			Non‐emoji portions of this article are also licensed under the (slightly) more permissive <a href="https://creativecommons.org/licenses/by-sa/4.0/" rel="nofollow noopener noreferrer"><cite>Creative Commons Attribution-ShareAlike 4.0 International License</cite></a>—so free to steal my CSS when your friends down the street hire you to build their bandʼs webpage. 
+			(Provided you ShareAlike, of course ;P .)</small>
 		</footer>
 	</article>
 </body>
