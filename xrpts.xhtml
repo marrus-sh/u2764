@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
+<head>
+	<title>❤ Excerpts</title>
+	<meta charset="utf-8"/>
+	<meta name="viewport" content="width=device-width,intial-scale=1"/>
+	<meta name="referrer" content="no-referrer"/>
+	<style>
+html {
+	Margin: 0;
+	Padding: 0;
+	Color: #302F2B;
+	Background: #DEDBD9;
+}
+body {
+	Display: Grid;
+	Margin: 0;
+	Padding: 0;
+	Height: 100VH;
+	Grid: Auto 1FR / Max-Content 1FR;
+}
+body>h1 {
+	Box-Sizing: Border-Box;
+	Grid-Area: 1 / 1;
+	Margin: Auto;
+	Padding: .5EM;
+	Width: Max-Content;
+	Max-Width: Calc(100VW / 3);
+	Min-Width: Min-Content;
+	Font: 500 X-Large / 1 Serif;
+	Text-Decoration: Underline;
+}
+body>nav {
+	Box-Sizing: Border-Box;
+	Direction: RTL;
+	Grid-Area: 2 / 1;
+	Justify-Self: Stretch;
+	Border-Top: Thin Solid;
+	Width: 12EM;
+	Max-Width: Calc(100VW / 3);
+	Min-Width: 100%;
+	Overflow-Y: Scroll;
+	Scrollbar-Color: #DEDBD9 #1F1A14;
+}
+body>nav>ol {
+	Direction: LTR;
+	Margin: 0;
+	Padding: 0;
+	Counter-Reset: Number;
+}
+body>nav>ol>li {
+	Display: Block;
+	Margin: 0;
+	Padding: 0;
+	Counter-Increment: Number;
+}
+body>nav>ol>li>a {
+	Display: Block;
+	Position: Relative;
+	Border-Bottom: Thin #302F2B Solid;
+	Padding: .75EM .5EM .75EM 3.5EM;
+	Background: #B8B3B0;
+	Font: Medium / 1.5 Cursive;
+	Hyphens: Auto;
+	Z-Index: 0;
+}
+body>nav>ol>li>a::before {
+	Display: Grid;
+	Position: Absolute;
+	Box-Sizing: Border-Box;
+	Top: 0;
+	Bottom: 0;
+	Left: 0;
+	Border-Right: Thin #75706A Solid;
+	Width: 3EM;
+	Align-Content: Center;
+	Color: #302F2B;
+	Background: #FAF8F7;
+	Font: Bold Italic Medium / 1 Serif;
+	Text-Align: Center;
+	Content: Counter(Number, Decimal-Leading-Zero) ".";
+}
+body>nav>ol>li>a:Any-Link {
+	Color: Inherit;
+	Text-Decoration: Dashed #75706A Underline;
+}
+body>nav>ol>li>a:Any-Link:Active {
+	Color: #B01C1C;
+	Text-Decoration-Color: #B01C1C;
+}
+body>nav>ol>li>a:Hover { Background: #DEDBD9 }
+body>nav>ol>li>a:Hover::before {
+	Border-Color: #F56E97;
+	Color: #B01C1C;
+}
+body>nav>p {
+	Direction: LTR;
+	Margin: .75EM 0;
+	Padding: 0 .5EM;
+	Font: Italic Small / 1.5 Serif;
+	Text-Align: Justify;
+	Text-Align-Last: Center;
+	Hyphens: Auto;
+}
+body>nav>p cite { Font-Style: Normal }
+body>div {
+	Position: Relative;
+	Grid-Area: 1 / 2 / Span 2 / Span 1;
+	Border-Left: Thin Solid;
+	Overflow: Auto;
+	Color: #1F1A14;
+	Background: #FAF8F7;
+}
+body>div>footer {
+	Position: Absolute;
+	Box-Sizing: Border-Box;
+	Bottom: 0;
+	Right: 0;
+	Padding: .5EM;
+	Max-Width: 100%;
+	Opacity: .95;
+	Font: Medium / 1.5 Serif;
+	Text-Align: Right;
+	Text-Transform: Uppercase;
+	Transition: Ease-In-Out Opacity .25S;
+}
+body>div>footer:Hover{ Opacity: .2 }
+body>div>footer>p {
+	Display: Inline;
+	Box-Decoration-Break: Clone;
+	Border: Thin Solid;
+	Padding: .15EM;
+	Color: #1F1A14;
+	Background: #FAF8F7;
+	Pointer-Events: None;
+}
+body>div>footer>p:Empty { Display: None }
+iframe[name=pane] {
+	Display: Block;
+	Box-Sizing: Border-Box;
+	Margin: 0;
+	Border: None;
+	Width: 100%;
+	Height: 100%;
+}
+	</style>
+</head>
+<body>
+	<h1>Excerpts</h1>
+	<nav>
+		<ol style="List-Style-Type: Decimal-Leading-Zero">
+		</ol>
+		<p>
+			<cite>Excerpts</cite> provides a selection of small clippings from various media for your education and entertainment. 
+			These may feature additional highlighting or annotation. 
+			Where possible, links to the original source are provided.
+		</p>
+		<p>
+			Copyright for the excerpts provided herein belongs to the original authors. 
+			They are made available under the principles of fair use. 
+			Feel free to clip bits out and use them in future zines, under principles of the same.
+		</p>
+		<p><a href="./">Return to <cite style="Text-Transform: Uppercase">Journal: \u2764</cite>.</a></p>
+	</nav>
+	<div>
+		<iframe id="pane" name="pane" src="about:blank"></iframe>
+		<footer>
+			<p></p>
+			<script>document.getElementById(`pane`).addEventListener(`load`, ( { target } ) => document.querySelector(`body>div>footer>p`).textContent = target.contentDocument.title ?? ``)</script>
+		</footer>
+	</div>
+</body>
+</html>
