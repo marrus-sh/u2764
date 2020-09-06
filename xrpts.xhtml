@@ -112,30 +112,6 @@ body>div {
 	Color: #1F1A14;
 	Background: #FAF8F7;
 }
-body>div>footer {
-	Position: Absolute;
-	Box-Sizing: Border-Box;
-	Bottom: 0;
-	Right: 0;
-	Padding: .5EM;
-	Max-Width: 100%;
-	Opacity: .95;
-	Font: Medium / 1.5 Serif;
-	Text-Align: Right;
-	Text-Transform: Uppercase;
-	Transition: Ease-In-Out Opacity .25S;
-}
-body>div>footer:Hover{ Opacity: .2 }
-body>div>footer>p {
-	Display: Inline;
-	Box-Decoration-Break: Clone;
-	Border: Thin Solid;
-	Padding: .15EM;
-	Color: #1F1A14;
-	Background: #FAF8F7;
-	Pointer-Events: None;
-}
-body>div>footer>p:Empty { Display: None }
 iframe[name=pane] {
 	Display: Block;
 	Box-Sizing: Border-Box;
@@ -170,10 +146,6 @@ cite {
 	</nav>
 	<div>
 		<iframe id="pane" name="pane" src="about:blank"></iframe>
-		<footer>
-			<p></p>
-			<script>document.getElementById(`pane`).addEventListener(`load`, ( { target } ) => document.querySelector(`body>div>footer>p`).textContent = target.contentDocument.title ?? ``)</script>
-		</footer>
 	</div>
 </body>
 </html>
