@@ -5,6 +5,7 @@
 	<meta charset="utf-8"/>
 	<meta name="viewport" content="width=device-width,intial-scale=1"/>
 	<meta name="referrer" content="no-referrer"/>
+	<base target="pane"/>
 	<style>
 html {
 	Margin: 0;
@@ -60,7 +61,7 @@ body>nav>ol>li>a {
 	Border-Bottom: Thin #302F2B Solid;
 	Padding: .75EM .5EM .75EM 3.5EM;
 	Background: #B8B3B0;
-	Font: Medium / 1.5 Cursive;
+	Font: Medium / 1.5 Serif;
 	Hyphens: Auto;
 	Z-Index: 0;
 }
@@ -143,12 +144,17 @@ iframe[name=pane] {
 	Width: 100%;
 	Height: 100%;
 }
+cite {
+	Font-Style: Inherit;
+	Font-Family: Cursive;
+}
 	</style>
 </head>
 <body>
 	<h1>Excerpts</h1>
 	<nav>
 		<ol style="List-Style-Type: Decimal-Leading-Zero">
+			<li><a href="./xrpt01.xhtml"><cite>Excerpts from “Thoughts about Community Support around Intimate Violence”</cite></a></li>
 		</ol>
 		<p>
 			<cite>Excerpts</cite> provides a selection of small clippings from various media for your education and entertainment. 
@@ -160,7 +166,7 @@ iframe[name=pane] {
 			They are made available under the principles of fair use. 
 			Feel free to clip bits out and use them in future zines, under principles of the same.
 		</p>
-		<p><a href="./">Return to <cite style="Text-Transform: Uppercase">Journal: \u2764</cite>.</a></p>
+		<p><a href="./" target="_self">Return to <cite style="Text-Transform: Uppercase">Journal: \u2764</cite>.</a></p>
 	</nav>
 	<div>
 		<iframe id="pane" name="pane" src="about:blank"></iframe>
