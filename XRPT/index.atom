@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom" xml:lang="en">
+
+<id>tag:www.u2764.com,2021:XRPT</id>
+<link rel="self" href="https://www.u2764.com/XRPT/index.atom"/>
+<link rel="alternate" type="application/xhtml+xml" href="https://www.u2764.com/XRPT/"/>
+<updated>2021-09-24T04:09:56-07:00</updated>
+<title>❤ Excerpts</title>
+<author>
+	<name>Margaret KIBI</name>
+	<uri>https://go.KIBI.family/About/#me</uri>
+</author>
+<category term="XRPT" scheme="tag:www.u2764.com,2021:" label="Excerpt"/>
+<icon>../icon.svg</icon>
+<subtitle>A selection of small clippings from various media for your education and entertainment.  These may feature additional highlighting or annotation.  Where possible, links to the original source are provided.</subtitle>
+<rights>Copyright for the excerpts provided here·in belongs to the original authors.  They are made available under the principles of fair use.  Feel free to clip bits out and use them in future zines, under principles of the same.  (This is not legal advice.)</rights>
+
+<entry xml:id="XRPT.2020-09-05.intvio">
+	<id>tag:www.u2764.com,2021:XRPT.2020-09-05.intvio</id>
+	<link rel="alternate" type="application/xhtml+xml" href="https://www.u2764.com/XRPT/2020-09-05/intvio/"/>
+	<published>2020-09-05T18:18:07-07:00</published>
+	<updated>2021-09-24T03:26:38-07:00</updated>
+	<title type="xhtml">
+		<div xmlns="http://www.w3.org/1999/xhtml">Excerpts from <cite>Thoughts about Community Support around Intimate Violence</cite></div>
+	</title>
+	<author>
+		<name>Margaret KIBI</name>
+		<uri>https://go.KIBI.family/About/#me</uri>
+	</author>
+	<summary type="xhtml">
+		<div xmlns="http://www.w3.org/1999/xhtml">
+			<p><a href="http://www.anarcha.org/sallydarity/IntViolzine.pdf">IntVolzine @ SallyDarity Library</a>.  Republished by Zabalaza Books: Johannesburg, South Africa; 2009.  <a href="https://archive.org/details/zabalaza_2009_intimate_violence">zabalaza_2009_intimate_violence @ archive.org</a>.  Numbering in this document references the latter.</p>
+			<p>Really you should read this whole zine if you’re interested, but I’ve gone and marked up the bits which stood out to me for easy reference.  Also, like, it’s long, and you may not have the time.</p>
+		</div>
+	</summary>
+</entry>
+
+<entry xml:id="XRPT.2020-09-07.F·n·L·i·A">
+	<id>tag:www.u2764.com,2021:XRPT.2020-09-07.F%C2%B7n%C2%B7L%C2%B7i%C2%B7A</id>
+	<link rel="alternate" type="application/xhtml+xml" href="https://www.u2764.com/XRPT/2020-09-07/F·n·L·i·A/"/>
+	<published>2020-09-07T05:44:59-07:00</published>
+	<updated>2021-09-24T03:39:08-07:00</updated>
+	<title type="xhtml">
+		<div xmlns="http://www.w3.org/1999/xhtml">Excerpts from <cite>Fear and Learning in America</cite></div>
+	</title>
+	<author>
+		<name>Margaret KIBI</name>
+		<uri>https://go.KIBI.family/About/#me</uri>
+	</author>
+	<summary type="xhtml">
+		<div xmlns="http://www.w3.org/1999/xhtml">
+			<p>In 2020, the COVID‐19 pandemic hit the United States and shut the country as near to down as our capitalistic society would allow.  Yet, despite a continually increasing number of cases, that August a bunch of school districts and universities decided that they would reopen for the 2020–2021 school year, even with the flu season being just around the corner and the virus being in no way under control.</p>
+			<p>This was an absolutely awful decision which medical professionals widely decried and which naturally sent fear through the hearts of a great many teenagers.  As the premier magazine covering teen issues, <cite>Teen Vogue</cite> ran a series of articles covering the response to schools reopening from a youth perspective.</p>
+			<p><strong>This is some real shit.</strong>  I’ve captured selected quotations and coverage below, and provided links to the full articles.  If you know of any other (good) reporting regarding this issue, feel free to send it my way.</p>
+		</div>
+	</summary>
+</entry>
+
+</feed>
