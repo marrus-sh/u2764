@@ -1,0 +1,1040 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<title>Lite 00 – Pilot</title>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width">
+<base target="_top">
+
+<meta property="og:title" content="Pilot">
+<meta property="og:type" content="book">
+<meta property="og:description" content="Lite is a story about witches, demons, and saving the day. This is the (non-canonical) pilot episode.">
+<meta property="og:site_name" content="Lite">
+<meta property="og:url" content="https://www.u2764.com/OFIC/2017/Lite/">
+
+<meta property="og:image" content="https://www.u2764.com/OFIC/2017/Lite/cover.png">
+<meta property="og:image:type" content="image/png">
+<meta property="og:image:width" content="630">
+<meta property="og:image:height" content="500">
+
+<meta property="book:author" content="Margaret KIBI">
+<meta property="book:release_date" content="2017-02-12">
+<meta property="book:tag" content="demons">
+<meta property="book:tag" content="high school">
+<meta property="book:tag" content="modern">
+<meta property="book:tag" content="pop">
+<meta property="book:tag" content="serial">
+<meta property="book:tag" content="teen">
+<meta property="book:tag" content="fiction">
+
+<style id="layout">
+/*  GLOBAL RULES  */
+
+*:root:root:root:root:root [hidden] {
+  display: none;
+}
+
+/*  PAGE  */
+
+html {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  margin: 0;
+  padding: 3.5rem 3rem;
+}
+
+body > header, body > a[href] > header {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+  align-items: flex-end;
+  position: relative;
+  margin: 0 auto;
+  padding: 0;
+  max-width: 28rem;
+  z-index: 100;
+}
+
+@media (min-width: 57rem) {
+  body > header, body > a[href] > header {
+    float: left;
+    margin: 0 1rem;
+    height: 18.9rem;
+  }
+}
+
+body > header h1, body > a[href] > header h1 {
+  display: block;
+  flex: auto;
+  margin: 0;
+  padding: 0;
+}
+
+body > header aside, body > a[href] > header aside {
+  display: block;
+  flex: none;
+  margin: 0 0 1rem .75rem;
+  padding: 0;
+  width: 1.25rem;
+  overflow: hidden;
+  -ms-writing-mode: tb-lr;
+  -webkit-writing-mode: vertical-lr;
+  -ms-writing-mode: vertical-lr;
+  writing-mode: vertical-lr;
+}
+
+body > header p, body > a[href] > header p {
+  margin: 0;
+  padding: 0;
+}
+
+body > header p::before, body > a[href] > header p::before {
+  content: none;
+}
+
+/*  SECTIONING  */
+
+article, section, aside, header, footer, div {
+  display: block;
+  margin: 0;
+  padding: 0;
+}
+
+nav {
+  margin: .675rem 1rem;
+}
+
+aside {
+  margin: .3375rem 0;
+  border: thick currentColor double;
+  padding: .3375rem 1rem;
+  overflow: auto;
+}
+
+header aside, footer {
+  margin: .3375rem 0;
+  border: none;
+  padding: 0;
+}
+
+blockquote > footer:last-child::before {
+  content: "– ";
+}
+
+main {
+  display: block;
+  position: relative;
+  margin: 1rem auto 0;
+  padding: 0 0 2.7rem;
+  max-width: 28rem;
+}
+
+@media (min-width: 57rem) {
+  main {
+    padding-left: 25%;
+  }
+}
+
+article:not(:first-child), section:not(:first-child) {
+  margin-top: 2.7rem;
+}
+
+article:not(:last-child), section:not(:last-child) {
+  margin-bottom: 2.7rem;
+}
+
+/*  TABLES  */
+
+caption {
+  margin: 0;
+  padding: .3375rem .25rem;
+}
+
+table {
+  margin: .675rem auto;
+  border-collapse: separate;
+  padding: .3375rem .25rem;
+  padding: 0;
+  max-width: 100%;
+}
+
+tbody + tbody::before {
+  display: table-row;
+  height: .675rem;
+  content: "";
+}
+
+td > table:only-child {
+  margin: auto;
+  width: 100%;
+}
+
+td, th {
+  border: none;
+  border-radius: .125em;
+  padding: .125em;
+  vertical-align: top;
+}
+
+/*  LISTS  */
+
+ul, ol, dl {
+  margin: .3375em 0;
+  padding: 0 0 0 2rem;
+  overflow: auto;
+}
+
+dt {
+  display: inline-block;
+  float: left;
+  margin: 0 -.25rem;
+  padding: 0 .25rem;
+}
+
+dt + dt::before {
+  content: ", ";
+}
+
+dd {
+  margin: 0 0 0 2rem;
+  padding: 0;
+}
+
+dd::before {
+  display: inline;
+  white-space: pre-wrap;
+  content: " : ";
+}
+
+dd + dd::before {
+  content: "″ : ";
+}
+
+dd:after {
+  display: block;
+  clear: both;
+  margin: 0;
+  padding: 0;
+  content: "";
+}
+
+/*  BLOCK ELEMENTS  */
+
+blockquote {
+  position: relative;
+  margin: .675rem 0;
+  padding: 0 2rem;
+  overflow: auto;
+}
+
+blockquote::before {
+  display: block;
+  position: absolute;
+  top: .3375rem;
+  left: 0;
+  width: 2rem;
+  content: "“";
+}
+
+blockquote::after {
+  display: block;
+  position: absolute;
+  bottom: .3375rem;
+  right: 0;
+  width: 2rem;
+  content: "„";
+}
+
+blockquote blockquote {
+  margin: .675rem 0;
+  padding: 0 1rem 0 calc(1rem - 1px);
+  border-left: 1px currentColor solid;
+}
+
+blockquote blockquote::before, blockquote blockquote::after {
+  content: none;
+}
+
+figcaption {
+  margin: .3375rem 0;
+}
+
+figure, iframe, img, svg, video {
+  display: block;
+  margin: 0;
+  border: none;
+  padding: 0;
+  max-width: 100%;
+}
+
+main figure, main iframe, main img, main svg, main video {
+  margin: auto;
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
+}
+
+figure, main figure {
+  margin: .675rem auto;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  margin: 0;
+  padding: 0;
+}
+
+h1 {
+    margin: 1.35rem 0;
+}
+
+h2 {
+  margin: 2.7rem 0 2.025rem;
+}
+
+h3 {
+  margin: 2.7rem 0 .675rem;
+}
+
+h4 {
+  margin: 1.35rem 0 .675rem;
+}
+
+h5 {
+  margin: .675rem 0;
+}
+
+h6 {
+  margin: .675rem 0;
+}
+
+hr {
+  display: block;
+  position: relative;
+  margin: 0;
+  border: none;
+  padding: 0;
+  width: 100%;
+  height: 4.05rem;
+  background: none;
+  overflow: hidden;
+}
+
+hr::after {
+  display: block;
+  position: absolute;
+  top: 1.35rem;
+  left: 0;
+  right: 0;
+  height: 1.35rem;
+  content: "*   *   *";
+}
+
+iframe[src*="//youtube.com/embed/"], iframe[src*="//www.youtube.com/embed/"] {
+  width: 560px;
+  height: 315px;
+}
+
+img.inline, svg.inline {
+  display: inline-block;
+  margin: 0;
+  padding: calc(.25em / 1.5);
+  max-height: calc(1em / 1.5);
+  max-width: calc(1em / 1.5);
+  vertical-align: middle;
+}
+
+p {
+  margin: 0;
+  padding: 0;
+}
+
+footer h4 + p, footer h5 + p, footer h6 + p, footer p + p {
+  margin-top: .675rem;
+}
+
+h4 + p::before, h5 + p::before, h6 + p::before, p + p::before {
+  display: inline-block;
+  margin: 0 .25em 0 .5em;
+  content: "¶";
+}
+
+footer h4 + p::before, footer h5 + p::before, footer h6 + p::before, footer p + p::before {
+  content: none;
+}
+
+pre {
+  margin: .675rem 1rem;
+}
+
+pre::before, pre::after {
+  display: block;
+  margin: 0 -1rem;
+  content: "```";
+}
+</style>
+<style id="formatting">
+/*  GLOBAL RULES  */
+
+*:root {
+  font-family: "Cormorant Garamond", "Junicode", "Iowan Old Style", "Hoefler Text", "Unifont LANGDEV", "Unifont Upper", "Unifont", serif;
+  font-size: large;
+  font-weight: 500;
+  font-synthesis: none;
+  text-align: justify;
+  quotes: "“" "”" "‘" "’";
+}
+
+@media print {
+
+  *:root {
+    color: black;
+    background: white;
+    font-family: "Times New Roman", serif;
+  }
+
+}
+
+*[title]:not([title=""]):not(a) {
+  border-bottom: dotted currentColor black;
+  cursor: help;
+}
+
+@supports (text-decoration-style: dotted) {
+  *[title]:not([title=""]):not(a) {
+    border: none;
+    text-decoration-line: underline;
+    text-decoration-style: dotted;
+  }
+}
+
+*:lang(en) {
+  quotes: "“" "”" "‘" "’";
+}
+
+blockquote:lang(en), blockquote *:lang(en) {
+  quotes: "‘" "’" "“" "”";
+}
+
+/*  PAGE  */
+
+html, body {
+  background: #faf8f7;
+  color: #57534c;
+}
+
+body > header, body > a[href] > header {
+  font-family: "Catamaran", "Unifont LANGDEV", "Unifont Upper", "Unifont", sans-serif;
+}
+
+body > header h1, body > a[href] > header h1 {
+  font-size: 5em;
+  font-weight: 800;
+  line-height: 1;
+}
+
+body > header a[href], body > header a[href]:hover, body > a[href] {
+  color: inherit;
+}
+
+body > header aside, body > a[href] > header aside {
+  font-weight: 100;
+  line-height: 1.25;
+  text-overflow: ellipsis;
+}
+
+body > header p, body > a[href] > header p {
+  text-indent: 0;
+}
+
+/*  SECTIONING  */
+
+aside {
+  border-color: transparent #b8b3b0;
+  text-align: left;
+  color: #75706a;
+}
+
+header aside {
+  font-size .85em;
+}
+
+footer {
+  font-family: "Catamaran", "Unifont LANGDEV", "Unifont Upper", "Unifont", sans-serif;
+  font-size: .85em;
+  font-weight: 100;
+  line-height: 1.25;
+  text-align: right;
+  color: #75706a;
+}
+
+blockquote > footer:last-child::before {
+  font-family: inherit;
+  font-weight: inherit;
+  line-height: inherit;
+  color: inherit;
+}
+
+header {
+  text-align: left;
+}
+
+main {
+  -webkit-hyphens: auto;
+  -ms-hyphens: auto;
+  hyphens: auto;
+}
+
+nav {
+  text-align: center;
+}
+
+/*  TABLES  */
+
+table {
+  text-align: left;
+}
+
+thead {
+  font-weight: 700;
+  text-align: center;
+}
+
+th {
+  text-align: center;
+  text-decoration: underline;
+}
+
+/*  LISTS  */
+
+ul, ol, dl {
+  text-align: left;
+}
+
+ul {
+  list-style-type: circle;
+}
+
+li ul {
+  list-style-type: square;
+}
+
+li li ul {
+  list-style-type: disc;
+}
+
+li li li ul {
+  list-style-type: circle;
+}
+
+li li li li ul {
+  list-style-type: square;
+}
+
+ol {
+  list-style-type: upper-roman;
+}
+
+li ol {
+  list-style-type: decimal-leading-zero;
+}
+
+li li ol {
+  list-style-type: lower-latin;
+}
+
+li li li ol {
+  list-style-type: lower-greek;
+}
+
+li li li li ol {
+  list-style-type: decimal;
+}
+
+dt {
+  font-weight: bold;
+}
+
+/*  BLOCK ELEMENTS  */
+
+blockquote {
+  font-weight: 300;
+  font-style: italic;
+}
+
+blockquote::before, blockquote::after {
+  font-family: "Catamaran", "Unifont LANGDEV", "Unifont Upper", "Unifont", sans-serif;
+  font-size: 2em;
+  font-weight: 800;
+  line-height: 1;
+  text-align: center;
+}
+
+figcaption {
+  font-family: "Catamaran", "Unifont LANGDEV", "Unifont Upper", "Unifont", sans-serif;
+  font-size: .85em;
+  font-weight: 100;
+  text-align: center;
+  line-height: 1.25;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  color: #1f1a14;
+  font-family: "Catamaran", "Unifont LANGDEV", "Unifont Upper", "Unifont", sans-serif;
+  font-weight: 800;
+  text-align: left;
+}
+
+h1 {
+  font-size: 5em;
+  line-height: 1;
+}
+
+h2 {
+  font-size: 3.5em;
+  line-height: 1;
+}
+
+h3 {
+  font-size: 1.75em;
+  line-height: 1;
+}
+
+h4 {
+  font-size: 1.4em;
+  line-height: 1.25;
+}
+
+h5 {
+  font-size: inherit;
+  font-variant: small-caps;
+  line-height: inherit;
+}
+
+h6 {
+  font-size: inherit;
+  line-height: inherit;
+}
+
+hr, hr::after {
+  color: inherit;
+  text-align: center;
+  white-space: pre;
+}
+
+p {
+  position: relative;
+  text-align: justify;
+}
+
+p::before, p::after {
+  color: #b8b3b0;
+  line-height: 1;
+}
+
+pre {
+  font-family: "Unifont LANGDEV", "Unifont Upper", "Unifont", monospace;
+  font-size: .85em;
+  font-weight: normal;
+  line-height: 1;
+  white-space: pre-wrap;
+  -webkit-hyphens: none;
+  -ms-hyphens: none;
+  hyphens: none;
+}
+
+svg {
+  color: inherit;
+}
+
+/*  PHRASING  */
+
+a[href] {
+  color: inherit;
+  text-decoration: none;
+  -webkit-text-decoration-color: inherit;
+  text-decoration-color: inherit;
+  transition: color .3s;
+  transition: color .3s, -webkit-text-decoration-color .3s;
+  transition: color .3s, text-decoration-color .3s;
+}
+
+a[href]:hover {
+  color: #302f2b;
+  -webkit-text-decoration-color: transparent;
+  text-decoration-color: transparent;
+}
+
+main a[href] {
+  display: inline;
+  text-decoration: underline;
+  -webkit-text-decoration-style: dashed;
+  text-decoration-style: dashed;
+}
+
+header a[href], nav a[href] {
+  text-decoration: none;
+}
+
+@media print {
+
+  a[href] {
+    text-decoration: none;
+  }
+
+  a[href]::after {
+    content: " [" attr(href) "]";
+  }
+
+}
+
+@supports (text-decoration-style: dotted) {
+  abbr {
+    border: none;
+  }
+}
+
+b {
+  color: #302f2b;
+  font-weight: 700;
+}
+
+cite {
+  font-style: italic;
+}
+
+code, samp, kbd {
+  font-size: .85em;
+  font-family: "Unifont LANGDEV", "Unifont Upper", "Unifont", monospace;
+  line-height: 1;
+  -webkit-hyphens: none;
+  -ms-hyphens: none;
+  hyphens: none;
+}
+
+code {
+  color: #1f1a14;
+}
+
+del {
+  color: #948d87;
+  text-decoration: line-through;
+}
+
+dfn {
+  font-style: inherit;
+  font-weight: 700;
+}
+
+em {
+  font-style: inherit;
+  text-decoration: underline;
+}
+
+i, u {
+  color: #302f2b;
+}
+
+aside i, aside u {
+  color: #57534c;
+}
+
+i {
+  font-style: italic;
+}
+
+blockquote i {
+  font-style: normal;
+}
+
+footer i::before, figcaption i::before, h1 i::before, h2 i::before, h3 i::before, h4 i::before, h5 i::before, h6 i::before {
+  content: no-open-quote open-quote;
+}
+
+footer i::after, figcaption i::after, h1 i::after, h2 i::after, h3 i::after, h4 i::after, h5 i::after, h6 i::after {
+  content: close-quote no-close-quote;
+}
+
+ins {
+  text-decoration: underline;
+}
+
+s {
+  text-decoration: line-through;
+}
+
+small {
+  color: #948d87;
+  font-size: inherit;
+}
+
+strong {
+  color: #1f1a14;
+  text-decoration: underline;
+  -webkit-text-decoration-style: double;
+  text-decoration-style: double;
+  font-weight: 700;
+}
+
+sup {
+  text-transform: uppercase;
+  line-height: 0;
+}
+
+u {
+  text-decoration: underline;
+  -webkit-text-decoration-style: wavy;
+  text-decoration-style: wavy;
+}
+</style>
+
+<header>
+  <h1>Lite!<br><small>#00</small> Pilot</h1>
+  <aside>
+    <p> Paranormal teen pop!
+  </aside>
+</header>
+
+<main><article>
+
+  <aside><b>In this issue:</b> <cite>Lite!</cite> is a story about witches, demons, and saving the day. This is the (non-canonical) pilot episode. <small>[~2000 words; 15 pages; 10min read]</small></aside>
+
+  <section id="§01">
+    <p>
+      <b>Scene:</b>
+      Downtown Seale, a thrift shop.
+      Outside, passersby mill about, visible between clothes and coat-racks and through large street-side windows.
+      A little girl tugs at the hem of her mother's dress; an elderly couple walk their dog.
+      Inside, the mood is quiet, subdued. In one corner of the shop, a pair of girls, high school students, casually examine some clothes.
+      It is their day off: a Saturday.
+    <p>
+      The smaller of the two girls holds up a slightly faded t-shirt thoughtfully.
+      They are short, and slender, with bright orange hair cropped into a short pixie and sparkling green eyes that glisten underneath.
+      <q>LIPSTICK DEMONS</q> proclaims the shirt, in large block letters arranged in a cross on its front; whether this is a band or some strange cosmetic marketing technique is unclear.
+      But of course they <em>have</em> to have it.
+      The girl pulls a duct-tape wallet out from their back pocket and thumbs through the bills, mentally attempting to justify the purchase.
+      Knowingly, I roll my eyes.
+      This is Niimi.
+      Niimi is a demon.
+      I don't think I have ever seen them wear lipstick in my life.
+    <p>
+      The other girl is me.
+      My heart isn't really in the shopping:
+      I have plenty of clothes back home.
+      But, I'm here for Niimi's sake.
+      Even <em>if</em> their wardrobe consists entirely of printed tees and cargo shorts, even <em>if</em> they have the ability to materialize articles onto their body at will, for some reason Niimi loves clothes-shopping.
+      Something about the tactility of it all, the branding behind it, being able to put it on and take it off and put it back on again…
+      Look, I'm not saying I understand, exactly, but we all have our hobbies.
+      It's their money, and I am content spending time with them out on the town.
+    <p>
+      My name is Betony Linnette Warrick.
+      My parents use my first name, medical professionals use my first name, nobody else uses my first name.
+      You shouldn't either.
+      I am seventeen years of age, a student at Eastbridge High and a witch-in-training at Seale Academy of Magic, 5'10" with curly brown hair, mocha-colored eyes, freckles.
+      My blood type is A negative.
+      My hobbies include reading books, playing video games, and casually occupying public spaces with friends.
+      Together with Niimi, I&mdash;
+    <p> Well.
+    <p>
+      The windows of the store rattle in their frames as a loud crash thunders across the floor from somewhere outside.
+      <q><em>Jesus&mdash;</em></q> the man at the cash register exclaims as a few minor accoutrements fall from their places on the shelves.
+      He is middle-aged, pudgy, balding, red in the face but quickly regaining composure.
+      We watch him for a moment before the eyes of everyone in the building turn outward.
+      On the streets, startled pedestrians quickly change course, not wanting to be too near the epicenter of the din; vehicles, on the other hand, largely pay it no mind, continuing on in the shortest route towards their destinations.
+      Whatever is actually <em>making</em> the noise is notably obscured from our vision.
+      But the leap in my pulse suggests that I already know.
+    <p>
+      I turn to Niimi.
+      <q>Is <em>that&mdash;?</em></q>
+    <p>
+      Their face answers my question before their mouth has a chance to form the words.
+      They do anyway.
+      <q><em>Definitely,</em></q> they say, gripping my hand, and giving it a tug.
+      <q>Let's go.</q>
+    <p>
+      Not wanting to cause a scene, I gently take the shirt from their hand and place it back on the rack.
+      Hurriedly, we run out of the store.
+  </section>
+
+  <section id="§02">
+    <p>
+      <b>Scene:</b>
+      The streets.
+      The sounds are louder here, and more continuous.
+      Crash after crash reaches us from somewhere beyond, and even cars are starting to take detours around the area.
+      Perhaps they suspect what we already know.
+      This isn't the first time this has happened.
+    <p> We set off in hot pursuit.
+    <p>
+      I can hear my heart pounding in my ears, and it's not just from the run.
+      Fear, curiosity, excitement&mdash;there being this much commotion is unusual; it's almost as if something is <em>trying</em> to draw us near…
+      Of course, we won't be the <em>only</em> ones who have noticed, and this means we'll have to work quickly.
+      Niimi's back, as they run just a few paces ahead, takes up the center of my vision, and already I feel myself being anticipatorily drawn their way&mdash;I wonder if they feel the same.
+      It puts an extra stride in my step as we continue on our way.
+    <p>
+      Niimi skids around the corner into an alley, and there we find it: a towering abomination, a monstrous hulk, two stories of muscle and bone and stench, four massive arms protruding from its shoulders and an unsightly fifth from its chest, unceremoniously bashing an entire dumpster against the wall, its contents long since spilled out onto the street and against its flesh.
+      It notices us immediately, tossing the vacant wastebin casually to the side.
+      This is a demon too&mdash;but not the good kind.
+    <p>
+      The abomination's laugh feels like a throat lozenge melting into the gravel on a hot day&mdash;sticky, course, <em>grimy</em>.
+      <q>I was expecting to attract <em>magicians</em> here to satisfy my cravings,</q> it, chuckling, proclaims, facing us squarely.
+      <q>But instead it seems I've found myself in the company of two <em>little girls.</em></q>
+      It flashes its teeth.
+      I resist the urge to vomit.
+      <q>Run along home now, little ones.
+      You're hardly a worthwhile morsel, and big bad demon is no fun to play.</q>
+    <p>
+      I find Niimi's hand again.
+      They grip back tightly.
+      We exhale slowly.
+      Right.
+    <p>
+      Neither of us needs to say anything&mdash;we're both already on the same page.
+      A glow begins to build in the corner of my vision; our corporeal forms flicker, and our transformation begins.
+      The framerate of the universe visibly slows, my body opens up, my spirit is set free.
+      Niimi is there too&mdash;we become One.
+      And suddenly, everything slams back into focus: the alley, the demon, our body, part human and part spirit, flexed and primed and ready to save the day.
+    <p>
+      My name is Betony Linnette Warrick.
+      I am seventeen years of age, a student at Eastbridge High and a witch-in-training at Seale Academy of Magic, 5'10" with curly brown hair, mocha-colored eyes, freckles.
+      My blood type is A negative.
+      My hobbies include reading books, playing video games, and casually occupying public spaces with friends.
+    <p> Together with Niimi, I fight abominations, and work hard to keep my city safe!
+  </section>
+
+  <section id="§03">
+    <p>
+      <b>
+        Record scratch.
+        Freeze frame.
+      </b>
+      Yup, that's me.
+      You're probably wondering how I ended up in this situation.
+      After all, how <em>does</em> an amateur witch find herself fighting demons in the back alleys of a city where she's not even old enough to vote?
+      I'd be lying if I said I had all the details, but here's what I know:
+    <p>
+      It all began last September.
+      Before then, demons, abominations, whatever, were the sort of thing you heard about in the tabloids, history books, <em>international</em> news maybe, but not, y'know, smashing dumpsters together back home.
+      How do I put this?
+      We'd won.
+      The situation was under control.
+      It had been for centuries.
+    <p> So, obviously, that didn't last.
+    <p>
+      Back in those days, I tended to spend my Saturdays with the local youth at Scott's, sipping black-cherry floats and gossiping casually about the week's events.
+      Gossiping&mdash;or just listening.
+      It was mostly just to get out of the house.
+      School had started only a few weeks prior, and there was plenty of work to do, so I left early and was on my way home when&mdash;lo and behold, abomination shows up, people start panicking, Niimi happens to be on scene, and we form a temporary truce to take it down.
+      Afterwards, we talked it out and decided to form a more steady relationship.
+      That is to say&mdash;we signed a mutually-beneficial contract.
+      Did you know demons made mutually-beneficial contracts?
+      I didn't.
+      They do.
+    <p>
+      Ever since then, abominations have been popping up more and more frequently in the city.
+      We've been ducking out&mdash;before and after school, during lunches, in-between classes&mdash;to take care of the problem.
+      We still don't know why this is happening.
+      We don't have time to care.
+    <p>
+      But we do know one thing.
+      These abominations… they aren't like Niimi.
+      They don't have names, and they can't be reasoned with.
+      Their minds are focused on one singular objective: destruction.
+    <p> We're here to destroy them first.
+  </section>
+
+  <section id="§04">
+    <p>
+      <b>Scene:</b>
+      About to kick this abomination's ass.
+      I wear Niimi against my skin and hear her loud and clear inside my mind.
+      We face off confidently, stretching out our arm and flexing our fingers.
+      With a snap, we let off a blinding flash of intimidation.
+      It feels good to be back on a stage.
+    <p>
+      Our theatrics have little effect on the abomination, which raises an eyebrow but appears to otherwise be unfazed.
+      These days, they rarely are.
+      Niimi thinks that knowledge of our union must have made its way to the Demon Dimension, although given the rate that they continue <em>underestimating</em> us, clearly part of the message keeps getting lost.
+      Perhaps abominations don't know how to feel fear; this one just laughs.
+    <p>
+      <q>You might be <em>fused with a human,</em> child&mdash;</q>
+      The abomination straightens itself before us, speaking yet again.
+      Maybe three stories tall, when it didn't slouch.
+      It swings a mighty fist down on our location as it finishes its phrase: <q>&mdash;but you're still just a <em>little kid!</em></q>
+    <p>
+      Please.
+      We're in <em>high school</em>.
+      We artfully dodge the attack.
+    <p>
+      The abomination tries a few more jabs and, naturally, finds only air&mdash;we're far faster than it is.
+      Still, it doesn't seem to be getting discouraged&mdash;in fact, it appears to be finding the whole experience rather enjoyable.
+      <q>Color me surprised,</q> it says, attempting to hit us with a lobbed bin but succeeding only in producing a further racket, <q>but fighting other demons is actually kind of <em>fun.</em></q>
+      <em>Speak for yourself,</em> Niimi whispers in my head.
+      Niimi tells me that demons can instantly adopt the language of their target&mdash;it's hard to broker a deal when you can't communicate, after all.
+      This one is just being <em>talkative</em> though.
+    <p> Unfortunately for it, we aren't much one for conversation.
+    <p>
+      Amidst the rotting vegetables and the abomination's own stench we can smell traces of what had to be our own sweat, and while we don't feel the least bit exhausted it does remind us that we are on something of a tight schedule.
+      We outstretch our fingers and a focused blast of spiritual energy emits from their tips, rending the abomination's flesh through.
+      And with that, the fun is over.
+      <q>What? How?</q> it screams cartoonishly as it evaporates into the atmosphere and back to the realm from whence it came.
+      Like we said.
+      We allow ourselves a moment to relax.
+    <p>
+      And then, right on cue, the police arrive.
+      We hear them before they come, blowing their whistles and yelling at us to <q>Stop!</q>&mdash;we get going, of course, thanking them mentally for the head start.
+      See, there <em>is</em> one more thing I forgot to mention earlier:
+      This demon-hunting business?
+      It's kind of… <em>not legal.</em>
+      As a matter of fact, humans engaging with demons in any way is totes <em>against the law.</em>
+    <p>
+      That includes fusing with one, mind you.
+      …Let's just say it's best if we never get caught.
+  </section>
+
+  <section id="§05">
+    <p>
+      <b>Scene, final:</b>
+      Two girls, one flushed and sweaty, the other aloof and chilled, giving each other a high five.
+      Zero guesses which one's me.
+      This next bit <em>might</em> sound a little counter-intuitive, but the best part about fusing with a demon?
+      Splitting back apart.
+    <p>
+      Slowly, I can feel the world come back into focus.
+      Niimi is standing there coolly, leaning against the wall as if they have just gotten out of the most <em>boring</em> school assembly, and&mdash;are they whistling?
+      The prick.
+      This is, still and all, why I love them.
+      I feel my senses return, one at a time:
+      Sight first, obviously, followed by hearing (oh my god am I really breathing that loudly), then taste (fusing always has a pleasant aftertaste, like spearmint), then smell (I'm sweaty and just got out of battle with a trash monster; no comment&mdash;
+    <p>
+      &mdash;And then physical sensation, and along with it the rush of adrenaline and excitement that my body hadn't realized it had been building up.
+      I feel my face flush.
+      I burst out laughing.
+      I can't feel my feet.
+      I can barely stand.
+      Niimi just smiles and looks on, used to the routine, as I struggle for control of my faculties.
+      I'm past getting embarrassed over stuff like this.
+      This isn't our first time.
+    <p>
+      A few moments later and I am decent&mdash;clothes straightened, smile under control, glow notched down from eleven.
+      Niimi gives me a light punch on the shoulder.
+      <q>Good job,</q> they say, and we start making our way back towards the shop.
+    <p>
+      <q>Nice work,</q> I reply, returning the gesture.
+      The chill spring breeze gives me goosebumps as we cross the street, and it is not long before we've resumed the slow-paced, leisurely gait of our everyday life.
+    <p> Until next time.
+    <footer><b>End.</b></footer>
+  </section>
+
+  <footer>
+    <p>
+      Copyright © 2017 Margaret KIBI. This work is licensed under a <a href="https://creativecommons.org/licenses/by-sa/4.0/" rel="license">Creative Commons Attribution-ShareAlike 4.0 International License</a>.
+    <nav>
+      <strong>www.u2764.com<br></strong>
+      <a href="/">Home</a> | <a href="/OFIC/">Original Fiction</a> | <a href="/Links/">Links</a>
+    </nav>
+  </footer>
+
+</article></main>

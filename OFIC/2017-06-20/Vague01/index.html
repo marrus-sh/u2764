@@ -1,0 +1,680 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<title>Vague 01</title>
+<meta charset="utf-8">
+<meta name="generator" content="pandoc">
+<meta name="author" content="Margaret KIBI">
+<base target="_top">
+
+<style>
+/*  IMPORTS  */
+@import url('https://fonts.googleapis.com/css?family=Old+Standard+TT:400,400i,700&subset=latin-ext');
+
+/*  GLOBAL RULES  */
+*:root {
+  font-family: "Old Standard TT", Baskerville, Georgia, serif;
+  font-size: large;
+  font-weight: 400;
+  font-synthesis: none;
+  line-height: 1.35;
+  text-align: justify;
+  quotes: "“" "”" "‘" "’";
+}
+@media print {
+  *:root {
+    color: black;
+    background: white;
+  }
+}
+*:root:root:root:root:root [hidden] {
+  display: none;
+}
+*[title]:not([title=""]):not(a) {
+  border-bottom: dotted currentColor black;
+  cursor: help;
+}
+@supports (text-decoration-style: dotted) {
+  *[title]:not([title=""]):not(a) {
+    border: none;
+    text-decoration-line: underline;
+    text-decoration-style: dotted;
+  }
+}
+*:lang(en) {
+  quotes: "“" "”" "‘" "’";
+}
+blockquote:lang(en), blockquote *:lang(en) {
+  quotes: "‘" "’" "“" "”";
+}
+
+/*  PAGE  */
+html, body {
+  background: #f7f1ed;
+  color: #302f2b;
+}
+html {
+  margin: 0;
+  padding: 0;
+}
+body {
+  margin: 0;
+  padding: 3.5rem 3rem;
+}
+
+/*  SECTIONING  */
+article, section, aside, header, footer, div {
+  display: block;
+  margin: 0;
+  padding: 0;
+}
+article {
+  position: relative;
+  margin: 2.7rem 0;
+}
+footer {
+  margin: 2.7rem 0;
+  font-size: .85em;
+  color: #641250;
+}
+blockquote > footer:last-child::before {
+  content: "– ";
+}
+header {
+  font-weight: bold;
+  text-align: right;
+}
+main {
+  display: block;
+  position: relative;
+  margin: 1rem auto 0;
+  padding: 0 0 2.7rem;
+  max-width: 28rem;
+  -webkit-hyphens: auto;
+  -ms-hyphens: auto;
+  hyphens: auto;
+}
+nav {
+  text-align: center;
+}
+
+/*  LISTS  */
+ul, ol, dl {
+  margin: .3375em 0;
+  padding: 0 0 0 2rem;
+  text-align: left;
+}
+ul {
+  list-style-type: circle;
+}
+li ul {
+  list-style-type: square;
+}
+li li ul {
+  list-style-type: disc;
+}
+li li li ul {
+  list-style-type: circle;
+}
+li li li li ul {
+  list-style-type: square;
+}
+ol {
+  list-style-type: upper-roman;
+}
+li ol {
+  list-style-type: decimal-leading-zero;
+}
+li li ol {
+  list-style-type: lower-latin;
+}
+li li li ol {
+  list-style-type: lower-greek;
+}
+li li li li ol {
+  list-style-type: decimal;
+}
+
+/*  BLOCK ELEMENTS  */
+blockquote {
+  position: relative;
+  margin: .675rem auto;
+  padding: 0 2rem;
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
+  font-style: italic;
+  color: #641250;
+}
+blockquote blockquote {
+  margin: .675rem 0;
+  padding: 0 1rem 0 calc(1rem - 1px);
+  border-left: 1px currentColor solid;
+}
+h1, h2, h3, h4, h5, h6 {
+  margin: 0;
+  padding: 0;
+  color: #641250;
+  font-weight: 700;
+}
+h1 {
+  margin: 0 0 2.7rem;
+  font-size: 3em;
+  line-height: 1;
+  text-align: right;
+}
+h2 {
+  margin: 2.7rem 0 .675rem;
+  font-size: inherit;
+  font-variant: small-caps;
+  line-height: inherit;
+  text-decoration: underline;
+}
+h2::after {
+  content: ":";
+}
+hr {
+  display: block;
+  position: relative;
+  margin: 0;
+  border: none;
+  padding: 0;
+  width: 100%;
+  height: 4.05rem;
+  color: #641250;
+  background: none;
+  overflow: hidden;
+  text-align: center;
+  white-space: pre;
+}
+hr::after {
+  display: block;
+  position: absolute;
+  top: 1.35rem;
+  left: 0;
+  right: 0;
+  height: 1.35rem;
+  content: "*   *   *";
+  text-align: center;
+  white-space: pre;
+}
+img.inline, svg.inline {
+  display: inline-block;
+  margin: 0;
+  padding: calc(.25em / 1.5);
+  max-height: calc(1em / 1.5);
+  max-width: calc(1em / 1.5);
+  vertical-align: middle;
+}
+p {
+  position: relative;
+  margin: 0;
+  padding: 0;
+  position: relative;
+}
+p::before, p::after {
+  color: #641250;
+}
+p + p {
+  text-indent: 2em;
+}
+p + p::before {
+  display: inline-block;
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 2em;
+  text-align: center;
+  text-indent: 0;
+  content: "¶";
+}
+footer p + p {
+  margin-top: .675rem;
+  text-indent: 0;
+}
+footer h4 + p::before, footer h5 + p::before, footer h6 + p::before, footer p + p::before {
+  content: none;
+}
+pre {
+  margin: .675rem 1rem;
+  font-family: monospace;
+  font-size: .85em;
+  font-weight: 400;
+  line-height: 1;
+  white-space: pre-wrap;
+  -webkit-hyphens: none;
+  -ms-hyphens: none;
+  hyphens: none;
+}
+svg {
+  color: inherit;
+}
+
+/*  PHRASING  */
+a[href] {
+  color: inherit;
+  text-decoration: none;
+  -webkit-text-decoration-color: inherit;
+  text-decoration-color: inherit;
+  transition: color .3s;
+  transition: color .3s, -webkit-text-decoration-color .3s;
+  transition: color .3s, text-decoration-color .3s;
+}
+a[href]:hover {
+  color: #641250;
+  -webkit-text-decoration-color: transparent;
+  text-decoration-color: transparent;
+}
+main a[href] {
+  display: inline;
+  text-decoration: underline;
+  -webkit-text-decoration-style: dashed;
+  text-decoration-style: dashed;
+}
+@media print {
+  a[href] {
+    text-decoration: none;
+  }
+  a[href]::after {
+    content: " [" attr(href) "]";
+  }
+}
+@supports (text-decoration-style: dotted) {
+  abbr {
+    border: none;
+  }
+}
+code {
+  font-size: .85em;
+  font-family: monospace;
+  line-height: 1;
+  -webkit-hyphens: none;
+  -ms-hyphens: none;
+  hyphens: none;
+}
+em {
+  font-style: italic;
+}
+strong {
+  font-weight: 700;
+}
+span.tab {
+  display: inline-block;
+  width: 2em;
+}
+sup {
+  text-transform: uppercase;
+}
+</style>
+
+<main>
+<article>
+<header>Vague 01</header>
+<section id="beginnings" class="level1">
+<h1>“Beginnings”</h1>
+<!-- I¶01 -->
+<p>My name is Violet Oliver. I was born on February 11 at 1:48 in the evening. I am now nineteen years old. I am five feet and two inches tall, and my weight is 125 pounds. My blood type is O positive. I wear wireframe glasses to compensate for my myopic vision. I'm not currently on any medications. I usually wear a B-cup and women's size 7 shoe. My eyes are a dark brown. I have hair which is long and straight, and I keep it tied back in a ponytail. I write with my left hand.</p>
+<!-- I¶02 -->
+<p>I'm not sure which of these things will be important, so please just bear them in mind.</p>
+<!-- I¶03 -->
+<p>In the August prior to my most recent birthday, I embarked upon my post-secondary academic career at Rosamund College, a small, private, liberal-arts school in what had marketed itself—somewhat deceptively—as America's Pacific Northwest. I had arrived on campus with a full-ride and lofty ambitions: to top my class, to set the academic standard, to secure for myself a high-paying career, to make my family proud. As an only child, I had never had much of a margin for error—not that I'd ever needed one, either. I had been ranked among the top percentile during the nation's standardized testing, I had gained acceptance at some of the most prestigious universities in the country, my high-school yearbook had listed me as “Most Likely to Succeed.” I knew what I wanted and I had the means to attain it, which meant that the ultimate realization of my goals was only a matter of time.</p>
+<!-- I¶04 -->
+<p>Of late, however, I've begun to doubt whether my ambitions have really been so grand. The nature of this doubt, and the circumstances surrounding it, I will now attempt to explain to you. Although, I cannot guarantee any answers—it is difficult enough just restating the problem.</p>
+<!-- I¶05 -->
+<p>The problem is this: I think I'm in love.</p>
+<!-- I¶06 -->
+<p>There is so much that I have yet to tell you—so many people that you need to meet. The rock band, the roommates, the classmate, the professor: Penelope Baines, Oliver Hoffman, Peter Yates, Natalia Savidge, Aya Faucheux, Zeke Williams, Dr.<span class="bsat"></span> Bobbi Addison, Ph.D<span class="bsat"></span>. And, of course, the frustrating, argumentative, <em>impossible</em> Jordan Ruskin. The boy who stole my heart.</p>
+<!-- I¶07 -->
+<p>But, it doesn't make any sense starting there. So let me go back to the beginning, and try working through the problem one more time…</p>
+<section id="side-a" class="level2">
+<h2>Side A</h2>
+<!-- A§1 | A□1 | A¶01 -->
+<p>The month was September; the day, Monday; the time, 9:52 AM<span class="bsat"></span>. The weather was fair, temperate, the morning sun putting on a convincing façade of its midsummer vigor despite its low approach betraying the lateness of the year. A slow bustle of students, unfortunate by their own reckonings, emerged from the myriad academic buildings of Rosamund College, having just concluded their 9AMs; another gaggle sat gossiping outside the nearest dining hall, enjoying their breakfast in the open as the weather allowed. Rosamund was not a large campus by any stretch of the imagination; the majority of its buildings were clustered around a single large square, and the reverberating echo of the red brick walls enhanced the atmosphere and lent it a surreal, etherial manner. From the distance, the remote rumblings of train cars were audible as an engine skirted the city's perimeter; the windows quivering quietly in recognition of the locomotive's power. At the far end of the square, stone steps paved the way to the preferred port of the school's most studious—Rosamund's sizable library. It was here I then stood.</p>
+<!-- A¶02 -->
+<p>Having had the privilege not to be assigned any classes before 10AM, I had decided to wake up early and get some studying done while the tranquility of the day remained undisturbed. Dining halls opened as early as 7:30, so after a quick breakfast I had been left with a solid two hours of productive time. I had dressed myself in a style which could perhaps best be described as “business casual”; given the pleasant climate and the fact that it was still ostensibly summer, this comprised itself of a medium-length black skirt, a light white blouse, and a casual black three-quarter-sleeve jacket, entirely for show. My hair was tied back in its usual low ponytail and my books were slung in a bag over my shoulder; the weight kept me grounded as I walked to class.</p>
+<!-- A△2 | A¶03 -->
+<p>I made quick work of the distance, stepping into Rosamund's Hall of the Humanities, then its second floor, then classroom 221. I flicked on the light, chose a seat, let my bag drop, and began unpacking into the space before me. Notebook, spiral, college-ruled, green. Text, Plato's <em>Symposium</em>, marked-up, annotated. Pencil bag, blue, zippered, naval-themed. And from this further: Pencil, green, sporting a ladybird eraser-topper, no actual eraser. Highlighter, fluorescent chartreuse-yellow, retractable, easily visible on the page. Eraser, high-polymer, white, lightly-used. All of these things I laid out in the space before me in an organized manner. Then I patiently waited for class to begin.</p>
+<!-- A○3 | A¶04 -->
+<p>The course title was <em>GENS 124 – Cultural Encounters</em>, and despite having no stated aims, belonging to no department, and generally billing itself as a waste of time, it was a part of the college's touted “first-year experience”—and, consequently, a requirement for graduation. This made for something of a mixed blessing, I had found. On the positive side, the competition—and, accordingly, the grading—was bound to be lighter in a classroom full of new students; on a more infuriating note, this also equated to a lowering of standards during class. As the course was discussion-based, this was no small fact.</p>
+<!-- A△4 | A¶05 -->
+<p>The remaining students entered the room the way one might fall in love, although their demeanor suggested they were falling asleep instead. One rubbed their eyes wearily; another casually devoured a granola bar, having evidently not had time for breakfast; a number were already locked in conversation—their prattlings seemed mundane.</p>
+<!-- A○5 | A¶06 -->
+<p>I noted these things because I was <em>bored</em>—I did not make a habit of involving myself with the goings-on of my classmates. To be entirely honest, I didn't even know most of their names. Since a very young age, I had always believed that the measure of a person could be determined from the summation of their accomplishments; consequently, I generally opted to let my successes speak for themselves. Not wasting my time on such nonnecessities as friendship, I had thus found myself generally respected, but rarely associated with, for my entire life.</p>
+<!-- A¶07 -->
+<p>“I'm worried about Violet.” My teachers had said as much when I was just nine years old. “She's very dedicated to her studies, but she seems to be having difficulty making friends.”</p>
+<!-- A¶08 -->
+<p>The kids had been less delicate. “You're a robot,” they'd told me.</p>
+<!-- A¶09 -->
+<p>But robots didn't need to study, and I had dedicated myself to mine, eager to prove the both of them wrong. Now, I was at one of the nation's most prestigious colleges, on a full-ride for academic excellence, preparing myself dutifully for the life beyond. If that wasn't the definition of success, I didn't know what was.</p>
+<!-- A△6 | A¶10 -->
+<p>Irritated, I glanced at the clock. Our professor was late. Not wanting to spend any more time among my peers than was absolutely necessary, I opened my book and shut out the surrounding mess. Despite having already done so just moments before, I decided to review the material from the previous week's lessons in the time that I had left. An underlined quote stuck out to me, and I absent-mindedly read myself the phrase.</p>
+<!-- A¶11 -->
+<blockquote>
+<p>There is a certain guidance each person needs for his whole life, if he is to live well; and nothing imparts this guidance—not high kinship, not public honor, not wealth… <!-- _Symposium_ pp. 9–10 --></p>
+</blockquote>
+<p>
+</p>
+<!-- A¶12 -->
+<p>The sudden sound of books and papers being dropped onto the table startled me away from the page. Our professor had arrived.</p>
+<!-- A○7 | A¶13 -->
+<p>Dr.<span class="bsat"></span> Bobbi Addison was an elderly and distinguished woman whose specialties lay in Medieval English literature, not Classical Greek philosophy—not that it would really make a difference in <em>this</em> class. Her hair was short, a greying sandy blonde, cropped close in that manner of pixie which seemed all the rage with 40-to-70 year old women in those days. Her normally very pale face was tinged red; flushed, no doubt, from her rushing down here so quickly from her office. She had done well—she was only a minute behind schedule.</p>
+<!-- A△8 | A¶14 -->
+<p>Still flustered, it took her a moment to regain composure. I allowed my eyes to finish their wanderings.</p>
+<!-- A¶15 -->
+<blockquote>
+<p>…not high kinship, not public honor, not wealth—nothing imparts this guidance as well as Love. <!-- _Symposium_ p. 10 --></p>
+</blockquote>
+<p>
+</p>
+<!-- A¶16 -->
+<p>“So,” Addison said, asserting her authority over the room. The ambient chatter, which had died to all but a whisper when she had entered, ceased completely with the enunciation of this one syllable. “Plato's <em>Symposium</em>,” she continued. “I trust the ending found you well?”</p>
+<!-- A¶17 -->
+<p>The room attempted to nod and mumble their way to a response. A few flipped through their notes; a number were skimming their books with their faces in a frown—evidently, the ending had not found <em>them</em> at all.</p>
+<!-- A□9 | A¶18 -->
+<p>Room 221 was, by Hall-Hum standards, a moderately-sized classroom—meaning that it was positively tiny compared to anywhere else. Its central space was occupied by a large, rectangular table—or rather, several smaller tables pushed together—allowing some-teen–odd students and one professor to position themselves around it in boardroom-style. One one wall, a large flatscreen TV hung unused; on another, narrow textured glass windows rose from floor to ceiling to allow muted sunlight through—this effect somewhat tempered, however, by the fact that they opened north and were thus perpetually in shadow. Fluorescent lights hummed softly underneath the discussion as the distant sounds of footstep and conversation drifted in through the hall. Students interjected at whim, usually raising their hands, only sometimes waiting before offering their response.</p>
+<!-- A○10 | A¶19 -->
+<p>When the period finally came to a close fifty minutes later, I had been all-too-content to pack my things and leave. The discourse had been mostly fruitless, glossing primarily on ancient history, Greek drinking culture (in both senses of the term), and collegiate romance; Socrates' final remarks had been acknowledged only with great reticence by my classmates, many of whom who'd decided that surely they knew better the subject of Love. Professor Addison, for her part, had been largely content to sit back and watch the show, letting the conversation flow of its own accord but for the occasional inquiry or comment—making one wonder why she had bothered showing up at all.</p>
+<!-- A△11 | A¶20 -->
+<p>But I had put those thoughts out of my mind and my body out the door before I heard the voice reeling me back in. “Violet? A word?” I stopped in my tracks with a heavy sigh and turned to face my addresser. Professor Addison was waiting for me, her face inquisitive, when I spun around.</p>
+<hr />
+<!-- A§2 | A□12 | A¶21 -->
+<p>Named after and connected to the adjoining Whitmore Residence Hall, the Whitmore Dining Hall was, by most students' reckonings, the lesser of Rosamund's two dining halls; located as it was just outside of Rosamund's central square, however, it nevertheless got substantial traffic from those students (like myself) who had just gotten out of class and couldn't be bothered to walk the additional block for better service. The room was large, open, rectangular, not unlike a K-12 cafeteria, with long tables and bench seating arranged in rows that spanned most of the hall. At one end, students and staff delivered portions, buffet-style, with a drinks machine and a salad bar nearby. Opposing this, awkward round tables had been placed, ostensibly, for better group seating; due to their location and inconvenience, however, they were instead frequented by the opposite: introverts and social outcasts who weren't welcome in or chose to distance themselves from the main crowd. Naturally, as this positioning allowed me to pursue my studies mostly uninterrupted, it was here I sat.</p>
+<!-- A¶22 -->
+<p>It was a Monday, which meant the meal <em>du jour</em> was grilled cheese and tater tots; in my case, these were accompanied by a cherry cola. The busiest time of the day for the dining hall, it was consequently the loudest, and I had in a pair of earbuds to counter. Usually, I listened to classical music when working, of the soft, minimal kind so as not to be distracting; I wasn't studying at the moment, though, and had opted for an upbeat variety of mindless pop.</p>
+<!-- A○13 | A¶23 -->
+<p>I was, as point of fact, pondering my charge. “There's a student in your hall by the name of… <em>Jordan Ruskin,</em>” Addison had said. She'd had to check her papers to get it right—evidently she wasn't the greatest with names either. “He's supposed to be in our section,” she'd told me. “Now, seeing as I haven't seen hide nor hair of him, in class or otherwise, and he has now missed… <em>all</em> of Plato's <em>Symposium</em>, let's just say it would be to everyone's benefit if he started showing his face in class.”</p>
+<!-- A¶24 -->
+<p>I didn't agree, although I hadn't said as much out loud. If this kid <em>himself</em> didn't want to come to class, what benefit did the rest of us gather from having him there? But it was obvious that Addison had wanted me to concur—and further, to bring him along. I sighed and looked out over the crowds. Jordan may not have come to class, but it was unlikely that he would skip lunch as well; studying the faces of the assorted boys in the hall, the odds weren't terrible that one of them was my mark. Not that there was anything I could do about it here, of course. Did anyone here look the sort to repeatedly fail to show up to a class they were paying thousands of dollars to attend? Not to their credit, they all sort of did, and I gave up trying to guess.</p>
+<!-- A△14 | A¶25 -->
+<p>I popped my last tater tot in my mouth, washing it down with the last dregs of my soda. I bussed my dishes and gathered my things. Then I left the hall and walked to my place of residence. There was no point putting off the inevitable. With luck, Jordan would be home.</p>
+<hr />
+<!-- A§3 | A□15 | A¶26 -->
+<p>Located six blocks from the main campus square, Whalen Hall was perhaps the outermost extremity of Rosamund College, separated from campus by a quiet residential neighborhood and the notably-less-quiet Greek row. The building proper rose three stories tall, fashioned out of a cream-colored brick and housing a couple hundred students within its walls; this was surrounded by what was effectively a small park, complete with trees, pond, and volleyball court. It was fully co-ed, and hosted more single-occupancy rooms than any other hall on campus, this latter fact being the reason I had ended up its resident. Its seclusion meant that the building was usually quiet, and the walks to and from were peaceful, if somewhat bemoaned by those who lived there.</p>
+<!-- A○16 | A¶27 -->
+<p>Presently, I had dropped my bag off in my room and was now prowling the halls, checking the door nametags in search of my mystery student. <em>Jordan Ruskin</em>. I would have had difficulty remembering the name had it not been playing in my head for the past hour. As first-years were confined to the first floor, the scope of my query was not large, and finding him would not take me much time.</p>
+<!-- A¶28 -->
+<p>It was obvious that Addison had wanted me to bring him along, but she hadn't asked as much. “I'm not asking you to drag him with you to class,” she had told me, perhaps sensing my disinclination. “But if you could stop by his room and at least tell him to <em>check his email</em>, it would really be doing me a favor. I'd rather <em>not</em> have a disciplinary situation on my hand on the second week of school, if I can help it.”</p>
+<!-- A¶29 -->
+<p>And so here I was. Frankly, tracking down the lazy, entitled, good-for nothing boy who couldn't even be bothered to come to class was the <em>last</em> thing I wanted to do with my time, but as a student in Bobbi Addison's <em>Cultural Encounters</em> class, where my grade essentially lived and died by her sayso, it wasn't like I had a whole lot of options, and we both knew it. I didn't make her any promises, but I had to assent to at least try.</p>
+<!-- A△17 | A¶30 -->
+<p>My pulse rose as I caught the name. <em>Jordan Ruskin</em>. I summoned all of my assertiveness, raised a fist, and knocked loudly on the door.</p>
+<!-- A¶31 -->
+<p>The voice which responded sounded normal enough. “One moment,” it said. Footsteps could be heard beyond the door—and then it opened, and I found myself face-to-face with the one-and-only.</p>
+<!-- A¶32 -->
+<p>“Jordan Ruskin?” I asked, confirming the obvious.</p>
+<!-- A¶33 -->
+<p>“Yeah,” he replied. He seemed confused as to why an unknown freshman girl had just summoned him. I couldn't blame him—in my own way, I was equally perplexed.</p>
+<!-- A□18 | A¶34 -->
+<p>Jordan Ruskin was a tall, slender boy with smooth features and tousled jet black hair. His slightly-too-large white dress shirt hung on his body casually, with the top button undone and both sleeves rolled up to his elbows. It was untucked and hanging loose from his black chinos, and I could see a pair of clean grey sneakers peeking out from below. He wasn't exceptionally athletic-looking, but his arms were well-defined and toned, a metallic silver watch ticking softly from his left wrist—which implied he was right-handed. He leaned lightly against the doorway, but it was fully ajar, and one could easily see past into his room—which was immaculate. His sheets were a pleasing combination of red and blue, smoothed across his (made!)<span class="bsat"></span> bed; his laptop sat open but dark on his desk, surrounded on either side by a modest speaker, and sharing the space with a blank manila notepad and a retractable ballpoint pen. A jacket was folded neatly across the back of his chair, but otherwise there was not a loose garment of clothing in sight.</p>
+<!-- A○19 | A¶35 -->
+<p>Whatever I had been expecting from the mysterious <em>Cultural Encounters</em> no-show, it wasn't this. Far from the slobbish, asocial kid from my mind's imaginings, this boy looked as though he could be running for class president. The short and punctual rant I had prepared for the moment had evaporated from my mind. He was looking at me expectantly, though—I needed to stall.</p>
+<!-- A△20 | A¶36 -->
+<p>My voice stammered a little. “C— Can we talk?” I asked.</p>
+<!-- A¶37 -->
+<p>“Sure,” Jordan replied. He furrowed his brow but stepped aside, holding open the door. “Come on in.”</p>
+<!-- A¶38 -->
+<p>And so I found myself inside. Jordan gently closed the door behind me. I realized suddenly that I had just invited myself behind closed doors with boy that I knew nothing about—perhaps not the most advisable practice even when the boy in question <em>wasn't</em> a delinquent. But he walked over to his bed, leaving my escape totally free. The closed door, it seemed, was for privacy.</p>
+<!-- A¶39 -->
+<p>“So,” Jordan said. He sat down, resting his hands in his lap. He had been a full head taller than me, standing. From his bed his eyes reached about my chin. “What's up?” he asked expectantly.</p>
+<!-- A¶40 -->
+<p>I collected myself quickly. “You,” I said, my tone more declarative than accusatory, “haven't been coming to class.”</p>
+<!-- A¶41 -->
+<p>He laughed. “What, <em>Cultural Encounters</em>?” he asked. His posture was all bravado, but his voice was sheepish. “What are you, a school agent or something?”</p>
+<!-- A¶42 -->
+<p>I felt myself blush as my eyes darted away. “I'm sorry,” I said. “I was unwillingly conscripted.”</p>
+<!-- A¶43 -->
+<p>Jordan laughed again. “Well, it's true,” he said, holding up his hands. “I <em>haven't</em> been coming to class. You caught me.”</p>
+<!-- A○21 | A¶44 -->
+<p>For all his charm, this boy clearly had no shame: The words had left his mouth as if they were the most natural thing in the world. He'd made no excuses: He hadn't been sick; there hadn't been a scheduling conflict; he hadn't been robbed of all he owned. He had simply chosen not to come to class. I could see <em>Symposium</em> sitting on his shelf—he even had the book. I wondered if he'd taken a look past its front cover.</p>
+<!-- A¶45 -->
+<p>My curiosity got the better of me—I had to ask.</p>
+<!-- A△22 | A¶46 -->
+<p>“I've already studied <em>Symposium</em>,” he responded, matter-of-factly. “Coming to class seemed like a waste of time.”</p>
+<!-- A¶47 -->
+<p>“Well, that's arrogant and foolish,” I shot back dismissively. “To think that you know everything there is to know about a subject is only to show that you know nothing about it whatsoever.” The words were rote but biting. My face flushed.</p>
+<!-- A¶48 -->
+<p>Jordan, for his part, seemed completely unaffected. “Certainly it must be the case, then,” he conceded, “that I know nothing at all.” He brushed back his hair in a theatrical motion that somehow managed to simultaneously make him look flattering and like a total dweeb. “Perhaps you can enlighten me, then,” he continued. “Was going to class really so rewarding? Did it expand your understanding beyond measure?”</p>
+<!-- A¶49 -->
+<p>“Well…” I said, letting my voice drift off.</p>
+<!-- A○23 | A¶50 -->
+<p>It hadn't. I had been complaining about it to myself all morning. I could see his point more than I cared to admit. I wasn't about to concede the debate, however—there was, after all, something his argument had conveniently left out.</p>
+<!-- A△24 | A¶51 -->
+<p>“…But what about your grade?” I asked him.</p>
+<!-- A¶52 -->
+<p>It was his turn to look away. “I don't care about my grade,” he said, which was self-evident. Again, his manner was nonchalant, but something in his tone gave him away. He said nothing else, and I found that I didn't know how to respond.</p>
+<!-- A○25 | A¶53 -->
+<p>My grade was everything to me.</p>
+<!-- A□26 | A¶54 -->
+<p>Jordan's room was south-facing, and the afternoon sun shone through the trees and filled the space with light. His window was cracked slightly, just enough to make audible the soft chirping of birds and the gentle, whispering breeze. A van drove by, its windows rolled down, upbeat rap blasting through the speakers; then it faded in the distance, and all was quiet. A pair of students, presumably returning from lunch, could be heard chattering joyfully as they walked up the front steps of the building, their voices cutting off abruptly as the door behind them closed.</p>
+<!-- A△27 | A¶55 -->
+<p>At long last, I spoke. “Well, if you're not interested in coming to class,” I told Jordan, “you should at least email Professor Addison and say so. Otherwise, she will rope unsuspecting students like me into tracking you down.” I turned away from the window and back to his face. “That's all I came here to say,” I concluded.</p>
+<!-- A¶56 -->
+<p>“Yeah,” he said finally. “Sorry.”</p>
+<!-- A¶57 -->
+<p>I pulled open his door and turned to leave. “Right,” I said. “Well, I'll be off then.”</p>
+<!-- A¶58 -->
+<p>I let the door close behind me. I paused for a moment. Then I spun around. <em>Jordan Ruskin</em> stared back at me, printed in the large, bubbly script of our resident assistant on a piece of green cardstock. I studied the inscription, as if for signs of fabrication, but it appeared genuine to me.</p>
+<!-- A○28 | A¶59 -->
+<p>Jordan Ruskin had not been anything like I had expected.</p>
+<!-- A¶60 -->
+<p>It was not the first time that someone had acted in a way that I was confused by, thought illogical, or didn't expect. Usually, in those instances, the issue came down to a lack of knowledge on my part, or a lack of foresight on theirs. But here, even with all of the knowledge at my disposal, I still wasn't sure who had been right.</p>
+<!-- A¶61 -->
+<p>And let's be honest, it wasn't just his actions that I had been struck off-guard by—his whole demeanor was unlike anything I'd expected. I was still burning with curiosity about him. It was as though we had existed in two separate universes, out of sync in both space and time, which had converged for one moment in the privacy of that room, and we were, for one brief minute, able to share in the same scenery, hear the same birdcall, and speak as equals. Now, that line had been severed, the heavy wooden door before me a giant slab whose mere presence cleaved our worlds again in two.</p>
+<!-- A△29 | A¶62 -->
+<p>I realized then that this must be what loneliness felt like, and I was frozen in place. I had never felt lonely before.</p>
+<!-- A¶63 -->
+<p>A long second passed, and the door opened once more. I started and blushed as I realized that I had been staring at his door for a full minute, and he had now caught me in the act. But Jordan seemed unsurprised, like he had been expecting me there.</p>
+<!-- A¶64 -->
+<p>“Hey,” he said, his voice cool and casual. “I'll come to class, if you're going to be there.”</p>
+<!-- A¶65 -->
+<p>The ocean broke its bounds. Not driving us apart, but filling the gap between us. I could hear it in my ears. I nodded quickly, then reasserted myself. “I always am,” I replied firmly.</p>
+<!-- A¶66 -->
+<p>“Cool,” he said. “I, uh… never did get your name.”</p>
+<!-- A¶67 -->
+<p>I looked him in his eyes. They reminded me of my own, but they were lighter, almost bronze. I held out my hand, holding his gaze. “My name is Violet Oliver,” I said calmly.</p>
+</section>
+<section id="side-b" class="level2">
+<h2>Side B</h2>
+<!-- B§1 | B□1 | B¶01 -->
+<p>The day was Wednesday, and the weather pouring. Water descended from the sky in giant droplets; they splattered harmlessly against the windows of the library, filling the space with a cooling ambiance. The building was all but deserted. Beyond the glass, one could see scattered clusters of students making their ways across the square as they hustled to breakfast or from class. None stopped to chitchat—few wanted to be outside longer than necessary in weather like this.</p>
+<!-- B○2 | B¶02 -->
+<p><em>I'll come to class, if you're going to be there.</em> The words had signaled my victory, but for some reason I didn't feel like celebrating. I was anxious. As I'd attempted to accomplish my morning studying, I had tried to imagine what Jordan might be like in the classroom—but no matter how hard I'd tried, I couldn't figure it out.</p>
+<!-- B¶03 -->
+<p>Of course, there was a chance he wouldn't show at all.</p>
+<!-- B△3 | B¶04 -->
+<p>Protected under my umbrella, I stepped down from the library stair—and almost straight into the path of a biker pedaling quickly through the storm. They zipped past, spraying water from the sidewalk onto my calves, and I blinked back in surprise. My heart racing from the adrenaline of the near-collision, I shakily started my way towards the Hall. I'd been paying even less attention than usual. I stepped with caution as I crossed the muddy grass.</p>
+<!-- B¶05 -->
+<p>Despite being in no rush to get to class, I was the first to arrive, and I followed my usual routine after entering, collecting my thoughts. I flicked on the light. I picked out my spot. I let my bag drop to the table. I took my seat. Then I unpacked my things in my characteristic organized manner. Notebook. Text. Pencil bag. From this further: Pencil. Highlighter. Eraser. These things I laid out before me, and then I patiently waited for class to begin.</p>
+<!-- B¶06 -->
+<p>He was the next to arrive, of course, and he didn't take long. He sat down directly opposite me, and nodded once in my direction as he leaned back in his chair.</p>
+<!-- B¶07 -->
+<p>“Hey,” Jordan said to me.</p>
+<!-- B¶08 -->
+<p>“Hey,” I responded, and nothing further was said.</p>
+<!-- B○4 | B¶09 -->
+<p>It was a small interaction, but with it my initial fears, at least, had been assuaged. Given how sociable he had seemed on Monday—not to mention the fact that he had identified <em>me</em> as his reason for coming to class—I had worried that Jordan would try distracting me with friendship during class. But if that was his intention, he would have taken a seat by my side, not across from me, as he had. He didn't look very invested in learning—he had no bag, notebook, or eraser. Just our text, protected from the rain by his jacket, and as I watched I saw him pull out a single pen—the very same ballpoint I had seen on his desk a few days before.</p>
+<!-- B△5 | B¶10 -->
+<p>Jordan glanced up at me, and I realized with great embarrassment that I had been caught staring. I quickly looked away, a little flustered. As if on cue, other students began to filter into the classroom, ignoring the both of us completely and filling the space as if we weren't there. Jordan, I realized, wasn't the only one who seemed to exist in a separate world—although I had no particular desire to visit <em>theirs</em>.</p>
+<!-- B¶11 -->
+<p>Professor Addison, for once, showed up on time—she noticed Jordan immediately, of course, catching my eyes and mouthing a quick “thank you” in my direction. <em>Mission accomplie,</em> I told myself. I responded with a simple nod.</p>
+<!-- B¶12 -->
+<p>Discussion began promptly, then, without further ado. Having exhausted <em>Symposium</em> in the previous class, our text for the following few days was <em>Genesis</em>—idly, I wondered if Jordan had “already studied” <em>Genesis</em> too. I wondered if he was religious at all.</p>
+<!-- B□6 | B¶13 -->
+<p>With the heavy cloudcover outside and next-to-no natural light coming in through Room 221's textured glass windows, the classroom had a subdued, artificial feel, a sharp contrast to the storm which could be heard raging outside. The wind had picked up, now, and the rain belted against the side of the building with awesome force. Every so often, a loud cracking sound would resonate through the hall as a nearby tree lost another of its mighty branches; this sound was soon joined by the first peals of thunder audible from afar. Perhaps in awe of this fearsome display, the voices in the classroom were hushed, quiet; without any discussion or rationale, each student had independently decided on whispering, their vocalizations only barely discernible from the din outside.</p>
+<!-- B○7 | B¶14 -->
+<p>As the world was tearing itself to pieces beyond our walls, we were discussing the act of its Creation. Unlike our encounter with Plato, the <em>Book of Genesis</em> was not structured like an argument, whose points could be debated or refuted. It was a religious text, which meant that the arguments were all ours. Whether from this fact or because of their greater familiarity with the material, the class seemed further engaged than they had before, the conversation bouncing from one to another despite their hushed tones. Jordan, for his part, was having no difficulty making his opinion known.</p>
+<!-- B△8 | B¶15 -->
+<p>“He speaks to each of them separately, but I think that for man and woman the curse is essentially the same,” Jordan said. He jabbed the page with his finger, seemingly unaware that none of us could possibly know where in the text he was. “God's curse isn't <em>this</em> for Man and <em>that</em> for Woman, it's one single punishment, for all of mankind.”</p>
+<!-- B¶16 -->
+<p>I thought this reading was preposterous, and I said so. “With all due respect,” I said. “That's preposterous.</p>
+<blockquote>
+<p><span class="longest">I will terribly sharpen your birth pangs,</span><br />
+<span class="tab"></span>in pain shall you bear children.<br />
+And for your man shall be your longing,<br />
+<span class="tab"></span>and he shall rule over you.</p>
+</blockquote>
+<p><span class="nonewpar"></span>First, God curses Woman with birth pangs, something which Man takes no part of. Then, He curses her with desire, granting her rule over to her spouse. How could you possibly argue that this punishment isn't dependent on sex?”</p>
+<!-- B¶17 -->
+<p>“Are you so bold as to argue that men do not also feel longing for their spouses?” Jordan shot back. “That they are not also ‘ruled’ by this desire? As Alcibiades put it, ‘It's obvious that the soul of every lover longs for something…’” He cut off the quote, staring me dead in the eyes. “<em>Every</em> lover,” he repeated. “Not just women.”</p>
+<!-- B¶18 -->
+<p>It was an intimidating performance, but he had also entirely missed the point. “It is true that both men and women are ruled by desire,” I replied tersely. I decided to ignore for the moment that the “rule” intended in <em>Genesis</em> was probably much more literal. “But you have still only addressed half of my argument. You can't honestly be claiming that the line about birth pangs is intended for men as well?”</p>
+<!-- B¶19 -->
+<p>“Pain, desire, and labor,” Jordan retorted. “Do you disagree? We are provided with specific examples—for Woman, love and birth; for Man, hunger and the field—but it is the general idea of suffering that is important! The specifics don't really matter.”</p>
+<!-- B¶20 -->
+<p>“But the specifics <em>do</em> matter!” I said, raising my voice to him. “We know from anecdotal evidence that God's curse <em>le'adam</em> falls to all of humanity—both men and women feel hunger, and both labor in the fields. But this does not mean that the opposite is also true! Even if we grant you your claim that the curse for Man and Woman contain the same basic elements, this is not to say that each experiences these in equal measure!”</p>
+<!-- B¶21 -->
+<p>“Okay, okay,” Professor Addison said softly, bringing me back into the room. I had risen out of my seat, and nearly the entire class's eyes were on me. I felt my face flush, and sat back down. “Let someone else have a turn, you two,” Addison said, a detectably exasperated in tone. Looking at her face, I wondered if she regretted giving thanks so soon.</p>
+<!-- B○9 | B¶22 -->
+<p>In that moment, I was feeling all of three things. First: I was obviously mortified. Making a scene in class—making a scene in class to the extent that <em>the professor herself</em> had to step in to break things up—was exactly the sort of thing I had hoped to <em>avoid</em> happening. I had, for one brief minute, completely forgotten that Addison and the rest of the class were even there—a dangerous lapse of judgment when the only reason I was there <em>at all</em> was for her grade.</p>
+<!-- B¶23 -->
+<p>Second: Barring my initial embarrassment, I was genuinely worried. This kind of confrontation was <em>exactly</em> the sort of thing I had hoped to avoid regarding Jordan, and—as the one who had brought him here—I felt strangely responsible for his actions. And, of course, I had been out of line as well. The only reason I had bothered with this boy in the first place was to garner Addison's good favor, and I was sure that had all but evaporated now.</p>
+<!-- B¶24 -->
+<p>Third: I was angry, at myself, obviously, but also at the boy who sat across from me, for being so challenging, for egging me on, and, of course, for not giving a damn about the consequences. Here he was now: sitting back, smiling, still interjecting with his opinion on an all-too-frequent basis, totally <em>en garde</em>. The muscles in my face formed an unbidden scowl. I knew that I wouldn't have lost control in that manner with just anyone—something about him had made me get <em>invested</em>, and, consequently, there was little doubt in my mind that my reaction was all his fault.</p>
+<!-- B△10 | B¶25 -->
+<p>Despite my cheerful opponent's insistence on providing commentary every five words, I didn't speak again for the remainder of class. Instead, I redoubled my efforts into my notes, writing down anything and everything that was said, however inane. I had hoped to excuse Jordan's remarks from this rule, but he was regrettably insightful when he wasn't busy unabashedly erasing sexual difference. I jotted down his words—drawing tiny puking faces beside them in the margins when I had the time.</p>
+<!-- B¶26 -->
+<p>As the period drew to a close, the way Jordan glanced at me gave me the sense that he wanted me to stick around, but I didn't the slightest bit care—and anyway, lingering meant risking of Addison's disastrous errands. I bolted out of the room the second that class ended.</p>
+<hr />
+<!-- B□11 | B¶27 -->
+<p>Whitmore Dining Hall was notably less hectic on Wednesdays, mostly due to the fact that, not having Chemistry, I was there an hour earlier. I was sitting in my usual seat, a greasy slice of pizza on my left and an open textbook before me. <em>Canon in D</em> was playing through my headphones at half volume, transporting me from the stressors of the tangible realm into the simpler, more structured world of <em>ECON 102 – Principles of Macroeconomics</em>. Outside, the storm had mostly abated, and the mood of students was one of exuberance tinged with relief as they walked through the doors to the hall.</p>
+<!-- B○12 | B¶28 -->
+<p>It was still the beginning of the semester, and we were just going over the basics—GDP, CPI, circular flow. I had taken a course in economics in high school, so it was mostly familiar material. Still, looking at a finished page of notes in my small, delicate script was a source of satisfaction in itself—and it would certainly make it easier when it came time to study. I hummed softly to myself in contentment. For these early sections, I could probably forego flashcards.</p>
+<!-- B△13 | B¶29 -->
+<p>A hand tapped my textbook softly, startling me out of my reverie. I popped out an earbud and glanced up. My mood soured almost immediately. “What do you want?” I asked sharply.</p>
+<!-- B¶30 -->
+<p>“I've been sitting here for the past five minutes,” Jordan said, in what curiously sounded like a complaint.</p>
+<!-- B¶31 -->
+<p>It didn't answer my question, and I wasn't about to waste my time sussing it out. I bit off a large chunk of pizza and rose from my seat. “Well, I'm leaving,” I said through the mouthful. The half-eaten remnants of my lunch weren't worth another fight. I took a massive swig of soda. “See ya,” I told him.</p>
+<!-- B¶32 -->
+<p>“Hold on,” Jordan replied, motioning me to calm down. “You seemed upset in class today,” he said. “I just wanted to check in and see if you were okay.”</p>
+<!-- B¶33 -->
+<p>This gave me pause. I still started packing my things, but internally I had decided to hear him out. “<em>You</em> wanted to check in on <em>me</em>?” I asked. “That's rich.”</p>
+<!-- B¶34 -->
+<p>“Was it something I said?” he asked.</p>
+<!-- B¶35 -->
+<p>I rolled my eyes. “Yes and no,” I said. “It wasn't the <em>saying</em> so much as the <em>result</em>. I'm upset that I lost control. You riled me, and I forgot myself.”</p>
+<!-- B¶36 -->
+<p>“I don't think you lost control,” he said adamantly. “I thought it was a fun argument.”</p>
+<!-- B¶37 -->
+<p>I laughed despite myself. “If the <em>professor</em> has to step in to break things up, you have <em>definitely</em> lost control,” I replied. “And the argument was decidedly unfun. I never want to do that again. And we are.” I gestured to the both of us, slinging my now-packed bag over my shoulder. “I really am leaving,” I said softly, grabbing my plate.</p>
+<!-- B¶38 -->
+<p>“Hold on,” he said again. I tapped my foot impatiently in response, eager to get a move-on. “I'm sorry for arguing,” he said to me.</p>
+<!-- B¶39 -->
+<p>He wasn't. “No, you're not,” I said back.</p>
+<!-- B¶40 -->
+<p>“Okay, I'm not,” he agreed, smiling. “But I'm sorry it offended you. Are you doing anything after this? Maybe we can talk it out.”</p>
+<!-- B○14 | B¶41 -->
+<p>Aside from my usual studying arrangements, I didn't have anything planned. I only had two classes on Wednesdays, and the other was an evening course and wouldn't commence until after dinner. I was still frustrated, of course, but the boy was making an effort and had a history of being genuinely insightful. In any case, if I agreed, it meant I would get to yell at him more.</p>
+<!-- B△15 | B¶42 -->
+<p>“Fine,” I told him. “You have one hour. On one condition.” I held up my finger to emphasize the point. “No arguing,” I demanded, drawing the words out as though I was speaking to a toddler.</p>
+<!-- B¶43 -->
+<p>He nodded. “Agreed,” he replied.</p>
+<hr />
+<!-- B□16 | B¶44 -->
+<p>Settlers Park was a spacious grassy area just five blocks east of campus, and perhaps the nicest (free) place to sit and chat for miles. On the distant boundary, a small handful of kids were enjoying the playset under the watchful gaze of their supervisors, their screams barely audible across the expanse to where we were standing. A large pond was set into the park's southern side, and a paved asphalt walkway led down and around its circumference. Benches were scattered strategically every dozen yards around the water, at times cutting into the low overlooking hill, and they provided the perfect privacy for the close couple or—as in our case—the slightly-begrudging hardly-friends. Overhead, the clouds were dark but scattered, sunlight shining through and lighting the scenery. The temperature was cool—Jordan was wearing a rain jacket, and I was wearing a light jumper over my blouse.</p>
+<!-- B¶45 -->
+<p>“Sorry for not coming up with anything better than this,” Jordan said, glancing over his shoulder as he led me down the path. “I'd take you out to eat, but, well… you kinda already did.”</p>
+<!-- B¶46 -->
+<p>I mumbled something incoherent in response. I actually <em>was</em> still hungry—but my pride prevented me from saying as much.</p>
+<!-- B¶47 -->
+<p>Slowly, we made our way around the circumference of the pond, Jordan driving the conversation, me giving him mostly curt responses. How was my day? I said my day was fine. Did I have any classes after this? Yes, I did, but not until much later. He was trying, I had to give him that—in maybe both senses of the word. But it wasn't his fault I was better left alone. I did my best to maintain an amicable disposition.</p>
+<!-- B¶48 -->
+<p>“Mind if we sit down for a bit?” Jordan asked suddenly. He took a seat without waiting for my response. We had come to one of the more secluded benches, and I looked around a little self-consciously.</p>
+<!-- B○17 | B¶49 -->
+<p>Jordan had sat himself as near the center of the bench as possible without encroaching on my side, and I felt more than a little nervous to take my place beside him. In part: because we were still technically at odds, and I didn't want to appear too friendly too soon. In part: because it would be harder to look at him when he was seated beside me, and I liked looking at him while he talked. In part: because my heart and mind were directing me to two separate locations on the bench, and I wasn't sure which to choose.</p>
+<!-- B△18 | B¶50 -->
+<p>I compromised, sitting in the exact center of the remaining space. I folded my hands and looked out pleasantly over the water, projecting a tranquility that I did not the least bit feel inside.</p>
+<!-- B¶51 -->
+<p>“I really did enjoy talking to you in class,” Jordan began, after a long time.</p>
+<!-- B¶52 -->
+<p>I wanted to dismiss the comment, but I bit my tongue. We had agreed: No arguing. “People don't usually… choose to spend time with me,” I finally responded.</p>
+<!-- B¶53 -->
+<p>Jordan laughed. “Really?” he asked. “That's hard to believe.”</p>
+<!-- B¶54 -->
+<p>“No,” I replied. “It really, really is not.”</p>
+<!-- B¶55 -->
+<p>“Eh, I'm sure they just haven't given you a chance,” he said. He turned his body so he could face me more directly. “Hang in there, and they'll come around.” There was no way Jordan could know what he was talking about, but he spoke with surprising authority.</p>
+<!-- B¶56 -->
+<p>“You assume I want them to,” I responded tartly.</p>
+<!-- B¶57 -->
+<p>“You don't?” he asked, surprised.</p>
+<!-- B¶58 -->
+<p><em>No</em>, I thought, but I didn't say this out loud.</p>
+<!-- B¶59 -->
+<p>It didn't matter, because Jordan wasn't waiting for a response. “I don't think it's wrong to be appreciated,” he said, self-assured. “I mean, you're dedicated, quick-witted, intelligent… Who wouldn't want to spend time with you?”</p>
+<!-- B¶60 -->
+<p>I rolled my eyes at his blatant adulation. “Your flattery will get you nowhere,” I said, pointedly avoiding his question. “I'm still mad at you.” I managed to ignore the reddening of my cheeks.</p>
+<!-- B¶61 -->
+<p>“Okay,” he said, sighing. “Let's talk about that. I still don't understand why you're mad.”</p>
+<!-- B¶62 -->
+<p>“I'm mad because—” I started quickly, but then paused when I realized I wasn't entirely sure myself. “I'm mad because we turned a public classroom into a private argument,” I began again. I started with the simplest reasons. “I'm mad because I'm concerned that Professor Addison is judging me—and even though I don't really like her all that much she's still my professor and she's still the one giving me my grade. I'm mad because this was all preventable but I lacked the self-control to keep it from happening. And <em>mostly</em>—” I paused again, partially for emphasis and partially because I didn't have the next bit fully composted yet. “<em>Mostly</em>,” I continued, “I'm mad because none of that seemed to affect you, because you didn't seem to care what the professor or me or anyone else thought, because you were able to jump right back into class conversations without any trouble, and on one hand I wish I had been able to do so too and on the other I think it was awfully insensitive of you.”</p>
+<!-- B○19 | B¶63 -->
+<p>It was quite possibly the longest that I had ever spoken about my feelings, and as the words left my mouth I felt a pang of fear about how Jordan would respond. It was so <em>easy</em> to get carried away with him sitting there looking at me. Mentally, I chastised myself for not being better at resisting his charms. Still, I found that I could breathe a little better with everything out in the open.</p>
+<!-- B△20 | B¶64 -->
+<p>I watched as Jordan opened his mouth. Then he closed it again. Then he opened it again. Then he closed it again. “…Sorry,” he finally stammered out. “Trying not to argue.”</p>
+<!-- B¶65 -->
+<p>I laughed, partially because it was funny watching him open and close his mouth like a captured fish, partially because I was relieved my revelation hadn't put him off, and partially because I was surprised he was still so seriously taking our accord. “It's okay,” I told him. “Say what's on your mind.”</p>
+<!-- B¶66 -->
+<p>“Well, first of all,” he said. “I do care. That's why I tracked you down during lunch and that's why we're sitting here now. Secondly, I don't think Addison is judging you and I don't think you should care if she did. Your points were valid and it was your responsibility to make them heard. And thirdly—” He let out a sigh. “What did you want me to do?” he asked. “Stop participating in class just because your feelings were hurt? That's hardly fair.”</p>
+<!-- B○21 | B¶67 -->
+<p>As usual, Jordan had made some very compelling points. He <em>had</em> demonstrated care towards my emotional state, even if it was weird and unusual for people to do that sort of thing with me. I, <em>myself</em>, was usually one to place efforts over appeasement, and it was uncharacteristic for me to care so much what a class professor thought. And finally…</p>
+<!-- B△22 | B¶68 -->
+<p>“…I didn't want you to stop participating,” I said, softy, realizing the words were true. “I just… I just wanted you to understand how I felt.”</p>
+<!-- B¶69 -->
+<p>We sat there in silence a short while. Across the pond, a pair of ducks slowly made their way towards us.</p>
+<!-- B¶70 -->
+<p>“…I really like you, you know,” Jordan said finally, breaking the silence.</p>
+<!-- B¶71 -->
+<p>I scoffed. “You don't even know me,” I said. I felt a pang of regret shooting him down so forcefully, but it was true.</p>
+<!-- B¶72 -->
+<p>“Well,” he said haughtily. “Maybe I should work on that, then.”</p>
+<!-- B¶73 -->
+<p>I side-eyed him. He looked right back. We stared at each other for a solid minute, neither willing to be the first to turn away.</p>
+<!-- B¶74 -->
+<p>Finally, he laughed, breaking the contact. “Sorry,” he told me, lightly. I wasn't quite sure what for.</p>
+<!-- B¶75 -->
+<p>“You sure apologize a lot,” I harrumphed, finally letting myself lean up against his arm. Jordan himself was relaxed, the muscle soft and comfortable.</p>
+<!-- B○23 | B¶76 -->
+<p>He had earned a little physical contact, I told myself. The wind had picked up, and a slight chill had come over me, but even through his jacket his body was still warm. I could smell his scent across the breeze. He smelled like… when you're baking molasses cookies, and you have most of the ingredients already in the mixer, and then the recipe calls for half a teaspoon of vanilla so you open your little jar and the scent of vanilla and the scent of molasses and the scent of cookie dough all mix together in your nose and it's sweet but also a little sharp and kind of invigorating but also it smells like home. That's what Jordan smelled like as I leaned my head back against his shoulder and looked out over the pond.</p>
+<!-- B△24 | B¶77 -->
+<p>“I really <em>do</em> like you, though,” he said quietly.</p>
+<!-- B¶78 -->
+<p>“Yeah,” I replied. “I know.” I didn't know how I knew but I did.</p>
+<!-- B¶79 -->
+<p>The wind settled, leaving ripples spreading across the pond. Across the water, an elderly couple were walking their dog, their hands clasped together, the puppy bounding ahead playfully. From the distance, one could hear the kids shouting to each other as they played tag. The ducks had made it to our side of the pond, and they emerged from the water as they slowly walked past.</p>
+<!-- B△25 | B¶80 -->
+<p>I turned my head towards Jordan, my nose burying itself slightly in his arm. He really did smell nice. It was hard for me to stay mad at him when it was such a nice day. “Thank you for talking with me like this,” I told him.</p>
+<!-- B¶81 -->
+<p>“Yeah, of course,” he said. He tried reaching up to put his arm around me, but I pushed it back down.</p>
+<!-- B○26 | B¶82 -->
+<p>We weren't that close of friends yet. And anyway, his arm was cozier as a pillow.</p>
+<!-- B¶83 -->
+<p>But, looking back, in that moment, something in my heart began to move.</p>
+</section>
+</section>
+<footer>
+  <p> The preceding text is a work of fiction. Brand names and trademarks (should they appear) are used without permission and do not imply association or endorsement from their respective owners. Excerpts of literature, criticism, film, music, art, and other copyrighted works which appear are likewise used without permission or endorsement under the standards of fair use. © 2017 Margaret KIBI. This work is licensed under a <a href="https://creativecommons.org/licenses/by-sa/4.0/" rel="license">Creative Commons Attribution-ShareAlike 4.0 International License</a>. This has been issue 01 of Vague. Thank you for reading.
+<section id="playlist-01" style="Text-Align: Center">
+<h2>Chapter Playlist</h2>
+<strong>01 Renaissance Beat</strong> || STUTS<br>
+<small>(<a href="https://itun.es/us/NyWGbb?i=1099105932" target="_blank">Apple Music</a> | <a href="https://open.spotify.com/track/45ausr2tZW8mOKoo14H3FQ" target="_blank">Spotify</a> | <a href="https://youtu.be/v7uc7PvcW2E" target="_blank">YouTube</a>)</small><br>
+<strong>02 Another Place To Fall</strong> || KT Tunstall<br>
+<small>(<a href="https://itun.es/us/y6EmR?i=724693237" target="_blank">Apple Music</a> | <a href="https://open.spotify.com/track/0U0L2aWTIo5zob64ewPJaR" target="_blank">Spotify</a> | <a href="https://youtu.be/0wpMx4v5OB8" target="_blank">YouTube</a>)</small><br>
+<strong>03 They Can't Hold Me Down ft. Illa J</strong> || Miles Davis &amp; Robert Glasper<br>
+<small>(<a href="https://itun.es/us/D9vq_?i=1061248867" target="_blank">Apple Music</a> | <a href="https://open.spotify.com/track/5hGM3sbvHUS40bx2p6jhqU" target="_blank">Spotify</a> | <a href="https://youtu.be/ajIovkNUbO8" target="_blank">YouTube</a>)</small><br>
+<strong>04 Alone</strong> || Halsey<br>
+<small>(<a href="https://itun.es/us/JZM0ib?i=1221749992" target="_blank">Apple Music</a> | <a href="https://open.spotify.com/track/2Te14aSrBgFj1CE2sBBVMX" target="_blank">Spotify</a> | <a href="https://youtu.be/c3jkwj90c6U" target="_blank">YouTube</a>)</small><br>
+<strong>05 Who Am I</strong> || London Grammar<br>
+<small>(<a href="https://itun.es/us/JfSKib?i=1217578061" target="_blank">Apple Music</a> | <a href="https://open.spotify.com/track/2QalEDQknZLABjQYmreKPq" target="_blank">Spotify</a> | <a href="https://youtu.be/k7aN0G2sEYM" target="_blank">YouTube</a>)</small><br>
+<strong>06 (Nice to Meet You) Anyway</strong> || Gavin DeGraw<br>
+<small>(<a href="https://itun.es/us/QxGJq?i=277743089" target="_blank">Apple Music</a> | <a href="https://open.spotify.com/track/1lJGpOpbouFQyDtQuTOv8t" target="_blank">Spotify</a> | <a href="https://youtu.be/IfS93jnTEK4" target="_blank">YouTube</a>)</small><br>
+<strong>07 Beautiful</strong> || Carly Rae Jepsen &amp; Justin Bieber<br>
+<small>(<a href="https://itun.es/us/FsnoH?i=557373195" target="_blank">Apple Music</a> | <a href="https://open.spotify.com/track/52PiyZoav11ZSAoHPqSlzh" target="_blank">Spotify</a> | <a href="https://youtu.be/16vuowrsojQ" target="_blank">YouTube</a>)</small><br>
+</section>
+<nav>
+<h2>www.u2764.com</h2>
+<p><a href="/">Home</a> | <a href="/OFIC/">Original Fiction</a> | <a href="/Links/">Links</a>
+</nav>
+</footer>
+</article>
+</main>

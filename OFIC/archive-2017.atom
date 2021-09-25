@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom" xml:lang="en" xmlns:fh="http://purl.org/syndication/history/1.0">
+
+<fh:archive/>
+<id>tag:www.u2764.com,2021:OFIC</id>
+<link rel="current" href="https://www.u2764.com/OFIC/index.atom"/>
+<link rel="self" href="https://www.u2764.com/OFIC/archive-2017.atom"/>
+<link rel="alternate" type="application/xhtml+xml" href="https://www.u2764.com/OFIC/"/>
+<updated>2021-09-25T04:34:08-07:00</updated>
+<title>❤ Original Fiction</title>
+<author>
+	<name>Margaret KIBI</name>
+	<uri>https://go.KIBI.family/About/#me</uri>
+</author>
+<category term="OFIC" scheme="tag:www.u2764.com,2021:" label="Original Fiction"/>
+<icon>../icon.svg</icon>
+<rights type="xhtml">
+	<div xmlns="http://www.w3.org/1999/xhtml">
+		<p>Except where otherwise mentioned, the works linked here are copyright © Margaret KIBI and licensed under a <a href="https://creativecommons.org/licenses/by-sa/4.0/" rel="license">Creative Commons Attribution-ShareAlike 4.0 International License [🅭🅯🄎]</a>.</p>
+	</div>
+</rights>
+
+<entry xml:id="OFIC.2017-02-12.Lite00">
+	<id>tag:www.u2764.com,2021:OFIC.2017-02-12.Lite00</id>
+	<link rel="alternate" type="text/html" href="https://www.u2764.com/OFIC/2017-02-12/Lite00/"/>
+	<!-- The identifier date differs from the published date for this entry.  The former gives the date it was published in any format; the latter is the publishing date of this particular HTML rendition. -->
+	<published>2017-03-10T11:11:34-08:00</published>
+	<updated>2021-09-25T03:29:26-07:00</updated>
+	<title>Lite #00: Pilot</title>
+	<author>
+		<name>Margaret KIBI</name>
+		<uri>https://go.KIBI.family/About/#me</uri>
+	</author>
+	<summary type="xhtml">
+		<div xmlns="http://www.w3.org/1999/xhtml">
+			<p><b>In this issue:</b> <cite>Lite!</cite> is a story about witches, demons, and saving the day. This is the (non-canonical) pilot episode. <small>[~2000 words; 15 pages; 10min read]</small></p>
+		</div>
+	</summary>
+</entry>
+
+<entry xml:id="OFIC.2017-06-20.Vague01">
+	<id>tag:www.u2764.com,2021:OFIC.2017-06-20.Vague01</id>
+	<link rel="alternate" type="text/html" href="https://www.u2764.com/OFIC/2017-06-20/Vague01/"/>
+	<published>2017-06-20T05:47:38-07:00</published>
+	<updated>2021-09-25T03:33:10-07:00</updated>
+	<title>Vague 01</title>
+	<author>
+		<name>Margaret KIBI</name>
+		<uri>https://go.KIBI.family/About/#me</uri>
+	</author>
+	<summary>“Beginnings”</summary>
+</entry>
+
+</feed>

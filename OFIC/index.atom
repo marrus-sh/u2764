@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom" xml:lang="en">
+
+<id>tag:www.u2764.com,2021:OFIC</id>
+<link rel="self" href="https://www.u2764.com/OFIC/index.atom"/>
+<link rel="prev-archive" href="./archive-2017.atom"/>
+<link rel="alternate" type="application/xhtml+xml" href="https://www.u2764.com/OFIC/"/>
+<updated>2021-09-25T04:34:23-07:00</updated>
+<title>❤ Original Fiction</title>
+<author>
+	<name>Margaret KIBI</name>
+	<uri>https://go.KIBI.family/About/#me</uri>
+</author>
+<category term="OFIC" scheme="tag:www.u2764.com,2021:" label="Original Fiction"/>
+<icon>../icon.svg</icon>
+<rights type="xhtml">
+	<div xmlns="http://www.w3.org/1999/xhtml">
+		<p>Except where otherwise mentioned, the works linked here are copyright © Margaret KIBI and licensed under a <a href="https://creativecommons.org/licenses/by-sa/4.0/" rel="license">Creative Commons Attribution-ShareAlike 4.0 International License [🅭🅯🄎]</a>.</p>
+	</div>
+</rights>
+
+<entry xml:id="OFIC.2019-08-17._4Ø">
+	<id>tag:www.u2764.com,2021:OFIC.2019-08-17._4%C3%98</id>
+	<link rel="alternate" type="text/html" href="https://www.u2764.com/OFIC/2019-08-17/_4Ø/"/>
+	<published>2019-08-17T21:43:47-07:00</published>
+	<updated>2021-09-25T03:40:23-07:00</updated>
+	<title>Forne’ermore</title>
+	<author>
+		<name>Margaret KIBI</name>
+		<uri>https://go.KIBI.family/About/#me</uri>
+	</author>
+	<summary>or, my queer Relationship with a Vampire —: in five parts.</summary>
+</entry>
+
+</feed>
