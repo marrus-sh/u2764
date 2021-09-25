@@ -55,7 +55,7 @@ body{ Display: Grid; Margin: 0; Padding: 0; Height: 100VH; Grid: 1FR / Auto 1FR 
 details#sidebar{ Writing-Mode: Vertical-RL; Width: Max-Content; Height: 100VH }
 details#sidebar>summary{ Padding: .25EM; Font-Size: X-Large; Font-Style: Italic; Line-Height: 1 }
 details#sidebar>nav{ Display: Grid; Writing-Mode: Horizontal-TB; Border-Right: Thin Solid; Max-Width: Calc(100VW / 3); Height: 100VH; Overflow: Hidden; Grid: Max-Content 1FR / MinMax(Calc(100VW / 3), Min-Content) }
-details#sidebar>nav>h1{ Box-Sizing: Border-Box; Grid-Area: 1 / 1; Margin: Auto; Padding: .5EM; Width: Max-Content; Text-Decoration: Underline }
+details#sidebar>nav>h1{ Box-Sizing: Border-Box; Grid-Area: 1 / 1; Margin: Auto; Padding: .5EM; Width: Max-Content; Max-Width: 100%; Text-Align: Center; Text-Decoration: Underline }
 div#scroller{ Box-Sizing: Border-Box; Direction: RTL; Grid-Area: 2 / 1; Justify-Self: Stretch; Border-Top: Thin Solid; Overflow-Y: Scroll }
 div#scroller>ol{ Direction: LTR; Margin: 0; Padding: 0 }
 div#scroller>ol>li{ Display: Block; Margin: 0; Padding: 0 }
