@@ -1,1 +1,0 @@
-All files in this directory are derived from Mutant Standard emoji (https://mutant.tech), and licensed under a Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International License (https://creativecommons.org/licenses/by-nc-sa/4.0/).
