@@ -5,7 +5,7 @@
 <link rel="self" href="https://www.u2764.com/MBED/index.atom"/>
 <link rel="prev-archive" href="https://www.u2764.com/MBED/archive-2018.atom"/>
 <link rel="alternate" type="application/xhtml+xml" href="https://www.u2764.com/MBED/"/>
-<updated>2021-09-27T04:19:57-07:00</updated>
+<updated>2021-09-27T05:00:52-07:00</updated>
 <title>❤ Embeds</title>
 <author>
 	<name>Margaret KIBI</name>
@@ -18,6 +18,23 @@
 		<p>Except where otherwise mentioned, the works linked here are copyright © Margaret KIBI and licensed under a <a href="https://creativecommons.org/licenses/by-sa/4.0/" rel="license">Creative Commons Attribution-ShareAlike 4.0 International License [🅭🅯🄎]</a>.</p>
 	</div>
 </rights>
+
+<entry xml:id="MBED.2019-03-29.sanix">
+	<id>tag:www.u2764.com,2021:MBED.2019-03-29.sanix</id>
+	<link rel="alternate" type="text/html" href="https://www.u2764.com/MBED/2019-03-29/sanix/"/>
+	<published>2019-03-29T07:17:15-07:00</published>
+	<updated>2021-09-27T05:00:31-07:00</updated>
+	<title>Sanix Text</title>
+	<author>
+		<name>Kyebego</name>
+		<uri>https://go.KIBI.family/About/#me</uri>
+	</author>
+	<summary type="xhtml">
+		<div xmlns="http://www.w3.org/1999/xhtml">
+			<p>A short little demo of making H·T·M·L headers which look like <cite>Sonic Adventure 2</cite>.  See the page source for info on how it’s done!</p>
+		</div>
+	</summary>
+</entry>
 
 <entry xml:id="MBED.2019-08-26.ourfedi">
 	<id>tag:www.u2764.com,2021:MBED.2019-08-26.ourfedi</id>

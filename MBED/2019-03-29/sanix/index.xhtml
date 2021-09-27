@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
+<head>
+	<title>Sonic demo</title>
+	<meta charset="utf-8"/>
+	<style>
+body { Background: Black }
+/*
+The trick with this header is to let your linear gradients overlap, and to use background sizing to effectively create “strips”.  Using the border for the solid color allows us to left-align the background, clipped to the padding box.
+*/
+header {
+	Border-Left: 2IN Solid;
+	Padding-Left: 8EM;
+	Max-Width: Max-Content;
+	Color: Blue; /* Use to set colour */
+	Background: Round Padding-Box Linear-Gradient( /* ___\ */
+		45DEG,
+		CurrentColor 2.828EM,
+		Transparent 2.828EM
+	) Left 1EM / 100% 2EM, Round Padding-Box Linear-Gradient( /* ___/ */
+		135DEG,
+		CurrentColor 2.828EM,
+		Transparent 2.828EM
+	) Left 1EM / 100% 2EM;
+}
+h1 {
+	Display: Grid;
+	Position: Relative;
+	Color: White;
+	Padding: .5EM;
+	Min-Height: 2EM;
+	Isolation: Isolate;
+	Align-Content: End;
+}
+h1::before,
+h1::after {
+	Display: Block;
+	Position: Absolute;
+	Bottom: 0;
+	Right: 0;
+	Width: 3EM;
+	Height: 3EM;
+	Mix-Blend-Mode: Lighten;
+	Z-Index: -1;
+	Content: "";
+}
+/*
+Iʼm too lazy to do the math to get these circles exactly perfect but hereʼs something closeish.  The trick here is to do two groups of opposing spirals to avoid overlaps and such, and to use `mix-blend-mode: lighten` to only take the nonblack values from the result.
+*/
+h1::before {
+	Background: Linear-Gradient( /* Colouring */
+		75DEG,
+		DeepSkyBlue,
+		DodgerBlue
+	), Radial-Gradient( /* Centre */
+		Circle 1EM At Center,
+		White 100%,
+		Transparent
+	), No-Repeat Radial-Gradient( /* Left Black Fix */
+		Circle 1.125EM At 1.1875EM 1.375EM,
+		Black 100%,
+		Transparent
+	) 0 .25EM / 2.5EM 1.25EM, No-Repeat Radial-Gradient( /* Left White Fix */
+		Circle 1.25EM At 1.25EM 1.25EM,
+		White 100%,
+		Transparent
+	) 0 .25EM / 2.5EM 1.25EM, No-Repeat Radial-Gradient( /* Right Black */
+		Circle 1.125EM At 1.3125EM .375EM,
+		Black 100%,
+		Transparent
+	) .5EM 1EM / 2.5EM 2EM, No-Repeat Radial-Gradient( /* Right White */
+		Circle 1.25EM At 1.25EM .5EM,
+		White 100%,
+		Transparent
+	) .5EM 1EM / 2.5EM 2EM, No-Repeat Radial-Gradient( /* Left Black */
+		Circle 1.125EM At 1.1875EM 1.375EM,
+		Black 100%,
+		Transparent
+	) 0 .25EM / 2.5EM 2EM, No-Repeat Radial-Gradient( /* Left White */
+		Circle 1.25EM At 1.25EM 1.25EM,
+		White 100%,
+		Transparent
+	) 0 .25EM / 2.5EM 2EM, Black;
+	Background-Blend-Mode: Multiply, Normal, Normal, Normal, Normal, Normal, Normal, Normal;
+	Transform: Skew(-15DEG, -15DEG);
+}
+h1::after {
+	Background: Linear-Gradient( /* Colouring */
+		75DEG,
+		DeepSkyBlue,
+		DodgerBlue
+	), Radial-Gradient( /* Centre */
+		Circle 1EM At Center,
+		White 100%,
+		Transparent
+	), No-Repeat Radial-Gradient( /* Bottom Black Fix */
+		Circle 1.125EM At 1.375EM 1.3125EM,
+		Black 100%,
+		Transparent
+	) .25EM .5EM / 1.25EM 2.5EM, No-Repeat Radial-Gradient( /* Bottom White Fix */
+		Circle 1.25EM At 1.25EM 1.25EM,
+		White 100%,
+		Transparent
+	) .25EM .5EM / 1.25EM 2.5EM, No-Repeat Radial-Gradient( /* Top Black */
+		Circle 1.125EM At .875EM 1.1875EM,
+		Black 100%,
+		Transparent
+	) .5EM 0 / 2.5EM 2.5EM, No-Repeat Radial-Gradient( /* Top White */
+		Circle 1.25EM At 1EM 1.25EM,
+		White 100%,
+		Transparent
+	) .5EM 0 / 2.5EM 2.5EM, No-Repeat Radial-Gradient( /* Bottom Black */
+		Circle 1.125EM At 1.375EM 1.3125EM,
+		Black 100%,
+		Transparent
+	) .25EM .5EM / 2EM 2.5EM, No-Repeat Radial-Gradient( /* Bottom White */
+		Circle 1.25EM At 1.25EM 1.25EM,
+		White 100%,
+		Transparent
+	) .25EM .5EM / 2EM 2.5EM, Black;
+	Background-Blend-Mode: Multiply, Normal, Normal, Normal, Normal, Normal, Normal, Normal;
+	Transform: Skew(-15DEG, -15DEG);
+}
+	</style>
+</head>
+<body>
+	<header>
+		<h1>Sanix Text</h1>
+	</header>
+</body>
+</html>
