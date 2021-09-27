@@ -109,8 +109,8 @@ details#sidebar>nav>h1{ Box-Sizing: Border-Box; Grid-Area: 1 / 1; Margin: Auto; 
 div#scroller{ Box-Sizing: Border-Box; Direction: RTL; Grid-Area: 2 / 1; Justify-Self: Stretch; Border-Top: Thin Solid; Overflow-Y: Scroll }
 div#scroller ol{ Direction: LTR; Margin: 0; Padding: 0 }
 div#scroller li{ Display: Block; Margin: 0; Padding: 0 }
-div#scroller li>span{ Display: Block; Box-Sizing: Border-Box; Border-Bottom: Medium Double; Padding: .25REM .5REM; Overflow: Hidden; White-Space: NoWrap; Font-Style: Italic; Font-Weight: Bold; Text-Align: Center; Text-Overflow: Ellipsis }
-div#scroller li:Not(:First-Child)>span{ Margin-Top: .75REM; Border-Top: Medium Double }
+div#scroller li>span{ Display: Block; Box-Sizing: Border-Box; Border-Width: Medium; Border-Bottom-Style: Double; Padding: .25REM .5REM; Overflow: Hidden; White-Space: NoWrap; Font-Style: Italic; Font-Weight: Bold; Text-Align: Center; Text-Overflow: Ellipsis }
+div#scroller li:Not(:First-Child)>span{ Margin-Top: .75REM; Border-Top-Style: Double }
 div#scroller li:Only-Child>span{ Display: None }
 div#scroller li>a{ Display: Block; Border-Bottom: Thin Solid; Padding: .5REM .5REM .5REM 2.5REM }
 div#scroller li>a:Any-Link{ Color: Inherit; Text-Decoration: None }
