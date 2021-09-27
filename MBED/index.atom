@@ -5,7 +5,7 @@
 <link rel="self" href="https://www.u2764.com/MBED/index.atom"/>
 <link rel="prev-archive" href="./archive-2018.atom"/>
 <link rel="alternate" type="application/xhtml+xml" href="https://www.u2764.com/MBED/"/>
-<updated>2021-09-27T03:40:15-07:00</updated>
+<updated>2021-09-27T04:17:17-07:00</updated>
 <title>❤ Embeds</title>
 <author>
 	<name>Margaret KIBI</name>
@@ -18,5 +18,18 @@
 		<p>Except where otherwise mentioned, the works linked here are copyright © Margaret KIBI and licensed under a <a href="https://creativecommons.org/licenses/by-sa/4.0/" rel="license">Creative Commons Attribution-ShareAlike 4.0 International License [🅭🅯🄎]</a>.</p>
 	</div>
 </rights>
+
+<entry xml:id="MBED.2019-08-26.ourfedi">
+	<id>tag:www.u2764.com,2021:MBED.2019-08-26.ourfedi</id>
+	<link rel="alternate" type="text/html" href="https://www.u2764.com/MBED/2019-08-26/ourfedi/"/>
+	<published>2019-08-26T13:58:15-07:00</published>
+	<updated>2021-09-27T04:11:58-07:00</updated>
+	<title>This Is Our Fediverse</title>
+	<author>
+		<name>Kyebego</name>
+		<uri>https://go.KIBI.family/About/#me</uri>
+	</author>
+	<summary>Itʼs pretty rare that I get to play around with colours in my design work, and Iʼve been thinking about the colour pink and the role of design on the fediverse, so I threw this together as a quick thing in about an hour or so.</summary>
+</entry>
 
 </feed>
