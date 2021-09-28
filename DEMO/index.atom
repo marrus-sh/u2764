@@ -1,17 +1,17 @@
 <?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom" xml:lang="en">
 
-<id>tag:www.u2764.com,2021:MBED</id>
-<link rel="self" href="https://www.u2764.com/MBED/index.atom"/>
-<link rel="prev-archive" href="https://www.u2764.com/MBED/archive-2018.atom"/>
-<link rel="alternate" type="application/xhtml+xml" href="https://www.u2764.com/MBED/"/>
-<updated>2021-09-27T05:00:52-07:00</updated>
-<title>❤ Embeds</title>
+<id>tag:www.u2764.com,2021:DEMO</id>
+<link rel="self" href="https://www.u2764.com/DEMO/index.atom"/>
+<link rel="prev-archive" href="https://www.u2764.com/DEMO/archive-2018.atom"/>
+<link rel="alternate" type="application/xhtml+xml" href="https://www.u2764.com/DEMO/"/>
+<updated>2021-09-27T17:54:23-07:00</updated>
+<title>❤ Demos &amp; Embeds</title>
 <author>
 	<name>Margaret KIBI</name>
 	<uri>https://go.KIBI.family/About/#me</uri>
 </author>
-<category term="MBED" scheme="tag:www.u2764.com,2021:" label="Embeds"/>
+<category term="DEMO" scheme="tag:www.u2764.com,2021:" label="Demos &amp; Embeds"/>
 <icon>../icon.svg</icon>
 <rights type="xhtml">
 	<div xmlns="http://www.w3.org/1999/xhtml">
@@ -19,9 +19,9 @@
 	</div>
 </rights>
 
-<entry xml:id="MBED.2019-03-29.sanix">
-	<id>tag:www.u2764.com,2021:MBED.2019-03-29.sanix</id>
-	<link rel="alternate" type="text/html" href="https://www.u2764.com/MBED/2019-03-29/sanix/"/>
+<entry xml:id="DEMO.2019-03-29.sanix">
+	<id>tag:www.u2764.com,2021:DEMO.2019-03-29.sanix</id>
+	<link rel="alternate" type="text/html" href="https://www.u2764.com/DEMO/2019-03-29/sanix/"/>
 	<published>2019-03-29T07:17:15-07:00</published>
 	<updated>2021-09-27T05:00:31-07:00</updated>
 	<title>Sanix Text</title>
@@ -36,9 +36,9 @@
 	</summary>
 </entry>
 
-<entry xml:id="MBED.2019-08-26.ourfedi">
-	<id>tag:www.u2764.com,2021:MBED.2019-08-26.ourfedi</id>
-	<link rel="alternate" type="text/html" href="https://www.u2764.com/MBED/2019-08-26/ourfedi/"/>
+<entry xml:id="DEMO.2019-08-26.ourfedi">
+	<id>tag:www.u2764.com,2021:DEMO.2019-08-26.ourfedi</id>
+	<link rel="alternate" type="text/html" href="https://www.u2764.com/DEMO/2019-08-26/ourfedi/"/>
 	<published>2019-08-26T13:58:15-07:00</published>
 	<updated>2021-09-27T04:11:58-07:00</updated>
 	<title>This Is Our Fediverse</title>

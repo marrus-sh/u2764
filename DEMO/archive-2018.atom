@@ -2,17 +2,17 @@
 <feed xmlns="http://www.w3.org/2005/Atom" xml:lang="en" xmlns:fh="http://purl.org/syndication/history/1.0">
 
 <fh:archive/>
-<id>tag:www.u2764.com,2021:MBED</id>
-<link rel="current" href="https://www.u2764.com/MBED/index.atom"/>
-<link rel="self" href="https://www.u2764.com/MBED/archive-2018.atom"/>
-<link rel="alternate" type="application/xhtml+xml" href="https://www.u2764.com/MBED/"/>
-<updated>2021-09-27T03:39:12-07:00</updated>
-<title>❤ Embeds</title>
+<id>tag:www.u2764.com,2021:DEMO</id>
+<link rel="current" href="https://www.u2764.com/DEMO/index.atom"/>
+<link rel="self" href="https://www.u2764.com/DEMO/archive-2018.atom"/>
+<link rel="alternate" type="application/xhtml+xml" href="https://www.u2764.com/DEMO/"/>
+<updated>2021-09-27T17:53:34-07:00</updated>
+<title>❤ Demos &amp; Embeds</title>
 <author>
 	<name>Margaret KIBI</name>
 	<uri>https://go.KIBI.family/About/#me</uri>
 </author>
-<category term="MBED" scheme="tag:www.u2764.com,2021:" label="Embeds"/>
+<category term="DEMO" scheme="tag:www.u2764.com,2021:" label="Demos &amp; Embeds"/>
 <icon>../icon.svg</icon>
 <rights type="xhtml">
 	<div xmlns="http://www.w3.org/1999/xhtml">
@@ -20,9 +20,9 @@
 	</div>
 </rights>
 
-<entry xml:id="MBED.2018-02-05.CMBD0001">
-	<id>tag:www.u2764.com,2021:MBED.2018-02-05.CMBD0001</id>
-	<link rel="alternate" type="text/html" href="https://www.u2764.com/MBED/2018-02-05/CMBD0001/"/>
+<entry xml:id="DEMO.2018-02-05.CMBD0001">
+	<id>tag:www.u2764.com,2021:DEMO.2018-02-05.CMBD0001</id>
+	<link rel="alternate" type="text/html" href="https://www.u2764.com/DEMO/2018-02-05/CMBD0001/"/>
 	<published>2018-02-05T22:05:21-08:00</published>
 	<updated>2021-09-26T23:40:02-07:00</updated>
 	<title>Trans Website - Intro Page Warning Message</title>
@@ -35,11 +35,11 @@
 
 <!-- The identifier date differs from the published date for the following `2018-02-12` entries.  Although these were originally dated to the 12th, they were not actually completed and published until the 14th. -->
 
-<entry xml:id="MBED.2018-02-12.CMBD0002">
-	<id>tag:www.u2764.com,2021:MBED.2018-02-12.CMBD0002</id>
-	<link rel="alternate" type="text/html" href="https://www.u2764.com/MBED/2018-02-12/CMBD0002/"/>
+<entry xml:id="DEMO.2018-02-12.CMBD0002">
+	<id>tag:www.u2764.com,2021:DEMO.2018-02-12.CMBD0002</id>
+	<link rel="alternate" type="text/html" href="https://www.u2764.com/DEMO/2018-02-12/CMBD0002/"/>
 	<published>2018-02-14T21:19:45-08:00</published>
-	<updated>2021-09-27T02:51:53-07:00</updated>
+	<updated>2021-09-27T17:25:46-07:00</updated>
 	<title>Overview | Faʞebook</title>
 	<author>
 		<name>KIBI Gô</name>
@@ -48,11 +48,11 @@
 	<summary>THIS IS AN EXTREME MESS BECAUSE FACEBOOK IS AN EXTREME MESS.  IT'S NOT PUNK.  IT'S A MESS.  FACEBOOK'S FAULT.  NOT MY SHIT.  [1 of 7]</summary>
 </entry>
 
-<entry xml:id="MBED.2018-02-12.CMBD0003">
-	<id>tag:www.u2764.com,2021:MBED.2018-02-12.CMBD0003</id>
-	<link rel="alternate" type="text/html" href="https://www.u2764.com/MBED/2018-02-12/CMBD0003/"/>
+<entry xml:id="DEMO.2018-02-12.CMBD0003">
+	<id>tag:www.u2764.com,2021:DEMO.2018-02-12.CMBD0003</id>
+	<link rel="alternate" type="text/html" href="https://www.u2764.com/DEMO/2018-02-12/CMBD0003/"/>
 	<published>2018-02-14T21:19:45-08:00</published>
-	<updated>2021-09-27T02:52:29-07:00</updated>
+	<updated>2021-09-27T17:26:13-07:00</updated>
 	<title>Work and Education | Faʞebook</title>
 	<author>
 		<name>KIBI Gô</name>
@@ -61,11 +61,11 @@
 	<summary>THIS IS AN EXTREME MESS BECAUSE FACEBOOK IS AN EXTREME MESS.  IT'S NOT PUNK.  IT'S A MESS.  FACEBOOK'S FAULT.  NOT MY SHIT.  [2 of 7]</summary>
 </entry>
 
-<entry xml:id="MBED.2018-02-12.CMBD0004">
-	<id>tag:www.u2764.com,2021:MBED.2018-02-12.CMBD0004</id>
-	<link rel="alternate" type="text/html" href="https://www.u2764.com/MBED/2018-02-12/CMBD0004/"/>
+<entry xml:id="DEMO.2018-02-12.CMBD0004">
+	<id>tag:www.u2764.com,2021:DEMO.2018-02-12.CMBD0004</id>
+	<link rel="alternate" type="text/html" href="https://www.u2764.com/DEMO/2018-02-12/CMBD0004/"/>
 	<published>2018-02-14T21:19:45-08:00</published>
-	<updated>2021-09-27T02:52:51-07:00</updated>
+	<updated>2021-09-27T17:45:04-07:00</updated>
 	<title>Places You've Lived | Faʞebook</title>
 	<author>
 		<name>KIBI Gô</name>
@@ -74,11 +74,11 @@
 	<summary>THIS IS AN EXTREME MESS BECAUSE FACEBOOK IS AN EXTREME MESS.  IT'S NOT PUNK.  IT'S A MESS.  FACEBOOK'S FAULT.  NOT MY SHIT.  [3 of 7]</summary>
 </entry>
 
-<entry xml:id="MBED.2018-02-12.CMBD0005">
-	<id>tag:www.u2764.com,2021:MBED.2018-02-12.CMBD0005</id>
-	<link rel="alternate" type="text/html" href="https://www.u2764.com/MBED/2018-02-12/CMBD0005/"/>
+<entry xml:id="DEMO.2018-02-12.CMBD0005">
+	<id>tag:www.u2764.com,2021:DEMO.2018-02-12.CMBD0005</id>
+	<link rel="alternate" type="text/html" href="https://www.u2764.com/DEMO/2018-02-12/CMBD0005/"/>
 	<published>2018-02-14T21:19:45-08:00</published>
-	<updated>2021-09-27T02:53:17-07:00</updated>
+	<updated>2021-09-27T17:45:10-07:00</updated>
 	<title>Contact and Basic Info | Faʞebook</title>
 	<author>
 		<name>KIBI Gô</name>
@@ -87,11 +87,11 @@
 	<summary>THIS IS AN EXTREME MESS BECAUSE FACEBOOK IS AN EXTREME MESS.  IT'S NOT PUNK.  IT'S A MESS.  FACEBOOK'S FAULT.  NOT MY SHIT.  [4 of 7]</summary>
 </entry>
 
-<entry xml:id="MBED.2018-02-12.CMBD0006">
-	<id>tag:www.u2764.com,2021:MBED.2018-02-12.CMBD0006</id>
-	<link rel="alternate" type="text/html" href="https://www.u2764.com/MBED/2018-02-12/CMBD0006/"/>
+<entry xml:id="DEMO.2018-02-12.CMBD0006">
+	<id>tag:www.u2764.com,2021:DEMO.2018-02-12.CMBD0006</id>
+	<link rel="alternate" type="text/html" href="https://www.u2764.com/DEMO/2018-02-12/CMBD0006/"/>
 	<published>2018-02-14T21:19:45-08:00</published>
-	<updated>2021-09-27T02:53:48-07:00</updated>
+	<updated>2021-09-27T17:45:34-07:00</updated>
 	<title>Family and Relationships | Faʞebook</title>
 	<author>
 		<name>KIBI Gô</name>
@@ -100,11 +100,11 @@
 	<summary>THIS IS AN EXTREME MESS BECAUSE FACEBOOK IS AN EXTREME MESS.  IT'S NOT PUNK.  IT'S A MESS.  FACEBOOK'S FAULT.  NOT MY SHIT.  [5 of 7]</summary>
 </entry>
 
-<entry xml:id="MBED.2018-02-12.CMBD0007">
-	<id>tag:www.u2764.com,2021:MBED.2018-02-12.CMBD0007</id>
-	<link rel="alternate" type="text/html" href="https://www.u2764.com/MBED/2018-02-12/CMBD0007/"/>
+<entry xml:id="DEMO.2018-02-12.CMBD0007">
+	<id>tag:www.u2764.com,2021:DEMO.2018-02-12.CMBD0007</id>
+	<link rel="alternate" type="text/html" href="https://www.u2764.com/DEMO/2018-02-12/CMBD0007/"/>
 	<published>2018-02-14T21:19:45-08:00</published>
-	<updated>2021-09-27T02:54:13-07:00</updated>
+	<updated>2021-09-27T17:45:46-07:00</updated>
 	<title>Details About You | Faʞebook</title>
 	<author>
 		<name>KIBI Gô</name>
@@ -113,11 +113,11 @@
 	<summary>THIS IS AN EXTREME MESS BECAUSE FACEBOOK IS AN EXTREME MESS.  IT'S NOT PUNK.  IT'S A MESS.  FACEBOOK'S FAULT.  NOT MY SHIT.  [6 of 7]</summary>
 </entry>
 
-<entry xml:id="MBED.2018-02-12.CMBD0008">
-	<id>tag:www.u2764.com,2021:MBED.2018-02-12.CMBD0008</id>
-	<link rel="alternate" type="text/html" href="https://www.u2764.com/MBED/2018-02-12/CMBD0008/"/>
+<entry xml:id="DEMO.2018-02-12.CMBD0008">
+	<id>tag:www.u2764.com,2021:DEMO.2018-02-12.CMBD0008</id>
+	<link rel="alternate" type="text/html" href="https://www.u2764.com/DEMO/2018-02-12/CMBD0008/"/>
 	<published>2018-02-14T21:19:45-08:00</published>
-	<updated>2021-09-27T02:54:37-07:00</updated>
+	<updated>2021-09-27T17:46:01-07:00</updated>
 	<title>Life Events | Faʞebook</title>
 	<author>
 		<name>KIBI Gô</name>
@@ -126,9 +126,9 @@
 	<summary>THIS IS AN EXTREME MESS BECAUSE FACEBOOK IS AN EXTREME MESS.  IT'S NOT PUNK.  IT'S A MESS.  FACEBOOK'S FAULT.  NOT MY SHIT.  [7 of 7]</summary>
 </entry>
 
-<entry xml:id="MBED.2018-09-09.demosite">
-	<id>tag:www.u2764.com,2021:MBED.2018-09-09.demosite</id>
-	<link rel="alternate" type="text/html" href="https://www.u2764.com/MBED/2018-09-09/demosite/"/>
+<entry xml:id="DEMO.2018-09-09.demosite">
+	<id>tag:www.u2764.com,2021:DEMO.2018-09-09.demosite</id>
+	<link rel="alternate" type="text/html" href="https://www.u2764.com/DEMO/2018-09-09/demosite/"/>
 	<published>2018-09-09T14:47:55-07:00</published>
 	<updated>2021-09-27T02:56:30-07:00</updated>
 	<title>GLASS.CAFE</title>
