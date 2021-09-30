@@ -1,0 +1,1604 @@
+<!DOCTYPE html>
+<html
+	xmlns="http://www.w3.org/1999/xhtml"
+	lang="en"
+	xml:lang="en"
+>
+<head>
+	<title>
+		September 2018: Fringe Mastodev &#x2013; Part I: The
+			Beginnings | KIBI Gô
+	</title>
+	<meta charset="UTF-8" />
+	<base target="_top" />
+	<style>
+		a[href].PREVIEW{ Display:Block ; Margin:1EM 0 ;
+			Border-Style:Solid Dashed Dashed Solid ;
+			Border-Width:Thin ; Border-Radius:.2EM ; Padding:1EM
+			; Color:Inherit ; Box-Shadow:2PX 2PX currentColor ;
+			Text-Decoration:None }
+		a[href].PREVIEW>cite{ Display:Block ; Margin:0 0 .25EM ;
+			Font-Size:Large ; Font-Style:Inherit ; Font-Weight:Bold
+			; Text-Decoration:Underline }
+		a[href].PREVIEW>p{ Margin: .5EM 0 0 ; Font-Style:Italic }
+		a[href].PREVIEW>p::before{ Content:None }
+		a[href].PREVIEW>time{ Font-Weight:Bold }
+		article.TOOT{ Display:Block ; Box-Sizing:Border-Box ;
+			Margin:1EM Auto ; Border:Thin Solid ;
+			Border-Radius:.25EM ; Padding:0 .875EM ; Width:25EM ;
+			Max-Width:100% ; Color:Black ; Background:White ;
+			Font-Family:Sans-Serif }
+		article.TOOT input{ Position:Absolute ; Margin:0 0 -1PX -1PX
+			; Width:1PX ; Height:1PX ; Visibility:Hidden }
+		article.TOOT input~p{ Display:None }
+		article.TOOT input:checked+label{ Border-Bottom-Style:Dashed
+			}
+		article.TOOT input:checked~p{ Display:Block }
+		article.TOOT label{ Display:Block ; Margin:.5EM 0 ;
+			Border:Thin Solid ; Padding:.1EM .2EM ; Cursor:Pointer }
+		article.TOOT label:focus{ Border:Medium Double }
+		article.TOOT label::before{ Font-Weight:Bold ;
+			Content:"Subject: " }
+		article.TOOT p{ Text-Align:Left ; Text-Indent:0 }
+		article.TOOT p::before{ Content:None }
+		article.TOOT p+p{ Margin-Top:1EM }
+		aside[role=note]{ Margin:1EM 0 1EM -3EM ; Border:Thin Dashed
+			; Padding:1EM 1EM 1EM 4EM ; Color:Maroon ;
+			Background:FloralWhite }
+		aside[role=note] p:First-Of-Type,figure
+			p:First-Of-Type{ Counter-Reset:PARAGRAPH ;
+			Counter-Increment:FIGURE }
+		aside[role=note] p::before,aside[role=note]
+		*.PARAGRAPH::before,figure p::before,figure
+		*.PARAGRAPH::before{ Padding-Right:1EM ; Content:"¶"
+			Counter(FIGURE, Upper-Alpha) Counter(PARAGRAPH) }
+		body{ Margin:Auto ; Padding:3EM ; Max-Width:43EM }
+		body>article{ Counter-Reset:FIGURE PARAGRAPH SECTION }
+		body>article>footer{ Margin-Bottom:1.85EM ; Padding-Bottom:0 }
+		body>article>header{ Margin-Top:1.85EM ; Padding-Top:0 }
+		body>article>section{ Position:Relative }
+		body>article>section::before{ Display:Block ;
+			Position:Absolute ; Box-Sizing:Border-Box ; Top:0 ;
+			Left:100% ; Margin:-1PX 0 ; Border:1PX Solid ;
+			Width:3REM ; Color:DimGrey ; Background:WhiteSmoke ;
+			Text-Align:Center ; Text-Indent:0 ;
+			Counter-Increment:SECTION ; Content:"§" Counter(SECTION)
+			}
+		body>article>section+p{ Margin:2EM -3EM 0 ; Border-Top:Thin
+			Dashed ; Padding:2EM 3EM 0 }
+		body>article>section+p::before{ Top:2EM ; Left:1EM ;
+			Right:Auto }
+		dl{ Columns:2 15EM ; Column-Gap:1.5EM ; Column-Rule:Thin
+			Solid ; Margin:1EM -3EM ; Border:Thin Solid ;
+			Padding:1EM ; Color:Black ; Background:WhiteSmoke }
+		dt{ Margin:2EM 0 1EM ; Font-Size:Large ;
+			Font-Weight:Bold ; Text-Align:Center ;
+			Text-Decoration:Underline }
+		dt:First-Child{ Margin-Top:0 }
+		dd{ Margin:0 }
+		figcaption{ Margin:0 -1EM -.5EM ; Border-Style:None Dotted
+			Dotted ; Border-Width:0 Thin Thin ; Padding:0 4EM .5EM ;
+			Text-Align:Center }
+		figcaption>p:First-Of-Type{ Margin-Top:.5EM }
+		figure{ Margin:1EM -2EM }
+		figure>img{ Max-Width:100% }
+		footer{ Margin:1.23EM 0 0 ; Border-Style:Solid None None ;
+			Border-Width:Thin 0 0 ; Text-Align:Right }
+		footer,header{ Padding:.369EM 0 ; Font-Size:Small }
+		footer>p,header>p{ Margin:.369EM 0 ; Text-Align:Inherit }
+		footer>p::before,header>p::before{ Content:None }
+		h1{ Margin:0 ; Font-Size:X-Large ; Font-Weight:Bold }
+		h2{ Margin:0 0 .5EM ; Font-Size:Large ; Font-Weight:Bold }
+		h2::BEFORE{ Display:Block ; Margin:2EM 0 ;
+			Font-Size:Medium ; Font-Weight:Normal ; Color:DimGrey ;
+			Text-Align:Center ; Content:"☙ ⁂ ❧" }
+		header{ Margin:0 0 1.23EM ; Border-Style:None None Solid ;
+			Border-Width:0 0 Thin ; Text-Align:Left }
+		header>time{ Display:Block ; Margin:.369EM 0 ;
+			Text-Align:Right }
+		html{ Font-Family:Serif }
+		i.SO-CALLED{ Font-Style:Inherit }
+		i.SO-CALLED::before{ Content:Open-Quote }
+		i.SO-CALLED::after{ Content:Close-Quote }
+		iframe{ Width:100% ; Height:24.6EM }
+		p{ Margin:0 ; Text-Align:Justify }
+		p+p{ Text-Indent:2EM }
+		p,*.PARAGRAPH{ Position:Relative }
+		p::before,*.PARAGRAPH::before{ Display:Block ;
+			Position:Absolute ; Top:0 ; Right:100% ; Width:2REM ;
+			Text-Align:Left ; Text-Indent:0 ; Opacity:.65 ;
+			Counter-Increment:PARAGRAPH ; Content:"¶"
+			Counter(PARAGRAPH, Decimal-Leading-Zero) }
+		ol,ul{ Margin:1EM 0 ; Padding:0 0 0 2EM }
+		ol>li,ul>li { Margin:1EM 0 }
+		ol.PARAGRAPH,ul.PARAGRAPH{ Margin:.5EM 0 0 -1PX ;
+			Border-Left:1PX Dotted }
+		ol.PARAGRAPH>li,ul.PARAGRAPH>li{ Margin:.5EM 0 }
+		ol p::before,ol *.PARAGRAPH::before,ul p::before,ul
+			*.PARAGRAPH::before{ Margin-Right:2EM }
+		span.OPTION{ Color:Grey ; Text-Shadow:1PX 0 White }
+		span.OPTION>span.CASE:nth-child(n+1){ Color:Crimson }
+		span.OPTION>span.CASE:nth-child(n+2){ Color:Blue }
+		span.OPTION>span.CASE:nth-child(n+3){ Color:Green }
+		span.OPTION>span.CASE:nth-child(n+4){ Color:Sienna }
+		span.OPTION>span.CASE:nth-child(n+5){ Color:MediumVioletRed }
+		span.OPTION>span.CASE:nth-child(n+6){ Color:Teal }
+		span.OPTION>span.CASE:nth-child(n+7){ Color:SaddleBrown }
+		span.PARENTHETICAL{ Color:DarkRed ; Background:AliceBlue }
+		span.SUBTITLE{ Font-Size: Large ; Font-Weight: Normal }
+		span.SUBTITLE::before{ Content: "☞ " }
+		strong.MARK{ Border:Thin Khaki Solid ; Color:MidnightBlue ;
+			Background:LemonChiffon ; Font-Weight:Inherit }
+		table{ Table-Layout:Fixed ; Margin:1EM 0 ;
+			Border-Collapse:Collapse ; Width:100% }
+		th{ Border-Bottom:Thin Solid ; Width:50% }
+		tr>*{ Border-Left:Thin Solid ; Padding:.25EM ;
+			Text-Align:Center }
+		tr>*:First-Child{ Border-Left-Style:Hidden }
+	</style>
+</head>
+<body>
+	<article>
+		<header>
+			<p>A History:</p>
+			<h1>
+				Fringe Mastodev<br /><span class="SUBTITLE">Part
+					I: <strong>The Beginnings</strong></span>
+			</h1>
+			<time datetime="2018-09">September 2018</time>
+		</header>
+		<p>
+			This post is the first in a series of posts chronicling
+				my personal history of involvement with the fringe
+				development scene on Mastodon, detailing the
+				origins of the movement, and touching on a number
+				of larger cultural developments and trends taking
+				place in the Mastodon communit<span class="OPTION"
+				>{<span class="CASE">y</span>|<span class="CASE"
+				>ies</span>}</span> more broadly.
+			<strong class="MARK"><dfn>Fringe development</dfn> is my
+				term for the development work (research; design;
+				coding) taking place on forks and individual
+				instances of Mastodon, <em>without</em> the
+				intention of sending that work upstream, and
+				without mainstream acknowledgment or
+				recognition.</strong>
+			Increasingly, as Mastodon as a project grows, I believe
+				that it is this development work that happens <i
+				class="SO-CALLED">on the fringes</i> that will
+				shape the future of the software.
+		</p>
+		<p>
+			Due to Mastodon's nature as a GPL&#x2010;licensed,
+				open&#x2010;source project, TootSuite upstream has
+				the ability to profit off of fringe development
+				work with little in the way of compensation or
+				acknowledgment, <strong class="MARK">obscuring the
+				origins of its features, and making the project
+				appear as the singular creation of one enlightened
+				organization&#x2014;or developer.</strong>
+			This could not be further from the truth.
+			<strong class="MARK">Acknowledging and recording the
+				troubled history of the Mastodon software is
+				essential</strong> to prevent the narratives of
+				these <em>other</em> developers&#x2014;frequently,
+				marginalized actors doing important work for their
+				communities&#x2014;from being lost.
+		</p>
+		<p>
+			For those of you who arrived at this post from somewhere
+				else, my name is KIBI Gô, and for the past year or
+				so I've been one of the most prolific fringe
+				developers of the Mastodon software.
+			My curriculum vitae in this respect mostly consists of
+				my work for <a
+				href="https://glitch-soc.github.io/docs/"
+				>GlitchSoc</a>, the first successful Mastodon fork,
+				where I was the primary, and frequently
+				full&#x2010;time, developer for the period from
+				roughly <time datetime="2017-06-20">20 June
+				2017</time>&#x2013;<time datetime="2018-02-20">20
+				February 2018</time> (8 months).
+			Aside from GlitchSoc proper, I have been involved in
+				such Mastodon&#x2010;adjacent projects as
+				<a href="
+https://github.com/marrus-sh/mastodon/commit/69e2d7ff7cf744c44f9f0c42ba3c271687a2daa7
+">Ardipithecus</a>, <a href="https://github.com/marrus-sh/laboratory
+">Laboratory</a>, <a href="https://github.com/marrus-sh/labcoat
+">Labcoat</a>, <a href="https://icosahedron.website/@u2764/692660
+">Snow Web Client</a>, <a href="https://github.com/ratatootille
+">Ratatootille</a>, <a href="
+http://marrus.xyz/ledger/mastodon/introducing-mastodon-go-020171031.html
+">Mastodon GO!</a>, <a href="
+https://www.monstr.pub/spec/monstrpub-overview/">MonStrPub</a>, <a
+				href="https://www.monstr.pub/monsto/"
+				>Monstodon</a>, <a href="
+https://glitch.social/@kibi/100464899901865407">ActivityPress</a>, and
+				<a href="https://github.com/postfic/slashbang"
+				>SlashBang</a>.
+			(Most of these names will probably be unfamiliar to you,
+				if you didn't follow me at the time I was working
+				on them.)
+		</p>
+		<p>
+			This post is intended as a retrospective of the past
+				nineteen&#x2010;plus months, starting with
+				Mastodon's February 2017 schism, and going up
+				through the present&#x2010;day, chronicling my
+				time working within the Mastodon community and with
+				the Mastodon software.
+			For those of you who <em>have</em> been following along
+				with me on this journey, it is intended to offer
+				some clarity as to where all of these ideas and
+				projects have gone, and what my plans are moving
+				forward.
+			For those of you who haven't, I'm hoping it will shed
+				some light on Mastodon's early history and the
+				forces and factors which have made it what it is
+				today.
+		</p>
+		<p>
+			I first joined Mastodon on <a href="
+https://mastodon.social/@marrus_sh/156773"><time
+				datetime="2016-11-22">22 November 2016</time></a>.
+			I've already touched upon the climate of Mastodon in
+				those early few months in my previous
+				retrospective, <a href="
+https://medium.com/@alliethehart/gameingers-are-dead-and-so-is-mastodon-705b535ed616
+"><cite>Mourning Mastodon</cite></a>, and I honestly don't have much
+				more to add.
+			(<cite>Mourning Mastodon</cite>, and its political
+				context, will be discussed in further detail later
+				in this series.)
+			Instead, I want to start with the moment when <strong
+				class="MARK">that initial cohesion met its first
+				major stumbling block,</strong> when <strong
+				class="MARK">Mastodon stopped being
+				singular,</strong> and when <strong class="MARK">I
+				first found myself getting involved as something
+				more than a user.</strong>
+		</p>
+		<aside role="note">
+			<p>
+				<strong>Disclaimer:</strong>
+				In the chronicle that follows, I've included dates
+					for those events where I have them, and linked
+					to commits, toots, and other resources where
+					feasible and proper.
+				However, much of these events happened
+					off&#x2010;the&#x2010;record, and my memory is
+					far from perfect.
+				For those of you who know me well, you might be
+					able to attach names and places to some of the
+					events that I have left ambiguous, but I ask
+					that you respect the privacy of those involved
+					and not bring them into the narrative without
+					their permission.
+			</p>
+		</aside>
+		<section id="february">
+			<h2>February 2017</h2>
+			<p>
+				This story begins, as perhaps it ought, with
+					Mastodon's most <strong class="MARK"
+					>significant,</strong> <strong class="MARK"
+					>controversial,</strong> and <strong
+					class="MARK">distinctive</strong> feature:
+					the <strong class="MARK">Content Warning
+					(CW).</strong>
+				As a technological feature, Mastodon received
+					Content Warnings <a href="
+https://github.com/tootsuite/mastodon/pull/460">on <time
+					datetime="2017-01-24">24 January
+					2017</time></a>, roughly 19&#x2013;20 months
+					ago, at time of writing.
+				In truth, <strong class="MARK">Mastodon already
+					<em>had</em> Content Warnings</strong> prior
+					to this, but they looked like so:
+			</p>
+			<article class="TOOT">
+				<header>
+					<a href="
+https://mastodon.social/@marrus_sh"><code>@marrus_sh<wbr
+						/>@mastodon.social</code></a>:
+				</header>
+				<p>
+					sensual// gurl yvsg hc lbhe fuveg, naq lbh
+						srry gur puvyy bs gur avtug nve juvfx
+						njnl gur snvagrfg tyvfgravat bs fjrng,
+						bayl gb or ercynprq ol gurve jnez
+						oerngu qbja lbhe arpx naq puvyyrq
+						svatref genpvat qbja lbhe fvqrf <a
+						href="
+https://mastodon.social/tags/np" class="mention hashtag" rel="tag"
+						>#<span>np</span></a> <a
+						href="https://youtu.be/QHin8ri__Sk"
+						rel="nofollow noopener" target="_blank"
+						><span class="invisible">https://</span
+						><span class=""
+						>youtu.be/QHin8ri__Sk</span><span
+						class="invisible"></span></a>
+				</p>
+				<footer>
+					<a href="
+https://mastodon.social/@marrus_sh/642932"><time
+						datetime="2017-01-16T12:22:34Z"
+						>January 16, 2017, 4:22 AM</time></a>
+				</footer>
+			</article>
+			<p>
+				That is, they consisted of a <strong class="MARK"
+					>plaintext description</strong> followed by
+					<strong class="MARK"><a
+					href="https://rot13.com/">ROT13</a
+					>&#x2010;encoded text.</strong>
+				These were used <em>primarily</em> for
+					lewds&#x2014;sometimes posted straight to the
+					public timeline&#x2014;but by the end of
+					January they were prevalent enough
+					in&#x2010;general that <a href="
+https://web.archive.org/web/20171023090328/https://swaldie.github.io/Mastodon-Guide/
+">Mastodon guides of that era</a> needed to explicitly tell new users
+					how to process them.
+				There were concerns from the development community
+					that <strong class="MARK">the massive amounts
+					of ROT13 on the site would drive away new
+					users,</strong> and this was <strong
+					class="MARK">one of the driving forces between
+					CW adoption.</strong>
+			</p>
+			<p>
+				To be clear on these points:
+			</p>
+			<ul class="PARAGRAPH">
+				<li>
+					CWs are a feature <strong class="MARK"
+						>developed by the community,</strong>
+				</li>
+				<li>
+					They <strong class="MARK">already had
+						widespread adoption</strong> before a
+						line of code was committed to the
+						Mastodon repository, and
+				</li>
+				<li>
+					The technological incorporation of CWs into
+						the software was aimed, among other
+						things, at making them <strong
+						class="MARK">easier and more
+						accessible</strong> for people to use,
+						especially for outsiders.
+				</li>
+			</ul>
+			<p>
+				<strong class="MARK">Mastodon culture moved <em
+					>incredibly</em> fast</strong> in those days,
+					and by the time <time datetime="2017-02"
+					>February</time> rolled around, there were
+					already a set of community practices
+					in&#x2010;place dictating when and where they
+					should be used.
+				These were largely carried over from the ROT13
+					days, but were enforced more stringently now
+					that adding a CW was as easy as clicking a
+					button.
+			</p>
+			<p>
+				That said, the transition from ROT13 to
+					built&#x2010;in CW <strong class="MARK">wasn't
+					entirely without turmoil.</strong>
+				<i class="SO-CALLED">CW&#x2010;jokes</i
+					>&#x2014;where the content warning was the
+					setup and the body of the toot was the
+					punchline&#x2014;existed from the very first
+					day, and were frequently used by people
+					testing out the feature for the first time.
+				Memes like <i class="SO-CALLED">SOME(BODY)</i> and
+					<i class="SO-CALLED">IT'S BEEN</i> also took
+					no time at all to surface, and made CWs into a
+					core part of Mastodon culture.
+				Even so, <strong class="MARK">there was a segment
+					of the population who thought that this was a
+					mis&#x2010;use of the feature,</strong> that
+					CWs should be used as trigger warnings
+					exclusively, and that <i class="SO-CALLED"
+					>CW&#x2010;jokes</i> were trivializing the
+					trauma of those who depended on them for safe
+					navigation online.
+			</p>
+			<article class="TOOT">
+				<header>
+					<a href="
+https://mastodon.social/@marrus_sh"><code>@marrus_sh<wbr
+						/>@mastodon.social</code></a>:
+				</header>
+				<p>
+					the content warning system was designed to be
+						flexible and accommodate multiple
+						use-case scenarios, including potentially
+						harmful content but also spoilers for
+						episode 47 of spongebob.
+					there is such a thing as *overuse* imo, but
+						not misuse per se.
+				</p>
+				<footer>
+					<a href="
+https://mastodon.social/@marrus_sh/764230"><time
+						datetime="2017-01-26T22:55:45Z"
+						>January 26, 2017, 2:55 PM</time></a>
+				</footer>
+			</article>
+			<article class="TOOT">
+				<header>
+					<a href="
+https://mastodon.social/@marrus_sh"><code>@marrus_sh<wbr
+						/>@mastodon.social</code></a>:
+				</header>
+				<p>
+					it's weird that this has been such a discourse
+						item when it has been called a spoiler
+						system / spoilertext from the beginning
+						iirc??
+					and there were accessibility concerns wrt
+						rot13 but never anyone saying “oh you
+						shouldn't've rot13'd that” as far as i
+						remember.
+					is this just an issue of branding / the fact
+						that the toggle says “content warning”??
+				</p>
+				<footer>
+					<a href="
+https://mastodon.social/@marrus_sh/764253"><time
+						datetime="2017-01-26T22:57:32Z"
+						>January 26, 2017, 2:57 PM</time></a>
+				</footer>
+			</article>
+			<article class="TOOT">
+				<header>
+					<a href="
+https://mastodon.social/@marrus_sh"><code>@marrus_sh<wbr
+						/>@mastodon.social</code></a>:
+				</header>
+				<p>
+					i thought the whole reason we switched away
+						from calling things trigger warnings and
+						started calling them content warnings was
+						because it was a more flexible label and
+						prevented this kind of discourse, smdh
+				</p>
+				<footer>
+					<a href="
+https://mastodon.social/@marrus_sh/764275"><time
+						datetime="2017-01-26T22:58:48Z"
+						>January 26, 2017, 2:58 PM</time></a>
+				</footer>
+			</article>
+			<p>
+				<strong class="MARK"><q>CW politics</q> was a
+					refrain which was taken up <em>very</em>
+					quickly</strong> by a number of passionate
+					users&#x2014;anyone who is on Mastodon today
+					is likely familiar with this norm.
+				Remember that this was <strong class="MARK">just
+					after the inauguration</strong> of the 45th
+					President of the United States of America,
+					Donald J. Trump, and that much of Mastodon's
+					initial base was <strong class="MARK">queer
+					leftists from Twitter</strong> who joined in
+					<time datetime="2016-11">November 2016</time>,
+					when post&#x2010;election fervour was at its
+					peak.
+				It had been a rough political year for all of us,
+					and time and space away from the steady
+					stream of disheartening news was something
+					many sorely needed.
+			</p>
+			<p>
+				However, early in February, <strong class="MARK"
+					>this community standard was
+					weaponized,</strong> as white, trans
+					users&#x2014;who, for the record, posted
+					un&#x2010;CWed trans shit in their timeline
+					all the time&#x2014;started <strong
+					class="MARK">taking it to the mentions of
+					people of colour</strong> whenever the subject
+					of race came up.
+				It was an incredibly unfair double&#x2010;standard,
+					which effectively amounted to white people
+					restricting the domain of public discourse to
+					only those things which made them feel
+					comfortable.
+				In an attempt to demonstrate the sillyness of their
+					position, I've created a table, reproduced
+					below, which lists <strong class="MARK">some
+					things that these white randos may or may not
+					have responded angrily to</strong> seeing on
+					the Public <abbr title="TimeLine">TL</abbr>:
+			</p>
+			<table>
+				<thead>
+					<tr>
+						<th>Probably OK</th>
+						<th>Probably Not OK</th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr>
+						<td>
+							<q>smdh this cis boy making my
+								latte fml</q>
+						</td>
+						<td>
+							<q>smdh this white boy making my
+								latte fml</q>
+						</td>
+					</tr>
+					<tr>
+						<td>
+							<q>Trebuchet TERFs</q>
+						</td>
+						<td>
+							<q>ugh trebuchet all these racist
+								randos in my mentions</q>
+						</td>
+					</tr>
+					<tr>
+						<td><q>trans witches are Powerful</q></td>
+						<td><q>#BlackGirlMagic</q></td>
+					</tr>
+				</tbody>
+			</table>
+			<p>
+				Keep in mind that CWs, as a technological feature,
+					had <strong class="MARK">only existed for
+					about a week at this time.</strong>
+			</p>
+			<aside role="note">
+				<p>
+					<strong>Sidenote:</strong>
+					Mastodon is far from the first instance of
+						people using content&#x2010;warning and
+						safe&#x2010;space rhetoric to silence
+						those at odds with their movement.
+					On college campuses, cis white feminists have
+						long deployed safe&#x2010;space
+						terminology to silence women of colour
+						and exclude trans people from their
+						movements, just as strong advocates of
+						the State of Israel have used it to quell
+						discussion of the history and status of
+						the Palestinian territories' occupation.
+					More recently, alt&#x2010;right organizations
+						have attempted (mostly unsuccessfully) to
+						co&#x2010;opt safe&#x2010;space rhetoric
+						as a means of creäting safe harbours for
+						their toxic views.
+				</p>
+				<p>
+					The moral of these incidents is not that
+						safe&#x2010;space or
+						content&#x2010;warning rhetoric is
+						inherently <em>bad</em>, but rather that
+						it, like any rhetoric, is indiscriminate,
+						and can be deployed by our oppressors
+						against us just as easily as we might
+						deploy it against them.
+					This is nothing new, and we have seen it
+						happen time and time again with various
+						resistance strategies over the years.
+					Of course, the difference is in the
+						details&#x2014;a <i class="SO-CALLED"
+						>Don't Ask, Don't Tell</i> policy
+						forbidding queer users from discussing
+						their sexuality outside of a CW isn't
+						intended to protect individuals, but
+						rather, the status quo.
+				</p>
+				<p>
+					And yes, in a different world, that might very
+						well have been the CW policy enforced on
+						Mastodon today.
+				</p>
+			</aside>
+			<figure>
+				<iframe src="/DEMO/2018-02-05/CMBD0001/" />
+				<figcaption>
+					<a href="/DEMO/2018-02-05/CMBD0001/"
+						>[CMBD0001]</a> | <a
+						href="/NFIC/2018-02-05/CMON0100/"
+						><cite>CYBREMONDAY</cite></a>
+						<em>[interactive]</em>
+					<p>
+						If you thought Content Warnings were a
+							<em>recent</em> phenomenon,
+							GeoCities would like to have a word
+							with you.
+					</p>
+				</figcaption>
+			</figure>
+			<p>
+				The people of colour I followed at the time were
+					infrequent posters, and (to my knowledge)
+					managed to dodge the event; the white people
+					I followed were (again, as far as I could
+					tell) not <em>directly</em> involved.
+				As a result, it took me a few days to piece
+					together what was going on, and most of what I
+					learned came secondhand (from people
+					discussing it on the <abbr
+					title="Public TimeLine">PTL</abbr>) or
+					thirdhand (from private communications with
+					friends).
+				You can <strong class="MARK">see the awareness
+					dawning</strong> if you look closely:
+			</p>
+			<dl>
+				<dt>
+					<time datetime="2017-02-02">02 February</time>
+				</dt>
+				<dd>
+					<article class="TOOT">
+						<header>
+							<a href="
+https://mastodon.social/@marrus_sh"><code>@marrus_sh<wbr
+								/>@mastodon.social</code></a>:
+						</header>
+						<p>
+							my girlfriend is yelling at people
+								on the internet and i would
+								show solidarity but i don't
+								know why or what about so
+								instead i'm just yelling about
+								dogs.
+							this works,
+						</p>
+						<footer>
+							<a href="
+https://mastodon.social/@marrus_sh/873155"><time
+								datetime="2017-02-03T03:51:16Z"
+								>February 2, 2017, 7:51
+								PM</time></a>
+						</footer>
+					</article>
+					<article class="TOOT">
+						<header>
+							<a href="
+https://mastodon.social/@marrus_sh"><code>@marrus_sh<wbr
+								/>@mastodon.social</code></a>:
+						</header>
+						<p>
+							you know how when you get a new
+								puppy and they just try to copy
+								everything you do except they
+								do it wrong because they're a
+								puppy?
+							did you know i was raised by dogs,
+						</p>
+						<footer>
+							<a href="
+https://mastodon.social/@marrus_sh/873174"><time
+								datetime="2017-02-03T03:51:52Z"
+								>February 2, 2017, 7:51
+								PM</time></a>
+						</footer>
+					</article>
+				</dd>
+				<dt>
+					<time datetime="2017-02-02">Later That
+						Night</time>
+				</dt>
+				<dd>
+					<article class="TOOT">
+						<header>
+							<a href="
+https://mastodon.social/@marrus_sh"><code>@marrus_sh<wbr
+								/>@mastodon.social</code></a>:
+						</header>
+						<p>
+							i'm going to bed now but did you
+								know Mastodon has about as many
+								user accounts as there are
+								*people in my town*??
+							and as many people registered in the
+								past WEEK as *went to my
+								college*??
+							i don't have a point to this except
+								if you expect some kind of
+								singular unified community to
+								emerge from that somehow…
+							um…
+							idk but my college experience was a
+								little different.
+						</p>
+						<footer>
+							<a href="
+https://mastodon.social/@marrus_sh/875495"><time
+								datetime="2017-02-03T06:52:24Z"
+								>February 2, 2017, 10:52
+								PM</time></a>
+						</footer>
+					</article>
+					<article class="TOOT">
+						<header>
+							<a href="
+https://mastodon.social/@marrus_sh"><code>@marrus_sh<wbr
+								/>@mastodon.social</code></a>:
+						</header>
+						<p>
+							idk sometimes the rhetoric on here
+								can kinda make it seem like
+								we're all the same and have the
+								same background and
+								expectations or even belong to
+								the same communities and like.
+							we're not.
+							and that's a good thing. imo.
+						</p>
+						<footer>
+							<a href="
+https://mastodon.social/@marrus_sh/875528"><time
+								datetime="2017-02-03T06:54:49Z"
+								>February 2, 2017, 10:54
+								PM</time></a>
+						</footer>
+					</article>
+					<article class="TOOT">
+						<header>
+							<a href="
+https://mastodon.social/@marrus_sh"><code>@marrus_sh<wbr
+								/>@mastodon.social</code></a>:
+						</header>
+						<p>
+							social networks live and die by
+								their diversity work.
+							and social networks live and die
+								by their diversity work.
+							imo.
+						</p>
+						<footer>
+							<a href="
+https://mastodon.social/@marrus_sh/875596"><time
+								datetime="2017-02-03T07:00:01Z"
+								>February 2, 2017, 11:00
+								PM</time></a>
+						</footer>
+					</article>
+				</dd>
+				<dt>
+					<time datetime="2017-02-05">05 February</time>
+				</dt>
+				<dd>
+					<article class="TOOT">
+						<header>
+							<a href="
+https://mastodon.social/@marrus_sh"><code>@marrus_sh<wbr
+								/>@mastodon.social</code></a>:
+						</header>
+						<p>
+							i've been hesitant to throw stones
+								because without actual
+								demographic information to back
+								it up i can't tell if masto is
+								incredibly homogeneous or just
+								my circles are, but ime we need
+								more diversity on this site.
+							imho.
+						</p>
+						<footer>
+							<a href="
+https://mastodon.social/@marrus_sh/911872"><time
+								datetime="2017-02-06T07:05:06Z"
+								>February 5, 2017, 11:05
+								PM</time></a>
+						</footer>
+					</article>
+					<article class="TOOT">
+						<header>
+							<a href="
+https://mastodon.social/@marrus_sh"><code>@marrus_sh<wbr
+								/>@mastodon.social</code></a>:
+						</header>
+						<p>
+							i went to a school that was *very*
+								white and university staff
+								would go up to POC and be like
+								“hey what can we do to attract
+								more minorities to campus” and
+								their response would always be
+								like.
+							dude.
+							why would i, a person of color, want
+								to go to a college and be
+								surrounded by white people all
+								the time.
+							why would i want to go to a college
+								where i don't have a voice or
+								decent representation.
+						</p>
+						<footer>
+							<a href="
+https://mastodon.social/@marrus_sh/911891"><time
+								datetime="2017-02-06T07:09:39Z"
+								>February 5, 2017, 11:09
+								PM</time></a>
+						</footer>
+					</article>
+					<article class="TOOT">
+						<header>
+							<a href="
+https://mastodon.social/@marrus_sh"><code>@marrus_sh<wbr
+								/>@mastodon.social</code></a>:
+						</header>
+						<p>
+							and this is a problem mastodon has.
+							again i can't speak for actual
+								demographics, but the
+								impression that i and i think a
+								lot of people have gotten has
+								been one of kinda white,
+								urbanite tech culture.
+							as someone who is white but isn't
+								urban and isn't tech, *i* can
+								get turned off by that
+								sometimes.
+							as you add intersections i can only
+								imagine that effect increases.
+						</p>
+						<footer>
+							<a href="
+https://mastodon.social/@marrus_sh/911901"><time
+								datetime="2017-02-06T07:09:39Z"
+								>February 5, 2017, 11:09
+								PM</time></a>
+						</footer>
+					</article>
+					<article class="TOOT">
+						<header>
+							<a href="
+https://mastodon.social/@marrus_sh"><code>@marrus_sh<wbr
+								/>@mastodon.social</code></a>:
+						</header>
+						<p>
+							we need to start actively elevating
+								diverse voices and we need to
+								carve out spaces for people who
+								don't fit the existing masto
+								mold to fit in.
+							we can't do this “gay communist tech
+								furry” thing forever.
+							or, i mean, we can, but it means
+								some marginalized people will
+								never feel at home using the
+								service.
+						</p>
+						<footer>
+							<a href="
+https://mastodon.social/@marrus_sh/911911"><time
+								datetime="2017-02-06T07:14:43Z"
+								>February 5, 2017, 11:09
+								PM</time></a>
+						</footer>
+					</article>
+				</dd>
+				<dt>
+					<time datetime="2017-02-06">06 February</time>
+				</dt>
+				<dd>
+					<article class="TOOT">
+						<header>
+							<a href="
+https://mastodon.social/@marrus_sh"><code>@marrus_sh<wbr
+								/>@mastodon.social</code></a>:
+						</header>
+						<p>
+							Realtalk though, every day I log
+								onto twitter and I see people
+								(mostly, people of color) doing
+								important work critiquing
+								whiteness and racism and sexism
+								and transmisogyny and what have
+								you, organizing and making a
+								difference and making a change.
+							Would <a href="
+https://mastodon.social/tags/blacklivesmatter">#BlackLivesMatter</a>
+								have taken off on Mastodon?
+							Actual question.
+							<a href="
+https://mastodon.social/tags/yesallwomen">#YesAllWomen</a>?
+							<a href="
+https://mastodon.social/tags/sayhername">#SayHerName</a>?
+						</p>
+						<footer>
+							<a href="
+https://mastodon.social/@marrus_sh/923593"><time
+								datetime="2017-02-07T05:11:44Z"
+								>February 6, 2017, 9:11
+								PM</time></a>
+						</footer>
+					</article>
+					<article class="TOOT">
+						<header>
+							<a href="
+https://mastodon.social/@marrus_sh"><code>@marrus_sh<wbr
+								/>@mastodon.social</code></a>:
+						</header>
+						<p>
+							Because from alot of what I've seen
+								it's like, we don't do that
+								here.
+							“I don't want to have to see your
+								critiques of my whiteness, tag
+								that shit and keep it hidden.”
+							(Like, not what content warnings are
+								for, folks.)
+							Features are more than just
+								technology.
+							Where are the communities of
+								support, where are the
+								journalists, where are the
+								activists?
+							And you wonder why people leave.
+							And you wonder why people go back.
+						</p>
+						<footer>
+							<a href="
+https://mastodon.social/@marrus_sh/923595"><time
+								datetime="2017-02-07T05:12:15Z"
+								>February 6, 2017, 9:12
+								PM</time></a>
+						</footer>
+					</article>
+					<article class="TOOT">
+						<header>
+							<a href="
+https://mastodon.social/@marrus_sh"><code>@marrus_sh<wbr
+								/>@mastodon.social</code></a>:
+						</header>
+						<p>
+							When there is legislation being
+								passed that is putting me and
+								the people I love at risk, when
+								there are communities in danger
+								that need our help, you can't
+								ask me to keep that stuff under
+								wraps.
+							You can't ask me not to be vocal.
+							Not when that stuff is as core to
+								who I am as a person as any
+								gender or sexual label.
+							Like, so much for inclusion when we
+								can't ever visibly mourn.
+						</p>
+						<footer>
+							<a href="
+https://mastodon.social/@marrus_sh/923597"><time
+								datetime="2017-02-07T05:12:35Z"
+								>February 6, 2017, 9:12
+								PM</time></a>
+						</footer>
+					</article>
+					<article class="TOOT">
+						<header>
+							<a href="
+https://mastodon.social/@marrus_sh"><code>@marrus_sh<wbr
+								/>@mastodon.social</code></a>:
+						</header>
+						<p>
+							Twitter:
+							“Hey followers my friend can't get
+								into the US because of the <a
+								href="
+https://mastodon.social/tags/muslimban">#MuslimBan</a> please send help
+								and best wishes.”<br
+							/>Mastodon:
+							“OMG birdsite getting all wild about
+								politics so glad we don't have
+								that here <a href="
+https://mastodon.social/tags/whyijoinedmastodon">#whyijoinedmastodon</a>
+						</p>
+						<p>
+							Like I know I'm caricaturing here
+								but also fuck that noise.
+							Yall should be getting angry.
+							Yall should be getting upset.
+							Like, I mean, take care of yourselves.
+							But come on.
+						</p>
+						<footer>
+							<a href="
+https://mastodon.social/@marrus_sh/923599"><time
+								datetime="2017-02-07T05:12:53Z"
+								>February 6, 2017, 9:12
+								PM</time></a>
+						</footer>
+					</article>
+					<article class="TOOT">
+						<header>
+							<a href="
+https://mastodon.social/@marrus_sh"><code>@marrus_sh<wbr
+								/>@mastodon.social</code></a>:
+						</header>
+						<p>
+							It has felt like “no politics” (or
+								“keep politics hidden”) has
+								been the cry here since day
+								one, but we've yet to really
+								define what “politics” means.
+							Does being black count as
+								“politics”?
+							What about being trans?
+							If my queer friend down in SF goes
+								to a rally and ends up hurt, is
+								that suddenly “politics”?
+							If I try to change my name, am I
+								being “political”?
+						</p>
+						<footer>
+							<a href="
+https://mastodon.social/@marrus_sh/923603"><time
+								datetime="2017-02-07T05:13:21Z"
+								>February 6, 2017, 9:13
+								PM</time></a>
+						</footer>
+					</article>
+					<article class="TOOT">
+						<header>
+							<a href="
+https://mastodon.social/@marrus_sh"><code>@marrus_sh<wbr
+								/>@mastodon.social</code></a>:
+						</header>
+						<p>
+							The brunt of my question is this:
+							To what extent is (some of) our
+								anti-politics culture standing
+								in the way of people living
+								their lives in a visible, open
+								manner?
+							And I say “people” but obviously not
+								all people are affected by this
+								equally.
+							And:
+							If people can't live their lives in
+								a visible, open manner on
+								Mastodon, is it any wonder they
+								choose a different service
+								where they can?
+						</p>
+						<footer>
+							<a href="
+https://mastodon.social/@marrus_sh/923604"><time
+								datetime="2017-02-07T05:13:45Z"
+								>February 6, 2017, 9:13
+								PM</time></a>
+						</footer>
+					</article>
+					<article class="TOOT">
+						<header>
+							<a href="
+https://mastodon.social/@marrus_sh"><code>@marrus_sh<wbr
+								/>@mastodon.social</code></a>:
+						</header>
+						<p>
+							Like, I understand the wear of being
+								surrounded by this stuff all
+								the time.
+							Believe me, I get it.
+							But sometimes you don't have a
+								choice.
+							Sometimes this stuff is your life
+								whether you like it or not.
+							And I'm not gonna just sit back and
+								watch a bunch of white queers
+								avoid talking about racism
+								because they're afraid of
+								destroying the sanctity of
+								their “safe space”.
+							Like, safe for whom.
+							Really.
+						</p>
+						<footer>
+							<a href="
+https://mastodon.social/@marrus_sh/923606"><time
+								datetime="2017-02-07T05:14:12Z"
+								>February 6, 2017, 9:14
+								PM</time></a>
+						</footer>
+					</article>
+					<article class="TOOT">
+						<header>
+							<a href="
+https://mastodon.social/@marrus_sh"><code>@marrus_sh<wbr
+								/>@mastodon.social</code></a>:
+						</header>
+						<p>
+							This is not saying we shouldn't use
+								content warnings.
+							This is not saying it's okay to
+								dogpile, or call people out
+								unnecessarily, or promote
+								harassment.
+							This isn't saying you shouldn't act
+								judiciously when it comes to
+								posting to public/unlisted/<!--
+								-->private/whatever.
+							These tools exist for a reason.
+							Use them.
+						</p>
+						<p>
+							But when shit goes down, show up.
+							What is the point of calling
+								yourself a community otherwise.
+						</p>
+						<footer>
+							<a href="
+https://mastodon.social/@marrus_sh/923608"><time
+								datetime="2017-02-07T05:14:35Z"
+								>February 6, 2017, 9:14
+								PM</time></a>
+						</footer>
+					</article>
+				</dd>
+			</dl>
+			<aside role="note">
+				<p>
+					<strong>Anecdote:</strong>
+					White people doing shitty white bullshit and
+						people of colour paying the price was not
+						a new theme for Mastodon, and happened
+						probably on at least a monthly basis in
+						the period from <time datetime="2017-01"
+						>January</time> to <time
+						datetime="2017-03">March</time>.
+					One instance that I do remember seeing, and
+						which I don't have a date for&#x2014;it
+						may very well have been a catalyst for
+						February's drama, for all I
+						know&#x2014;was when a person of colour
+						vented their frustrations about white
+						people onto their timeline in a single
+						post, and received a number of white
+						users making jokes about their <em>word
+						choice</em> in their mentions as a
+						result.
+				</p>
+				<p>
+					Although I can't say definitively whether CWs
+						were or were not a feature at the time
+						when this went down (maybe some other
+						original Mastos can help me out here), I
+						have complete confidence that if they
+						were, there would have been white folks
+						yelling at people of colour to CW the
+						community discussion that
+						followed&#x2014;with the express
+						intention of avoiding having to read
+						about why what they had done was wrong.
+				</p>
+			</aside>
+		</section>
+		<section id="aftermath">
+			<h2>The Aftermath</h2>
+			<p>
+				The above narrative is <strong class="MARK"
+					>probably not unfamiliar</strong> to many of
+					the people of colour on Mastodon today,
+					because this shit still happens.
+				Mastodon's white users <strong class="MARK">remain
+					more sensitive to issues of race</strong> than
+					issues of gender, and continue to <strong
+					class="MARK">leverage their white
+					fragility</strong> in an attempt to silence
+					and contain nonwhite voices and complaints.
+				Whereäs Mastodon's trans community has largely been
+					<strong class="MARK">granted the
+					self&#x2010;autonomy to decide</strong> what
+					kinds of topics are or aren't acceptable, or
+					which do or don't require advance warning,
+					with respect to trans issues, for much of its
+					history Mastodon's nonwhite communities have
+					<strong class="MARK">not had the size or
+					leverage</strong> to do the same regarding
+					issues of racial injustice.
+			</p>
+			<p>
+				Nevertheless, the landscape of Mastodon today is
+					<strong class="MARK">far more open and
+					optimistic</strong> with respect to garnering
+					change in this area than the Mastodon of
+					nineteen months ago ever was.
+				At that time, <strong class="MARK"><a href="
+https://github.com/mastodon/mastodon/commit/3b81baaaaf51ff1c70fb1f865eef07fdb33a5950
+">reports didn't even exist yet</a>,</strong> <strong class="MARK"
+					>users were mostly confined to a
+					single instance,</strong> and the question of
+					<strong class="MARK">when and where and what
+					is considered politics</strong> had been
+					circulating unresolved since Fidel Castro's
+					death on literally the third day after I'd
+					joined.
+				Consequently, the <i class="SO-CALLED">do
+					white people have the right to police
+					when and where and how people of colour
+					talk about race</i> question blew up to
+					encompass a number of other topics, like
+					<strong class="MARK"><i class="SO-CALLED">what
+					is Mastodon's role as a safe space versus
+					communication and organizing platform</i
+					>.</strong>
+			</p>
+			<p>
+				From these questions, <strong class="MARK">two
+					broad camps emerged,</strong> and these were
+					informed by race and politics&#x2014;but also
+					by <strong class="MARK">fundamental
+					differences in how people used the
+					site.</strong>
+				The first camp didn't want <strong class="MARK"
+					>anything resembling an uncomfortable
+					topic</strong> crossing their
+					feeds&#x2014;even and especially during
+					community disputes.
+				The most sympathetic of these users were folks
+					who had <strong class="MARK">active social
+					media accounts</strong> on Twitter and other
+					platforms, and who used Mastodon as a <strong
+					class="MARK">safe&#x2010;space refuge</strong>
+					and <strong class="MARK">not as a
+					replacement</strong> for other sites:
+				<i class="SO-CALLED">I'm <strong class="MARK"
+					>already bombarded with politics on
+					Twitter;</strong> why should I have to deal
+					with it here?</i>
+				Of course, there were also those who <strong
+					class="MARK">just didn't want their privilege
+					challenged.</strong>
+				Many of the users in this camp went on to
+					<strong class="MARK">serve as the founding
+					body for <a href="https://awoo.space/"
+					>awoo.space</a></strong> (nothing against
+					Awoo), which was registered as a domain on
+					<time datetime="2017-02-07">07 February
+					2017</time>.
+			</p>
+			<article class="TOOT">
+				<header>
+					<a href="
+https://mastodon.social/@marrus_sh"><code>@marrus_sh<wbr
+						/>@mastodon.social</code></a>:
+				</header>
+				<input id="cw.2017-02-08.1" type="checkbox" />
+				<label for="cw.2017-02-08.1">
+					awoo space; difficult questions
+				</label>
+				<p>
+					i don't mean to keep beating a dead horse with
+						this.
+					i am a strong advocate of both privacy
+						features and content warnings, and i
+						think having a separate, depoliticized
+						"safe-space" instance aside from the
+						mainstream is probably a good decision.
+					but whenever we talk about safe spaces, two
+						questions leap to the front of my mind:
+					(1) safe space for whom?
+					(2) what happens when the personal becomes
+						political?
+					and i always worry about their answers.
+				</p>
+				<footer>
+					<a href="
+https://mastodon.social/@marrus_sh/934865"><time
+						datetime="2017-02-08T04:09:28Z"
+						>February 7, 2017, 8:09 PM</time></a>
+				</footer>
+			</article>
+			<article class="TOOT">
+				<header>
+					<a href="
+https://mastodon.social/@marrus_sh"><code>@marrus_sh<wbr
+						/>@mastodon.social</code></a>:
+				</header>
+				<input id="cw.2017-02-08.2" type="checkbox" />
+				<label for="cw.2017-02-08.2">
+					questions, cont.
+				</label>
+				<p>
+					if i am a undocumented trans person of color,
+						from a nation where being trans is a
+						crime punishable by death, whose very
+						existence is illegal no matter where i
+						turn, is this a safe space for me?
+					when what other people call "politics" is just
+						me trying to get through my daily life?
+					and if not, fine, but be up-front about it.
+					don't claim to be a safe space for everyone if
+						you can't be a safe space for refugees.
+				</p>
+				<footer>
+					<a href="
+https://mastodon.social/@marrus_sh/934891"><time
+						datetime="2017-02-08T04:14:26Z"
+						>February 7, 2017, 8:14 PM</time></a>
+				</footer>
+			</article>
+			<article class="TOOT">
+				<header>
+					<a href="
+https://mastodon.social/@marrus_sh"><code>@marrus_sh<wbr
+						/>@mastodon.social</code></a>:
+				</header>
+				<input id="cw.2017-02-08.3" type="checkbox" />
+				<label for="cw.2017-02-08.3">
+					questions, final
+				</label>
+				<p>
+					i am worried about the way in which boundaries
+						can become closets, and the psychic
+						damage of not being able to live life
+						without always having a warning out front.
+					many of us are queer, i think we know those
+						stakes.
+				</p>
+				<p>
+					again, i agree with pretty much every decision
+						that has been made.
+					these are just questions.
+				</p>
+				<footer>
+					<a href="
+https://mastodon.social/@marrus_sh/934920"><time
+						datetime="2017-02-08T04:20:38Z"
+						>February 7, 2017, 8:20 PM</time></a>
+				</footer>
+			</article>
+			<p>
+				The other camp was largely populated by those
+					individuals who had hoped to <strong
+					class="MARK">use Mastodon as a
+					Twitter&#x2010;replacement,</strong> who
+					wanted to <strong class="MARK">speak openly
+					and frankly about their experiences and
+					community concerns,</strong> and who
+					<strong class="MARK">didn't take kindly to
+					white randos</strong> telling them what they
+					could or couldn't say or how.
+				For the <strong class="MARK">incredibly
+					debate&#x2010;minded,</strong> <strong
+					class="MARK"><a
+					href="https://icosahedron.website"
+					>icosahedron.website</a> was
+					established</strong> (<time
+					datetime="2017-02-03">03 February 2017</time>)
+					as an instance with lighter moderation and
+					instance&#x2010;blocking policies, and was
+					more friendly to openly political content.
+				(The specifics of this have to deal with the
+					Mastodon / GNU Social divide and the
+					perceived <i class="SO-CALLED">walled
+					garden</i> of <a
+					href="https://mastodon.social"
+					>mastodon.social</a> at the time, which is
+					beyond the scope of this narrative.)
+				For <strong class="MARK">everybody else,</strong>
+					the options were either to <strong
+					class="MARK">leave Mastodon
+					altogether,</strong> or to stay on <a
+					href="https://mastodon.social"
+					>mastodon.social</a> and <strong class="MARK"
+					>fuck shit up</strong>
+					when the opportunity presented itself.
+				People of colour, who often had <strong
+					class="MARK">existing networks of
+					support</strong> on Twitter, tended to take
+					the first option; queer white users, who
+					<strong class="MARK">sometimes didn't,</strong
+					> tended to be more comfortable with the second.
+				(There was also a third <i class="SO-CALLED"
+					>option</i> of investing the time and energy
+					to operate an instance of your own on this
+					platform which had just mistreated you, which,
+					unsurprisingly, nobody went for.)
+			</p>
+		</section>
+		<section id="ardipithecus">
+			<h2>Ardipithecus</h2>
+			<p>
+				After making the light rants quoted above, I
+					<strong class="MARK">mostly fell
+					silent</strong> on the issue of Mastodon's
+					February schism, out of equal parts…
+			</p>
+			<ul class="PARAGRAPH">
+				<li>
+					…not wanting to <strong class="MARK">incite
+						additional drama.</strong>
+				</li>
+				<li>
+					…not wanting to make Mastodon <strong
+						class="MARK">any more
+						factionalized</strong> or openly hostile
+						than it already was.
+				</li>
+				<li>
+					…not <strong class="MARK">feeling it was my
+						place to discuss,</strong> as someone who
+						had mostly experienced everything from
+						the outside.
+					(<strong class="MARK">I kept waiting</strong>
+						for someone else who was
+						better&#x2010;informed to flesh out a
+						comprehensive take on the subject.
+					But, you know, unlike me, <strong class="MARK"
+						>they all had lives.</strong>)
+				</li>
+				<li>
+					…<strong class="MARK">needing to maintain my
+						social connections</strong> to <a
+						href="https://mastodon.social/"
+						>mastodon.social</a>, as they made up my
+						<strong class="MARK">sole point of
+						access</strong> for any sort of trans
+						community or resources.
+				</li>
+			</ul>
+			<p>
+				And if you have spoken to me about or heard me make
+					reference to these events before, you have
+					<strong class="MARK">probably noticed my
+					reticence</strong> towards going into any sort
+					of detail, for some or all of the reasons
+					above.
+				At the same time, however, <strong class="MARK"
+					>underground plans were brewing.</strong>
+				The <strong class="MARK">writing was on the
+					wall</strong> with regard to how the Mastodon
+					project would treat its <strong class="MARK"
+					>most marginalized users</strong> whenever
+					their needs came into conflict with its
+					<strong class="MARK">existing </strong
+					>(albeït, at the time,
+					also&#x2010;quite&#x2010;marginalized)<strong
+					class="MARK"> base,</strong> and so
+					<a href="https://glitch.social/@KitRedgrave"
+					>@KitRedgrave</a> and I almost
+					immediately began working on an <strong
+					class="MARK">independent fork of the
+					software,</strong> codenamed <strong
+					class="MARK"><i>Ardipithecus</i>,</strong>
+					to liberate the codebase from the questionable
+					decisions of its development team.
+				This was, to my knowledge, the <strong class="MARK"
+					>first serious attempt at forking</strong>
+					Mastodon.
+				The first commit was made on <a href="
+https://github.com/marrus-sh/mastodon/commit/69e2d7ff7cf744c44f9f0c42ba3c271687a2daa7
+"><time datetime="2017-02-15">15 February 2017</time></a>.
+			</p>
+			<p>
+				One of the Mastodon Project's biggest failings was
+					that it <strong class="MARK">lacked any sort
+					of strong mission statement</strong> or
+					purpose&#x2014; beyond simply <i
+					class="SO-CALLED">replace Twitter</i>.
+				Mastodon's rules were a series of prohibitions:
+					certain things were not allowed (and they were
+					good things to disallow), but there was
+					<strong class="MARK">no sense of what the
+					project actually stood <em>for</em>.</strong>
+				Consequently, when push came to shove, the Mastodon
+					project was only willing to react in cases
+					where somebody had <i class="SO-CALLED">broken
+					the law</i>, and not to proäctively defend its
+					users.
+				Kit and I agreed that we wanted <strong
+					class="MARK">an instance which did things
+					differently,</strong> and I drafted a rough
+					sketch of five Principles for guiding
+					instance management, under the tentative name
+					of GLASS<sub>CAFE</sub>.
+				After our plans regarding Ardipithecus were more
+					firmly formalized, we decided on LuciCity
+					as the final name for our instance.
+				(It never launched, but Kit did purchase the domain
+					name.)
+			</p>
+			<figure>
+				<iframe src="/DEMO/2018-09-09/demosite/" />
+				<figcaption>
+					GLASS<sub>CAFE</sub> initial design sketch
+						<em>[interactive]</em>
+					<p>
+						In the time since this original sketch
+							was created, the problems of
+							instance and community management
+							have been tackled time and time
+							again across the fediverse, and a
+							number of best&#x2010;practices,
+							which may or may not be reflected in
+							the above, have emerged.
+						At the time in which we were doing this
+							work, however, it was all
+							unprecedented.
+						This was a time when private toots still
+							didn't federate&#x2014;and that was
+							fine, because everybody lived on
+							<a href="https://mastodon.social"
+							>mastodon.social</a>.
+					</p>
+				</figcaption>
+			</figure>
+			<p>
+				Aside from wanting better community management, we
+					also wanted a more <strong class="MARK"
+					>flexible</strong>, <strong class="MARK"
+					>customizable</strong>, and <strong
+					class="MARK">human(e)</strong> software, with
+					<strong class="MARK">better documentation and
+					standardization</strong> of features, a
+					<strong class="MARK">slower, more
+					transparent</strong> development process, and
+					a <strong class="MARK">more open and
+					developer&#x2010;friendly</strong> approach to
+					pull requests.
+				At the top of our wishlist was the <strong
+					class="MARK">splitting of Mastodon's frontend
+					and backend,</strong> which we had planned as
+					our breakout feature.
+				Neither of us liked Mastodon's existing branding,
+					and we wanted Ardipithecus to have a look of
+					its own.
+			</p>
+			<figure>
+				<img src="./ardipithecus.png" />
+				<figcaption>
+					Screenshot of Ardipithecus
+						<code>/about/more</code>
+					<p>
+						As the above screenshot shows,
+							<q>Misson</q> and <q>Principles</q>
+							are prominently positioned on the
+							Ardipithecus About page.
+						The colour scheme is inspired by old
+							newsprint and is intended to invoke
+							a warmer, less&#x2013;Incredibly
+							Online feel.
+					</p>
+				</figcaption>
+			</figure>
+			<p>
+				Before that February, I had <strong class="MARK"
+					>never interacted with React, Redux, or Ruby
+					on Rails before,</strong> and the week between
+					our decision to fork the software and its
+					first commit was mostly spent by me taking the
+					crashiest of crash courses.
+				Coming into this, I was a Gender Studies major and
+					fantasy/romance writer whose experience with
+					programming for the web was mostly limited to
+					<strong class="MARK">static websites,</strong>
+					<strong class="MARK">dictionaries for
+					fictional languages,</strong> and the <strong
+					class="MARK">occasional (bad) HTML5 browser
+					game.</strong>
+			</p>
+			<p>
+				My reasons for bringing up Mastodon's February
+					schism aren't simply to stir up drama or to
+					show how nothing has really changed.
+				<strong class="MARK">This is what got me into
+					Mastodon development.</strong>
+			</p>
+			<p>
+				<em>To be continued.</em>
+			</p>
+		</section>
+		<footer>
+			<p>
+				Questions or comments?
+				@ me: <a href="https://glitch.social/@kibi">@kibi<wbr
+					/>@glitch.social</a>.
+			</p>
+		</footer>
+	</article>
+</body>
+</html>

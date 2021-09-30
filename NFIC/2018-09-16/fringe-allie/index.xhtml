@@ -1,0 +1,1206 @@
+<!DOCTYPE html>
+<html
+	xmlns="http://www.w3.org/1999/xhtml"
+	lang="en"
+	xml:lang="en"
+>
+<head>
+	<title>
+		September 2018: Fringe Mastodev &#x2013; Part II: Enter Allie
+			Hart | KIBI Gô
+	</title>
+	<meta charset="UTF-8" />
+	<base target="_top" />
+	<style>
+		/* Asides */
+		aside[role=note]{ Margin:1EM 0 1EM -3EM ; Border:Thin Sienna
+			Dashed ; Padding:1EM 1EM 1EM 4EM ; Color:Maroon ;
+			Background:FloralWhite }
+
+		/* Basic Styling */
+		iframe{ Width:100% ; Height:24.6EM }
+		p{ Margin:0 ; Text-Align:Justify }
+		p+p{ Text-Indent:2EM }
+		p+p>*{ Text-Indent:0 }
+		/* > Markèd Importance */
+		strong.MARK{ Border:Thin Khaki Solid ; Color:MidnightBlue ;
+			Background:LemonChiffon ; Font-Weight:Inherit }
+		/* > Parentheticals */
+		span.PARENTHETICAL{ Color:DarkRed ; Background:AliceBlue }
+		/* > "So-Called" Text */
+		i.SO-CALLED{ Font-Style:Inherit }
+		i.SO-CALLED::before{ Content:Open-Quote }
+		i.SO-CALLED::after{ Content:Close-Quote }
+
+		/* Blockquotes */
+		blockquote{ Margin:1EM 0 1EM -3EM ; Border:Thin SlateBlue
+			Solid ; Padding:1EM 2EM 1EM 5EM ; Color:DarkSlateBlue ;
+			Background:AliceBlue }
+		blockquote::after,blockquote::before{ Position:Absolute ;
+			Width:1.6EM ; Font-Size:1.25EM ;
+			Font-Weight:Bold ; Text-Align:Center }
+		blockquote mark{ Border:Thin LightSteelBlue Solid ;
+			Color:DarkBlue ; Background:Lavender ;
+			Font-Weight:Inherit }
+		blockquote p+p{ Margin-Top:1EM ; Text-Indent:0 }
+		/* > Blockquote Quotes */
+		blockquote{ Position:Relative }
+		blockquote::after{ Bottom:.8EM ; Right:0 ;
+			Content:Close-Quote }
+		blockquote::before{ Top:.8EM ; Left:2.4EM ;
+			Content:Open-Quote }
+
+		/* Case Options */
+		span.OPTION{ Color:Grey ; Text-Shadow:1PX 0 White }
+		span.OPTION>span.CASE:nth-child(n+1){ Color:Crimson }
+		span.OPTION>span.CASE:nth-child(n+2){ Color:Blue }
+		span.OPTION>span.CASE:nth-child(n+3){ Color:Green }
+		span.OPTION>span.CASE:nth-child(n+4){ Color:Sienna }
+		span.OPTION>span.CASE:nth-child(n+5){ Color:MediumVioletRed }
+		span.OPTION>span.CASE:nth-child(n+6){ Color:Teal }
+		span.OPTION>span.CASE:nth-child(n+7){ Color:SaddleBrown }
+
+		/* Figures */
+		figcaption{ Margin:0 -1EM -.5EM ; Border-Style:None Dotted
+			Dotted ; Border-Width:0 Thin Thin ; Padding:0 4EM .5EM }
+		figcaption>p:First-Of-Type{ Margin-Top:.5EM }
+		figcaption>p::before,figcaption>*.PARAGRAPH::before{
+			Left:-3EM }
+		figure{ Margin:1EM -2EM ; Text-Align:Center }
+		figure>img{ Max-Width:100% }
+		/* > 2-Image Lightbox Figures */
+		figure>input[type=checkbox]{ Position:Absolute ; Margin:0 0
+			-1PX -1PX ; Width:1PX ; Height:1PX ; Visibility:Hidden }
+		figure>input:checked+label>img{ Z-Index:2 }
+		figure>input:checked+label>img+img{ Z-Index:0 }
+		figure>label{ Display:Block ; Position:Relative ;
+			Margin:.5EM 0 ; Border:.25EM Solid ; Padding:.25EM ;
+			Background:DimGrey ; Cursor:Pointer }
+		figure>label::after{ Display:Block; Position:Absolute ; Top:0
+			; Bottom:0 ; Left:0 ; Right:0 ; Background:DimGrey ;
+			Opacity:.35 ; Z-Index:1 ; Content:"" }
+		figure>label>img{ Display:Block ; Position:Relative ;
+			Width:75% ; Z-Index:0 }
+		figure>label>img+img{ Margin:-25% 0 0 25% ; Z-Index:2 }
+
+		/* Headers/Footers */
+		footer{ Margin:1.23EM 0 0 ; Border-Style:Solid None None ;
+			Border-Width:Thin 0 0 ; Text-Align:Right }
+		footer,header{ Padding:.369EM 0 ; Font-Size:Small }
+		footer>p,header>p{ Margin:.369EM 0 ; Text-Align:Inherit }
+		header{ Margin:0 0 1.23EM ; Border-Style:None None Solid ;
+			Border-Width:0 0 Thin ; Text-Align:Left }
+
+		/* Headings */
+		h1{ Margin:0 ; Font-Size:X-Large ; Font-Weight:Bold }
+		h2{ Margin:0 0 .5EM ; Font-Size:Large ; Font-Weight:Bold }
+		h2::before{ Display:Block ; Margin:2EM 0 ; Font-Size:Medium ;
+			Font-Weight:Normal ; Opacity:.65 ; Text-Align:Center ;
+			Content:"☙ ⁂ ❧" }
+		span.SUBTITLE{ Font-Size: Large ; Font-Weight: Normal }
+		span.SUBTITLE::before{ Content: "☞ " }
+
+		/* Link Previews */
+		a[href].PREVIEW{ Display:Block ; Margin:1EM 0 ;
+			Border-Style:Solid Dashed Dashed Solid ;
+			Border-Width:Thin ; Border-Radius:.2EM ; Padding:1EM
+			; Color:Inherit ; Box-Shadow:2PX 2PX currentColor ;
+			Text-Decoration:None }
+		a[href].PREVIEW>*:First-Child{ Margin-Top:0 }
+		a[href].PREVIEW>*:Last-Child{ Margin-Bottom:0 }
+		a[href].PREVIEW>cite{ Display:Block ; Margin:.4EM 0 ;
+			Font-Size:1.25EM ; Font-Style:Inherit ; Font-Weight:Bold
+			; Text-Decoration:Underline }
+		a[href].PREVIEW>p{ Margin:.5EM 0 ; Font-Style:Italic }
+		a[href].PREVIEW time{ Font-Weight:Bold }
+
+		/* Ordered/Unordered Lists */
+		ol,ul{ Margin:1EM 0 ; Padding:0 0 0 2EM }
+		ol>li,ul>li { Margin:1EM 0 }
+		/* > List-Paragraphs */
+		ol.PARAGRAPH,ul.PARAGRAPH{ Margin:.5EM 0 0 -1PX ;
+			Border-Left:1PX Dotted }
+		ol.PARAGRAPH>li,ul.PARAGRAPH>li{ Margin:.5EM 0 }
+
+		/* Page Layout */
+		body{ Margin:Auto ; Padding:3EM ; Max-Width:43EM }
+		body>article>footer{ Margin-Bottom:1.85EM ; Padding-Bottom:0 }
+		body>article>header{ Margin-Top:1.85EM ; Padding-Top:0 }
+		body>article>header>time{ Display:Block ; Margin:.369EM 0 ;
+			Text-Align:Right }
+		body>article>section+p{ Margin:2EM -3EM 0 ; Border-Top:Thin
+			Dashed ; Padding:2EM 3EM 0 }
+		html{ Font-Family:Serif }
+
+		/* Paragraph Markers */
+		body>article{ Counter-Reset:FIGURE PARAGRAPH SECTION }
+		p,*.PARAGRAPH{ Position:Relative }
+		p::before,*.PARAGRAPH::before{ Display:Block ;
+			Position:Absolute ; Top:0 ; Left:-2REM ; Width:2REM ;
+			Text-Align:Left ; Text-Indent:0 ; Opacity:.65 ;
+			Counter-Increment:PARAGRAPH ; Content:"¶"
+			Counter(PARAGRAPH, Decimal-Leading-Zero) }
+		/* > Figure Paragraph Markers */
+		aside[role=note] p:First-Of-Type,blockquote
+			p:First-Of-Type,figure p:First-Of-Type{
+			Counter-Reset:PARAGRAPH ; Counter-Increment:FIGURE }
+		aside[role=note] p::before,aside[role=note]
+		*.PARAGRAPH::before,blockquote p::before,blockquote
+		*.PARAGRAPH::before,figure p::before,figure
+		*.PARAGRAPH::before{ Content:"¶" Counter(FIGURE,Upper-Alpha)
+			Counter(PARAGRAPH) }
+		/* > Paragraph Marker Styling */
+		aside[role=note] p::before,aside[role=note]
+			*.PARAGRAPH::before{ Left:-3EM ; Color:Sienna ;
+			Opacity:1 }
+		blockquote p::before,blockquote *.PARAGRAPH::before{
+			Left:-4EM ; Color:SlateBlue ; Opacity:1 }
+		body>article>section+p::before{ Top:2EM ; Left:1EM }
+		ol p::before,ol *.PARAGRAPH::before,ul p::before,ul
+			*.PARAGRAPH::before{ Left:-4EM }
+		/* > No Paragraph Markers */
+		a[href].PREVIEW>p::before{ Content:None }
+		article.TOOT p::before,footer>p::before,header>p::before{
+			Content:None }
+
+		/* Section Markers */
+		body>article>section{ Position:Relative }
+		body>article>section::before{ Display:Block ;
+			Position:Absolute ; Box-Sizing:Border-Box ; Top:0 ;
+			Left:100% ; Margin:-1PX 0 ; Border:1PX Solid ;
+			Width:3REM ; Color:DimGrey ; Background:WhiteSmoke ;
+			Text-Align:Center ; Text-Indent:0 ;
+			Counter-Increment:SECTION ; Content:"§" Counter(SECTION)
+			}
+
+		/* Toots */
+		article.TOOT{ Display:Block ; Box-Sizing:Border-Box ;
+			Margin:1EM Auto ; Border:Thin Solid ;
+			Border-Radius:.25EM ; Padding:0 .875EM ; Width:25EM ;
+			Max-Width:100% ; Color:Black ; Background:White ;
+			Font-Family:Sans-Serif }
+		article.TOOT p{ Text-Align:Left ; Text-Indent:0 }
+		article.TOOT p+p{ Margin-Top:1EM }
+		/* > Toot CWs */
+		article.TOOT input{ Position:Absolute ; Margin:0 0 -1PX -1PX
+			; Width:1PX ; Height:1PX ; Visibility:Hidden }
+		article.TOOT input~p{ Display:None }
+		article.TOOT input:checked+label{ Border-Bottom-Style:Dashed
+			}
+		article.TOOT input:checked~p{ Display:Block }
+		article.TOOT label{ Display:Block ; Margin:.5EM 0 ;
+			Border:Thin Solid ; Padding:.1EM .2EM ; Cursor:Pointer }
+		article.TOOT label:focus{ Border:Medium Double }
+		article.TOOT label::before{ Font-Weight:Bold ;
+			Content:"Subject: " }
+
+		/* Tables */
+		table{ Table-Layout:Fixed ; Margin:1EM 0 ;
+			Border-Collapse:Collapse ; Width:100% }
+		td,th{ Width:50% }
+		th{ Border-Bottom:Thin Solid ; Width:50% }
+		tr>*{ Border-Left:Thin Solid ; Padding:.25EM ;
+			Text-Align:Center }
+		tr>*:First-Child{ Border-Left-Style:Hidden }
+	</style>
+</head>
+<body>
+	<article>
+		<header>
+			<p>A History:</p>
+			<h1>
+				Fringe Mastodev<br /><span class="SUBTITLE">Part
+					II: <strong>Enter Allie Hart</strong></span>
+			</h1>
+			<time datetime="2018-09">September 2018</time>
+		</header>
+		<p>
+			This post is the second in a series of posts chronicling
+				my personal history of involvement with the fringe
+				development scene on Mastodon, detailing the
+				origins of the movement, and touching on a number
+				of larger cultural developments and trends taking
+				place in the Mastodon communit<span class="OPTION"
+				>{<span class="CASE">y</span>|<span class="CASE"
+				>ies</span>}</span> more broadly.
+			<strong class="MARK"><dfn>Fringe development</dfn> is my
+				term for the development work (research; design;
+				coding) taking place on forks and individual
+				instances of Mastodon, <em>without</em> the
+				intention of sending that work upstream, and
+				without mainstream acknowledgment or
+				recognition.</strong>
+			Increasingly, as Mastodon as a project grows, I believe
+				that it is this development work that happens <i
+				class="SO-CALLED">on the fringes</i> that will
+				shape the future of the software.
+		</p>
+		<p>
+			If you haven't already read the first part of this
+				story, you can do so here:
+		</p>
+		<a class="PREVIEW" href="
+https://www.u2764.com/NFIC/2018-09-09/fringe-beginnings/"
+		>
+			<p>A History:</p>
+			<cite>
+				Fringe Mastodev &#x2013; Part I: The
+					Beginnings
+			</cite>
+			<time datetime="2018-09">September 2018</time>
+		</a>
+		<aside role="note">
+			<p>
+				<strong>Disclaimer:</strong>
+				In the chronicle that follows, I've included dates
+					for those events where I have them, and linked
+					to commits, toots, and other resources where
+					feasible and proper.
+				However, much of these events happened
+					off&#x2010;the&#x2010;record, and my memory is
+					far from perfect.
+				For those of you who know me well, you might be
+					able to attach names and places to some of the
+					events that I have left ambiguous, but I ask
+					that you respect the privacy of those involved
+					and not bring them into the narrative without
+					their permission.
+			</p>
+		</aside>
+		<section id="timeline.laboratory">
+			<h2>Laboratory/Labcoat</h2>
+			<p>
+				When we started work on Ardipithecus, there were no
+					illusions about the fact that a fork of
+					Mastodon was <strong class="MARK">unlikely to
+					be an overnight success.</strong>
+				Unlike the fediverse today, the fear <strong
+					class="MARK">wasn't lack of instance
+					adoption</strong>&#x2014;our single flagship
+					instance would have been more than enough to
+					compete with Mastodon's single flagship
+					instance in that respect&#x2014;<strong
+					class="MARK">but of lack of users.</strong>
+				For both cultural and technical reasons, Mastodon
+					users were <strong class="MARK">unlikely to
+					move away from <a
+					href="https://mastodon.social/"
+					>mastodon.social</a></strong> in favour of an
+					independent instance&#x2014;be it <a
+					href="https://luci.city/">luci.city</a> or
+					anywhere else.
+				We <strong class="MARK">needed a breakout
+					feature</strong> that would encourage folks to
+					make the switch.
+			</p>
+			<p>
+				The feature we decided on was a <strong
+					class="MARK">custom frontend,</strong>
+					with enhanced customization features and
+					a more user&#x2010;friendly interface.
+				Mastodon's existing frontend was <strong
+					class="MARK">sorely lacking in customization
+					facilities</strong> and had the look and
+					feel of a somewhat&#x2010;less&#x2010;capable
+					TweetDeck clone.
+				For Ardipithecus, we wanted a <strong class="MARK"
+					>clearer, more distinctive design</strong>
+					which could be <strong class="MARK">easily
+					adapted by instance administrators</strong> to
+					fit their site's overall theme and character.
+			</p>
+			<figure>
+				<input id="imgck.l3-4" type="checkbox" />
+				<label for="imgck.l3-4" aria-label="Toggle Images">
+					<img src="lab03.png" alt="
+Labcoat/Ardipithecus with a black&#x2010;and&#x2010;white background"
+						/>
+					<img src="lab04.png" alt="
+Labcoat/Ardipithecus with a colourful background" />
+				</label>
+				<figcaption>
+					Testing Different Backgrounds on
+						Labcoat/Ardipithecus
+						<em>[interactive]</em>
+					<p>
+						One thing that was distinctly lacking on
+							early Mastodon was any kind of art
+							scene.
+						An idea that I had during Labcoat
+							development was to use the site
+							background as a showcase for
+							Mastodon(/Ardipithecus) artists, to
+							help gain them exposure and make
+							them easier to find.
+						In an ideal world (one where we had
+							a stable revenue stream),
+							participating artists would have
+							been compensated for their efforts.
+					</p>
+					<p>
+						The tests above use public&#x2010;domain
+							images taken from Flickr.
+					</p>
+				</figcaption>
+			</figure>
+			<p>
+				I named this frontend <a
+					href="https://github.com/marrus-sh/labcoat"
+					><i>Labcoat</i></a>, built on top of a
+					Mastodon API framework that I'd created,
+					called <a
+					href="https://github.com/marrus-sh/laboratory"
+					><i>Laboratory</i></a>.
+				Mastodon's frontend was <strong class="MARK"
+					>messy,</strong> <strong class="MARK"
+					>difficult to remix,</strong> and <strong
+					class="MARK">had a steep learning
+					curve.</strong>
+				My hope with Laboratory/Labcoat <strong
+					class="MARK">was to make Mastodon development
+					easier</strong> and <strong class="MARK">more
+					accessible</strong> to newcomers.
+				Both technologies were written in Literate
+					CoffeeScript.
+			</p>
+			<figure>
+				<input id="imgck.l1-2" type="checkbox" checked=""
+					/>
+				<label for="imgck.l1-2" aria-label="Toggle Images">
+					<img src="lab01.png" alt="
+Labcoat/Ardipithecus's compose menu with visible labels"
+						/>
+					<img src="lab02.png" alt="
+Labcoat/Ardipithecus's compose menu with hidden labels" />
+				</label>
+				<figcaption>
+					Screenshots of Labcoat's Compose Menu
+						<em>[interactive]</em>
+					<p>
+						One of the design principles for Labcoat
+							was that every button have a clear
+							text label, as seen in the first of
+							these early development snapshots.
+						Labcoat was also designed with a
+							<i class="SO-CALLED">compact
+							mode</i>, in which these labels were
+							turned off, as seen in the second.
+					</p>
+				</figcaption>
+			</figure>
+			<p>
+				While Mastodon provides <strong class="MARK"
+					>consistent appearances and branding</strong>
+					across all of its instances, our hope with
+					Ardipithecus was to place interface styling in
+					the hands of local administrators and, to the
+					extent feasable at the time, users.
+				Labcoat was a <i class="SO-CALLED">serverless</i>
+					web application, which meant that hosting your
+					own was <strong class="MARK">as simple as
+					forking the code</strong> and publishing to
+					GitHub Pages.
+				I <a href="
+https://github.com/tootsuite/mastodon/pull/654">opened a Pull
+					Request</a> (which was merged) for a minimal
+					API for <strong class="MARK">conveying
+					instance information</strong>&#x2014;this is
+					now <code>/api/v1/instances</code
+					>&#x2014;which was used by Labcoat to set the
+					site title and links.
+				I also <a href="
+https://github.com/tootsuite/mastodon/issues/669">opened a larger
+					Issue</a> for conveying more in&#x2010;depth
+					information&#x2014;which <strong class="MARK"
+					>did not find support.</strong>
+			</p>
+		</section>
+		<section id="timeline.mastodev">
+			<h2>Upstream MastoDev</h2>
+			<p>
+				Assuming we <em>were</em> successful with our fork
+					of Mastodon, we <strong class="MARK">knew that
+					we would never wholly capture</strong> the
+					Fediverse ecosystem as&#x2010;a&#x2010;whole.
+				We saw this as <strong class="MARK">a good
+					thing:</strong> Mastodon was (and is) the
+					Internet Explorer of&#x2014;at the
+					time&#x2014;OStatus implementations,
+					developing with <strong class="MARK">little
+					regard for interoperability</strong> due to
+					its dominance of the ecosystem, and <strong
+					class="MARK">we had no interest</strong> in
+					securing this position for ourselves.
+				But it left open <strong class="MARK">an ethical
+					dilemma:</strong>
+				If we were to develop a feature which <strong
+					class="MARK">greatly improved the lives of our
+					users,</strong> was it right for us to <strong
+					class="MARK"><i class="SO-CALLED">hoard</i>
+					it for ourselves,</strong> rather than <strong
+					class="MARK">send it upstream,</strong> where
+					<strong class="MARK">a greater number of users
+					could benefit?</strong>
+			</p>
+			<p>
+				Because we were naïve, we decided that it would
+					probably be best if our improvements <strong
+					class="MARK">were made available to
+					everyone.</strong>
+				I worked <strong class="MARK">implementing a number
+					of features</strong> to the TootSuite codebase
+					in late February, with the hope that, once
+					they made it into master, we could <strong
+					class="MARK">merge them into Ardipithecus
+					proper</strong> as part of our regular
+					updates.
+				The Pull Requests I opened during that time
+					included:
+			</p>
+			<ul class="PARAGRAPH">
+				<li>
+					<strong class="MARK">Splitting Mastodon's
+						frontend from its backend</strong>
+						[<a href="
+https://github.com/mastodon/mastodon/pull/652">PR #652</a>; <time
+						datetime="2017-02-25">25 February
+						2017</time>; <strong class="MARK"><strong
+						>not</strong> merged</strong>].
+				</li>
+				<li>
+					<strong class="MARK">Adding site
+						metadata</strong> (see above) [<a href="
+https://github.com/mastodon/mastodon/pull/654">PR #654</a>; <time
+						datetime="2017-02-27">27 February
+						2017</time>; <strong class="MARK"
+						>merged</strong> on <time
+						datetime="2017-03-14">15 March
+						2017</time>].
+				</li>
+				<li>
+					<strong class="MARK">Character count
+						fixes</strong> [<a href="
+https://github.com/mastodon/mastodon/pull/655">PR #655</a>; <time
+						datetime="2017-02-27">27 February
+						2017</time>; <strong class="MARK"
+						>merged</strong> on <time
+						datetime="2017-02-27">27 February
+						2017</time>].
+				</li>
+				<li>
+					<strong class="MARK">Pasting images from
+						the clipboard</strong> [<a href="
+https://github.com/mastodon/mastodon/pull/657">PR #657</a>; <time
+						datetime="2017-02-28">28 February
+						2017</time>; <strong class="MARK"
+						>merged</strong> on <time
+						datetime="2017-03-01">01 March
+						2017</time>].
+				</li>
+				<li>
+					<strong class="MARK">Collapsing long
+						toots</strong> [<a href="
+https://github.com/mastodon/mastodon/pull/658">PR #658</a>; <time
+						datetime="2017-02-28">28 February
+						2017</time>; <strong class="MARK"><strong
+						>not</strong> merged</strong>].
+				</li>
+				<li>
+					<strong class="MARK">Adding colour palette
+						SCSS variables</strong> to make it easier
+						for admins to customize their themes [<a
+						href="
+https://github.com/mastodon/mastodon/pull/659">PR #659</a>; <time
+						datetime="2017-02-28">28 February
+						2017</time>; <strong class="MARK"><strong
+						>not</strong> merged</strong>].
+				</li>
+				<li>
+					<strong class="MARK">Back button
+						improvements</strong> [<a href="
+https://github.com/mastodon/mastodon/pull/660">PR #660</a>; <time
+						datetime="2017-02-28">28 February
+						2017</time>; <strong class="MARK"
+						>merged</strong> on <time
+						datetime="2017-03-01">01 March
+						2017</time>].
+				</li>
+			</ul>
+			<p>
+				Mastodon development at this time was still
+					<strong class="MARK">largely a one&#x2010;man
+					affair</strong> with <strong class="MARK">very
+					little oversight,</strong> which meant that
+					<strong class="MARK">interpersonal poltics
+					were very <em>very</em> important.</strong>
+				Although I was <strong class="MARK">upset with how
+					the Mastodon Project had responded to conflict
+					in the past</strong>&#x2014;as well as its
+					<strong class="MARK">organization,</strong>
+					<strong class="MARK">development
+					practices,</strong> <strong class="MARK"
+					>treatment of contributors,</strong> <strong
+					class="MARK">approach to branding,</strong>
+					<strong class="MARK">lack of mission
+					statement,</strong> <strong class="MARK">habit
+					of firing from the hip</strong> when it came
+					to new features, and <strong class="MARK"
+					>tendency not to listen</strong> to the
+					concerns of its most marginalized until
+					<strong class="MARK"><em>after</em> it was too
+					late</strong>&#x2014;and even though I was in
+					fact <strong class="MARK">secretly building a
+					fork of the software</strong> in response to
+					these concerns, I needed to <strong
+					class="MARK">publicly maintain an agreeable
+					image</strong> so long as I had outstanding
+					Pull Requests that I <strong class="MARK">was
+					waiting to get merged.</strong>
+				This was <em>especially</em> true in the period
+					from <time datetime="2017-02-27">27
+					February</time>&#x2013;<time
+					datetime="2017-03-15">15 March</time>, when I
+					was <strong class="MARK">waiting for the
+					Instances API</strong> that Labcoat needed to
+					function.
+				<span class="PARENTHETICAL">(NB:
+				There was a reason I swore off upstream MastoDev
+					after this.)</span>
+			</p>
+		</section>
+		<section id="timeline.u2764">
+			<h2>Introducing: Allie Hart</h2>
+			<p>
+				Nevertheless, I am <strong class="MARK">not the
+					type to keep quiet</strong> when something is
+					bothering me.
+				If I <strong class="MARK">couldn't be publicly
+					critical</strong> of upstream on main, then
+					the only solution <strong class="MARK">was to
+					create an alt</strong>&#x2014;an pseudonymous
+					account which <strong class="MARK">wouldn't
+					easily be connected to my development
+					work</strong> or GitHub account.
+				Thus, <strong class="MARK"><a
+					href="https://icosahedron.website/@u2764"
+					>@u2764<wbr />@icosahedron.website</a></strong
+					> was born, under the <strong class="MARK"
+					>alias of <i class="SO-CALLED">Allie Hart</i
+					>.</strong>
+				To prevent word from leaking, I <strong
+					class="MARK">didn't tell <em>anyone</em
+					></strong> that we were the same person,
+					and <strong class="MARK">didn't follow anyone
+					I already knew</strong> (or really at all) for
+					the first several weeks.
+				This was <strong class="MARK"><a href="
+https://icosahedron.website/@u2764/74389"><time
+					datetime="2017-03-13">13 March 2017</time></a
+					>.</strong>
+			</p>
+			<p>
+				<span class="PARENTHETICAL">(NB: In retrospect, not
+					telling <em>anyone</em> was not
+					the greatest move for me to make.
+				Friends, if you are going to start switching all of
+					your spicy and controversial takes onto a
+					secret pseudonymous alt account and virtually
+					disappear from main for days at a
+					time&#x2014;please at least tell your
+					significant other that that's where you are,
+					okay?
+				Thanks.
+				&#x2014;KIBI Gô)</span>
+			</p>
+			<p>
+				Allie Hart was <strong class="MARK">not a <em
+					>new</em> persona for me</strong> (it actually
+					predates my literal actual name)&#x2014; it
+					was the name I went by on the <strong
+					class="MARK">anonymous public forum</strong>
+					<cite>Whitman Encounters</cite> (now defunct)
+					at my alma mater, where I, alongside a number
+					of other feminist&#x2010;leaning
+					individuals, did my best to keep the
+					whole place from degenerating into a
+					racist, misogynist shithole.
+				<strong class="MARK">We <a href="
+https://whitmanwire.com/news/2013/11/07/rally-against-racism-cyberbullying-draws-attention-from-board-of-trustees/
+">mostly failed</a>.</strong>
+				For this round, I played a <strong class="MARK"
+					>no&#x2010;nonsense,
+					goes&#x2010;for&#x2010;the&#x2010;throat
+					wolfgirl&#x2010;in&#x2010;Hart's&#x2010;<!--
+					-->clothing,</strong> still <strong
+					class="MARK">recovering from a past toxic
+					relationship</strong> <span
+					class="PARENTHETICAL">(NB:
+				<em>Not</em> the
+					actual relationship I was in at the
+					time)</span>, who <strong class="MARK">loved
+					the 😘 emoji</strong> and <strong class="MARK"
+					>cheekily reäppropriated <cite>Metroid: Other
+					M</cite></strong> with her avatar and
+					catchphrase, <strong class="MARK"><q>any
+					objections, Adam?</q>.</strong>
+				This was&#x2014;for the record&#x2014;an
+					<strong class="MARK">accurate
+					self&#x2010;portrayal,</strong> but it was in
+					<strong class="MARK">stark contrast with the
+					typical gay softposting</strong> I was doing
+					on my <a href="https://mastodon.social"
+					>mastodon.social</a> account, and so <strong
+					class="MARK">nobody ever connected the
+					dots</strong> on their own.
+			</p>
+			<p>
+				For about the first month of my beïng there, I
+					was the <strong class="MARK">most frequent
+					poster</strong> on <a
+					href="https://icosahedron.website"
+					>icosahedron.website</a>, and being there was,
+					frankly, <strong class="MARK">incredibly
+					liberating.</strong>
+				I know I am not the only trans friend who <strong
+					class="MARK">owes significant parts of her
+					life and wellbeing to Mastodon</strong
+					>&#x2014;but once I got outside of its
+					main bubble, I came to see how <strong
+					class="MARK">insular and toxic much of the
+					culture had become.</strong>
+				I was tired of the <strong class="MARK"
+					>small&#x2010;community drama</strong> and
+					<strong class="MARK">not knowing which of my
+					friends were racists,</strong> <strong
+					class="MARK">friends of racists,</strong> or
+					<strong class="MARK">cool.</strong>
+				It was good to be able to retreat to <strong
+					class="MARK">my own, <em>very</em> political,
+					safe space,</strong> where I <strong
+					class="MARK">didn't follow anyone</strong> and
+					<strong class="MARK">said what I
+					wanted</strong> straight to the Public
+					Timeline and <strong class="MARK">it didn't
+					matter</strong> anyway.
+			</p>
+			<p>
+				People who weren't around in those early days
+					often don't understand it, but I don't
+					think I'm the only Mastodon veteran who
+					is now <strong class="MARK">very conscious
+					about keeping her circles small.</strong>
+			</p>
+		</section>
+		<section id="april">
+			<h2>April 2017</h2>
+			<p>
+				Then, <strong class="MARK"><time datetime="2017-04"
+					>April 2017</time> arrived, and everything
+					changed.</strong>
+				Mastodon went from <strong class="MARK"
+					>three&#x2010;plus&#x2010;change
+					instances</strong> to <strong class="MARK"
+					>over a thousand,</strong> relatively
+					overnight.
+				Eugen covers the basics in his <a href="
+https://medium.com/tootsuite/april-post-mortem-12e3d141878c"><cite
+					>April post-mortem</cite></a>, so I'll just
+					<strong class="MARK">quote the relevant
+					passages</strong> here:
+			</p>
+			<blockquote>
+				<p>
+					Mastodon caught on on Infosec Twitter, which
+						is both huge and influential, and
+						(somehow, I do not quite understand how)
+						also French Twitter.
+					[…]
+					Think explosion of users from <mark
+						>20,000</mark> to <mark>42,000</mark>
+						in the span of two days.
+				</p>
+				<p>
+					[…]
+				</p>
+				<p>
+					At the time of writing, the Mastodon network
+						includes more than <mark>486,767
+						users</mark> spread out among more than a
+						<mark>1,212 instances.</mark>
+					That’s how far we’ve come.
+				</p>
+			</blockquote>
+			<p>
+				This resulted in <strong class="MARK">two major
+					changes</strong> in my life.
+			</p>
+			<p>
+				<strong class="MARK"><strong>Thing one.</strong
+					></strong>
+				The Ardipithecus project was <strong class="MARK"
+					>obsoleted overnight,</strong> as <strong
+					class="MARK">thousands of instances and admins
+					across the globe</strong>, all combining their
+					efforts, did a much better job of <strong
+					class="MARK">removing social moderation power
+					from <a href="https://mastodon.social"
+					>mastodon.social</a>'s hands</strong> than we
+					ever could.
+				Of course, the <strong class="MARK">problems of
+					development governance</strong> were <strong
+					class="MARK">yet to be solved,</strong> but
+					the <strong class="MARK">game had now
+					changed</strong>&#x2014;fork success would be
+					<strong class="MARK">measured by instance
+					count</strong> as much as it was <strong
+					class="MARK">in users</strong> for the
+					forseeable future.
+				With the April influx came a number of <strong
+					class="MARK">new developers sensitive to user
+					issues</strong> and <strong class="MARK"
+					>willing to work on features</strong> for
+					them&#x2014;developers who had <strong
+					class="MARK">probably been working in React
+					and Redux for longer than two months.</strong>
+				I was <strong class="MARK">more than happy to let
+					them take the reins.</strong>
+			</p>
+			<p>
+				This wasn't to say I stopped developing Mastodon
+					projects completely, but my focus had shifted
+					<strong class="MARK">away from big codebases
+					for everyone</strong> and <strong class="MARK"
+					>towards personal projects and niche
+					interests.</strong>
+			</p>
+			<figure>
+				<img src="snow.png" />
+				<figcaption>
+					Development Screenshot of Snow Web Client
+					<p>
+						Although I wasn't able to talk about
+							my work with Laboratory as
+							Allie, I did try my hand at
+							developing a different punk web
+							client called Snow, pictured
+							here.
+						Snow was inspired by classic Macintosh
+							aesthetic, as well as that one time
+							when Mastodon's code for handling
+							animated avatars meant that profile
+							pictures looked fuzzy unless you
+							hovered over them.
+						The black&#x2010;and&#x2010;white effect
+							on profile pictures in the above
+							screenshot was created through use
+							of CSS filters, and would disappear
+							on hover.
+					</p>
+				</figcaption>
+			</figure>
+			<p>
+				<strong class="MARK"><strong>Thing two.</strong
+					></strong>
+				<strong class="MARK">My social life got a <em
+					>lot</em> better.</strong>
+				Whereäs Allie Hart was <strong class="MARK">a
+					little bit at&#x2010;odds with traditional
+					Mastodon culture,</strong> her <strong
+					class="MARK">lengthy political posts,</strong>
+					<strong class="MARK">cultivated
+					#brand,</strong> and <strong class="MARK"
+					>sassy demeanour</strong> fit <strong
+					class="MARK">right in with the new
+					crowd.</strong>
+				I went from being a <strong class="MARK">prolific
+					nobody</strong> to being a <strong class="MARK"
+					>prolific somebody with hundreds of
+					followers</strong> in under a week.
+				Consequently, I <strong class="MARK">mostly stopped
+					logging into <a href="https://mastodon.social"
+					>mastodon.social</a></strong> at all.
+			</p>
+		</section>
+		<section id="timeline.gameingers">
+			<h2><cite>Mourning Mastodon</cite></h2>
+			<p>
+				Well.
+				Although the influx of new users was <strong
+					class="MARK">good for me personally,</strong>
+					its impact on others still involved with
+					Mastodon development&#x2014;and who I
+					maintained connections to via close
+					friends&#x2014;was <strong class="MARK"
+					>less&#x2010;than&#x2010;grand.</strong>
+			</p>
+			<p>
+				Since the beginning, Mastodon development had been
+					<strong class="MARK">driven by its queer
+					communities and users,</strong> many of whom
+					<strong class="MARK">didn't feel safe on other
+					platforms</strong> and were <strong
+					class="MARK">wedded to the site.</strong>
+				It was, at first, <strong class="MARK">a happy
+					marriage</strong>&#x2014;Mastodon <strong
+					class="MARK">got a userbase</strong> and Masto
+					queers got <strong class="MARK">a space to
+					call their own</strong>&#x2014;but after the
+					April influx <strong class="MARK">this balance
+					had been upset.</strong>
+				Queer voices were, or were in danger of,
+					<strong class="MARK">being replaced by cis
+					white techbros</strong> from the sizeäble
+					infosec demographic which had initiated the
+					surge.
+				There was, and still is, <strong class="MARK">a
+					real fear</strong> of Mastodon <strong
+					class="MARK">turning the way of every other
+					social media platform</strong> now that there
+					was <strong class="MARK">a suitable straight
+					white base</strong> to sustain it into the
+					future.
+			</p>
+			<p>
+				Lots of people saw this happening, and were
+					worried about it, but at the time most of
+					the folks close enough to be aware <strong
+					class="MARK">were themselves knees&#x2010;deep
+					in Mastodon development politics</strong> and
+					<strong class="MARK">couldn't really afford to
+					throw stones</strong>&#x2014;the <strong
+					class="MARK">same situation I had been
+					in</strong> before switching accounts.
+				I, on the other hand, had <strong class="MARK"><em
+					>already</em> positioned myself as an
+					outsider,</strong> and had the chops
+					and&#x2014;as of recently&#x2014;the audience
+					to <strong class="MARK">apply appropriate
+					pressure.</strong>
+				The goal was to <strong class="MARK">get queer
+					oversight into the Mastodon development
+					process</strong> through the <strong
+					class="MARK">hiring of a non&#x2010;cishet
+					Project Manager.</strong>
+				(Ideally, we would have aimed for a
+					non&#x2010;white Project Manager as well,
+					but it seemed like the chances of that
+					happening were already
+					slim&#x2010;to&#x2010;none.)
+			</p>
+			<p>
+				The resulting piece was titled <strong class="MARK"
+					><a href="
+https://medium.com/@alliethehart/gameingers-are-dead-and-so-is-mastodon-705b535ed616
+"><cite>Mourning Mastodon</cite></a>.</strong>
+				I wrote it over the course of <strong class="MARK"
+					>a couple of days,</strong> leveraging all of
+					my Gender Studies&#x2013;major skills and
+					<strong class="MARK">pulling an
+					all&#x2010;nighter</strong> to finish it off
+					before sending it to a friend for
+					proofreading.
+				I <strong class="MARK">got the go&#x2010;ahead to
+					publish</strong>&#x2014;and it <strong
+					class="MARK">immediately made waves</strong>
+					(new users went wild over community drama like
+					this), was <strong class="MARK">raised in the
+					the Mastodon developer Discord
+					channel,</strong> and, quite surprisingly,
+					honestly, to me, <strong class="MARK">had the
+					desired effect.</strong>
+				There was <strong class="MARK">public
+					admission</strong> that <strong class="MARK"
+					>Mastodon's development practices were <em>not
+					the greatest</em>,</strong> and <strong
+					class="MARK">we got our Project
+					Manager.</strong>
+				For my part, I mostly celebrated by <strong
+					class="MARK">getting some sleep.</strong>
+			</p>
+			<aside role="note">
+				<p>
+					<strong>Anecdote:</strong>
+					There was a joking rumour going around at the
+						time that Mastodon was being controlled
+						by a secret cabal of trans women (<i
+						>*cough*</i>&#x2014;and enbies) who
+						determined everything from what memes
+						would be popular that day to which
+						features would be slated for development.
+					This was funny for two reasons:
+					One, because as far as Mastodon development
+						was concerned, <i class="SO-CALLED">trans
+						women are in control of everything</i>
+						couldn't have been further from the
+						truth.
+					Two, because yes, that was us, that was
+						<cite>Mourning Mastodon</cite>, and we
+						got shit done.
+				</p>
+			</aside>
+			<a class="PREVIEW" href="
+https://medium.com/@alliethehart/gameingers-are-dead-and-so-is-mastodon-705b535ed616
+">
+				<cite>Mourning Mastodon</cite>
+				by ALLIE ❤ HART | <time
+					datetime="2017-04-23T04:36:30.126Z">Apr 22, 2017</time>
+				<p>
+					Realizing the death which preceded the Universe
+				</p>
+			</a>
+			<p>
+				Most of the responses to the piece were <strong
+					class="MARK">things I had anticipated ahead of
+					time:</strong>
+				Queer users, generally, said <strong class="MARK"
+					><q>yes this rings true;</q></strong> white
+					techbros, more or less, said <strong
+					class="MARK"><q>this is overblown</q></strong>
+					or <strong class="MARK"><q>if you're so upset
+					by this, why don't you write a fork?</q
+					></strong>
+				(LOL.
+				As a matter of fact, there <em>was</em> another
+					fork attempt around this time—<a
+					href="
+https://github.com/heropunch/mastodon-ce">Mastodon CE</a>.
+				I contributed my frontend&#x2010;splitting code,
+					but the fork attempt appears only to have
+					lasted all of three days.)
+			</p>
+			<p>
+				There was another response which I received <strong
+					class="MARK">which I <em>didn't</em>
+					expect</strong>&#x2014;from <strong
+					class="MARK">people of colour</strong> reading
+					the piece, all of whom (who @&#x2010;mentioned
+					me) seemed to be <strong class="MARK">new to
+					the site,</strong> who were <strong
+					class="MARK">curious about the instances of
+					racism</strong> I mentioned but largely left
+					unexplained, and wondered <strong class="MARK"
+					>why I was placing so much emphasis on queer
+					problems and queer empowerment</strong> when
+					<strong class="MARK">white queer users were
+					arguäbly the source</strong> (well, one <em
+					>of</em> the sources) of the racism problem in
+					the first place.
+			</p>
+			<a class="PREVIEW" href="
+https://medium.com/@alliethehart/mourning-what-now-10964cce22a8
+">
+				<cite>Mourning What Now?!?!</cite>
+				by ALLIE ❤ HART | <time
+					datetime="2017-04-23T22:31:14.166Z">Apr 23, 2017</time>
+				<p>
+					A response to “Mourning Mastodon,” by the author
+				</p>
+			</a>
+			<p>
+				The answer to this question, which I attempted to
+					make clear in my <em>own</em> response to the
+					piece, was that <cite>Mourning Mastodon</cite>
+					was a <strong class="MARK">political essay
+					with a particular goal,</strong> and <strong
+					class="MARK">calling out Masto queers for
+					their racism</strong> wasn't going to stop
+					Masto <em>development</em> from <strong
+					class="MARK">going the way of the
+					techbro.</strong>
+				And, in all honesty, I was <strong class="MARK">a
+					little miffed at the time,</strong> because
+					the whole <em>reason</em> I had <strong
+					class="MARK">switched accounts</strong> and
+					<strong class="MARK">made this entire
+					alternate persona</strong> and <strong
+					class="MARK">devoted countless hours to
+					learning Ruby and React</strong> and <strong
+					class="MARK">how to do Mastodon
+					development</strong> and <strong class="MARK"
+					>cut off contact with most of my
+					friends</strong> was <strong class="MARK"
+					><em>because</em> of Mastodon's racism
+					problem,</strong> and so having people <strong
+					class="MARK">arriving fresh from
+					Twitter,</strong> <strong class="MARK">not
+					bothering to learn any of that
+					history,</strong> but <strong class="MARK"
+					>throwing stones at <em>me</em> for not doing
+					it justice</strong> felt a tad unfair
+					(especially when I could just have easily have
+					not brought it up in the first place and
+					erased the whole thing&#x2014;not that <em
+					>that</em> would have helped anyone).
+			</p>
+			<p>
+				The truth, of course, was that I <strong
+					class="MARK"><em>hadn't</em> done the issue
+					justice;</strong> it would remain <strong
+					class="MARK">completely unchronicled</strong>
+					for the following 16&#x2010;plus months until
+					the publishing of the first post in this
+					series.
+				Furthermore, although the (mostly
+					temporary&#x2014;at least for those friends
+					who weren't lowkey racist) loss of friendships
+					and social networks resulting from switching
+					accounts, and the (very much
+					not&#x2010;recoverable) time sunk into
+					learning Mastodon technologies <strong
+					class="MARK">were real sacrifices made on my
+					part,</strong> the reason <em
+					>why</em> I had been able to stick around and
+					see this work through <strong class="MARK">had
+					a good deal to do</strong> with my being
+					<strong class="MARK">white,</strong> <strong
+					class="MARK">trans,</strong> and <strong
+					class="MARK">relatively inconspicuous</strong>
+					(despite, sometimes, my best intentions).
+				So, <strong class="MARK">such responses were
+					reasonable</strong>&#x2014;although I lacked
+					the means to do much better at the time.
+			</p>
+			<p>
+				<span class="PARENTHETICAL">(NB:
+				Of course, literally every other white Mastodon
+					user was also to blame for not owning up to
+					this history or, geez, writing it down.
+				People been asking for <em>over a year</em>
+					now&#x2014;and I <em>know</em> because
+					<cite>Mourning Mastodon</cite>, my propoganda
+					piece with clear and glaring flaws when it
+					comes to actually providing a historical
+					record, is <em>still</em> what gets shared
+					around and linked to every time someone brings
+					the question up.
+				<q>Hey, I heard that Mastodon has had something of
+					a troubled history when it comes to issues of
+					race&#x2014;are there any resources or
+					histories where I can read up on that?</q>
+				<q>Oh sure, here's this piece by Allie Hart, it
+					literally only mentions it in passing and is
+					mostly about development drama which hasn't
+					been relevant for over a year, but hey, it's
+					the best we've got.</q>
+				…Sorry, I'm venting now 😜.
+				&#x2014;KIBI Gô)</span>
+			</p>
+		</section>
+		<section id="timeline.vague">
+			<h2><cite>Vague</cite> and Patreon</h2>
+			<p>
+				Doing MastoDev with <strong class="MARK">little in
+					the way of support,</strong> <strong
+					class="MARK">results,</strong> or <strong
+					class="MARK">recognition</strong> had <strong
+					class="MARK">taken a lot out of me.</strong>
+				<strong class="MARK">Publishing <cite>Mourning
+					Mastodon</cite>,</strong> <strong class="MARK"
+					>dealing with the waves of responses,</strong>
+					and <strong class="MARK">trying to somehow
+					coërce upstream development to act in a
+					responsible manner</strong> had <strong
+					class="MARK">taken out a lot more.</strong>
+				The landscape of Mastodon had <strong class="MARK"
+					>changed significantly,</strong> and I wasn't
+					sure that <strong class="MARK">pursuïng
+					Mastodon development</strong> was the <strong
+					class="MARK">best use of my time</strong> when
+					it came to <strong class="MARK">making a
+					difference</strong> anymore.
+			</p>
+			<p>
+				As a trans woman on the internet, my work with
+					Mastodon has <strong class="MARK">always been
+					about more than just social media</strong
+					>&#x2014;it's been about keeping people alive.
+				But when it came to keeping people alive, was
+					<strong class="MARK">building this or that new
+					feature</strong> really the most effective
+					thing to do?
+				I'm a believer that people are better at staying
+					alive when <strong class="MARK">they have
+					something to look forward to</strong
+					>&#x2014;and so I set my sights on <strong
+					class="MARK">earnestly trying to create things
+					that people <em>would</em> look forward
+					to,</strong> much moreso than this or that
+					<strong class="MARK">minor bugfix to their social
+					networking site.</strong>
+				<span class="PARENTHETICAL">(NB:
+				God, I miss the days of publishing works and
+					honing my craft out of the pure and earnest
+					hope that it might help someone through a
+					difficult time.
+				What has happened to my life.)</span>
+			</p>
+			<p>
+				This manifested itself as the <strong class="MARK"
+					>first chapter to a serialized novel,</strong>
+					<strong class="MARK"><cite>Vague</cite
+					>,</strong> which I spent <strong class="MARK"
+					>most of <time datetime="2017-05">May</time
+					></strong> and <strong class="MARK">the
+					beginning of <time datetime="2017-06"
+					>June</time></strong> working on.
+				It was a <strong class="MARK">formalistic,
+					experimental romance novel</strong> built upon
+					equal parts <strong class="MARK">comparative
+					literature</strong> and <strong class="MARK"
+					>shoujo anime.</strong>
+				It was, admittedly, <strong class="MARK">probably
+					pretty niche.</strong>
+			</p>
+			<a class="PREVIEW" href="https://www.u2764.com/OFIC/2017-06-20/Vague01/">
+				<span>ALLIE HART presents:</span>
+				<cite>Vague</cite>
+				<p>
+					Before entering college, Violet Oliver only
+						cared about one thing: her schoolwork.
+					Then she met Jordan Ruskin, an argumentative,
+						confrontational boy who refused to show
+						up to class.
+					Suddenly, Violet finds herself developing
+						attachments that extend beyond her
+						schoolwork—but will she be able to attend
+						to relationships that won't result in a
+						grade?
+					<time datetime="2017">2017.</time>
+				</p>
+			</a>
+			<p>
+				Once it was out&#x2014;now that I <strong
+					class="MARK">actually had a published
+					something</strong> in my portfolio that I
+					could point to as a product of my time, and
+					now that I was <strong class="MARK">starting
+					to pay back my student loans,</strong> and
+					<strong class="MARK">needed some manner of
+					revenue stream</strong>&#x2014;I <strong
+					class="MARK"><a
+					href="https://patreon.com/kibigo">launched my
+					Patreon</a></strong>… and really only
+					attracted a <strong class="MARK">handful of
+					dollars per month</strong> in those early
+					days, but <strong class="MARK">it was at least
+					<em>something</em> for my effort,</strong>
+					anyway.
+			</p>
+			<p>
+				It was <strong class="MARK">more than MastoDev had
+					garnered me,</strong> in any case.
+			</p>
+			<p>
+				<em>To be continued.</em>
+			</p>
+		</section>
+		<footer>
+			<p>
+				Questions or comments?
+				@ me: <a href="https://glitch.social/@kibi">@kibi<wbr
+					/>@glitch.social</a>.
+			</p>
+		</footer>
+	</article>
+</body>
+</html>

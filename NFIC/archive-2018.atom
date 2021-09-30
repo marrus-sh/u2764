@@ -1,0 +1,241 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom" xml:lang="en" xmlns:fh="http://purl.org/syndication/history/1.0">
+
+<fh:archive/>
+<id>tag:www.u2764.com,2021:NFIC</id>
+<link rel="current" href="https://www.u2764.com/NFIC/index.atom"/>
+<link rel="self" href="https://www.u2764.com/NFIC/archive-2018.atom"/>
+<link rel="alternate" type="application/xhtml+xml" href="https://www.u2764.com/NFIC/"/>
+<updated>2021-09-29T21:12:08-07:00</updated>
+<title>❤ Nonfiction</title>
+<author>
+	<name>Margaret KIBI</name>
+	<uri>https://go.KIBI.family/About/#me</uri>
+</author>
+<category term="NFIC" scheme="tag:www.u2764.com,2021:" label="Nonfiction"/>
+<icon>../icon.svg</icon>
+<rights type="xhtml">
+	<div xmlns="http://www.w3.org/1999/xhtml">
+		<p>Except where otherwise mentioned, the works linked here are copyright © Margaret KIBI and licensed under a <a href="https://creativecommons.org/licenses/by-sa/4.0/" rel="license">Creative Commons Attribution-ShareAlike 4.0 International License [🅭🅯🄎]</a>.</p>
+	</div>
+</rights>
+
+<entry xml:id="NFIC.2018-02-05.CMON0100">
+	<id>tag:www.u2764.com,2021:NFIC.2018-02-05.CMON0100</id>
+	<link rel="alternate" type="text/html" href="https://www.u2764.com/NFIC/2018-02-05/CMON0100/"/>
+	<published>2018-02-05T22:05:21-08:00</published>
+	<updated>2021-09-27T17:46:52-07:00</updated>
+	<title>The Cybre Manifesto</title>
+	<author>
+		<name>KIBI Gô</name>
+		<uri>https://go.KIBI.family/About/#me</uri>
+	</author>
+	<summary>2017 was the year of the cyber. 2018 is the year of the cybre.</summary>
+</entry>
+
+<entry xml:id="NFIC.2018-02-12.CMON0101">
+	<id>tag:www.u2764.com,2021:NFIC.2018-02-12.CMON0101</id>
+	<link rel="alternate" type="text/html" href="https://www.u2764.com/NFIC/2018-02-12/CMON0101/"/>
+	<!-- The identifier date differs from the published date for this entry.  Although it was originally dated to the 12th, it was not actually completed and published until the 14th. -->
+	<published>2018-02-14T21:19:45-08:00</published>
+	<updated>2021-09-27T17:47:06-07:00</updated>
+	<title>Cybre Love</title>
+	<author>
+		<name>KIBI Gô</name>
+		<uri>https://go.KIBI.family/About/#me</uri>
+	</author>
+	<summary type="xhtml">
+		<div xmlns="http://www.w3.org/1999/xhtml">
+			<p>Special <time datetime="2018-02-14" title="2018-02-14">Valentine's Day</time> Issue!!</p>
+		</div>
+	</summary>
+</entry>
+
+<entry xml:id="NFIC.2018-06-29.ｍｅｒｍａｉｄ">
+	<id>tag:www.u2764.com,2021:NFIC.2018-06-29.%EF%BD%8D%EF%BD%85%EF%BD%92%EF%BD%8D%EF%BD%81%EF%BD%89%EF%BD%84</id>
+	<link rel="alternate" type="text/html" href="https://www.u2764.com/NFIC/2018-06-29/ｍｅｒｍａｉｄ/"/>
+	<published>2018-06-29T23:28:13-07:00</published>
+	<updated>2021-09-26T15:42:17-07:00</updated>
+	<title>ｍｅｒｍａｉｄ</title>
+	<author>
+		<name>KIBI Gô</name>
+		<uri>https://go.KIBI.family/About/#me</uri>
+	</author>
+	<summary type="xhtml">
+		<div xmlns="http://www.w3.org/1999/xhtml">
+			<article class="TOOT">
+				<header>
+					<a href="https://glitch.social/@kibi"><code>@kibi@glitch.social</code></a>:
+				</header>
+				<p>
+					i'm trying to consolidate my thoughts around
+					building a comprehensive self-publishing and
+					cataloguing workflow into a cohesive programme and
+					i think i'm getting somewhere with it
+				</p>
+				<footer>
+					<a href="https://glitch.social/@kibi/100228339689019684"><time datetime="2018-06-18T23:04:53Z">June 18, 2018, 4:04 PM</time></a>
+				</footer>
+			</article>
+		</div>
+	</summary>
+</entry>
+
+<entry xml:id="NFIC.2018-07-31.clacks-overhead">
+	<id>tag:www.u2764.com,2021:NFIC.2018-07-31.clacks-overhead</id>
+	<link rel="alternate" type="text/html" href="https://www.u2764.com/NFIC/2018-07-31/clacks-overhead/"/>
+	<published>2018-07-31T15:54:31-07:00</published>
+	<updated>2021-09-26T15:42:29-07:00</updated>
+	<title>Clacks Overhead</title>
+	<author>
+		<name>KIBI Gô</name>
+		<uri>https://go.KIBI.family/About/#me</uri>
+	</author>
+	<summary type="xhtml">
+		<div xmlns="http://www.w3.org/1999/xhtml">
+			<p>Subject: Natalie; Clacks Overheads.</p>
+			<p>I wrote a brief thing on supporting them in ActivityPub. Apologies if this has been done before, but I couldn't find anything and I think it might be important.</p>
+			<p>🕯<br/>miss you</p>
+		</div>
+	</summary>
+</entry>
+
+<entry xml:id="NFIC.2018-08-11.girlfriends">
+	<id>tag:www.u2764.com,2021:NFIC.2018-08-11.girlfriends</id>
+	<link rel="alternate" type="text/html" href="https://www.u2764.com/NFIC/2018-08-11/girlfriends/"/>
+	<published>2018-08-11T17:03:08-07:00</published>
+	<updated>2021-09-26T15:42:40-07:00</updated>
+	<title>That One “Striaght Girlfriends” Article</title>
+	<author>
+		<name>KIBI Gô</name>
+		<uri>https://go.KIBI.family/About/#me</uri>
+	</author>
+	<summary type="xhtml">
+		<div xmlns="http://www.w3.org/1999/xhtml">
+			<p>Subject: Natalie; Clacks Overheads.</p>
+			<p>I wrote a brief thing on supporting them in ActivityPub. Apologies if this has been done before, but I couldn't find anything and I think it might be important.</p>
+			<p>🕯<br/>miss you</p>
+		</div>
+	</summary>
+</entry>
+
+<entry xml:id="NFIC.2018-09-09.fringe-beginnings">
+	<id>tag:www.u2764.com,2021:NFIC.2018-09-09.fringe-beginnings</id>
+	<link rel="alternate" type="text/html" href="https://www.u2764.com/NFIC/2018-09-09/fringe-beginnings/"/>
+	<published>2018-09-09T14:47:55-07:00</published>
+	<updated>2021-09-27T17:47:59-07:00</updated>
+	<title>Fringe Mastodev – I: The Beginnings</title>
+	<author>
+		<name>KIBI Gô</name>
+		<uri>https://go.KIBI.family/About/#me</uri>
+	</author>
+	<summary type="xhtml">
+		<div xmlns="http://www.w3.org/1999/xhtml">
+			<p>Hot off the presses: Learn about the early history of Content Warnings, the First Ever Mastodon Fork, and the sitewide drama which preëmpted it!!</p>
+		</div>
+	</summary>
+</entry>
+
+<entry xml:id="NFIC.2018-09-16.fringe-allie">
+	<id>tag:www.u2764.com,2021:NFIC.2018-09-16.fringe-allie</id>
+	<link rel="alternate" type="text/html" href="https://www.u2764.com/NFIC/2018-09-16/fringe-allie/"/>
+	<published>2018-09-16T17:07:04-07:00</published>
+	<updated>2021-09-26T15:47:26-07:00</updated>
+	<title>Fringe Mastodev – II: Enter Allie Hart</title>
+	<author>
+		<name>KIBI Gô</name>
+		<uri>https://go.KIBI.family/About/#me</uri>
+	</author>
+	<summary type="xhtml">
+		<div xmlns="http://www.w3.org/1999/xhtml">
+			<p>A challenger approaches!! Learn the backstory behind The Most Controversial Article Ever About Mastodon (at least until this blogseries finishes #yolo) and everyone's fav trashgirl who wrote it.</p>
+		</div>
+	</summary>
+</entry>
+
+<entry xml:id="NFIC.2018-09-22.modern-7c">
+	<id>tag:www.u2764.com,2021:NFIC.2018-09-22.modern-7c</id>
+	<link rel="alternate" type="text/html" href="https://www.u2764.com/NFIC/2018-09-22/modern-7c/"/>
+	<published>2018-09-22T18:22:02-07:00</published>
+	<updated>2021-09-26T15:47:59-07:00</updated>
+	<title>Modern? Sevensi Serialization</title>
+	<author>
+		<name>KIBI Gô</name>
+		<uri>https://go.KIBI.family/About/#me</uri>
+	</author>
+	<summary type="xhtml">
+		<div xmlns="http://www.w3.org/1999/xhtml">
+			<p>A brief look into the evolution of the Sevensi language, featuring Latin orthographies and input methods.</p>
+		</div>
+	</summary>
+</entry>
+
+<entry xml:id="NFIC.2018-09-29.jing">
+	<id>tag:www.u2764.com,2021:NFIC.2018-09-29.jing</id>
+	<link rel="alternate" type="text/html" href="https://www.u2764.com/NFIC/2018-09-29/jing/"/>
+	<published>2018-09-29T14:11:43-07:00</published>
+	<updated>2021-09-26T15:48:31-07:00</updated>
+	<title>Neutral Jing</title>
+	<author>
+		<name>KIBI Gô</name>
+		<uri>https://go.KIBI.family/About/#me</uri>
+	</author>
+	<summary type="xhtml">
+		<div xmlns="http://www.w3.org/1999/xhtml">
+			<p>A brief discourse/explination on jing, which underpins a significant portion of Sevensi philosophy and æsthetic understandings.</p>
+		</div>
+	</summary>
+</entry>
+
+<entry xml:id="NFIC.2018-10-01.fringe-glitch">
+	<id>tag:www.u2764.com,2021:NFIC.2018-10-01.fringe-glitch</id>
+	<link rel="alternate" type="text/html" href="https://www.u2764.com/NFIC/2018-10-01/fringe-glitch/"/>
+	<published>2018-10-01T06:01:44-07:00</published>
+	<updated>2021-09-26T15:50:03-07:00</updated>
+	<title>Fringe Mastodev – III: Joining GlitchSoc</title>
+	<author>
+		<name>KIBI Gô</name>
+		<uri>https://go.KIBI.family/About/#me</uri>
+	</author>
+	<summary type="xhtml">
+		<div xmlns="http://www.w3.org/1999/xhtml">
+			<p>Learn about the origins of the GlitchSoc fork of Mastodon, my involvement with it, and other projects I was working on in the summer months of 2017.</p>
+		</div>
+	</summary>
+</entry>
+
+<entry xml:id="NFIC.2018-10-27._7c-text">
+	<id>tag:www.u2764.com,2021:NFIC.2018-10-27._7c-text</id>
+	<link rel="alternate" type="text/html" href="https://www.u2764.com/NFIC/2018-10-27/_7c-text/"/>
+	<published>2018-10-27T00:19:49-07:00</published>
+	<updated>2021-09-26T22:50:17-07:00</updated>
+	<title>Sevensi Text</title>
+	<author>
+		<name>KIBI Gô</name>
+		<uri>https://go.KIBI.family/About/#me</uri>
+	</author>
+	<summary type="xhtml">
+		<div xmlns="http://www.w3.org/1999/xhtml">
+			<p>This blogpost outlines the new Sevensi orthography, and a number of other Sevensi‐text–related topics.</p>
+		</div>
+	</summary>
+</entry>
+
+<entry xml:id="NFIC.2018-11-06.fringe-intermission">
+	<id>tag:www.u2764.com,2021:NFIC.2018-11-06.fringe-intermission</id>
+	<link rel="alternate" type="text/html" href="https://www.u2764.com/NFIC/2018-11-06/fringe-intermission/"/>
+	<published>2018-11-06T13:27:37-08:00</published>
+	<updated>2021-09-26T22:57:26-07:00</updated>
+	<title>Fringe Mastodev – Part IV: Intermission</title>
+	<author>
+		<name>KIBI Gô</name>
+		<uri>https://go.KIBI.family/About/#me</uri>
+	</author>
+	<summary type="xhtml">
+		<div xmlns="http://www.w3.org/1999/xhtml">
+			<p>Mastodon has a culture of exploitation. We need to talk about it.</p>
+		</div>
+	</summary>
+</entry>
+
+</feed>

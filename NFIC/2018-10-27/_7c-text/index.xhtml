@@ -1,0 +1,2336 @@
+<!DOCTYPE html>
+<html
+	xmlns="http://www.w3.org/1999/xhtml"
+	lang="en"
+	xml:lang="en"
+>
+<head>
+	<title>
+		October 2018: Sevensi Text | KIBI Gô
+	</title>
+	<meta charset="UTF-8" />
+	<base target="_top" />
+	<style>
+		*:Lang(zxx){ Font-Family:Inherit }
+		aside[role=note]{ Margin:1EM 0 1EM -3EM ; Border:Thin Sienna
+			Dashed ; Padding:1EM 1EM 1EM 4EM ; Color:Maroon ;
+			Background:FloralWhite }
+		div[role=note]{ Margin:1EM 0 ; Border:Thin Solid ;
+			Padding:1EM ; Color:Black ; Background:Gainsboro }
+		body{ Margin:Auto ; Padding:3EM ; Max-Width:43EM }
+		body>article>header{ Margin-Top:1.85EM ; Padding-Top:0 }
+		dd{ Margin:0 0 1EM 2EM }
+		dl{ Margin:1EM 0 }
+		dt{ Margin:1EM 0 .5EM ; Font-Weight:Bold }
+		figcaption{ Margin:0 2EM ; Font-Style:Italic ;
+			Text-Align:Center }
+		figcaption>*:first-child{ Margin-Top:.5EM }
+		figure{ Margin:1EM -3EM }
+		figure.KEYBOARD{ Border:Thin Solid ; Padding:1EM ;
+			Color:Black ; Background:WhiteSmoke ; Text-Align:Center
+			; Overflow:Scroll }
+		figure.KEYBOARD>figcaption{ Margin-Top:1EM }
+		figure.KEYBOARD input:Nth-Of-Type(1):Checked~*
+			tbody:Nth-Of-Type(2),figure.KEYBOARD
+			input:Nth-Of-Type(2):Checked~*
+			tbody:Nth-Of-Type(3),figure.KEYBOARD
+			input:Nth-Of-Type(3):Checked~*
+			tbody:Nth-Of-Type(4),figure.KEYBOARD
+			input:Nth-Of-Type(4):Checked~*
+			tbody:Nth-Of-Type(5){ Display:Table-Row-Group }
+		figure.KEYBOARD table{ Table-Layout:Fixed ; Margin:1EM Auto 0
+			; Border:Thin Silver Solid ; Border-Spacing:.25EM ;
+			Width:30EM ; Color:Black ; Background:Gainsboro }
+		figure.KEYBOARD tbody{ Font-Size:Inherit }
+		figure.KEYBOARD tbody:First-Of-Type td{ Display:None }
+		figure.KEYBOARD tbody:Nth-Of-Type(n+2){ Display:None }
+		figure.KEYBOARD td{ Border:Thin DarkGrey Solid ; Padding:0
+			.25EM ; Height:1EM ; Color:Black ; Background:White ;
+			Font-Size:Inherit ; Line-Height:1.5EM }
+		figure.KEYBOARD td.ON{ Color:White ; Background:Black }
+		figure.KEYBOARD tr{ Font-Size:Inherit }
+		figure.KEYBOARD u{ Text-Decoration:Underline Dotted }
+		h1{ Margin:0 ; Font-Size:X-Large ; Font-Weight:Bold }
+		h2{ Margin:0 0 .5EM ; Font-Size:Large ; Font-Weight:Bold }
+		h2::BEFORE{ Display:Block ; Margin:2EM 0 ; Font-Size:Medium ;
+			Font-Weight:Normal ; Opacity:.65 ; Text-Align:Center ;
+			Content:"☙ ⁂ ❧" }
+		hr{ Margin:1EM -1.5EM ; Border-Style:Solid None None ;
+			Border-Color:CurrentColor Transparent Transparent ;
+			Border-Width:Thin 0 0 ; Color:Inherit }
+		header{ Margin:0 0 1.23EM ; Border-Style:None None Solid ;
+			Border-Width:0 0 Thin ; Padding:.369EM 0 ;
+			Font-Size:Small ; Text-Align:Left }
+		header>p{ Margin:.369EM 0 }
+		header>p::before{ Content:None }
+		header>time{ Display:Block ; Margin:.369EM 0 ;
+			Text-Align:Right }
+		html{ Font-Family:"Noto Serif","Gentium\
+			Plus","Gentium","Noto\ Sans Osage",Serif }
+		i[lang$=-fonipa]{ Font-Style:Inherit }
+		i.SO-CALLED{ Font-Style:Inherit }
+		i.SO-CALLED::before{ Content:Open-Quote }
+		i.SO-CALLED::after{ Content:Close-Quote }
+		p{ Margin:0 ; Text-Align:Justify }
+		p+p{ Text-Indent:2EM }
+		table{ Margin:1EM Auto ; Border-Collapse:Collapse ;
+			Text-Align:Center }
+		td,th{ Border-Top:Thin Solid ; Padding:0 .5CH }
+		th[scope=col]{ Border-Top:Hidden ; Border-Bottom:Solid }
+		th[scope=row]{ Border-Right:Thin Solid }
+		ul{ Margin:1EM 0 ; Padding:0 0 0 2EM }
+		ul>li{ Margin:1EM 0 }
+	</style>
+</head>
+<body>
+	<article>
+		<header>
+			<p>An Overview:</p>
+			<h1>Sevensi Text</h1>
+			<time datetime="2018-10">October 2018</time>
+		</header>
+		<aside role="note">
+			<p>
+				<strong>Note:</strong>
+				This document contains a number of little&#x2010;used
+					Latin characters and symbols, which may not
+					appear correctly if you do not have
+					appropriate fonts installed.
+				<a href="https://www.google.com/get/noto/">The Noto
+					fonts project</a> by Google should provide
+					adequate coverage&#x2014;although it places
+					the diacritics in odd locations sometimes.
+				(Please <a href="https://glitch.social/@kibi">let
+					me know</a> if you know of any other fonts
+					with full Sevensi support!)
+			</p>
+		</aside>
+		<p>
+			Last month I published a blogpost describing <a href="
+https://www.u2764.com/NFIC/2018-09-22/modern-7c/">a number of
+				phonological and orthographic changes to Modern
+				Sevensi</a>, a fictional language under provenance
+				of <a href="https://www.LANGDEV.xyz/">the LANGDEV
+				Project</a> and <a href="https://www.KIBI.family/"
+				>the KIBI Jexr</a>.
+			In the time since, I have further refined the
+				orthographic representation of Sevensi words,
+				resulting in a writing system which is quite
+				distinct from what is described there.
+			This blogpost outlines the new Sevensi orthography, and
+				a number of other
+				Sevensi&#x2010;text&#x2013;related topics.
+		</p>
+		<section id="alphabet">
+			<h2>The Sevensi Alphabet</h2>
+			<p>
+				The Sevensi alphabet is divided roughly into four
+					sections:
+			</p>
+			<ul>
+				<li>
+					The 8 <b>consonants</b>: Ꜧ<wbr />Ɣ<wbr />Ƣ<wbr
+						/>Ꝣ<wbr />Ꞵ<wbr />Ƿ<wbr />Ŋ<wbr />Ꜭ
+				</li>
+				<li>
+					The 4 <b>consonant modifiers</b>: ◌̊<wbr
+						/>◌̕<wbr />Ꝛ<wbr />Ȝ
+				</li>
+				<li>
+					The 7 <b>vowels</b>: Ɩ<wbr />Ɛ<wbr />Ɑ<wbr
+						/>Ʊ<wbr />Ɔ<wbr />𐒳<wbr />ꞏ
+				</li>
+				<li>
+					The 2 <b>vowel modifiers</b>: ◌̃<wbr />Ʀ
+				</li>
+			</ul>
+			<p>
+				Each Sevensi syllable consists of one consonant,
+					followed by any number of consonant modifiers,
+					followed by one vowel, followed by any number
+					of vowel modifiers.
+				ꞏ is typically omitted, except when combined with
+					˜, as ꞏ̃&#x2014;it is the <i class="SO-CALLED"
+					>default</i> vowel for a syllable, making the
+					Latin orthography share some similarities
+					with an abugida.
+			</p>
+		</section>
+		<section id="survey">
+			<h2>Survey of the Alphabet</h2>
+			<dl>
+				<dt>Ꜧ</dt>
+				<dd>
+					<p>
+						<b>Ꜧ</b> (lowercase: <i>ꜧ</i>) is the
+							first consonant in the Sevensi
+							alphabet.
+						Its English name is <i>heng</i>, and its
+							Sevensi name is <i
+							lang="art-Latn-x-svi">ꜧɛŋ</i>
+							(Anglicized: <i>ʼengh</i>).
+						It represents the glottal stop, <i
+							lang="zxx-fonipa">/ʔ/</i>.
+						In Modern Sevensi, the voiced and
+							devoiced forms of Ꜧ are pronounced
+							identically, but in Classical
+							Sevensi the devoiced form was
+							instead pronounced <i
+							lang="zxx-fonipa">/h/</i>.
+					</p>
+					<p>
+						In the past, I have considered a number
+							of options for this letter,
+							including the glottal stop letter
+							itself (Ɂ).
+						I opted for Ꜧ instead, which has been
+							used for a variety of
+							back&#x2010;of&#x2010;the<!--
+							-->&#x2010;throat sounds in various
+							languages, both because it is a
+							named, non&#x2010;IPA letter, and
+							because it resembles H, the English
+							equivalent for the Classical
+							devoiced form.
+					</p>
+				</dd>
+				<dt>Ɣ</dt>
+				<dd>
+					<p>
+						<b>Ɣ</b> (lowercase: <i>ɣ</i>) is the
+							second consonant in the Sevensi
+							alphabet.
+						Its English name is <i>gamma</i>, and its
+							Sevensi name is <i
+							lang="art-Latn-x-svi">ɣȝɛ</i>
+							(Anglicized: <i>gye</i>).
+						It represents the velar stop, <i
+							lang="zxx-fonipa">/g/</i> (voiced)
+							or <i lang="zxx-fonipa">/k/</i>
+							(devoiced).
+					</p>
+					<p>
+						Traditionally, the letter Ɣ is used to
+							represent the velar <em
+							>fricative</em>, not stop.
+						In Sevensi, this sound is instead
+							represented by Ƣ.
+						Ɣ paralells Ꞵ as a Romanized Greek
+							letter used to represent the voiced
+							and devoiced forms of its Latin
+							equivalent.
+					</p>
+					<p>
+						Sevensi uses a nontraditional shape for
+							this character, with a straight
+							right edge that parallels Ƣ.
+						See the design notes further on in this
+							document for more information.
+					</p>
+				</dd>
+				<dt>Ƣ</dt>
+				<dd>
+					<p>
+						<b>Ƣ</b> (lowercase: <i>ƣ</i>) is the
+							third consonant in the Sevensi
+							alphabet.
+						Its English name is <i>gha</i>, and its
+							Sevensi name is <i
+							lang="art-Latn-x-svi">ƣɑ</i>
+							(Anglicized: <i>xra</i>).
+						It represents the velar fricative, <i
+							lang="zxx-fonipa">/ɣ/</i> (voiced)
+							or <i lang="zxx-fonipa">/x/</i> (devoiced).
+					</p>
+					<p>
+						The letter Ƣ derives from the Latin
+							letter Q, and was used to represent
+							the same sound in a variety of
+							Turkic languages.
+					</p>
+				</dd>
+				<dt>Ꝣ</dt>
+				<dd>
+					<p>
+						<b>Ꝣ</b> (lowercase: <i>ꝣ</i>) is the
+							fourth consonant in the Sevensi
+							alphabet.
+						Its English name is <i>zet</i>, and its
+							Sevensi name is <i
+							lang="art-Latn-x-svi">ꝣɩ</i>
+							(Anglicized: <i>zhi</i>).
+						It represents the alveolo&#x2010;palatal
+							sibilant fricative, <i
+							lang="zxx-fonipa">/ʑ/</i> (voiced)
+							or <i lang="zxx-fonipa">/ɕ/</i>
+							(devoiced).
+					</p>
+					<p>
+						In the past I have used Ʒ to represent
+							this letter, but this is too easily
+							confusable with Ȝ.
+						Ꝣ is a more visually&#x2010;distinct
+							letter with a similar shape and
+							purpose.
+					</p>
+				</dd>
+				<dt>Ꞵ</dt>
+				<dd>
+					<p>
+						<b>Ꞵ</b> (lowercase: <i>ꞵ</i>) is the
+							fifth consonant in the Sevensi
+							alphabet.
+						Its English name is <i>beta</i>, and its
+							Sevensi name is <i
+							lang="art-Latn-x-svi">ꞵȝɛ</i>
+							(Anglicized: <i>bye</i>).
+						It represents the bilabial stop, <i
+							lang="zxx-fonipa">/b/</i> (voiced)
+							or <i lang="zxx-fonipa">/p/</i>
+							(devoiced).
+					</p>
+					<p>
+						Traditionally, the letter Ꞵ is used to
+							represent the bilabial <em
+							>fricative</em>, not stop.
+						This sound is not present in Sevensi.
+						Ꞵ paralells Ɣ as a Romanized Greek
+							letter used to represent the voiced
+							and devoiced forms of its Latin
+							equivalent.
+						Its left&#x2010;hand descender and
+							overall shape also parallels Ƿ.
+					</p>
+				</dd>
+				<dt>Ƿ</dt>
+				<dd>
+					<p>
+						<b>Ƿ</b> (lowercase: <i>ƿ</i>) is the
+							sixth consonant in the Sevensi
+							alphabet.
+						Its English name is <i>wynn</i>, and its
+							Sevensi name is <i
+							lang="art-Latn-x-svi">ƿɑ</i>
+							(Anglicized: <i>va</i>).
+						It represents the labiodental fricative,
+							<i lang="zxx-fonipa">/v/</i>
+							(voiced) or <i
+							lang="zxx-fonipa">/f/</i>
+							(devoiced).
+					</p>
+					<p>
+						Ƿ is an Old English letter which
+							represented <i lang="zxx-fonipa"
+							>/w/</i>.
+						It is used here by allusion with the
+							related Old Norse letter, Ꝩ, which
+							also was used to represent <i
+							lang="zxx-fonipa">/u/</i>, and
+							<i lang="zxx-fonipa">/v/</i>.
+						It bears no relation to P.
+					</p>
+				</dd>
+				<dt>Ŋ</dt>
+				<dd>
+					<p>
+						<b>Ŋ</b> (lowercase: <i>ŋ</i>) is the
+							seventh consonant in the Sevensi
+							alphabet.
+						Its English name is <i>eng</i>, and its
+							Sevensi name is <i
+							lang="art-Latn-x-svi">ŋɛ̃</i>
+							(Anglicized: <i>nghen</i>).
+						It represents the velar nasal, <i
+							lang="zxx-fonipa">/ŋ/</i>.
+					</p>
+					<p>
+						Ŋ is a widespread and common character
+							for representing this sound.
+					</p>
+				</dd>
+				<dt>Ꜭ</dt>
+				<dd>
+					<p>
+						<b>Ꜭ</b> (lowercase: <i>ꜭ</i>) is the
+							eighth consonant in the Sevensi
+							alphabet.
+						Its English name is <i>cuatrillo</i>,
+							and its Sevensi name is <i
+							lang="art-Latn-x-svi">ꜭȝɛ</i>
+							(Anglicized: <i>jye</i>).
+						It represents the alveolo&#x2010;palatal
+							sibilant affricate, <i
+							lang="zxx-fonipa">/ʥ/</i> (voiced)
+							or <i lang="zxx-fonipa">/ʨ/</i>
+							(devoiced).
+					</p>
+					<p>
+						Ꜭ is a letter invented by a Franciscan
+							friar, Alonso de la Parra, for
+							representing the velar ejective <i
+							lang="zxx-fonipa">/kʼ/</i> in Mayan.
+						A variant with a comma (Ꜯ) was used to
+							represent the alveolar ejective
+							affricate <i
+							lang="zxx-fonipa">/tsʼ/</i>.
+						The Sevensi usage of this letter draws
+							mostly from the meaning of this
+							variant Ꜯ form.
+					</p>
+					<p>
+						The choice of Ꜭ also benefits from its
+							similarity in appearance to J, the
+							closest English approximation for
+							its voiced form; the <a href="
+http://www.unicode.org/L2/L2006/06121-n3082-tresillo.pdf">Unicode
+							proposal for the letter</a>
+							describes its design as follows:
+						<q>Take capital J and small j and attach
+							the flag of a 4 to it.</q>
+					</p>
+				</dd>
+				<dt>◌̊</dt>
+				<dd>
+					<p>
+						<b>◌̊</b> is the first consonant modifier
+							in the Sevensi alphabet.
+						Its English name is <i>ring above</i>,
+							and its Sevensi name is <i
+							lang="art-Latn-x-svi">ꜧ̊ẽ</i>
+							(Anglicized: <i>ʼwen</i>).
+						It represents the labiovelar
+							approximant, <i lang="zxx-fonipa"
+							>/w/</i> (voiced) or <i
+							lang="zxx-fonipa">/ʍ/</i>
+							(devoiced).
+						In the context of Sevensi, it may be
+							called the <i>labialization
+							mark</i>.
+					</p>
+					<p>
+						This character derives from the shape of
+							the Latin letter O, which has long
+							been used to represent rounding in
+							Sevensi.
+					</p>
+				</dd>
+				<dt>◌̕</dt>
+				<dd>
+					<p>
+						<b>◌̕</b> is the second consonant
+							modifier in the Sevensi alphabet.
+						Its English name is <i>comma above
+							right</i>, and its Sevensi name is
+							<i lang="art-Latn-x-svi">ꜭ̕ɛ</i>
+							(Anglicized: <i>che</i>).
+						It indicates that the syllable is
+							devoiced.
+						In the context of Sevensi, it may be
+							called the <i>devoicing mark</i>.
+					</p>
+					<p>
+						An apostrophe or comma above is a common
+							symbol for indicating devoicing or
+							aspiration.
+						In Modern Sevensi, devoicing affects not
+							only the base consonant of the
+							syllable, but also (if present) its
+							labialization.
+					</p>
+				</dd>
+				<dt>Ꝛ</dt>
+				<dd>
+					<p>
+						<b>Ꝛ</b> (lowercase: <i>ꝛ</i>) is the
+							third consonant modifier in the
+							Sevensi alphabet.
+						Its English name is  <i
+							>R&#x2010;rotunda</i>, and its
+							Sevensi name is <i
+							lang="art-Latn-x-svi">ꜧɩꜧꝛ</i>
+							(Anglicized: <i>ʼiʼd</i>).
+						It represents the alveolar tap <i
+							lang="zxx-fonipa">/ɾ/</i> or trill
+							<i lang="zxx-fonipa">/r/</i> (these
+							are not distinguished in Sevensi).
+						In the context of Sevensi, it may be
+							called the <i>trill mark</i>.
+					</p>
+					<p>
+						In traditional Latin typography, Ꝛ is a
+							typographical variant of R after
+							rounded letters.
+						It was chosen to represent the trill
+							mark in Sevensi because of the way
+							it visually appears to connect with
+							the preceding character, bridging
+							the gap between a diacritic and a
+							distinct letter.
+					</p>
+				</dd>
+				<dt>Ȝ</dt>
+				<dd>
+					<p>
+						<b>Ȝ</b> (lowercase: <i>ȝ</i>) is the
+							fourth consonant modifier in the
+							Sevensi alphabet.
+						Its English name is <i>yogh</i>, and its
+							Sevensi name is <i
+							lang="art-Latn-x-svi">ꜧȝɛ</i>
+							(Anglicized: <i>ʼye</i>).
+						It represents the palatal approximant, <i
+							lang="zxx-fonipa">/j/</i>.
+						In the context of Sevensi, it may be
+							called the <i>palatalization
+							mark</i>.
+					</p>
+					<p>
+						Ȝ is an Old/Middle English letter which
+							represented this sound.
+					</p>
+				</dd>
+				<dt>Ɩ</dt>
+				<dd>
+					<p>
+						<b>Ɩ</b> (lowercase: <i>ɩ</i>) is the
+							first vowel in the Sevensi alphabet.
+						Its English name is <i>iota</i>, and its
+							Sevensi name is <i
+							lang="art-Latn-x-svi">ꜧɩ</i>
+							(Anglicized: <i>ʼi</i>).
+						It represents the Sevensi iota, <i
+							lang="zxx-fonipa">/i/</i>.
+					</p>
+					<p>
+						In Classical Sevensi, the iota was used
+							to form diphthongs.
+						By Modern Sevensi, this process
+							developed into palatalization, but
+							the iota persisted as an
+							independent vowel.
+					</p>
+				</dd>
+				<dt>Ɛ</dt>
+				<dd>
+					<p>
+						<b>Ɛ</b> (lowercase: <i>ɛ</i>) is the
+							second vowel in the Sevensi
+							alphabet.
+						Its English name is <i
+							>open&#x2010;E</i>, and its Sevensi
+							name is <i lang="art-Latn-x-svi"
+							>ꜧɛ</i> (Anglicized: <i>ʼe</i>).
+						It represents the Sevensi front unrounded
+							vowel, <i lang="zxx-fonipa">/ɛ/</i>.
+					</p>
+					<p>
+						This letter reflects the IPA letter for
+							its sound.
+					</p>
+				</dd>
+				<dt>Ɑ</dt>
+				<dd>
+					<p>
+						<b>Ɑ</b> (lowercase: <i>ɑ</i>) is the
+							third vowel in the Sevensi alphabet.
+						Its English name is <i>alpha</i>, and its
+							Sevensi name is <i
+							lang="art-Latn-x-svi">ꜧɑ</i>
+							(Anglicized: <i>ʼa</i>).
+						It represents the Sevensi back unrounded
+							vowel, <i lang="zxx-fonipa">/ɑ/</i>.
+					</p>
+					<p>
+						This letter reflects the IPA letter for
+							its sound.
+					</p>
+				</dd>
+				<dt>Ʊ</dt>
+				<dd>
+					<p>
+						<b>Ʊ</b> (lowercase: <i>ʊ</i>) is the
+							fourth vowel in the Sevensi
+							alphabet.
+						Its English name is <i>upsilon</i>, and
+							its Sevensi name is <i
+							lang="art-Latn-x-svi">ꜧʊ</i>
+							(Anglicized: <i>ʼu</i>).
+						It represents the Sevensi high rounded
+							vowel, <i lang="zxx-fonipa">/u/</i>.
+					</p>
+					<p>
+						Diphthongs with Ʊ are presumed to be the
+							original forms of the Classical
+							Sevensi rounded vowels.
+						This letter&#x2010;shape was chosen as a
+							compliment to Ɩ, which was also
+							used to form diphthongs.
+					</p>
+				</dd>
+				<dt>Ɔ</dt>
+				<dd>
+					<p>
+						<b>Ɔ</b> (lowercase: <i>ɔ</i>) is the
+							fifth vowel in the Sevensi alphabet.
+						Its English name is <i>open&#x2010;O</i>,
+							and its Sevensi name is <i
+							lang="art-Latn-x-svi">ꜧɔ</i>
+							(Anglicized: <i>ʼo</i>).
+						It represents the Sevensi low rounded
+							vowel, <i lang="zxx-fonipa">/ɔ/</i>.
+					</p>
+					<p>
+						This letter reflects the IPA letter for
+							its sound.
+						It is the result of a merger between two
+							Classical Sevensi rounded vowels, Ꞷ
+							and Ɵ.
+					</p>
+				</dd>
+				<dt>𐒳</dt>
+				<dd>
+					<p>
+						<b>𐒳</b> (lowercase: <i>𐓛</i>) is the
+							sixth vowel in the Sevensi alphabet.
+						Its English name is <i>lambda</i>, and
+							its Sevensi name is <i
+							lang="art-Latn-x-svi">ꜧ𐓛</i>
+							(Anglicized: <i>ʼl</i>).
+						It represents the Sevensi syllabic L, <i
+							lang="zxx-fonipa">/l/</i>
+							(regular), <i lang="zxx-fonipa"
+							>/ɫ/</i> (labialized), or
+							<i lang="zxx-fonipa">/n/</i>
+							(nasal).
+					</p>
+					<p>
+						In a previous Classical Sevensi
+							orthography, a lambda with stroke
+							(ƛ) was used to represent the
+							syllabic sequence <i
+							lang="art-Latn-x-osv">đ̕𐓛</i>,
+							from which this letter developed.
+						This, in turn, was inspired by American
+							Phoneticist usage.
+					</p>
+					<p>
+						Latin lambda does not exist in Unicode,
+							so the visually&#x2010;similar
+							Osage letter is used instead.
+						Note that the capital form resembles a
+							turned Y and not a Greek Λ.
+					</p>
+				</dd>
+				<dt>ꞏ</dt>
+				<dd>
+					<p>
+						<b>ꞏ</b> is the seventh vowel in the
+							Sevensi alphabet.
+						Its English name is <i>middle dot</i>,
+							and its Sevensi name is <i
+							lang="art-Latn-x-svi">ꜧȝꞏ̃</i>
+							(Anglicized: <i>ʼyn</i>).
+						It represents the Sevensi neutral vowel,
+							<i lang="zxx-fonipa">/ʌ/</i>.
+					</p>
+					<p>
+						Note that the Unicode encoding for this
+							character is U+A78F ꞏ LATIN LETTER
+							SINOLOGICAL DOT and <em>not</em>
+							U+00B7 · MIDDLE DOT (which is a
+							symbol, not a letter).
+						U+02D1 ˑ MODIFIER LETTER HALF TRIANGULAR
+							COLON was considered, but rejected
+							on account of the fact that it is
+							generally the wrong shape and as a
+							vowel, this is not a modifier
+							letter.
+					</p>
+				</dd>
+				<dt>◌̃</dt>
+				<dd>
+					<p>
+						<b>◌̃</b> is the first vowel modifier in
+							the Sevensi alphabet.
+						Its English name is <i>tilde</i>, and its
+							Sevensi name is <i
+							lang="art-Latn-x-svi">ꜧ𐓛̃ꜧ</i>
+							(Anglicized: <i>ʼlnʼ</i>).
+						It indicates that the syllable is
+							nasalized.
+						In the context of Sevensi, it may be
+							called the <i>nasalization mark</i>.
+					</p>
+					<p>
+						◌̃ is a common and widely&#x2010;used
+							mark for indicating nasalization.
+						It resembles a small N.
+					</p>
+				</dd>
+				<dt>Ʀ</dt>
+				<dd>
+					<p>
+						<b>Ʀ</b> (lowercase: <i>ʀ</i>) is the
+							second vowel modifier in the
+							Sevensi alphabet.
+						Its English name is <i>Yr</i>, and its
+							Sevensi name is <i
+							lang="art-Latn-x-svi">ꜧɑʀꜧɔ</i>
+							(Anglicized: <i>ʼarʼo</i>).
+						It represents the alveolar approximant,
+							<i lang="zxx-fonipa">/ɹ/</i>.
+						In the context of Sevensi, it may be
+							called the <i>rhotic mark</i>.
+					</p>
+					<p>
+						Ʀ is the Latin transcription for an Old
+							Norse letter which signified a
+							rhotic consonant at the end of
+							words.
+						It holds a similar significance in
+							Sevensi.
+					</p>
+				</dd>
+			</dl>
+		</section>
+		<section id="archaic">
+			<h2>Archaïc Letters</h2>
+			<p>
+				Classical and Middle Sevensi had a
+					somewhat different set of available
+					sounds.
+				The additional 4 letters Þ<wbr />Ɱ<wbr
+					/>Ɵ<wbr />Ꞷ can be used to express these as
+					follows:
+			</p>
+			<dl>
+				<dt>Þ</dt>
+				<dd>
+					<p>
+						<b>Þ</b> (lowercase: <i>þ</i>) is the
+							ninth consonant in the Sevensi
+							alphabet.
+						Its English name is <i>thorn</i>, and its
+							Sevensi name is <i
+							lang="art-Latn-x-svi">þɔ</i>
+							(Anglicized: <i>dho</i>).
+						It represents the alveolar stop, <i
+							lang="zxx-fonipa">/d/</i> (voiced)
+							or <i lang="zxx-fonipa">/t/</i>
+							(devoiced).
+					</p>
+					<p>
+						Þ is an Old and Middle English letter
+							which represented <i
+							lang="zxx-fonipa">/θ/</i> and <i
+							lang="zxx-fonipa">/ð/</i>.
+						As with Ɣ and Ꞵ, it is a letter which
+							traditionally represents a
+							fricative but which is used in
+							Sevensi to represent a
+							voiced/devoiced pair of stops.
+					</p>
+					<p>
+						In Classical Sevensi texts, Þ is
+							typically collated after Ƣ (before
+							Ꝣ).
+					</p>
+				</dd>
+				<dt>Ɱ</dt>
+				<dd>
+					<p>
+						<b>Ɱ</b> (lowercase: <i>ɱ</i>) is the
+							tenth consonant in the Sevensi
+							alphabet.
+						Its English name is <i>meng</i>, and its
+							Sevensi name is <i
+							lang="art-Latn-x-svi">ɱɑ̃</i>
+							(Anglicized: <i>man</i>).
+						It represents the bilabial nasal, <i
+							lang="zxx-fonipa">/m/</i>.
+					</p>
+					<p>
+						Ɱ is simply a modified version of the
+							traditional Latin letter for this
+							sound, M, to better match the shape
+							and appearance of the other
+							consonants.
+					</p>
+					<p>
+						In Classical Sevensi texts, Ɱ is
+							typically collated after Ŋ (before
+							Ꜭ).
+					</p>
+				</dd>
+				<dt>Ɵ</dt>
+				<dd>
+					<p>
+						<b>Ɵ</b> (lowercase: <i>ɵ</i>) is the
+							eighth vowel in the Sevensi
+							alphabet.
+						Its English name is <i
+							>barred&#x2010;O</i>, and its
+							Sevensi name is <i
+							lang="art-Latn-x-svi">ꜧɵ</i>
+							(Anglicized: <i>ʼø</i>).
+						It represents the Sevensi front rounded
+							vowel, <i lang="zxx-fonipa">/o/</i>.
+					</p>
+					<p>
+						In Classical Sevensi, Ɵ was the rounded
+							pair for the unrounded Ɛ.
+						It's letter shape is a <i
+							class="SO-CALLED">fully closed</i>
+							E, in contrast to the <i
+							class="SO-CALLED">open</i> Ɛ.
+					</p>
+					<p>
+						In Classical Sevensi texts, Ɵ is
+							typically collated after Ɛ (before
+							Ɑ).
+					</p>
+				</dd>
+				<dt>Ꞷ</dt>
+				<dd>
+					<p>
+						<b>Ꞷ</b> (lowercase: <i>ꞷ</i>) is the
+							ninth vowel in the Sevensi alphabet.
+						Its English name is <i>omega</i>, and its
+							Sevensi name is <i
+							lang="art-Latn-x-svi">ꜧꞷ</i>
+							(Anglicized: <i>ʼå</i>).
+						It represents the Sevensi back rounded
+							vowel, <i lang="zxx-fonipa">/ɒ/</i>.
+					</p>
+					<p>
+						In Classical Sevensi, Ꞷ was the rounded
+							pair for the unrounded Ɑ.
+						It was deemed suitable that <i
+							class="SO-CALLED">omega</i> be the
+							Latin letter for the rounded pairing of <i class="SO-CALLED"
+							>alpha</i>.
+					</p>
+					<p>
+						In Classical Sevensi texts, Ꞷ is
+							typically collated after Ɑ (before
+							Ʊ).
+					</p>
+				</dd>
+			</dl>
+		</section>
+		<section id="design" class="yes">
+			<h2>Letter and Script Design</h2>
+			<dl>
+				<dt>Broad design goals.</dt>
+				<dd>
+					<p>
+						Sevensi phonology can differ quite
+							dramatically from that of English
+							or other Latin&#x2010;script
+							languages.
+						Consequently, one of the primary goals
+							for the Sevensi script was <em
+							>visual distinctiveness</em>; none
+							of the letters are a part of the
+							Basic Latin set.
+						The Sevensi script brings a number of
+							old, largely&#x2010;unused Latin
+							characters back into the scenery;
+							nevertheless, it remains a Latin
+							script, and is designed for use
+							with Latin typographic traditions
+							like capitalization and italics.
+					</p>
+					<p>
+						In previous Sevensi scripts, voiced and
+							devoiced sounds were given separate
+							letters, as is typical for Latin
+							scripts.
+						However, this approach was not a good
+							match for Sevensi phonology, which
+							approaches voicing on the level of
+							the syllable, not letter.
+						Furthermore, supporting devoiced letters
+							would require increasing the
+							character count to (at minimum) 25,
+							making the task of creäting ASCII
+							equivalents for each letter more
+							difficult.
+						There is not, for example, a
+							straightforward answer as to what
+							the devoiced pairing for H or X
+							should be.
+					</p>
+					<p>
+						The Sevensi Latin script has been
+							designed such that each consonant
+							has a descender.
+						In contrast, modifiers and vowels should
+							<em>not</em> descend below the
+							baseline.
+						This visually aids in splitting up
+							Sevensi words into their syllable
+							components.
+					</p>
+					<p>
+						The consonant modifiers ◌̊◌̕ꝚȜ bear a
+							visual similarity to the numerals
+							0123; this is a coïncidence, but
+							may be useful in remembering their
+							order.
+					</p>
+				</dd>
+				<dt>Script status and Unicode.</dt>
+				<dd>
+					<p>
+						The script outlined above is described
+							as <i class="SO-CALLED"
+							>Romanized</i> and <i
+							class="SO-CALLED">Latin</i> to
+							distinguish it from the syllabic
+							alphabetical Sevensi script
+							currently in development.
+						Most of its characters can be clearly
+							unified with existing Latin
+							characters already encoded into
+							Unicode.
+						There are two exceptions:
+					</p>
+					<ul>
+						<li>
+							<p>
+								The character 𐒳, whose shape
+									is correct but is not
+									presently encoded as
+									Latin; the codepoints
+									used in this document are
+									U+104B3 𐒳 OSAGE CAPITAL
+									LETTER AH and U+104DB 𐓛
+									OSAGE SMALL LETTER AH.
+								True Latin lambdas, with the
+									same shape as the Osage
+									characters, would be
+									preferred, as the Osage
+									letter represents an
+									entirely different sound.
+								The private&#x2010;use
+									characters U+101061 and
+									U+101062 are recommended
+									for the capital and small
+									forms of these characters
+									in situations where the
+									Osage characters prove
+									undesirable.
+							</p>
+						</li>
+						<li>
+							<p>
+								The character Ɣ, which is a
+									Latin character, but has
+									the incorrect shape:
+								In Sevensi typography, this
+									character should appear
+									as a reversed Ꝩ, with
+									a straight (not looped)
+									descender on the
+									right&#x2010;hand side.
+								This, too, should probably
+									have a separate encoding,
+									the unification with Ɣ
+									beïng a technical stopgap
+									measure.
+								(In particular, the Sevensi
+									Ɣ should <em>not</em> be
+									used for phonetic
+									transcription, where it
+									might be confused with Y.)
+								The private&#x2010;use
+									characters U+101063 and
+									U+101064 are recommended
+									for the capital and
+									small forms of these
+									characters in situations
+									where unification proves
+									undesirable.
+							</p>
+						</li>
+					</ul>
+					<p>
+						Of course, given the fact that the
+							Romanized Sevensi script includes
+							<em>no</em> characters from Basic
+							Latin, and that the extended Latin
+							characters it <em>does</em> use
+							often take on a subtly different
+							meaning, it is an open question as
+							to whether it is a <i
+							class="SO-CALLED">true</i> Latin
+							script at all, and not merely <i
+							class="SO-CALLED"
+							>Latin&#x2010;derived</i>.
+						This is a question for the Unicode
+							Consortium and other classifiers of
+							scripts, and should take into
+							account both the traditions of
+							Latin typesetting as well as the
+							principles of Sevensi character
+							design which are outlined here, and
+							which will doubtlessly continue to
+							evolve over the language's lifetime.
+					</p>
+				</dd>
+				<dt>Casing.</dt>
+				<dd>
+					<p>
+						Only the consonants can appear at the
+							beginning of words; consequently, a
+							minimal font need only support
+							capital forms for the consonants.
+						However, the other letters may appear in
+							capitalized or small&#x2010;capital
+							form in titles or other specialized
+							applications.
+					</p>
+					<p>
+						Combining characters are, as is typical
+							for Latin scripts, not cased, and
+							neither is ꞏ (which is largely just
+							a placeholder character for use
+							with ◌̃).
+						All other characters have capital and
+							small forms.
+					</p>
+					<p>
+						By convention, Sevensi capitalizes the
+							first letter of each sentence and
+							of nouns which utilize the proper
+							article <i lang="art-Latn-x-svi"
+							>ꜭ̕</i>.
+					</p>
+				</dd>
+				<dt>The consonants.</dt>
+				<dd>
+					<p>
+						The Sevensi consonants can roughly be
+							categorized into two categories:
+							consonants with hooks (Ꜧ, Ꝣ, Ŋ, Ꜭ,
+							Ɱ) and consonants with straight
+							descenders (Ɣ, Ƣ, Ꞵ, Ƿ, Þ).
+					</p>
+					<p>
+						The right&#x2010;hand components of Ꜧ,
+							Ŋ, Ꜭ, and Ɱ should all be
+							indentical, and match that of the
+							Basic Latin J; the capital of Ŋ
+							should resemble N and not its
+							lowercase form.
+						The hooks of all of these characters
+							should drop below, and not rest
+							upon, the baseline, even in their
+							capital forms.
+					</p>
+					<p>
+						The hook of Ꝣ should match those on the
+							other hooked characters; this is
+							somewhat smaller and more subtle
+							than is typical for the character.
+						Indeed, Ꝣ might be described as a C, Z,
+							and J stacked on top of one another.
+						The height of capital Ꝣ should not
+							exceed that of the other letters;
+							the height of small Ꝣ should match
+							that of small Ꞵ.
+						Small Ꝣ may be given a less pronounced
+							upper curl to distinguish it from
+							its capital form.
+					</p>
+					<p>
+						The decenders of Ɣ, Ƣ, Ꞵ, Ƿ, and Þ should
+							all drop below the baseline an
+							equal amount and have an identical
+							appearance, in both the capital
+							and small forms; Ƣ, Ƿ, and Þ in
+							particular should always be written
+							with their vertical strokes
+							dropping below the baseline.
+					</p>
+					<p>
+						Ɣ should be rendered with a straight
+							right edge and no loop, resembling
+							a reversed Ꝩ, with the vertex on
+							the baseline.
+						Compare the the lowercase Greek letter,
+							which approximates this shape at a
+							slant, especially in mathematical
+							usage and italic fonts.
+						The left&#x2010;hand branch may be either
+							straight or curl downward.
+					</p>
+					<p>
+						The capital Ꞵ should resemble B with a
+							left&#x2010;hand descender; the
+							lowercase form may be open at the
+							bottom or closed, and should have a
+							rounded top.
+						The height of small Ꞵ should match Ꝣ,
+							both of which may be taller than
+							other lowercase letters.
+					</p>
+					<p>
+						Care should be taken to distinguish Ƿ and
+							Þ; the latter should have an
+							ascender in its small form and its
+							bowl should not exceed one
+							X&#x2010;height regardless of case.
+						Captial Þ should resemble capital Ꞵ minus
+							its upper bowl.
+						Þ may be open at the top (with a more
+							Y&#x2010;like appearance) or closed;
+							Ƿ, on the other hand, must always
+							be closed.
+					</p>
+					<p>
+						The straight middle&#x2010;crossbars of
+							capital Ꜧ, Ꝣ, Ꞵ, and Ꜭ should all
+							have the same height; notably, the
+							flag of capital Ꜭ should <em
+							>not</em> rest on the baseline
+							(unlike with its small form).
+					</p>
+				</dd>
+				<dt>The consonant modifiers.</dt>
+				<dd>
+					<p>
+						◌̊ should be placed above the hump of
+							small Ꜧ, not above the entire
+							character, reflecting its position
+							for Ŋ.
+					</p>
+					<p>
+						◌̕ should always be written <em>next
+							to</em> (and not above or below) ◌̊.
+						The former may influence the position of
+							the latter (by shifting it to the
+							left).
+						For characters lacking ◌̊, ◌̕ may
+							instead take the shape of ◌̓, beïng
+							centred on its base character
+							rather than aligned with the right
+							edge&#x2014;this is a
+							font&#x2010;level decision.
+					</p>
+					<p>
+						The capital Ꝛ should follow the shape of
+							a capital R, minus its left
+							downward stroke; small Ꝛ should
+							resemble a small numeral 2 moreso
+							than its capital form.
+						Its shape should <em>not</em> copy small
+							Ʀ.
+					</p>
+					<p>
+						The hook of Ȝ should match the hooks of
+							the consonant letters (dropping
+							below the baseline even in the
+							capital form); the upper half of
+							the character should match Ꝛ in
+							both captial and small forms.
+						Visually, Ȝ should take the appearance of
+							Ꝛ&#x2010;with&#x2010;hook.
+					</p>
+				</dd>
+				<dt>The vowels.</dt>
+				<dd>
+					<p>
+						Unlike the consonants, vowels do not have
+							descenders.
+						With the exception of 𐒳, the uppercase
+							and lowercase forms have the same
+							shape.
+						This contrasts with the Greek versions
+							of these characters, where the
+							capital form can differ starkly
+							from the small one.
+					</p>
+					<p>
+						𐒳 is a Latin lambda, although its shape
+							more closely resembles a reversed,
+							turned Y than the Greek letter.
+						The small form should be drawn with
+							straight lines, and the ascender
+							should <em>not</em> terminate in a
+							hook.
+					</p>
+					<p>
+						ꞏ should be drawn somewhat larger than
+							the dots in the period (.), colon
+							(:), or interpunct (·), and the top
+							of the dot should align with the
+							X&#x2010;height of the font.
+					</p>
+				</dd>
+				<dt>The vowel modifiers.</dt>
+				<dd>
+					<p>
+						◌̃ should be written at the same height
+							for all vowels of the same case; in
+							the case of small (but <em>not</em>
+							capital) 𐒳, it will cross the
+							ascender.
+					</p>
+					<p>
+						When it is combined with ꞏ, ◌̃ may
+							increase the overal width of the
+							character; ꞏ̃ should have the same
+							width as the small tilde on its own
+							(˜).
+					</p>
+					<p>
+						Capital Ʀ should be rendered as Þ with a
+							tail; this tail <em>may</em> (but
+							need not) cross the baseline so
+							long as it does not have the same
+							shape as either of the consonant
+							descenders (instead extending
+							out at a diagonal and/or curling
+							upward).
+						Small Ʀ should be rendered as a small
+							capital R (with no descender).
+					</p>
+				</dd>
+				<dt>Punctuation.</dt>
+				<dd>
+					<p>
+						Sevensi utilizes standard Latin spacing
+							and punctuation, leaning closer to
+							the English tradition than French.
+						Single curly quotes (‘’) are preferred
+							at the top level for dialogue;
+							double angle quotes («») may be
+							used when directly quoting from
+							a known (usually, printed) source.
+						Parentheses (()) and brackets ([]) have
+							their usual meanings; curly braces
+							({}) may be used to contain a list
+							of items, separated by commas.
+						Bangs (!) and queries (?) are generally
+							superfluous and need not be
+							employed.
+						The pipe (|) may be used as a
+							reverse&#x2010;colon.
+					</p>
+				</dd>
+			</dl>
+		</section>
+		<section>
+			<h2>Other Alphabets</h2>
+			<dl>
+				<dt>The ASCII Alphabet.</dt>
+				<dd>
+					<p>
+						There are ASCII equivalents for all of
+							the Sevensi letters and modifier
+							marks.
+						The ASCII alphabet, in the same order as
+							the above, is: H<wbr />G<wbr
+							/>X<wbr />Z<wbr />B<wbr />V<wbr
+							/>N<wbr />J // W<wbr />'<wbr
+							/>D<wbr />Y // I<wbr />E<wbr
+							/>A<wbr />U<wbr />O<wbr />L<wbr />-
+							// ~<wbr />R.
+						Because the meaning of each Sevensi
+							letter can be quite different from
+							the traditional interpretation of
+							its ASCII form, using the native
+							(non&#x2013;Basic Latin)
+							representation is preferred wherever
+							possible.
+					</p>
+					<p>
+						The ASCII representations of the archaïc
+							characters are T<wbr />M // %<wbr
+							/>@.
+					</p>
+				</dd>
+				<dt>The Anglicized Alphabet.</dt>
+				<dd>
+					<p>
+						In order to make Sevensi words easier to
+							parse for non&#x2010;native
+							speakers, it is suggested that
+							specialized alphabets be used when
+							incorporating Sevensi words into
+							other languages.
+						The Anglicized Alphabet is more suitable
+							than the ASCII representation for
+							writing Sevensi words in English.
+					</p>
+					<p>
+						Consonants (with the exception of Ŋ,
+							which is always voiced in Sevensi)
+							have separate voiced and devoiced
+							equivalents.
+						These are as follows:
+					</p>
+					<table>
+						<thead>
+							<tr>
+								<th scope="col">Sevensi</th>
+								<th scope="col">Voiced</th>
+								<th scope="col">Devoiced</th>
+							</tr>
+						</thead>
+						<tbody>
+							<tr>
+								<th scope="row">Ꜧ</th>
+								<td>ʼ</td><td>ʼh</td>
+							</tr>
+							<tr>
+								<th scope="row">Ɣ</th>
+								<td>G</td><td>K</td>
+							</tr>
+							<tr>
+								<th scope="row">Ƣ</th>
+								<td>Xr</td><td>Kh</td>
+							</tr>
+							<tr>
+								<th scope="row">Ꝣ</th>
+								<td>Zh</td><td>Sh</td>
+							</tr>
+							<tr>
+								<th scope="row">Ꞵ</th>
+								<td>B</td><td>P</td>
+							</tr>
+							<tr>
+								<th scope="row">Ƿ</th>
+								<td>V</td><td>F</td>
+							</tr>
+							<tr>
+								<th scope="row">Ŋ</th>
+								<td colspan="2">Ngh</td>
+							</tr>
+							<tr>
+								<th scope="row">Ꜭ</th>
+								<td>J</td><td>Ch</td>
+							</tr>
+						</tbody>
+					</table>
+					<p>
+						The remaining characters have
+							straightforward equivalents:
+					</p>
+					<table>
+						<thead>
+							<tr>
+								<th scope="col">Sevensi</th>
+								<th scope="col">Anglicized</th>
+							</tr>
+						</thead>
+						<tbody>
+							<tr>
+								<th scope="row">◌̊</th>
+								<td>W</td>
+							</tr>
+							<tr>
+								<th scope="row">Ꝛ</th>
+								<td>D</td>
+							</tr>
+							<tr>
+								<th scope="row">Ȝ</th>
+								<td>Y</td>
+							</tr>
+							<tr>
+								<th scope="row">Ɩ</th>
+								<td>I</td>
+							</tr>
+							<tr>
+								<th scope="row">Ɛ</th>
+								<td>E</td>
+							</tr>
+							<tr>
+								<th scope="row">Ɑ</th>
+								<td>A</td>
+							</tr>
+							<tr>
+								<th scope="row">Ʊ</th>
+								<td>U</td>
+							</tr>
+							<tr>
+								<th scope="row">Ɔ</th>
+								<td>O</td>
+							</tr>
+							<tr>
+								<th scope="row">𐒳</th>
+								<td>L</td>
+							</tr>
+							<tr>
+								<th scope="row">ꞏ</th>
+								<td>(Æ)</td>
+							</tr>
+							<tr>
+								<th scope="row">◌̃</th>
+								<td>N</td>
+							</tr>
+							<tr>
+								<th scope="row">Ʀ</th>
+								<td>R</td>
+							</tr>
+						</tbody>
+					</table>
+					<p>
+						The letter ꞏ is usually not transcribed,
+							but Æ is the accepted letter should
+							the occasion arise.
+					</p>
+					<p>
+						There are also Anglicizations for the
+							archaïc Sevensi consonants:
+					</p>
+					<table>
+						<thead>
+							<tr>
+								<th scope="col">Sevensi</th>
+								<th scope="col">Voiced</th>
+								<th scope="col">Devoiced</th>
+							</tr>
+						</thead>
+						<tbody>
+							<tr>
+								<th scope="row">Þ</th>
+								<td>Dh</td><td>T</td>
+							</tr>
+							<tr>
+								<th scope="row">Ɱ</th>
+								<td colspan="2">M</td>
+							</tr>
+						</tbody>
+					</table>
+					<p>
+						…And vowels (drawing from the
+							Dano&#x2010;Norwegian alphabet):
+					</p>
+					<table>
+						<thead>
+							<tr>
+								<th scope="col">Sevensi</th>
+								<th scope="col">Anglicized</th>
+							</tr>
+						</thead>
+						<tbody>
+							<tr>
+								<th scope="row">Ɵ</th>
+								<td>Ø</td>
+							</tr>
+							<tr>
+								<th scope="row">Ꞷ</th>
+								<td>Å</td>
+							</tr>
+						</tbody>
+					</table>
+				</dd>
+				<dt>The Hex Alphabet.</dt>
+				<dd>
+					<p>
+						Because Sevensi has a rigid syllable
+							structure, the number of characters
+							in the alphabet can be reduced by
+							reüsing consonants as vowel
+							modifiers and vowels as consonant
+							modifiers.
+						The minimum number of characters under
+							such a system is 8 consonants + 7
+							vowels = 15.
+						By adding a space character, we arrive at
+							a lossless transformation of Sevensi
+							words and phrases into just 16 ASCII
+							characters, which can then be
+							easily interpreted as hexidecimal
+							digits by a computer program.
+						As the maximal Sevensi syllable 8
+						 	characters long, this means that any
+							Sevensi syllable can easily be
+							interpreted as a 32-bit integer
+							(padded with spaces) under this
+							system.
+					</p>
+					<p>
+						The letters of the Hex alphabet, as they
+							correspond to the native/ASCII
+							ones, are: H<wbr />G<wbr />R<wbr
+							/>Z<wbr />B<wbr />V<wbr />N<wbr />J
+							// U<wbr />'<wbr />L<wbr />I //
+							I<wbr />E<wbr />A<wbr />U<wbr
+							/>O<wbr />L<wbr />' // N<wbr />R.
+						The sixteen letters, in order, are:
+							&lt;space&gt;<wbr />H<wbr />G<wbr
+							/>R<wbr />Z<wbr />B<wbr />V<wbr
+							/>N<wbr />J<wbr />U<wbr />'<wbr
+							/>L<wbr />I<wbr />E<wbr />A<wbr />O.
+						The duplicates are: R and N, which are
+							consonants if they precede a vowel
+							or consonant modifier, and vowel
+							modifiers if they precede a
+							potential consonant; and U, ', L,
+							and I, which are consonant
+							modifiers if they precede a
+							potential vowel, and vowels
+							otherwise.
+					</p>
+					<p>
+						Vocalic ' cannot be dropped in the Hex
+							alphabet representation, and archaïc
+							characters are not supported.
+					</p>
+				</dd>
+				<dt>Summary.</dt>
+				<dd>
+					<p>
+						The following table summarizes each
+							Sevensi letter and its various
+							representations:
+					</p>
+					<table>
+						<thead>
+							<tr>
+								<th scope="col">Sevensi</th>
+								<th scope="col">ASCII</th>
+								<th colspan="2" scope="col"
+									>Anglicized</th>
+								<th scope="col">Hex</th>
+							</tr>
+						</thead>
+						<tbody>
+							<tr>
+								<th scope="row">Ꜧ</th>
+								<td>H</td>
+								<td>ʼ</td><td>ʼh</td>
+								<td>H</td>
+							</tr>
+							<tr>
+								<th scope="row">Ɣ</th>
+								<td>G</td>
+								<td>G</td><td>K</td>
+								<td>G</td>
+							</tr>
+							<tr>
+								<th scope="row">Ƣ</th>
+								<td>X</td>
+								<td>Xr</td><td>Kh</td>
+								<td>R</td>
+							</tr>
+							<tr>
+								<th scope="row">Ꝣ</th>
+								<td>Z</td>
+								<td>Zh</td><td>Sh</td>
+								<td>Z</td>
+							</tr>
+							<tr>
+								<th scope="row">Ꞵ</th>
+								<td>B</td>
+								<td>B</td><td>P</td>
+								<td>B</td>
+							</tr>
+							<tr>
+								<th scope="row">Ƿ</th>
+								<td>V</td>
+								<td>V</td><td>F</td>
+								<td>V</td>
+							</tr>
+							<tr>
+								<th scope="row">Ŋ</th>
+								<td>N</td>
+								<td colspan="2">Ngh</td>
+								<td>N</td>
+							</tr>
+							<tr>
+								<th scope="row">Ꜭ</th>
+								<td>J</td>
+								<td>J</td><td>Ch</td>
+								<td>J</td>
+							</tr>
+							<tr>
+								<th scope="row">◌̊</th>
+								<td>W</td>
+								<td colspan="2">W</td>
+								<td>U</td>
+							</tr>
+							<tr>
+								<th scope="row">◌̕</th>
+								<td>'</td>
+								<td colspan="2"></td>
+								<td>'</td>
+							</tr>
+							<tr>
+								<th scope="row">Ꝛ</th>
+								<td>D</td>
+								<td colspan="2">D</td>
+								<td>L</td>
+							</tr>
+							<tr>
+								<th scope="row">Ȝ</th>
+								<td>Y</td>
+								<td colspan="2">Y</td>
+								<td>I</td>
+							</tr>
+							<tr>
+								<th scope="row">Ɩ</th>
+								<td>I</td>
+								<td colspan="2">I</td>
+								<td>I</td>
+							</tr>
+							<tr>
+								<th scope="row">Ɛ</th>
+								<td>E</td>
+								<td colspan="2">E</td>
+								<td>E</td>
+							</tr>
+							<tr>
+								<th scope="row">Ɑ</th>
+								<td>A</td>
+								<td colspan="2">A</td>
+								<td>A</td>
+							</tr>
+							<tr>
+								<th scope="row">Ʊ</th>
+								<td>U</td>
+								<td colspan="2">U</td>
+								<td>U</td>
+							</tr>
+							<tr>
+								<th scope="row">Ɔ</th>
+								<td>O</td>
+								<td colspan="2">O</td>
+								<td>O</td>
+							</tr>
+							<tr>
+								<th scope="row">𐒳</th>
+								<td>L</td>
+								<td colspan="2">L</td>
+								<td>L</td>
+							</tr>
+							<tr>
+								<th scope="row">ꞏ</th>
+								<td>-</td>
+								<td colspan="2">(Æ)</td>
+								<td>'</td>
+							</tr>
+							<tr>
+								<th scope="row">◌̃</th>
+								<td>~</td>
+								<td colspan="2">N</td>
+								<td>N</td>
+							</tr>
+							<tr>
+								<th scope="row">Ʀ</th>
+								<td>R</td>
+								<td colspan="2">R</td>
+								<td>R</td>
+							</tr>
+							<tr>
+								<th scope="row">Þ</th>
+								<td>T</td>
+								<td>Dh</td><td>T</td>
+								<td></td>
+							</tr>
+							<tr>
+								<th scope="row">Ɱ</th>
+								<td>M</td>
+								<td colspan="2">M</td>
+								<td></td>
+							</tr>
+							<tr>
+								<th scope="row">Ɵ</th>
+								<td>C</td>
+								<td colspan="2">Ø</td>
+								<td></td>
+							</tr>
+							<tr>
+								<th scope="row">Ꞷ</th>
+								<td>Q</td>
+								<td colspan="2">Å</td>
+								<td></td>
+							</tr>
+						</tbody>
+					</table>
+				</dd>
+			</dl>
+		</section>
+		<section id="keyboards">
+			<h2>Sevensi Keyboards</h2>
+			<p>
+				With the new Sevensi alphabet, naturally new
+					Sevensi keyboards are required.
+				These layouts are given below:
+			</p>
+			<figure class="KEYBOARD">
+				<input id="key1.mod1" name="key1mod" type="radio"
+					checked="" />
+				<label for="key1.mod1">Normal</label>
+				<input id="key1.mod2" name="key1mod" type="radio" />
+				<label for="key1.mod2">Shift</label>
+				<input id="key1.mod3" name="key1mod" type="radio" />
+				<label for="key1.mod3">Option</label>
+				<input id="key1.mod4" name="key1mod" type="radio" />
+				<label for="key1.mod4">Alt</label>
+				<table>
+					<tbody hidden="">
+						<tr><td></td><td></td><td></td><td></td
+						><td></td><td></td><td></td><td></td><td
+						></td><td></td><td></td><td></td><td></td
+						><td></td><td></td><td></td><td></td><td
+						></td><td></td><td></td><td></td><td></td
+						><td></td><td></td><td></td><td></td><td
+						></td><td></td><td></td><td></td><td></td
+						><td></td><td></td><td></td><td></td><td
+						></td><td></td><td></td><td></td><td></td
+						><td></td><td></td><td></td><td></td><td
+						></td><td></td><td></td><td></td><td></td
+						><td></td><td></td><td></td><td></td><td
+						></td><td></td><td></td><td></td><td></td
+						></tr>
+					</tbody>
+					<tbody>
+						<tr>
+							<td colspan="4">0</td>
+							<td colspan="4">1</td>
+							<td colspan="4">2</td>
+							<td colspan="4">3</td>
+							<td colspan="4">4</td>
+							<td colspan="4">5</td>
+							<td colspan="4">6</td>
+							<td colspan="4">7</td>
+							<td colspan="4">8</td>
+							<td colspan="4">9</td>
+							<td colspan="4">ƒ</td>
+							<td colspan="4">−</td>
+							<td colspan="4">+</td>
+							<td colspan="6">⌫</td>
+						</tr>
+						<tr>
+							<td colspan="6">⇥</td>
+							<td colspan="4">ŋ</td>
+							<td colspan="4">ƣ</td>
+							<td colspan="4">ꜭ</td>
+							<td colspan="4">ƿ</td>
+							<td colspan="4">ꝛ</td>
+							<td colspan="4">ʀ</td>
+							<td colspan="4">ʊ</td>
+							<td colspan="4">ɔ</td>
+							<td colspan="4">𐓛</td>
+							<td colspan="4">=</td>
+							<td colspan="4">&lt;</td>
+							<td colspan="4">&gt;</td>
+							<td colspan="4">±</td>
+						</tr>
+						<tr>
+							<td colspan="7">⇪</td>
+							<td colspan="4">ꜧ</td>
+							<td colspan="4">ɣ</td>
+							<td colspan="4">ꝣ</td>
+							<td colspan="4">ꞵ</td>
+							<td colspan="4">ȝ</td>
+							<td colspan="4">ꞏ</td>
+							<td colspan="4">ɩ</td>
+							<td colspan="4">ɛ</td>
+							<td colspan="4">ɑ</td>
+							<td colspan="4">◌̊</td>
+							<td colspan="4">◌̕</td>
+							<td colspan="7">⏎</td>
+						</tr>
+						<tr>
+							<td colspan="9">⇧</td>
+							<td colspan="4">[</td>
+							<td colspan="4">]</td>
+							<td colspan="4">,</td>
+							<td colspan="4">.</td>
+							<td colspan="4">–</td>
+							<td colspan="4">‘</td>
+							<td colspan="4">’</td>
+							<td colspan="4">(</td>
+							<td colspan="4">)</td>
+							<td colspan="4">◌̃</td>
+							<td colspan="9">⇧</td>
+						</tr>
+						<tr>
+							<td colspan="4">⎈</td>
+							<td colspan="5">⌥</td>
+							<td colspan="8">⌘</td>
+							<td colspan="20"> </td>
+							<td colspan="5">⎋</td>
+							<td colspan="4">←</td>
+							<td colspan="4">→</td>
+							<td colspan="4">↓</td>
+							<td colspan="4">↑</td>
+						</tr>
+					</tbody>
+					<tbody>
+						<tr>
+							<td colspan="4">∅</td>
+							<td colspan="4">!</td>
+							<td colspan="4">?</td>
+							<td colspan="4">#</td>
+							<td colspan="4">%</td>
+							<td colspan="4">©</td>
+							<td colspan="4">™</td>
+							<td colspan="4">¥</td>
+							<td colspan="4">$</td>
+							<td colspan="4">@</td>
+							<td colspan="4">Ƒ</td>
+							<td colspan="4">÷</td>
+							<td colspan="4">×</td>
+							<td colspan="6">⌫</td>
+						</tr>
+						<tr>
+							<td colspan="6">⇤</td>
+							<td colspan="4">Ŋ</td>
+							<td colspan="4">Ƣ</td>
+							<td colspan="4">Ꜭ</td>
+							<td colspan="4">Ƿ</td>
+							<td colspan="4">Ꝛ</td>
+							<td colspan="4">Ʀ</td>
+							<td colspan="4">Ʊ</td>
+							<td colspan="4">Ɔ</td>
+							<td colspan="4">𐒳</td>
+							<td colspan="4">≈</td>
+							<td colspan="4">←</td>
+							<td colspan="4">→</td>
+							<td colspan="4">∋</td>
+						</tr>
+						<tr>
+							<td colspan="7">⇪</td>
+							<td colspan="4">Ꜧ</td>
+							<td colspan="4">Ɣ</td>
+							<td colspan="4">Ꝣ</td>
+							<td colspan="4">Ꞵ</td>
+							<td colspan="4">Ȝ</td>
+							<td colspan="4">|</td>
+							<td colspan="4">Ɩ</td>
+							<td colspan="4">Ɛ</td>
+							<td colspan="4">Ɑ</td>
+							<td colspan="4">◌̌</td>
+							<td colspan="4">ʼ</td>
+							<td colspan="7">⌤</td>
+						</tr>
+						<tr>
+							<td class="ON" colspan="9">⇧</td>
+							<td colspan="4">{</td>
+							<td colspan="4">}</td>
+							<td colspan="4">;</td>
+							<td colspan="4">:</td>
+							<td colspan="4">—</td>
+							<td colspan="4">“</td>
+							<td colspan="4">”</td>
+							<td colspan="4">⟨</td>
+							<td colspan="4">⟩</td>
+							<td colspan="4">`</td>
+							<td class="ON" colspan="9">⇧</td>
+						</tr>
+						<tr>
+							<td colspan="4">⎈</td>
+							<td colspan="5">⎇</td>
+							<td colspan="8">⌘</td>
+							<td colspan="20"> </td>
+							<td colspan="5">⎋</td>
+							<td colspan="4">←</td>
+							<td colspan="4">→</td>
+							<td colspan="4">↓</td>
+							<td colspan="4">↑</td>
+						</tr>
+					</tbody>
+					<tbody>
+						<tr>
+							<td colspan="4">☓</td>
+							<td colspan="4">†</td>
+							<td colspan="4">¶</td>
+							<td colspan="4">⁜</td>
+							<td colspan="4">/</td>
+							<td colspan="4">®</td>
+							<td colspan="4">þ</td>
+							<td colspan="4">ɱ</td>
+							<td colspan="4">ɵ</td>
+							<td colspan="4">ꞷ</td>
+							<td colspan="4">θ</td>
+							<td colspan="4">¬</td>
+							<td colspan="4">&amp;</td>
+							<td colspan="6">⌦</td>
+						</tr>
+						<tr>
+							<td colspan="6">⇥</td>
+							<td colspan="4">n</td>
+							<td colspan="4">x</td>
+							<td colspan="4">j</td>
+							<td colspan="4">v</td>
+							<td colspan="4">d</td>
+							<td colspan="4">r</td>
+							<td colspan="4">u</td>
+							<td colspan="4">o</td>
+							<td colspan="4">l</td>
+							<td colspan="4">≠</td>
+							<td colspan="4">≪</td>
+							<td colspan="4">≫</td>
+							<td colspan="4">^</td>
+						</tr>
+						<tr>
+							<td colspan="7">⇪</td>
+							<td colspan="4">h</td>
+							<td colspan="4">g</td>
+							<td colspan="4">z</td>
+							<td colspan="4">b</td>
+							<td colspan="4">y</td>
+							<td colspan="4">-</td>
+							<td colspan="4">i</td>
+							<td colspan="4">e</td>
+							<td colspan="4">a</td>
+							<td colspan="4">w</td>
+							<td colspan="4">'</td>
+							<td colspan="7">⏎</td>
+						</tr>
+						<tr>
+							<td colspan="9">⇧</td>
+							<td colspan="4">⟦</td>
+							<td colspan="4">⟧</td>
+							<td colspan="4">*</td>
+							<td colspan="4">…</td>
+							<td colspan="4">⁓</td>
+							<td colspan="4">«</td>
+							<td colspan="4">»</td>
+							<td colspan="4">⸨</td>
+							<td colspan="4">⸩</td>
+							<td colspan="4">~</td>
+							<td colspan="9">⇧</td>
+						</tr>
+						<tr>
+							<td colspan="4">⎈</td>
+							<td class="ON" colspan="5">⌥</td>
+							<td colspan="8">⌘</td>
+							<td colspan="20">_</td>
+							<td colspan="5">⎋</td>
+							<td colspan="4">←</td>
+							<td colspan="4">→</td>
+							<td colspan="4">↓</td>
+							<td colspan="4">↑</td>
+						</tr>
+					</tbody>
+					<tbody>
+						<tr>
+							<td colspan="4">◊</td>
+							<td colspan="4">‡</td>
+							<td colspan="4">§</td>
+							<td colspan="4">※</td>
+							<td colspan="4">\</td>
+							<td colspan="4">🄯</td>
+							<td colspan="4">Þ</td>
+							<td colspan="4">Ɱ</td>
+							<td colspan="4">Ɵ</td>
+							<td colspan="4">Ꞷ</td>
+							<td colspan="4">Θ</td>
+							<td colspan="4">√</td>
+							<td colspan="4">∘</td>
+							<td colspan="6">⌦</td>
+						</tr>
+						<tr>
+							<td colspan="6">⇤</td>
+							<td colspan="4">N</td>
+							<td colspan="4">X</td>
+							<td colspan="4">J</td>
+							<td colspan="4">V</td>
+							<td colspan="4">D</td>
+							<td colspan="4">R</td>
+							<td colspan="4">U</td>
+							<td colspan="4">O</td>
+							<td colspan="4">L</td>
+							<td colspan="4">≉</td>
+							<td colspan="4">⇐</td>
+							<td colspan="4">⇒</td>
+							<td colspan="4">∌</td>
+						</tr>
+						<tr>
+							<td colspan="7">⇪</td>
+							<td colspan="4">H</td>
+							<td colspan="4">G</td>
+							<td colspan="4">Z</td>
+							<td colspan="4">B</td>
+							<td colspan="4">Y</td>
+							<td colspan="4">‐</td>
+							<td colspan="4">I</td>
+							<td colspan="4">E</td>
+							<td colspan="4">A</td>
+							<td colspan="4">W</td>
+							<td colspan="4">"</td>
+							<td colspan="7">⌤</td>
+						</tr>
+						<tr>
+							<td class="ON" colspan="9">⇧</td>
+							<td colspan="4">⦃</td>
+							<td colspan="4">⦄</td>
+							<td colspan="4">⁂</td>
+							<td colspan="4">∞</td>
+							<td colspan="4">⸺</td>
+							<td colspan="4">‹</td>
+							<td colspan="4">›</td>
+							<td colspan="4">⟪</td>
+							<td colspan="4">⟫</td>
+							<td colspan="4">∼</td>
+							<td class="ON" colspan="9">⇧</td>
+						</tr>
+						<tr>
+							<td colspan="4">⎈</td>
+							<td class="ON" colspan="5">⎇</td>
+							<td colspan="8">⌘</td>
+							<td colspan="20">_</td>
+							<td colspan="5">⎋</td>
+							<td colspan="4">←</td>
+							<td colspan="4">→</td>
+							<td colspan="4">↓</td>
+							<td colspan="4">↑</td>
+						</tr>
+					</tbody>
+				</table>
+				<figcaption>
+					Sevensi Roman keyboard layout
+				</figcaption>
+			</figure>
+			<figure class="KEYBOARD">
+				<input id="key2.mod1" name="key2mod" type="radio"
+					checked="" />
+				<label for="key2.mod1">Normal</label>
+				<input id="key2.mod2" name="key2mod" type="radio" />
+				<label for="key2.mod2">Shift</label>
+				<input id="key2.mod3" name="key2mod" type="radio" />
+				<label for="key2.mod3">Option</label>
+				<input id="key2.mod4" name="key2mod" type="radio" />
+				<label for="key2.mod4">Alt</label>
+				<table>
+					<tbody hidden="">
+						<tr><td></td><td></td><td></td><td></td
+						><td></td><td></td><td></td><td></td><td
+						></td><td></td><td></td><td></td><td></td
+						><td></td><td></td><td></td><td></td><td
+						></td><td></td><td></td><td></td><td></td
+						><td></td><td></td><td></td><td></td><td
+						></td><td></td><td></td><td></td><td></td
+						><td></td><td></td><td></td><td></td><td
+						></td><td></td><td></td><td></td><td></td
+						><td></td><td></td><td></td><td></td><td
+						></td><td></td><td></td><td></td><td></td
+						><td></td><td></td><td></td><td></td><td
+						></td><td></td><td></td><td></td><td></td
+						></tr>
+					</tbody>
+					<tbody>
+						<tr>
+							<td colspan="4">`</td>
+							<td colspan="4">1</td>
+							<td colspan="4">2</td>
+							<td colspan="4">3</td>
+							<td colspan="4">4</td>
+							<td colspan="4">5</td>
+							<td colspan="4">6</td>
+							<td colspan="4">7</td>
+							<td colspan="4">8</td>
+							<td colspan="4">9</td>
+							<td colspan="4">0</td>
+							<td colspan="4">-</td>
+							<td colspan="4">=</td>
+							<td colspan="6">⌫</td>
+						</tr>
+						<tr>
+							<td colspan="6">⇥</td>
+							<td colspan="4">q</td>
+							<td colspan="4">w</td>
+							<td colspan="4">e</td>
+							<td colspan="4">r</td>
+							<td colspan="4">t</td>
+							<td colspan="4">y</td>
+							<td colspan="4">u</td>
+							<td colspan="4">i</td>
+							<td colspan="4">o</td>
+							<td colspan="4">p</td>
+							<td colspan="4">[</td>
+							<td colspan="4">]</td>
+							<td colspan="4">\</td>
+						</tr>
+						<tr>
+							<td colspan="7">⇪</td>
+							<td colspan="4">a</td>
+							<td colspan="4">s</td>
+							<td colspan="4">d</td>
+							<td colspan="4">f</td>
+							<td colspan="4">g</td>
+							<td colspan="4">h</td>
+							<td colspan="4">j</td>
+							<td colspan="4">k</td>
+							<td colspan="4">l</td>
+							<td colspan="4">;</td>
+							<td colspan="4">'</td>
+							<td colspan="7">⏎</td>
+						</tr>
+						<tr>
+							<td colspan="9">⇧</td>
+							<td colspan="4">z</td>
+							<td colspan="4">x</td>
+							<td colspan="4">c</td>
+							<td colspan="4">v</td>
+							<td colspan="4">b</td>
+							<td colspan="4">n</td>
+							<td colspan="4">m</td>
+							<td colspan="4">,</td>
+							<td colspan="4">.</td>
+							<td colspan="4">/</td>
+							<td colspan="9">⇧</td>
+						</tr>
+						<tr>
+							<td colspan="4">⎈</td>
+							<td colspan="5">⌥</td>
+							<td colspan="8">⌘</td>
+							<td colspan="20"> </td>
+							<td colspan="5">⎋</td>
+							<td colspan="4">←</td>
+							<td colspan="4">→</td>
+							<td colspan="4">↓</td>
+							<td colspan="4">↑</td>
+						</tr>
+					</tbody>
+					<tbody>
+						<tr>
+							<td colspan="4">~</td>
+							<td colspan="4">!</td>
+							<td colspan="4">@</td>
+							<td colspan="4">#</td>
+							<td colspan="4">$</td>
+							<td colspan="4">%</td>
+							<td colspan="4">^</td>
+							<td colspan="4">&amp;</td>
+							<td colspan="4">*</td>
+							<td colspan="4">(</td>
+							<td colspan="4">)</td>
+							<td colspan="4">_</td>
+							<td colspan="4">+</td>
+							<td colspan="6">⌫</td>
+						</tr>
+						<tr>
+							<td colspan="6">⇤</td>
+							<td colspan="4">Q</td>
+							<td colspan="4">W</td>
+							<td colspan="4">E</td>
+							<td colspan="4">R</td>
+							<td colspan="4">T</td>
+							<td colspan="4">Y</td>
+							<td colspan="4">U</td>
+							<td colspan="4">I</td>
+							<td colspan="4">O</td>
+							<td colspan="4">P</td>
+							<td colspan="4">{</td>
+							<td colspan="4">}</td>
+							<td colspan="4">|</td>
+						</tr>
+						<tr>
+							<td colspan="7">⇪</td>
+							<td colspan="4">A</td>
+							<td colspan="4">S</td>
+							<td colspan="4">D</td>
+							<td colspan="4">F</td>
+							<td colspan="4">G</td>
+							<td colspan="4">H</td>
+							<td colspan="4">J</td>
+							<td colspan="4">K</td>
+							<td colspan="4">L</td>
+							<td colspan="4">:</td>
+							<td colspan="4">"</td>
+							<td colspan="7">⌤</td>
+						</tr>
+						<tr>
+							<td class="ON" colspan="9">⇧</td>
+							<td colspan="4">Z</td>
+							<td colspan="4">X</td>
+							<td colspan="4">C</td>
+							<td colspan="4">V</td>
+							<td colspan="4">B</td>
+							<td colspan="4">N</td>
+							<td colspan="4">M</td>
+							<td colspan="4">&lt;</td>
+							<td colspan="4">&gt;</td>
+							<td colspan="4">?</td>
+							<td class="ON" colspan="9">⇧</td>
+						</tr>
+						<tr>
+							<td colspan="4">⎈</td>
+							<td colspan="5">⎇</td>
+							<td colspan="8">⌘</td>
+							<td colspan="20"> </td>
+							<td colspan="5">⎋</td>
+							<td colspan="4">←</td>
+							<td colspan="4">→</td>
+							<td colspan="4">↓</td>
+							<td colspan="4">↑</td>
+						</tr>
+					</tbody>
+					<tbody>
+						<tr>
+							<td colspan="4"><u>`</u></td>
+							<td colspan="4">¬</td>
+							<td colspan="4">ꞷ</td>
+							<td colspan="4">←</td>
+							<td colspan="4">→</td>
+							<td colspan="4">ɵ</td>
+							<td colspan="4"><u>ˇ</u></td>
+							<td colspan="4"><u>¨</u></td>
+							<td colspan="4"><u>´</u></td>
+							<td colspan="4"><u>˜</u></td>
+							<td colspan="4"><u>˚</u></td>
+							<td colspan="4">–</td>
+							<td colspan="4">≈</td>
+							<td colspan="6">⌦</td>
+						</tr>
+						<tr>
+							<td colspan="6">⇥</td>
+							<td colspan="4">«</td>
+							<td colspan="4">»</td>
+							<td colspan="4">ɛ</td>
+							<td colspan="4">ʀ</td>
+							<td colspan="4">þ</td>
+							<td colspan="4">ȝ</td>
+							<td colspan="4">ʊ</td>
+							<td colspan="4">ɩ</td>
+							<td colspan="4">ɔ</td>
+							<td colspan="4">θ</td>
+							<td colspan="4">‘</td>
+							<td colspan="4">’</td>
+							<td colspan="4">ꞏ</td>
+						</tr>
+						<tr>
+							<td colspan="7">⇪</td>
+							<td colspan="4">ɑ</td>
+							<td colspan="4">æ</td>
+							<td colspan="4">ꝛ</td>
+							<td colspan="4">ƒ</td>
+							<td colspan="4">ɣ</td>
+							<td colspan="4">ꜧ</td>
+							<td colspan="4">ꜭ</td>
+							<td colspan="4">œ</td>
+							<td colspan="4">𐓛</td>
+							<td colspan="4">‐</td>
+							<td colspan="4"><u>ʼ</u></td>
+							<td colspan="7">⏎</td>
+						</tr>
+						<tr>
+							<td colspan="9">⇧</td>
+							<td colspan="4">ꝣ</td>
+							<td colspan="4">ƣ</td>
+							<td colspan="4">ø</td>
+							<td colspan="4">ƿ</td>
+							<td colspan="4">ꞵ</td>
+							<td colspan="4">ŋ</td>
+							<td colspan="4">ɱ</td>
+							<td colspan="4">⟨</td>
+							<td colspan="4">⟩</td>
+							<td colspan="4">−</td>
+							<td colspan="9">⇧</td>
+						</tr>
+						<tr>
+							<td colspan="4">⎈</td>
+							<td class="ON" colspan="5">⌥</td>
+							<td colspan="8">⌘</td>
+							<td colspan="20"> </td>
+							<td colspan="5">⎋</td>
+							<td colspan="4">←</td>
+							<td colspan="4">→</td>
+							<td colspan="4">↓</td>
+							<td colspan="4">↑</td>
+						</tr>
+					</tbody>
+					<tbody>
+						<tr>
+							<td colspan="4">∼</td>
+							<td colspan="4">√</td>
+							<td colspan="4">Ꞷ</td>
+							<td colspan="4">⇐</td>
+							<td colspan="4">⇒</td>
+							<td colspan="4">Ɵ</td>
+							<td colspan="4">ˇ</td>
+							<td colspan="4">¨</td>
+							<td colspan="4">´</td>
+							<td colspan="4">˜</td>
+							<td colspan="4">˚</td>
+							<td colspan="4">—</td>
+							<td colspan="4">±</td>
+							<td colspan="6">⌦</td>
+						</tr>
+						<tr>
+							<td colspan="6">⇥</td>
+							<td colspan="4">‹</td>
+							<td colspan="4">›</td>
+							<td colspan="4">Ɛ</td>
+							<td colspan="4">Ʀ</td>
+							<td colspan="4">Þ</td>
+							<td colspan="4">Ȝ</td>
+							<td colspan="4">Ʊ</td>
+							<td colspan="4">Ɩ</td>
+							<td colspan="4">Ɔ</td>
+							<td colspan="4">Θ</td>
+							<td colspan="4">“</td>
+							<td colspan="4">”</td>
+							<td colspan="4">∋</td>
+						</tr>
+						<tr>
+							<td colspan="7">⇪</td>
+							<td colspan="4">Ɑ</td>
+							<td colspan="4">Æ</td>
+							<td colspan="4">Ꝛ</td>
+							<td colspan="4">Ƒ</td>
+							<td colspan="4">Ɣ</td>
+							<td colspan="4">Ꜧ</td>
+							<td colspan="4">Ꜭ</td>
+							<td colspan="4">Œ</td>
+							<td colspan="4">𐒳</td>
+							<td colspan="4">…</td>
+							<td colspan="4">ʼ</td>
+							<td colspan="7">⏎</td>
+						</tr>
+						<tr>
+							<td class="ON" colspan="9">⇧</td>
+							<td colspan="4">Ꝣ</td>
+							<td colspan="4">Ƣ</td>
+							<td colspan="4">Ø</td>
+							<td colspan="4">Ƿ</td>
+							<td colspan="4">Ꞵ</td>
+							<td colspan="4">Ŋ</td>
+							<td colspan="4">Ɱ</td>
+							<td colspan="4">≪</td>
+							<td colspan="4">≫</td>
+							<td colspan="4">∅</td>
+							<td class="ON" colspan="9">⇧</td>
+						</tr>
+						<tr>
+							<td colspan="4">⎈</td>
+							<td class="ON" colspan="5">⎇</td>
+							<td colspan="8">⌘</td>
+							<td colspan="20"> </td>
+							<td colspan="5">⎋</td>
+							<td colspan="4">←</td>
+							<td colspan="4">→</td>
+							<td colspan="4">↓</td>
+							<td colspan="4">↑</td>
+						</tr>
+					</tbody>
+				</table>
+				<figcaption>
+					Bilingual Sevensi Roman keyboard layout
+				</figcaption>
+			</figure>
+			<p>
+				An Apple keyboard bundle (created with <a
+					href="https://scripts.sil.org/ukelele"
+					>Ukelele</a>) <a href="
+https://github.com/marrus-sh/sevensi-roman-keyboards">is available</a>
+					for users of macOS devices, which makes the
+					above layouts available in System Preferences
+					once unzipped and installed into <code>~/<wbr
+					/>Library/<wbr />Keyboard Layouts/</code>.
+				It may be used as a basis for similar input methods
+					on other platforms.
+			</p>
+		</section>
+	</article>
+</body>
+</html>

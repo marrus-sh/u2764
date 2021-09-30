@@ -1,0 +1,800 @@
+<!DOCTYPE html>
+<html
+	xmlns="http://www.w3.org/1999/xhtml"
+	lang="en"
+	xml:lang="en"
+>
+<head>
+	<title>
+		October 2018: Fringe Mastodev &#x2013; Part III: Joining
+			GlitchSoc | KIBI Gô
+	</title>
+	<meta charset="UTF-8" />
+	<base target="_top" />
+	<style>
+		/* Asides */
+		aside[role=note]{ Margin:1EM 0 1EM -3EM ; Border:Thin Sienna
+			Dashed ; Padding:1EM 1EM 1EM 4EM ; Color:Maroon ;
+			Background:FloralWhite }
+
+		/* Basic Styling */
+		iframe{ Width:100% ; Height:24.6EM }
+		p{ Margin:0 ; Text-Align:Justify }
+		p+p{ Text-Indent:2EM }
+		p+p>*{ Text-Indent:0 }
+		/* > Markèd Importance */
+		strong.MARK{ Border:Thin Khaki Solid ; Color:MidnightBlue ;
+			Background:LemonChiffon ; Font-Weight:Inherit }
+		/* > Parentheticals */
+		span.PARENTHETICAL{ Color:DarkRed ; Background:AliceBlue }
+		/* > "So-Called" Text */
+		i.SO-CALLED{ Font-Style:Inherit }
+		i.SO-CALLED::before{ Content:Open-Quote }
+		i.SO-CALLED::after{ Content:Close-Quote }
+
+		/* Case Options */
+		span.OPTION{ Color:Grey ; Text-Shadow:1PX 0 White }
+		span.OPTION>span.CASE:nth-child(n+1){ Color:Crimson }
+		span.OPTION>span.CASE:nth-child(n+2){ Color:Blue }
+		span.OPTION>span.CASE:nth-child(n+3){ Color:Green }
+		span.OPTION>span.CASE:nth-child(n+4){ Color:Sienna }
+		span.OPTION>span.CASE:nth-child(n+5){ Color:MediumVioletRed }
+		span.OPTION>span.CASE:nth-child(n+6){ Color:Teal }
+		span.OPTION>span.CASE:nth-child(n+7){ Color:SaddleBrown }
+
+		/* Figures */
+		figcaption{ Margin:0 -1EM -.5EM ; Border-Style:None Dotted
+			Dotted ; Border-Width:0 Thin Thin ; Padding:0 4EM .5EM }
+		figcaption>p:First-Of-Type{ Margin-Top:.5EM }
+		figcaption>p::before,figcaption>*.PARAGRAPH::before{
+			Left:-3EM }
+		figure{ Margin:1EM -2EM ; Text-Align:Center }
+		figure>img{ Display:Block ; Margin:Auto ; Max-Width:100% }
+
+		/* Headers/Footers */
+		footer{ Margin:1.23EM 0 0 ; Border-Style:Solid None None ;
+			Border-Width:Thin 0 0 ; Text-Align:Right }
+		footer,header{ Padding:.369EM 0 ; Font-Size:Small }
+		footer>p,header>p{ Margin:.369EM 0 ; Text-Align:Inherit }
+		header{ Margin:0 0 1.23EM ; Border-Style:None None Solid ;
+			Border-Width:0 0 Thin ; Text-Align:Left }
+
+		/* Headings */
+		h1{ Margin:0 ; Font-Size:X-Large ; Font-Weight:Bold }
+		h2{ Margin:0 0 .5EM ; Font-Size:Large ; Font-Weight:Bold }
+		h2::before{ Display:Block ; Margin:2EM 0 ; Font-Size:Medium ;
+			Font-Weight:Normal ; Opacity:.65 ; Text-Align:Center ;
+			Content:"☙ ⁂ ❧" }
+		span.SUBTITLE{ Font-Size: Large ; Font-Weight: Normal }
+		span.SUBTITLE::before{ Content: "☞ " }
+
+		/* Link Previews */
+		a[href].PREVIEW{ Display:Block ; Margin:1EM 0 ;
+			Border-Style:Solid Dashed Dashed Solid ;
+			Border-Width:Thin ; Border-Radius:.2EM ; Padding:1EM
+			; Color:Inherit ; Box-Shadow:2PX 2PX currentColor ;
+			Text-Decoration:None }
+		a[href].PREVIEW>*:First-Child{ Margin-Top:0 }
+		a[href].PREVIEW>*:Last-Child{ Margin-Bottom:0 }
+		a[href].PREVIEW>cite{ Display:Block ; Margin:.4EM 0 ;
+			Font-Size:1.25EM ; Font-Style:Inherit ; Font-Weight:Bold
+			; Text-Decoration:Underline }
+		a[href].PREVIEW>p{ Margin:.5EM 0 ; Font-Style:Italic }
+		a[href].PREVIEW time{ Font-Weight:Bold }
+
+		/* Ordered/Unordered Lists */
+		ol,ul{ Margin:1EM 0 ; Padding:0 0 0 2EM }
+		ol>li,ul>li{ Margin:1EM 0 }
+		/* > List-Paragraphs */
+		ol.PARAGRAPH,ul.PARAGRAPH{ Margin:.5EM 0 0 -1PX ;
+			Border-Left:1PX Dotted }
+		ol.PARAGRAPH>li,ul.PARAGRAPH>li{ Margin:.5EM 0 }
+
+		/* Page Layout */
+		body{ Margin:Auto ; Padding:3EM ; Max-Width:43EM }
+		body>article>footer{ Margin-Bottom:1.85EM ; Padding-Bottom:0 }
+		body>article>header{ Margin-Top:1.85EM ; Padding-Top:0 }
+		body>article>header>time{ Display:Block ; Margin:.369EM 0 ;
+			Text-Align:Right }
+		body>article>section+p{ Margin:2EM -3EM 0 ; Border-Top:Thin
+			Dashed ; Padding:2EM 3EM 0 }
+		html{ Font-Family:Serif }
+
+		/* Paragraph Markers */
+		body>article{ Counter-Reset:FIGURE PARAGRAPH SECTION }
+		p,*.PARAGRAPH{ Position:Relative }
+		p::before,*.PARAGRAPH::before{ Display:Block ;
+			Position:Absolute ; Top:0 ; Left:-2REM ; Width:2REM ;
+			Text-Align:Left ; Text-Indent:0 ; Opacity:.65 ;
+			Counter-Increment:PARAGRAPH ; Content:"¶"
+			counter(PARAGRAPH, Decimal-Leading-Zero) }
+		/* > Figure Paragraph Markers */
+		aside[role=note] p:First-Of-Type,blockquote
+			p:First-Of-Type,figure p:First-Of-Type{
+			Counter-Reset:PARAGRAPH ; Counter-Increment:FIGURE }
+		aside[role=note] p::before,aside[role=note]
+		*.PARAGRAPH::before,blockquote p::before,blockquote
+		*.PARAGRAPH::before,figure p::before,figure
+		*.PARAGRAPH::before{ Content:"¶" counter(FIGURE,Upper-Alpha)
+			counter(PARAGRAPH) }
+		/* > Paragraph Marker Styling */
+		aside[role=note] p::before,aside[role=note]
+			*.PARAGRAPH::before{ Left:-3EM ; Color:Sienna ;
+			Opacity:1 }
+		blockquote p::before,blockquote *.PARAGRAPH::before{
+			Left:-4EM ; Color:SlateBlue ; Opacity:1 }
+		body>article>section+p::before{ Top:2EM ; Left:1EM }
+		ol p::before,ol *.PARAGRAPH::before,ul p::before,ul
+			*.PARAGRAPH::before{ Left:-4EM }
+		/* > No Paragraph Markers */
+		a[href].PREVIEW>p::before{ Content:None }
+		footer>p::before,header>p::before{ Content:None }
+
+		/* Preformatted Text */
+		pre{ Margin:1EM Auto ; Border:.5CH DeepPink Solid ;
+			Padding:1EM 2CH ; Color:LavenderBlush ;
+			Background:DarkSlateBlue ; Max-Width:Calc(100% - 3CH) ;
+			Font-Family:Monospace ; Text-Align:Left ;
+			Overflow:Scroll }
+		pre *:link,pre *:visited { Color:HotPink }
+		pre code{ Color:Khaki }
+		pre em,pre strong{ Color:White }
+		pre small{ Font:Inherit ; Color:Thistle }
+
+		/* Section Markers */
+		body>article>section{ Position:Relative }
+		body>article>section::before{ Display:Block ;
+			Position:Absolute ; Box-Sizing:Border-Box ; Top:0 ;
+			Left:100% ; Margin:-1PX 0 ; Border:1PX Solid ;
+			Width:3REM ; Color:DimGrey ; Background:WhiteSmoke ;
+			Text-Align:Center ; Text-Indent:0 ;
+			Counter-Increment:SECTION ; Content:"§" counter(SECTION)
+			}
+	</style>
+</head>
+<body>
+	<article>
+		<header>
+			<p>A History:</p>
+			<h1>
+				Fringe Mastodev<br /><span class="SUBTITLE">Part
+					III: <strong>Joining GlitchSoc</strong></span>
+			</h1>
+			<time datetime="2018-10">October 2018</time>
+		</header>
+		<p>
+			This post is the third in a series of posts chronicling
+				my personal history of involvement with the fringe
+				development scene on Mastodon, detailing the
+				origins of the movement, and touching on a number
+				of larger cultural developments and trends taking
+				place in the Mastodon communit<span class="OPTION"
+				>{<span class="CASE">y</span>|<span class="CASE"
+				>ies</span>}</span> more broadly.
+			<strong class="MARK"><dfn>Fringe development</dfn> is my
+				term for the development work (research; design;
+				coding) taking place on forks and individual
+				instances of Mastodon, <em>without</em> the
+				intention of sending that work upstream, and
+				without mainstream acknowledgment or
+				recognition.</strong>
+			Increasingly, as Mastodon as a project grows, I believe
+				that it is this development work that happens <i
+				class="SO-CALLED">on the fringes</i> that will
+				shape the future of the software.
+		</p>
+		<p>
+			If you haven't already read the previous parts of this
+				story, you can do so here:
+		</p>
+		<a class="PREVIEW" href="
+https://www.u2764.com/NFIC/2018-09-09/fringe-beginnings/">
+			<p>A History:</p>
+			<cite>
+				Fringe Mastodev &#x2013; Part I: The Beginnings
+			</cite>
+			<time datetime="2018-09">September 2018</time>
+		</a>
+		<a class="PREVIEW" href="
+https://www.u2764.com/NFIC/2018-09-16/fringe-allie/">
+			<p>A History:</p>
+			<cite>
+				Fringe Mastodev &#x2013; Part II: Enter Allie Hart
+			</cite>
+			<time datetime="2018-09">September 2018</time>
+		</a>
+		<aside role="note">
+			<p>
+				<strong>Disclaimer:</strong>
+				In the chronicle that follows, I've included dates
+					for those events where I have them, and linked
+					to commits, toots, and other resources where
+					feasible and proper.
+				However, much of these events happened
+					off&#x2010;the&#x2010;record, and my memory is
+					far from perfect.
+				For those of you who know me well, you might be
+					able to attach names and places to some of the
+					events that I have left ambiguous, but I ask
+					that you respect the privacy of those involved
+					and not bring them into the narrative without
+					their permission.
+			</p>
+		</aside>
+		<section id="glitchsoc">
+			<h2>GlitchSoc</h2>
+			<p>
+				When I published the first chapter of <cite
+					>Vague</cite>, I really was hoping to be
+					<strong class="MARK">done with Mastodon
+					development</strong> for a while.
+				It <strong class="MARK">hadn't gotten me
+					anywhere,</strong> <strong class="MARK">hadn't
+					made much of a difference</strong> to the
+					software, and <strong class="MARK">didn't seem
+					to be sustainable.</strong>
+				I wanted to <strong class="MARK">refocus my time on
+					my passions</strong>&#x2014;writing,
+					especially, and on making things, and bringing
+					light into the world.
+				<cite>Vague</cite> was experimental, but the hope
+					was that it would <strong class="MARK">help me
+					build the chops</strong> (and&#x2014;although
+					it was a longshot&#x2014;the audience) to
+					<strong class="MARK">pursue writing more
+					actively</strong> in the future.
+			</p>
+			<p>
+				<strong class="MARK">All of that got pushed
+					aside</strong> a few weeks later, however,
+					when <strong class="MARK"><a
+					href="https://glitch.social/@bea">@bea</a>
+					made me an offer I couldn't refuse.</strong>
+			</p>
+			<p>
+				<strong class="MARK">The context:</strong>
+				After publishing <cite>Mourning Mastodon</cite>, I
+					<strong class="MARK">made good on my
+					efforts</strong> to stay out of
+					MastoDev&#x2014;at least, the Mastodon
+					development that was happening <strong
+					class="MARK"><em>at that time</em></strong>.
+				What I <em>would</em> do, however, was <strong
+					class="MARK">post little <i class="SO-CALLED"
+					>historical note</i> threads to my Mastodon
+					account,</strong> divulging the <strong
+					class="MARK">history of various
+					features</strong> and <strong class="MARK">how
+					they had sprung into being</strong
+					>&#x2014;something which <strong class="MARK"
+					>doesn't get talked about enough,</strong>
+					imo, and something which I <strong
+					class="MARK">still do from time to
+					time.</strong>
+				These threads <strong class="MARK">attracted <a
+					href="https://glitch.social/@bea">@bea</a>'s
+					attention</strong>&#x2014;although at the time
+					I mostly identified her (perhaps rightfully)
+					as <strong class="MARK">part of the
+					glitch/<wbr />tech/<wbr />hacker
+					crowd,</strong> which I <strong class="MARK"
+					>wasn't (amn't) really a part of</strong> and
+					<strong class="MARK">didn't (don't) really
+					understand.</strong>
+				Apparently (<a href="
+https://github.com/glitch-soc/mastodon/commit/ea785d0bafd75f6b7ce3d4139642c2bad688784b#diff-04c6e90faac2675aa89e2176d2eec7d8
+">looking at GitHub</a>), there were already <strong class="MARK">the
+					beginnings of an attempt</strong> at <strong
+					class="MARK">implementing some glitch
+					hacks</strong> onto Mastodon in these early
+					days, and these were completely <strong
+					class="MARK">not on my radar,</strong>
+					probably for this reason.
+			</p>
+			<p>
+				In any case, during the course of my postings I had
+					<strong class="MARK">noticed there was a
+					discrepancy</strong> between the way in which
+					characters were counted in the Mastodon
+					frontend, and the way in which they were
+					counted in the backend's status validator.
+				(This sort of minute detail is an <em
+					>incredibly</em> <i class="SO-CALLED">me</i>
+					thing to notice and look into, as those of you
+					who know me probably know well.)
+				Because <strong class="MARK">I'm a Unicode sort of
+					gal,</strong> and <strong class="MARK">was
+					curious,</strong> and <strong class="MARK"
+					>familiar with the Mastodon codebase,</strong>
+					I <strong class="MARK">tracked down the exact
+					lines</strong> in Mastodon's source which were
+					causing the problem.
+				<strong class="MARK">I <a href="
+https://icosahedron.website/@u2764/2151749">posted these findings</a
+					></strong> to my Mastodon account, and <a
+					href="https://glitch.social/@bea">@bea</a>
+					<strong class="MARK">offered to let me try
+					patching it live</strong> on her development
+					instance, <a href="https://dev.glitch.social"
+					>dev.glitch.social</a>.
+			</p>
+			<p>
+				In the private discussions with <a
+					href="https://glitch.social/@bea">@bea</a>
+					which followed, I explained that I had
+					<strong class="MARK">actually stopped doing
+					Mastodon development,</strong> given my past
+					history with it and the way it had treated its
+					queer contributors.
+				She responded that <strong class="MARK">she had
+					heard that a lot,</strong> <strong
+					class="MARK">thought it was sad,</strong> and
+					<strong class="MARK">was actually trying to
+					pull together a fork</strong> of the software,
+					as a space for <strong class="MARK">queer
+					devs</strong> who had been <strong
+					class="MARK">pushed out of mainline Mastodon
+					development.</strong>
+				<strong class="MARK">Her focus,</strong> she said,
+					<strong class="MARK">was on trans
+					women,</strong> and <strong class="MARK"
+					>creating a safe place</strong> where <strong
+					class="MARK">their contributions would be
+					heard.</strong>
+			</p>
+			<p>
+				I'll admit&#x2014;<strong class="MARK">I had a
+					moment of hesitation.</strong>
+				After cis white men, techy trans women are one of
+					the <strong class="MARK">largest and most
+					influential demographics</strong> on Mastodon,
+					and already had a <strong class="MARK">long
+					and established history</strong> of
+					contributions both <strong class="MARK">to the
+					Mastodon culture</strong> and <strong
+					class="MARK">to its codebase.</strong>
+				Although I was vocal about <strong class="MARK"
+					>ensuring these contributions received the
+					recognition they deserved,</strong> and
+					<strong class="MARK">concerned about the
+					long&#x2010;term viability of trans Mastodon
+					development</strong> (see <cite>Mourning
+					Mastodon</cite> lol), trans women were <strong
+					class="MARK">far from the top</strong> of my
+					list of <strong class="MARK"><i
+					class="SO-CALLED">underrepresented groups in
+					need of support</i>.</strong>
+				I didn't (don't) think that Mastodon's
+					<strong class="MARK"
+					>less&#x2010;than&#x2010;stellar
+					history</strong> of responding to
+					race&#x2010;related issues would be resolved
+					by <strong class="MARK">anything other than a
+					significant nonwhite presence in the
+					development staff</strong>&#x2014;and <em
+					>that</em>, far more than Mastodon's handling
+					of queer issues, was <strong class="MARK">what
+					had gotten me into Mastodon
+					development.</strong>
+				A trans&#x2010;dedicated fork could well end up
+					<strong class="MARK">in tension with those
+					goals</strong> if&#x2014;as historically had
+					been the case on Mastodon&#x2014;those trans
+					women <strong class="MARK">trended
+					overwhelmingly towards being white.</strong>
+			</p>
+			<p>
+				On the other hand:
+				<strong class="MARK">How many major
+					user&#x2010;facing open&#x2010;source
+					projects</strong> are
+					significantly&#x2010;to&#x2010;entirely
+					<strong class="MARK">owned, operated, and
+					dedicated to trans women?</strong>
+				For a time at least, <strong class="MARK">that was
+					GlitchSoc.</strong>
+				<strong class="MARK">It was a big deal,</strong>
+					and I <strong class="MARK">couldn't exactly
+					say no.</strong>
+			</p>
+			<p>
+				Needless to say, <strong class="MARK"><cite
+					>Vague</cite> got placed on hold.</strong>
+			</p>
+			<p>
+				(<span class="PARENTHETICAL">NB:
+				GlitchSoc is now over a year old, and has undergone
+					a number of internal changes during that time,
+					for a variety of reasons (some of which I will
+					get into later in this series).
+				Although we might be able to point you in the
+					direction of current active staff and
+					developers, neither <a
+					href="https://glitch.social/@bea">@bea</a> nor
+					I are currently involved with development or
+					management of the fork in any significant,
+					day&#x2010;to&#x2010;day way.
+				There are probably better people to approach if you
+					want to know what the status of the fork is
+					right now!
+				&#x2014;KIBI Gô)</span>
+			</p>
+		</section>
+		<section id="features">
+			<h2>First Week of Features</h2>
+			<p>
+				Over the course of the next week, I implemented on
+					the GlitchSoc fork <strong class="MARK">a
+					number of features,</strong> some of which I
+					had <strong class="MARK">previously tried and
+					failed</strong> to get into upstream Mastodon:
+			</p>
+			<ul class="PARAGRAPH">
+				<li>
+					<strong class="MARK"><a href="
+https://github.com/glitch-soc/mastodon/commit/0d3ec19e89b7a3b6e01f2018640c713dd545ae21
+">User&#x2010;defined profile metadata</a></strong> [<strong
+						class="MARK"><time datetime="2017-06-20"
+						>20 June 2017</time></strong>; <a href="
+https://github.com/mastodon/mastodon/issues/232#issuecomment-262705473
+">upstream issue</a> @ <time datetime="2016-11-23">23 November
+						2016</time> (-209 days); <a href="
+https://github.com/mastodon/mastodon/pull/6645">upstream adoption</a>
+						@ <time datetime="2018-04-14">14 April
+						2018</time> (+298 days)]
+				</li>
+				<li>
+					<strong class="MARK"><a href="
+https://github.com/glitch-soc/mastodon/commit/93c52301ade71fb685d937b90451974d03d710af
+">Collapsible statuses</a></strong> [<strong class="MARK"><time
+						datetime="2017-06-21">21 June 2017</time
+						></strong>; <a href="
+https://github.com/mastodon/mastodon/issues/206">upstream issue</a>
+						(a less&#x2010;featureful request and
+						implementation, solely for collapsing
+						long toots) @ <time datetime="2016-11-22"
+						>22 November 2016</time> (-211 days); <a
+						href="
+https://github.com/mastodon/mastodon/pull/658">original upstream PR</a
+						> @ <time datetime="2017-02-28">28
+						February 2017</time> (-113 days); <a
+						href="
+https://github.com/mastodon/mastodon/pull/8205">upstream adoption</a>
+						@ <time datetime="2018-09-27">27
+						September 2018</time> (+463 days)]
+				</li>
+				<li>
+					<strong class="MARK"><a href="
+https://github.com/glitch-soc/mastodon/pull/26">User&#x2010;controlled
+						layout</a></strong> [with help from a
+						friend; <strong class="MARK"><time
+						datetime="2017-06-24">24 June 2017</time
+						></strong>; <a href="
+https://github.com/mastodon/mastodon/issues/5341">upstream issue</a> @
+						<time datetime="2017-10-11">11 October
+						2017</time> (+109 days)]
+				</li>
+				<li>
+					<strong class="MARK"><a href="
+https://github.com/glitch-soc/mastodon/commit/38a1299975e867c637c73b9ee5439cff08d08e96
+">Images inside CWs</a></strong> [<strong class="MARK"><time
+						datetime="2017-06-25">25 June 2017</time
+						></strong>; <a href="
+https://github.com/mastodon/mastodon/issues/1010">upstream issue</a> @
+						<time datetime="2017-04-05">05 April
+						2017</time> (-81 days); <a
+						href="
+https://github.com/mastodon/mastodon/pull/3979">original upstream
+						PR</a> @ <time datetime="2017-06-27">27
+						June 2017</time> (+2 days)]
+				</li>
+				<li>
+					An <strong class="MARK"><a href="
+https://github.com/glitch-soc/mastodon/commit/595c6de32c052f2a5e21307a0e43a6bd5d4b5c88
+">in&#x2010;app settings modal</a></strong> [<strong class="MARK"><time
+						datetime="2017-06-28">28 June 2017</time
+						></strong>]
+				</li>
+			</ul>
+			<p>
+				When I first arrived at
+					<a href="https://dev.glitch.social"
+					>dev.glitch.social</a>, I was able to
+					make these commits <strong class="MARK"
+					>straight to master,</strong> because I was
+					more&#x2010;or&#x2010;less the only one
+					around.
+				<span class="PARENTHETICAL">(NB: Dev on production
+					and break stuff often was the Original Glitch
+					Ethos&#x2014;but then we got all <em
+					>popular</em>.)</span>
+				By the end of that week, a number of users
+					had moved over and were <strong class="MARK"
+					>considering making DevGlitch their
+					main.</strong>
+				I can't take full credit for this&#x2014;the
+					<strong class="MARK">dialogues taking place on
+					the Discord server</strong> and <strong
+					class="MARK"><a
+					href="https://glitch.social/@bea">@bea</a>'s
+					outreach</strong> definitely contributed to
+					our early popularity as well&#x2014;but it
+					isn't exaggerating to say that my early
+					involvement implementing these features was a
+					<strong class="MARK">huge factor in getting
+					the project off the ground.</strong>
+			</p>
+		</section>
+		<section id="go">
+			<h2>Summer of Go</h2>
+			<p>
+				Although my early work with GlitchSoc <strong
+					class="MARK">received a fairly wide amount of
+					acclaim,</strong> it was, in essence, <strong
+					class="MARK">a week's worth of hacks,</strong>
+					and I still <strong class="MARK">had my sights
+					set on other things.</strong>
+				I <strong class="MARK">visited the beach,</strong>
+					and a friend and I <strong class="MARK"
+					>chatted about making a visual novel
+					engine</strong> in Qt+Go, tentatively titled
+					<strong class="MARK"><a
+					href="https://github.com/kirin-vn"><i>Kirin
+					VN</i></a>.</strong>
+				I spent a week or two playing around in Go and
+					learning the language&#x2014;one thing in its
+					favour, Go is <em>incredibly</em> fast to
+					learn.
+			</p>
+			<p>
+				Go's channels seemed <strong class="MARK"
+					>incredibly well&#x2010;suited to
+					feed&#x2010;based applications,</strong> and
+					so I toyed around with creating a Mastodon API
+					library in the language.
+				It was titled <strong class="MARK"><a
+					href="https://github.com/ratatootille"><i
+					>Ratatootille</i></a></strong>, and all the
+					components were given culinary names, like <i
+					>Mirepoix</i> and <i>Roux</i>.
+				I was <strong class="MARK">frustrated with the lack
+					of native apps</strong> for Mastodon on
+					desktop platforms, and saw Ratatootille as a
+					potential first step to getting there.
+				(Ratatootille was never finished&#x2014;my time
+					got taken up with other projects before I had
+					the chance to bring it to a working state.)
+			</p>
+			<p>
+				As I developed these projects over the summer, I
+					<strong class="MARK">remained involved in the
+					Glitch community,</strong> moving my personal
+					account over to <a
+					href="https://glitch.social/@kibi">@kibi<wbr
+					/>@glitch.social</a> and leaving my
+					Icosahedron one open for more political
+					conversations.
+				(For a while&#x2014;after all my involvement with
+					Mastodon politics and community drama,
+					however, <strong class="MARK">I really needed
+					a break,</strong> and so that account
+					gradually fell out of use.)
+				I <strong class="MARK">continued to hold
+					conversations</strong> about the state of
+					Mastodon and the potential for new features on
+					the GlitchSoc Discord, and <strong
+					class="MARK">added polish</strong> to the
+					various things I had already implemented,
+					slowly converting them from quick hacks into
+					more fully&#x2010;developed features.
+				I came up with absurd things like <strong
+					class="MARK"><a href="
+https://github.com/glitch-soc/mastodon/blob/21bafc65555d9ce82bf9e3c7841ba69564cc70fd/app/javascript/glitch/util/bio_metadata.js
+">ƔAML</a></strong> (pronounced <i>Garglamel</i>), the subset of YAML's
+					syntax which GlitchSoc used for its profile
+					bio metadata.
+			</p>
+			<figure>
+				<pre style="Width:71CH"
+><small>/*********************************************************************\</small>
+
+                                       To my lovely code maintainers,
+
+  The syntax recognized by the Mastodon frontend for its bio metadata
+  feature is a subset of that provided by the YAML 1.2 specification.
+  In particular, Mastodon recognizes metadata which is provided as an
+  implicit YAML map, where each key-value pair takes up only a single
+  line (no multi-line values are permitted). To simplify the level of
+  processing required, Mastodon metadata frontmatter has been limited
+  to only allow those characters in the <code>`c-printable`</code> set, as defined
+  by the YAML 1.2 specification, instead of permitting those from the
+  <code>`nb-json`</code> characters inside double-quoted strings like YAML proper.
+    <small>¶</small> It is important to note that Mastodon only borrows the <em>*syntax*</em>
+  of YAML, not its semantics. This is to say, Mastodon won't make any
+  attempt to interpret the data it receives. <code>`true`</code> will not become a
+  boolean; <code>`56`</code> will not be interpreted as a number. Rather, each key
+  and every value will be read as a string, and as a string they will
+  remain. The order of the pairs is unchanged, and any duplicate keys
+  are preserved. However, YAML escape sequences will be replaced with
+  the proper interpretations according to the YAML 1.2 specification.
+    <small>¶</small> The implementation provided below interprets <code>`&lt;br&gt;`</code> as <code>`\n`</code> and
+  allows for an open &lt;p&gt; tag at the beginning of the bio. It replaces
+  the escaped character entities <code>`&amp;apos;`</code> and <code>`&amp;quot;`</code> with single or
+  double quotes, respectively, prior to processing. However, no other
+  escaped characters are replaced, not even those which might have an
+  impact on the syntax otherwise. These minor allowances are provided
+  because the Mastodon backend will insert these things automatically
+  into a bio before sending it through the API, so it is important we
+  account for them. Aside from this, the YAML frontmatter must be the
+  very first thing in the bio, leading with three consecutive hyphen-
+  minues (<code>`---`</code>), and ending with the same or, alternatively, instead
+  with three periods (<code>`...`</code>). No limits have been set with respect to
+  the number of characters permitted in the frontmatter, although one
+  should note that only limited space is provided for them in the UI.
+    <small>¶</small> The regular expression used to check the existence of, and then
+  process, the YAML frontmatter has been split into a number of small
+  components in the code below, in the vain hope that it will be much
+  easier to read and to maintain. I leave it to the future readers of
+  this code to determine the extent of my successes in this endeavor.
+
+  <strong>UPDATE 19 Oct 2017:</strong> We no longer allow character escapes inside our
+  double-quoted strings for ease of processing. We now internally use
+  the name "ƔAML" in our code to clarify that this is Not Quite YAML.
+
+                                       Sending love + warmth eternal,
+                                       <small>-</small> kibigo <a href="https://glitch.social/@kibi">[@kibi@glitch.social]</a>
+
+<small>\*********************************************************************/</small></pre
+					>
+				<figcaption>
+					Code documentation for <code>util/<wbr
+						/>bio_metadata</code> in the GlitchSoc
+						source
+					<p>
+						Something I was very passionate about
+							while working on the GlitchSoc
+							codebase was giving it a personal
+							touch&#x2014;leaving notes like
+							these for future developers and
+							making clear the people and ideas
+							which lead to certain features and
+							implementations.
+						I think a lot of open&#x2010;source
+							projects tend towards erasing the
+							individual in favour of the Product,
+							and I think that's pretty shitty and
+							exploitative and aliënating
+							actually.
+					</p>
+				</figcaption>
+			</figure>
+			<p>
+				Notably, during this time, the <strong class="MARK"
+					>initial steps were taken towards GlitchSoc's
+					multiple frontend support.</strong>
+				Splitting out the frontend and the backend was
+					something I had been passionate about
+					<strong class="MARK">since my work with
+					Ardipithecus</strong>&#x2014;however, thanks
+					to Mastodon switching over to Webpack for
+					for asset management, it was now <strong
+					class="MARK">possible to support on a
+					per&#x2010;user basis.</strong>
+				I <strong class="MARK">rewrote significant parts of
+					Mastodon's Webpack configuration</strong> and
+					created a <a href="
+https://github.com/glitch-soc/mastodon/pull/110">first&#x2010;steps
+					implementation</a> on <time
+					datetime="2017-07-30">30 July 2017</time>,
+					then <a href="
+https://github.com/glitch-soc/mastodon/pull/155">rewrote it to use YAML
+					configuration files</a> on <time
+					datetime="2017-09-25">25 September 2017</time
+					>.
+				During that time, upstream Mastodon <strong
+					class="MARK">implemented <a href="
+https://github.com/mastodon/mastodon/pull/4959">its <em>own</em>
+					theming support</a></strong>; however, unlike
+					GlitchSoc, these themes were <strong
+					class="MARK">limited to switching out
+					stylesheets,</strong> not replacing the whole
+					frontend.
+				I would eventually <a href="
+https://github.com/glitch-soc/mastodon/pull/229">add support for this
+					method of theming to GlitchSoc as well</a>,
+					calling <strong class="MARK"
+					>total&#x2010;frontend&#x2010;replacement
+					themes <i class="SO-CALLED">flavours</i
+					></strong> and <strong class="MARK"
+					>just&#x2010;stylesheet&#x2010;replacement
+					themes <i class="SO-CALLED">skins</i></strong>
+					(<time datetime="2017-11-20">20 November
+					2017</time>).
+			</p>
+		</section>
+		<section id="kibiwriter">
+			<h2>KibiWriter and Web Apps</h2>
+			<p>
+				At the same time as I was working on these big
+					changes on the big GlitchSoc codebase (now
+					deployed across multiple servers!), I was
+					growing <strong class="MARK">increasingly
+					disillusioned with big codebases</strong> and
+					applications in general.
+				I <strong class="MARK">didn't like the way that the
+					Web App was trending</strong>&#x2014;towards
+					<strong class="MARK">big, centralized apps
+					which try to do everything,</strong> as
+					opposed to <strong class="MARK">small,
+					personalized, forkable ones</strong> that do
+					One Task Only, which I think the Web App model
+					is <strong class="MARK">inherently
+					well&#x2010;suited for.</strong>
+				I wanted web apps that <strong class="MARK">looked
+					and functioned like DSi applications,</strong>
+					that <strong class="MARK">came in multiple
+					skins and colours,</strong> that <strong
+					class="MARK">could be saved to disk and run
+					without needing a server,</strong> and which
+					were <strong class="MARK">written in
+					human&#x2010;readable HTML and
+					JavaScript</strong> such that <strong
+					class="MARK">anyone could modify them and make
+					them their own.</strong>
+			</p>
+			<p>
+				To this end, and drawing inspiration from both the
+					DSi and apps like OmmWriter, I created a
+					<strong class="MARK">small plain&#x2010;text
+					writing app,</strong> which I called <strong
+					class="MARK"><a
+					href="http://go.kibi.family/writer/"><i
+					>KibiWriter</i></a></strong>.
+				It was <strong class="MARK">essentially just a
+					glorified <code>&lt;textarea<wbr />&gt;</code
+					>,</strong> and I <strong class="MARK">threw
+					it together in about a day</strong> just to
+					show the sorts of <strong class="MARK"
+					>low&#x2010;effort, compact Web App
+					projects</strong> people could do if they ever
+					bothered.
+				(It was astonishing to me&#x2014;given the
+					simplicity of throwing a <code
+					>&lt;textarea<wbr />&gt;</code> on a page and
+					styling it&#x2014;that small, themed
+					plain&#x2010;text editors <strong class="MARK"
+					>aren't something that hardly anyone on the
+					Internet has made before.</strong>
+				<strong class="MARK">Nobody builds web apps like
+					this</strong>&#x2014;and I don't understand
+					why?
+				I mean&#x2014;it's <strong class="MARK"
+					>personal,</strong> <strong class="MARK"
+					>wholesome,</strong> and <strong class="MARK"
+					>can't be used to turn a profit,</strong> so I
+					guess I <em>understand</em> why… but <strong
+					class="MARK">that's precisely the problem,
+					though.</strong>)
+			</p>
+			<p>
+				<strong class="MARK">Small, hand&#x2010;coded web
+					apps,</strong> <strong class="MARK"
+					>webrings,</strong> and <strong class="MARK"
+					>indie web design and publishing</strong
+					>&#x2014;these things were my focus as summer
+					came to a close in 2017.
+			</p>
+			<p>
+				<em>To be continued.</em>
+			</p>
+		</section>
+		<footer>
+			<p>
+				Questions or comments?
+				@ me: <a href="https://glitch.social/@kibi">@kibi<wbr
+					/>@glitch.social</a>.
+			</p>
+		</footer>
+	</article>
+</body>
+</html>

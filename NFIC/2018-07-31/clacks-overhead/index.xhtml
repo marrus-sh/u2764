@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html
+	xmlns="http://www.w3.org/1999/xhtml"
+	lang="en"
+	xml:lang="en"
+>
+<head>
+	<title>July 2018: Clacks Overhead | KIBI Gô</title>
+	<meta charset="UTF-8" />
+	<base target="_top" />
+	<style>
+		body{ Margin:Auto ; Padding:3EM ; Max-Width:43EM }
+		body>header { Margin-Top:1.85EM ; Padding-Top:0 }
+		code{ Border:Thin Grey Solid ; Border-Radius:.1EM ;
+			Padding:.1EM .2EM ; Color:Black ;
+			Background:RGBA(245,245,245,.8) ; Line-Height:1 }
+		h1{ Margin:0 ; Font-Size:X-Large ; Font-Weight:Bold }
+		header{ Margin:0 0 1.23EM ; Border-Style:None None Solid ;
+			Border-Width:0 0 Thin ; Padding:.369EM 0 ;
+			Font-Size:Small ; Text-Align:Left }
+		header>p{ Margin:.369EM 0 }
+		header>time{ Display:Block ; Margin:.369EM 0 ;
+			Text-Align:Right }
+		html{ Font-Family:Serif }
+		p{ Margin:0 ; Text-Align:Justify }
+		p+p{ Text-Indent:2EM }
+		strong.CW{ Display:Block ; Margin:1EM ; Border:Medium
+			DarkRed Solid ; Padding:1EM ; Color:Black ;
+			Background-Color:MistyRose ; Font-Size:Larger ;
+			Font-Style:Italic ; Font-Weight:Inherit }
+	</style>
+</head>
+<body>
+	<article>
+		<header>
+			<p>Remembering…</p>
+			<h1>Clacks Overhead</h1>
+			<time datetime="2018-07">July 2018</time>
+		</header>
+		<strong class="CW">
+			<strong><abbr title="Content Warning">CW</abbr>:</strong>
+			Mentions of death; suicide.
+		</strong>
+		<p>
+			Something which very recently came back into my mind,
+				and only because a recent update on my home
+				Mastodon instance of <a
+				href="https://glitch.social/">glitch.social</a>
+				interfered with its normal operation for a single
+				page of the site, is the <code>X-<wbr />Clacks-<wbr
+				/>Overhead</code> HTTP header.
+			For those not familiar, <code>X-<wbr />Clacks-<wbr
+				/>Overhead</code> is a (non&#x2010;standard) means
+				of commemorating the departed through a tiny piece
+				of extra information sent alongside internet
+				responses from servers.
+			The name and design of this header comes from Terry
+				Pratchett's Discworld series, and you can read more
+				about it <a href="http://gnuterrypratchett.com/"
+				>here</a>.
+		</p>
+		<p>
+			<code>X-<wbr />Clacks-<wbr />Overhead</code> has special
+				significance to my community on the fediverse, as
+				instance admins have used it to commemorate Natalie
+				Nguyen (aka <a
+				href="https://glitch.social/@tipsytentacle"
+				>@tipsytentacle</a>), one of our own who lost her
+				life to suicide last November.
+			It's a very sad story with a lot of accompanying hurt
+				and trauma that I'm not going to go into here, but
+				suffice to say that the <code>X-<wbr />Clacks-<wbr
+				/>Overhead</code> has been our way of preserving
+				her memory, as we knew her and as she wished to be
+				known.
+		</p>
+		<p>
+			The <code>X-<wbr />Clacks-<wbr />Overhead</code>, as an
+				HTTP header, is designed to be completely
+				unobtrusive, invisible to people who don't know
+				where or how to look for it there.
+			For example, you might not be aware that websites such
+				as <a href="https://mozilla.org/">mozilla.org</a>
+				and <a href="https://archiveofourown.com/"
+				>archiveofourown.com</a> serve <code>X-<wbr
+				/>Clacks-<wbr />Overhead</code> headers with every
+				webpage they serve.
+			They do, and you can see them with browser extensions
+				like <a href="
+https://addons.mozilla.org/en-US/firefox/addon/gnu_terry_pratchett/"
+				title="GNU_Terry_Pratchett | Add-ons for Firefox"
+				>this one</a> for Firefox and <a href="
+https://chrome.google.com/webstore/detail/clacks-overhead-gnu-terry/lnndfmobdoobjfcalkmfojmanbeoegab
+				" title="Clacks Overhead - GNU Terry Pratchett |
+				Chrome Web Store"
+				>this one</a> for Chrome.
+		</p>
+		<p>
+			However, sometimes we might want to commemorate our
+				loved ones in a more visible way.
+			On the fediverse in particular, we might want to
+				make our Clacks overheads visible through the
+				same JSON(-LD) tools used to process our
+				ordinary content.
+			Indeed, we might want to let users (and not just
+				admins) generate overheads of their own.
+		</p>
+		<p>
+			And so, because I couldn't find any reference or
+				existing best&#x2010;practices for doing this
+				online (it is admittedly difficult to
+				web&#x2010;search), I'm writing this document as a
+				casual specification for a single new datatype and
+				a single new property for describing Clacks
+				overheads in RDF&#x2014;and, by extension,
+				protocols like ActivityPub.
+		</p>
+		<p>
+			The base URI for these definitions is <code>tag:<wbr
+				/>gnuterrypratchett.com,2015-<wbr />03-<wbr
+				/>12:</code>.
+			(Note that I do not control this domain.
+			But using a personal domain for something as meaningful
+				as this didn't seem prudent, and <a
+				href="http://gnuterrypratchett.com/"
+				>gnuterrypratchett.com</a> is arguably the
+				canonical website on the subject.)
+			In this document, I will represent this URI using the
+				prefix <code>clacks:</code>.
+		</p>
+		<p>
+			The datatype being introduced is <code>clacks:<wbr
+				/>gnu</code>, which is a restriction on
+				<code>xsd:<wbr />string</code> via the following
+				<code>pattern</code> and with the
+				<code>whiteSpace</code> facet set to
+				<code>collapse</code>:
+		</p>
+		<pre>GNU\s.+</pre>
+		<p>
+			That is, <code>clacks:<wbr />gnu</code> must be a string
+				which begins with the characters "GNU", followed by
+				a space, followed by one or more characters, with
+				sequences of whitespace collapsed to a single space
+				character prior to processing.
+		</p>
+		<p>
+			The property being introduced is <code>clacks:<wbr
+				/>overhead</code>, which must have exclusively (but
+				potentially multiple) <code>clacks:<wbr
+				/>gnu</code> values.
+		</p>
+		<p>
+			A sample JSON-LD object with a <code>clacks:<wbr
+				/>overhead</code> is:
+		</p>
+		<pre>{
+  "@context": {
+    "clacks": "tag:gnuterrypratchett.com,2015-03-12:",
+    "overhead": {
+      "@id": "clacks:overhead",
+      "@type": "clacks:gnu"
+    }
+  },
+  "overhead": "GNU John Dearheart"
+}</pre>
+		<p>
+			Just like with <code>X-<wbr />Clacks-<wbr
+				/>Overhead</code>, <code>clacks:<wbr
+				/>overhead</code> will likely be ignored silently
+				by any unrecognizing servers or clients.
+			However, implementations which recognize this property
+				should preserve it as they federate our objects
+				evermore out into the cybre.
+		</p>
+	</article>
+</body>
+</html>

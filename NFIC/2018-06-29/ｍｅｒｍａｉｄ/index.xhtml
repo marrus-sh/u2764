@@ -1,0 +1,291 @@
+<!DOCTYPE html>
+<html
+	xmlns="http://www.w3.org/1999/xhtml"
+	lang="en"
+	xml:lang="en"
+>
+<head>
+	<title>June 2018: ｍｅｒｍａｉｄ | KIBI Gô</title>
+	<meta charset="UTF-8" />
+	<base target="_top" />
+	<style>
+		html{ Font-Family:Serif }
+		body{ Margin:Auto ; Padding: 3EM ; Max-Width:43EM }
+		body>header { Margin-Top:1.85EM ; Padding-Top:0 }
+		footer{ Margin:1.23EM 0 0 ; Border-Style:Solid None None ;
+			Border-Width:Thin 0 0 ; Padding:.369EM 0 ;
+			Font-Size:Small ; Text-Align:Right }
+		h1{ Margin:0 ; Font-Size:X-Large ; Font-Weight:Bold }
+		header{ Margin:0 0 1.23EM ; Border-Style:None None Solid ;
+			Border-Width:0 0 Thin ; Padding:.369EM 0 ;
+			Font-Size:Small ; Text-Align:Left }
+		header>p{ Margin:.369EM 0 }
+		header>time{ Display:Block ; Margin:.369EM 0 ;
+			Text-Align:Right }
+		i.SO-CALLED{ Font-Style:Inherit }
+		i.SO-CALLED::before{ Content: Open-Quote }
+		i.SO-CALLED::after{ Content: Close-Quote }
+		p{ Margin:0 ; Text-Align:Justify }
+		p+p{ Text-Indent:2EM }
+		u{ Text-Decoration:Wavy Underline }
+		u:Lang(en){ Font-Variant:Small-Caps ; Text-Decoration:None }
+		article.TOOT{ Display:Block; Margin:1EM Auto ; Border:Thin
+			Solid ; Border-Radius:.25EM ; Padding:0 .875EM ;
+			Width:25EM ; Max-Width:100% ; Font-Family:Sans-Serif }
+	</style>
+</head>
+<body>
+	<article>
+		<header>
+			<p>Introducing…</p>
+			<h1>ｍｅｒｍａｉｄ</h1>
+			<time datetime="2018-06">June 2018</time>
+		</header>
+		<article class="TOOT">
+			<header>
+				<a href="https://glitch.social/@kibi"
+					><code>@kibi@glitch.social</code></a>:
+			</header>
+			<p>
+				i'm trying to consolidate my thoughts around
+				building a comprehensive self-publishing and
+				cataloguing workflow into a cohesive programme and
+				i think i'm getting somewhere with it
+			</p>
+			<footer>
+				<a href="
+					https://glitch.social/@kibi/100228339689019684
+					"><time datetime="2018-06-18T23:04:53Z">June
+					18, 2018, 4:04 PM</time></a>
+			</footer>
+		</article>
+		<p>
+			So I've been doing a lot of thinking about my work, and
+				my goals, and where it's all headed lately, and
+				something that seems to be a continuous thread
+				throughout it all is freeing up publishing and
+				cataloguïng tools for indie creätors and really
+				just making the whole process as clean and smooth
+				as possible.
+			Because like, I got into web technology in order to do
+				self&#x2010;publishing; virtually all of the
+				development work I've done has been related to
+				publishing somehow; and still, looking around,
+				nothing really feels any easier than it did when I
+				first got started??
+			Maybe things are even harder now&#x2014;idk.
+		</p>
+		<p>
+			On my birthday at the beginning of the month, I
+				published a preliminary catalogue of all of the
+				projects and creative works I've put time into over
+				the years.
+			You can view that <a href="https://go.kibi.family/bns/"
+				>here</a>.
+			I think that these sorts of catalogues, on a personal
+				level, are cool and important, and something that
+				the Internet enables in a new way.
+			There's no reason to limit ourselves to only the most
+				polished and refined of our works in a world where
+				sharing text is as easy as uploading a file, and
+				being able to trace a text back through past forms
+				and iterations is (I think) really useful both in
+				terms of historically situating a work, and from a
+				pedagogical standpoint of demonstrating the act of
+				revision and contemplation by example.
+		</p>
+		<p>
+			There are some authors who are content to use Git for
+				this sort of thing, which I disagree with, firstly
+				because Git revisions do not map wholly
+				or cleanly onto the system of volumes, versions,
+				and drafts commonly used in literature&#x2014;you
+				can get around this, somewhat, given enough repos
+				and tags, but it's honestly in my experience more
+				trouble than it's worth&#x2014;and secondly,
+				because Git does not actually provide an accessible
+				means of publishing multiple drafts of a work in
+				a manner that is easy to host and browse using
+				basic web technologies&#x2014;at best, the process
+				is something like <cite>Releases</cite> &#x2192;
+				<cite>[Your draft here]</cite> &#x2192;
+				<cite>View source</cite> &#x2192; <cite>[The page
+				or document you are looking for]</cite> via a site
+				like GitHub&#x2014;and then only if the format is
+				something which the site is capable of displaying.
+			And certainly, if Git isn't a suitable technology for
+				browsing multiple drafts of <em>the same work</em>,
+				it's not going to hold up when trying to browse
+				multiple drafts of <em>a complicated and
+				potentially interconnected network of works</em>,
+				the sort of which I would like to see and am
+				interested in publishing for my very self if
+				nothing else.
+		</p>
+		<p>
+			Organizing drafts in a manner easy to browse using a
+				filesystem (and by extension, a web browser) is
+				something I've been grappling with for as long as
+				I've been typing my works up onto electronic
+				devices, as I'm someone who has always kept every
+				draft, and benefitted greatly from being able to
+				browse old copies of works for new inspiration.
+			I came up with the Branching Notational System as a way
+				of hierarchically organizing works into a tree
+				structure that can be represented as a single
+				string suitable in a URL or filesystem.
+			As it currently exists, I basically have a script which
+				trawls my filesystem for files, reads their
+				associated metadata for more information, and
+				constructs a giant YAML file which is then piped
+				through Jekyll for the resultant site.
+			This works, but it's a delicate system, and not one that
+				can easily accommodate the workflows of others.
+		</p>
+		<p>
+			That said, the problem of converting work metadata into
+				a single unique identifier representing a location
+				within a filing structure is the problem of library
+				cataloguïng more generally, and so although my
+				particular system has developed in a personal
+				manner through my own work habits and practices,
+				the systems and technologies that I use when
+				managing it have <em>the potential</em> for
+				significance to a much wider audience.
+			And it is a problem for which technologies have
+				<em>already</em> been developed&#x2014;<a href="
+				https://www.w3.org/DesignIssues/LinkedData.html"
+				>Linked Data</a>, as a field, is concerned with the
+				interrelationship between object metadata, as <abbr
+				title="Resource Description Framework">RDF</abbr>,
+				and unique identifiers, in the form of (hopefully)
+				dereferencable <abbr
+				title="Internationalized Resource Identifiers"
+				>IRIs</abbr>.
+		</p>
+		<p>
+			However, Linked Data and related technologies are not
+				something which is really accessible to anyone who
+				doesn't have a high level of web literacy and who
+				hasn't spent the past several months reading up on
+				relevant W3C standards on the internet.
+			So, what I'm aiming for in all this is the following:
+		</p>
+		<ol>
+			<li>
+				<p>
+					I want there to be comprehensive tools for
+						working with Linked Data from a
+						client&#x2010;side, programming
+						standpoint.
+					Many programming languages already have
+						libraries for something like this, but
+						they tend to be outdated, unmaintained,
+						or cumbersome.
+					My emphasis here, at least initially, is on
+						JavaScript, since clients written in HTML
+						and JavaScript are the most accessible
+						for laypersons to run, regardless of
+						platform or environment.
+				</p>
+			</li>
+			<li>
+				<p>
+					Next, I want there to be meaningful
+						high&#x2010;level tools for people to
+						write documents, associate them with
+						metadata, and catalogue them in an
+						easily&#x2010;browsable fashion,
+						<em>without</em> necessarily having the
+						programming chops to deal directly with
+						the above.
+					This is, in fact, the same design goal as
+						<em>ActivityPub</em> clients, since
+						ActivityPub objects are, in essence, just
+						metadata&#x2010;rich documents catalogued
+						in a typically&#x2010;chronological
+						manner.
+					Of course, I'm looking for a cataloguïng
+						system more complex than pure chronology,
+						and a more expansive system of metadata
+						than just the Activity Vocabulary.
+					But my hope here is that some of the work that
+						I do will be transferrable over to
+						the ActivityPub client realm, once
+						ActivityPub clients are actually a thing,
+						in the <i class="SO-CALLED">supports 
+						<abbr title="Client to Server">C2S</abbr>
+						services in the way outlined by the
+						spec</i> sense.
+				</p>
+			</li>
+			<li>
+				<p>
+					Finally, as an ultimate end&#x2010;goal, I
+						want there to exist
+						easy&#x2010;to&#x2010;use tools for
+						<em>publishing</em> said documents, on
+						the internet, in such a way so as to be
+						accessible for other Linked Data clients
+						(including but not limited to the above)
+						to discover.
+					This is roughly the same goal as ActivityPub
+						<em>servers</em>, and if I end up writing
+						an ActivityPub software of my own to
+						supplant Medium as the première in
+						accessible document publishing, I
+						certainly won't be shedding any tears.
+				</p>
+				<p>
+					There's a lot more to having an accessible
+						publishing programme than simply building
+						a server software, and this is all a bit
+						above my paygrade, but these are bridges
+						to be crossed once reached and not a
+						second before.
+				</p>
+			</li>
+		</ol>
+		<p>
+			To tackle the first of these wants, I'm currently in the
+				process of developing a software called&#x2014;and
+				yes the fullwidth is important, this is
+				<u>kibigo!</u> speaking after
+				all&#x2014;<i>ｍｅｒｍａｉｄ</i>.
+			It's starting out as an implementation of <a
+				href="https://www.w3.org/TR/rdf-interfaces/"
+				><cite>RDF Interfaces</cite></a>&#x2014;in spirit,
+				at least, since I'll be updating things to be a
+				little more compatible with RDF 1.1.
+			From there, I'm adding in support for <a
+				href="https://www.w3.org/TR/xmlschema11-2/"
+				><cite>XSD Datatypes</cite></a>, different parsing
+				and serialization formats, and honestly who knows
+				where I'll end up.
+		</p>
+		<p>
+			The whole thing is being written in <a
+				href="https://coffeescript.org/#literate">Literate
+				CoffeeScript 2.3</a>, and I'm targeting ECMAScript
+				5.1 with my transpilation so that it will hopefully
+				run pretty much anywhere.
+		</p>
+		<p>
+			ｍｅｒｍａｉｄ is a personal project, and I'm not really
+				looking for outside code or contributors, because
+				if there's one thing I <em>don't</em> need after
+				the past year of work with Mastodon development,
+				it's the stress of trying to manage an Open Source
+				Project™ on top of actually coding my dang shit.
+			That said, it will be licensed GPL,
+				literate&#x2010;as&#x2010;in&#x2010;educational,
+				and I'll have the whole source up somewhere as soon
+				as I have it somewhere worthwhile to put up.
+		</p>
+		<p>
+			More info soon hopefully!
+			But that's all for now⁓.
+		</p>
+	</article>
+</body>
+</html>

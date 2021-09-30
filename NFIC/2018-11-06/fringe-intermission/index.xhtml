@@ -1,0 +1,1806 @@
+<!DOCTYPE html>
+<html
+	xmlns="http://www.w3.org/1999/xhtml"
+	lang="en"
+	xml:lang="en"
+>
+<head>
+	<title>
+		November 2018: Fringe Mastodev &#x2013; Part IV: Intermission
+			| KIBI Gô
+	</title>
+	<meta charset="UTF-8" />
+	<base target="_top" />
+	<style>
+		/* Asides */
+		aside[role=note]{ Margin:1EM 0 1EM -3EM ; Border:Thin
+			DarkSalmon Dashed ; Padding:1EM 1EM 1EM 4EM ;
+			Color:MistyRose ; Background:DarkRed }
+
+		/* Basic Styling */
+		p{ Margin:0 ; Text-Align:Justify }
+		p+p{ Text-Indent:2EM }
+		p+p>*{ Text-Indent:0 }
+		/* > Links */
+		*:Link{ Color:LightSkyBlue }
+		*:Visited{ Color:Lavender }
+		*:Link:Active,*:Visited:Active{ Color:MistyRose }
+		/* > Markèd Importance */
+		strong.MARK{ Border:Thin OrangeRed Solid ; Color:Azure ;
+			Background:Firebrick ; Font-Weight:Inherit ;
+		 	Text-Shadow:1PX 1PX DarkRed }
+		strong.MARK *:Link,strong.MARK *:Visited{ Color:Inherit }
+		/* > Parentheticals */
+		span.PARENTHETICAL{ Color:MistyRose ; Background:MidnightBlue
+			}
+		/* > Selections */
+		*::selection{ Color:Black ; Background:White ;
+			Text-Shadow:None }
+		strong.MARK::selection,strong.MARK *::selection{ Color:Red }
+		/* > "So-Called" Text */
+		i.SO-CALLED{ Font-Style:Inherit }
+		i.SO-CALLED::before{ Content:Open-Quote }
+		i.SO-CALLED::after{ Content:Close-Quote }
+
+		/* Case Options */
+		span.OPTION{ Color:Gainsboro ; Text-Shadow:1PX 0 Black }
+		span.OPTION>span.CASE:nth-child(n+1){ Color:MistyRose }
+		span.OPTION>span.CASE:nth-child(n+2){ Color:LightSteelBlue }
+		span.OPTION>span.CASE:nth-child(n+3){ Color:PaleGreen }
+		span.OPTION>span.CASE:nth-child(n+4){ Color:Wheat }
+		span.OPTION>span.CASE:nth-child(n+5){ Color:LightPink }
+		span.OPTION>span.CASE:nth-child(n+6){ Color:PaleTurquoise }
+		span.OPTION>span.CASE:nth-child(n+7){ Color:Cornsilk }
+
+		/* Headers/Footers */
+		footer{ Margin:1.23EM 0 0 ; Border-Style:Solid None None ;
+			Border-Width:Thin 0 0 ; Text-Align:Right }
+		footer,header{ Padding:.369EM 0 ; Font-Size:Small }
+		footer>p,header>p{ Margin:.369EM 0 ; Text-Align:Inherit }
+		header{ Margin:0 0 1.23EM ; Border-Style:None None Solid ;
+			Border-Width:0 0 Thin ; Text-Align:Left }
+
+		/* Headings */
+		h1{ Margin:0 ; Font-Size:X-Large ; Font-Weight:Bold }
+		h2{ Margin:0 0 .5EM ; Font-Size:Large ; Font-Weight:Bold }
+		h2::before{ Display:Block ; Margin:2EM 0 ; Font-Size:Medium ;
+			Font-Weight:Normal ; Opacity:.65 ; Text-Align:Center ;
+			Content:"☙ ⁂ ❧" }
+		span.SUBTITLE{ Font-Size:Large ; Font-Weight:Normal }
+		span.SUBTITLE::before{ Content:"☞ " }
+		span.SUBTITLE>strong{ Margin:-2PX ; Border:2PX White Solid ;
+			Color:Black ; Background:White ; Box-Shadow:-2PX 2PX
+			Firebrick }
+
+		/* Link Previews */
+		a[href].PREVIEW{ Display:Block ; Margin:1EM 0 ;
+			Border-Style:Double Dashed Dashed Double ;
+			Border-Width:Medium Thin Thin Medium ;
+			Border-Radius:.2EM ; Padding:1EM ; Color:Inherit ;
+			Box-Shadow:-2PX -2PX CurrentColor Inset ;
+			Text-Decoration:None }
+		a[href].PREVIEW>*:First-Child{ Margin-Top:0 }
+		a[href].PREVIEW>*:Last-Child{ Margin-Bottom:0 }
+		a[href].PREVIEW>cite{ Display:Block ; Margin:.4EM 0 ;
+			Font-Size:1.25EM ; Font-Style:Inherit ; Font-Weight:Bold
+			; Text-Decoration:Underline }
+		a[href].PREVIEW>p{ Margin:.5EM 0 ; Font-Style:Italic }
+		a[href].PREVIEW time{ Font-Weight:Bold }
+
+		/* Ordered/Unordered Lists */
+		ol,ul{ Margin:1EM 0 ; Padding:0 0 0 2EM }
+		ol>li,ul>li{ Margin:1EM 0 }
+		/* > List-Paragraphs */
+		ol.PARAGRAPH,ul.PARAGRAPH{ Margin:.5EM 0 0 -1PX ;
+			Border-Left:1PX Dotted }
+		ol.PARAGRAPH>li,ul.PARAGRAPH>li{ Margin:.5EM 0 }
+
+		/* Page Layout */
+		body{ Margin:Auto ; Padding:3EM ; Max-Width:43EM }
+		body>article>footer{ Margin-Bottom:1.85EM ; Padding-Bottom:0 }
+		body>article>header{ Margin-Top:1.85EM ; Padding-Top:0 }
+		body>article>header>time{ Display:Block ; Margin:.369EM 0 ;
+			Text-Align:Right }
+		body>article>section+p{ Margin:2EM -3EM 0 ; Border-Top:Thin
+			Dashed ; Padding:2EM 3EM 0 }
+		html{ Border-Style:None Double ; Border-Color:Transparent
+			DarkRed ; Border-Width:0 9PX ; Padding:0 9PX ;
+			Color:White ; Background:Linear-Gradient(To Left,Black
+			24.5EM,DarkRed)Left/50%Repeat-Y,Linear-Gradient(To
+			Right,Black 24.5EM,DarkRed)Right/50%Repeat-Y,Black ;
+			Background-Color:Black ; Font-Family:Serif }
+
+		/* Paragraph Markers */
+		body>article{ Counter-Reset:FIGURE PARAGRAPH SECTION }
+		p,*.PARAGRAPH{ Position:Relative }
+		p::before,*.PARAGRAPH::before{ Display:Block ;
+			Position:Absolute ; Top:0 ; Left:-2REM ; Width:2REM ;
+			Text-Align:Left ; Text-Indent:0 ; Opacity:.65 ;
+			Counter-Increment:PARAGRAPH ;
+			Content:"¶"counter(PARAGRAPH,Decimal-Leading-Zero) }
+		/* > Figure Paragraph Markers */
+		aside[role=note] p:First-Of-Type{ Counter-Reset:PARAGRAPH ;
+			Counter-Increment:FIGURE }
+		aside[role=note] p::before,aside[role=note]
+			*.PARAGRAPH::before{
+			Content:"¶"counter(FIGURE,Upper-Alpha)counter(PARAGRAPH)
+			}
+		/* > Paragraph Marker Styling */
+		aside[role=note] p::before,aside[role=note]
+			*.PARAGRAPH::before{ Left:-3EM ; Color:LightCoral ;
+			Opacity:1 }
+		ol p::before,ol *.PARAGRAPH::before,ul p::before,ul
+			*.PARAGRAPH::before{ Left:-4EM }
+		/* > No Paragraph Markers */
+		a[href].PREVIEW>p::before{ Content:None }
+		footer>p::before,header>p::before{ Content:None }
+
+		/* Section Markers */
+		body>article>section{ Position:Relative }
+		body>article>section::before{ Display:Block ;
+			Position:Absolute ; Box-Sizing:Border-Box ; Top:0 ;
+			Left:100% ; Margin:-1PX 0 ; Border:1PX Solid ;
+			Width:3REM ; Color:LightGrey ; Background:Black ;
+			Text-Align:Center ; Text-Indent:0 ;
+			Counter-Increment:SECTION ; Content:"§"counter(SECTION)
+			}
+	</style>
+</head>
+<body>
+	<article>
+		<header>
+			<p>A History:</p>
+			<h1>
+				Fringe Mastodev<br /><span class="SUBTITLE">Part
+					IV: <strong>Intermission</strong></span>
+			</h1>
+			<time datetime="2018-11">November 2018</time>
+		</header>
+		<p>
+			This post is the fourth in a series of posts chronicling
+				my personal history of involvement with the fringe
+				development scene on Mastodon, detailing the
+				origins of the movement, and touching on a number
+				of larger cultural developments and trends taking
+				place in the Mastodon communit<span class="OPTION"
+				>{<span class="CASE">y</span>|<span class="CASE"
+				>ies</span>}</span> more broadly.
+			<strong class="MARK"><dfn>Fringe development</dfn> is my
+				term for the development work (research; design;
+				coding) taking place on forks and individual
+				instances of Mastodon, <em>without</em> the
+				intention of sending that work upstream, and
+				without mainstream acknowledgment or
+				recognition.</strong>
+			Increasingly, as Mastodon as a project grows, I believe
+				that it is this development work that happens <i
+				class="SO-CALLED">on the fringes</i> that will
+				shape the future of the software.
+		</p>
+		<p>
+			If you haven't already read the previous parts of this
+				story, you can do so here:
+		</p>
+		<a class="PREVIEW" href="
+https://www.u2764.com/NFIC/2018-09-09/fringe-beginnings/">
+			<p>A History:</p>
+			<cite>
+				Fringe Mastodev &#x2013; Part I: The Beginnings
+			</cite>
+			<time datetime="2018-09">September 2018</time>
+		</a>
+		<a class="PREVIEW" href="
+https://www.u2764.com/NFIC/2018-09-16/fringe-allie/">
+			<p>A History:</p>
+			<cite>
+				Fringe Mastodev &#x2013; Part II: Enter Allie Hart
+			</cite>
+			<time datetime="2018-09">September 2018</time>
+		</a>
+		<a class="PREVIEW" href="
+https://www.u2764.com/NFIC/2018-10-01/fringe-glitch/">
+			<p>A History:</p>
+			<cite>
+				Fringe Mastodev &#x2013; Part III: Joining
+					GlitchSoc
+			</cite>
+			<time datetime="2018-10">October 2018</time>
+		</a>
+		<aside role="note">
+			<p>
+				<strong>Disclaimer:</strong>
+				In the chronicle that follows, I've included dates
+					for those events where I have them, and linked
+					to commits, toots, and other resources where
+					feasible and proper.
+				However, much of these events happened
+					off&#x2010;the&#x2010;record, and my memory is
+					far from perfect.
+				For those of you who know me well, you might be
+					able to attach names and places to some of the
+					events that I have left ambiguous, but I ask
+					that you respect the privacy of those involved
+					and not bring them into the narrative without
+					their permission.
+			</p>
+		</aside>
+		<section id="intermission">
+			<h2>An Intermission</h2>
+			<p>
+				When I first started planning out this Mastodon
+					history series, I had planned for it to be
+					<strong class="MARK">a <em>lot</em>
+					shorter.</strong>
+				The entire <a href="
+https://www.u2764.com/NFIC/2018-09-09/fringe-beginnings/">first post</a
+					>&#x2014;where I go into the <strong
+					class="MARK">racist drama</strong> that struck
+					Mastodon in <time datetime="2017-02">February
+					2017</time>&#x2014;was <strong class="MARK"
+					>off the menu;</strong> the plan was to start
+					in <time datetime="2017-04">April</time>,
+					where <cite>Mourning Mastodon</cite> had left
+					off, and with my joining of the GlitchSoc
+					fork.
+				As I got <strong class="MARK">further and
+					further</strong> into the writing process,
+					however, I realized that there was <strong
+					class="MARK">no way that this would
+					work:</strong>
+				The events which had taken place that February had
+					<strong class="MARK">so deeply underpinned
+					everything which came after</strong> that
+					<strong class="MARK">I couldn't <em>not</em>
+					bring them up</strong>&#x2014;and, well:
+				They had <strong class="MARK">never been recorded
+					before.</strong>
+			</p>
+			<p>
+				Still, <strong class="MARK">I found myself
+					hesitating,</strong> and as I pieced my
+					thoughts together, I realized that I was
+					<strong class="MARK">hesitating because I was
+					afraid.</strong>
+				I was afraid because <strong class="MARK">this was
+					something nobody talked about</strong
+					>&#x2014;this was something I had
+					<strong class="MARK">nobody <em>to</em> talk
+					about <em>with</em></strong>&#x2014;and no
+					real evidence to support, beyond potential
+					corroboration from others who were also
+					present at the time.
+				I was afraid that somebody would tell me that what
+					I had <strong class="MARK">seen and heard with
+					my own eyes and ears</strong> was wrong, that
+					<strong class="MARK">the racism and
+					harassment</strong> that I knew was <strong
+					class="MARK">this platform's heritage</strong>
+					was a myth, that I was <strong class="MARK"
+					>just stirring up drama</strong> and it
+					<strong class="MARK">didn't matter
+					anyway.</strong>
+				I published in spite of these fears
+					because&#x2014;well, <strong class="MARK"
+					>that's what responsible journalism is
+					about,</strong> isn't it?
+				Saying <strong class="MARK">what needs to be
+					said.</strong>
+			</p>
+			<p>
+				As I have been working on and reworking this post,
+					I have found myself <strong class="MARK"
+					>confronting all of those same fears.</strong>
+				As a matter of fact, <strong class="MARK">this time
+					it's worse,</strong> because I'm not just
+					talking about <strong class="MARK">some
+					singular event in the distant past which noöne
+					remembers</strong>&#x2014;I'm talking about
+					<strong class="MARK">systemic issues in the
+					here&#x2010;and&#x2010;now.</strong>
+			</p>
+			<p>
+				<strong class="MARK">I don't think <i
+					>gaslighting</i> is the correct word</strong>
+					for this situation&#x2014;it's a word that I
+					see thrown around sometimes, for that feeling
+					<strong class="MARK">when you see something
+					wrong but nobody else is saying anything and
+					noöne seems to want to talk about it and you
+					start to wonder if you've <em>lost your
+					mind.</em></strong>
+				But gaslighting is a <strong class="MARK">targeted
+					abuse tactic</strong> aimed at maximizing
+					control; gaslighting is when you approach your
+					significant other hoping to talk about
+					how&#x2014;you think, maybe&#x2014;they have
+					treated you like shit for the past several
+					months, and instead of having a conversation
+					about it, they respond with <i>no I haven't;
+					none of that is real; if it were it would be
+					your own fault&#x2014;and how dare you lash
+					out at me that way?</i>
+				…<em>This</em> is more just a <strong class="MARK"
+					>culture of denial,</strong> of <strong
+					class="MARK">respectability,</strong> and,
+					well&#x2014;
+			</p>
+			<p>
+				<strong class="MARK">My excuse</strong> for writing
+					this post, and this history&#x2014;because
+					realtalk, this post is a good 75% of what this
+					history series has been about&#x2014;is that I
+					have a <strong class="MARK">number of
+					supporters,</strong> some of whom have been
+					<strong class="MARK">contributing
+					financially</strong> to keep me afloat, some
+					of whom have been doing so <strong
+					class="MARK">because of the very work that I
+					have been describing</strong> in these
+					posts&#x2014;and I owe it to those people to
+					be <strong class="MARK">frank and honest about
+					what has been going on</strong> for the past
+					year and the <strong class="MARK">truth behind
+					my involvement</strong> in these things.
+				I do want you to <strong class="MARK">pause and
+					think about that word&#x2014;<i>excuse</i
+					></strong>&#x2014;how <strong class="MARK">I
+					feel like I need an <em>excuse</em></strong>
+					to talk about my feelings and my experiences,
+					because without one they are <strong
+					class="MARK">too quickly invalidated,</strong>
+					too easily dismissed.
+				How I have to <strong class="MARK">put my entire
+					post on hold</strong> and take the time to
+					focus your attention on that fact.
+				How I'm <strong class="MARK">burying the
+					lede:</strong> currently, right now, in this
+					post, paragraphs and paragraphs of explanation
+					and justification and rationalization without
+					yet ever getting to my point; currently, right
+					now, in this entire series, because we're
+					<strong class="MARK">four posts in and I'm
+					only just starting to get to the important
+					part.</strong>
+			</p>
+			<p>
+				These are things which, frankly, <strong
+					class="MARK">I don't expect all of you to
+					catch the significance of.</strong>
+				This is Mastodon, where culture A is techbros who
+					<strong class="MARK">talk about <i
+					class="SO-CALLED">security</i> like it's a
+					variable to optimize for</strong> and culture
+					B is white trans girls who <strong
+					class="MARK">pass around objectifying pictures
+					of women like they're candy.</strong>
+				I'm writing this post for <strong class="MARK">the
+					handful of you who might;</strong> who might
+					close your eyes and whisper:
+				<strong class="MARK"><q>She finally said it.</q
+					></strong>
+				I'm writing this post for <strong class="MARK">the
+					historians,</strong> also, and <strong
+					class="MARK">the academics,</strong> because
+					Mastodon really is quite unique and
+					groudbreaking in a lot of ways, and <strong
+					class="MARK">these aren't the sorts of
+					circumstances that come about more than once
+					in a planet's lifetime.</strong>
+				And, of course, <strong class="MARK">I'm writing
+					this post for myself,</strong> maybe most of
+					all, because after the past year I
+					<em>really</em> need some closure, I need to
+					be able to put this all behind me and tell
+					myself:
+				<strong class="MARK"><q>It's okay to move on.</q
+					></strong>
+			</p>
+			<p>
+				<strong class="MARK">I've been grappling</strong>
+					with how to talk about the content of this
+					post ever since I first decided I wanted to
+					do this history series, <strong class="MARK"
+					>how much detail</strong> I should go into
+					and <strong class="MARK">what I should
+					include,</strong> and, like with my first post
+					about the events of February, this one
+					originally <strong class="MARK">wasn't even
+					on the menu.</strong>
+				Up until now&#x2014;I don't know if you've
+					noticed&#x2014;I've limited myself to mostly
+					analysing things with an <strong class="MARK"
+					>academic, historical sort of voice,</strong>
+					never going deeper than <strong class="MARK"
+					>stating the events which occurred</strong>
+					and <strong class="MARK">in what order</strong
+					> and <strong class="MARK">looking into the
+					reasons why.</strong>
+			</p>
+			<p>
+				But what I've realized is that <strong class="MARK"
+					>there's no way I can maintain that</strong>
+					for the entire rest of this series and still
+					<strong class="MARK">say everything which
+					deserves to be said.</strong>
+				I need to pause, take a moment, and really <strong
+					class="MARK">spell out the emotional
+					impact</strong> of this all without trying
+					to hide it <strong class="MARK">behind
+					relationships of cause and effect.</strong>
+				So that's what this post is&#x2014;<strong
+					class="MARK">an intermission,</strong> a
+					pause in the history, for really just <strong
+					class="MARK">laying bare some shit on
+					Mastodon</strong> and the experience of
+					Mastodon development, for talking about
+					<strong class="MARK">how it has affected me
+					and the people close to me,</strong> and for
+					<strong class="MARK">setting the record
+					straight</strong> such that when I say,
+					<strong class="MARK"><q>I didn't have the
+					energy to remain involved in Mastodon dev,</q
+					></strong> you all will know <em>exactly</em>
+					where that sentence is coming from.
+			</p>
+			<p>
+				<strong class="MARK">This series isn't over</strong
+					>&#x2014;I still need to talk more about my
+					work on Mastodon themeïng, about Mastodon GO!
+					and my attempts at a refactor, about <cite
+					>CYBREMONDAY</cite>, my work on
+					specifications like <cite>MonStrPub</cite>, my
+					refocusing on internet publishing and the
+					tools thereof, <cite>ActivityPress</cite>, and
+					where I'm planning on going from here.
+				We're… <strong class="MARK">maybe halfway</strong>
+					through everything that I have to say.
+				And, I suppose, if you're especially callous, you
+					can probably <strong class="MARK">skip this
+					post entirely</strong> and not miss out on a
+					whole lot as far as that all is concerned.
+			</p>
+			<p>
+				But I'm <strong class="MARK">hoping you
+					won't:</strong>
+				I'm hoping you read this post, and it resonates
+					with some part of you, and you understand;
+					honestly, I'm hoping it's <strong class="MARK"
+					>at least a little bit educational,</strong>
+					if not <em>as</em> educational as the rest of
+					this  series, because hey, maybe that means
+					we'll be on a path towards things getting
+					better.
+				I'm hoping I <strong class="MARK">get at least one
+					response</strong> that says, you know, <q
+					>that's fucked up and i'm sorry and yr
+					feelings r valid.</q>
+			</p>
+			<p>
+				<strong class="MARK">Don't say it if you don't
+					mean it,</strong> though.
+				I'm not gonna begrudge you for <strong class="MARK"
+					>needing time to think</strong> on this one.
+			</p>
+		</section>
+		<section id="exploitation">
+			<h2>A Culture of Exploitation</h2>
+			<p>
+				<strong class="MARK">There is another
+					reason</strong> why I have hesitated on
+					writing this post&#x2014;aside from a stifling
+					culture of denial and doubting my own sanity,
+					I mean&#x2014;and that's because I was really
+					<strong class="MARK">rather hoping that
+					somebody else would say it first.</strong>
+				It's the sort of thing that really works better
+					when <strong class="MARK">someone else brings
+					it up:</strong>
+				<q>Hey, so&#x2010;and&#x2010;so has really been
+					doing a lot for y'all and they deserve to be
+					treated better</q> is a sentence which, under
+					white respectability culture, sounds a lot
+					more heartfelt and genuine <strong
+					class="MARK">when <i
+					>so&#x2010;and&#x2010;so</i> isn't
+					yourself.</strong>
+				I was hoping that someone who <em>wasn't</em> a
+					developer or caretaker or public figure,
+					someone who <em>wasn't</em> me or one of my
+					friends who have been struggling with this,
+					would <strong class="MARK">maybe take a hint
+					that things weren't totally that great</strong
+					> and rally the forces to possibly try to do
+					something about it.
+			</p>
+			<p>
+				Of course, the truth is that <strong class="MARK"
+					>the people who aren't struggling with this
+					are more&#x2010;often&#x2010;than&#x2010;not
+					the ones perpetuating it,</strong> and even
+					when they're not, they don't care, or at
+					least&#x2014;most generously, because <strong
+					class="MARK">there <em>are</em> some of you
+					that I do love and trust and believe in out
+					there</strong>&#x2014;at least haven't had
+					the life experiences to notice this sort of
+					shit and <strong class="MARK">realize what is
+					going on.</strong>
+				And yes, I'm a gender studies major, I took an
+					<strong class="MARK">entire semester on how
+					caretaking work is devalued and exploited by
+					sociëty,</strong> it's probably unfair for me
+					to expect others to be clued into those sorts
+					of things when they've <strong class="MARK"
+					>spent their entire lives studying
+					circuitboards or machine code or
+					whatever</strong> and are told by their
+					employers to <strong class="MARK">view people
+					as just <i class="SO-CALLED">that thing which
+					generates requests for our REST API</i
+					>.</strong>
+			</p>
+			<p>
+				But the fact of the matter is:
+				<strong class="MARK">Mastodon has a culture of
+					exploitation,</strong> and it's really bad.
+			</p>
+			<p>
+				I've already discussed&#x2014;in <cite>Mourning
+					Mastodon</cite>, and elsewhere&#x2014;how
+					<strong class="MARK">Mastodon <em
+					>development</em> has largely operated
+					through a mechanism of exploitation,</strong>
+					where queer and marginalized users <strong
+					class="MARK">raise warnings and design
+					features</strong> which upstream then adopts,
+					often with <strong class="MARK">little
+					acknowledgment, recognition, or
+					compensation,</strong> and often <strong
+					class="MARK">well after their moment of need
+					has begun.</strong>
+				But Mastodon's culture of exploitation is <strong
+					class="MARK">not limited to its development
+					staff</strong>&#x2014;as a matter of fact,
+					<strong class="MARK">Mastodon exploits its
+					developers too,</strong> especially <strong
+					class="MARK">those on the fringes,</strong>
+					who are often volunteers, as well as <strong
+					class="MARK">its instance admins and
+					moderators,</strong> who are certainly never
+					compensated their worth for protecting users
+					from <strong class="MARK"> The Entirety Of
+					The Fediverse.</strong>
+				Mastodon <strong class="MARK"><em>is a culture</em
+					> built upon entitlement</strong
+					>&#x2014;<strong class="MARK">entitled</strong
+					> to this space, <strong class="MARK"
+					>entitled</strong> to set the limits of
+					discourse, <strong class="MARK"
+					>entitled</strong> to read what you have to
+					say, <strong class="MARK">entitled</strong>
+					to react, <strong class="MARK"
+					>entitled</strong> to respond, <strong
+					class="MARK">entitled</strong> to be heard,
+					<strong class="MARK">entitled</strong> to new
+					features, <strong class="MARK"
+					>entitled</strong> to others' time, <strong
+					class="MARK">entitled</strong> to others'
+					care&#x2014;and it <strong class="MARK"><em
+					>is a culture</em> built upon
+					exploitation,</strong> where <strong
+					class="MARK">the vast majority of users coast
+					along</strong> on the efforts of a few <span
+					class="OPTION">{<span class="CASE"
+					>developers</span> | <span class="CASE"
+					>admins</span> | <span class="CASE"
+					>moderators</span> | <span class="CASE"
+					>caretakers</span>}</span> without ever
+					offering <strong class="MARK">more than the
+					basest acknowledgment</strong> or <strong
+					class="MARK">anything resembling fair
+					compensation,</strong> and certainly not
+					<strong class="MARK">taking steps to
+					ensure that the people in these roles are
+					able to sustainably maintain them into the
+					future.</strong>
+			</p>
+			<p>
+				And <strong class="MARK">what happens</strong>
+					when they burn out?
+				When drama hits, or they get sick, or are hit with
+					a new employment situation, or need to take
+					care of a loved one, or any one of the <strong
+					class="MARK">innumerable things</strong> which
+					can make somebody <strong class="MARK">no
+					longer capable</strong> of handling the large
+					amounts of remote caretaking work that
+					Mastodon demands?
+				Well, if the person in question is trans, then
+					<strong class="MARK"><a href="
+https://everydayfeminism.com/2016/10/call-out-culture-fails-trans-women/
+">social death is real death</a>,</strong> as they say.
+			</p>
+			<p>
+				And I say this while acknowledging that <strong
+					class="MARK">there are people with real,
+					critical, urgent needs</strong> on the
+					fediverse, and without suggesting that those
+					needs are not valid or should not be met.
+				<strong class="MARK">Of course they are, and
+					should.</strong>
+				But what I see time and time again is that <strong
+					class="MARK"><em>it is the same people</em>
+					doing the work</strong> to meet those
+					needs&#x2014;until they burn out; until they
+					no longer can&#x2014;and that the rest of the
+					Mastodon community is <strong class="MARK"
+					>more&#x2010;or&#x2010;less content</strong>
+					to let them carry that burden, with little in
+					the way of support, and then <strong
+					class="MARK">cast them to the side</strong>
+					once their usefulness has worn thin.
+				And, of course, the truly needy among us are only
+					tolerated so long as they <strong
+					class="MARK">shitpost in the
+					culturally&#x2010;appropriate manner,</strong>
+					or make takes and
+					calls&#x2010;to&#x2010;action that <strong
+					class="MARK">leave white people feeling good
+					when they click <i class="SO-CALLED">boost</i
+					>,</strong> and <strong class="MARK">carefully
+					cultivate their #brand</strong> (because
+					that's what it is) to appropriately match
+					Mastodon's expectations for <strong
+					class="MARK">what a marginalized person
+					should say and do.</strong>
+				People who are able to do these things well <strong
+					class="MARK">can tap into Mastodon time and
+					time again,</strong> extracting whatever
+					value they want; people who fail at them have
+					<strong class="MARK">difficulty getting
+					connected with resources that they sorely
+					need</strong>&#x2014;and, in all likelihood,
+					silently disappear.
+			</p>
+			<p>
+				It's <strong class="MARK">not hard to come up with
+					an explanation</strong> for these behaviours:
+				Mastodon remains largely a culture of techies, and
+					<strong class="MARK">tech is an entire <em
+					>industry</em> founded upon exploiting the
+					labour of others</strong>&#x2014;be it <strong
+					class="MARK">users,</strong> <strong
+					class="MARK">cafeteria and restaurant
+					workers,</strong> <strong class="MARK"
+					>custodial staff,</strong> <strong
+					class="MARK">factory workers,</strong>
+					<strong class="MARK">drivers,</strong>
+					<strong class="MARK">housekeepers,</strong>
+					<strong class="MARK">nannies,</strong>
+					<strong class="MARK">parents,</strong>
+					<strong class="MARK">spouses,</strong> or
+					<strong class="MARK">friends</strong
+					>&#x2014;and it <strong class="MARK"><a href="
+https://medium.com/matter/the-women-i-pretend-to-be-ef0a5ce97277
+">isn't as though being a woman exempts you</a> from the
+					consequences</strong> of living and breathing
+					in a <strong class="MARK">toxic, white,
+					masculinist culture</strong> every day, and
+					certainly not for those among us for whom
+					<strong class="MARK">that culture is
+					more&#x2010;or&#x2010;less all we have ever
+					known.</strong>
+				Not to cast too thin a line, but
+					by&#x2010;and&#x2010;large tech culture
+					<strong class="MARK">does not know how to
+					take care of itself,</strong> <strong
+					class="MARK">does not know how to take care
+					of others,</strong> and <strong class="MARK"
+					>does not know how to recognize care</strong>
+					when it sees it taking place.
+			</p>
+		</section>
+		<section id="rebuttal">
+			<h2>Two Quick Rebuttals</h2>
+			<p>
+				I anticipate <strong class="MARK">two major
+					responses</strong> to the above claims.
+				The first is, as already mentioned, <strong
+					class="MARK">denial</strong>, arguïng that
+					the problem is imagined, or overstated, or
+					localized to just one small corner of the
+					fediverse, or just one small group of people.
+				To this I ask:
+				<strong class="MARK">Where, then, are Mastodon's
+					caretakers?</strong>
+				Where are the people <strong class="MARK">greeting
+					new users</strong> as they sign on, <strong
+					class="MARK">communicating with
+					people</strong> about their needs, <strong
+					class="MARK">checking in with random
+					strangers</strong> to make sure they feel
+					accepted and their day is going okay,
+					<strong class="MARK">working to
+					advocate for them</strong> on a development
+					level and build the features they need,
+					<strong class="MARK">creating Issues and
+					spreading them around</strong> for important
+					concerns, <strong class="MARK">working to
+					bridge the cultural gaps</strong> between
+					communities and resolve disputes, and
+					<strong class="MARK">literally being people's
+					literal mother</strong> in times of crisis
+					when they have nobody else to turn to?
+				<strong class="MARK">I have done these
+					things.</strong>
+				<strong class="MARK">I know so many people</strong>
+					who have done these things.
+				<strong class="MARK">None of us are doing them any
+					longer.</strong>
+			</p>
+			<p>
+				(If there <em>is</em> a secret Mastodon sociëty of
+					caretakers out there, tell me where I can sign
+					up to get some service, because I feel about
+					<strong class="MARK">5000 spoons in the
+					hole</strong> right now.)
+			</p>
+			<p>
+				The second, more insidious response that I expect
+					is <strong class="MARK">resignation:</strong>
+				Nevermind that <strong class="MARK">Mastodon once
+					<em>had</em> all of these things;</strong>
+					toxic individualism is <strong class="MARK"
+					>the end product of all social media,</strong>
+					we're all just here to piggyback each other's
+					labour for a <strong class="MARK">personal,
+					social high,</strong> for favs and boosts and
+					a place to vent without regard for our
+					surroundings, and it was <strong class="MARK"
+					>misguided from the start</strong> to expect
+					anything better.
+				And, historically speaking?
+				<strong class="MARK">Yes, it was.</strong>
+				All of the people who set their minds to turning
+					Mastodon into a warm, nurturing space are now
+					<strong class="MARK">hurt,</strong>
+					<strong class="MARK">traumatized,</strong>
+					<strong class="MARK">burned out,</strong> have
+					<strong class="MARK">difficulty even <em
+					>using</em> the default web app</strong>
+					because the visual layout or colour scheme or
+					branding or <i class="SO-CALLED">boop</i>
+					sound all remind us of months of hard,
+					difficult work and exploitation that <strong
+					class="MARK">never amounted to
+					anything</strong> in the long run.
+				But I think it is <strong class="MARK">wrong to see
+					this chain of events as inevitable,</strong>
+					as though it wasn't the <strong
+					class="MARK">direct result of a pattern of
+					use and neglect</strong> on the part of the
+					people here, as though, if everyone was on
+					the same page about this and put in the
+					necessary forethought and planning, we
+					couldn't have created a network that <strong
+					class="MARK">valued and protected its
+					caretakers</strong> and had systems in place
+					to <strong class="MARK">help people transition
+					in <em>and out</em> of those roles.</strong>
+			</p>
+			<p>
+				And maybe that <em>is</em> too much to ask, in
+					these times, when everyone has so many other
+					concerns plaguing them, when we're so busy
+					worrying about <strong class="MARK">the
+					survivability of ourselves and our own
+					bodies,</strong> to think about and plan for
+					the survivability of an online social network
+					where we spend some of our time.
+				Or maybe that's a discussion which <strong
+					class="MARK">still needs to happen.</strong>
+				What I do know is that the <strong class="MARK"
+					>hurt and trauma already present on this
+					network</strong> isn't going anywhere anytime
+					soon, and it's about time <strong class="MARK"
+					>Mastodon started accounting for that
+					fact.</strong>
+			</p>
+		</section>
+		<section id="timeline">
+			<h2>A Typical Timeline for Caretaking Work on
+				Mastodon</h2>
+			<p>
+				It's <strong class="MARK">easy for me to speak
+					about</strong> Mastodon's culture of
+					exploitation because, well, <strong
+					class="MARK">I've lived it,</strong> multiple
+					times over, and seen my friends go through it
+					<strong class="MARK">time and time
+					again.</strong>
+				The pattern is <strong class="MARK">depressingly
+					regular,</strong> occuring over <strong
+					class="MARK">five stages:</strong>
+			</p>
+			<ol>
+				<li>
+					<p>
+						<strong class="MARK"><strong>Present a
+							problem.</strong></strong>
+						In the early days of Mastodon, the major
+							problem was <strong class="MARK"
+							>onboarding</strong> and <strong
+							class="MARK">community
+							management.</strong>
+						Then it was <strong class="MARK"
+							>developing new features.</strong>
+						Then it was <strong class="MARK"
+							>managing the fork,</strong>
+							GlitchSoc.
+						And there has always been the tasks of
+							<strong class="MARK">listening to
+							those in need,</strong> <strong
+							class="MARK">negotiating
+							disputes,</strong> <strong
+							class="MARK">recording
+							histories,</strong> <strong
+							class="MARK">helping those without
+							access to resources</strong>
+							navigate their
+							day&#x2010;to&#x2010;day issues,
+							and <strong class="MARK">Keeping
+							Trans Folks Alive.</strong>
+						On Mastodon, there are <strong
+							class="MARK">problems around
+							every corner,</strong> for those
+							who know how to look.
+					</p>
+				</li>
+				<li>
+					<p>
+						<strong class="MARK"><strong>Extract
+							labour.</strong></strong>
+						Mastodon has had the good fortune of
+							having a <strong class="MARK">steady
+							stream of volunteer labour</strong>
+							to rely on when addressing its most
+							urgent concerns.
+						Before the onboarding modal was
+							implemented, there was <strong
+							class="MARK">an onboarding
+							team</strong> which would
+							personally reach out to and welcome
+							each new user to the fediverse,
+							facilitated through a bot scanning
+							the public timeline for toots from
+							people it had never seen before.
+						Mastodon's <strong class="MARK">content
+							warnings,</strong> many different
+							<strong class="MARK">kinds of
+							mutes,</strong> <strong class="MARK"
+							>theming system,</strong> and
+							<strong class="MARK">profile
+							metadata fields</strong> are all
+							features designed and/or
+							implemented in a large part through
+							volunteer community labour.
+						<strong class="MARK">Instance
+							administration and
+							moderation</strong> remains largely
+							a volunteer occupation, as does the
+							less&#x2010;visible work of
+							<strong class="MARK">checking in
+							with users and extending
+							care.</strong>
+					</p>
+					<p>
+						There is <strong class="MARK">nothing
+							wrong with volunteering for a
+							cause</strong> that you believe in,
+							but systemically, this means that
+							<strong class="MARK">the bulk of
+							the caretaking work falls</strong>
+							on <strong class="MARK">those who
+							either can't afford</strong> to let
+							it slip&#x2014;the most
+							marginalized&#x2014;or <strong
+							class="MARK">those who aren't
+							willing to</strong
+							>&#x2014;frequently because they
+							are survivors of great moments of
+							need themselves.
+						Meanwhile, cis, white, privileged users,
+							and the project as a whole, reap
+							the benefit.
+						<strong class="MARK">Mastodon would not
+							still be around today</strong>
+							without the many volunteer
+							caretakers, admins, moderators, and
+							developers who have donated their
+							time to this project.
+						But even though everyone else profits
+							from their work, as a whole, they
+							largely do not.
+					</p>
+				</li>
+				<li>
+					<p>
+						<strong class="MARK"><strong>Generate
+							burnout.</strong></strong>
+						Mastodon <strong class="MARK">needs its
+							caretakers,</strong> but it <strong
+							class="MARK">does not protect
+							them,</strong> and it <strong
+							class="MARK">does nothing to ensure that they are given a manageäble load.</strong>
+						To the contrary, Mastodon's
+							care&#x2010;work is <strong
+							class="MARK">perpetually
+							understaffed</strong>&#x2014;and
+							this is only becoming more of a
+							problem as increasingly many people
+							are driven away.
+						Frequently, one kind of care work
+							becomes <strong class="MARK">a
+							gateway to more:</strong> an
+							instance admin becomes a community
+							moderator, or a developer of
+							features for their instance; a
+							manager for a fork becomes an
+							admin to test the software they
+							have written.
+						Mastodon <strong class="MARK">encourages
+							these consolidations of
+							labour.</strong>
+						It lacks the <strong class="MARK"
+							>tools,</strong> <strong
+							class="MARK">structures,</strong>
+							and <strong class="MARK">motivated
+							individuals</strong> necessary for
+							dividing it up equally.
+					</p>
+					<p>
+						Eventually, it all becomes too much, and
+							caretaker in question finds
+							themselves <strong class="MARK"
+							>stepping out of the
+							spotlight,</strong> <strong
+							class="MARK">reducing their public
+							presence,</strong> and <strong
+							class="MARK">cutting back or
+							terminating their
+							involvment</strong> with the
+							project.
+						They <strong class="MARK">might feel
+							unseen or unheard,</strong> they
+							<strong class="MARK">might feel
+							shame,</strong> and they <strong
+							class="MARK">might feel
+							used.</strong>
+						With their reduced public presence,
+							Mastodon as&#x2010;a&#x2010;whole
+							largely <strong class="MARK">forgets
+							that they ever existed.</strong>
+						However, <strong class="MARK">their
+							journey is not yet over.</strong>
+					</p>
+				</li>
+				<li>
+					<p>
+						<strong class="MARK"><strong>Create
+							drama.</strong></strong>
+						Inevitably, <strong class="MARK"
+							>drama happens.</strong>
+						Relationship drama is, in my experience,
+							probably the most effective for
+							this, but instance or meta drama
+							works just as well.
+						At this point, the presence of the
+							<strong class="MARK">old,
+							burned&#x2010;out caretaker</strong>
+							that the fediverse pushed too hard
+							and never gave anything back to in
+							return is <strong class="MARK">a
+							collective embarrassment,</strong>
+							a reminder of this platform's long
+							history of taking advantage of
+							others.
+						So, needless to say, <strong class="MARK"
+							>the source and credibility of the
+							drama hardly matters.</strong>
+						What is important is that it creates
+							<strong class="MARK">an excuse to
+							overlook one's past
+							contributions</strong> by casting
+							them in a new or different light.
+					</p>
+				</li>
+				<li>
+					<p>
+						<strong class="MARK"><strong>Discard and
+							repeat.</strong></strong>
+						By <i class="SO-CALLED">discard</i>, I do
+							not mean to suggest a loss of
+							followers or, necessarily,
+							visibility.
+						What I do mean is a <strong
+							class="MARK">loss of status,</strong
+							> <strong class="MARK"
+							>recognition,</strong> and, to an
+							extent, <strong class="MARK"
+							>personhood,</strong> such that one
+							<strong class="MARK">no longer needs
+							to be respected</strong> for their
+							history of service, and can be
+							<strong class="MARK">safely ignored
+							when they attempt to speak
+							out</strong> about their
+							experiences.
+						In some cases, followers and visibility
+							are actually <em>increased</em>, as
+							one's <strong class="MARK"
+							>boundaries are invaded</strong> and
+							everything one says and does is
+							trivialized and reduced into a meme.
+						Thus, <strong class="MARK">further
+							exploitation can ensue.</strong>
+					</p>
+					<p>
+						Mastodon ex&#x2010;caretakers complain
+							about <strong class="MARK">not
+							feeling comfortable posting their
+							opinions</strong> on their own
+							timelines, about <strong
+							class="MARK">randos jumping into
+							their mentions</strong> over the
+							slightest things, about <strong
+							class="MARK">people questioning them
+							out&#x2010;of&#x2010;the&#x2010;<!--
+							-->blue</strong> about work they
+							did months or years ago, about
+							being <strong class="MARK"
+							>dropped,</strong> <strong
+							class="MARK">ghosted,</strong> or
+							<strong class="MARK"
+							>abandoned</strong> by people they
+							considered friends.
+						Many <strong class="MARK">lock their
+							accounts,</strong> are <strong
+							class="MARK">hesitant to ever
+							post</strong> publicly, and/or
+							<strong class="MARK">greatly reduce
+							their posting habits.</strong>
+						Those that have accounts on Twitter often
+							say that <strong class="MARK">they
+							find the environment
+							less&#x2010;stressful there.</strong
+							>
+					</p>
+					<p>
+						Meanwhile, the Mastodon exploitation
+							machine moves on.
+						Of course, <strong class="MARK"
+							>caretakers are a limited
+							resource,</strong> and eventually
+							Mastodon will find itself out of
+							people willing to commit themselves
+							to this labour.
+						At that point, <strong class="MARK">the
+							software and community will fall
+							apart.</strong>
+						Personally, I see signs that this might
+							<strong class="MARK">already be
+							beginning to happen</strong> now.
+					</p>
+				</li>
+			</ol>
+		</section>
+		<section id="macro-micro">
+			<h2>Macro and Micro</h2>
+			<p>
+				Thus far, <strong class="MARK">all of the examples
+					I have given</strong> regarding the
+					exploitation taking place on Mastodon have
+					been <strong class="MARK">large, systemic,
+					macro issues</strong>&#x2014;but the <strong
+					class="MARK">same patterns</strong> take
+					place on a <strong class="MARK">micro,
+					interpersonal level</strong> as well.
+				<strong class="MARK">I actually think this is far
+					worse</strong> than the larger&#x2010;scale
+					offenses, because when someone gets used by
+					Mastodon as a system, <em>even if</em> nobody
+					cares and <em>even if</em> there is currently
+					zero interest in redressing those problems <em
+					>right now</em>, it is <strong class="MARK">at
+					least undeniable that they <em>happened</em
+					>.</strong>
+				<strong class="MARK">We <em>all</em> know
+					somebody</strong>&#x2014;if you've been
+					around on Mastodon at all in the past year,
+					you probably know several&#x2014;<strong
+					class="MARK">who <i class="SO-CALLED">used
+					to</i></strong> be a community leader or
+					contributor or organizer and has since been
+					<strong class="MARK">driven to silence or
+					irrelevance</strong> by the forces described
+					above.
+				If there were <strong class="MARK">any sort of
+					community desire,</strong> it would not be
+					difficult to check in with each and every one
+					of these people to <strong class="MARK"
+					>ensure that their needs are beïng cared
+					for,</strong> and that they have <strong
+					class="MARK">received what they believe to be
+					suitable compensation</strong> for their work.
+			</p>
+			<p>
+				But lately, however, I have begun to question
+					whether this macro level of exploitation is
+					<strong class="MARK">anything more than the
+					tip of the iceberg</strong> when it comes to
+					these sorts of offences.
+				If there isn't a <strong class="MARK">deeper, more
+					insidious culture</strong> of people taking
+					advantage of each other which isn't being
+					talked about on this site.
+			</p>
+			<p>
+				When I was first getting involved with GlitchSoc
+					last year, I had a <strong class="MARK"
+					>somewhat naïve motto</strong> which I
+					sort&#x2010;of lived by, which basically
+					boiled down to <strong class="MARK"><i
+					class="SO-CALLED">take care of the
+					caretakers</i>.</strong>
+				What this meant in practice was looking for those
+					people who were <strong class="MARK"
+					>consistently providing the emotional
+					support</strong> necessary to maintain our
+					communities&#x2014;and there were more of
+					these people in those days, too; it's rather
+					dropped off, wonder why&#x2014;looking for
+					<strong class="MARK">those caretakers who
+					didn't have caretakers of their own,</strong>
+					and then <strong class="MARK">trying to be
+					there for them</strong> and <strong
+					class="MARK">build a positive working
+					relationship</strong> so that they
+					could continue doïng their very important
+					work.
+			</p>
+			<p>
+				The reason <em>why</em> <strong class="MARK">this
+					approach was naïve</strong>&#x2014;which
+					isn't to say it was misguided, although your
+					milage may vary on that one&#x2014;was
+					because, as I later discovered, <strong
+					class="MARK">some people actually think that
+					this terrible exploitative system,</strong> a
+					system founded on constantly <strong
+					class="MARK">taking from others</strong>
+					rather than <strong class="MARK">giving from
+					yourself,</strong> was <strong class="MARK"
+					><em>actually what a healthy relationship was
+					supposed to look like</em>,</strong> that a
+					healthy relationship was just <strong
+					class="MARK">two people doing that to <em
+					>each other</em>.</strong>
+				Or not even:
+				That there were those who, exploited caretakers
+					themselves, <strong class="MARK">suffered no
+					qualms</strong> turning right around and
+					exploiting others <strong class="MARK">in the
+					exact same manner,</strong> giving nothing in
+					return.
+			</p>
+			<p>
+				I have already expressed, in my <a href="
+https://www.u2764.com/NFIC/2018-08-11/girlfriends/">response to that
+					piece on <i class="SO-CALLED">straight
+					girlfriends</i></a>, that <strong class="MARK"
+					>I am concerned about the dating culture
+					taking place on Mastodon.</strong>
+				As a traumatized, queer community, there is a
+					<strong class="MARK">real shortage of
+					positive examples of healthy
+					relationships</strong> in both the media we
+					consume and in our daily life.
+				This is, actually, one of the reasons why I am a
+					romance author.
+				When Mastodon <strong class="MARK">fails to
+					recognize and call out unfair use of
+					labour</strong> on the large scale, when
+					it is easy to identify, when there are users
+					and pull requests and public toots and an
+					undeniable record, it is <strong class="MARK"
+					>hard for me to believe that it is managing
+					any better</strong> at handling the less
+					obvious, more private, intimate scale.
+			</p>
+			<p>
+				<strong class="MARK">It has been joked
+					before,</strong> on numerous occasions, that
+					Mastodon is <strong class="MARK">actually a
+					queer dating site.</strong>
+				<strong class="MARK">It should go without
+					saying</strong> that <strong class="MARK"
+					>this is only a strength</strong> of the
+					platform <strong class="MARK">if the
+					relationships which result are healthy
+					ones,</strong> built on <strong class="MARK"
+					>mutual love</strong> and <strong class="MARK"
+					>respect</strong> and <strong class="MARK"
+					>care,</strong> <strong class="MARK">good
+					communication,</strong> <strong  class="MARK"
+					>consent,</strong> <strong class="MARK"
+					>accountability,</strong> and <strong
+					class="MARK">understanding.</strong>
+				<strong class="MARK">It should go without
+					saying</strong> that <strong class="MARK">we
+					have a duty to our queer users,</strong> many
+					of whom are young, many of whom are
+					inexperienced in romantic affairs, to <strong
+					class="MARK">provide good mentorship,</strong>
+					to <strong class="MARK">educate on warning
+					signs and unhealthy behaviours,</strong> and
+					to <strong class="MARK"><em>not</em>
+					normalize toxic situations</strong> when they
+					occur.
+			</p>
+			<p>
+				I think <strong class="MARK">we have failed at
+					this,</strong> as a community, <strong
+					class="MARK">undeniably and
+					overwhelmingly.</strong>
+				There are days when Mastodon looks frighteningly
+					like a network <strong class="MARK">groomed
+					as a safe haven by abusers</strong> where
+					they can <strong class="MARK">escape
+					accountability for their deeds.</strong>
+				(Need I say more on this one?
+				I feel like this is <strong class="MARK">an open
+					secret.</strong>)
+				And I am <strong class="MARK">fearful for the
+					consequences</strong> which that failure might
+					bring.
+			</p>
+		</section>
+		<section id="relationship">
+			<h2>An Unhealthy Relationship</h2>
+			<p>
+				Again, <strong class="MARK">it's not hard</strong>
+					for me to describe what this sort of
+					exploitation looks like on an intimate level,
+					because <strong class="MARK">it was my
+					life</strong> for the first half of 2018.
+				On <strong class="MARK"><time
+					datetime="2018-01-15">15 January</time
+					>,</strong> I entered into a relationship
+					with someone who was, at the time, jobless,
+					homeless, recovering from surgery,
+					more&#x2010;or&#x2010;less wandering the
+					earth and burning through what remaining
+					resources they had.
+				When we broke up a little over six months later,
+					they had, by virtue of their own labour, but
+					also the labour of myself and countless
+					others, an apartment, with a stable tech
+					salary, in their first&#x2010;choice city of
+					residence, making probably more money in a
+					single month than I have ever possessed in my
+					entire life.
+				Over that same period of time, I went from the
+					<strong class="MARK">principal contributor and
+					project manager</strong> for the GlitchSoc
+					fork to a <strong class="MARK">relative
+					nobody,</strong> <strong class="MARK">unable
+					to maintain</strong> my contributions to
+					Mastodon development, <strong class="MARK"
+					>unable to sustain</strong> my various social
+					connections on the site, and largely <strong
+					class="MARK">unable to follow through</strong
+					> on my various side&#x2010;projects such as
+					the <cite>CYBREMONDAY</cite> zine.
+			</p>
+			<p>
+				This is the <strong class="MARK">KIBI Litmus Test
+					For Unhealthy Relationships</strong> (<abbr
+					>KiLTFUR</abbr>):
+				When two people are in a close, intimate
+					relationship, and one of them <strong
+					class="MARK">sees their opportunities and
+					material access to resources expanding
+					dramatically</strong> while <strong
+					class="MARK">the other one suffers,</strong>
+					that's a sign that maybe things <strong
+					class="MARK">aren't quite wonderful.</strong>
+				That's a sign that maybe someone in the
+					relationship <strong class="MARK">isn't
+					contributing their fair share.</strong>
+				It's not a perfect test by any means, but it does
+					have the advantage of being <strong
+					class="MARK">pretty straightforward to figure
+					out</strong>&#x2014;just run the
+					numbers&#x2014;and <strong class="MARK"
+					>pretty indisputable in terms of its
+					result.</strong>
+				Plainly speaking, in this relationship, I was
+					<strong class="MARK">putting a lot of labour
+					and material resources in,</strong> but not
+					<strong class="MARK">getting much in the way
+					of care or support out.</strong>
+			</p>
+			<p>
+				As a matter of fact, as I thought more about what I
+					experienced over the past several months, the
+					more I realized it had <strong class="MARK"
+					>followed the same pattern I had grown
+					familiar with</strong> from my time in
+					Mastodon development:
+			</p>
+			<ol>
+				<li>
+					<p>
+						<strong class="MARK"><strong>Present a
+							problem.</strong></strong>
+						It <strong class="MARK">wasn't hard to
+							notice,</strong> when our
+							relationship began, that <strong
+							class="MARK">things were not
+							good.</strong>
+						My partner had zero stability in their
+							life, and it was clear that, if
+							things were to have any hope of
+							working out in the long&#x2010;term,
+							that would have to change.
+						As unconditional as love may be,
+							<strong class="MARK">relationships
+							are built upon care,</strong> and
+							care requires means.
+					</p>
+					<p>
+						<strong class="MARK">As the material
+							conditions for my partner
+							improved,</strong> however, the
+							problems in our relationship, if
+							anything, <strong class="MARK">got
+							worse.</strong>
+						I am not one to <em>ever</em> tell
+							someone going through a rough time
+							that their problems might be
+							self&#x2010;generated.
+						But it was frustrating, time after time,
+							watching my loved one in one breath
+							<strong class="MARK">pointedly
+							mistreating others</strong> and
+							<strong class="MARK">pushing them
+							away,</strong> and in the very next
+							<strong class="MARK">complaining
+							about abandonment</strong> and
+							<strong class="MARK">being so
+							alone.</strong>
+						And this dynamic led to me being their
+							<strong class="MARK">primary and
+							sole caretaker</strong> again and
+							again.
+					</p>
+				</li>
+				<li>
+					<p>
+						<strong class="MARK"><strong>Extract
+							labour.</strong></strong>
+						<strong class="MARK">Nobody should ever
+							try to fix a person.</strong>
+						The whole idea is <strong class="MARK"
+							>flawed from the start</strong
+							>&#x2014;that a person could be
+							<i class="SO-CALLED">broken</i> and
+							moreöver that you, <strong
+							class="MARK">a completely untrained
+							volunteer caretaker,</strong> might
+							have the skills needed to <i
+							class="SO-CALLED">fix</i> them.
+						It is <strong class="MARK"
+							>objectifying,</strong> it <strong
+							class="MARK">leads to
+							codependency,</strong> and it's
+							<strong class="MARK">harmful for
+							everybody involved.</strong>
+					</p>
+					<p>
+						But <strong class="MARK">it is not
+							unreasonable</strong> to try to fix
+							<strong class="MARK">a shitty
+							situation.</strong>
+						Repairing friendships, acquiring
+							employment, getting housing:
+						<strong class="MARK">These are things
+							one can do.</strong>
+					</p>
+					<p>
+						And <strong class="MARK">these are things
+							we,</strong> for the most part,
+							<strong class="MARK"
+							>achieved:</strong>
+						I helped my partner <strong class="MARK"
+							>get back in touch</strong> with
+							those with whom they had become
+							estranged.
+						I helped them <strong class="MARK">make
+							plans</strong> and <strong
+							class="MARK">imagine a
+							future</strong> with stability.
+						I <strong class="MARK">listened to them
+							vent</strong> about their
+							job&#x2010;search, I <strong
+							class="MARK">checked in</strong> as
+							they made flights for interviews and
+							looked for housing, I <strong
+							class="MARK">drove on little sleep
+							to go meet them</strong> before
+							they made their final trip to their
+							new city and apartment.
+						And they, for their part, and not without
+							the help of many others, <strong
+							class="MARK">persevered,</strong>
+							and made it happen.
+						In a frankly remarkable series of events,
+							over the course of the first half of
+							the year, <strong class="MARK"
+							>nearly every material
+							concern</strong> they had begun our
+							relationship with was resolved, and
+							honestly, and with no hint of irony,
+							<strong class="MARK">kudos to
+							everyone involved.</strong>
+					</p>
+				</li>
+				<li>
+					<p>
+						<strong class="MARK"><strong>Generate
+							burnout.</strong></strong>
+						At the same time, <strong class="MARK"
+							>my needs weren't being met at
+							all.</strong>
+						I was <strong class="MARK"
+							>on&#x2010;call essentially
+							24/7</strong> to lend a helping hand
+							in case a moment of crisis should
+							arive; I was <strong class="MARK"
+							>sitting in on phone calls</strong>
+							and <strong class="MARK">serving as
+							mediator</strong> as they tried
+							unsuccessfully to repair
+							relationships with people they had
+							harmed; I had to be conscious to
+							<strong class="MARK">always keep
+							them in my thoughts</strong> and
+							<strong class="MARK">check in
+							regularly</strong> to keep their
+							fears of abandonment down.
+						I was, essentially, a <strong
+							class="MARK">full&#x2010;time
+							caretaker,</strong> only lacking
+							both the training and the income
+							which that position usually
+							provides.
+					</p>
+					<p>
+						Needless to say, my <strong class="MARK"
+							>work on Mastodon,</strong> my
+							<strong class="MARK">work on other
+							projects,</strong> and basically
+							<strong class="MARK">everything
+							else happening in my life</strong
+							>&#x2014;which nobody's
+							life depended on, which I could
+							<i class="SO-CALLED">afford</i> (in
+							the literal sense, because I was
+							losing time and resources as a
+							result) to <i class="SO-CALLED"
+							>slack off</i> on&#x2010;<strong
+							class="MARK">suffered as a
+							result.</strong>
+						And, for the most part, <strong
+							class="MARK">I made these sacrifices
+							willingly,</strong> because they
+							were for somebody I loved.
+					</p>
+					<p>
+						Eventually, however&#x2014;after we had
+							successfully met their material
+							needs, after my constant labour
+							looked like it wasn't going to be
+							needed anymore&#x2014;I finally made
+							the call: that this relationship
+							pattern, which had been necessary,
+							but which we had <strong
+							class="MARK">both known from the
+							getgo wasn't sustainable</strong>,
+							had run its course.
+						It is my opinon, based upon personal
+							experience, that <strong
+							class="MARK">it is not possible to
+							always simultaneöusly be someone's
+							caretaker and romantic
+							partner</strong>&#x2014;one or the
+							other will sometimes have to give.
+						For most of our relationship, <strong
+							class="MARK">beïng able to provide
+							care was more important than
+							romance.</strong>
+						Now that things were looking up, I was
+							<strong class="MARK">looking to
+							transition out of that caretaker
+							role.</strong>
+					</p>
+				</li>
+				<li>
+					<p>
+						<strong class="MARK"><strong>Create
+							drama.</strong></strong>
+						<q>I feel like you <strong class="MARK"
+							>don't really treat me like a
+							girlfriend,</strong></q> I told my
+							partner (paraphrased), on one
+							occasion.
+						<q>I feel like you <strong class="MARK"
+							>show more affection to strangers on
+							the internet</strong> than you do
+							with me.
+						I know I'm an anxious person
+							but&#x2014;do you think you could
+							<strong class="MARK">accommodate
+							that a little</strong> and do a
+							better job of <strong class="MARK"
+							>affirming the ways in which you
+							love me?</strong></q>
+					</p>
+					<p>
+						I've gotta be honest with you on this
+							one&#x2014;I <strong class="MARK"
+							>really thought that this request
+							would be no big deal.</strong>
+						<q>Of course you're my girlfriend; what
+							can I do to make things easier for
+							you?</q>&#x2014;nevermind the fact
+							that <strong class="MARK">never
+							<em>once</em> in the six months of
+							our relationship</strong> had they
+							asked whether they were <strong
+							class="MARK">doing an okay job as a
+							partner</strong> or if there was
+							<strong class="MARK">anything they
+							could be doing better,</strong>
+							despite me being very conscious
+							about asking those very questions
+							to them multiple times each month.
+						I really thought we could <strong
+							class="MARK">talk this out,</strong>
+							maybe <strong class="MARK">go over
+							love languages</strong> and <strong
+							class="MARK">differential ways of
+							expressing care,</strong> and things
+							would get better and the whole
+							matter would be resolved.
+					</p>
+					<p>
+						Instead, I was told that my <strong
+							class="MARK">asking for
+							accommodations was
+							out&#x2010;of&#x2010;line,</strong>
+							that it was <strong class="MARK"
+							>my problem for never feeling
+							valued</strong> despite <strong
+							class="MARK">never being given
+							anything of value;</strong>
+							furthermore, that trying to have a
+							conversation about these things was
+							<strong class="MARK">too much for
+							them to handle right now.</strong>
+						We didn't speak for a week after that.
+					</p>
+					<p>
+						I <strong class="MARK">don't see it as
+							any sort of coïncidence</strong>
+							that me asserting my needs became
+							<i class="SO-CALLED">too much to
+							handle</i> the moment I stopped
+							letting my partner be <strong
+							class="MARK">dependent on me for
+							their care.</strong>
+						The moment my labour stopped being an
+							exploitable resource, my presence
+							<strong class="MARK">became a
+							nuisance</strong> and <strong
+							class="MARK">painful reminder of
+							trauma</strong> which <strong
+							class="MARK">begged for vitriolic
+							detatchment.</strong>
+						Our relationship <strong class="MARK"
+							>degraded quickly from
+							there.</strong>
+					</p>
+				</li>
+				<li>
+					<p>
+						<strong class="MARK"><strong>Discard and
+							repeat.</strong></strong>
+						When my partner and I got back in
+							contact, we both pledged to take
+							time out of our days to have a long
+							conversation, where we would <strong
+							class="MARK">air out our fears and
+							feelings and work to sort through
+							them.</strong>
+						It was a very good idea and I went into
+							it with the hope that we would, if
+							nothing else, at least be able to
+							<strong class="MARK">nurture a good
+							friendship</strong> out of the ashes
+							of what we had gone through.
+					</p>
+					<p>
+						After we had been talking long enough for
+							them to express all of their <em
+							>own</em> feelings on the matter,
+							however, my partner determined that
+							the conversations were <strong
+							class="MARK">taking too much time
+							and energy out of their
+							weeks,</strong> that <strong
+							class="MARK">listening to my
+							concerns was distracting from their
+							ability to perform at their
+							job,</strong> and they essentially
+							<strong class="MARK">called the
+							whole thing off</strong> and broke
+							up with me.
+						<span class="PARENTHETICAL">(NB:
+						Our relationship was not healthy.
+						I hold nothing against them for calling
+							it off.
+						But the way in which they were
+							enthusiastic about our conversations
+							only so long as they served their
+							own purposes was indicative of how
+							our relationship had tended to go as
+							a whole.)</span>
+						We tried being <i class="SO-CALLED">just
+							friends</i>&#x2014;that lasted
+							<strong class="MARK">until I tried
+							holding them accountable</strong>
+							for all of the times they had used
+							me over the past year.
+						Then it was <strong class="MARK"><q
+							>goodbye, kibi.</q></strong>
+					</p>
+					<p>
+						I muted them after that, so, in all
+							honesty, I can't speak to the
+							<i class="SO-CALLED">repeat</i> part
+							of this step.
+						But I do know that I was <strong
+							class="MARK">far from the first
+							person</strong> they had treated in
+							this way.
+					</p>
+				</li>
+			</ol>
+			<p>
+				I've <strong class="MARK">left out a number of
+					details</strong> in the above narrative:
+				<strong class="MARK">Red flags</strong> that I
+					should have paid more attention to; <strong
+					class="MARK">moments of manipulation;</strong
+					> small and large <strong class="MARK"
+					>violations of boundaries and consent;</strong
+					> numerous questionable <strong class="MARK"
+					>interactions with others;</strong> attempts
+					to <strong class="MARK">discredit my voice
+					and control the narrative.</strong>
+				But <strong class="MARK">dwelling on these
+					traumas</strong> will likely <strong
+					class="MARK">not make anything better for
+					anyone,</strong> and a Mastodon history
+					series is hardly the place to be <strong
+					class="MARK">unreservedly dishing the salt on
+					your ex.</strong>
+			</p>
+			<p>
+				Still, I bring this up because it was <strong
+					class="MARK">really frightening for
+					me</strong> to realize that the <strong
+					class="MARK">unhealthy treatment of
+					caretakers</strong> and <strong class="MARK"
+					>exploitation of labour</strong> which I had
+					become so accustomed to in Mastodon
+					development had also characterized my private
+					affairs.
+				To realize that <strong class="MARK">this had
+					become my normal,</strong> not just in the
+					workplace, but in my intimate relationships as
+					well.
+				To acknowledge that <strong class="MARK">this
+					problem was cultural,</strong> that <strong
+					class="MARK">Mastodon encouraged it;</strong>
+					to wonder to what extent <strong class="MARK"
+					>Mastodon was being conditioned for
+					it,</strong> and how many other people were
+					<strong class="MARK">walking into this sort of
+					trap;</strong> and, most frighening of all,
+					realizing that I wasn't entirely certain that
+					<strong class="MARK">people would see the
+					problem</strong> if I was public and open
+					about my experiences, that I wasn't entirely
+					certain that <strong class="MARK">I even knew
+					what the problem was <em>myself</em>,</strong
+					> because I had been living this for so long,
+					because I had been living <em>in</em> this
+					for so long, that I <strong class="MARK"
+					>didn't know what was reasonable</strong> to
+					expect from people anymore.
+			</p>
+			<p>
+				With respect to the rest of this history series:
+				It is undeniable that my involvement in this
+					relationship had <strong class="MARK">a
+					profound impact on my ability to contribute
+					to Mastodon development,</strong> as well as
+					on <strong class="MARK">the shape in which
+					those contributions took place.</strong>
+				As is true for my professional relationships and
+					all the other caretaker roles I have served in
+					during my time on Mastodon.
+				There will be plenty of time to get into the
+					details regarding those contributions in the
+					posts which follow this one.
+			</p>
+			<p>
+				But for now:
+				We <strong class="MARK">need to have a conversation
+					about this.</strong>
+				We need to <strong class="MARK">radically rethink
+					the way we approach care</strong> and really
+					<strong class="MARK">interrogate the ways in
+					which we are complicit</strong> in the
+					continued exploitation of our caretakers.
+				We need to <strong class="MARK">stop providing
+					solace to exploiters and abusers,</strong>
+					<strong class="MARK">stop ignoring or
+					normalizing toxic relationship patterns and
+					abuse,</strong> and <strong class="MARK"><em
+					>start</em> modelling healthy relationships
+					and ways of beïng with one another.</strong>
+			</p>
+			<p>
+				It seems like every week there is someone else
+					venting on their timeline about an ex who took
+					advantage of them and treated them like shit.
+				It's honestly exhausting living in a community
+					where that seems so regular and normal.
+				<strong class="MARK">We need to do more</strong> to
+					<strong class="MARK">protect our fellow
+					fediversians,</strong> <strong class="MARK"
+					>respect their boundaries,</strong> and
+					<strong class="MARK">ensure that the care
+					that they provide is sustainable.</strong>
+				And we need to start <strong class="MARK">valuïng
+					people based on what they have done for our
+					community</strong> and not whether or not they
+					are good at making fucking trashtoots.
+			</p>
+			<p>
+				<em>To be continued.</em>
+			</p>
+		</section>
+		<footer>
+			<p>
+				Questions or comments?
+				@ me: <a href="https://glitch.social/@kibi"
+					>@kibi<wbr />@glitch.social</a>.
+			</p>
+		</footer>
+	</article>
+</body>
+</html>
