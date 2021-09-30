@@ -168,7 +168,7 @@ iframe#pane[name=pane]{ Display: Block; Box-Sizing: Border-Box; Margin: 0; Borde
 								<for-each select="atom:subtitle|atom:rights">
 									<variable name="wrapper">
 										<choose>
-											<when test="@type='xhtml' and html:p">div</when>
+											<when test="@type='xhtml' and .//html:*[local-name()='p' or local-name()='pre']">div</when>
 											<otherwise>p</otherwise>
 										</choose>
 									</variable>
