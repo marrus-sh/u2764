@@ -131,6 +131,7 @@ div#scroller>footer em,
 div#scroller>footer i{ Font-Style: Normal }
 div#window{ Position: Relative; Grid-Area: 1 / 2 / Span 2 / Span 1; Border-Left: Thin Solid; Overflow: Auto }
 iframe#pane[name=pane]{ Display: Block; Box-Sizing: Border-Box; Margin: 0; Border: None; Width: 100%; Height: 100% }
+iframe#pane[name=pane][src]:Not([src="about:blank"]){ Background: #FFFFFF }
 			</html:style>
 			<apply-templates mode="clone"/>
 			<html:base target="pane"/>
