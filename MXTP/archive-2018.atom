@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom" xml:lang="en" xmlns:fh="http://purl.org/syndication/history/1.0">
+
+<fh:archive/>
+<id>tag:www.u2764.com,2021:MXTP</id>
+<link rel="current" href="https://www.u2764.com/MXTP/index.atom"/>
+<link rel="self" href="https://www.u2764.com/MXTP/archive-2018.atom"/>
+<link rel="alternate" type="application/xhtml+xml" href="https://www.u2764.com/MXTP/"/>
+<updated>2021-09-29T18:09:15-07:00</updated>
+<title>❤ Mixtapes</title>
+<author>
+	<name>Margaret KIBI</name>
+	<uri>https://go.KIBI.family/About/#me</uri>
+</author>
+<category term="MXTP" scheme="tag:www.u2764.com,2021:" label="Mixtapes"/>
+<icon>../icon.svg</icon>
+<subtitle type="xhtml">
+	<div xmlns="http://www.w3.org/1999/xhtml">
+		<p>Various playlists and the like I have created.  This is <em>not</em> a complete list 😜.</p>
+	</div>
+</subtitle>
+<rights>Of course, the linked songs are copyright their original artists.</rights>
+
+<entry xml:id="MXTP.2018-02-05.CPLA0100">
+	<id>tag:www.u2764.com,2021:MXTP.2018-02-05.CPLA0100</id>
+	<link rel="alternate" type="text/html" href="https://www.u2764.com/MXTP/2018-02-05/CPLA0100/"/>
+	<published>2018-02-05T22:05:21-08:00</published>
+	<updated>2021-09-29T16:19:20-07:00</updated>
+	<title>Enter the Cybre</title>
+	<author>
+		<name>KIBI Gô</name>
+		<uri>https://go.KIBI.family/About/#me</uri>
+	</author>
+</entry>
+
+<entry xml:id="MXTP.2018-02-12.CPLA0101">
+	<id>tag:www.u2764.com,2021:MXTP.2018-02-12.CPLA0101</id>
+	<link rel="alternate" type="text/html" href="https://www.u2764.com/MXTP/2018-02-12/CPLA0101/"/>
+	<!-- The identifier date differs from the published date for this entry.  Although it was originally dated to the 12th, it was not actually completed and published until the 14th. -->
+	<published>2018-02-14T21:19:45-08:00</published>
+	<updated>2021-09-29T16:19:29-07:00</updated>
+	<title>Cybre in Love</title>
+	<author>
+		<name>KIBI Gô</name>
+		<uri>https://go.KIBI.family/About/#me</uri>
+	</author>
+</entry>
+
+<entry xml:id="MXTP.2018-09-24.dot.support">
+	<id>tag:www.u2764.com,2021:MXTP.2018-09-24.dot.support</id>
+	<link rel="alternate" type="text/html" href="https://www.u2764.com/MXTP/2018-09-24/dot.support/"/>
+	<!-- This playlist was originally created/dated 2014-10-25, but it wasn’t formally published until 2018-09-24. -->
+	<published>2018-09-24T20:31:49-07:00</published>
+	<updated>2021-09-27T01:20:07-07:00</updated>
+	<title>dot support</title>
+	<author>
+		<name>KIBI Gô</name>
+		<uri>https://go.KIBI.family/About/#me</uri>
+	</author>
+</entry>
+
+<entry xml:id="MXTP.2018-10-01.future_bar">
+	<id>tag:www.u2764.com,2021:MXTP.2018-10-01.future_bar</id>
+	<link rel="alternate" type="text/html" href="https://www.u2764.com/MXTP/2018-10-01/future_bar/"/>
+	<!-- This playlist was originally created/dated 2014-08-24, but it wasn’t formally published until 2018-10-01. -->
+	<published>2018-10-01T09:10:53-07:00</published>
+	<updated>2021-09-27T01:20:02-07:00</updated>
+	<title>future bar</title>
+	<author>
+		<name>KIBI Gô</name>
+		<uri>https://go.KIBI.family/About/#me</uri>
+	</author>
+	<summary type="xhtml">
+		<div xmlns="http://www.w3.org/1999/xhtml">
+			<pre>a playlist_ music from a future past_&#x0A;bar_</pre>
+		</div>
+	</summary>
+</entry>
+
+</feed>
