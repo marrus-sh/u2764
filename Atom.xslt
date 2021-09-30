@@ -5,56 +5,61 @@
 		<variable name="self" select="document($source)//atom:feed/atom:link[@rel='self']/@href[1]"/>
 		<variable name="name" select="substring-before(substring-after($self, atom:link[@rel='alternate']/@href[1]), '.')"/>
 		<html:li>
-			<html:span lang="en" xml:lang="en">
-				<choose>
-					<when test="$name='index'">
-						<text>Most Recent</text>
-					</when>
-					<when test="starts-with($name, 'archive-')">
-						<value-of select="concat(translate(substring(substring-after($name, 'archive-'), 1, 1), 'abcdðefƒghijklmnŋopqrstuvwxyzþæœ', 'ABCDÐEFƑGHIJKLMNŊOPQRSTUVWXYZÞÆŒ'), translate(substring(substring-after($name, 'archive-'), 2), '-_', '‐ '))"/>
-					</when>
-					<otherwise>
-						<value-of select="concat(translate(substring($name, 1, 1), 'abcdðefƒghijklmnŋopqrstuvwxyzþæœ-_', 'ABCDÐEFƑGHIJKLMNŊOPQRSTUVWXYZÞÆŒ· '), translate(substring($name, 2), '-_', '‐ '))"/>
-					</otherwise>
-				</choose>
-			</html:span>
-			<html:ol>
-				<for-each select="document($source)//atom:entry">
-					<sort select="atom:link[@rel='alternate']/@href[1]" lang="zxx" order="descending"/>
-					<variable name="date" select="substring-before(substring-after(atom:link[@rel='alternate']/@href[1], document($feed)//atom:feed[1]/atom:link[@rel='alternate']/@href[1]), '/')"/>
-					<variable name="identifier" select="substring-before(substring-after(substring-after(atom:link[@rel='alternate']/@href[1], document($feed)//atom:feed[1]/atom:link[@rel='alternate']/@href[1]), '/'), '/')"/>
-					<html:li title="{normalize-space(atom:summary)}">
-						<apply-templates select="." mode="lang"/>
-						<html:a data-atom-id="{atom:id}" href="{atom:link[@rel='alternate']/@href[1]}">
-							<if test="@xml:id">
-								<attribute name="id">
-									<value-of select="@xml:id"/>
-								</attribute>
-							</if>
-							<html:small>
-								<html:time datetime="{$date}">
-									<text>[</text>
-									<value-of select="$date"/>
-									<text>]</text>
-								</html:time>
-								<text> </text>
-								<html:code>
-									<value-of select="$identifier"/>
-								</html:code>
-							</html:small>
-							<if test="atom:link[@rel='http://id.loc.gov/ontologies/bibframe/coverArt']">
-								<html:img alt="{atom:title} cover art." src="{atom:link[@rel='http://id.loc.gov/ontologies/bibframe/coverArt']/@href[1]}"/>
-							</if>
-							<for-each select="atom:title">
-								<html:span>
-									<apply-templates select="." mode="lang"/>
-									<apply-templates select="." mode="content"/>
-								</html:span>
-							</for-each>
-						</html:a>
-					</html:li>
-				</for-each>
-			</html:ol>
+			<html:details>
+				<if test="$name='index'">
+					<attribute name="open"/>
+				</if>
+				<html:summary lang="en" xml:lang="en">
+					<choose>
+						<when test="$name='index'">
+							<text>Most Recent</text>
+						</when>
+						<when test="starts-with($name, 'archive-')">
+							<value-of select="concat(translate(substring(substring-after($name, 'archive-'), 1, 1), 'abcdðefƒghijklmnŋopqrstuvwxyzþæœ', 'ABCDÐEFƑGHIJKLMNŊOPQRSTUVWXYZÞÆŒ'), translate(substring(substring-after($name, 'archive-'), 2), '-_', '‐ '))"/>
+						</when>
+						<otherwise>
+							<value-of select="concat(translate(substring($name, 1, 1), 'abcdðefƒghijklmnŋopqrstuvwxyzþæœ-_', 'ABCDÐEFƑGHIJKLMNŊOPQRSTUVWXYZÞÆŒ· '), translate(substring($name, 2), '-_', '‐ '))"/>
+						</otherwise>
+					</choose>
+				</html:summary>
+				<html:ol>
+					<for-each select="document($source)//atom:entry">
+						<sort select="atom:link[@rel='alternate']/@href[1]" lang="zxx" order="descending"/>
+						<variable name="date" select="substring-before(substring-after(atom:link[@rel='alternate']/@href[1], document($feed)//atom:feed[1]/atom:link[@rel='alternate']/@href[1]), '/')"/>
+						<variable name="identifier" select="substring-before(substring-after(substring-after(atom:link[@rel='alternate']/@href[1], document($feed)//atom:feed[1]/atom:link[@rel='alternate']/@href[1]), '/'), '/')"/>
+						<html:li title="{normalize-space(atom:summary)}">
+							<apply-templates select="." mode="lang"/>
+							<html:a data-atom-id="{atom:id}" href="{atom:link[@rel='alternate']/@href[1]}">
+								<if test="@xml:id">
+									<attribute name="id">
+										<value-of select="@xml:id"/>
+									</attribute>
+								</if>
+								<html:small>
+									<html:time datetime="{$date}">
+										<text>[</text>
+										<value-of select="$date"/>
+										<text>]</text>
+									</html:time>
+									<text> </text>
+									<html:code>
+										<value-of select="$identifier"/>
+									</html:code>
+								</html:small>
+								<if test="atom:link[@rel='http://id.loc.gov/ontologies/bibframe/coverArt']">
+									<html:img alt="{atom:title} cover art." src="{atom:link[@rel='http://id.loc.gov/ontologies/bibframe/coverArt']/@href[1]}"/>
+								</if>
+								<for-each select="atom:title">
+									<html:span>
+										<apply-templates select="." mode="lang"/>
+										<apply-templates select="." mode="content"/>
+									</html:span>
+								</for-each>
+							</html:a>
+						</html:li>
+					</for-each>
+				</html:ol>
+			</html:details>
 		</html:li>
 		<if test="document($source)//atom:feed[1]/atom:link[@rel='prev-archive']">
 			<call-template name="entries">
@@ -112,9 +117,9 @@ details#sidebar>nav>h1{ Box-Sizing: Border-Box; Grid-Area: 1 / 1; Margin: Auto; 
 div#scroller{ Box-Sizing: Border-Box; Direction: RTL; Grid-Area: 2 / 1; Justify-Self: Stretch; Border-Top: Thin Solid; Overflow-Y: Scroll }
 div#scroller ol{ Direction: LTR; Margin: 0; Padding: 0 }
 div#scroller li{ Display: Block; Margin: 0; Padding: 0 }
-div#scroller li>span{ Display: Block; Box-Sizing: Border-Box; Border-Width: Medium; Border-Bottom-Style: Double; Padding: .25REM .5REM; Overflow: Hidden; White-Space: NoWrap; Font-Style: Italic; Font-Weight: Bold; Text-Align: Center; Text-Overflow: Ellipsis }
-div#scroller li:Not(:First-Child)>span{ Margin-Top: .75REM; Border-Top-Style: Double }
-div#scroller li:Only-Child>span{ Display: None }
+div#scroller li>details>summary{ Box-Sizing: Border-Box; Border-Width: Medium; Border-Bottom-Style: Double; Padding: .25REM .5REM; Overflow: Hidden; White-Space: NoWrap; Font-Style: Italic; Font-Weight: Bold; Text-Align: Center; Text-Overflow: Ellipsis }
+div#scroller li:Not(:First-Child)>details{ Margin-Top: .75REM; Border-Top-Style: Double }
+div#scroller li:Only-Child>details[open]>summary{ Display: None }
 div#scroller li>a{ Display: Grid; Border-Bottom: Thin Solid; Padding: .5REM .5REM .5REM .5REM; Grid: Auto-Flow / MinMax(1.5REM, Max-Content) 1FR; Gap: .5REM }
 div#scroller li>a:Any-Link{ Color: Inherit; Text-Decoration: None }
 div#scroller li>a>small:First-Child{ Display: Block; Box-Sizing: Border-Box; Grid-Column: 1 / Span 2; Margin: -.5REM -.5REM 0 -.5REM; Border-Bottom: Thin Solid; Padding: .25REM .5REM; Min-Width: 100%; Overflow: Hidden; White-Space: NoWrap; Font-Size: Inherit; Font-Weight: Bold; Line-Height: 1; Text-Overflow: Ellipsis }
