@@ -1,0 +1,436 @@
+<meta charset="UTF-8"/>
+<title>InCoWriMo 2020</title>
+<base target="_top"/>
+<meta name="viewport" content="width=device-width,intial-scale=1"/>
+<link rel="alternate" type="text/x.market" href="index.market" />
+<style>
+@font-face{ Font-Family: Eadui; Src: URL(Eadui.ttf) }
+@font-feature-values Eadui{ @swash{ Swash: 1 } @styleset{ Drops: 11; Titling: 12 } @stylistic{ Alts: 1 } }
+html{ Font: Small-Caps X-Large / 1.1 Eadui, Sans-Serif; Text-Align: Justify }
+body{ Margin: Auto; Padding: 2REM .5REM; Max-Width: 34EM }
+div.TOOTBOX{ Display: Grid; Grid-Template-Columns: 1FR 1FR; Clear: Both; Padding: .55REM 0; Gap: .55REM .5REM }
+article::after,section::after{ Display: Block; Clear: Both; Content: "" }
+article.TOOT{ Position: Relative; Margin: 0; Border: Thin Solid; Padding: .55REM 1REM; Box-Shadow: 1PX 1PX CurrentColor; Font-Variant-Caps: Normal }
+article.TOOT:First-Child:Nth-Last-Child(2),article.TOOT:Last-Child:Nth-Child(2){ Align-Self: Start }
+article.TOOT::before{ Display: Block; Box-Sizing: Border-Box; Margin: 0 .25REM .275REM 0; Border: 2PX Solid; Height: 1.1REM; Width: 1.1REM; Content: "" }
+article.TOOT::after{ Position: Absolute; Box-Sizing: Border-Box; Top: .75REM; Left: 2.35REM; Border-Style: Solid None; Border-Width: 2PX; Height: .55REM; Width: 2.7REM; Clip-Path: Polygon(-20% -20%, 120% -20%, 120% 50%, 60% 50%, 60% 120%, -20% 120%); Content: "" }
+nav{ Padding: 2EM 1EM 0 2EM; Text-Align: Center }
+header{ Float: Right; Margin: -1.9REM 0 .2REM 1REM; Width: Min-Content; Max-Width: 100% }
+footer{ Font: Normal XX-Large / 1.1 Cursive; Text-Align: Right }
+h1[aria-level="1"]~section{ Clear: Both; Margin: 2REM 0; Border-Style: None None Double Double; Border-Width: Medium; Padding: 2REM 1REM 0 2REM; Box-Shadow: 1PX -1PX CurrentColor }
+h1[aria-level="1"]~section:Target{ Border-Style: None None Solid Solid; Box-Shadow: 2PX -2PX CurrentColor }
+h1[aria-level="3"]~section{ Margin: 0 -.5REM .55REM -1.5REM; Border-Bottom: Thin Solid; Padding: 0 .5REM .55REM 1.5REM }
+h1[aria-level="5"]~section{ Display: Inline }
+h1[aria-level="5"]~section::after{ Content: None }
+h1[aria-level="2"]{ Margin: 0 Auto; Width: Max-Content; Max-Width: 100%; Font: Inherit; Word-Spacing: 120%; Line-Height: 1; Text-Decoration: Underline }
+h1[aria-level="3"]{ Margin: 0 0 1.1EM; Font: Inherit; Font-Variant-Caps: Normal; Word-Spacing: 120%; Text-Decoration: Underline }
+h1[aria-level="4"]{ Float: Right; Width: Max-Content; Max-Width: 100%; Margin: -.55REM -.5REM 0 0; Border-Style: None Solid Double Double; Padding: .1EM .5EM; Border-Width: Thin Thin Medium Medium; Font: Inherit; Font-Variant-Alternates: Styleset(Titling); Font-Variant-Caps: Titling-Caps; Text-Transform: Uppercase }
+h1[aria-level="5"]{ Display: Inline; Margin: 0; Font: Inherit; Letter-Spacing: .075EM }
+h1[aria-level="6"]{ Display: Inline; Margin: 0; Border: Thin Solid; Font: Inherit; Font-Size: Large; Font-Variant-Alternates: Styleset(Titling); Font-Variant-Caps: Titling-Caps; Line-Height: 1; Text-Transform: Uppercase }
+nav ol{ Margin: .55EM 0; Padding: 0; Columns: 3 6EM; List-Style: None }
+p{ Display: Inline; Margin: 0 }
+p+p::before{ Display: Inline-Block; Margin: 0 .25EM -.1REM; Padding: 0 1PX 1PX 0; Box-Shadow: 1PX 1PX CurrentColor; Font-Size: 1.1REM; Font-Family: Cursive; Font-Weight: Bold; Line-Height: 1; Vertical-Align: Top; Content: "¶" }
+blockquote p,footer p{ Display: Block }
+blockqupte p::before,footer p::before{ Content: None }
+blockquote p+p{ Margin-Top: 1.1EM }
+pre{ Margin: 0; Padding: 0 1EM; Font: Inherit; Font-Variant-Caps: Normal; White-Space: Pre-Wrap }
+blockquote,figure{ Float: Left; Position: Relative; Box-Sizing: Border-Box; Margin: 0 .5REM 0 0; Border: Thin Dashed; Padding: 0 .5REM; Width: Max-Content; Min-Width: Min-Content; Max-Width: 40%; Box-Shadow: 1PX 1PX CurrentColor; Font: Normal XX-Large / 1.1 Cursive; Text-Align: Left }
+blockquote::before,blockquote::after{ Display: Block; Position: Absolute; Top: 0; Bottom: 0; Margin: Auto; Border: Thin Solid; Width: 1EM; Height: 1EM; Color: Black; Background: White; Font: Normal X-Large / 1 Sans-Serif; Text-Align: Center }
+blockquote::before{ Left: -.5EM; Content: "«" }
+blockquote::after{ Right: -.5EM; Content: "»" }
+footer blockquote,footer figure{ Border: None; Margin-Left: -1REM; Padding: 0 1REM; Max-Width: 60%; Box-Shadow: None; Font-Size: Large }
+figcaption{ Margin: 0; Border-Top: Thin Solid; Padding: .55EM 0; Min-Width: 100%; Width: Min-Content; Font: Normal Medium / 1.1 Cursive; Text-Align: Center }
+a[href]{ Color: Inherit; Text-Decoration: Dashed Underline }
+a.NP{ Display: Block; Border-Style: Solid Dotted Dotted; Border-Width: Thin; Padding: 0 .1EM; Text-Decoration: None }
+a.NP::after{ Display: Block; Margin: -.25EM 0 -.75EM; Line-Height: 1; Text-Align: Right; Content: "♫" }
+a.SIG{ Display: Block; Margin: .55EM 0 .55EM Auto; Border: Thin Solid; Padding: 0 .25REM .55EM; Width: Max-Content; Max-Width: 100%; Overflow: Hidden; Font: Normal Medium / 1.1 Eadui, Sans-Serif; Text-Decoration: None }
+abbr{ Font-Variant-Alternates: Styleset(Titling) }
+b{ Font: Inherit; Text-Decoration: Double Underline }
+b.DROP{ Float: Left; Position: Relative; Margin: 0 3PX 3PX 0; Border-Style: Solid None None Dashed; Border-Width: Thin; Padding: 0 1PX 1PX 0; Box-Shadow: 2PX 2PX CurrentColor; Font-Size: 2.5EM; Font-Weight: Inherit; Font-Variant-Alternates: Styleset(Drops); Font-Variant-Caps: Normal; Text-Decoration: None; Z-Index: 0 }
+b.DROP::First-Letter{ Text-Transform: Uppercase }
+blockquote b.DROP,h1[aria-level="5"].MENTION b.DROP{ Margin: 0; Border: None; Padding: 0; Box-Shadow: None; Font-Size: 2EM; Line-Height: 1 }
+h1[aria-level="5"].MENTION b.DROP{ Margin-Right: 3PX }
+h1[aria-level="5"].MENTION b.DROP::before{ Display: Block; Position: Absolute; Bottom: 0; Left: 0; Right: 0; Border-Style: None None Solid Solid; Border-Width: Thin; Height: .275REM; Z-Index: -1; Content: "" }
+h1[aria-level="5"].MENTION b.DROP::after{ Display: Block; Position: Absolute; Top: 1REM; Bottom: 0; Left: 0; Right: 0; Box-Shadow: 2PX 1PX CurrentColor; Z-Index: -1; Content: "" }
+cite{ Font: Normal Large / 1.1 Cursive }
+:Root blockquote>cite{ Display: Block; Margin: .55REM -.5REM -.55REM Auto; Border-Style: Solid None None Solid; Border-Width: Thin; Width: Max-Content; Max-Width: 100%; Font: Normal Large / 1.1 Eadui, Sans-Serif }
+:Root footer blockquote>cite{ Border: Thin Solid }
+cite.SMALL{ Font: Inherit; Font-Variant-Caps: Normal; Quotes: "“" "”" "‘" "’" }
+cite.SMALL::before{ Content: Open-Quote }
+cite.SMALL::after{ Content: Close-Quote }
+code{ Font: Inherit; Font-Variant-Caps: Normal }
+code::before,code::after{ Content: "`" }
+pre code::before,pre code::after{ Display: Block; Content: "```" }
+em{ Font: Inherit; Text-Decoration: Underline }
+q{ Font-Variant-Caps: Normal }
+q::before,q::after{ Border: Thin Solid; Font: Normal X-Large / 1 Sans-Serif }
+q::before{ Margin: 0 .25EM 0 0; Content: "«" }
+q::after{ Margin: 0 0 0 .25EM; Content: "» "}
+strong{ Font: Inherit; Letter-Spacing: .075EM }
+a.SIG span.SUFFIX{ Position: Relative; Top: .55EM }
+u.NAME{ Font-Variant-Caps: Normal; Text-Decoration: None }
+a.SIG u.NAME{ Display: Block; Margin: 0 -.25REM; Border-Bottom: Thin Solid; Padding: 0 .25REM; Font: Normal XXX-Large / 1.1 Cursive; Text-Align: Right }
+</style>
+
+@ { @en } _| InCoWriMo 2020 |_ { .NAME } @
+
+_| t |_ { .S }hese missives were handwritten during the month of February 2020, as a sort of faux­‑@| _| InCoWriMo |_ { .NAME } |@ { !https://incowrimo.org/ } for my followers on social media.
+_| t |_ { .S }he following are plain­‑text reproductions that undoubtedly will lack some of the charm of the original.
+
+\[\_| t |_ { .S }ypeset in @| '| Eadui |' |@ { !https://fontlibrary.org/en/font/eadui } (_| ]| OFL |] { /Open /Font /License } |_ { .NAME }).]
+
+%% Contents
+
+& @| 01 february 2020 |@ { !#01 target=_self }
+
+& @| 02 february 2020 |@ { !#02 target=_self }
+
+& @| 03 february 2020 |@ { !#03 target=_self }
+
+& @| 04 february 2020 |@ { !#04 target=_self }
+
+& @| 05 february 2020 |@ { !#05 target=_self }
+
+& @| 06 february 2020 |@ { !#06 target=_self }
+
+& @| 07 february 2020 |@ { !#07 target=_self }
+
+& @| 08 february 2020 |@ { !#08 target=_self }
+
+& @| 09 february 2020 |@ { !#09 target=_self }
+
+& @| 10 february 2020 |@ { !#10 target=_self }
+
+& @| 11 february 2020 |@ { !#11 target=_self }
+
+$$ { #01 }
+^^^
+-- 01 february 2020
+@| '| Through the Deep, Dark Valley |' \|\ _| The Oh Hellos |_ { .NAME } |@ { !https://music.theohhellos.com/album/through-the-deep-dark-valley .NP }
+
+$$$ Friends of KIBI:
+
+$$$$
+
+#| t |# { .DROP }his letter comes to you as the actualization of a subpost—awareness of this thing called “@| _| #InCoWriMo |_ { .NAME } |@ { !https://incowrimo.org/ }” arrived in my feed as some poor soul seeked a mate to partake with, and i, a similar sort of poor soul, jokingly remarked that for the month of february i would simply « handwrite all my toots ». _| t |_ { .S }his is not *| really |* in the spirit of _| International Correspondence Writing Month |_ { .NAME }—wherein the word “personal” is implied—but i will forever be known as the type to commit to a bit once she has said it. _| a |_ { .S }nd so here we are.
+
+$$$$
+
+>>>>>
+#| M |# { .DROP }astodon needs a remix culture
+
+/////
+. : _| t |_ { .S }his is one such toot. _| i |_ { .S } came of age in a ]| \U+1F16D\ |] { /Creative /Commons }­‑repping, hip­‑hop–influenced internet, and for a long time i (and i think a lot of people!) rather assumed that the open­‑source culture that places like mastodon attract was much the same—and nobody wants to be one of *| those |* people! _| b |_ { .S }ut I think they are quite different actually! _| n |_ { .S }obody is trying to “remix” @| underscore.js |@ { !http://underscorejs.org/ }! _| a |_ { .S }nd it shows in the fact that, despite open source’s vibrancy, our cultural commons is mostly limited to lacklustre memes. _| s |_ { .S }o maybe there is a place for a concerted remix culture on mastodon after all.
+
+$$$$
+
+#| t |# { .DROP }hese missives take a long time to write. _| m |_ { .S }ore tomorrow?
+
+___
+>>>>
+Nothin’ is a waste, if you learn from it;||And the sun, it does not cause us to grow—||It is the rain that will strengthen your soul.||:| —It will make you whole. |: { $Display: $Block; $Text-Align: $Right }
+
+` <cite class="SMALL">I Have Made Mistakes</cite>
+
+////
+yours,
+
+@| _| J’Li 🎐 |_ { .NAME } @jellyfish_link@elekk:| .xyz |: { .SUFFIX } |@ { !https://elekk.xyz/@jellyfish_link .SIG }
+
+@| _| Lady KIBI |_ { .NAME } @kibimon@monsterpit:| .net |: { .SUFFIX } |@ { !https://monsterpit.net/@kibimon .SIG }
+
+$$ { #02 }
+^^^
+-- 02 february 2020
+@| '| Down the Way |' \|\ _| Angus & Julia Stone |_ { .NAME } |@ { !http://www.worldcat.org/oclc/871943240 .NP }
+
+$$$ Friends of KIBI:
+
+$$$$
+
+#| i |# { .DROP } typically count my days starting from sunrise, not midnight, but for these messages have decided to go with the traditional calendar system, such that i can pen them at the end of my day rather than the beginning. _| s |_ { .S }o this was written shortly after midnight on the waking of the first.
+
+$$$$ responses:
+
+$$$$$ _| #| @ |# { .DROP }KitRedGrave |_ { .NAME }: { .MENTION }
+
+\[\@| on the preparation time of these messages |@ { !https://vulpine.club/@KitRedgrave/103585321263884941 }]
+
+$$$$$$ regarding the handwriting:
+
+_| i |_ { .S } would like to say it took “an afternoon” to devise, but in fact it is the culmination of roughly a half­‑decade of gradual development. _| t |_ { .S }his particular hand is an evolution of my small­‑caps script (seen above ↗), which i noticed slowly diverging from my majuscules over the past year (and perhaps helped on its way a bit). _| a |_ { .S }s followers of me on social media will note, i am not wont to use capital letters in my regular communication. _| s |_ { .S }o having a mixed­‑script penmanship seemed a tad unnecessary, especially so far as such things as legibility are concerned.
+
+$$$$$$ regarding the layout:
+
+_| i |_ { .S } have planned nothing. _| i |_ { .S } am literally making this up as i go.
+
+$$$$$ _| #| @ |# { .DROP }satyrlegs |_ { .NAME }: { .MENTION }
+
+\[\@| re: mass effect |@ { !https://monsterpit.net/@satyrlegs/103587248341690247 }] _| t |_ { .S }his is why, for all its flaws, i still hold that @| #DA2 |@ { !https://elekk.xyz/tags/DA2 } is the best _| Dragon Age |_ { .NAME } game. _| _| H |_ { .S }awke |_ { .NAME } is literally irrelevant beyond the walls of _| Kirkwall |_ { .NAME }.
+
+$$$$
+
+#| a |# { .DROP }s you can see, i am not giving up on sociality just because i am handwriting everything! _| i |_ { .S }f you message me, i may respond (slowly).
+
+___
+Until tomorrow,
+
+@| _| J’Li 🎐 |_ { .NAME } @jellyfish_link@elekk:| .xyz |: { .SUFFIX } |@ { !https://elekk.xyz/@jellyfish_link .SIG }
+
+@| _| Lady KIBI |_ { .NAME } @kibimon@monsterpit:| .net |: { .SUFFIX } |@ { !https://monsterpit.net/@kibimon .SIG }
+
+$$ { #03 }
+^^^
+-- 03 february 2020
+@| '| Seeking Thrills |' \|\ _| Georgia |_ { .NAME } |@ { !https://georgiauk.com/ .NP }
+
+$$$ Friends of KIBI:
+
+$$$$
+
+*| #| l |# { .DROP }ast night i dreamt of college. |* _| n |_ { .S }ot such a strange occurance, but what made this dream interesting was that it actually seemed... happy?! _| b |_ { .S }ecause college was not generally a very happy time for me. _| b |_ { .S }ut i think there is a part of me which misses having an apartment and living with friends.
+
+_| i |_ { .S }t is a difficult thing for me to reason about, because in many ways i feel i am happier, healthier, and more stable as i am now. _| b |_ { .S }ut in other ways, it feels as though the feet have been taken out from under me.
+
+$$$$
+
+#| i |# { .DROP } also spent a good deal of time—too much, really—thinking about english orthography—which is to say my respelling rules feel very firm by now, and i am just waiting on my codex software (]| w.i.p. |] { /work /in /progress }) such that i have a place to document it. _| i |_ { .S } despise like 90% of the people who speak in runes, but i even had a look at the anglo­‑saxon fuþorc, and it turns out that an anglo­‑saxon alphabet is quite suited to english (who would have thought?), so the case may be that i am unwittingly inventing a runic transliteration system as well. _| t |_ { .S }he major question is diacritics!
+
+$$$$
+
+#| th |# { .DROP }ere are actually a great many projects which i am itching to write codices/encyclopædias/handbooks/primers/etc. for, which is why i have been working so hard on programming of late! _| w |_ { .S }riting tests has been exhausting. _| b |_ { .S }ut i’m excited with where it is heading.
+
+___
+. { $Font-Size: $X-Large } Hope to show it to you soon...
+
+@| _| J’Li 🎐 |_ { .NAME } @jellyfish_link@elekk:| .xyz |: { .SUFFIX } |@ { !https://elekk.xyz/@jellyfish_link .SIG }
+
+@| _| Lady KIBI |_ { .NAME } @kibimon@monsterpit:| .net |: { .SUFFIX } |@ { !https://monsterpit.net/@kibimon .SIG }
+
+$$ { #04 }
+^^^
+-- 04 february 2020
+@| '| Metals |' \|\ _| Feist |_ { .NAME } |@ { !https://www.worldcat.org/title/metals/oclc/747615289 .NP }
+
+$$$ Friends of KIBI:
+
+$$$$
+
+#| th |# { .DROP }is letter comes to you a little late—i spent last night working hard on refactoring my _| Resource |_ { .NAME } code to make use of @| _| ECMAScript Proxy Objects |_ { .NAME } |@ { !https://tc39.es/ecma262/#sec-proxy-objects }—so that the triple ~| <example:1> rdfs:label "Example". |~ can be written plainly as
+
+` <pre><code>const resource = new Resource ("example:1")
+` resource[pname`rdfs:label`] = "Example"</code></pre>
+
+which needless to say was a lot of work for a primarily aesthetic improvement—and i still haven’t written the tests yet.
+
+_| m |_ { .S }y initial hope for this project was to try to keep the whole library under 65,536 characters, but considering i am presently at 61,020, that is looking increasingly unlikely. _| b |_ { .S }ut surely 1,114,112 is still a reasonable upper bound! :P. _| t |_ { .S }he length comes from my insistence on doing everything in a single file—so that includes basic data structures, more advanced graph/resource operations, @| _| N‑Triples |_ { .NAME } |@ { !https://www.w3.org/TR/n-triples/ } and @| _| Turtle |_ { .NAME } |@ { !https://www.w3.org/TR/turtle/ } ]| i/o |] { /Input/Output }, _| ]| HMTL |] |_ { .NAME } and native _| JavaScript |_ { .NAME } output, and of course the actual codex software itself.
+
+$$$$ two short toots:
+::::: { .TOOTBOX }
+@@@@@@ { .TOOT }
+It's funny how people call it “sleeping like a dog” when what you're actually doing is... sleeping like a human...
+
+@@@@@@ { .TOOT }
+What if instead of nostalgically bemoaning the loss of old flash games, we spent that time looking at/developing/playing the small HTML web games being made now?
+
+___
+>>>>
+Cold outside / warm by the fire—||Get it wrong, get it wrong, get it wrong.||Get it right, get it right, get it right.
+
+` <cite class="SMALL">Get It Wrong, Get It Right</cite>
+
+////
+Just an idea...
+
+@| _| J’Li 🎐 |_ { .NAME } @jellyfish_link@elekk:| .xyz |: { .SUFFIX } |@ { !https://elekk.xyz/@jellyfish_link .SIG }
+
+@| _| Lady KIBI |_ { .NAME } @kibimon@monsterpit:| .net |: { .SUFFIX } |@ { !https://monsterpit.net/@kibimon .SIG }
+
+$$ { #05 }
+^^^
+-- 05 february 2020
+@| '| The Long March EP |' \|\ _| Blue Scholars |_ { .NAME } |@ { !https://bluescholars.bandcamp.com/album/the-long-march-ep .NP }
+
+$$$ Friends of KIBI:
+
+$$$$
+
+#| y’ |# { .DROP }all remember that one article that was like @| '| Kanye’s Politics Are What Happens When You Don’t Read Books |' { .SMALL } |@ { !https://verysmartbrothas.theroot.com/kanyes-politics-are-what-happens-when-you-dont-read-boo-1825475113 }? _| h |_ { .S }ere, i’ll just quote a bit at you: "| Kanye has a humongous platform, though, and is used to people listening to what he has to say. And that might make him believe that what he has to say is worth listening to— |"and wow, hello mastodon!
+
+_| h |_ { .S }ere’s the thing. _| w |_ { .S }hen it comes to knowing if your takes are worthwhile, you can’t learn that if you only listen to yourself. _| y |_ { .S }ou can’t learn that from your followers, either. _| y |_ { .S }ou gotta actually like... broaden your horizons a bit... and, like, read a book.
+
+_| t |_ { .S }he word “read” here is flexible but the word “book” isn’t. _| i |_ { .S } mean, you can listen to an audiobook. _| b |_ { .S }ut the thing about a book is it’s actually, y’know, *| edited |*, and not the off­‑the­‑cuff sort of friendchat that fills social media and—yes—podcasts. _| f |_ { .S }riendchat is important—conversation is where synthesis happens—but friendchat cannot check you when you’re talking out your ass. _| y |_ { .S }ou gotta read a book.
+
+$$$$
+
+#| wh |# { .DROP }en i first joined mastodon, something i immediately missed from my time on twitter was the journalism. _| p |_ { .S }eople on twitter share articles all the time, and articles are like books, but shorter. _| i |_ was okay with this in the first months after i joined, because i joined in 2016 and _| Donald Trump |_ { .NAME } had just been elected president. _| b |_ { .S }ut it’s been, like, three years, and there’s still the same takes and lack of substance. _| i |_ { .S } tried to make it happen with my own shit—i offered to edit a zine and wrote all kinds of articles—no luck. _| f |_ { .S }edis don’t wanna read, they wanna shitpost and spicy take all over the timeline. _| i |_ { .S }dk fam, is that really how you plan on defeating capitalism?!
+
+___
+>>>>
+But now, you say there’s no time to study,||People look—You got time to take a shit,||Then you got time to read a book.
+
+` <cite class="SMALL">Southside Revival</cite>
+
+////
+Think about it...
+
+@| _| J’Li 🎐 |_ { .NAME } @jellyfish_link@elekk:| .xyz |: { .SUFFIX } |@ { !https://elekk.xyz/@jellyfish_link .SIG }
+
+@| _| Lady KIBI |_ { .NAME } @kibimon@monsterpit:| .net |: { .SUFFIX } |@ { !https://monsterpit.net/@kibimon .SIG }
+
+$$ { #06 }
+^^^
+-- 06 february 2020
+@| '| 小圈子 |' \|\ _| 輕描淡寫 |_ { .NAME } |@ { !https://vill4in.bandcamp.com/album/--5 .NP }
+
+$$$ Friends of KIBI:
+
+$$$$
+
+#| f |# { .DROP }olks who were around on mastodon in 2017 might remember what was described as the magic of that time. _| t |_ { .S }hink my @| _| CYBREMONDAY |_ { .NAME } |@ { !https://www.u2764.com/NFIC/2018-02-05/CMON0100/ } (2018) zine; there were folks trying to figure out how to hack the blockchiain to give trans girls money; there were folks joining up to make music, podcasts, games; @| Mutant Standard |@ { !https://mutant.tech/ } got started around that time, as did @| GlitchSoc |@ { !https://glitch-soc.github.io/docs/ }, which i was involved in. _| f |_ { .S }or a long time i thought that magic was driven by a lie, which collapsed sometime mid­‑2018, but with the stuff going on about @| _| #MastoMonday |_ { .NAME } |@ { !https://elekk.xyz/tags/MastoMonday } lately i’m beginning to wonder if maybe that magic is still alive. _| m |_ { .S }aybe what’s changed... is my relation to it.
+
+$$$$
+
+#| a |# { .DROP }nd not just mine—codemom left; persons who shall not be named (thankfully, in some cases) stepped out of the public spotlight. _| b |_ { .S }ut as an early adopter of mastodon, connectedness to its dominant culture and trends for me largely came free. _| a |_ { .S }nd it’s been a weird—and perhaps difficult—transition out of that place to where i am now. _| t |_ { .S }o be clear: _| i |_ { .S } was tired as fuck of having hundreds of followers, and intentionally distanced myself from the popular folks who attracted them. _| i |_ { .S }’m not complaining about being obscure. _| b |_ { .S }ut that doesn’t mean i don’t still have dreams; it doesn’t mean i don’t still want to organize and get things done. _| w |_ { .S }e need a social media where the little people can accomplish things, too.
+
+$$$$
+
+#| i |# { .DROP }n other news, i’ve been thinking of revamping my website. _| s |_ { .S }tay tuned?
+
+___
+It’ll be super rad...
+
+. { $Display: $Grid; $Grid-Template-Columns: $Repeat(3, $Max-Content); $Justify-Content: $End; $Align-Items: $Center; $Font-Size: $XXX-Large }@| _| Lady||KIBI |_ { .NAME $Font-Size: $XX-Large; $Text-Align: $Center } @kibimon||:| `|	|` |: { $White-Space: $Pre }@monsterpit||:| `|		|` |: { $White-Space: $Pre }.net |@ { !https://monsterpit.net/@kibimon .SIG $Align-Self: $Start; $Tab-Size: $1EM; $-moz-Tab-Size: $1EM; $Text-Align: $Left } / @| _| ^| 🎐 |^ { $Font-Size: $Large }J’Li |_ { .NAME $Text-Align: $Center } @jellyfish_link||:| `|	|` |: { $White-Space: $Pre }@elekk||:| `|		|` |: { $White-Space: $Pre }.xyz |@ { !https://elekk.xyz/@jellyfish_link .SIG $Align-Self: $Start; $Tab-Size: $1EM; $-moz-Tab-Size: $1EM; $Text-Align: $Left }
+
+$$ { #07 }
+^^^
+-- 07 february 2020
+@| '| Memory Sketches |' \|\ _| Tim Linghaus |_ { .NAME } |@ { !https://timlinghaus.bandcamp.com/album/memory-sketches .NP }
+
+$$$ Friends of KIBI:
+
+$$$$
+
+#| i |# { .DROP } actually did update @| my webpage |@ { !https://go.KIBI.family/ }! _| i |_ { .S }t looks all clean and professional now. _| i |_t actually took me somewhat by surprise, seeing how many things i had listed on it, because in the past it has always seemed a struggle finding anything to list at all. _| i |_ { .S } guess i have been busy? _| a |_ { .S }nd that’s not even counting the fact that i, like, did a _| NaNoWriMo |_ { .NAME } last year.
+
+_| i |_ { .S } still feel like most of my work over the past few years has been primarily not useful to anyone but myself. _| i |_ think doing things which are helpful to other people might be my 2020 goal.
+
+$$$$
+
+#| th |# { .DROP }ere’s a phrase: _| t |_ { .S }he best camera for capturing a moment is the one you have with you? _| i |_ feel like i don’t hear that phrase enough. _| t |_ { .S }he best publishing platform is the one you have access to. _| t |_ { .S }he best chat app is the one your friends have installed. _| t |_ { .S }he best digital audio workstation is the one which runs on your computer. _| i |_ { .S } think sometimes we get so caught up in obtaining the proper equipment that we forget to capture the moment using the equipment we have. _| d |_ { .S }on’t run home for your ]| DSLR |] { /Digital /Single­‑lens /Reflex /Camera }, pull out your phone and take a picture of the damn sunset. _| y |_ { .S }’know?
+
+_| i |_ { .S } think probably the biggest change in my approach over the past few years has been in designing cameras you can capture the sunset with.
+
+___
+. { $Font-Size: $X-Large } Send me Polaroids of your Polaroids,
+
+@| _| J’Li 🎐 |_ { .NAME } @jellyfish_link@elekk:| .xyz |: { .SUFFIX } |@ { !https://elekk.xyz/@jellyfish_link .SIG }
+
+@| _| Lady KIBI |_ { .NAME } @kibimon@monsterpit:| .net |: { .SUFFIX } |@ { !https://monsterpit.net/@kibimon .SIG }
+
+$$ { #08 }
+^^^
+-- 08 february 2020
+@| '| Beat the Champ |' \|\ _| The Mountain Goats |_ { .NAME } |@ { !http://www.worldcat.org/oclc/904452681 .NP }
+
+$$$ Friends of KIBI:
+
+$$$$
+
+#| i |# { .DROP } was speaking with a friend earlier, and one topic which came up was how the things a person might seek out of a friendship might change over the course of recovery. _| i |_ { .S }n #| stage I |#, it is important to have people who listen to and validate your experiences. _| i |_ { .S }n #| stage II |#, you need people who will give you space and respect your emotional unavailability. _| b |_ { .S }ut come #| stage III |#, you need people who will invest themselves and their time in you, to assert for yourself that it is possible for you to have “normal”, healthy, intimate relationships again.
+
+_| i |_ { .S } think the transition from #| stage I |# to #| stage II |# typically comes pretty easily (thankfully), since the people who listen to and affirm survivors are typically *| other survivors |*, who have similar needs themselves, or at least understand them. _| b |_ { .S }ut everyone makes the transition from #| stage II |# to #| stage III |# at different times. _| a |_ { .S }nd that is hard, because your existing friends stop being able to meet your needs, and because the people you need now are the same sort you have spent the last year(s) pushing away. _| i |_ { .S }t is especially hard on a place like mastodon, which is Not That Large Actually, where most of the social groups you might try to insert yourself into already know your face, even if you are like me, and regularly change your accounts.
+
+_| e |_ { .S }ven among groups that commonly tout things like “people change”, i think we could use some more recognition that people’s *| needs |* change, too.
+
+___
+Sincerely yours,
+
+@| _| J’Li 🎐 |_ { .NAME } @jellyfish_link@elekk:| .xyz |: { .SUFFIX } |@ { !https://elekk.xyz/@jellyfish_link .SIG }
+
+@| _| Lady KIBI |_ { .NAME } @kibimon@monsterpit:| .net |: { .SUFFIX } |@ { !https://monsterpit.net/@kibimon .SIG }
+
+$$ { #09 }
+^^^
+-- 09 february 2020
+@| '| Eutopia |' \|\ _| STUTS |_ { .NAME } |@ { !https://ssm.lnk.to/STUTS .NP }
+
+$$$ Friends of KIBI:
+
+$$$$
+
+#| s |# { .DROP }omething i have always appreciated about japanese is the incredibly mixed nature of its script—in one paragraph one might find kanji, hiragana, katakana, hindu­‑arabic numerals, latin letters, assorted symbols and punctuation, and—netled within an unassuming kaomoji, tibetan marks or canadian syllabics or any host of other characters. _| s |_ { .S }omething i have always appreciated about unicode is the fact that it makes this radical mixing of scripts possible.
+
+$$$$
+
+#| a |# { .DROP }mong speakers of latin­‑script languages especially, i think there is a tendency to forget that unicode is largely jut a compilation of historical artefacts, a corpus of marks which humans have bothered to make on pages over the years. _| t |_ { .S }here is nothing innate or magical about an arbitrary assignment of codepoints to a selection of historically­‑meaningful glyphs, and that set can be expanded at any time. _| i |_ { .S } recently learned that @| three of the characters in the runic block |@ { !https://r12a.github.io/app-analysestring/?chars=%E1%9B%B1%E1%9B%B2%E1%9B%B3 } are tolkienian inventions, encoded solely because he happened to use them in the '| Hobbit |'. _| a |_ { .S }nd then of course there are @| the claudian letters |@ { !https://r12a.github.io/app-analysestring/?chars=%E2%84%B2%E2%85%8E%E2%86%83%E2%86%84%E2%B1%B5%E2%B1%B6 }, and any number of others. _| u |_ { .S }nicode is not a language society; their business is not to decree how these glyphs might be employed by a language; and indeed any person finds themself with the whole of the corpus at their disposal, to do with as they please.
+
+_| i |_ { .S } want to see more people doing interesting things with them.
+
+___
+
+[ . { $Font: $Bold $XXX-Large $/ $1 $Sans-Serif } ᛱᛲᛳ
+[
+[ _ Tolkenian Runes
+
+[ . { $Font: $Bold $XXX-Large $/ $1 $Sans-Serif } ℲↃⱵ
+[
+[ _ Claudian Letters
+
+. { $Font-Size: $X-Large } Encode more weird shit,
+
+@| _| J’Li 🎐 |_ { .NAME } @jellyfish_link@elekk:| .xyz |: { .SUFFIX } |@ { !https://elekk.xyz/@jellyfish_link .SIG }
+
+@| _| Lady KIBI |_ { .NAME } @kibimon@monsterpit:| .net |: { .SUFFIX } |@ { !https://monsterpit.net/@kibimon .SIG }
+
+$$ { #10 }
+^^^
+-- 10 february 2020
+@| '| Wave |' \|\ _| Patrick Watson |_ { .NAME } |@ { !https://patrickwatson.bandcamp.com/album/wave .NP }
+
+$$$ Friends of KIBI:
+
+$$$$
+
+#| o |# { .DROP }ne phrase which i have never placed much stock in is the phrase “bad at writing”. _| i |_ { .S } have seen people, with no hint of irony, send off texts or social media posts saying they “can’t write”, and it takes everything in me not to reply: _| y |_ { .S }ou do know that you’re writing right now, don’t you? _| b |_ { .S }ut what they mean is that they are not practiced in a certain *| form |* of writing, that they do not meet the prescriptive standards by which our society judges those who might seek the label of “writer”. _| a |_ { .S }nd, i think those are bollocks, so.
+
+$$$$
+
+#| i |# { .DROP } think the same is true of programming, only worse, by which i mean the arbitrary standards are. _| t |_ { .S }his is the intent behind my @| _| #prrgrrmmng |_ { .NAME } |@ { !https://elekk.xyz/tags/prrgrrmmng } hashtag, why i refuse the terms “coding” and “coder”, and why, despite my general affinity for their ethos, i will never identify as “hacker”. _| a |_ { .S }nd part of this comes from my _| macOS |_ { .NAME } roots; the _| AppleScript |_ { .NAME } mentality of programming scripts without need for a terminal, an understanding of the underlying technologies, or a real programming language. _| i |_ { .S }t is a far distance from that to C or Rust or whatever the “coding world” thinks “good programs” should be written in.
+
+$$$$
+
+#| o |# { .DROP }f course, some people say they “can’t write/program” and mean instead that they don’t *| want |* to. _| b |_ { .S }ut that is a different conversation entirely.
+
+___
+. { $Font-Size: $X-Large } IDK I just wanna see more cool webpages,
+
+@| _| J’Li 🎐 |_ { .NAME } @jellyfish_link@elekk:| .xyz |: { .SUFFIX } |@ { !https://elekk.xyz/@jellyfish_link .SIG }
+
+@| _| Lady KIBI |_ { .NAME } @kibimon@monsterpit:| .net |: { .SUFFIX } |@ { !https://monsterpit.net/@kibimon .SIG }
+
+$$ { #11 }
+^^^
+-- 11 february 2020
+@| '| Night |' \|\ _| Ola Gjeilo |_ { .NAME } |@ { !http://olagjeilo.com/albums/ola-gjeilo-night/ .NP }
+
+$$$ Friends of KIBI:
+
+$$$$
+
+#| t |# { .DROP }oday’s contentious hot take is about @| _| #javascript |_ { .NAME } |@ { !https://elekk.xyz/tags/javascript }, and it is this: _| j |_ { .S }avascript code (especially: libraries, packages) should emphasize flexibility over efficiency (or, for that matter, simplicity). _| t |_ { .S }his is not to say that efficiency/simplicity is not important, but: efficiency requires rigidity, and simplicity requires straightforwardness, and (to put it another way) if your goal is to emphasize those things, you *| should not be writing javascript |*. _| b |_ { .S }ecause as a prototype­‑based language, the whole *| point |* of javascript is that everything can be mucked with, and nothing is necessarily quite what it seems. _| t |_ { .S }hat is not simple *| or |* efficient. _| t |_ { .S }hat is not what javascript is *| for |*.
+
+$$$$
+
+#| th |# { .DROP }is speaks to an underlying problem which i think plagues javascript development, which is that people tend to treat it like whatever class­‑based compiled language they are used to, only worse, instead of seeing it as its own language with its own strengths. _| w |_ { .S }hich means you never see people programming to take advantage of those strengths, only to mitigate its weaknesses. _| t |_ { .S }he javascript meta would look *| very |* different if writing flexible, prototype­‑informed (beyond simple inheritance) code was the norm, and by different i mean more diverse and interesting, and less universalizing or scalable. _| m |_ { .S }any of the assumptions in today’s code simply would not hold. _| j |_ { .S }avascript is not a language for people making assumptions.
+
+$$$$
+
+#| i |# { .DROP }n other news, i’ve recently started doing duolingo again. _| d |_ { .S }uolingo is good for me because it helps me feel accomplished even on days where i don’t do much, which is good for my mental health.
+
+___
+Wish me luck!
+
+@| _| J’Li 🎐 |_ { .NAME } @jellyfish_link@elekk:| .xyz |: { .SUFFIX } |@ { !https://elekk.xyz/@jellyfish_link .SIG }
+
+@| _| Lady KIBI |_ { .NAME } @kibimon@monsterpit:| .net |: { .SUFFIX } |@ { !https://monsterpit.net/@kibimon .SIG }

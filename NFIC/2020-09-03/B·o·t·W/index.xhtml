@@ -1,0 +1,589 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
+<head>
+	<title>Why Shit Keeps Breaking In ‘Breath of the Wild’</title>
+	<meta charset="utf-8"/>
+	<base target="_top"/>
+	<meta name="viewport" content="width=device-width,intial-scale=1"/>
+	<meta name="referrer" content="no-referrer"/>
+	<style>
+/*
+If you need vertical text, set it on article, not html.
+*/
+html {
+	Writing-Mode: Horizontal-TB;
+	Margin: 0;
+	Padding: 0;
+	Color: #1F1A14;
+	Background: #FAF8F7;
+	Font: 500 Large / 1.2 Serif;
+}
+html::before{
+	Display: Block;
+	Height: 74.23VW;
+	Max-Height: 75VH;
+	Min-Height: 55.6725VW;
+	Background: Linear-Gradient(
+		90DEG,
+		#1F1A14 Calc(50% / 7),
+		Transparent Calc(100% / 7),
+		Transparent Calc(600% / 7),
+		#1F1A14 Calc(650% / 7)
+	) Center / 100VW 74.23VW, Linear-Gradient(
+		180DEG,
+		Transparent Calc(500% / 6),
+		#1F1A14 Calc(500% / 6),
+		#75706A
+	) Center / 100VW 74.23VW, Linear-Gradient(
+		-60DEG,
+		Transparent 60%,
+		#1F1A14 60%,
+		#75706A Calc(60% + 100% / 6),
+		#B8B3B0
+	) Center / 100VW 74.23VW, Linear-Gradient(
+		60DEG,
+		Transparent 60%,
+		#1F1A14 60%,
+		#75706A Calc(60% + 100% / 6),
+		#B8B3B0
+	) Center / 100VW 74.23VW, Linear-Gradient(
+		180DEG,
+		#FAF8F7 50%,
+		#1AACEB Calc(500% / 6),
+		#4B2DF7
+	) Center / 100VW 74.23VW, Linear-Gradient(
+		60DEG,
+		#FAF8F7 40%,
+		#FAE13E 60%,
+		#D15919
+	) Center / 100VW 74.23VW, Linear-Gradient(
+		-60DEG,
+		#FAF8F7 40%,
+		#F56E97 60%,
+		#B01C1C
+	) Center / 100VW 74.23VW, Linear-Gradient(
+		180DEG,
+		#FFFFFF 50%,
+		#1F1A14 50%
+	) Center / 100VW 74.23VW, Linear-Gradient(
+		60DEG,
+		#FFFFFF 40%,
+		#1F1A14 40%
+	) Center / 100VW 74.23VW, Linear-Gradient(
+		-60DEG,
+		#FFFFFF 40%,
+		#1F1A14 40%
+	) Center / 100VW 74.23VW;
+	Background-Blend-Mode: Color-Dodge, Hard-Light, Hard-Light, Hard-Light, Multiply, Multiply, Multiply, Screen, Screen, Normal;
+	Content: "";
+}
+body{
+	Margin: 0;
+	Padding: 5VH Calc(50VW / 7) 0;
+	Min-Height: 95VH;
+}
+article{
+	Margin: Auto Auto 1.2EM;
+	Margin-Block-End: Auto;
+	Width: 100%;
+	Max-Inline-Size: 40EM;
+	Overflow: Auto;
+	Overflow-Inline: Hidden;
+}
+article>header {
+	Margin-Block-Start: 0;
+	Margin-Block-End: 1.2EM;
+	Border-Block-End: Thin #948D87 Solid;
+	Padding-Block-End: .6EM;
+	Color: #57534C;
+	Font-Size: X-Large;
+	Font-Style: Italic;
+}
+article>header nav,
+article>footer nav {
+	Margin-Block-Start: .6EM;
+	Margin-Block-End: .6EM;
+	Font-Size: Medium;
+	Font-Style: Normal;
+	Font-Variant-Caps: All-Small-Caps;
+}
+article>header nav:First-Child,
+article>footer nav:First-Child{  Margin-Block-Start: 0 }
+article>header nav:Last-Child,
+article>footer nav:Last-Child { Margin-Block-End: 0 }
+article>header p { Margin-Block-Start: .6EM }
+article>header p cite {
+	Font-Style: Inherit;
+	Font-Variant-Caps: Small-Caps;
+}
+article>footer {
+	Margin-Block-End: 2.4EM;
+	Text-Align: End;
+}
+aside {
+	Margin-Block-Start: 1.2REM;
+	Margin-Block-End: 1.2REM;
+	Border-Block-Start: #D15919 1PX Dotted;
+	Border-Block-End: #D15919 3PX Solid;
+	Border-Inline-Start: #D15919 1PX Dashed;
+	Border-Inline-End: #D15919 3PX Double;
+	Border-Width: 1PX 3PX 3PX 1PX;
+	Padding-Block-Start: Calc(1.2EM - 1PX);
+	Padding-Block-End: Calc(1.2EM - 3PX);
+	Padding-Inline-Start: Calc(2REM - 1PX);
+	Padding-Inline-End: Calc(2REM - 3PX);
+	Font: 400 Medium / 1.2 Serif;
+}
+section { Margin-Block-End: 4.8EM }
+blockquote {
+	Position: Relative;
+	Margin-Block-Start: .6REM;
+	Margin-Block-End: .6REM;
+	Margin-Inline-Start: 0;
+	Margin-Inline-End: 0;
+	Padding-Block-Start: .6REM;
+	Padding-Block-End: .6REM;
+	Padding-Inline-Start: 1EM;
+	Padding-Inline-End: 0;
+	Font: 400 Medium / 1.2 Serif;
+}
+blockquote::before{
+	Display: Block;
+	Position: Absolute;
+	Inset-Block-Start: 0;
+	Inset-Block-End: 0;
+	Inset-Inline-Start: 0;
+	Inline-Size: 3PX;
+	Background: Fixed Linear-Gradient(
+		180DEG,
+		#FAF8F7 50%,
+		#1AACEB Calc(500% / 6),
+		#4B2DF7
+	), Fixed Linear-Gradient(
+		60DEG,
+		#FAF8F7 40%,
+		#FAE13E 60%,
+		#D15919
+	), Fixed Linear-Gradient(
+		-60DEG,
+		#FAF8F7 40%,
+		#F56E97 60%,
+		#B01C1C
+	);
+	Background-Blend-Mode: Multiply;
+	Content: "";
+}
+blockquote p::before,
+blockquote p::after { Color: #D15919 }
+blockquote p::before{ Content: "« " }
+blockquote p:Last-Of-Type::after{ Content: " »" }
+figure { Margin: 0 }
+figcaption {
+	Margin-Block-Start: .6REM;
+	Margin-Block-End: 1.2REM;
+	Padding-Inline-Start: 2EM;
+	Padding-Inline-End: 2EM;
+	Font: 300 Medium / 1.2 Serif;
+	Font-Variant-Caps: All-Small-Caps;
+	Font-Variant-Numeric: Oldstyle-Nums;
+	Text-Align: Center;
+}
+dl {
+	Margin-Top: 1.2EM;
+	Margin-Bottom: 1.2EM;
+}
+dt {
+	Border-Block-End: #D15919 3PX Double;
+	Padding-Block-End: Calc(.3EM - 3PX);
+	Padding-Inline-Start: .5EM;
+	Padding-Inline-End: .5EM;
+	Width: Max-Content;
+	Font-Weight: Bold
+}
+dd {
+	Margin-Block-Start: 0;
+	Margin-Block-End: .9EM;
+	Margin-Inline-Start: 0;
+	Margin-Inline-End: 0;
+	Border-Block-Start: None;
+	Border-Block-End: #D15919 1PX Solid;
+	Border-Inline-Start: #D15919 1PX Dotted;
+	Border-Inline-End: None;
+	Padding-Block-Start: .675EM;
+	Padding-Block-End:  Calc(.675EM - 1PX);
+	Padding-Inline-Start: Calc(2EM - 1PX);
+	Padding-Inline-End: 0;
+}
+dd>ul {
+	Margin: 0;
+	Padding: 0;
+	List-Style-Type: "▽  ";
+}
+dd>ul li::marker {
+	Color: #D15919;
+	Font-Size: Smaller;
+}
+h1,
+h2,
+h3 {
+	Margin: 0;
+	Color: #302F2B;
+	Font: Bold XXX-Large / 1.2 Sans-Serif;
+}
+h2 {
+	Position: Relative;
+	Margin-Block-Start: 1.8EM;
+	Margin-Block-End: 1.2EM;
+	Margin-Inline-Start: 4.8REM;
+	Margin-Inline-End: 0;
+	Font-Size: XX-Large;
+	Text-Transform: Uppercase;
+}
+h2::before {
+	Display: Block;
+	Position: Absolute;
+	Margin: Auto;
+	Inset-Block-Start: 0;
+	Inset-Block-End: 0;
+	Inset-Inline-End: 100%;
+	Block-Size: 2EM;
+	Min-Inline-Size: 4EM;
+	Color: #D15919;
+	Font-Size: .6EM;
+	Font-Weight: Normal;
+	Line-Height: 1;
+	White-Space: Pre;
+	Text-Align: Center;
+	Text-Orientation: Sideways;
+	Content: "△\0A △ △ ";
+}
+h3 {
+	Font-Size: X-Large;
+	Font-Family: Inherit;
+	Font-Variant-Caps: Small-Caps;
+}
+p {
+	Margin-Block-Start: 0;
+	Margin-Block-End: 0;
+}
+p+p { Margin-Block-Start: 1.2EM }
+*:Any-Link { Color: #D15919 }
+*:Any-Link:Active { Color: #B01C1C }
+mark {
+	Border-Inline-Start: Transparent Solid;
+	Border-Inline-End: Transparent Solid;
+	Box-Decoration-Break: Clone;
+	Background: Fixed Linear-Gradient(
+		180DEG,
+		#FAF8F73F 50%,
+		#1AACEB3F Calc(500% / 6),
+		#4B2DF73F
+	), Fixed Linear-Gradient(
+		60DEG,
+		#FAF8F73F 40%,
+		#FAE13E3F 60%,
+		#D159193F
+	), Fixed Linear-Gradient(
+		-60DEG,
+		#FAF8F73F 40%,
+		#F56E973F 60%,
+		#B01C1C3F
+	);
+	Background-Blend-Mode: Multiply, Multiply, Multiply, Normal;
+	Font-Weight: Inherit;
+	Text-Shadow: 0 0 3PX #FAF8F7;
+}
+strong:Not(.YELL) {
+	Margin-Inline-Start: -.25CH;
+	Margin-Inline-End: -.25CH;
+	Border-Inline-Start: Thin Transparent Solid;
+	Border-Inline-End: Thin Transparent Solid;
+	Padding-Inline-Start: .25CH;
+	Padding-Inline-End: .25CH;
+	Box-Decoration-Break: Clone;
+	Background: #FAE13EBF;
+	Font-Weight: Inherit;
+	Text-Shadow: 0 0 3PX #EB9100BF;
+}
+	</style>
+</head>
+<body>
+	<article>
+		<header>
+			<nav>
+				<a href="/NFIC/">Nonfiction</a>
+			</nav>
+			<h1>Why Shit Keeps Breaking In <cite>Breath of the Wild</cite></h1>
+			<p>And why there is no such thing as a permanent fix in the <cite>Zelda</cite> universe.</p>
+		</header>
+		<section id="adult-timeline-best-timeline">
+			<h2><cite>Spirit Tracks</cite> Has Something to Say About Rising Sea Levels</h2>
+			<p>
+				There is <strong>only one happy ending</strong> in the <cite>Legend of Zelda</cite> franchise.
+			</p>
+			<p>
+				This is to say, there is only one ending in the <cite>Legend of Zelda</cite> franchise at all. 
+				It comes in <a href="https://youtu.be/-J9nr2o2-Jo?t=1820">the final moments of <cite>Spirit Tracks</cite> <small>[YouTube video]</small></a>, when the Lokomo leader, Anjean, addresses Zelda and Link one final time before rising into the heavens with the rest of her people.
+			</p>
+			<blockquote>
+				<p>You see, as Lokomos... 
+					We werenʼt only meant to protect the Spirit Tracks. 
+					<mark>We were also meant to watch over mankind.</mark></p>
+				<p>But <mark>our protection is no longer needed.</mark> 
+					<mark>Even without the spiritsʼ guidance, you will do well.</mark> 
+					So I think I will return to the heavens... 
+					In the company of my old friend Byrne.</p>
+				<p><mark>Please watch over this land, my dear.</mark> 
+					And Link... 
+					You must help her. 
+					Good‐bye... 
+					And thank you. 
+					Thank you both.</p>
+			</blockquote>
+			<p>
+				The sentiment is not unlike that of the Elves in <cite>Lord of the Rings</cite> sailing off to the West. 
+				<cite>Spirit Tracks</cite> situates itself as one of the most technologically progressed <cite>Zelda</cite> games, and it leaves the player with a feeling of finality: 
+				<strong>This, here, is the moment in which the narrative of <cite>Legend of Zelda</cite> finally passes from “legend” into modernity.</strong> 
+				People, with their trains and engineers and bureaucratic governments, are now able to face their own demons, no longer needing spirits to guide them.
+			</p>
+			<p>
+				What did it take for this finality to be achieved? 
+				<strong>Let us view this ending in context.</strong> 
+				<cite>Spirit Tracks</cite> takes place at the end of the Adult Timeline of the <cite>Zelda</cite> universe, meaning that it serves as the capstone on the timeline in which Ganondorf successfully gained access to the Triforce and brought down an apocalypse on the world, before being defeated in <cite>Ocarina of Time</cite>. 
+				In the prologue to <cite>The Wind Waker</cite>, we learn that this moment of solace was only ever temporary: 
+				Ganondorf returns, stronger than ever, and this time no hero rises to defeat him. 
+				The gods of Hyrule respond to this challenge by casting a flood down on the entire world. 
+				<strong>The happy ending of <cite>Spirit Tracks</cite> comes on the back of, presumably, thousands of deaths.</strong>
+			</p>
+			<aside>
+				<h3>Adult Timeline in a Nutshell</h3>
+				<dl>
+					<dt><cite>Ocarina of Time</cite></dt>
+					<dd>
+						<ul>
+							<li>Ganondorf enters the Sacred Realm</li>
+							<li><strong>An apocalypse falls on Hyrule</strong>, wrecking the Castle and filling the world with monsters</li>
+							<li>Link defeats Ganondorf and seals him away</li>
+							<li>Zelda sends Link back in time</li>
+						</ul>
+					</dd>
+					<dt>Prologue to <cite>The Wind Waker</cite></dt>
+					<dd>
+						<ul>
+							<li>The castle is rebuilt; Hyrule prospers for a while</li>
+							<li>But then Ganondorf returns; having been sent to the Child Timeline, Link is no longer around to play the hero</li>
+							<li>The people of Hyrule still expect a saviour; when none appears, they plead to the gods</li>
+							<li>As a last resort to prevent Ganondorf from taking Hyrule, <strong>the gods flood the land</strong>, creating the Great Sea</li>
+						</ul>
+					</dd>
+					<dt><cite>The Wind Waker</cite></dt>
+					<dd>
+						<ul>
+							<li>Many years later, Ganondorf starts kidnapping girls in an attempt to assemble the Triforce</li>
+							<li>It is revealed that Ganondorf’s ultimate goal is to restore Hyrule to a time before the Great Flood, so that he can once again assume control</li>
+							<li>The King of Red Lions, who is the spirit of the last Hyrulean king, chooses Toon Link to stop Ganondorf from acheiving his aims</li>
+							<li>The Triforce is reassembled, but the King of Red Lions touches it before Ganondorf has the opportunity, <strong>wishing for the ultimate destruction of Hyrule</strong> and an end to the cycle of violence it created</li>
+						</ul>
+					</dd>
+					<dt><cite>Phantom Hourglass</cite></dt>
+					<dd>
+						<ul>
+							<li><strong>Zelda (as Tetra) and (Toon) Link sail off in search of new lands</strong> upon which to found a new Hyrule Kingdom</li>
+							<li>They encounter the Ghost Ship and Tetra is turned into a statue</li>
+							<li>A bunch of stuff happens which all turns out to take place in a parallel universe of some sort</li>
+							<li>Linebeck is there</li>
+						</ul>
+					</dd>
+					<dt><cite>Spirit Tracks</cite></dt>
+					<dd>
+						<ul>
+							<li>New Hyrule is founded; steam engines are invented; a hundred years pass</li>
+							<li>As it happens, the land New Hyrule was built upon contains an ancient demon! which then possesses Zelda (descendant of Tetra)</li>
+							<li>Zelda (as a spirit) and Link team up to defeat this new evil; inspired by their teamwork, the Lokomo ascend to the heavens, <strong>declaring the fate of the world to now be in humanity’s hands</strong></li>
+							<li>End of Story; there will never be a sequel; <strong class="YELL">no, <cite>Breath of the Wild</cite> does not somehow belong in this timeline, <em>I will fight you</em></strong></li>
+						</ul>
+					</dd>
+				</dl>
+			</aside>
+			<p>
+				Compare, for a moment, the other main branch of the <cite>Zelda</cite> timeline <small>(technicality warning: the timeline has three branches)</small>, which picks up after <cite>Majora’s Mask</cite> with <cite>Twilight Princess</cite>. 
+				Here, <strong>we are presented with a Hyrule which <em>never</em> faced an apocalypse</strong>, in which Ganondorf was defeated and banished without ever stepping foot in the Sacred Realm—<strong>and it is a Hyrule in a state of decay.</strong> 
+				Bridges crumble, ruins are everywhere, and the Gerudo are conspicuously absent. 
+				Here, the Hero of Time makes a direct appearance, referring to <em>this</em> Link as his descendant: 
+				<em>This</em> Hyrule, with its spineless guards and struggling communities, is his legacy. 
+				In contrast, the world of <cite>The Wind Waker</cite> is thriving; the people are smiling and happy; and the question is perpetually left open whether Toon Link is truly the Chosen Hero at all, or <strong>just some kid who happened to find himself in the right place at the right time.</strong>
+			</p>
+			<p>
+				So, it is within the context of this apocalyptic backdrop that the ending of <cite>Spirit Tracks</cite> rings true: 
+				<strong>The Lokomo know that humanity can face down the apocalypse and come through standing because <em>they have already done it</em>.</strong> 
+				The Triforce is no more; Link is not special in any particular way (aside from being circumstantially available); and <em>yet</em> the bad guys are still overcome. 
+				In the prologue to <cite>The Wind Waker</cite>, it is humanity’s dependence on the gods which led to the destruction of their world; in <cite>Spirit Tracks</cite>, it is humans depending <em>on each other</em> which is the key to defeating the evil that lurks between the surface of their new Kingdom. 
+				Force Gems, which you collect instead of pieces of the Triforce, come not from the gods, but from aiding your fellow Hyruleans. 
+				It turns out that humans <em>don’t</em> need the spirits to guide them, after all.
+			</p>
+			<p>
+				It is a statement which only <cite>Spirit Tracks</cite> (and the other Toon Link games) can make, because <cite>Spirit Tracks</cite> (and the other Toon Link games) are <strong>the only <cite>Zelda</cite> games which take place fully <em>after</em> the apocalypse is over.</strong> 
+				<cite>Zelda</cite> is a series about apocalypses, and every game has some apocalyptic relation, but most of them take place before, or during, the event. 
+				And by preventing or postponing its consummation, the timeline is left open for another, worse apocalypse to follow. 
+				Hyrule itself is locked in stasis, and never reaches modernity.
+			</p>
+			<p>
+				<cite>A Link Between Worlds</cite> makes the message painfully blunt: 
+				<strong>The loss of the Triforce is necessarily a world‐ending event.</strong> 
+				Yet, so long as there is a Triforce, there will be cycles of conflict which emit from it. 
+				<cite>Spirit Tracks</cite> is the only happy ending in the series, because <cite>Spirit Tracks</cite> is the only game which shows humanity not averting or postponing this inevitable contradition, but living through it, and, generations down the line, again coming to prosper.
+			</p>
+			<p>
+				Which, naturally, brings us to <cite>Breath of the Wild</cite>.
+			</p>
+			<p>
+				Like every <cite>Zelda</cite> game before it, <strong><cite>Breath of the Wild</cite> is fundamentally a game about an apocalypse.</strong> 
+				And, like almost every other <cite>Zelda</cite> game outside of the Adult Timeline, it is fundamentally a game about saving Hyrule, even as it depicts a Hyrule which, as in <cite>The Wind Waker</cite>, has mostly already learned to cope. 
+				The cyclical and unending nature of this battle is made clear through the Blood Moon, which resurrects all of Link’s defeated enemies for him to battle again and again. 
+				There is no final victory; not during the game—and, as the in‐development status of <a href="https://youtu.be/3fr1Z07AV00">its sequel <small>[YouTube trailer]</small></a> tells us, not upon its conclusion, either.
+			</p>
+			<p>
+				From a purely mechanical standpoint, it is easy to question and debate design decisions like weapon durabilities or enemy regeneration on the basis of æsthetic preferences like “is it fun to play”. 
+				But I think <strong>it is much more <em>interesting</em> to instead analyse what these systems are actually trying to <em>say</em>.</strong> 
+				It is my opinion that the true meaning behind these gameplay features becomes clear once you begin to analyse these aspects of its design through the context of its narrative—and, in particular, <strong>the philosophical underpinnings of the Triforce itself.</strong>
+			</p>
+		</section>
+		<section id="this-is-like-the-opposite-of-ludonarrative-dissonance">
+			<h2>The Three Forces of Game Design</h2>
+			<p>
+				To begin (as I hadn’t already) this analysis with a controversial take: 
+				<strong>Weapon durabilities are absolutely <em>essential</em> to the gameplay of <cite>Breath of the Wild</cite>.</strong> 
+				This is not to say that I don’t believe there are problems with the weapons system in the game. 
+				But I think these problems lie primarily in the area of weapons <em>acquisition</em>: 
+				It is too unpredictable and cumbersome to acquire specifically the right tool for a task, so players find themselves operating largely with whatever they might have on hand. 
+				But to understand why it is the acquisition, and not the durability, which is the problem, we need to first think about what weapon durabilities are <em>doing</em> as one progresses throughout the game.
+			</p>
+			<p>
+				At risk of stating the obvious: 
+				Having weapons with durabilities requires you to find new weapons. 
+				And so too is the case for most of <cite>Breath of the Wild</cite>’s other mechanics: 
+				Needing materials for potionmaking or armor upgrades requires you to find materials. 
+				Needing Korok seeds to expand one’s inventory requires you to find Koroks. 
+				Needing to complete shrines to expand your hearts or stamina gauge requires you to find shrines. 
+				And so <strong>gameplay in <cite>Breath of the Wild</cite> finds itself generally split up into two distinct modes: Exploration and Challenge</strong>, where the former involves a lot of time running about in nature looking for things, and the latter involves completing some manner of puzzle or combat in a Shrine or Divine Beast.
+			</p>
+			<p>
+				This separation of modes is absolutely essential. 
+				Removing either one of them would result in an entirely different game. 
+				<strong>And, in fact, there exists a <em>third</em> mode</strong> which <cite>Breath of the Wild</cite> operates in, which is again distinct from those two: <strong>that of Narrative</strong>—story and dialogue—which, again, alternates with Exploration and Challenge and is equally essential to the shape and pacing of the game.
+			</p>
+			<p>
+				It is because of the dynamic between these three modes that I have no problem with weapon durabilities in <cite>Breath of the Wild</cite>: 
+				Invincible weapons would mean that a player could, conceivably, simply get the strongest weapon at the very beginning of the game and then be set for life. 
+				So, too, is the Blood Moon necessary: 
+				<cite>Breath of the Wild</cite> would lose its fundamental character if its wilds were ever tamed. 
+				<strong>What I wish instead is that Nintendo had made the Exploration segments more purposeful</strong>; if those moments of preparing for the Next Big Challenge amounted to something more than just hitting glowing rocks or wandering around hoping for good loot. 
+				I hope that this is an area in which the sequel improves.
+			</p>
+			<p>
+				Yet the question remains: 
+				<strong><em>Why</em> is this alternation of modes so fundamental to <cite>Breath of the Wild</cite> as a game?</strong> 
+				Because, after all, it’s <em>not</em> as though there aren’t good games which don’t follow this formula. 
+				<cite>Dragon Age: Origins</cite> tells basically the same story as <cite>Breath of the Wild</cite> (massive, world‐threatening apocalypse; the hubris of man bringing about its downfall; needing to unite the peoples of the land against evil), and it does so with permadeath mechanics and everlasting weaponry. 
+				But <strong>it’s just that every <cite>Zelda</cite> game does.</strong> 
+				This is how a franchise can alternate between 2D and 3D environments, between buttonpressing and motion controls and touch interfaces, and evolve from a dungeon‐based linear narrative to an open‐world adventure with hardly anything resembling a “dungeon” while still remaining, quintessentially, deserving of the title “<cite>Zelda</cite>”.
+			</p>
+			<p>
+				And <strong>it forms the very meaning behind the Triforce.</strong> 
+				Traditionally speaking, each game mode has corresponded with a specific kind of location:— 
+				Exploration occurs in the Overworld; Narrative happens in Towns and Houses and Old Man Caves; Challenges take place in the Underworld, Temples, or Dungeons. 
+				And each primary Bearer of the Triforce is strongly associated with one of these locations:— 
+				Ganon, Bearer of Power, occupies the sites of Challenge, often as a Boss; Zelda, bearer of Wisdom, typically resides in a Town, Village, or Sanctuary; and Link, Bearer of Courage—at least since <cite>Ocarina of Time</cite>—is strongly associated with the Woods, where his Master Sword resides.
+			</p>
+			<p>
+				I am not trying to argue that the original <cite>Legend of Zelda</cite> was designed with these correspondences firmly in mind. 
+				<strong>Obviously it was not:</strong> 
+				The Triforce in the original <cite>Legend of Zelda</cite> didn’t even have three parts. 
+				But as the series developed, and particularly as the relationship between Ganon, Zelda, Link, and the Triforce became more clearly defined, certain parallels between game design concepts, narrative elements, and the underlying philosophies which shaped both gradually grew more and more rigid. 
+				And as the latest entry in the series, <cite>Breath of the Wild</cite> cuts out much of its traditional Zelda baggage to focus on this dynamic almost exclusively. 
+			</p>
+			<p>
+				It is for this reason that, even though the Triforce hardly even makes an appearance in the game, <strong>I think <cite>Breath of the Wild</cite> is possibly one of the most Triforce‐centric Zelda games to date.</strong> 
+				At its core, <cite>Breath of the Wild</cite> is a game about maintaining the cycle of Power, Wisdom, and Courage unto infinity. 
+				This is, of course, important for Nintendo, since, well... they want to keep making <cite>Zelda</cite> games unto infinity. 
+				It is something <cite>Metroid</cite> has always struggled with: 
+				How to reset Samusʼs progression at the beginning of each game so that she doesnʼt start out with a fully‐powered Power Suit. 
+				In <cite>Zelda</cite>, this is an easy problem to solve. 
+				Undoing the progress made in the previous game comes baked in.
+			</p>
+			<p>
+				As far as game design is concerned, <strong>it means creating a world which is constantly being reset</strong>, one in which any progress is transient, one which never reaches a state of completion; narratively, it means that <strong>the Calamity of Ganon can never be entirely defeated, only forestalled until next time.</strong> 
+				The underlying philosophy—something which <cite>Zelda</cite> fanfiction oft notes—is one of extreme conservatism, <strong>in which any change might bring the next apocalypse, and in which the only solution is restoration of the old order,</strong> the one of balance between the three Forces, the one in which the Triforce rules over all. 
+				And, of course, consequently, inevitably, eventually everything falls apart again, and the cycle begins anew.
+			</p>
+		</section>
+		<section id="ganon-more-like-mammon">
+			<h2>Nobody Cares About The Zelda Timelines</h2>
+			<p>
+				As the existence of <cite>The Wind Waker</cite> shows, <strong>it hasn’t always been this way.</strong> 
+				In fact, even <em>as</em> the core structure of <cite>Zelda</cite> games has remained largely static for the duration of the franchise, the underlying <em>motif</em> of the series has evolved numerous times. 
+				In <cite>Legend of Zelda</cite>, it was simply about <strong>saving the princess</strong>. 
+				Sheik severely complicates that narrative in <cite>Ocarina of Time</cite>, placing the emphasis instead upon <strong>balancing the three Forces</strong> and the cultural differences within Hyrule. 
+				In <cite>The Wind Waker</cite>, the Forces were largely forgotten and <cite>Zelda</cite> became a game about <strong>reckoning with the past and charting a new future</strong>. 
+				Then, in <cite>Skyward Sword</cite>, the past and future were collapsed into <strong>a cyclical battle between good and evil</strong>, Hylia and Demise. 
+				The Golden Goddesses largely forgotten, the Triforce came to stand in for Hylia’s power, which is why its destruction in <cite>A Link Between Worlds</cite> reads very differently than in <cite>The Wind Waker</cite>, where it represented old monarchy and oppressive rule.
+			</p>
+			<p>
+				This is why—<strong>I don’t want to say that the Zelda timeline is <em>useless</em>.</strong> 
+				As a way of organizing the various works of the fandom into a rough, overarching narrative structure, it works functionally well. 
+				But <cite>The Wind Waker</cite> and <cite>Twilight Princess</cite> don’t just follow different branches in a diverging timeline: 
+				<strong>They represent different approaches to reckoning with Hyrule’s bloody past.</strong> 
+				And <cite>Skyward Sword</cite> doesn’t just <em>precede</em> <cite>Ocarina of Time</cite>: 
+				<strong>It <em>fundamentally revises</em> what was originally a tale about uniting different peoples under a shared interest into a tale about the Hylian Divine Right to Rule.</strong>
+			</p>
+			<p>
+				When I look at <cite>Breath of the Wild</cite>, I see the series pivoting yet again. 
+				In some ways, this was inevitable: 
+				<strong><cite>Zelda</cite> is a series about apocalypses, and we live in apocalyptic times.</strong> 
+				<cite>Breath of the Wild</cite> is the first <cite>Zelda</cite> game in which evil comes not from outside, but <strong>from the people of Hyrule’s own machines;</strong> in which discontented Sheikah <strong>form an apocalyptic death cult instead of merely bowing</strong> to the throne; and, indeed, in which <strong>disaster comes not unexpectedly, but as foretold.</strong> 
+				<small>(Technicality warning: 
+				The events of <cite>Skyward Sword</cite> were also prophesized, but the prophecy is that disaster will be <em>averted</em>. 
+				And Zelda herself foresees disaster on numerous occasions, but never is the whole kingdom mobilized as a result.)</small>
+			</p>
+			<p>
+				But <strong>the apocalypse of our time is an apocalypse which the <cite>Zelda</cite> series cannot bear to weather.</strong> 
+				The inherent contradictions in <em>our</em> society—of consumption in an age of ecological disaster; of capitalism in an age when people can barely afford to survive—are <strong>the same ones which underpin the series’s production</strong>, as a commercial product on behalf of Nintendo aiming for sales in the tens of millions. 
+				And so, whereas <cite>The Wind Waker</cite> depicted postapocalyptic survival as full of life, happiness, and potential, <strong><cite>Breath of the Wild</cite> approaches it with fear.</strong> 
+				And if the former encouraged us to confront our past by looking instead to the future, <strong><cite>Breath of the Wild</cite> tells us to face the present by looking to what came before,</strong> not with a critical eye, but <strong>with the revisionist lens of nostalgia.</strong>
+			</p>
+			<figure>
+				<blockquote>
+					<p>You have gathered already that <mark>the Calamity is the result of apocalypse deferred by generations that could not deal with it in their own time.</mark> 
+						My generation is guilty of the same. 
+						But that does not make you more responsible for the world; <mark>it only means that you are the last ones who have a chance.</mark> 
+						Our failures weigh on you, but that does not change who you are. 
+						All of you who are preparing to fight, all of you who have fought—you and the princess and the Zora prince and the Chief of the Gerudo and all the others—are still children. 
+						<mark>You are still growing.</mark> 
+						When you stop this end, when you keep the world from breaking, <mark>you will continue to grow.</mark></p>
+				</blockquote>
+				<figcaption>
+					Impa, speaking in <a href="https://archiveofourown.org/works/15049127/chapters/52039762">Chapter 47 of <cite>The Princess Who Carries the Blood of the Goddess</cite></a>, by <a href="https://archiveofourown.org/users/TheLoudGuy/">TheLoudGuy on <cite>Archive of Our Own</cite></a>. 
+					Compare the emphasis on “growth” here with the emphasis on “restoration” in the canonical narrative.
+				</figcaption>
+			</figure>
+			<p>
+				<strong>It is not hard to imagine an alternate universe in which things play out differently.</strong> 
+				After all, Hyrule’s monarchy has not been kind to Zelda; what we have seen of her behaviour is hardly befitting of a princess, and she would be much better‐suited for bringing Hyrule into a new, postmonarchic, scientific age. 
+				<strong>This would be the happy ending</strong>, in which humanity learns its lesson of the dangers of overreliance on gifts from the Goddess to vanquish Calamity. 
+				It would be an ending where, instead of following rotely in the footsteps of racist foundational myth, <strong>the people of Hyrule band together to chart a future of working together in harmony.</strong>
+			</p>
+			<p>
+				<strong>But, I’m not holding my breath waiting for that to happen.</strong> 
+				What is much more likely is that Zelda will be forced, yet again, into the role she was always destined for, the old intercourse between the Forces restored, such that things can carry on the way that they always have in the <cite>Zelda</cite> universe. 
+				<strong>As it ever has been, all for the sake of yet another <cite>Zelda</cite> game.</strong> 
+				Except for that one time.
+			</p>
+		</section>
+		<footer>
+			<nav>
+				<a href="/">Home</a>    <a href="/NFIC/">Nonfiction</a>    <a href="/Links/">Links</a>
+			</nav>
+		</footer>
+	</article>
+</body>
+</html>

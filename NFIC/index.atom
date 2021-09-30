@@ -5,7 +5,7 @@
 <link rel="self" href="https://www.u2764.com/NFIC/index.atom"/>
 <link rel="prev-archive" href="https://www.u2764.com/NFIC/archive-2019.atom"/>
 <link rel="alternate" type="application/xhtml+xml" href="https://www.u2764.com/NFIC/"/>
-<updated>2021-09-29T23:53:27-07:00</updated>
+<updated>2021-09-30T01:01:29-07:00</updated>
 <title>❤ Nonfiction</title>
 <author>
 	<name>Margaret KIBI</name>
@@ -18,5 +18,43 @@
 		<p>Except where otherwise mentioned, the works linked here are copyright © Margaret KIBI and licensed under a <a href="https://creativecommons.org/licenses/by-sa/4.0/" rel="license">Creative Commons Attribution-ShareAlike 4.0 International License [🅭🅯🄎]</a>.</p>
 	</div>
 </rights>
+
+<entry xml:id="NFIC.2020-02-05.InCoWriMo20">
+	<id>tag:www.u2764.com,2021:NFIC.2020-02-05.InCoWriMo20</id>
+	<link rel="alternate" type="text/html" href="https://www.u2764.com/NFIC/2020-02-05/InCoWriMo20/"/>
+	<published>2019-02-26T19:53:56-08:00</published>
+	<updated>2021-09-30T00:35:37-07:00</updated>
+	<title>InCoWriMo 2020</title>
+	<author>
+		<name>J’Li / Lady KIBI</name>
+		<uri>https://go.KIBI.family/About/#me</uri>
+	</author>
+	<summary type="xhtml">
+		<div xmlns="http://www.w3.org/1999/xhtml">
+			<p><u>t</u>hese missives were handwritten during the month of February 2020, as a sort of faux­‑<a href="https://incowrimo.org/"><u>InCoWriMo</u></a> for my followers on social media. <u>t</u>he following are plain­‑text reproductions that undoubtedly will lack some of the charm of the original.</p>
+		</div>
+	</summary>
+</entry>
+
+<entry xml:id="NFIC.2020-09-03.B·o·t·W">
+	<id>tag:www.u2764.com,2021:NFIC.2020-09-03.B%C2%B7o%C2%B7t%C2%B7W</id>
+	<link rel="alternate" type="text/html" href="https://www.u2764.com/NFIC/2020-09-03/B·o·t·W/"/>
+	<published>2019-02-26T19:53:56-08:00</published>
+	<updated>2021-09-30T00:50:49-07:00</updated>
+	<title type="xhtml">
+		<div xmlns="http://www.w3.org/1999/xhtml">
+			Why Shit Keeps Breaking In <cite>Breath of the Wild</cite>
+		</div>
+	</title>
+	<author>
+		<name>kibigo!</name>
+		<uri>https://go.KIBI.family/About/#me</uri>
+	</author>
+	<summary type="xhtml">
+		<div xmlns="http://www.w3.org/1999/xhtml">
+			<p>And why there is no such thing as a permanent fix in the <cite>Zelda</cite> universe.</p>
+		</div>
+	</summary>
+</entry>
 
 </feed>
