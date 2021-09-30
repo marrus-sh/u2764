@@ -2,8 +2,8 @@
 	<variable name="feed" select="//html:link[@rel='alternate'][@type='application/atom+xml']/@href[1]"/>
 	<template name="entries">
 		<param name="source" select="$feed"/>
-		<variable name="self" select="document($source)//atom:feed/atom:link[@rel='self']/@href"/>
-		<variable name="name" select="substring-before(substring-after($self, atom:link[@rel='alternate']/@href), '.')"/>
+		<variable name="self" select="document($source)//atom:feed/atom:link[@rel='self']/@href[1]"/>
+		<variable name="name" select="substring-before(substring-after($self, atom:link[@rel='alternate']/@href[1]), '.')"/>
 		<html:li>
 			<html:span lang="en" xml:lang="en">
 				<choose>
@@ -20,12 +20,12 @@
 			</html:span>
 			<html:ol>
 				<for-each select="document($source)//atom:entry">
-					<sort select="atom:link[@rel='alternate']/@href" lang="zxx" order="descending"/>
-					<variable name="date" select="substring-before(substring-after(atom:link[@rel='alternate']/@href, document($feed)//atom:feed[1]/atom:link[@rel='alternate']/@href), '/')"/>
-					<variable name="identifier" select="substring-before(substring-after(substring-after(atom:link[@rel='alternate']/@href, document($feed)//atom:feed[1]/atom:link[@rel='alternate']/@href), '/'), '/')"/>
+					<sort select="atom:link[@rel='alternate']/@href[1]" lang="zxx" order="descending"/>
+					<variable name="date" select="substring-before(substring-after(atom:link[@rel='alternate']/@href[1], document($feed)//atom:feed[1]/atom:link[@rel='alternate']/@href[1]), '/')"/>
+					<variable name="identifier" select="substring-before(substring-after(substring-after(atom:link[@rel='alternate']/@href[1], document($feed)//atom:feed[1]/atom:link[@rel='alternate']/@href[1]), '/'), '/')"/>
 					<html:li title="{normalize-space(atom:summary)}">
 						<apply-templates select="." mode="lang"/>
-						<html:a data-atom-id="{atom:id}" href="{atom:link[@rel='alternate']/@href}">
+						<html:a data-atom-id="{atom:id}" href="{atom:link[@rel='alternate']/@href[1]}">
 							<if test="@xml:id">
 								<attribute name="id">
 									<value-of select="@xml:id"/>
@@ -42,6 +42,9 @@
 									<value-of select="$identifier"/>
 								</html:code>
 							</html:small>
+							<if test="atom:link[@rel='http://id.loc.gov/ontologies/bibframe/coverArt']">
+								<html:img alt="{atom:title} cover art." src="{atom:link[@rel='http://id.loc.gov/ontologies/bibframe/coverArt']/@href[1]}"/>
+							</if>
 							<for-each select="atom:title">
 								<html:span>
 									<apply-templates select="." mode="lang"/>
@@ -55,7 +58,7 @@
 		</html:li>
 		<if test="document($source)//atom:feed[1]/atom:link[@rel='prev-archive']">
 			<call-template name="entries">
-				<with-param name="source" select="document($source)//atom:feed[1]/atom:link[@rel='prev-archive'][1]/@href"/>
+				<with-param name="source" select="document($source)//atom:feed[1]/atom:link[@rel='prev-archive'][1]/@href[1]"/>
 			</call-template>
 		</if>
 	</template>
@@ -112,12 +115,14 @@ div#scroller li{ Display: Block; Margin: 0; Padding: 0 }
 div#scroller li>span{ Display: Block; Box-Sizing: Border-Box; Border-Width: Medium; Border-Bottom-Style: Double; Padding: .25REM .5REM; Overflow: Hidden; White-Space: NoWrap; Font-Style: Italic; Font-Weight: Bold; Text-Align: Center; Text-Overflow: Ellipsis }
 div#scroller li:Not(:First-Child)>span{ Margin-Top: .75REM; Border-Top-Style: Double }
 div#scroller li:Only-Child>span{ Display: None }
-div#scroller li>a{ Display: Block; Border-Bottom: Thin Solid; Padding: .5REM .5REM .5REM 2.5REM }
+div#scroller li>a{ Display: Grid; Border-Bottom: Thin Solid; Padding: .5REM .5REM .5REM .5REM; Grid: Auto-Flow / MinMax(1.5REM, Max-Content) 1FR; Gap: .5REM }
 div#scroller li>a:Any-Link{ Color: Inherit; Text-Decoration: None }
-div#scroller li>a:Any-Link>span{ Text-Decoration: Underline }
-div#scroller li>a>small:First-Child{ Display: Block; Box-Sizing: Border-Box; Margin: -.5REM -.5REM .5REM -2.5REM; Border-Bottom: Thin Solid; Padding: .25REM .5REM; Overflow: Hidden; White-Space: NoWrap; Font-Size: Inherit; Font-Weight: Bold; Line-Height: 1; Text-Overflow: Ellipsis }
+div#scroller li>a>small:First-Child{ Display: Block; Box-Sizing: Border-Box; Grid-Column: 1 / Span 2; Margin: -.5REM -.5REM 0 -.5REM; Border-Bottom: Thin Solid; Padding: .25REM .5REM; Min-Width: 100%; Overflow: Hidden; White-Space: NoWrap; Font-Size: Inherit; Font-Weight: Bold; Line-Height: 1; Text-Overflow: Ellipsis }
 div#scroller li>a>small:First-Child>code{ Font: Inherit; Font-Style: Italic }
-div#scroller li>a>span{ Display: Block; Margin: 0 -.5REM 0 -1.5REM; Padding: 0 .5REM 0 1.5REM; Max-Width: Max-Content; Text-Indent: -1REM; Hyphens: Auto }
+div#scroller li>a>img{ Display: Block; Grid-Column: 1; Width: 3REM; Height: 3REM; Object-Fit: Contain }
+div#scroller li>a>span{ Display: Block; Grid-Column: 2; Align-Self: Center; Max-Width: Max-Content; Hyphens: Auto }
+div#scroller li>a:Any-Link>span{ Text-Decoration: Underline }
+div#scroller li>a>small:First-Child+span{ Margin-Left: -1.5REM; Padding-Left: 1.5REM; Text-Indent: -1REM }
 div#scroller>footer{ Direction: LTR; Padding: 0 .5EM; Font-Size: Smaller }
 div#scroller>footer hr{ Border-Style: Solid None None; Border-Color: Inherit; Border-Width: Thin; Font-Style: Italic }
 div#scroller>footer p{ Direction: LTR; Margin: .75EM 0 }
@@ -183,7 +188,7 @@ iframe#pane[name=pane]{ Display: Block; Box-Sizing: Border-Box; Margin: 0; Borde
 										<attribute name="href">
 											<choose>
 												<when test="atom:link[@rel='self']/@href">
-													<value-of select="atom:link[@rel='self']/@href"/>
+													<value-of select="atom:link[@rel='self']/@href[1]"/>
 												</when>
 												<otherwise>
 													<value-of select="$feed"/>

@@ -6,7 +6,7 @@
 <link rel="current" href="https://www.u2764.com/MXTP/index.atom"/>
 <link rel="self" href="https://www.u2764.com/MXTP/archive-2018.atom"/>
 <link rel="alternate" type="application/xhtml+xml" href="https://www.u2764.com/MXTP/"/>
-<updated>2021-09-29T18:09:15-07:00</updated>
+<updated>2021-09-29T19:46:25-07:00</updated>
 <title>❤ Mixtapes</title>
 <author>
 	<name>Margaret KIBI</name>
@@ -24,6 +24,7 @@
 <entry xml:id="MXTP.2018-02-05.CPLA0100">
 	<id>tag:www.u2764.com,2021:MXTP.2018-02-05.CPLA0100</id>
 	<link rel="alternate" type="text/html" href="https://www.u2764.com/MXTP/2018-02-05/CPLA0100/"/>
+	<link rel="http://id.loc.gov/ontologies/bibframe/coverArt" type="image/png" href="https://www.u2764.com/MXTP/2018-02-05/CPLA0100/cover.png"/>
 	<published>2018-02-05T22:05:21-08:00</published>
 	<updated>2021-09-29T16:19:20-07:00</updated>
 	<title>Enter the Cybre</title>
@@ -31,11 +32,17 @@
 		<name>KIBI Gô</name>
 		<uri>https://go.KIBI.family/About/#me</uri>
 	</author>
+	<summary type="xhtml">
+		<div xmlns="http://www.w3.org/1999/xhtml">
+			<img style="Display: Block; Margin: Auto" width="600" height="600" alt="‘Enter the Cybre’ cover art." src="https://www.u2764.com/MXTP/2018-02-05/CPLA0100/cover.png"/>
+		</div>
+	</summary>
 </entry>
 
 <entry xml:id="MXTP.2018-02-12.CPLA0101">
 	<id>tag:www.u2764.com,2021:MXTP.2018-02-12.CPLA0101</id>
 	<link rel="alternate" type="text/html" href="https://www.u2764.com/MXTP/2018-02-12/CPLA0101/"/>
+	<link rel="http://id.loc.gov/ontologies/bibframe/coverArt" type="image/png" href="https://www.u2764.com/MXTP/2018-02-12/CPLA0101/cover.png"/>
 	<!-- The identifier date differs from the published date for this entry.  Although it was originally dated to the 12th, it was not actually completed and published until the 14th. -->
 	<published>2018-02-14T21:19:45-08:00</published>
 	<updated>2021-09-29T16:19:29-07:00</updated>
@@ -44,11 +51,17 @@
 		<name>KIBI Gô</name>
 		<uri>https://go.KIBI.family/About/#me</uri>
 	</author>
+	<summary type="xhtml">
+		<div xmlns="http://www.w3.org/1999/xhtml">
+			<img style="Display: Block; Margin: Auto" width="600" height="600" alt="‘Cybre in Love’ cover art." src="https://www.u2764.com/MXTP/2018-02-12/CPLA0101/cover.png"/>
+		</div>
+	</summary>
 </entry>
 
 <entry xml:id="MXTP.2018-09-24.dot.support">
 	<id>tag:www.u2764.com,2021:MXTP.2018-09-24.dot.support</id>
 	<link rel="alternate" type="text/html" href="https://www.u2764.com/MXTP/2018-09-24/dot.support/"/>
+	<link rel="http://id.loc.gov/ontologies/bibframe/coverArt" type="image/png" href="https://www.u2764.com/MXTP/2018-09-24/dot.support/cover.png"/>
 	<!-- This playlist was originally created/dated 2014-10-25, but it wasn’t formally published until 2018-09-24. -->
 	<published>2018-09-24T20:31:49-07:00</published>
 	<updated>2021-09-27T01:20:07-07:00</updated>
@@ -57,11 +70,17 @@
 		<name>KIBI Gô</name>
 		<uri>https://go.KIBI.family/About/#me</uri>
 	</author>
+	<summary type="xhtml">
+		<div xmlns="http://www.w3.org/1999/xhtml">
+			<img style="Display: Block; Margin: Auto" width="500" height="500" alt="‘dot support’ cover art." src="https://www.u2764.com/MXTP/2018-09-24/dot.support/cover.png"/>
+		</div>
+	</summary>
 </entry>
 
 <entry xml:id="MXTP.2018-10-01.future_bar">
 	<id>tag:www.u2764.com,2021:MXTP.2018-10-01.future_bar</id>
 	<link rel="alternate" type="text/html" href="https://www.u2764.com/MXTP/2018-10-01/future_bar/"/>
+	<link rel="http://id.loc.gov/ontologies/bibframe/coverArt" type="image/png" href="https://www.u2764.com/MXTP/2018-10-01/future_bar/cover.png"/>
 	<!-- This playlist was originally created/dated 2014-08-24, but it wasn’t formally published until 2018-10-01. -->
 	<published>2018-10-01T09:10:53-07:00</published>
 	<updated>2021-09-27T01:20:02-07:00</updated>
@@ -72,6 +91,7 @@
 	</author>
 	<summary type="xhtml">
 		<div xmlns="http://www.w3.org/1999/xhtml">
+			<img style="Display: Block; Margin: Auto" width="500" height="500" alt="‘dot support’ cover art." src="https://www.u2764.com/MXTP/2018-10-01/future_bar/cover.png"/>
 			<pre>a playlist_ music from a future past_&#x0A;bar_</pre>
 		</div>
 	</summary>
