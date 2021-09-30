@@ -1,0 +1,570 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
+<head>
+	<meta charset="utf-8"/>
+	<title>Sevensi Cosmogeny</title>
+	<base target="_top"/>
+	<meta name="referrer" content="no-referrer"/>
+	<style>
+/*
+The red/black/blue colour scheme of this page derives from ink colours in my old notebooks where I would do language development in high school.
+*/
+*:Any-Link { Color: #4B2DF7 }
+*:Lang(art) { Color: #4B2DF7 }
+*:Lang(art)[tabindex] {
+	Cursor: Default;
+	Text-Decoration: #B01C1C Dotted Underline;
+}
+html {
+	Color: #1F1A14;
+	Background: Fixed Linear-Gradient(
+		45DEG,
+		#DEDBD9 .35EM,
+		Transparent .35EM,
+		Transparent 1.06EM,
+		#DEDBD9 1.06EM
+	) Top Center / 1EM 1EM, Fixed Linear-Gradient(
+		-45DEG,
+		#DEDBD9 Calc(.71EM - .82PX),
+		#57534C Calc(.71EM - .6PX),
+		#57534C Calc(.71EM + .6PX),
+		#DEDBD9 Calc(.71EM + .82PX)
+	) Top Center / 1EM 1EM, #DEDBD9;
+	Font: Normal 1EM / 1.5 Serif;
+	Font-Variant-Numeric: Oldstyle-Nums;
+}
+body {
+	Margin: Auto;
+	Border: 2REM #FAF8F7 Solid;
+	Min-Width: 36REM;
+	Max-Width: 68REM;
+	Color: #1F1A14;
+	Background: Fixed Padding-Box Linear-Gradient(
+		45DEG,
+		#FAF8F7 .35REM,
+		Transparent .35REM,
+		Transparent 1.06REM,
+		#FAF8F7 1.06REM
+	) Top Center / 1REM 1REM, Fixed Padding-Box Linear-Gradient(
+		-45DEG,
+		#FAF8F7 Calc(.71REM - .82PX),
+		#4B2DF7 Calc(.71REM - .6PX),
+		#4B2DF7 Calc(.71REM + .6PX),
+		#FAF8F7 Calc(.71REM + .82PX)
+	) Top Center / 1REM 1REM;
+}
+article {
+	Margin: 0 Calc(30% - 2REM - 1PX);
+	Padding: 0 2REM;
+	Border-Style: None Solid;
+	Border-Color: #4B2DF7;
+	Border-Width: 1PX;
+	Color: #1F1A14;
+	Background: #FAF8F7;
+	Counter-Reset: Note;
+}
+article::after,
+section::after {
+	Display: Block;
+	Content: "";
+}
+article,
+article::after,
+header,
+section,
+section::after,
+footer,
+nav,
+aside { Clear: Both }
+header,
+footer,
+nav,
+aside {
+	Position: Relative;
+	Margin: 0 -75%;
+	Border-Style: Double None;
+	Border-Width: Medium;
+	Padding: 2REM;
+	Color: #1F1A14;
+	Background: Fixed Linear-Gradient(
+		45DEG,
+		#FAF8F7 .35REM,
+		Transparent .35REM,
+		Transparent 1.06REM,
+		#FAF8F7 1.06REM
+	) Top Center / 1REM 1REM, Fixed Linear-Gradient(
+		-45DEG,
+		#FAF8F7 Calc(.71REM - .82PX),
+		#302F2B Calc(.71REM - .6PX),
+		#302F2B Calc(.71REM + .6PX),
+		#FAF8F7 Calc(.71REM + .82PX)
+	) Top Center / 1REM 1REM;
+	Z-Index: 1;
+}
+header:First-Child,
+footer:First-Child,
+nav:First-Child,
+aside:First-Child,
+header+header,
+header+footer,
+header+nav,
+header+aside,
+footer+header,
+footer+footer,
+footer+nav,
+footer+aside,
+nav+header,
+nav+footer,
+nav+nav,
+nav+aside,
+aside+header,
+aside+footer,
+aside+nav,
+aside+aside { Border-Top: None }
+header:Last-Child,
+footer:Last-Child,
+nav:Last-Child,
+aside:Last-Child { Border-Bottom: None }
+nav {
+	Display: Grid;
+	Border-Color: #FAF8F7;
+	Padding: 1REM Calc(75% - 4.4REM) 1REM;
+	Grid-Template-Columns: 1FR 1FR 1FR;
+	Grid-Gap: 1REM;
+	Gap: 1REM;
+	Align-Items: Center;
+	Justify-Items: Center;
+	Background: Fixed Linear-Gradient(
+		45DEG,
+		#302F2B .35REM,
+		Transparent .35REM,
+		Transparent 1.06REM,
+		#302F2B 1.06REM
+	) Top Center / 1REM 1REM, Fixed Linear-Gradient(
+		-45DEG,
+		#302F2B Calc(.71REM - .82PX),
+		#FAF8F7 Calc(.71REM - .6PX),
+		#FAF8F7 Calc(.71REM + .6PX),
+		#302F2B Calc(.71REM + .82PX)
+	) Top Center / 1REM 1REM;
+}
+nav>ol,
+nav>ul { Display: Contents }
+nav>*,
+nav>ol>*,
+nav>ul>* {
+	Display: Block;
+	Box-Sizing: Border-Box ! IMPORTANT;
+	Margin: Auto;
+	Border: Medium Double;
+	Padding: .5EM 1EM;
+	Max-Width: 100% ! IMPORTANT;
+	Overflow: Hidden ! IMPORTANT;
+	Color: #1F1A14;
+	Background: #FAF8F7;
+}
+nav a[href] {
+	Display: Block;
+	Overflow: Hidden;
+	Color: Inherit;
+	White-Space: NoWrap;
+	Text-Overflow: Ellipsis;
+}
+aside {
+	Border-Color: #B01C1C;
+	Background: Fixed Linear-Gradient(
+		45DEG,
+		#FAF8F7 .35REM,
+		Transparent .35REM,
+		Transparent 1.06REM,
+		#FAF8F7 1.06REM
+	) Top Center / 1REM 1REM, Fixed Linear-Gradient(
+		-45DEG,
+		#FAF8F7 Calc(.71REM - .82PX),
+		#B01C1C Calc(.71REM - .6PX),
+		#B01C1C Calc(.71REM + .6PX),
+		#FAF8F7 Calc(.71REM + .82PX)
+	) Top Center / 1REM 1REM;
+}
+section {
+	Position: Relative;
+	Color: #1F1A14;
+	Background: No-Repeat Space Content-Box Radial-Gradient(
+		Circle At Center,
+		Transparent Calc(.05REM - .25PT),
+		#B01C1C Calc(.05REM + .25PT),
+		#B01C1C Calc(.125REM - .25PT),
+		Transparent Calc(.125REM + .25PT)
+	) Top Center / 1REM 1REM, #FAF8F7;
+	Z-Index: 0;
+}
+section::after {
+	Position: Relative;
+	Bottom: 3REM;
+	Margin: 0 0 -3REM;
+	Height: 3REM;
+	Background: Linear-Gradient(
+		To Top,
+		#FAF8F7 2REM,
+		Transparent
+	);
+	Z-Index: -1;
+}
+h1 {
+	Margin: 0;
+	Border-Bottom: 2REM Transparent Solid;
+	Padding: 1REM;
+	Color: #1F1A14;
+	Background: Padding-Box #FAF8F7;
+	Font-Size: 3REM;
+	Font-Style: Italic;
+	Font-Variant-Caps: Small-Caps;
+	Text-Align: Center;
+	Line-Height: 1;
+}
+h2 {
+	Position: Relative;
+	Margin: 0 -2REM;
+	Padding: 0 0 2REM;
+	Color: #B01C1C;
+	Font-Size: 2REM;
+	Line-Height: 1;
+	Text-Align: Center;
+	Z-Index: 1;
+}
+h2::before { Content: "❧ " }
+h2::after { Content: " ☙" }
+section>h2:First-Child {
+	Margin: 0 -75%;
+	Border-Style: None None Solid;
+	Border-Color: Transparent;
+	Border-Width: 1REM;
+	Padding: 1REM Calc(75% - 2REM) 1REM;
+	Box-Shadow: Inset 0 -1PX 0 0 #1F1A14;
+	Background: Fixed Linear-Gradient(
+		45DEG,
+		#FAF8F7 .35REM,
+		Transparent .35REM,
+		Transparent 1.06REM,
+		#FAF8F7 1.06REM
+	) Top Center / 1REM 1REM, Fixed Linear-Gradient(
+		-45DEG,
+		#FAF8F7 Calc(.71REM - .82PX),
+		#DEDBD9 Calc(.71REM - .6PX),
+		#DEDBD9 Calc(.71REM + .6PX),
+		#FAF8F7 Calc(.71REM + .82PX)
+	) Top Center / 1REM 1REM, #FAF8F7;
+	Mask: Alpha Linear-Gradient(
+		To Top,
+		Transparent,
+		White 1REM
+	) Bottom;
+}
+section+section>h2:First-Child {
+	Bottom: 1REM;
+	Margin-Bottom: -1REM;
+	Border-Top-Style: Solid;
+	Box-Shadow: Inset 0 1PX 0 0 #1F1A14, Inset 0 -1PX 0 0 #1F1A14;
+	Mask: Alpha Intersect Linear-Gradient(
+		To Bottom,
+		Transparent,
+		White 1REM
+	) Top, Alpha Linear-Gradient(
+		To Top,
+		Transparent,
+		White 1REM
+	) Bottom;
+}
+p {
+	Position: Relative;
+	Margin: 0 -2REM;
+	Padding: 0 2REM;
+	Color: #1F1A14;
+	Background: #FAF8F7;
+	Text-Align: Justify;
+	Hyphens: Auto;
+}
+p::before,
+p::after {
+	Color: #57534CBF;
+	Text-Indent: 0;
+}
+p::after {
+	Display: Inline-Block;
+	Vertical-Align: Sub;
+	Margin: 0 -2EM -1EM 0;
+	Padding: 0 0 0 1EM;
+	Min-Width: 1EM;
+	Height: 1EM;
+	Line-Height: 1;
+}
+p:Not(:Last-Child)::after { Content: "//" }
+p+p { Text-Indent: 1EM }
+p+p::before {
+	Display: Block;
+	Position: Absolute;
+	Top: 0;
+	Right: Calc(100% - 2REM);
+	Padding: 0 .5EM 0 0;
+	Font-Style: Italic;
+	Font-Weight: Bold;
+	Text-Align: Right;
+	Content: "¶";
+}
+p>* { Text-Indent: 0 }
+p:First-Child,
+*:Not(p)+p {
+	Margin-Top: -2REM;
+	Padding-Top: 2REM;
+}
+section+section>h2:First-Child+p { Margin-Top: -3REM }
+p:Last-Child {
+	Padding-Bottom: 3REM;
+	Background: No-Repeat Linear-Gradient(
+		To Bottom,
+		#FAF8F7 2REM,
+		Transparent 2REM
+	), No-Repeat Radial-Gradient(
+		Circle At Center,
+		#FAF8F7 Calc(.05REM - .25PT),
+		Transparent Calc(.05REM + .25PT)
+	) Bottom 1.5REM Center / .25REM .25REM, No-Repeat Radial-Gradient(
+		Circle At Center,
+		#FAF8F7 Calc(.05REM - .25PT),
+		Transparent Calc(.05REM + .25PT)
+	) Bottom 2.25REM Center / .25REM .25REM, No-Repeat Linear-Gradient(
+		To Right,
+		#B01C1C Calc(.075REM - .25PT),
+		#FAF8F7 Calc(.075REM + .25PT),
+		#FAF8F7 Calc(.175REM - .25PT),
+		#B01C1C Calc(.175REM + .25PT)
+	) Bottom 1.625REM Center / .25REM .75REM, No-Repeat Radial-Gradient(
+		Circle At Center,
+		#B01C1C Calc(.125REM - .25PT),
+		Transparent Calc(.125REM + .25PT)
+	) Bottom 1.5REM Center / .25REM .25REM, No-Repeat Radial-Gradient(
+		Circle At Center,
+		#B01C1C Calc(.125REM - .25PT),
+		#FAF8F7 Calc(.125REM + .25PT)
+	) Bottom 2.25REM Center / .25REM .25REM, No-Repeat Linear-Gradient(
+		To Top,
+		#FAF8F7,
+		#FAF8F7
+	) Bottom 2.25REM Center / .25REM 1REM, Content-Box #FAF8F7;
+}
+header p,
+aside p,
+footer p {
+	Box-Sizing: Border-Box;
+	Margin: Auto;
+	Border-Style: None Solid;
+	Border-Color: #B01C1C;
+	Border-Width: 1PX;
+	Padding: 0 Calc(2EM - 1PX);
+	Max-Width: 36EM;
+	Color: #1F1A14;
+	Background: #FAF8F7;
+}
+header p::before,
+header p::after,
+footer p::before,
+footer p::after,
+aside p::before,
+aside p::after { Color: #B01C1CBF }
+header p:First-Child,
+header *:Not(p)+p,
+footer p:First-Child,
+footer *:Not(p)+p,
+aside p:First-Child,
+aside *:Not(p)+p {
+	Margin-Top: Auto;
+	Padding-Top: Calc(1EM - 1PX);
+	Border-Top-Style: Solid;
+}
+header p:Last-Child,
+footer p:Last-Child,
+aside p:Last-Child {
+	Margin-Bottom: Auto;
+	Padding-Bottom: Calc(1EM - 1PX);
+	Border-Bottom-Style: Solid;
+	Background: #FAF8F7;
+}
+header p:Last-Child::after,
+footer p:Last-Child::after,
+aside p:Last-Child::after { Content: "∎" }
+aside p:First-Child::before,
+aside *:Not(p)+p::before {
+	Display: Block;
+	Float: Left;
+	Margin: 0;
+	Padding: 0 2REM 0 0;
+	Font-Size: 4.5REM;
+	Font-Weight: Bold;
+	Line-Height: 1;
+	Z-Index: 1;
+	Content: "※";
+}
+b.NUMERIC {
+	Display: Inline-Block;
+	Box-Sizing: Border-Box;
+	Vertical-Align: .0625EM;
+	Margin: -.5EM Calc(-.25EM - 2PX) -.375EM;
+	Border: 2PX #4B2DF7 Solid;
+	Border-Radius: Calc(50% * 1.1294) 50%;
+	Padding: Calc(.5EM - 2PX) .125EM Calc(.375EM - 2PX);
+	Min-Width: 1.875EM;
+	Font-Size: .8EM;
+	Font-Style: Italic;
+	Font-Variant-Numeric: Tabular-Nums Lining-Nums;
+	Line-Height: 1;
+	Text-Align: Center;
+}
+em {
+	Margin: .05EM;
+	Font-Style: Inherit;
+	Letter-Spacing: .05EM;
+}
+em::before { Content: "· " }
+em::after { Content: " ·" }
+u {
+	Font-Variant-Caps: Small-Caps;
+	Text-Decoration: None;
+}
+ins {
+	Text-Decoration: None;
+	Counter-Increment: Note;
+}
+ins::before {
+	Vertical-Align: Super;
+	Color: #B01C1C;
+	Font-Size: .8EM;
+	Font-Variant-Numeric: Tabular-Nums Lining-Nums;
+	Line-Height: 1;
+	Content: "\2060※\2060" Counter(Note);
+}
+span[role=note] {
+	Display: Block;
+	Box-Sizing: Border-Box;
+	Margin: -1REM 0 2REM;
+	Border: 1PX #B01C1C Solid;
+	Padding: Calc(1REM - 1PX);
+	Width: Calc(75% - 2REM);
+	Color: #1F1A14;
+	Background: Fixed Linear-Gradient(
+		45DEG,
+		#FAF8F7 .35REM,
+		Transparent .35REM,
+		Transparent 1.06REM,
+		#FAF8F7 1.06REM
+	) Top Center / 1REM 1REM, Fixed Linear-Gradient(
+		-45DEG,
+		#FAF8F71F Calc(.71REM - .82PX),
+		#B01C1C1F Calc(.71REM - .6PX),
+		#B01C1C1F Calc(.71REM + .6PX),
+		#FAF8F71F Calc(.71REM + .82PX)
+	) Top Center / 1REM 1REM, #FAF8F7;
+	Text-Justify: Inter-Character;
+}
+/*
+The following will not ensure that notes flip sides every time, but they should prevent any three successive notes from all appearing on the same side.
+*/
+p:Nth-Of-Type(Even) ins:Nth-Of-Type(Even)>span[role=note],
+p:Nth-Of-Type(Odd) ins:Nth-Of-Type(Odd)>span[role=note] {
+	Float: Left;
+	Clear: Left;
+	Margin-Left: -75%;
+}
+p:Nth-Of-Type(Even) ins:Nth-Of-Type(Odd)>span[role=note],
+p:Nth-Of-Type(Odd) ins:Nth-Of-Type(Even)>span[role=note] {
+	Float: Right;
+	Clear: Right;
+	Margin-Right: -75%;
+}
+span[role=note]::before {
+	Display: Inline-Block;
+	Padding: 0 1EM 0 0;
+	Color: #B01C1C;
+	Font-Weight: Bold;
+	Font-Variant-Numeric: Tabular-Nums Lining-Nums;
+	Content: "※" Counter(Note);
+}
+span.ETYMOLOGY {
+	Display: None;
+	Position: Absolute;
+	Left: 0;
+	Right: 0;
+	Border-Style: Solid None;
+	Border-Color: #4B2DF7;
+	Border-Width: Thin;
+	Padding: 1EM;
+	Color: #1F1A14;
+	Background: #FAF8F7;
+	Font-Size: .8EM;
+	Font-Variant-Caps: Normal;
+	Z-Index: 2;
+}
+*:Lang(art):Focus span.ETYMOLOGY,
+*:Lang(art):Hover span.ETYMOLOGY { Display: Block }
+*:Lang(art):Focus~*:Lang(art) span.ETYMOLOGY,
+*:Lang(art):Hover~*:Lang(art) span.ETYMOLOGY { Z-Index: 1 }
+*:Focus-Within~* *:Lang(art) span.ETYMOLOGY,
+*:Hover~* *:Lang(art) span.ETYMOLOGY { Z-Index: 1 }
+	</style>
+</head>
+<body>
+	<article>
+		<header>
+			<h1>Sevensi Cosmogeny</h1>
+			<p>What follows is a brief retelling of the creätion myth of Sevensi culture. Strange as it may seem to be reading a creätion myth in the contemporary age, this story has wide and deep significance for many areäs of Sevensi philosophy, making a general familiarity with its concepts necessary for any further discussion of Sevensi thought.</p>
+			<p>Sevensi does not have any divine texts, and “ objective ” storytelling is antithetical to the Sevensi conception of the human. Understandings of the world are developed through conversation and consensus and are expected to grow and evolve over time. Consequently, what follows is far from—and should not be taken as—the Truth of the matter—merely one fragmentary perspective.</p>
+			<p>Even so, I have done my best to limit the main telling to only those elements which I consider to be generally‐accepted, core concepts with wide‐reaching influënce and ramifications. Bear in mind that every sentence of the following story could probably be used as a launching‐point for an entire essay. I have limited myself to marginal notes.</p>
+		</header>
+		<section id="origins">
+			<h2>Origins</h2>
+			<p>In the beginning, time and space had no meaning, and all was naught but energy ⟨ <span lang="art-Latn-x-svi-anglic" tabindex="0">ye<span class="ETYMOLOGY" lang="en"> ⟦ JSV <span lang="art-Latn-x-jsv">*hei</span> ⟨ energy ⟩ > OSV <span lang="art-Latn-x-osv">HY−</span> > OSM <span lang="art-Latn-x-osm-anglic">hye</span> > SVI <span lang="art-Latn-x-svi-anglic">ye</span> ⟧</span></span> ⟩.</p>
+			<p>But not all energy is the same, and so it happened that the heavy, dense energy of substance ⟨ <span lang="art-Latn-x-svi-anglic" tabindex="0">wded<span class="ETYMOLOGY" lang="en"> ⟦ JSV <span lang="art-Latn-x-jsv">*teueid</span> ⟨ body ; substance ⟩ > OSV <span lang="art-Latn-x-osv">LW7D−</span> > OSM <span lang="art-Latn-x-osm-anglic">duʼědh</span> > SVI <span lang="art-Latn-x-svi-anglic">wded</span> ⟧</span></span> ⟩ sank down to form <u>the Earth</u> ⟨ <u lang="art-Latn-x-svi-anglic" tabindex="0">gub<span class="ETYMOLOGY" lang="en"> ⟦ JSV <span lang="art-Latn-x-jsv">*geupû</span> ⟨ earth ; world ⟩ > OSV <span lang="art-Latn-x-osv">GWB−</span> > OSM <span lang="art-Latn-x-osm-anglic">gub</span> > SVI <span lang="art-Latn-x-svi-anglic">gub</span> ⟧</span></u> ⟩, and the lighter, free‐moving energy of action ⟨ <span lang="art-Latn-x-svi-anglic" tabindex="0">yof<span class="ETYMOLOGY" lang="en"> ⟦ JSV <span lang="art-Latn-x-jsv">*ôfai</span> ⟨ shrub ; chaötic ⟩ > OSV <span lang="art-Latn-x-osv">7WYFY+</span> > OSM <span lang="art-Latn-x-osm-anglic">yofy</span> > SVI <span lang="art-Latn-x-svi-anglic">yof</span> ⟧</span></span> ⟩ was left to form <u>the Heavens</u> above ⟨ <u lang="art-Latn-x-svi-anglic" tabindex="0">dyol<span class="ETYMOLOGY" lang="en"> ⟦ JSV <span lang="art-Latn-x-jsv">*dautû</span> ⟨ sky ⟩ > OSV <span lang="art-Latn-x-osv">DWYL+</span> > OSM <span lang="art-Latn-x-osm-anglic">dhyol</span> > SVI <span lang="art-Latn-x-svi-anglic">dyol</span> ⟧</span></u> ⟩.<ins><span role="note">In Sevensi, the word for ‘ substance ’ can also be used to mean “ structure,” and the word for ‘ action ’ can also be used to mean “ chaos.” This distinction between structure and chaos colours much of the interactions between <u>Earth</u> and <u>Heaven</u> in this story.</span></ins> Thus was the world created.</p>
+			<p><u>Earth</u>, being comprised of the energy of substance, was quite content with this cleanly structured state of affairs. But <u>Heaven</u>, comprised of the energy of action, longed for the prior chaos and detested these new boundaries.<ins><span role="note">This is a death drive. <u>Heaven</u> was only given form and identity through its separation from <u>Earth</u>, and its essence as the energy of action requires the existence of objects to act upon. Yet, <u>Heaven</u> desires for a time before such things existed. You will see the interplay between action and death as a running theme throughout this story.</span></ins> Stirring up fire, wind, and rain,<ins><span role="note">These are the three Sevensi elementals, and they are not direct products of either <u>Heaven</u> or <u>Earth</u>, but rather formed through their boundary and constantly in circulation between them.</span></ins> <u>Heaven</u> attempted to wear away at <u>Earth</u> ; in retaliation, <u>Earth</u> sent up great mountains, forcing <u>Heaven</u> away.</p>
+			<p>The space between <u>Heaven</u> and <u>Earth</u> is the Mortal Plane ⟨ <span lang="art-Latn-x-svi-anglic" tabindex="0">ǒzhedin<span class="ETYMOLOGY" lang="en"> ⟦ JSV <span lang="art-Latn-x-jsv">*hôʒei‐twein</span> ⟨ mortal land ⟩ > OSV <span lang="art-Latn-x-osv">HWZLWYN−</span> > OSM <span lang="art-Latn-x-osm-anglic">hǒzhedin</span> > SVI <span lang="art-Latn-x-svi-anglic">ǒzhedin</span> ⟧</span></span> ⟩, and was filled with the energy of mortality ⟨ <span lang="art-Latn-x-svi-anglic" tabindex="0">hwdeyn<span class="ETYMOLOGY" lang="en"> ⟦ JSV <span lang="art-Latn-x-jsv">*têweiûn</span> ⟨ mortality ⟩ > OSV <span lang="art-Latn-x-osv">DWY7N−</span> > OSM <span lang="art-Latn-x-osm-anglic">dhewěyn</span> > SVI <span lang="art-Latn-x-svi-anglic">hwdeyn</span> ⟧</span></span> ⟩.<ins><span role="note">The energy of mortality is the energy of sustenance, as well as the energy of termination ( the sustenance of absence ). Together, the energies of substance, action, and mortality might be translated to English as ‘ beïng,’ ‘ doïng,’ and ‘ becoming,’ although much of their connotations are Sevensi‐specific.</span></ins></p>
+		</section>
+		<section id="life">
+			<h2>Life and Death</h2>
+			<p>With the creation of the Mortal Plane came the birth of <u>Life</u> ⟨ <u lang="art-Latn-x-svi-anglic" tabindex="0">yěwi<span class="ETYMOLOGY" lang="en"> ⟦ JSV <span lang="art-Latn-x-jsv">*hâwî</span> ⟨ life ⟩ > OSV <span lang="art-Latn-x-osv">HYWY−</span> > OSM <span lang="art-Latn-x-osm-anglic">hyěwi</span> > SVI <span lang="art-Latn-x-svi-anglic">yěwi</span> ; change from positive to negative harmony during OSV likely through contrast with <span lang="art-Latn-x-osv">VAYY+</span> ⟨ death ⟩ ⟧</span></u> ⟩,<ins><span role="note"><u>Heaven</u> and <u>Earth</u> are both the names of locations and of spirits. But here, <u>Life</u> is the spirit and the Mortal Plane is the place. ( It can be argued that the concept of “ place ” has no meaning for <u>Earth</u> or <u>Heaven</u>. )</span></ins> formed by imbuïng <u>Earth</u>ʼs energy of substance with <u>Heaven</u>ʼs energy of action, and bound together through the energy of mortality found only in the Mortal Plane. Thus, <u>Heaven</u>ʼs desire for a mingling of the energies was fulfilled. However, as <u>Life</u> was born of substance, to substance it was fated to return, and so also was born <u>Death</u> ⟨ <u lang="art-Latn-x-svi-anglic" tabindex="0">vǎyi<span class="ETYMOLOGY" lang="en"> ⟦ JSV <span lang="art-Latn-x-jsv">*fâî</span> ⟨ death ⟩ > OSV <span lang="art-Latn-x-osv">VAYY+</span> > OSM <span lang="art-Latn-x-osm-anglic">vǎyi</span> > SVI <span lang="art-Latn-x-svi-anglic">vǎyi</span> ⟧</span></u> ⟩, formed by imbuïng <u>Heaven</u>ʼs energy of action with <u>Earth</u>ʼs energy of substance, which restored this prior order.<ins><span role="note">It remains an open question whether <u>Life</u> and <u>Death</u> are actually distinct spirits. They might be portrayed as the twin rulers of the Mortal Realm—or as a single, two‐faced one. The duality of <u>Life</u> and <u>Death</u> reflects the duality ( sustenance and termination ) of mortal energy and the Mortal Realm itself.</span></ins> These are the two disobedient children of <u>Heaven</u> and <u>Earth</u> : <u>Life</u>, a spirit of substance which acts, and <u>Death</u>, a spirit of action which brings substance.<ins><span role="note">Remember again that ‘ substance ’ and ‘ structure ’ are synonyms in Sevensi. That which is in motion is de‐structured—and thus action is the antithesis of substance in Sevensi philosophy. <u>Death</u> is a sort of “ final destructuring into structure,” an action which ends all further chance of action by an entity.</span></ins></p>
+		</section>
+		<aside>
+			<p>To an extent, <u>Heaven</u>, <u>Earth</u>, <u>Life</u>, <u>Death</u>, and their interactions are structural facts of the universe acting according to their nature, and you should avoid anthropomorphizing them too much. But now, the story takes a turn into the realm of living things. You will see how the tension taking place at a cosmological level set the stage for these interspecies conflicts, not through their active participation, but because of how they have structured the fabric of reality for all that exists within the Mortal Plane.</p>
+		</aside>
+		<section id="animals">
+			<h2>The Great Animals</h2>
+			<p>Life grew to exist in many forms. Of the animals, there were thirteen principal spirits ⟨ <span lang="art-Latn-x-svi-anglic" tabindex="0">f<span class="ETYMOLOGY" lang="en"> ⟦ JSV <span lang="art-Latn-x-jsv">*‐ôfâ</span> ⟨ great ⟩ > OSV <span lang="art-Latn-x-osv">F+</span> ⟨ great spirit ⟩ > OSM <span lang="art-Latn-x-osm-anglic">f</span> > SVI <span lang="art-Latn-x-svi-anglic">f</span> ⟧</span></span> ⟩<ins><span role="note">This term for ‘ spirit ’ also means “ genus ” or “ genre ” ( ‘ genius ’ might be a more accurate, if unconventional, English translation ). It incorporates all great animal spirits and also other kinds of great spirits, such as spirits for plant life, natural features, or artistic mediums. It does not encompass lesser spirits, such as those for individual species, habitats, landmarks, or works of art.</span></ins> :— <b class="NUMERIC">1.</b> <u lang="art-Latn-x-svi-anglic" tabindex="0">odǒ<span class="ETYMOLOGY" lang="en"> ⟦ JSV <span lang="art-Latn-x-jsv">*hôteu[‐ôfâ]</span> ⟨ great crab ⟩ > OSV <span lang="art-Latn-x-osv">HWLW−</span> > OSM <span lang="art-Latn-x-osm-anglic">hodǒ</span> > SVI <span lang="art-Latn-x-svi-anglic">odǒ</span> ⟧</span></u> [ <u>Caris</u> ; <u>the Great Crab</u> ],<ins><span role="note">There are not direct English words which convey the broad species sense of these Sevensi names, so I have opted to borrow names from Latin as species‐approximants. Feminine words were chosen because the great animal spirits are traditionally portrayed as female.</span></ins> <b class="NUMERIC">2.</b> <u lang="art-Latn-x-svi" tabindex="0">yězhu<span class="ETYMOLOGY" lang="en"> ⟦ JSV <span lang="art-Latn-x-jsv">*deizâ[‐ôfâ]</span> ⟨ great fish ⟩ > OSV <span lang="art-Latn-x-osv">TYZW−</span> > OSM <span lang="art-Latn-x-osm-anglic">yězhu</span> > SVI <span lang="art-Latn-x-svi-anglic">yězhu</span> ⟧</span></u> [ <u>Carpa</u> ; <u>the Great Fish</u> ], <b class="NUMERIC">3.</b> <u lang="art-Latn-x-svi" tabindex="0">kǒsho<span class="ETYMOLOGY" lang="en"> ⟦ JSV <span lang="art-Latn-x-jsv">*gôs[‐ôfâ]</span> ⟨ great bird ⟩ > OSV <span lang="art-Latn-x-osv">KWSW−</span> > OSM <span lang="art-Latn-x-osm-anglic">kǒsho</span> > SVI <span lang="art-Latn-x-svi-anglic">kǒsho</span> ⟧</span></u> [ <u>Avis</u> ; <u>the Great Bird</u> ], <b class="NUMERIC">4.</b> <u lang="art-Latn-x-svi" tabindex="0">zhozh<span class="ETYMOLOGY" lang="en"> ⟦ JSV <span lang="art-Latn-x-jsv">*ʒôʒô[‐ôfâ]</span> ⟨ great frog ⟩ > OSV <span lang="art-Latn-x-osv">ZWZ−</span> > OSM <span lang="art-Latn-x-osm-anglic">zhozh</span> > SVI <span lang="art-Latn-x-svi-anglic">zhozh</span> ⟧</span></u> [ <u>Rana</u> ; <u>the Great Frog</u> ], <b class="NUMERIC">5.</b> <u lang="art-Latn-x-svi" tabindex="0">zhovyǒi<span class="ETYMOLOGY" lang="en"> ⟦ JSV <span lang="art-Latn-x-jsv">*zôfei[‐ôfâ]</span> ⟨ great snake ⟩ > OSV <span lang="art-Latn-x-osv">ZWFWY−</span> > OSM <span lang="art-Latn-x-osm-anglic">zhovyǒi</span> > SVI <span lang="art-Latn-x-svi-anglic">zhovyǒi</span> ⟧</span></u> [ <u>Colubra</u> ; <u>the Great Snake</u> ], <b class="NUMERIC">6.</b> <u lang="art-Latn-x-svi" tabindex="0">dexrǐ<span class="ETYMOLOGY" lang="en"> ⟦ JSV <span lang="art-Latn-x-jsv">*deitô[‐ôfâ]</span> ⟨ great wolf ⟩ > OSV <span lang="art-Latn-x-osv">D9Y−</span> > OSM <span lang="art-Latn-x-osm-anglic">dhexrǐ</span> > SVI <span lang="art-Latn-x-svi-anglic">dexrǐ</span> ⟧</span></u> [ <u>Lupa</u> ; <u>the Great Wolf</u> ], <b class="NUMERIC">7.</b> <u lang="art-Latn-x-svi" tabindex="0">shǎchwi<span class="ETYMOLOGY" lang="en"> ⟦ JSV <span lang="art-Latn-x-jsv">*sâtseu[‐ôfâ]</span> ⟨ great deer ⟩ > OSV <span lang="art-Latn-x-osv">SCWY+</span> > OSM <span lang="art-Latn-x-osm-anglic">shǎchwi</span> > SVI <span lang="art-Latn-x-svi-anglic">shǎchwi</span> ⟧</span></u> [ <u>Cerva</u> ; <u>the Great Deer</u> ], <b class="NUMERIC">8.</b> <u lang="art-Latn-x-svi" tabindex="0">dadǒ<span class="ETYMOLOGY" lang="en"> ⟦ JSV <span lang="art-Latn-x-jsv">*dât[‐ôfâ]</span> ⟨ great otter ⟩ > OSV <span lang="art-Latn-x-osv">DDW+</span> > OSM <span lang="art-Latn-x-osm-anglic">dhadhǒ</span> > SVI <span lang="art-Latn-x-svi-anglic">dadǒ</span> ⟧</span></u> [ <u>Lutra</u> ; <u>the Great Otter</u> ], <b class="NUMERIC">9.</b> <u lang="art-Latn-x-svi" tabindex="0">dǒvaxro<span class="ETYMOLOGY" lang="en"> ⟦ JSV <span lang="art-Latn-x-jsv">*dôfiy[‐ôfâ]</span> ⟨ great bear ⟩ > OSV <span lang="art-Latn-x-osv">DWV9W+</span> > OSM <span lang="art-Latn-x-osm-anglic">dhǒvaxro</span> > SVI <span lang="art-Latn-x-svi-anglic">dǒvaxro</span> ⟧</span></u> [ <u>Ursa</u> ; <u>the Great Bear</u> ], <b class="NUMERIC">10.</b> <u lang="art-Latn-x-svi" tabindex="0">jyo<span class="ETYMOLOGY" lang="en"> ⟦ JSV <span lang="art-Latn-x-jsv">*jô‐aifû</span> ⟨ powerfully luminous [ being ] ⟩ > OSV <span lang="art-Latn-x-osv">JWY+</span> > OSM <span lang="art-Latn-x-osm-anglic">jyo</span> > SVI <span lang="art-Latn-x-svi-anglic">jyo</span> ; this is a different construction than is used for most of the great animal spirits, which suggests that this might have originated from a different source ⟧</span></u> [ <u>Feles</u> ; <u>the Great Cat</u> ], <b class="NUMERIC">11.</b> <u lang="art-Latn-x-svi" tabindex="0">geyǒ<span class="ETYMOLOGY" lang="en"> ⟦ JSV <span lang="art-Latn-x-jsv">*gei[‐ôfâ]</span> ⟨ great rodent ⟩ > OSV <span lang="art-Latn-x-osv">GYW−</span> > OSM <span lang="art-Latn-x-osm-anglic">geyǒ</span> > SVI <span lang="art-Latn-x-svi-anglic">geyǒ</span> ; JSV <span lang="art-Latn-x-jsv">*tau[‐ôfâ]</span> ⟨ great mouse ⟩ > OSV <span lang="art-Latn-x-osv">LVW+</span> was an early alternate name ⟧</span></u> [ <u>Mus</u> ; <u>the Great Mouse</u> ], <b class="NUMERIC">12.</b> <u lang="art-Latn-x-svi" tabindex="0">dayǒ<span class="ETYMOLOGY" lang="en"> ⟦ JSV <span lang="art-Latn-x-jsv">*tâ[‐ôfâ]</span> ⟨ great insect ⟩ > OSV <span lang="art-Latn-x-osv">LYW+</span> > OSM <span lang="art-Latn-x-osm-anglic">dayǒ</span> > SVI <span lang="art-Latn-x-svi-anglic">dayǒ</span> ⟧</span></u> [ <u>Blatta</u> ; <u>the Great Insect</u> ], and <b class="NUMERIC">13.</b> <u lang="art-Latn-x-svi" tabindex="0">jyǒzhe<span class="ETYMOLOGY" lang="en"> ⟦ JSV <span lang="art-Latn-x-jsv">*jôfâ‐zei</span> ⟨ our great one ⟩ > OSV <span lang="art-Latn-x-osv">JWYZ−</span> > OSM <span lang="art-Latn-x-osm-anglic">jyǒzhe</span> > SVI <span lang="art-Latn-x-svi-anglic">jyǒzhe</span> ⟧</span></u><ins><span role="note">Sevensi has two separate words for describing humanity. ‘ <u lang="art-Latn-x-svi-anglic">jyǒzhe</u> ’ specifically denotes the fundamental originary spirit as described in this story, and is not a proper synonym for ‘ humankind ’—as humankind may or may not be acting in the interests of <u lang="art-Latn-x-svi-anglic">jyǒzhe</u> in any given time.</span></ins> [ <u>Genitrix</u> ; <u>the Great Mother</u> ] —: collectively, these are the great animals ⟨ <span lang="art-Latn-x-svi-anglic" tabindex="0">zhadǒ<span class="ETYMOLOGY" lang="en"> ⟦ JSV <span lang="art-Latn-x-jsv">*zât[‐ôfâ]</span> ⟨ great animal ⟩ > OSV <span lang="art-Latn-x-osv">ZDW+</span> > OSM <span lang="art-Latn-x-osm-anglic">zhadhǒ</span> > SVI <span lang="art-Latn-x-svi-anglic">zhadǒ</span> ⟧</span></span> ⟩.<ins><span role="note">As mentioned previously, these are ( with the exception of <u lang="art-Latn-x-svi-anglic">jyǒzhe</u> ) not only the names of spirits, but also designators of species. Be advised that these distinctions are not scientific and nor do they conform to contemporary understandings of evolution. As an example, elk are traditionally considered equally related to bison as they are to deer ( all are children of <u lang="art-Latn-x-svi-anglic">shǎchwi</u> ).</span></ins> These and their children lived and bickered amongst themselves for many years, fashioning offspring ⟨ <span lang="art-Latn-x-svi-anglic" tabindex="0">yǎkhwi<span class="ETYMOLOGY" lang="en"> ⟦ JSV <span lang="art-Latn-x-jsv">*hai‐xwî</span> ⟨ enlivened ; animated ⟩ > OSV <span lang="art-Latn-x-osv">HYXWY+</span> ⟨ animal ( servant of a great animal ) ⟩ > OSM <span lang="art-Latn-x-osm-anglic">hyǎkhwi</span> > SVI <span lang="art-Latn-x-svi-anglic">yǎkhwi</span> ⟧</span></span> ⟩<ins><span role="note">This Sevensi word literally means “ animal,” and specifically denotes any soulless animate servant of a great animal spirit. At this point in the story, this includes humans. In Sevensi, animals, trees, and so forth are not considered to have individual spirits, since all organisms of a species grow more‐or‐less according to the same plan. ( The substance and action of this plan comprises their <em>collective</em> spirit. ) In contrast, landmarks and artistic works generally each have a unique structure and design—and thus may be considered to have their own unique ( minor ) spirits.</span></ins> out of the substance of <u>the Earth</u> to perform their wills ⟨ <span lang="art-Latn-x-svi-anglic" tabindex="0">khěxru<span class="ETYMOLOGY" lang="en"> ⟦ JSV <span lang="art-Latn-x-jsv">*xeifô‐xai</span> ⟨ core ; essense ⟩ > OSV <span lang="art-Latn-x-osv">X9WY−</span> ⟨ soul ; will ⟩ > OSM <span lang="art-Latn-x-osm-anglic">khěxru</span> > SVI <span lang="art-Latn-x-svi-anglic">khěxru</span> ⟧</span></span> ⟩.<ins><span role="note">This word can mean either “ soul ” or “ ( free ) will.” The important thing to note here is that the offspring are not given souls/wills of their own—they are merely acting out those of their creätors.</span></ins> In the case of <u lang="art-Latn-x-svi-anglic">dexrǐ</u> and <u lang="art-Latn-x-svi-anglic">jyǒzhe</u>, they even found love.<ins><span role="note">The romance between <u>the Great Wolf</u> and <u>the Great Mother</u> is credited with the partnership between dogs and humans. In Sevensi folklore, there often appears an inverse counterpart : a were‐people who live with and assist wolves, and who often act as liaisons between the wolf and human world, and/or seduce humans.</span></ins></p>
+		</section>
+		<section id="taming">
+			<h2>The Taming of the Wilds</h2>
+			<p>Created from substance, to substance must all life return. But it was discovered that, through leading a structured life, one could for a time postpone the final structuring of death—and none excelled more skillfully at this than <u lang="art-Latn-x-svi-anglic">jyǒzhe</u>. She rerouted streams, cultivated farms, and brought order to the chaötic wilderness in the interest of sustaining life for herself and her species.</p>
+			<p>The consequences of these actions deeply divided the remaining great animals. Some, like <u lang="art-Latn-x-svi-anglic">geyǒ</u>, took advantage of these new habitats for their own benefit. Some, like <u lang="art-Latn-x-svi-anglic">shǎchwi</u>, made partnerships with <u lang="art-Latn-x-svi-anglic">jyǒzhe</u>, offering offspring for food and labour in exchange for their protection. Others, like the territorial <u lang="art-Latn-x-svi-anglic">dǒvaxro</u> and predatory <u lang="art-Latn-x-svi-anglic">jyo</u>, rejected this encroachment into their territory and the human protection offered to their prey.<ins><span role="note">Note that domestic cats are not a part of traditional Sevensi culture, and most certainly would not have existed at this point in the narrative.</span></ins> What ensued was a great conflict among the animals the likes of which had never occurred before.</p>
+		</section>
+		<section id="fragmentation">
+			<h2>The Shattering of Humanity</h2>
+			<p>Although humans were more populous than the felines and the bears, they were at a disadvantage, in the same manner that a hand with five fingers is disadvantaged against a knife. <u lang="art-Latn-x-svi-anglic">dexrǐ</u> fought valiantly in defense of her beloved, but the war was readily becoming lost. And, it pained <u lang="art-Latn-x-svi-anglic">jyǒzhe</u> to see her lover sacrificing herself so.</p>
+			<p>However, there was a far‐fetched idea which carried with it the chance for victory. Just as it was possible to shore up life by cultivating structure, so too, <u lang="art-Latn-x-svi-anglic">jyǒzhe</u> surmised, might it be possible to court chaös as a weapon of death. And so she did the unthinkable : <u lang="art-Latn-x-svi-anglic">jyǒzhe</u> shattered her own soul.<ins><span role="note">Whether <u lang="art-Latn-x-svi-anglic">jyǒzhe</u>ʼs self‐shattering was ultimately a wise decision is open to interpretation. Just as ordinary humans are susceptible to foolish, emotional, self‐sacrificing gestures, <u>the Great Human</u> is perhaps <em>greatly</em> susceptible to the same. We are ( collectively ) allowed to interrogate and critique <u lang="art-Latn-x-svi-anglic">jyǒzhe</u>ʼs motives and actions because we are ( collectively ) she.</span></ins> Spreading her spirit out amongst her offspring, she allowed each the ability to use its own intuïtion and, through thousands of independent, simultaneous actions, routed her attackers and brought an end to the war.<ins><span role="note">This is what gives individual humans their souls and free will, and is ( in traditional Sevensi thought ) what sets humans apart from animals. Most of the other great animals were horrified by this action—especially ( and understandably ) <u lang="art-Latn-x-svi-anglic">dexri</u>.</span></ins></p>
+		</section>
+		<section id="fragmentation">
+			<h2>Fragmentation</h2>
+			<p>But a clay pot, once broken, can never be re‐formed.<ins><span role="note">The shattered clay pot is a Sevensi metaphor which has a number of different interpretations ; the inability to repair all which is broken is the most fundamental.</span></ins> Unintentionally, in the shattering of her own soul, <u lang="art-Latn-x-svi-anglic">jyǒzhe</u> gave birth to a new spirit of <u>Fragmentation</u> ⟨ <u lang="art-Latn-x-svi-anglic" tabindex="0">zhǎfor<span class="ETYMOLOGY" lang="en"> ⟦ JSV <span lang="art-Latn-x-jsv">*ʒâfû‐dôt</span> ⟨ fragmentation ⟩ > OSV <span lang="art-Latn-x-osv">ZFTWL+</span> > OSM <span lang="art-Latn-x-osm-anglic">zhǎfor</span> > SVI <span lang="art-Latn-x-svi-anglic">zhǎfor</span> ⟧</span></u> ⟩, whose will accompanied each piece of her soul and prevented them from ever again beïng as one. The fragmentary wills of these dual spirits—<u lang="art-Latn-x-svi-anglic">jyǒzhe</u> and <u>Fragmentation</u>—exist in each one of us today.<ins><span role="note">This condition is known as ‘ dual will ’ and is fundamental to Sevensi philosophy. In Sevensi, people do not have single, whole souls but dual, fragmentary ones which are in perpetual conflict. This somewhat tempers the Sevensi ethic of radical interdependency—it is imperative that you help other people, but you want to make sure that the soul you are helping isnʼt just <u>Fragmentation</u> in disguise.</span></ins></p>
+			<p>Distraught by the sudden destruction of her lover ( and unflattered by her new, fragmentary incarnation ), <u lang="art-Latn-x-svi-anglic">dexrǐ</u> largely recused herself from human affairs, blaming <u lang="art-Latn-x-svi-anglic">jyo</u> and <u lang="art-Latn-x-svi-anglic">dǒvaxro</u> and swearing them her mortal enemies.<ins><span role="note">After these events, <u lang="art-Latn-x-svi-anglic">dexrǐ</u> is largely portrayed as feeling bitter and betrayed towards humanity, while at the same time sometimes offering assistance in memory of their past love. « Fucking foolish conceited self‐sacrificing fucking humans » sums up the general sentiment.</span></ins> And humanity ⟨ <u lang="art-Latn-x-svi-anglic" tabindex="0">zhyaxri<span class="ETYMOLOGY" lang="en"> ⟦ JSV <span lang="art-Latn-x-jsv">*zei‐âtî</span> ⟨ us‐animal ⟩ > OSV <span lang="art-Latn-x-osv">ZY9Y+</span> ⟨ human ⟩ > OSM <span lang="art-Latn-x-osm-anglic">zhyaxri</span> > SVI <span lang="art-Latn-x-svi-anglic">zhyaxri</span> ⟧</span></u> ⟩,<ins><span role="note">This word signifies humanity as a collective of individuals post‐fragmentation—individuals who may, or may not, be manifesting <u lang="art-Latn-x-svi-anglic">jyozhe</u>ʼs will.</span></ins> for its part, built towns, cities, and nations, in an everlasting attempt to manifest ⟨ <u lang="art-Latn-x-svi-anglic" tabindex="0">xrwechor<span class="ETYMOLOGY" lang="en"> ⟦ JSV <span lang="art-Latn-x-jsv">*ûxwô‐deitsô</span> ⟨ presenting as though brought together ⟩ > OSV <span lang="art-Latn-x-osv">79WYCWL−</span> ⟨ manifest ⟩ > OSM <span lang="art-Latn-x-osm-anglic">xrweichor</span> > SVI <span lang="art-Latn-x-svi-anglic">xrwechor</span> ⟧</span></u> ⟩ in clarity ⟨ <u lang="art-Latn-x-svi-anglic" tabindex="0">yed<span class="ETYMOLOGY" lang="en"> ⟦ JSV <span lang="art-Latn-x-jsv">*deihîtû</span> ⟨ clear ; unblemished ; flawless ⟩ > OSV <span lang="art-Latn-x-osv">TYL−</span> ⟨ clarity ⟩ > OSM <span lang="art-Latn-x-osm-anglic">yed</span> > SVI <span lang="art-Latn-x-svi-anglic">yed</span> ⟧</span></u> ⟩ <u lang="art-Latn-x-svi-anglic">jyozhe</u>ʼs will.<ins><span role="note">The existence of <u>Fragmentation</u> does not make the manifestation of clarity <em>impossible</em> so much as <em>temporary</em>, <em>localized</em>, and <em>requiring constant effort</em>. You can, in fact, stick the pieces of a clay pot back together. They just wonʼt stay that way for very long.</span></ins></p>
+		</section>
+		<aside>
+			<p>The manifestation of clarity is generally considered the right and just goal for humanity, which is not to say that efforts in this vein are always benign in nature. The Sevensi term “ false clarity ” is used to describe ideas or situations which appear to provide clarity but actually form stratifications or divisions between people—which is to say, <u>Fragmentation</u>. Sevensi does not have a concept of good or evil ( and nor does it have a concept of heaven or hell ), but because all humans share ( different fragments of ) the same fundamental soul, it is taken as principle that actions of <u>Fragmentation</u>—which are actions against the soul of <u>Humanity</u>—are not only actions taken against other people—but also ( soul‐rending ) actions taken against oneself.</p>
+			<p>Clarity, humanity, and <u>Fragmentation</u> collectively make up part of the Sevensi <em>toolkit</em> for reasoning <em>about</em> morality—they are not moral systems in themselves. Which is to say, these concepts can be used to justify socialist programmes of collective benefit and mutual aid, or fascist ones of strength and forced unity. In this, Sevensi is no different from any other religious or philosophical framework.</p>
+			<p>There are innumerable other trains of thought which I have not emphasized here but which might be picked up on by particular Sevensi thinkers : for example, the relationship ( and potential responsibilities ) between <u lang="art-Latn-x-svi-anglic">jyozhe</u> and <u>Life</u> as a whole ; the impacts of <u>Fragmentation</u> on knowledge and understanding ; the concept of “ harmony ” between the three different energies ; the fundamental lesbian tendencies of the human soul. As I said, this is just a very brief overview. My hope is that, with this broad narrative in hand, we will now be able to explore in depth some of those further inquiries.</p>
+		</aside>
+		<nav>
+			<ul>
+				<li><a href="/">⌂ Home ⌂</a></li>
+				<li><a href="/NFIC/">⎈ Nonfiction ⎈</a></li>
+				<li><a href="/Links/">⎋ Links ⎋</a></li>
+				<li style="Grid-Column: 2"><a href="#">↿ Top ↾</a></li>
+			</ul>
+		</nav>
+	</article>
+</body>
+</html>

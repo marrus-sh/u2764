@@ -1,0 +1,153 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom" xml:lang="en" xmlns:fh="http://purl.org/syndication/history/1.0">
+
+<fh:archive/>
+<id>tag:www.u2764.com,2021:NFIC</id>
+<link rel="current" href="https://www.u2764.com/NFIC/index.atom"/>
+<link rel="self" href="https://www.u2764.com/NFIC/archive-2019.atom"/>
+<link rel="prev-archive" href="https://www.u2764.com/NFIC/archive-2018.atom"/>
+<link rel="alternate" type="application/xhtml+xml" href="https://www.u2764.com/NFIC/"/>
+<updated>2021-09-29T23:51:23-07:00</updated>
+<title>❤ Nonfiction</title>
+<author>
+	<name>Margaret KIBI</name>
+	<uri>https://go.KIBI.family/About/#me</uri>
+</author>
+<category term="NFIC" scheme="tag:www.u2764.com,2021:" label="Nonfiction"/>
+<icon>../icon.svg</icon>
+<rights type="xhtml">
+	<div xmlns="http://www.w3.org/1999/xhtml">
+		<p>Except where otherwise mentioned, the works linked here are copyright © Margaret KIBI and licensed under a <a href="https://creativecommons.org/licenses/by-sa/4.0/" rel="license">Creative Commons Attribution-ShareAlike 4.0 International License [🅭🅯🄎]</a>.</p>
+	</div>
+</rights>
+
+<entry xml:id="NFIC.2019-02-26.bjourn">
+	<id>tag:www.u2764.com,2021:NFIC.2019-02-26.bjourn</id>
+	<link rel="alternate" type="text/html" href="https://www.u2764.com/NFIC/2019-02-26/bjourn/"/>
+	<published>2019-02-26T19:53:56-08:00</published>
+	<updated>2021-09-29T22:41:19-07:00</updated>
+	<title>Front cover @ JOURNAL: \U2764</title>
+	<author>
+		<name>kibigo!</name>
+		<uri>https://go.KIBI.family/About/#me</uri>
+	</author>
+</entry>
+
+<entry xml:id="NFIC.2019-03-03.web20">
+	<id>tag:www.u2764.com,2021:NFIC.2019-03-03.web20</id>
+	<link rel="alternate" type="text/html" href="https://www.u2764.com/NFIC/2019-03-03/web20/"/>
+	<published>2019-03-03T13:56:48-08:00</published>
+	<updated>2021-09-29T22:41:27-07:00</updated>
+	<title>Designing for Web 2020</title>
+	<author>
+		<name>kibigo!</name>
+		<uri>https://go.KIBI.family/About/#me</uri>
+	</author>
+</entry>
+
+<entry xml:id="NFIC.2019-03-11.exopunk">
+	<id>tag:www.u2764.com,2021:NFIC.2019-03-11.exopunk</id>
+	<link rel="alternate" type="text/html" href="https://www.u2764.com/NFIC/2019-03-11/exopunk/"/>
+	<published>2019-03-11T17:30:55-07:00</published>
+	<updated>2021-09-29T22:41:34-07:00</updated>
+	<title>The Exopunk Manifesto</title>
+	<author>
+		<name>kibigo!</name>
+		<uri>https://go.KIBI.family/About/#me</uri>
+	</author>
+	<summary>A dissertation on mechs and exosuits that has been sitting in my Drafts folder since april of 2017 (ps exopunk isnʼt a real word and this isnʼt a real manifesto)</summary>
+</entry>
+
+<entry xml:id="NFIC.2019-04-06.antiviolence">
+	<id>tag:www.u2764.com,2021:NFIC.2019-04-06.antiviolence</id>
+	<link rel="alternate" type="text/html" href="https://www.u2764.com/NFIC/2019-04-06/antiviolence/"/>
+	<published>2019-04-06T16:16:11-07:00</published>
+	<updated>2021-09-29T22:44:03-07:00</updated>
+	<title>Taking Violence Personally</title>
+	<author>
+		<name>kibigo!</name>
+		<uri>https://go.KIBI.family/About/#me</uri>
+	</author>
+	<summary>An anecdote; a definition; a goal; a conversation; a project.</summary>
+</entry>
+
+<entry xml:id="NFIC.2019-04-21._7c-cosmo">
+	<id>tag:www.u2764.com,2021:NFIC.2019-04-21._7c-cosmo</id>
+	<link rel="alternate" type="text/html" href="https://www.u2764.com/NFIC/2019-04-21/_7c-cosmo/"/>
+	<published>2019-04-21T16:14:43-07:00</published>
+	<updated>2021-09-29T22:52:23-07:00</updated>
+	<title>Sevensi Cosmogeny</title>
+	<author>
+		<name>kibigo!</name>
+		<uri>https://go.KIBI.family/About/#me</uri>
+	</author>
+	<summary type="xhtml">
+		<div xmlns="http://www.w3.org/1999/xhtml">
+			<p>What follows is a brief retelling of the creätion myth of Sevensi culture.  Strange as it may seem to be reading a creätion myth in the contemporary age, this story has wide and deep significance for many areas of Sevensi philosophy, making a general familiarity with its concepts necessary for any further discussion of Sevensi thought.</p>
+			<p>Sevensi does not have any divine texts, and “objective” storytelling is antithetical to the Sevensi conception of the human.  Understandings of the world are developed through conversation and consensus and are expected to grow and evolve over time.  Consequently, what follows is far from—and should not be taken as—the Truth of the matter—merely one fragmentary perspective.</p>
+			<p>Even so, I have done my best to limit the main telling to only those elements which I consider to be generally‐accepted, core concepts with wide‐reaching influence and ramifications.  Bear in mind that every sentence of the following story could probably be used as a launching‐point for an entire essay.  I have limited myself to marginal notes.</p>
+		</div>
+	</summary>
+</entry>
+
+<entry xml:id="NFIC.2019-05-09.comsoft-principles">
+	<id>tag:www.u2764.com,2021:NFIC.2019-05-09.comsoft-principles</id>
+	<link rel="alternate" type="text/html" href="https://www.u2764.com/NFIC/2019-05-09/comsoft-principles/"/>
+	<published>2019-05-09T15:07:47-07:00</published>
+	<updated>2021-09-29T23:14:00-07:00</updated>
+	<title>Organizing Principles for Community Software</title>
+	<author>
+		<name>kibigo!</name>
+		<uri>https://go.KIBI.family/About/#me</uri>
+	</author>
+	<summary>What follows is a series of five Principles, the adoption of which I believe is integral for any truly community‐led software movement to emerge.  They are developed largely from my experience within the open‐source software project Mastodon (and various forks thereof), and build upon the ideas and experiences of others both in the software community and with respect to community organizing as a whole.</summary>
+</entry>
+
+<entry xml:id="NFIC.2019-06-24.pride19">
+	<id>tag:www.u2764.com,2021:NFIC.2019-06-24.pride19</id>
+	<link rel="alternate" type="text/html" href="https://www.u2764.com/NFIC/2019-06-24/pride19/"/>
+	<published>2019-06-24T18:54:56-07:00</published>
+	<updated>2021-09-29T23:45:34-07:00</updated>
+	<title>Fuck Pride | Folks Died | 2019</title>
+	<author>
+		<name>kibigo!</name>
+		<uri>https://go.KIBI.family/About/#me</uri>
+	</author>
+	<summary>Queer toxicity; queer labour; queer trauma; queer debility; queer disability.</summary>
+</entry>
+
+<entry xml:id="NFIC.2019-09-15.fringe-progress">
+	<id>tag:www.u2764.com,2021:NFIC.2019-09-15.fringe-progress</id>
+	<link rel="alternate" type="text/html" href="https://www.u2764.com/NFIC/2019-09-15/fringe-progress/"/>
+	<published>2019-09-15T09:45:56-07:00</published>
+	<updated>2021-09-29T23:45:35-07:00</updated>
+	<title>Progressing Fringe Mastodev</title>
+	<author>
+		<name>kibigo!</name>
+		<uri>https://go.KIBI.family/About/#me</uri>
+	</author>
+	<summary type="xhtml">
+		<div xmlns="http://www.w3.org/1999/xhtml">
+			<p>This entry is a <strong>much‐belated resolution</strong> to my indefinitely‐suspended blogseries, <cite>Fringe Mastodev</cite>, first written in the back half of 2018.  The following sentences, which appeared at the beginning of each post, summed up the unproven thesis of the series:</p>
+			<blockquote>
+				<p><strong>Fringe development is my term for the development work (research; design; coding) taking place on forks and individual instances of Mastodon, without the intention of sending that work upstream, and without mainstream acknowledgment or recognition.</strong>  Increasingly, as Mastodon as a project grows, I believe that it is this development work that happens on the fringes that will shape the future of the software.</p>
+			</blockquote>
+			<p>Although these posts do an acceptable job describing the culture and situation into which fringe Mastodon development first emerged (in the form of the GlitchSoc fork), <strong>the final conclusions</strong>—regarding the radical potential, as well as the dangers, that these development practices hold—<strong>were never reached.</strong>  And, in the time since, <strong>new developments on the fediverse have emerged.</strong>  This <span style="Text-Transform: Uppercase">Journal</span> entry picks up the mantle of fringe Mastodev analysis once again, in an effort to see these posts to their conclusion.  It will begin by <strong>recapping, and analysing in context, the original posts, as well as discursive developments on the fediverse</strong> which have followed their publication.  It will then <strong>retackle these older arguments and resituate them within the contemporary fediversian context.</strong>  Ignoring the argument at scale, it will <strong>analyse small communities and question the assumptions which underlie how they are currently conceived.</strong>  And it will <strong>push at the boundaries hitherto expressed about the forms that these small communities might take.</strong>  Finally, it will <strong>take a critical look at the forms of power which might perpetuate,</strong> even/still, into this new frontier.</p>
+		</div>
+	</summary>
+</entry>
+
+<entry xml:id="NFIC.2019-09-26.fedi-motion">
+	<id>tag:www.u2764.com,2021:NFIC.2019-09-26.fedi-motion</id>
+	<link rel="alternate" type="text/html" href="https://www.u2764.com/NFIC/2019-09-26/fedi-motion/"/>
+	<published>2019-06-24T18:54:56-07:00</published>
+	<updated>2021-09-29T23:46:04-07:00</updated>
+	<title>Building Fedi Motion</title>
+	<author>
+		<name>kibigo!</name>
+		<uri>https://go.KIBI.family/About/#me</uri>
+	</author>
+	<summary>The Question(s); Fediverse Activism; Organizing around Violence; Building Networks</summary>
+</entry>
+
+</feed>

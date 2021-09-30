@@ -5,6 +5,7 @@
 <id>tag:www.u2764.com,2021:NFIC</id>
 <link rel="current" href="https://www.u2764.com/NFIC/index.atom"/>
 <link rel="self" href="https://www.u2764.com/NFIC/archive-2018.atom"/>
+<link rel="next-archive" href="https://www.u2764.com/NFIC/archive-2019.atom"/>
 <link rel="alternate" type="application/xhtml+xml" href="https://www.u2764.com/NFIC/"/>
 <updated>2021-09-29T21:12:08-07:00</updated>
 <title>❤ Nonfiction</title>
@@ -191,7 +192,7 @@
 	<id>tag:www.u2764.com,2021:NFIC.2018-10-01.fringe-glitch</id>
 	<link rel="alternate" type="text/html" href="https://www.u2764.com/NFIC/2018-10-01/fringe-glitch/"/>
 	<published>2018-10-01T06:01:44-07:00</published>
-	<updated>2021-09-26T15:50:03-07:00</updated>
+	<updated>2021-09-29T23:38:14-07:00</updated>
 	<title>Fringe Mastodev – III: Joining GlitchSoc</title>
 	<author>
 		<name>KIBI Gô</name>
