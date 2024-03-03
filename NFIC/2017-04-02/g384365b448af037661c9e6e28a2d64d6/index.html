@@ -1,0 +1,261 @@
+<!DOCTYPE html><html lang=en><title>Thoughts on the Future of the Mastodon Ecosystem</title><base target="_top"><style>body{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI","Noto Sans",Helvetica,Arial,sans-serif,"Apple Color Emoji","Segoe UI Emoji";font-size:.875rem;line-height:1.5;color:#1F2328;background:#ffffff;overflow-wrap:break-word}main{box-sizing:border-box;padding-right:1rem;padding-left:1rem;max-width:1012px;margin-right:auto;margin-left:auto}.file{position:relative;box-sizing:border-box;margin-top:.5rem;margin-bottom:.5rem;border:1px solid #d0d7de;border-radius:6px}.file-header{display:flex;padding:4px 8px;background-color:#f6f8fa;border-bottom:1px solid #d0d7de;border-top-left-radius:6px;border-top-right-radius:6px;align-items:flex-start;z-index:2}.file-info{font-family:ui-monospace,SFMono-Regular,SF Mono,Menlo,Consolas,Liberation Mono,monospace;font-size:12px;line-height:32px;padding-right:1.5rem;flex:auto}.file-info .octicon{margin-right:.25rem;color:#656d76}.Box-body{border-bottom:max(1px, 0.0625rem) solid #d0d7de;padding:2rem}.Box-body:last-of-type{margin-bottom:calc(max(1px, 0.0625rem)*-1);border-bottom-left-radius:.375rem;border-bottom-right-radius:.375rem}article{display:block;box-sizing:border-box;margin-right:auto;margin-left:auto;max-width:1012px}.markdown-body{font-size:16px;font-family:-apple-system,BlinkMacSystemFont,"Segoe UI","Noto Sans",Helvetica,Arial,sans-serif,"Apple Color Emoji","Segoe UI Emoji";line-height:1.5;word-wrap:break-word}.markdown-body>*:first-child,.markdown-body>*:first-child>.heading-element:first-child{margin-top:0}.markdown-heading{position:relative}.markdown-heading .anchor-element{display:flex;position:absolute;top:50%;left:-28px;margin:auto;border-radius:6px;width:28px;height:28px;justify-content:center;align-items:center;opacity:0;transform:translateY(-50%)}.markdown-heading:hover .anchor-element,.markdown-heading .anchor-element:hover{opacity:1}.markdown-heading h1.heading-element+.anchor-element,.markdown-heading h2.heading-element+.anchor-element{transform:translateY(calc(-50% - 0.3rem))}.markdown-heading .anchor-element .octicon{color:#1F2328}h1{margin-top:24px;margin-bottom:16px;border-bottom:1px solid hsla(210,18%,87%,1);padding-bottom:.3em;font-size:2em;font-weight:600;line-height:1.25}h2{margin-top:24px;margin-bottom:16px;border-bottom:1px solid hsla(210,18%,87%,1);padding-bottom:.3em;font-size:1.5em;font-weight:600;line-height:1.25}h3{margin-top:24px;margin-bottom:16px;font-size:1.25em;font-weight:600;line-height:1.25}p{margin-top:0;margin-bottom:16px}ol,ul{padding-left:2em}li+li{margin-top:.25em}li>p{margin-top:16px}hr{margin:24px 0;border:0;padding:0;height:.25em;background-color:#d0d7de}.octicon{display:inline-block;vertical-align:text-bottom;overflow:visible;fill:currentColor}a{color:#0969da;text-decoration:none}a:hover{text-decoration:underline}b,strong{font-weight:600}code{font-family:ui-monospace,SFMono-Regular,SF Mono,Menlo,Consolas,Liberation Mono,monospace;margin:0;border-radius:6px;padding:.2em .4em;background-color:rgba(175,184,193,0.2);font-size:85%;white-space:break-spaces}@media (min-width:768px){.file-header,.file-info{align-items:center}}</style>
+<main itemscope itemtype="http://schema.org/Code">
+<div itemprop="about">Thoughts on the Future of the Mastodon Ecosystem</div>
+<div id="file-readme-md" class="file">
+<div class="file-header"><div class="file-info"><svg aria-hidden="true" height="16" viewBox="0 0 16 16" version="1.1" width="16" data-view-component="true" class="octicon octicon-code-square color-fg-muted"><path d="M0 1.75C0 .784.784 0 1.75 0h12.5C15.216 0 16 .784 16 1.75v12.5A1.75 1.75 0 0 1 14.25 16H1.75A1.75 1.75 0 0 1 0 14.25Zm1.75-.25a.25.25 0 0 0-.25.25v12.5c0 .138.112.25.25.25h12.5a.25.25 0 0 0 .25-.25V1.75a.25.25 0 0 0-.25-.25Zm7.47 3.97a.75.75 0 0 1 1.06 0l2 2a.75.75 0 0 1 0 1.06l-2 2a.749.749 0 0 1-1.275-.326.749.749 0 0 1 .215-.734L10.69 8 9.22 6.53a.75.75 0 0 1 0-1.06ZM6.78 6.53 5.31 8l1.47 1.47a.749.749 0 0 1-.326 1.275.749.749 0 0 1-.734-.215l-2-2a.75.75 0 0 1 0-1.06l2-2a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042Z"></path></svg><a style="word-break:break-all" href="#file-readme-md"><strong style="max-width:690px">README.md</strong></a></div></div>
+<div id="file-readme-md-readme" class="Box-body readme blob"><article class="markdown-body entry-content" itemprop="text">
+<div class="markdown-heading" dir="auto"><h1 class="heading-element" dir="auto">Thoughts on the Future of the Mastodon Ecosystem</h1><a id="thoughts-on-the-future-of-the-mastodon-ecosystem" class="anchor-element" aria-label="Permalink: Thoughts on the Future of the Mastodon Ecosystem" href="#thoughts-on-the-future-of-the-mastodon-ecosystem"><svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg></a></div>
+<p dir="auto"><code>@marrus_sh@mastodon.social</code> / <code>@u2764@icosahedron.website</code></p>
+<hr>
+<div class="markdown-heading" dir="auto"><h2 class="heading-element" dir="auto">1. Core and Community Instances</h2><a id="1-core-and-community-instances" class="anchor-element" aria-label="Permalink: 1. Core and Community Instances" href="#1-core-and-community-instances"><svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg></a></div>
+<div class="markdown-heading" dir="auto"><h3 class="heading-element" dir="auto">Model:</h3><a id="model" class="anchor-element" aria-label="Permalink: Model:" href="#model"><svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg></a></div>
+<p dir="auto">It will <em>always</em> be the case that larger instances will have more advertising power for drawing in new users than smaller instances.
+Furthermore, larger instances will, in general, have better administration, a larger community, and newer features than smaller instances.
+This makes big instances an appealing target for new users.</p>
+<p dir="auto">I don't see this as a flaw, I see it as a requirement.
+Right now the ease at which one can find new users to follow is largely dependent on how large one's instance is:
+It is far easier to find new people to follow on <code>mastodon.social</code> than <code>icosahedron.website</code>, for example.
+<strong>So long as there are multiple competing large instances</strong> (aka no one instance has a monopoly, as is the case currently),  the downsides of large instances are manageable, and they serve to familiarize users with the ecosystem and (I think, ideally) funnel them into smaller, more community-focused instances later.</p>
+<p dir="auto">This model will be the premise from which I will be making future points, so let's set up some terminology:
+I'll call large instances <em><strong>core instances</strong></em> and small instances <em><strong>community instances</strong></em>; there are, of course, also <em><strong>single-user instances</strong></em> in addition to these.</p>
+<div class="markdown-heading" dir="auto"><h3 class="heading-element" dir="auto">Implementation:</h3><a id="implementation" class="anchor-element" aria-label="Permalink: Implementation:" href="#implementation"><svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg></a></div>
+<p dir="auto">In order for this model to work successfully, however, it is important that switching instances be a fairly seamless operation.
+Being able to import / export old toots is not a requirement (although I think being able to download a database of your toots is important for other reasons); however, the following features <em>are</em> important:</p>
+<ol dir="auto">
+<li>Being able to import/export follower lists, block lists, mute lists</li>
+<li>Being able to canonically declare that an account has changed location</li>
+</ol>
+<div class="markdown-heading" dir="auto"><h2 class="heading-element" dir="auto">2. Specialized Instances</h2><a id="2-specialized-instances" class="anchor-element" aria-label="Permalink: 2. Specialized Instances" href="#2-specialized-instances"><svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg></a></div>
+<div class="markdown-heading" dir="auto"><h3 class="heading-element" dir="auto">Model:</h3><a id="model-1" class="anchor-element" aria-label="Permalink: Model:" href="#model-1"><svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg></a></div>
+<p dir="auto">One of the strengths of federation, and a notable way to get people using the Mastodon software, is the ability to create specialized instances with a targeted community.
+Some examples of this include:</p>
+<ol dir="auto">
+<li>Instances dedicated to certain artforms, hobbies, or skills</li>
+<li>Instances dedicated to particular fandoms</li>
+<li>Instances used for educational purposes, or in a classroom environment</li>
+<li>Instances used by businesses for professional reasons</li>
+</ol>
+<p dir="auto">Specialized instances have a very different purpose from a more general-use instance, and are a point where the email metaphor breaks down:
+You would never choose your email server for its <em>community</em>.
+Consequently, they have some particular needs.</p>
+<div class="markdown-heading" dir="auto"><h3 class="heading-element" dir="auto">Implementation:</h3><a id="implementation-1" class="anchor-element" aria-label="Permalink: Implementation:" href="#implementation-1"><svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg></a></div>
+<p dir="auto">Here are some things I see as requirements for proper specialized instance support:</p>
+<ol dir="auto">
+<li>
+<p dir="auto"><strong>The per-instance ability to turn off the local timeline, the global timeline, or both.</strong>
+A global timeline makes considerably less sense when on a specialized instance dedicated to a specific topic.
+Conversely, for extremely general-use instances, instance owners might want to disable a local timeline to promote federation and prevent cliquey behaviour.</p>
+</li>
+<li>
+<p dir="auto"><strong>The ability to disable federation altogether, or easily enable federation only to a whitelisted list of servers.</strong>
+The need for this should be obvious when you consider using Mastodon in a K-12 educational setting.
+Roleplay or support-group servers may also find this feature valuable.</p>
+</li>
+<li>
+<p dir="auto"><strong>The ability to communicate instance culture to clients.</strong>
+Some things this might include:</p>
+<ul dir="auto">
+<li>The title of the instance</li>
+<li>An instance logo</li>
+<li>Instance colours (there would need to be a standard regarding this)</li>
+<li>Localization settings (to allow specialized terminology for posts, boosts, and so forth)</li>
+<li>Custom links to about pages, blogs, terms, et cetera</li>
+<li>Given (1) and (2) above, what kinds of federation are supported</li>
+</ul>
+<p dir="auto">Of course, communicating these things <em>between instances</em> might be useful as well.</p>
+</li>
+<li>
+<p dir="auto"><strong>The ability to extend Mastodon with plugins.</strong>
+Mastodon will never be able to handle every specialized instance's needs.
+Some instances might, for example, want integration with SoundCloud, YouTube, or other platforms that would be beyond the scope of Mastodon proper.
+There should be a (documented, accessible) means of extending Mastodon built into the main server engine, both with respect to the frontend and the backend (especially, imo, regarding the User Settings page).</p>
+</li>
+</ol>
+<div class="markdown-heading" dir="auto"><h2 class="heading-element" dir="auto">3.  Revenue Stream</h2><a id="3--revenue-stream" class="anchor-element" aria-label="Permalink: 3.  Revenue Stream" href="#3--revenue-stream"><svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg></a></div>
+<div class="markdown-heading" dir="auto"><h3 class="heading-element" dir="auto">Model:</h3><a id="model-2" class="anchor-element" aria-label="Permalink: Model:" href="#model-2"><svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg></a></div>
+<p dir="auto">The idea of having a revenue stream and profitability is an uncomfortable one for a fair number of folks in the FOSS crowd, but it is also a necessity given the fact that (a) the labour costs of the Mastodon project, if done well, are fairly high, and (b) that labour needs to be compensated in some manner. (Also (c), if Mastodon is to compete with large financial entities, attempting to do so without a revenue stream is folly.)</p>
+<p dir="auto">Here are some specific things that the Mastodon ecosystem needs a revenue stream to address:</p>
+<ol dir="auto">
+<li>
+<p dir="auto"><strong>Mastodon needs a legal team.</strong>
+For the following reasons: (a) to provide legal advice and education to instance owners and administrators; (b) to take the burden of writing ToSes and possibly CoCs off of instance owners; (c) to deal with legal challenges from larger, corporate entities (Facebook, Twitter, etc).</p>
+</li>
+<li>
+<p dir="auto"><strong>Mastodon needs a PR staff.</strong>
+Word-of-mouth communication and grassroots organization works fine for now, but eventually schisms will happen and (if successful) large, corporate organizations with large PR departments will begin actively campaigning against us.
+We need to be able to formulate a response.</p>
+</li>
+<li>
+<p dir="auto"><strong>Mastodon should provide training to instance owners.</strong>
+If Mastodon wants to make owning and running an instance something anyone can do, then it needs to provide owners with training about community management, sensitivity, and moderation.</p>
+</li>
+<li>
+<p dir="auto"><strong>Core Mastodon instances need a dedicated moderation team.</strong>
+For community instances, volunteer community moderation works fine.
+However, once the user count reaches a certain threshold, having a dedicated support staff to deal with moderation (and Support) becomes a must.</p>
+</li>
+<li>
+<p dir="auto"><strong>Mastodon needs fulltime devs.</strong>
+You could argue that, as a FOSS project, Mastodon doesn't <em>need</em> fulltime devs, but let's all agree that it would be nice and leave it at that.</p>
+</li>
+</ol>
+<p dir="auto">Obviously, if you have a revenue stream, you will also eventually need a nonprofit Foundation, a governance model, good administration, et cetera, but for now let's just focus on where that money is coming from and how to get it. <strong>Mastodon is free software, which means that the primary site for monetization lies not with the software itself, but with individual instances.</strong> It is, for obvious reasons, to instances' benefit to donate to help fund the above ventures. Of course, this means that instances themselves must have ways of attaining a revenue stream.</p>
+<p dir="auto">The question of whether instances themselves should be non-profit or for-profit is to me a moot question, as for-profit instances are inevitable if the software is successful.
+If we want that money coming back to us (the FOSS project) instead of for-profit entities creating their own implementations and keeping the money for themselves (less ideal) then we will have to accommodate a revenue stream model into the Mastodon software eventually.
+Another advantage to doing this ourselves is that we then hold sway over which kinds of revenue aqcuisition are acceptible and which kinds are not.</p>
+<div class="markdown-heading" dir="auto"><h3 class="heading-element" dir="auto">Implementation:</h3><a id="implementation-2" class="anchor-element" aria-label="Permalink: Implementation:" href="#implementation-2"><svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg></a></div>
+<p dir="auto">Here are some thoughts on how Mastodon instances might attain a revenue stream, and furthermore how the Mastodon software might accommodate (or not accommodate) them.</p>
+<ol dir="auto">
+<li><strong>Donations.</strong>
+Donations (and volunteer work) will likely be the primary source of revenue for community instances, but will likely become insufficient for core instances as they have to deal with larger moderation and administrative problems.</li>
+<li><strong>Aesthetic changes.</strong>
+This includes paid themes, customization options, et cetera.
+Of course, this probably requires allowing instances to <strong>support multiple frontends</strong> before any progress can be made on this option.
+<strong>Users should never have to pay for accessibility,</strong> so charging money for (for example) a high-contrast theme would be inappropriate.</li>
+<li><strong>Account badging.</strong>
+“Supporter” badges and the like are one means of encouraging users to give money to the project.
+Giving supporters additional features over everyday users would be inappropriate, however.
+(Note that account badging need not necessarily be tied to monitization, and being able to badge accounts might be seen as a useful feature for other, completely benign purposes.)</li>
+<li><strong>Grants and organizations.</strong>
+Believe it or not there are a lot of people who don't much like Twitter, and some of those people undoubtedly have money and are in charge of foundations and might be willing to donate to help take it down.
+For-profit organizations who use the Mastodon software for their own purposes furthermore might be willing to fund its continued development.</li>
+</ol>
+<p dir="auto">With all of the above, there is of course the fear that instance staff will preference donating members (or organizations) over everyday users when making moderation decisions; ie that moderators or developers can be “bought off”.
+This is a problem of capitalism.
+Unfortunately, the Mastodon project exists in a world beset by capitalism.</p>
+<p dir="auto"><strong>The Mastodon software should probably have a terms of use / license that clearly specifies what forms of monitization are or aren't acceptable.</strong>
+This, contradictorily, requires having a legal team (both to create the license and to enforce it) and thus, a revenue stream.</p>
+</article></div>
+<script type="text/markdown" id="gist[content]">#  Thoughts on the Future of the Mastodon Ecosystem  #
+
+`@marrus_sh@mastodon.social` / `@u2764@icosahedron.website`
+
+ - - -
+
+##  1. Core and Community Instances  ##
+
+###  Model:
+
+It will *always* be the case that larger instances will have more advertising power for drawing in new users than smaller instances.
+Furthermore, larger instances will, in general, have better administration, a larger community, and newer features than smaller instances.
+This makes big instances an appealing target for new users.
+
+I don't see this as a flaw, I see it as a requirement.
+Right now the ease at which one can find new users to follow is largely dependent on how large one's instance is:
+It is far easier to find new people to follow on `mastodon.social` than `icosahedron.website`, for example.
+**So long as there are multiple competing large instances** (aka no one instance has a monopoly, as is the case currently),  the downsides of large instances are manageable, and they serve to familiarize users with the ecosystem and (I think, ideally) funnel them into smaller, more community-focused instances later.
+
+This model will be the premise from which I will be making future points, so let's set up some terminology:
+I'll call large instances ___core instances___ and small instances ___community instances___; there are, of course, also ___single-user instances___ in addition to these.
+
+###  Implementation:
+
+In order for this model to work successfully, however, it is important that switching instances be a fairly seamless operation.
+Being able to import / export old toots is not a requirement (although I think being able to download a database of your toots is important for other reasons); however, the following features *are* important:
+
+1.  Being able to import/export follower lists, block lists, mute lists
+2.  Being able to canonically declare that an account has changed location
+
+##  2. Specialized Instances  ##
+
+###  Model:
+
+One of the strengths of federation, and a notable way to get people using the Mastodon software, is the ability to create specialized instances with a targeted community.
+Some examples of this include:
+
+1.  Instances dedicated to certain artforms, hobbies, or skills
+2.  Instances dedicated to particular fandoms
+3.  Instances used for educational purposes, or in a classroom environment
+4.  Instances used by businesses for professional reasons
+
+Specialized instances have a very different purpose from a more general-use instance, and are a point where the email metaphor breaks down:
+You would never choose your email server for its *community*.
+Consequently, they have some particular needs.
+
+###  Implementation:
+
+Here are some things I see as requirements for proper specialized instance support:
+
+1.  __The per-instance ability to turn off the local timeline, the global timeline, or both.__
+    A global timeline makes considerably less sense when on a specialized instance dedicated to a specific topic.
+    Conversely, for extremely general-use instances, instance owners might want to disable a local timeline to promote federation and prevent cliquey behaviour.
+
+2.  __The ability to disable federation altogether, or easily enable federation only to a whitelisted list of servers.__
+    The need for this should be obvious when you consider using Mastodon in a K-12 educational setting.
+    Roleplay or support-group servers may also find this feature valuable.
+
+3.  __The ability to communicate instance culture to clients.__
+    Some things this might include:
+
+    - The title of the instance
+    - An instance logo
+    - Instance colours (there would need to be a standard regarding this)
+    - Localization settings (to allow specialized terminology for posts, boosts, and so forth)
+    - Custom links to about pages, blogs, terms, et cetera
+    - Given (1) and (2) above, what kinds of federation are supported
+
+    Of course, communicating these things *between instances* might be useful as well.
+
+4.  __The ability to extend Mastodon with plugins.__
+    Mastodon will never be able to handle every specialized instance's needs.
+    Some instances might, for example, want integration with SoundCloud, YouTube, or other platforms that would be beyond the scope of Mastodon proper.
+    There should be a (documented, accessible) means of extending Mastodon built into the main server engine, both with respect to the frontend and the backend (especially, imo, regarding the User Settings page).
+
+##  3.  Revenue Stream  ##
+
+###  Model:
+
+The idea of having a revenue stream and profitability is an uncomfortable one for a fair number of folks in the FOSS crowd, but it is also a necessity given the fact that (a) the labour costs of the Mastodon project, if done well, are fairly high, and (b) that labour needs to be compensated in some manner. (Also (c), if Mastodon is to compete with large financial entities, attempting to do so without a revenue stream is folly.)
+
+Here are some specific things that the Mastodon ecosystem needs a revenue stream to address:
+
+1.  __Mastodon needs a legal team.__
+    For the following reasons: (a) to provide legal advice and education to instance owners and administrators; (b) to take the burden of writing ToSes and possibly CoCs off of instance owners; (c) to deal with legal challenges from larger, corporate entities (Facebook, Twitter, etc).
+
+2.  __Mastodon needs a PR staff.__
+    Word-of-mouth communication and grassroots organization works fine for now, but eventually schisms will happen and (if successful) large, corporate organizations with large PR departments will begin actively campaigning against us.
+    We need to be able to formulate a response.
+
+3.  __Mastodon should provide training to instance owners.__
+    If Mastodon wants to make owning and running an instance something anyone can do, then it needs to provide owners with training about community management, sensitivity, and moderation.
+
+4.  __Core Mastodon instances need a dedicated moderation team.__
+    For community instances, volunteer community moderation works fine.
+    However, once the user count reaches a certain threshold, having a dedicated support staff to deal with moderation (and Support) becomes a must.
+
+5.  __Mastodon needs fulltime devs.__
+    You could argue that, as a FOSS project, Mastodon doesn't *need* fulltime devs, but let's all agree that it would be nice and leave it at that.
+
+Obviously, if you have a revenue stream, you will also eventually need a nonprofit Foundation, a governance model, good administration, et cetera, but for now let's just focus on where that money is coming from and how to get it. **Mastodon is free software, which means that the primary site for monetization lies not with the software itself, but with individual instances.** It is, for obvious reasons, to instances' benefit to donate to help fund the above ventures. Of course, this means that instances themselves must have ways of attaining a revenue stream.
+
+The question of whether instances themselves should be non-profit or for-profit is to me a moot question, as for-profit instances are inevitable if the software is successful.
+If we want that money coming back to us (the FOSS project) instead of for-profit entities creating their own implementations and keeping the money for themselves (less ideal) then we will have to accommodate a revenue stream model into the Mastodon software eventually.
+Another advantage to doing this ourselves is that we then hold sway over which kinds of revenue aqcuisition are acceptible and which kinds are not.
+
+###  Implementation:
+
+Here are some thoughts on how Mastodon instances might attain a revenue stream, and furthermore how the Mastodon software might accommodate (or not accommodate) them.
+
+1.  __Donations.__
+    Donations (and volunteer work) will likely be the primary source of revenue for community instances, but will likely become insufficient for core instances as they have to deal with larger moderation and administrative problems.
+2.  __Aesthetic changes.__
+    This includes paid themes, customization options, et cetera.
+    Of course, this probably requires allowing instances to __support multiple frontends__ before any progress can be made on this option.
+    __Users should never have to pay for accessibility,__ so charging money for (for example) a high-contrast theme would be inappropriate.
+3.  __Account badging.__
+    “Supporter” badges and the like are one means of encouraging users to give money to the project.
+    Giving supporters additional features over everyday users would be inappropriate, however.
+    (Note that account badging need not necessarily be tied to monitization, and being able to badge accounts might be seen as a useful feature for other, completely benign purposes.)
+4.  __Grants and organizations.__
+    Believe it or not there are a lot of people who don't much like Twitter, and some of those people undoubtedly have money and are in charge of foundations and might be willing to donate to help take it down.
+    For-profit organizations who use the Mastodon software for their own purposes furthermore might be willing to fund its continued development.
+
+With all of the above, there is of course the fear that instance staff will preference donating members (or organizations) over everyday users when making moderation decisions; ie that moderators or developers can be “bought off”.
+This is a problem of capitalism.
+Unfortunately, the Mastodon project exists in a world beset by capitalism.
+
+__The Mastodon software should probably have a terms of use / license that clearly specifies what forms of monitization are or aren't acceptable.__
+This, contradictorily, requires having a legal team (both to create the license and to enforce it) and thus, a revenue stream.
+</script>
+</div>
+</main>

@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom" xml:lang="en" xmlns:fh="http://purl.org/syndication/history/1.0">
+
+<fh:archive/>
+<id>tag:www.u2764.com,2021:NFIC</id>
+<link rel="current" href="https://www.u2764.com/NFIC/index.atom"/>
+<link rel="self" href="https://www.u2764.com/NFIC/archive-2017.atom"/>
+<link rel="next-archive" href="https://www.u2764.com/NFIC/archive-2018.atom"/>
+<link rel="alternate" type="application/xhtml+xml" href="https://www.u2764.com/NFIC/"/>
+<updated>2024-03-03T12:37:02-05:00</updated>
+<title>❤ Nonfiction</title>
+<author>
+	<name>Margaret KIBI</name>
+	<uri>https://go.KIBI.family/About/#me</uri>
+</author>
+<category term="NFIC" scheme="tag:www.u2764.com,2021:" label="Nonfiction"/>
+<icon>../icon.svg</icon>
+<rights type="xhtml">
+	<div xmlns="http://www.w3.org/1999/xhtml">
+		<p>Except where otherwise mentioned, the works linked here are copyright © Margaret KIBI and licensed under a <a href="https://creativecommons.org/licenses/by-sa/4.0/" rel="license">Creative Commons Attribution-ShareAlike 4.0 International License [🅭🅯🄎]</a>.</p>
+	</div>
+</rights>
+
+<entry xml:id="NFIC.2017-04-02.g384365b448af037661c9e6e28a2d64d6">
+	<id>tag:www.u2764.com,2021:NFIC.2017-04-02.g384365b448af037661c9e6e28a2d64d6</id>
+	<link rel="alternate" type="text/html" href="https://www.u2764.com/NFIC/2017-04-02/g384365b448af037661c9e6e28a2d64d6/"/>
+	<published>2017-04-23T04:36:30.126Z</published>
+	<updated>2024-03-02T23:11:23-05:00</updated>
+	<title>Thoughts on the Future of the Mastodon Ecosystem</title>
+	<author>
+		<name>marrus-sh</name>
+		<uri>https://gist.github.com/marrus-sh</uri>
+	</author>
+</entry>
+
+<entry xml:id="NFIC.2017-04-23.gameingers-are-dead-and-so-is-mastodon">
+	<id>tag:www.u2764.com,2021:NFIC.2017-04-23.gameingers-are-dead-and-so-is-mastodon</id>
+	<link rel="alternate" type="text/html" href="https://www.u2764.com/NFIC/2017-04-23/gameingers-are-dead-and-so-is-mastodon/"/>
+	<published>2017-04-23T04:36:30.126Z</published>
+	<updated>2024-03-02T21:11:46-05:00</updated>
+	<title>Mourning Mastodon</title>
+	<author>
+		<name>ALLIE ❤ HART</name>
+		<uri>https://medium.com/@alliethehart</uri>
+	</author>
+	<summary>You may have heard about Mastodon, the new open-source social network software. Here’s how it died.</summary>
+</entry>
+
+<entry xml:id="NFIC.2017-04-23.mourning-what-now">
+	<id>tag:www.u2764.com,2021:NFIC.2017-04-23.mourning-what-now</id>
+	<link rel="alternate" type="text/html" href="https://www.u2764.com/NFIC/2017-04-23/mourning-what-now/"/>
+	<published>2017-04-23T04:36:30.126Z</published>
+	<updated>2024-03-02T21:20:50-05:00</updated>
+	<title>Mourning What Now?!?!</title>
+	<author>
+		<name>ALLIE ❤ HART</name>
+		<uri>https://medium.com/@alliethehart</uri>
+	</author>
+	<summary>A response to “Mourning Mastodon,” by the author</summary>
+</entry>
+
+</feed>
