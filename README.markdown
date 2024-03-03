@@ -22,4 +22,4 @@ Documents in each category `XXXX` are catalogued in the Atom file `/XXXX/index.a
 
 ## Licensing
 
-Except where otherwise mentioned, the documents in this repository are copyright © [Margaret KIBI](https://go.KIBI.family/About/#me) and licensed under a <a href="https://creativecommons.org/licenses/by-sa/4.0/" rel="license">Creative Commons Attribution-ShareAlike 4.0 International License [🅭🅯🄎]</a>.  There are some exceptions; if a directory or file carries a different copyright statement, this one does not apply.
+Except where otherwise mentioned, the documents in this repository are copyright © the author and licensed under a <a href="https://creativecommons.org/licenses/by-sa/4.0/" rel="license">Creative Commons Attribution-ShareAlike 4.0 International License [🅭🅯🄎]</a>.  There are some exceptions; if a directory or file carries a different copyright statement, this one does not apply.
